@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru-RU">
+    <head>
+        {% include 'connects/meta.html' %}
+        <title>Шоколадный Батончик Picnic Грецкий орех</title>
+        <meta name="description" content="Alpen Gold - это яркие сочетания шоколада с разными ингредиентами. Испытай вкус яркости!" />
+        {% include 'connects/styles.html' %} {% include 'analytics.html' %}
+    </head>
+
+    <body class="product-page picnic">
+        {% include 'noscript.html' %}
+        <div class="product-page__wrapper">
+            <!--HEADER-->
+            {% set showLogo = true %} {% set activePage = "picnic" %} {% include 'header.html' %}
+
+            <div class="product-page-content">
+                <div class="product-content">
+                    <div class="product-content-wrapper">
+                        <div
+                            class="product-bg mobile-visible"
+                            style="background: radial-gradient(50% 60.35% at 50% 50%, #ffe804 0%, #371865 100%)"
+                        ></div>
+                        <div class="container">
+                            <div class="breadcrumbs">
+                                <a href="./">Главная</a>
+                                <a href="./#catalog">Продукты</a>
+                                <a href="./picnic.html">Picnic</a>
+                                <a href="./product-picnic-3.html">Грецкий орех</a>
+                            </div>
+                            <div class="product-wrapper">
+                                <div class="product with-slider owl-carousel owl-theme">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg desktop-visible"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #ffe804 0%, #371865 100%)"
+                                        ></div>
+                                        <img src="img/products/picnic/3-1m.webp" alt="Alpen Gold Picnic" class="show-img-in-mobil" />
+                                        <img src="img/products/picnic/3-1.webp" alt="Alpen Gold Picnic" class="del-img-in-mobil" />
+                                    </div>
+                                    <!-- <div class="product-img second-image">
+                                        <img src="img/products/picnic/3-2.webp" alt="Alpen Gold Picnic" />
+                                    </div> -->
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-name">Шоколадный<br />Батончик Picnic Грецкий орех</div>
+                                    <div class="product-weight">52 г</div>
+                                    <div class="product-desc">
+                                        Батончик Picnic Грецкий орех — это сочетание хрустящих вафель, мягкой карамели, и&nbsp;воздушного риса
+                                        с&nbsp;ноткой грецкого ореха.
+                                        <span>
+                                            Бери батончик с&nbsp;собой на&nbsp;учебу, работу или в&nbsp;дорогу, чтобы быстро утолить голод
+                                            и&nbsp;расслабиться!
+                                        </span>
+                                    </div>
+                                    <div class="accordion-wrap">
+                                        <div class="accordion-item">
+                                            <div class="accordion-item-title">Состав</div>
+                                            <div class="accordion-item-text">
+                                                сахар, масла растительные (пальмовое, рапсовое), воздушный рис (мука рисовая, сахар, масло пальмовое,
+                                                ЯЧМЕННО-солодовый экстракт, соль), ГРЕЦКИЙ ОРЕХ обжаренный дробленый, мука ПШЕНИЧНАЯ, масло какао,
+                                                сыворотка сухая МОЛОЧНАЯ, АРАХИС обжаренный дробленый, какао тертое, сироп глюкозный, МОЛОКО сухое
+                                                цельное, какао-порошок, эмульгаторы (лецитин СОЕВЫЙ, Е476, Е471), соль, регуляторы кислотности
+                                                (гидрокарбонат натрия, кислота лимонная), ароматизатор.
+                                                <br />
+                                                <span>МОЖЕТ СОДЕРЖАТЬ СЛЕДЫ ДРУГИХ ОРЕХОВ. </span><br />
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-item-title">Пищевая ценность на 100 г</div>
+                                            <div class="accordion-item-text">
+                                                <div class="product-table">
+                                                    <p>
+                                                        <span>Белки</span>
+                                                        <span>6,2 г</span>
+                                                    </p>
+                                                    <p>
+                                                        <span>Углеводы</span>
+                                                        <span>57 г</span>
+                                                    </p>
+                                                    <p>
+                                                        <span>Жиры</span>
+                                                        <span>26 г</span>
+                                                    </p>
+                                                    <p>
+                                                        <span>Энергетическая ценность</span>
+                                                        <span>2069 кДж/ 495 ккал</span>
+                                                    </p>
+                                                </div>
+
+                                                <span class="disclaimer small">АКТУАЛЬНУЮ ИНФОРМАЦИЮ О&nbsp;ПРОДУКТЕ СМОТРИ НА&nbsp;УПАКОВКЕ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% include 'connects/seo-text.html' %} {% include 'cart-button.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'footer.html' %} {% include 'popups/popup-markets-picnic.html' %} {% include 'connects/scripts.html' %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru-RU">
+    <head>
+        {% include 'connects/meta.html' %}
+        <title>Alpen Gold. Испытай вкус яркости!</title>
+        <meta name="description" content="Испытай Вкус яркости! Выбери свой любимый вкус." />
+        {% include 'connects/styles.html' %} {% include 'analytics.html' %}
+    </head>
+
+    <body class="main-page">
+        {% include 'noscript.html' %}
+        <div class="home-page__wrapper">
+            <!--HEADER-->
+            {% set showLogo = false %} {% set activePage = "main" %} {% include 'header.html' %}
+
+            <!--MAIN-->
+            <main class="main home-page__content">
+                <section class="hero">
+                    <div class="wrapper">
+                        <div class="hero-content">
+                            <img src="img/main/logo.webp" alt="" class="hero-logo hide-in-mobil" />
+                            <img src="img/main/title.svg" alt="" class="hero-title" />
+                        </div>
+                    </div>
+                </section>
+                <!--Cards-->
+                <div id="catalog" class="home-content">
+                    <div class="home-content__wrapper">
+                        <div class="container">
+                            <div class="home-content__grid">
+                                <div class="home-content__grid-item home-content__grid-item_size-big">
+                                    <div class="home-card">
+                                        <a class="home-card__wrapper" href="./alpengold.html">
+                                            <picture class="home-card__img">
+                                                <source media="(min-width:700px) " srcset="img/main/alpengold.webp" />
+                                                <img class="home-card__img home-card__img_tablet-left" src="img/main/alpengold-m.webp" />
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="home-content__grid-item home-content__grid-item_size-small">
+                                    <div class="home-card">
+                                        <a class="home-card__wrapper" href="./alpengold-oreo.html">
+                                            <picture class="home-card__img">
+                                                <source media="(min-width:700px) " srcset="img/main/oreo.webp" />
+                                                <img class="home-card__img" src="img/main/oreo-m.webp" />
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="home-content__grid-item home-content__grid-item_size-medium">
+                                    <div class="home-card">
+                                        <a class="home-card__wrapper" href="./alpengold-maxfun.html">
+                                            <picture class="home-card__img">
+                                                <source media="(min-width:700px) " srcset="img/main/maxfun.webp" />
+                                                <img class="home-card__img" src="img/main/maxfun-m.webp" />
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="home-content__grid-item home-content__grid-item_size-medium">
+                                    <div class="home-card">
+                                        <a class="home-card__wrapper" href="./alpengold-duo.html">
+                                            <picture class="home-card__img">
+                                                <source media="(min-width:700px) " srcset="img/main/duo.webp" />
+                                                <img class="home-card__img" src="img/main/duo-m.webp" />
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="home-content__grid-item home-content__grid-item_size-small">
+                                    <div class="home-card">
+                                        <a class="home-card__wrapper" href="./alpengold-aero.html">
+                                            <picture class="home-card__img">
+                                                <source media="(min-width:700px) " srcset="img/main/aero.webp" />
+                                                <img class="home-card__img home-card__img_tablet-right" src="img/main/aero-m.webp" />
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="home-content__grid-item home-content__grid-item_size-big">
+                                    <div class="home-card">
+                                        <a class="home-card__wrapper" href="./picnic.html">
+                                            <picture class="home-card__img">
+                                                <source media="(min-width:700px) " srcset="img/main/picnic.webp" />
+                                                <img class="home-card__img" src="img/main/picnic-m.webp" />
+                                            </picture>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="recipes" class="recipes-block">
+                                <div class="recipes-title">Рецепты</div>
+                                <div class="recipes-slider owl-carousel owl-theme">
+                                    <div class="recipe-slide">
+                                        <div class="recipe-slide-content">
+                                            <div class="recipe-slide-img">
+                                                <img src="img/recipes/recipe-9.webp" class="recipe-video-poster" alt="" />
+                                                <video src="img/recipes/recipe-9.mp4" class="recipe-video" autoplay loop muted playsinline></video>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="recipe-slide">
+                                        <div class="recipe-slide-content">
+                                            <div class="recipe-slide-img">
+                                                <img src="img/recipes/recipe-10.webp" class="recipe-video-poster" alt="" />
+                                                <video src="img/recipes/recipe-10.mp4" class="recipe-video" autoplay loop muted playsinline></video>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="recipe-slide">
+                                        <div class="recipe-slide-content">
+                                            <div class="recipe-slide-img" style="background: url(img/recipes/recipe-1.png); background-size: contain">
+                                                <img src="img/recipes/recipe-1.png" class="recipe-static" alt="" data-recipe="recipe-1" />
+                                                <img src="" class="recipe-gif" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="recipe-slide">
+                                        <div class="recipe-slide-content">
+                                            <div class="recipe-slide-img" style="background: url(img/recipes/recipe-2.png); background-size: contain">
+                                                <img src="img/recipes/recipe-2.png" class="recipe-static" alt="" data-recipe="recipe-2" />
+                                                <img src="" class="recipe-gif" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recipe-slide">
+                                        <div class="recipe-slide-content">
+                                            <div class="recipe-slide-img" style="background: url(img/recipes/recipe-3.png); background-size: contain">
+                                                <img src="img/recipes/recipe-3.png" class="recipe-static" alt="" data-recipe="recipe-3" />
+                                                <img src="" class="recipe-gif" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recipe-slide">
+                                        <div class="recipe-slide-content">
+                                            <div class="recipe-slide-img" style="background: url(img/recipes/recipe-5.png); background-size: contain">
+                                                <img src="img/recipes/recipe-5.png" class="recipe-static" alt="" data-recipe="recipe-5" />
+                                                <img src="" class="recipe-gif" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="recipe-slide">
+                                        <div class="recipe-slide-content">
+                                            <div class="recipe-slide-img" style="background: url(img/recipes/recipe-6.png); background-size: contain">
+                                                <img src="img/recipes/recipe-6.png" class="recipe-static" alt="" data-recipe="recipe-6" />
+                                                <img src="" class="recipe-gif" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="recipe-slide">
+                                        <div class="recipe-slide-content">
+                                            <div class="recipe-slide-img" style="background: url(img/recipes/recipe-7.png); background-size: contain">
+                                                <img src="img/recipes/recipe-7.png" class="recipe-static" alt="" data-recipe="recipe-7" />
+                                                <img src="" class="recipe-gif" alt="" />
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            {% include 'connects/seo-text.html' %}
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            {% include "footer.html" %} {% include "popups/popup-markets-main.html" %} {% include 'connects/scripts.html' %}
+        </div>
+    </body>
+</html>

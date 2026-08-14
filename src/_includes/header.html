@@ -1,0 +1,98 @@
+<header class="header">
+    <div class="container">
+        <div class="header__wrapper">
+            {% if showLogo %}
+            <a href="./" class="header__logo"><img class="header__logo-img" src="img/catalog/logo.png" /></a>
+            {% endif %}
+
+            <div class="lang-wrap">
+                <div class="lang-select">
+                    <div class="lang-img">
+                        <img src="img/lang/rus.svg" alt="" />
+                    </div>
+                </div>
+                <div class="lang-dropdown" style="display: none">
+                    <a href="https://alpengold-promo.me/?utm_source=old_domain" class="lang">
+                        <div class="lang-img">
+                            <img src="img/lang/kz.svg" alt="" />
+                        </div>
+                    </a>
+                    <a href="https://alpengold-promo.me/?utm_source=old_domain" class="lang">
+                        <div class="lang-img">
+                            <img src="img/lang/ge.svg" alt="" />
+                        </div>
+                    </a>
+                    <a href="https://alpengold-promo.me/?utm_source=old_domain" class="lang">
+                        <div class="lang-img">
+                            <img src="img/lang/uz.svg" alt="" />
+                        </div>
+                    </a>
+                    <a href="https://alpengold-promo.me/?utm_source=old_domain" class="lang">
+                        <div class="lang-img">
+                            <img src="img/lang/az.svg" alt="" />
+                        </div>
+                    </a>
+                    <a href="https://alpengold-promo.me/?utm_source=old_domain" class="lang">
+                        <div class="lang-img">
+                            <img src="img/lang/mn.svg" alt="" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="header__burger">
+                <div class="header-burger burger">
+                    <div class="header-burger__wrapper">
+                        <div class="header-burger__item"></div>
+                        <div class="header-burger__item"></div>
+                        <div class="header-burger__item"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__block header__nav main-nav">
+                <nav class="header-nav">
+                    <ul class="header-nav__list">
+                        <li class="header-nav__item header-nav__item-m"><a class="header-nav__link" href="./">Главная</a></li>
+                        <li class="header-nav__item header-nav__item-have-submenu">
+                            <span class="header-nav__link">Наши продукты</span>
+                            <ul class="header-submenu">
+                                <li class="header-submenu-item">
+                                    <a class="header-nav__link {% if activePage == 'alpengold' %}active{% endif %}" href="./alpengold.html">
+                                        Alpen Gold Классический
+                                    </a>
+                                </li>
+                                <li class="header-submenu-item">
+                                    <a class="header-nav__link {% if activePage == 'oreo' %}active{% endif %}" href="./alpengold-oreo.html">
+                                        Alpen Gold Oreo
+                                    </a>
+                                </li>
+                                <li class="header-submenu-item">
+                                    <a class="header-nav__link {% if activePage == 'maxfun' %}active{% endif %}" href="./alpengold-maxfun.html">
+                                        Alpen Gold MaxFun
+                                    </a>
+                                </li>
+                                <li class="header-submenu-item">
+                                    <a class="header-nav__link {% if activePage == 'duo' %}active{% endif %}" href="./alpengold-duo.html">
+                                        Alpen Gold Duo
+                                    </a>
+                                </li>
+                                <li class="header-submenu-item">
+                                    <a class="header-nav__link {% if activePage == 'aero' %}active{% endif %}" href="./alpengold-aero.html">
+                                        Alpen Gold Aerated
+                                    </a>
+                                </li>
+                                <li class="header-submenu-item">
+                                    <a class="header-nav__link {% if activePage == 'picnic' %}active{% endif %}" href="./picnic.html">Picnic</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="header-nav__item">
+                            <a class="header-nav__link {% if activePage == 'facts' %}active{% endif %}" href="./facts.html">О бренде</a>
+                        </li>
+                        <li class="header-nav__item"><a class="header-nav__link" href="./#recipes">Рецепты</a></li>
+                        <li class="header-nav__item"><a class="header-nav__link pop-op" href="#" data-popup="shops">Где купить</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

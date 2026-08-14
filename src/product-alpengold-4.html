@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru-RU">
+    <head>
+        {% include 'connects/meta.html' %}
+        <title>Alpen Gold Молочный с клубнично-йогуртовой начинкой</title>
+        <meta name="description" content="Alpen Gold - это яркие сочетания шоколада с разными ингредиентами. Испытай вкус яркости!" />
+        {% include 'connects/styles.html' %} {% include 'analytics.html' %}
+    </head>
+
+    <body class="product-page alpengold">
+        {% include 'noscript.html' %}
+        <div class="product-page__wrapper">
+            <!--HEADER-->
+            {% set showLogo = true %} {% set activePage = "alpengold" %} {% include 'header.html' %}
+
+            <div class="product-page-content">
+                <div class="product-content">
+                    <div class="product-content-wrapper">
+                        <div
+                            class="product-bg mobile-visible"
+                            style="background: radial-gradient(50% 60.35% at 50% 50%, #edf1f9 0%, #ee2241 100%)"
+                        ></div>
+                        <div class="container">
+                            <div class="breadcrumbs">
+                                <a href="./">Главная</a>
+                                <a href="./#catalog">Продукты</a>
+                                <a href="./alpengold.html">Alpen Gold</a>
+                                <a href="./product-alpengold-4.html">Молочный с клубнично-йогуртовой начинкой</a>
+                            </div>
+                            <div class="product-wrapper">
+                                <div class="product with-slider owl-carousel owl-theme">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg desktop-visible"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #edf1f9 0%, #ee2241 100%)"
+                                        ></div>
+                                        <img src="img/products/alpengold/4.webp" alt="Alpen Gold" />
+                                        <img
+                                            srcset="img/catalog/alpengold/product/decor/4.png 1x, img/catalog/alpengold/product/decor/4@2x.png 2x"
+                                            alt=""
+                                            class="product-decor"
+                                        />
+                                    </div>
+                                    <div class="product-img second-image">
+                                        <img src="img/products/alpengold/4-2.webp" alt="Alpen Gold" />
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-name">Шоколад молочный с&nbsp;клубнично-йогуртовой начинкой</div>
+                                    <div class="product-weight">80 г</div>
+                                    <div class="product-desc">
+                                        Alpen Gold с&nbsp;клубнично-йогуртовой начинкой — это сочетание молочного шоколада и&nbsp;яркого клубничного
+                                        вкуса с&nbsp;нотками йогурта. В&nbsp;ассортименте Alpen Gold представлены как&nbsp;классические вкусы,
+                                        так&nbsp;и&nbsp;необычные миксы.
+                                        <span>Добавь Alpen Gold в&nbsp;каждый момент!</span>
+                                    </div>
+                                    <div class="accordion-wrap">
+                                        <div class="accordion-item">
+                                            <div class="accordion-item-title">Состав</div>
+                                            <div class="accordion-item-text">
+                                                сахар, жир растительный (масло пальмовое), сыворотка сухая МОЛОЧНАЯ, какао тертое, масло какао, МОЛОКО
+                                                сухое цельное, жир МОЛОЧНЫЙ, порошок клубничный, эмульгаторы (лецитин СОЕВЫЙ, E476), ЙОГУРТОВЫЙ
+                                                порошок, МОЛОКО сухое обезжиренное, регулятор кислотности (лимонная кислота), соль, ароматизаторы.
+                                                <br />
+                                                <span>МОЖЕТ СОДЕРЖАТЬ СЛЕДЫ АРАХИСА, ДРУГИХ ОРЕХОВ И ПШЕНИЦЫ.</span><br />
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <div class="accordion-item-title">Пищевая ценность на 100 г</div>
+                                            <div class="accordion-item-text">
+                                                <div class="product-table">
+                                                    <p>
+                                                        <span>Белки</span>
+                                                        <span>3,9 г</span>
+                                                    </p>
+                                                    <p>
+                                                        <span>Углеводы</span>
+                                                        <span>59 г</span>
+                                                    </p>
+                                                    <p>
+                                                        <span>Жиры</span>
+                                                        <span>33 г</span>
+                                                    </p>
+                                                    <p>
+                                                        <span>Энергетическая ценность</span>
+                                                        <span>2295 кДж/ 550 ккал</span>
+                                                    </p>
+                                                </div>
+
+                                                <span class="disclaimer small">АКТУАЛЬНУЮ ИНФОРМАЦИЮ О&nbsp;ПРОДУКТЕ СМОТРИ НА&nbsp;УПАКОВКЕ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% include 'connects/seo-text.html' %} {% include 'cart-button.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'footer.html' %} {% include 'popups/popup-markets-main.html' %} {% include 'connects/scripts.html' %}
+        </div>
+    </body>
+</html>

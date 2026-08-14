@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru-RU">
+    <head>
+        {% include 'connects/meta.html' %}
+        <title>Picnic</title>
+        <meta name="description" content="Alpen Gold - это яркие сочетания шоколада с разными ингредиентами. Испытай вкус яркости!" />
+        {% include 'connects/styles.html' %} {% include 'analytics.html' %}
+    </head>
+
+    <body class="catalog-page picnic">
+        {% include 'noscript.html' %}
+        <div class="catalog-page__wrapper">
+            <!--HEADER-->
+            {% set showLogo = false %} {% set activePage = "picnic" %} {% include 'header.html' %}
+
+            <div class="catalog-page-content">
+                <div class="catalog-banner picnic">
+                    <div class="container">
+                        <div class="breadcrumbs">
+                            <a href="./">Главная</a>
+                            <a href="./#catalog">Продукты</a>
+                            <a href="./alpengold-picnic.html">Picnic</a>
+                        </div>
+                        <div class="catalog-logo">
+                            <img src="img/catalog/picnic/logo.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog-content">
+                    <div class="catalog-content-wrapper">
+                        <div class="container">
+                            <div class="products-grid col--2">
+                                <a href="product-picnic-1.html" class="product product-medium">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #7d58b3 0%, #371865 100%)"
+                                        ></div>
+                                        <img src="img/products/picnic/1.webp" alt="Alpen Gold Picnic" />
+                                    </div>
+                                    <div class="product-name">Шоколадный Батончик Big&nbsp;Picnic, 76&nbsp;г</div>
+                                </a>
+                                <a href="product-picnic-2.html" class="product product-medium">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #e6530d 0%, #371865 100%)"
+                                        ></div>
+                                        <img src="img/products/picnic/2.webp" alt="Alpen Gold Picnic" />
+                                    </div>
+                                    <div class="product-name">Шоколадный Батончик Picnic, 38&nbsp;г</div>
+                                </a>
+                                <a href="product-picnic-3.html" class="product product-medium">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #ffe804 0%, #371865 100%)"
+                                        ></div>
+                                        <img src="img/products/picnic/3.webp" alt="Alpen Gold Picnic" />
+                                    </div>
+                                    <div class="product-name">Шоколадный батончик Picnic Грецкий орех, 52&nbsp;г</div>
+                                </a>
+                                <a href="product-picnic-4.html" class="product product-medium">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #d61315 0%, #44185e 91.53%, #371865 100%)"
+                                        ></div>
+                                        <img src="img/products/picnic/4.webp" alt="Alpen Gold Picnic" />
+                                    </div>
+                                    <div class="product-name">Шоколад молочный Alpen&nbsp;Gold Picnic MIX</div>
+                                </a>
+                            </div>
+                            {% include 'connects/seo-text.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'footer.html' %} {% include 'popups/popup-markets-picnic.html' %} {% include 'connects/scripts.html' %}
+        </div>
+    </body>
+</html>

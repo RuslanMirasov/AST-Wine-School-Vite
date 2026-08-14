@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru-RU">
+    <head>
+        {% include 'connects/meta.html' %}
+        <title>Alpen Gold Duo</title>
+        <meta name="description" content="Alpen Gold - это яркие сочетания шоколада с разными ингредиентами. Испытай вкус яркости!" />
+        {% include 'connects/styles.html' %} {% include 'analytics.html' %}
+    </head>
+
+    <body class="catalog-page duo">
+        {% include 'noscript.html' %}
+        <div class="catalog-page__wrapper">
+            <!--HEADER-->
+            {% set showLogo = false %} {% set activePage = "duo" %} {% include 'header.html' %}
+
+            <div class="catalog-page-content">
+                <div class="catalog-banner duo">
+                    <div class="container">
+                        <div class="breadcrumbs dark">
+                            <a href="./">Главная</a>
+                            <a href="./#catalog">Продукты</a>
+                            <a href="./alpengold-duo.html">Alpen Gold DUO</a>
+                        </div>
+                        <div class="catalog-logo">
+                            <img src="img/catalog/logo-big.png" alt="Alpen Gold DUO" />
+                        </div>
+                        <div class="catalog-banner-product">
+                            <img src="img/products/duo/hero-image.webp" alt="Alpen Gold" class="catalog-banner-product-img" />
+                            <img src="img/products/duo/decor/0.webp" alt="Alpen Gold" class="catalog-banner-product-decor" />
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog-content">
+                    <div class="catalog-content-wrapper">
+                        <div class="container">
+                            <div class="products-grid col--2">
+                                <a href="product-alpengold-duo-1.html" class="product product-medium">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #dfb69c 0%, #bf7240 100%)"
+                                        ></div>
+                                        <img src="img/products/duo/1.webp" alt="Alpen Gold" />
+                                    </div>
+                                    <div class="product-name">
+                                        Темный и&nbsp;молочный шоколад Alpen&nbsp;Gold&nbsp;DUO с&nbsp;начинкой с&nbsp;какао, фундуком
+                                        и&nbsp;вафельной крошкой в&nbsp;карамели
+                                    </div>
+                                </a>
+                                <a href="product-alpengold-duo-2.html" class="product product-medium">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #fff0f0 0%, #ffb0b0 100%)"
+                                        ></div>
+                                        <img src="img/products/duo/2.webp" alt="Alpen Gold" />
+                                    </div>
+                                    <div class="product-name">
+                                        Белый и&nbsp;молочный шоколад Alpen&nbsp;Gold&nbsp;DUO с&nbsp;клубничной начинкой и&nbsp;фруктовыми кусочками
+                                        с&nbsp;клубникой, малиной
+                                    </div>
+                                </a>
+                            </div>
+                            {% include 'connects/seo-text.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'footer.html' %} {% include 'popups/popup-markets-duo.html' %} {% include 'connects/scripts.html' %}
+        </div>
+    </body>
+</html>

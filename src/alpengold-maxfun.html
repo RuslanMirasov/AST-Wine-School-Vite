@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru-RU">
+    <head>
+        {% include 'connects/meta.html' %}
+        <title>Alpen Gold MAXFUN</title>
+        <meta name="description" content="Alpen Gold - это яркие сочетания шоколада с разными ингредиентами. Испытай вкус яркости!" />
+        {% include 'connects/styles.html' %} {% include 'analytics.html' %}
+    </head>
+
+    <body class="catalog-page maxfun">
+        {% include 'noscript.html' %}
+        <div class="catalog-page__wrapper">
+            <!--HEADER-->
+            {% set showLogo = false %} {% set activePage = "maxfun" %} {% include 'header.html' %}
+
+            <div class="catalog-page-content">
+                <!--HERO-->
+                <div class="catalog-banner maxfun">
+                    <div class="container">
+                        <div class="breadcrumbs">
+                            <a href="./">Главная</a>
+                            <a href="./#catalog">Продукты</a>
+                            <a href="./alpengold-maxfun.html">Alpen Gold MAXFUN</a>
+                        </div>
+                        <div class="catalog-logo">
+                            <img src="img/catalog/logo-big.png" alt="" />
+                        </div>
+                        <div class="catalog-banner-product">
+                            <img src="img/products/maxfun/hero-image.webp" alt="Alpen Gold" class="catalog-banner-product-img" />
+                            <img src="img/products/maxfun/decor/0.webp" alt="Alpen Gold" class="catalog-banner-product-decor" />
+                        </div>
+                    </div>
+                </div>
+
+                <!--CATALOG-->
+                <div class="catalog-content">
+                    <div class="catalog-content-wrapper">
+                        <div class="container">
+                            <div class="products-grid col--2">
+                                <!--col--3-->
+                                <a href="product-alpengold-maxfun-1.html" class="product product-medium">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #b5a4d4 0%, #58309d 100%)"
+                                        ></div>
+                                        <img srcset="img/products/maxfun/1.webp" alt="Alpen Gold" />
+                                    </div>
+                                    <div class="product-name">Шоколад молочный со&nbsp;взрывной карамелью, мармеладом <br />и&nbsp;печеньем</div>
+                                </a>
+
+                                <!-- <a href="product-alpengold-maxfun-2.html" class="product product-medium">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #586daf 0%, #0c2574 100%)"
+                                        ></div>
+                                        <img srcset="img/products/maxfun/2.webp" alt="Alpen Gold" />
+                                    </div>
+                                    <div class="product-name">
+                                        Шоколад молочный с&nbsp;мармеладом со&nbsp;вкусом колы, попкорном и&nbsp;взрывной карамелью
+                                    </div>
+                                </a> -->
+                                <!-- <a href="product-alpengold-maxfun-3.html" class="product product-medium">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #e4feee 0%, #00b049 100%)"
+                                        ></div>
+                                        <img srcset="img/products/maxfun/3.webp" alt="Alpen Gold" />
+                                    </div>
+                                    <div class="product-name">
+                                        Шоколад молочный c&nbsp;фруктово-ягодными кусочками, взрывной карамелью и&nbsp;шипучими шариками
+                                    </div>
+                                </a> -->
+
+                                <a href="product-alpengold-maxfun-4.html" class="product product-medium">
+                                    <div class="product-img">
+                                        <div
+                                            class="product-bg"
+                                            style="background: radial-gradient(50% 60.35% at 50% 50%, #edf1f9 0%, #fe842a 100%)"
+                                        ></div>
+                                        <img srcset="img/products/maxfun/4.webp" alt="Alpen Gold" />
+                                    </div>
+                                    <div class="product-name">
+                                        Шоколад молочный c&nbsp;фруктовыми кусочками, взрывной карамелью и&nbsp;шипучими шариками
+                                    </div>
+                                </a>
+                            </div>
+                            {% include 'connects/seo-text.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'footer.html' %} {% include 'popups/popup-markets-maxfun.html' %} {% include 'connects/scripts.html' %}
+        </div>
+    </body>
+</html>
