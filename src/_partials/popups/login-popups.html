@@ -129,23 +129,44 @@
       </label>
     </fieldset>
 
-    <div class="data-form-errors" data-form-errors></div>
+    <div class="form-errors" data-form-errors></div>
 
     <fieldset>
       <label class="label">
-        <input name="confirmation" type="checkbox" class="checkbox" required onchange="onCodeCheckboxChange(event)" />
+        <input
+          name="confirmation"
+          type="checkbox"
+          class="checkbox"
+          required
+          data-error-title="Согласие на обработку данных обязательно"
+          onchange="onCodeCheckboxChange(event)"
+        />
         <p class="label-text">
           <span>Согласен с&nbsp;<a href="%ROOT%" target="_blank">Условиями обработки персональных данных</a></span>
         </p>
       </label>
       <label class="label">
-        <input name="confirmation2" type="checkbox" class="checkbox" required onchange="onCodeCheckboxChange(event)" />
+        <input
+          name="confirmation2"
+          type="checkbox"
+          class="checkbox"
+          required
+          data-error-title="Принятие политики конфиденциальности обязательно"
+          onchange="onCodeCheckboxChange(event)"
+        />
         <p class="label-text">
           <span>Принимаю <a href="%ROOT%" target="_blank">Политику конфиденциальности</a></span>
         </p>
       </label>
       <label class="label">
-        <input name="confirmation3" type="checkbox" class="checkbox" required onchange="onCodeCheckboxChange(event)" />
+        <input
+          name="confirmation3"
+          type="checkbox"
+          class="checkbox"
+          required
+          data-error-title="Принятие пользовательского соглашения обязательно"
+          onchange="onCodeCheckboxChange(event)"
+        />
         <p class="label-text">
           <span>Принимаю <a href="%ROOT%" target="_blank">Пользовательское соглашение</a></span>
         </p>

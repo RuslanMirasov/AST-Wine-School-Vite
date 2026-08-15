@@ -1,3 +1,26 @@
+const normalizePath = path => path.replace(/\/$/, '') || '/';
+
+const isLinkActive = (link, currentPath) => {
+  const href = link.getAttribute('href');
+  if (!href || href === '#') return false;
+
+  const linkPath = normalizePath(link.pathname);
+
+  // Home is only active on an exact match, otherwise it would stay
+  // highlighted on every page. Section links also stay active on their
+  // nested pages (e.g. "О нас" on /about/test/).
+  if (linkPath === '/') return currentPath === '/';
+  return currentPath === linkPath || currentPath.startsWith(linkPath + '/');
+};
+
+const setActiveMenuLinks = menuLinks => {
+  const currentPath = normalizePath(window.location.pathname);
+
+  menuLinks.forEach(link => {
+    link.classList.toggle('active', isLinkActive(link, currentPath));
+  });
+};
+
 export const initNavigationMenu = () => {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.navigation ');
@@ -17,6 +40,8 @@ export const initNavigationMenu = () => {
       link.insertAdjacentHTML('beforeend', `<svg width="10" height="6"><use href="${spriteUrl}#arrow"></use></svg>`);
     }
   });
+
+  setActiveMenuLinks(menuLinks);
 };
 
 export const hidePreloader = () => {
