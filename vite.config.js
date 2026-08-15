@@ -17,10 +17,36 @@ function compileStyles(style) {
 // in dev, compile on request and hot-swap the <link> on scss changes (no
 // full reload); at build time, write both a minified (linked) and an
 // expanded (unlinked, kept for reference) output.
+const hmrClientId = 'virtual:scss-hmr-client';
+const resolvedHmrClientId = '\0' + hmrClientId;
+// Vite's URL convention for \0-prefixed virtual modules: /@id/__x00__<id>.
+const hmrClientUrl = '/@id/__x00__' + hmrClientId;
+
 function scssDevPlugin() {
   return {
     name: 'compile-scss-dev',
     apply: 'serve',
+    resolveId(id) {
+      if (id === hmrClientId) return resolvedHmrClientId;
+    },
+    load(id) {
+      if (id !== resolvedHmrClientId) return;
+
+      // Hot-swaps the compiled styles.min.css link on scss changes,
+      // without a full page reload.
+      return `
+        if (import.meta.hot) {
+          import.meta.hot.on('scss-update', () => {
+            document.querySelectorAll('#app-styles').forEach(link => {
+              const next = link.cloneNode();
+              next.href = link.href.split('?')[0] + '?t=' + Date.now();
+              next.onload = () => link.remove();
+              link.parentNode.insertBefore(next, link.nextSibling);
+            });
+          });
+        }
+      `;
+    },
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const url = req.url?.split('?')[0];
@@ -42,7 +68,27 @@ function scssDevPlugin() {
       });
     },
     transformIndexHtml(html) {
-      return html.replace('</body>', '<script type="module" src="/_dev-scss-hmr-client.js"></script>\n</body>');
+      return html.replace('</body>', `<script type="module" src="${hmrClientUrl}"></script>\n</body>`);
+    },
+  };
+}
+
+// Computes, for the page currently being processed, how many levels deep
+// it sits below the site root ("/" -> 0, "/about/" -> 1, ...) and expands
+// every "%ROOT%" token in its HTML into the matching relative prefix
+// ("./", "../", "../../", ...). Combined with base: '' below, this makes
+// a single dist/ work when dropped at any URL — domain root, a random
+// subdirectory, GitHub Pages — with no rebuild and no --base flag.
+function rootPrefix(path) {
+  const depth = path.split('/').filter(Boolean).length - 1;
+  return depth <= 0 ? './' : '../'.repeat(depth);
+}
+
+function rootTokenPlugin() {
+  return {
+    name: 'expand-root-token',
+    transformIndexHtml(html, ctx) {
+      return html.replaceAll('%ROOT%', rootPrefix(ctx.path));
     },
   };
 }
@@ -62,10 +108,10 @@ function scssBuildPlugin() {
 
 export default defineConfig({
   root: 'src',
-  base: '/',
+  base: '',
   appType: 'mpa',
   publicDir: '_public',
-  plugins: [injectHTML(), scssDevPlugin(), scssBuildPlugin()],
+  plugins: [injectHTML(), rootTokenPlugin(), scssDevPlugin(), scssBuildPlugin()],
   build: {
     outDir: '../dist',
     emptyOutDir: true,
