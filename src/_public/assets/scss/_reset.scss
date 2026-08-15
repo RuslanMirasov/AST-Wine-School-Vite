@@ -133,19 +133,17 @@ button {
 }
 
 .section {
-  display: block;
+  display: flex;
   width: 100%;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
   position: relative;
-  overflow: hidden;
   z-index: 1;
   padding: 40px 0px;
+  margin: 0 auto;
   scroll-margin: 45px;
-  &.full {
-    min-height: 100svh;
-  }
-  &.visible {
-    overflow: visible;
-  }
 }
 
 @media (min-width: 1024px) {

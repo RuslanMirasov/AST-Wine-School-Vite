@@ -1,0 +1,113 @@
+.swiper {
+  width: 100%;
+}
+
+.arrows {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 18px;
+  flex-shrink: 0;
+  &.auto {
+    display: inline-flex;
+    width: auto;
+  }
+  &.ta--l {
+    justify-content: flex-start;
+  }
+  &.ta--r {
+    justify-content: flex-end;
+  }
+}
+
+.arrow {
+  display: block;
+  width: 38px;
+  height: 38px;
+  border-radius: 38px;
+  cursor: pointer;
+  transition: 0.3s var(--cubic);
+  z-index: 4;
+
+  &.swiper-button-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &[data-arrow-prev] {
+    background: var(--white) url('../img/svg/prev.svg') no-repeat center center/cover;
+  }
+  &[data-arrow-next] {
+    background: var(--white) url('../img/svg/next.svg') no-repeat center center/cover;
+  }
+}
+
+.swiper-pagination {
+  display: flex;
+  position: relative;
+  width: 364px !important;
+  max-width: calc(100% - 40px);
+  height: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  top: 0px !important;
+  left: 0px !important;
+  bottom: 0px !important;
+  transform: translate(0%, 0%) !important;
+  gap: 2px;
+  overflow: visible;
+  @media (max-width: 767px) {
+    margin-top: 14px;
+  }
+
+  .swiper-pagination-bullet {
+    flex: 1;
+    width: auto !important;
+    height: 8px !important;
+    border-radius: 0px !important;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1) translate(0px, 0px) !important;
+    left: 0px !important;
+    margin: 0 !important;
+    opacity: 1;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0);
+    transition: background 0.3s !important;
+
+    &:first-child {
+      border-radius: 20px 0px 0px 20px !important;
+    }
+
+    &:last-child {
+      border-radius: 0px 20px 20px 0px !important;
+    }
+
+    &.swiper-pagination-bullet-active {
+      background: rgba(255, 255, 255, 1);
+    }
+  }
+
+  &.big {
+    .swiper-pagination-bullet {
+      width: 52px !important;
+
+      &.swiper-pagination-bullet-active {
+        background: #44caf6;
+        box-shadow: inset 4px 4px 10px #00eaff;
+      }
+
+      @media (max-width: 767px) {
+        width: 26px !important;
+        height: 6px !important;
+        box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+}
