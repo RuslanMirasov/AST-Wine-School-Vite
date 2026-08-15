@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "build:pages": "vite build --base=/AST-Wine-School-Vite/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite preview"
   },
   "keywords": [],
   "author": "Ruslan Mirasov",
