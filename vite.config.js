@@ -1,62 +1,41 @@
 import { defineConfig } from 'vite';
-import { relative, resolve } from 'node:path';
-
-const srcDir = resolve(__dirname, 'src');
-
-function normalizePath(path) {
-    return path.replace(/\\/g, '/');
-}
-
-function getOriginalAssetPath(assetInfo) {
-    const originalFileName = assetInfo.originalFileNames?.[0];
-
-    if (!originalFileName) {
-        return null;
-    }
-
-    return normalizePath(relative(srcDir, originalFileName));
-}
+import { glob } from 'glob';
+import injectHTML from 'vite-plugin-html-inject';
 
 export default defineConfig({
-    base: './',
-    plugins: [
-        {
-            name: 'remove-empty-css-entry',
-            generateBundle(_, bundle) {
-                for (const [fileName, chunk] of Object.entries(bundle)) {
-                    if (chunk.type === 'chunk' && chunk.code.trim() === '') {
-                        delete bundle[fileName];
-                    }
-                }
-            },
-        },
-    ],
-    build: {
-        outDir: 'dist',
-        emptyOutDir: false,
-        rollupOptions: {
-            input: {
-                main: resolve(__dirname, 'src/scss/main.scss'),
-            },
-            output: {
-                assetFileNames: (assetInfo) => {
-                    if (assetInfo.name === 'main.css') {
-                        return 'css/main.min.css';
-                    }
-
-                    const originalPath = getOriginalAssetPath(assetInfo);
-
-                    if (originalPath?.startsWith('img/')) {
-                        return originalPath;
-                    }
-
-                    if (originalPath?.startsWith('fonts/')) {
-                        return originalPath;
-                    }
-
-                    return originalPath ?? '[name][extname]';
-                },
-            },
-        },
+  root: 'src',
+  base: '/',
+  appType: 'mpa',
+  plugins: [
+    injectHTML(),
+    {
+      // A CSS-only entry (styles.scss) still produces an empty JS chunk;
+      // drop it so dist doesn't ship an unused .js file next to styles.min.css.
+      name: 'remove-empty-css-entry',
+      generateBundle(_, bundle) {
+        for (const [fileName, chunk] of Object.entries(bundle)) {
+          if (chunk.type === 'chunk' && chunk.code.trim() === '') {
+            delete bundle[fileName];
+          }
+        }
+      },
     },
+  ],
+  build: {
+    outDir: '../dist',
+    emptyOutDir: true,
+    modulePreload: { polyfill: false },
+    rollupOptions: {
+      input: glob.sync('src/**/*.html', { ignore: 'src/partials/**' }),
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'styles.css') {
+            return 'assets/css/styles.min.css';
+          }
+
+          return 'assets/[name][extname]';
+        },
+      },
+    },
+  },
 });

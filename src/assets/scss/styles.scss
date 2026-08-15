@@ -1,0 +1,30 @@
+@use 'fonts';
+@use 'preloader';
+@use 'reset';
+@use 'header';
+@use 'buttons';
+@use 'forms';
+@use 'section__callback';
+@use 'footer';
+@use 'popup';
+
+:root {
+  --font: 'Mabry Pro', system-ui, -apple-system, sans-serif;
+
+  --black: #0b1020;
+  --white: #ffffff;
+  --grey: #94a3b8;
+  --grey-dark: #6b7280;
+  --grey-medium: #b2b2b2;
+  --grey-light: #edf0f5;
+  --grey-border: #e5e7eb;
+  --blue: #273551;
+  --blue-light: rgba(5, 67, 189, 0.102);
+  --magenta: #c24191;
+  --magenta-hover: #e439a2;
+  --magenta-light: rgba(194, 65, 145, 0.102);
+  --magenta-opacity: rgba(228, 57, 162, 0.5);
+
+  --invalid: #ff0000;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+}

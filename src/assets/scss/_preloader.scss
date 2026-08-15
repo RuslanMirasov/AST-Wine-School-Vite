@@ -1,0 +1,86 @@
+// animation: rotate 0.5s linear infinite;
+
+/* Вращение по кругу */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.preloader {
+  display: flex;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100svh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: var(--grey-light);
+  z-index: 999;
+  transition: opacity 1s var(--cubic);
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.preloader-center {
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  text-align: center;
+  .preloader-logo {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    width: 60px;
+    height: 60px;
+    color: var(--magenta);
+
+    &:before {
+      content: '';
+      position: absolute;
+      border-radius: 60px;
+      width: 150%;
+      height: 150%;
+
+      border-top: 2px solid var(--magenta);
+      border-right: 2px solid var(--magenta);
+      animation: rotate 0.5s linear infinite;
+    }
+    svg {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  p {
+    display: block;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 700;
+    margin-top: 16px;
+    text-transform: uppercase;
+    span {
+      display: block;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 300;
+      margin-top: 8px;
+    }
+  }
+}

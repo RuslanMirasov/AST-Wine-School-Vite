@@ -1,25 +1,22 @@
 {
-  "name": "alpengold-vite",
+  "name": "ast-wine-school-vite",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "run-p dev:html dev:css",
-    "dev:html": "eleventy --serve",
-    "dev:css": "vite build --watch",
-    "build": "run-s clean build:html build:css",
-    "build:html": "eleventy",
-    "build:css": "vite build",
-    "clean": "node -e \"fs.rmSync('dist', { recursive: true, force: true })\"",
-    "start": "vite preview"
+    "dev": "vite",
+    "build": "vite build",
+    "build:pages": "vite build --base=/AST-Wine-School-Vite/",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "Ruslan Mirasov",
   "license": "ISC",
-  "description": "alpengold",
+  "description": "ast-wine-school",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.5",
-    "npm-run-all": "^4.1.5",
+    "glob": "^13.0.6",
     "sass": "^1.99.0",
-    "vite": "^6.4.2"
+    "vite": "^6.4.2",
+    "vite-plugin-html-inject": "^1.1.2"
   }
 }

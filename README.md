@@ -1,147 +1,160 @@
-# Alpen Gold Website
+# AST - Школа вина
 
-Статический сайт на связке Eleventy + Vite.
+![Project Preview](./public/poster.webp)
 
-Eleventy собирает HTML-страницы и копирует статические файлы. Vite собирает SCSS в CSS.
+## Валидация форм (JS)
 
-## Основные команды
+Валидация подключена один раз глобально (`initForms()` в `scripts.js`) и работает автоматически для любой формы на странице — вызывать вручную ничего
+не нужно, достаточно правильно разметить HTML.
 
-Установка зависимостей:
-
-```bash
-npm install
-```
-
-Запуск разработки с локальным сервером и автообновлением:
-
-```bash
-npm run dev
-```
-
-Финальная сборка с очисткой `dist`:
-
-```bash
-npm run build
-```
-
-## Как работает dev
-
-Команда `npm run dev` запускает два процесса параллельно:
-
-```bash
-npm run dev:html
-npm run dev:css
-```
-
-`dev:html` запускает Eleventy dev server:
-
-```bash
-eleventy --serve
-```
-
-`dev:css` запускает Vite в режиме наблюдения:
-
-```bash
-vite build --watch
-```
-
-При сохранении HTML, SCSS, JS или файлов из статических папок сборка обновляется.
-
-## Как работает build
-
-Команда `npm run build` выполняет шаги последовательно:
-
-```bash
-npm run clean
-npm run build:html
-npm run build:css
-```
-
-`clean` удаляет старую папку `dist`.
-
-`build:html` собирает HTML через Eleventy и копирует статические файлы.
-
-`build:css` собирает SCSS через Vite.
-
-## Структура проекта
-
-```text
-src/
-  index.html
-  scss/
-    main.scss
-  js/
-  img/
-  fonts/
-  libs/
-  _includes/
-  _layouts/
-
-dist/
-```
-
-HTML-страницы лежат в `src` и после сборки попадают в корень `dist` с теми же именами:
-
-```text
-src/index.html -> dist/index.html
-src/product-alpengold-1.html -> dist/product-alpengold-1.html
-```
-
-Статические папки копируются так:
-
-```text
-src/img -> dist/img
-src/fonts -> dist/fonts
-src/libs -> dist/libs
-src/js -> dist/js
-```
-
-SCSS собирается так:
-
-```text
-src/scss/main.scss -> dist/css/main.min.css
-```
-
-## Как добавлять страницы
-
-Новые страницы добавляются прямо в `src`:
-
-```text
-src/picnic.html
-src/product-alpengold-1.html
-src/product-alpengold-2.html
-```
-
-После сборки они появятся в корне `dist`:
-
-```text
-dist/picnic.html
-dist/product-alpengold-1.html
-dist/product-alpengold-2.html
-```
-
-## Подключения в HTML
-
-Текущие пути в HTML рассчитаны на такую структуру билда:
+### Быстрый старт
 
 ```html
-<link rel="stylesheet" href="css/main.min.css" />
-<script src="js/geolocation.js"></script>
-<script src="libs/jquery-3.5.1.min.js"></script>
-<script src="libs/owl/owl.carousel.min.js"></script>
-<script src="js/common.js"></script>
+<form data-form novalidate>
+  <label class="label">
+    <span class="label__text">Email</span>
+    <input type="email" name="email" class="input" required />
+  </label>
+
+  <button type="submit" class="button">Отправить</button>
+</form>
 ```
 
-Картинки подключаются из `img`:
+Главное правило: **валидация цепляется за атрибут `data-form`, а не за класс `.form`**. Класс — только для стилей, его можно менять/убирать как
+угодно, на работу валидации это не влияет. `novalidate` обязателен на каждой форме — он глушит нативный попап браузера, но не мешает нашей валидации
+(она использует тот же браузерный API, просто рисует ошибки сама).
+
+### Как поле получает правило проверки
+
+Приоритет (сверху вниз, первое найденное — используется):
+
+1. `pattern="..."` — свой regex прямо в разметке, ничего в JS трогать не нужно
+2. `data-rule="имя"` — ссылка на готовое именованное правило
+3. `type` / `inputmode` — правило по умолчанию для типовых полей
+4. просто `required`, без проверки формата
 
 ```html
-<img src="img/main/logo.webp" alt="" />
+<!-- 1. Свой формат прямо в разметке -->
+<input type="text" pattern="^[A-Z]{2}\d{4}$" title="Формат: AB1234" required />
+
+<!-- 2. Готовое правило по имени -->
+<input type="text" data-rule="email" required />
+
+<!-- 3. Правило само подхватится по type, ничего указывать не нужно -->
+<input type="email" required />
 ```
 
-## Важные файлы
+Готовые именованные правила (`assets/js/modules/forms/validationRules.js`):
 
-`.eleventy.js` - настройка Eleventy: вход `src`, выход `dist`, сохранение HTML-страниц в корне и копирование статических папок.
+| `data-rule` | Срабатывает само по   | Формат             |
+| ----------- | --------------------- | ------------------ |
+| `email`     | `type="email"`        | `name@domain.ru`   |
+| `tel`       | `type="tel"`          | `+7 999 000 00 00` |
+| `decimal`   | `inputmode="decimal"` | `100` или `100.50` |
 
-`vite.config.js` - настройка Vite: сборка `src/scss/main.scss` в `dist/css/main.min.css`.
+### Нативная валидация — бесплатно, без единой строчки JS
 
-`src/scss/main.scss` - главная точка входа для стилей.
+`required`, `minlength`/`maxlength`, `min`/`max`, `step` обрабатываются автоматически через встроенный браузерный `validity` API — просто ставьте
+атрибут:
+
+```html
+<input type="text" minlength="2" maxlength="30" required /> <input type="number" min="18" max="99" required />
+```
+
+⚠️ `min`/`max` работают только на `type="number"`, `range`, `date`-подобных полях. Для текста/email ограничение длины — только через
+`minlength`/`maxlength`.
+
+### Свой текст ошибки
+
+- `data-error-text="..."` — переопределяет сообщение, но **только для кастомных правил** (`data-rule` / `type`-fallback). На нативные ошибки (пустое
+  поле, `minlength` и т.п.) не влияет — для них уже есть отдельный словарь сообщений в `validationRules.js`.
+- `title="..."` — используется как текст ошибки для `pattern` без `data-rule` (стандартный смысл атрибута `title` для `pattern` в HTML).
+
+```html
+<input type="tel" required data-error-text="Укажите номер в формате +7 999 000 00 00" />
+```
+
+### Два способа вывести ошибки
+
+По умолчанию ошибка появляется под каждым полем. Чтобы вместо этого собрать все ошибки формы в один блок снизу — просто добавьте его в разметку:
+
+```html
+<div class="data-form-errors" data-form-errors></div>
+```
+
+Режим переключается автоматически по наличию этого блока в форме — ничего дополнительно указывать не нужно.
+
+### Radio-группы
+
+Всегда оборачивайте группу в `<fieldset>` с `<legend>` — это не только семантика: `<legend>` используется как заголовок ошибки в summary-режиме, а сам
+`<fieldset>` — как место, куда крепится **одна** ошибка на всю группу (а не на каждый `radio` отдельно).
+
+```html
+<fieldset class="row">
+  <legend class="label-text">Ваш пол</legend>
+  <label class="label"><input type="radio" name="sex" required /> Мужчина</label>
+  <label class="label"><input type="radio" name="sex" required /> Женщина</label>
+</fieldset>
+```
+
+### Select / Choices.js
+
+Работает без дополнительных настроек. Если у `<select>` есть родитель с классом `.choices` (так библиотека оборачивает поле) — класс ошибки `.invalid`
+автоматически продублируется на эту обёртку, т.к. сам `<select>` Choices прячет визуально.
+
+### Полное отключение вывода ошибок
+
+`SHOW_ERRORS` в `assets/js/modules/forms/errorRenderer.js` — общий флаг на все формы сайта. При `false` поля всё ещё помечаются `.invalid` (рамка
+красная), но текст ошибки нигде не показывается — ни под полем, ни в summary.
+
+### Для интеграции в Bitrix (или любую другую CMS)
+
+Форма и её валидация полностью работают на клиенте и ничего сами не отправляют — модуль только блокирует `submit`, если форма невалидна
+(`event.preventDefault()`); если всё заполнено верно, событие `submit` идёт дальше как обычно, так что серверный экшен/компонент вешается на форму как
+всегда, без оглядки на этот модуль.
+
+При переносе вёрстки в компоненты обязательно сохранить:
+
+- атрибут `data-form` на `<form>` и `novalidate`
+- обёртку `<label>` вокруг поля (используется, чтобы найти место под текст ошибки)
+- `.label-text` / `<legend>` — видимый текст, который подставляется в заголовок ошибки в summary-режиме
+- атрибут `name` у полей — запасной вариант заголовка, если видимого текста лейбла нет
+- `<div data-form-errors></div>`, если в форме используется summary-режим
+
+### Структура модуля
+
+`assets/js/modules/forms/`
+
+| Файл                      | За что отвечает                                                                |
+| ------------------------- | ------------------------------------------------------------------------------ |
+| `validationRules.js`      | словарь нативных сообщений + именованные кастомные правила (email/tel/decimal) |
+| `resolveRules.js`         | резолвинг кастомного правила для поля: `data-rule` → `type` → `inputmode`      |
+| `resolveAnchor.js`        | группировка radio по `name` и поиск общего предка для ошибки группы            |
+| `validateField.js`        | проверка одного поля: нативный `validity` → кастомное правило                  |
+| `validateForm.js`         | обход всех полей формы, маркировка `.invalid`, сбор ошибок                     |
+| `errorRenderer.js`        | базовый контракт стратегий вывода + флаг `SHOW_ERRORS`                         |
+| `inlineErrorRenderer.js`  | вывод ошибки под полем (режим по умолчанию)                                    |
+| `summaryErrorRenderer.js` | вывод всех ошибок одним блоком в `[data-form-errors]`                          |
+| `animateHeight.js`        | анимация раскрытия/схлопывания блоков с ошибками                               |
+| `factory.js`              | выбор inline/summary-рендерера по наличию `[data-form-errors]` в форме         |
+| `index.js`                | точка входа — `initForms()`, обработчики фокуса/change/submit                  |
+
+### Как добавить новое кастомное правило
+
+Например, нужна проверка ИНН. Добавляем правило в `validationRules.js`:
+
+```js
+export const customRules = {
+  // ...существующие
+  inn: {
+    test: value => /^\d{10}(\d{2})?$/.test(value.trim()),
+    message: 'ИНН должен содержать 10 или 12 цифр',
+  },
+};
+```
+
+И используем в разметке — без изменений где-либо ещё в JS:
+
+```html
+<input type="text" data-rule="inn" required />
+```
