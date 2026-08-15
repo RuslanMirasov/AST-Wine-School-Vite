@@ -13,7 +13,8 @@ export const initNavigationMenu = () => {
     link.addEventListener('click', toggleMenu);
 
     if (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') {
-      link.insertAdjacentHTML('beforeend', '<svg width="10" height="6"><use href="/assets/img/sprite.svg#arrow"></use></svg>');
+      const spriteUrl = new URL('../../img/sprite.svg', import.meta.url).href;
+      link.insertAdjacentHTML('beforeend', `<svg width="10" height="6"><use href="${spriteUrl}#arrow"></use></svg>`);
     }
   });
 };
