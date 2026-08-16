@@ -1,14 +1,5 @@
 .reviews-slider {
-  overflow: visible;
-
   .swiper-slide {
-    display: flex;
-    height: auto;
-    position: relative;
-    transition: opacity 0.5s var(--cubic);
-    pointer-events: none;
-    opacity: 0;
-    &.swiper-slide-active,
     &.swiper-slide-active + .swiper-slide,
     &.swiper-slide-active + .swiper-slide + .swiper-slide {
       opacity: 1;

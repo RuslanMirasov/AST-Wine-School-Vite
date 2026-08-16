@@ -36,6 +36,17 @@
     color 0.3s var(--cubic),
     background-color 0.3s var(--cubic);
 
+  &.blue {
+    background-color: var(--blue-light);
+    color: var(--blue);
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: var(--blue);
+      }
+    }
+  }
+
   &.magenta {
     background-color: var(--magenta);
     @media (hover: hover) {

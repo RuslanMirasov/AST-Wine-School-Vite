@@ -8,9 +8,18 @@
   .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 24px 80px;
     max-width: 1280px;
     padding: 0px 20px;
+  }
+
+  .button.magenta {
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: var(--magenta-hover);
+      }
+    }
   }
 }
 
@@ -57,12 +66,39 @@
 }
 
 .footer-menu {
-  width: calc((100% - 72px) / 4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 0px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex: 1;
+  min-width: 300px;
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    min-width: 200px;
+  }
+
+  .button {
+    margin-top: 12px;
+  }
+}
+
+.footer-menu-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 50%;
+  padding-right: 5px;
+  .footer-menu-title {
+    font-size: 16px;
+    line-height: 14px;
+  }
 }
 
 .footer-menu-title {
   display: block;
-  margin-bottom: 8px;
   font-weight: 700;
   font-size: 18px;
   line-height: 1;
@@ -83,7 +119,7 @@
   flex-direction: column;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 1.143;
 
   span {
     opacity: 0.5;
@@ -100,6 +136,19 @@
       }
     }
   }
+
+  li {
+    &:first-child {
+      a {
+        padding-top: 0px;
+      }
+    }
+    &:last-child {
+      a {
+        padding-bottom: 0px;
+      }
+    }
+  }
 }
 
 .socials {
@@ -111,7 +160,7 @@
   align-items: center;
   align-content: center;
   gap: 8px;
-  padding: 8px 0px;
+  margin-top: 4px;
   a {
     display: block;
     width: 24px;

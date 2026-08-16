@@ -1,5 +1,19 @@
 .swiper {
   width: 100%;
+  overflow: visible;
+
+  .swiper-slide {
+    display: flex;
+    height: auto;
+    position: relative;
+    transition: opacity 0.5s var(--cubic);
+    pointer-events: none;
+    opacity: 0;
+    &.swiper-slide-active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
 }
 
 .arrows {
@@ -13,8 +27,7 @@
   gap: 18px;
   flex-shrink: 0;
   &.auto {
-    display: inline-flex;
-    width: auto;
+    flex: 1;
   }
   &.ta--l {
     justify-content: flex-start;
