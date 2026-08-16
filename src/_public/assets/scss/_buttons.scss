@@ -23,7 +23,7 @@
   align-items: center;
   align-content: center;
   gap: 10px;
-  height: 42px;
+  height: 44px;
   padding: 0px 32px;
   border-radius: 42px;
   color: var(--white);
@@ -72,7 +72,14 @@
   &.small {
     font-size: 14px;
     height: 32px;
+    padding: 0px 40px;
     font-weight: 400;
+  }
+
+  &.medium {
+    font-size: 14px;
+    height: 40px;
+    padding: 0px 20px;
   }
 
   &.big {
