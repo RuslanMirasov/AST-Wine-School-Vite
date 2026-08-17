@@ -193,6 +193,12 @@
   align-items: center;
   align-content: center;
   gap: 26px;
+  li {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .header-button {
