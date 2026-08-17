@@ -7,9 +7,12 @@ const isLinkActive = (link, currentPath) => {
   const linkPath = normalizePath(link.pathname);
 
   // Home is only active on an exact match, otherwise it would stay
-  // highlighted on every page. Section links also stay active on their
-  // nested pages (e.g. "О нас" on /about/test/).
-  if (linkPath === '/') return currentPath === '/';
+  // highlighted on every page. Can't infer this from linkPath === '/':
+  // when the site is deployed under a subpath (GitHub Pages project
+  // sites, a hosting subfolder), the home link resolves to that subpath
+  // root, not '/'. Section links also stay active on their nested pages
+  // (e.g. "О нас" on /about/test/).
+  if (link.hasAttribute('data-home')) return currentPath === linkPath;
   return currentPath === linkPath || currentPath.startsWith(linkPath + '/');
 };
 
