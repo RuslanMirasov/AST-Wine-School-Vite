@@ -45,6 +45,15 @@ const updateAutoHeightParents = sliderWrapper => {
   instance.updateAutoHeight(0);
 };
 
+const updateCustomPagination = (sliderWrapper, instance) => {
+  const items = Array.from(sliderWrapper.querySelectorAll('.custom-pagination-item')).filter(
+    el => el.closest('[data-slider]') === sliderWrapper
+  );
+  if (!items.length) return;
+
+  items.forEach(item => item.classList.toggle('active', Number(item.dataset.index) === instance.realIndex));
+};
+
 const destroySlider = sliderWrapper => {
   const instance = instances.get(sliderWrapper);
   if (!instance) return;
@@ -135,7 +144,11 @@ const initSlider = sliderWrapper => {
 
   const instance = new Swiper(swiper, options);
   instances.set(sliderWrapper, instance);
-  instance.on('slideChange', () => updateAutoHeightParents(sliderWrapper));
+  instance.on('slideChange', () => {
+    updateAutoHeightParents(sliderWrapper);
+    updateCustomPagination(sliderWrapper, instance);
+  });
+  updateCustomPagination(sliderWrapper, instance);
 
   const key = getSliderKey(sliderWrapper);
   if (key) {
@@ -151,9 +164,26 @@ const updateSlider = sliderWrapper => {
   }
 };
 
+const linkControlledSliders = () => {
+  sliders.forEach(sliderWrapper => {
+    const controlsKey = sliderWrapper.dataset.controls;
+    if (!controlsKey) return;
+
+    const master = instances.get(sliderWrapper);
+    const slave = window.swipers?.[controlsKey];
+    if (!master || !slave) return;
+
+    master.controller.control = slave;
+  });
+};
+
 export const initSliders = () => {
   if (sliders.length > 0) {
     sliders.forEach(updateSlider);
-    window.addEventListener('resize', () => sliders.forEach(updateSlider));
+    linkControlledSliders();
+    window.addEventListener('resize', () => {
+      sliders.forEach(updateSlider);
+      linkControlledSliders();
+    });
   }
 };

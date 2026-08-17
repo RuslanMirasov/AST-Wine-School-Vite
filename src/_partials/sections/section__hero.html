@@ -1,0 +1,122 @@
+<section class="section section-hero">
+  <div class="hero">
+    <!--Images slider-->
+    <div class="hero-images-slider" data-slider="hero-images-swiper" data-allow-touch-move="false" data-loop="true">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 767px)" srcset="/assets/img/promo/1-mob.webp" />
+              <img src="/assets/img/promo/1-full.webp" alt="AST" />
+            </picture>
+          </div>
+
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 767px)" srcset="/assets/img/promo/2-mob.webp" />
+              <img src="/assets/img/promo/2-full.webp" alt="AST" />
+            </picture>
+          </div>
+
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 767px)" srcset="/assets/img/promo/2-mob.webp" />
+              <img src="/assets/img/promo/3-full.webp" alt="AST" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Content-->
+    <div
+      class="hero-content"
+      data-slider="hero-text-swiper"
+      data-controls="hero-images-swiper"
+      data-effect="fade"
+      data-allow-touch-move="false"
+      data-autoplay="10000"
+      data-loop="true"
+      data-auto-height="true"
+    >
+      <div class="swiper hero-text-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <ul class="tags auto">
+              <li class="tag">
+                <svg width="18" height="18"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                15 июля
+              </li>
+              <li class="tag">
+                <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                Новинка
+              </li>
+            </ul>
+            <h2 class="title title--40">Быстрый старт: о&nbsp;вине за&nbsp;3&nbsp;встречи</h2>
+            <p class="text">Всего за&nbsp;три встречи вы узнаете о&nbsp;вине всё, что&nbsp;нужно.</p>
+            <a href="#" class="button medium magenta">Подробнее</a>
+          </div>
+
+          <div class="swiper-slide">
+            <ul class="tags auto">
+              <li class="tag">
+                <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                Онлайн
+              </li>
+            </ul>
+            <h2 class="title title--40">История виноделия</h2>
+            <p class="text">В&nbsp;этой серии видеоуроков мы поведаем, как&nbsp;появилось виноделие и&nbsp;как оно менялось</p>
+            <a href="#" class="button medium magenta">Перейти</a>
+          </div>
+
+          <div class="swiper-slide">
+            <ul class="tags auto">
+              <li class="tag">
+                <svg width="18" height="18"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                15 июля
+              </li>
+            </ul>
+            <h2 class="title title--40">Корпоративный праздник</h2>
+            <p class="text">Какое-то описание...</p>
+            <a href="#" class="button medium magenta">Подробнее</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="arrows auto ta--r">
+        <button class="arrow" data-arrow-prev></button>
+        <button class="arrow" data-arrow-next></button>
+      </div>
+
+      <ul class="custom-pagination">
+        <li class="custom-pagination-item active" data-index="0" onclick="goToSlide(this.dataset.index, { key: 'hero-text-swiper', base: 0 })">
+          <div class="custom-pagination-image">
+            <img src="/assets/img/promo/1-mini.webp" alt="AST" />
+          </div>
+          <div class="custom-pagination-text">
+            <h3>Быстрый старт: о&nbsp;вине за 3 встречи</h3>
+            <p>В этой серии видеоуроков мы поведаем, как появилось виноделие и как оно менялось.</p>
+          </div>
+        </li>
+        <li class="custom-pagination-item" data-index="1" onclick="goToSlide(this.dataset.index, { key: 'hero-text-swiper', base: 0 })">
+          <div class="custom-pagination-image">
+            <img src="/assets/img/promo/2-mini.webp" alt="AST" />
+          </div>
+          <div class="custom-pagination-text">
+            <h3>История виноделия</h3>
+            <p>В этой серии видеоуроков мы поведаем, как появилось виноделие и как оно менялось.</p>
+          </div>
+        </li>
+        <li class="custom-pagination-item" data-index="2" onclick="goToSlide(this.dataset.index, { key: 'hero-text-swiper', base: 0 })">
+          <div class="custom-pagination-image">
+            <img src="/assets/img/promo/3-mini.webp" alt="AST" />
+          </div>
+          <div class="custom-pagination-text">
+            <h3>Корпоративный праздник</h3>
+            <p>В этой серии видеоуроков мы поведаем, как появилось виноделие и как оно менялось.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
