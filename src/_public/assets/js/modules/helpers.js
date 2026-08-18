@@ -146,6 +146,20 @@ export const initA11yToggle = () => {
   });
 };
 
+export const initSearchToggle = () => {
+  const form = document.querySelector('[data-search]');
+  const toggles = document.querySelectorAll('[data-search-toggle]');
+
+  if (!form || !toggles.length) return;
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', event => {
+      event.preventDefault();
+      form.classList.toggle('active');
+    });
+  });
+};
+
 export const hidePreloader = () => {
   const preloader = document.querySelector('[data-preloader]');
   const body = document.querySelector('.body');
