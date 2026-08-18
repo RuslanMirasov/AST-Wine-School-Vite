@@ -12,8 +12,8 @@
         <a href="%ROOT%" class="menu-link"><span>Главная</span></a>
       </li>
       <li>
-        <span class="menu-link"><span>Курсы</span></span>
-        <div class="mega-menu">
+        <button class="menu-link" data-megamenu-button><span>Курсы</span></button>
+        <div class="mega-menu" data-megamenu>
           <div class="mega-menu-inner">
             <ul class="submenu">
               <li>
@@ -31,8 +31,8 @@
               <li>
                 <a href="#" class="menu-link"><span>Очные курсы</span></a>
               </li>
-              <li>
-                <a href="#" class="button magenta small">Расписание всех курсов</a>
+              <li class="full">
+                <a href="#" class="button magenta medium">Расписание всех курсов</a>
               </li>
             </ul>
             <div class="recomendations-menu" data-slider="submenu-slider" data-slides-per-view="auto,auto,auto" data-space-between="12,12,12">
@@ -84,30 +84,64 @@
         <a href="#" class="menu-link"><span>Подарочные сертификаты</span></a>
       </li>
       <li>
-        <a href="%ROOT%about/" class="menu-link"><span>О нас</span></a>
-        <ul>
-          <li>
-            <a href="#" class="menu-link"><span>Преподаватели</span></a>
-          </li>
-          <li>
-            <a href="#" class="menu-link"><span>Наши залы (классы)</span></a>
-          </li>
-          <li>
-            <a href="#" class="menu-link"><span>Профессия и диплом</span></a>
-          </li>
-          <li>
-            <a href="#" class="menu-link"><span>Новости</span></a>
-          </li>
-          <li>
-            <a href="#" class="menu-link"><span>Полезные материалы</span></a>
-          </li>
-          <li>
-            <a href="#" class="menu-link"><span>Видеоматериалы</span></a>
-          </li>
-          <li>
-            <a href="#" class="menu-link"><span>Контакты</span></a>
-          </li>
-        </ul>
+        <button class="menu-link" data-megamenu-button><span>О нас</span></button>
+        <div class="mega-menu center" data-megamenu>
+          <div class="mega-menu-inner">
+            <ul class="submenu">
+              <li>
+                <a href="#" class="menu-link"><span>История школы</span></a>
+              </li>
+              <li>
+                <a href="#" class="menu-link"><span>Преподаватели</span></a>
+              </li>
+              <li>
+                <a href="#" class="menu-link"><span>Учебный класс</span></a>
+              </li>
+              <li>
+                <a href="#" class="menu-link"><span>Профессия и диплом</span></a>
+              </li>
+              <li>
+                <a href="#" class="menu-link"><span>Отзывы</span></a>
+              </li>
+              <li>
+                <a href="#" class="menu-link"><span>Новости</span></a>
+              </li>
+              <li>
+                <a href="#" class="menu-link"><span>Полезные материалы</span></a>
+              </li>
+              <li>
+                <a href="#" class="menu-link"><span>Видеобиблиотека</span></a>
+              </li>
+              <li>
+                <a href="#" class="menu-link"><span>Реферальная программа</span></a>
+              </li>
+              <li>
+                <a href="%ROOT%contacts/" class="menu-link"><span>Контакты</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="mega-menu-inner">
+            <ul class="submenu">
+              <li>
+                <a href="#" class="menu-link"><span>Сведения об образовательной организации</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="mega-menu-inner">
+            <ul class="socials">
+              <li>
+                <a href="%ROOT%">
+                  <svg width="24" height="24"><use href="/assets/img/sprite.svg#vk"></use></svg>
+                </a>
+              </li>
+              <li>
+                <a href="%ROOT%">
+                  <svg width="24" height="24"><use href="/assets/img/sprite.svg#max"></use></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </li>
     </ul>
   </nav>
@@ -115,14 +149,14 @@
   <!--icons menu-->
   <ul class="header-buttons">
     <li>
-      <a href="%ROOT%" class="header-button">
+      <button type="button" class="header-button">
         <svg width="24" height="24"><use href="/assets/img/sprite.svg#search"></use></svg>
-      </a>
+      </button>
     </li>
     <li>
-      <a href="%ROOT%" class="header-button">
+      <button type="button" class="header-button" data-a11y-toggle>
         <svg width="24" height="24"><use href="/assets/img/sprite.svg#eye"></use></svg>
-      </a>
+      </button>
     </li>
     <li>
       <a href="%ROOT%" class="header-button">

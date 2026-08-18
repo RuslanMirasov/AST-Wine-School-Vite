@@ -36,7 +36,14 @@ const setActiveMenuLinks = menuLinks => {
   const menuRootPath = getMenuRootPath(links);
 
   links.forEach(link => {
-    link.classList.toggle('active', isLinkActive(link, currentPath, menuRootPath));
+    const isActive = isLinkActive(link, currentPath, menuRootPath);
+    link.classList.toggle('active', isActive);
+
+    if (isActive) {
+      const megaMenu = link.closest('[data-megamenu]');
+      const megaMenuButton = megaMenu?.previousElementSibling;
+      if (megaMenuButton?.hasAttribute('data-megamenu-button')) megaMenuButton.classList.add('active');
+    }
   });
 };
 
@@ -65,6 +72,67 @@ export const initNavigationMenu = () => {
   });
 
   setActiveMenuLinks(menuLinks);
+};
+
+export const initMegaMenu = () => {
+  const items = Array.from(document.querySelectorAll('[data-megamenu-button]'))
+    .map(button => ({ button, menu: button.nextElementSibling }))
+    .filter(({ menu }) => menu?.hasAttribute('data-megamenu'));
+
+  if (!items.length) return;
+
+  const closeMenu = ({ button, menu }) => {
+    menu.style.height = '0px';
+    button.classList.remove('open');
+    menu.classList.remove('open');
+  };
+
+  const openMenu = ({ button, menu }) => {
+    menu.style.height = `${menu.scrollHeight}px`;
+    button.classList.add('open');
+    menu.classList.add('open');
+  };
+
+  items.forEach(item => {
+    item.button.addEventListener('click', event => {
+      event.stopPropagation();
+      const isOpen = item.menu.classList.contains('open');
+
+      items.forEach(closeMenu);
+      if (!isOpen) openMenu(item);
+    });
+  });
+
+  document.addEventListener('click', event => {
+    items.forEach(item => {
+      const isOutside = !item.menu.contains(event.target) && !item.button.contains(event.target);
+      if (item.menu.classList.contains('open') && isOutside) closeMenu(item);
+    });
+  });
+};
+
+const A11Y_STORAGE_KEY = 'a11y-enabled';
+
+export const initA11yToggle = () => {
+  const toggle = document.querySelector('[data-a11y-toggle]');
+  const body = document.querySelector('.body');
+
+  if (!toggle || !body) return;
+
+  const applyState = enabled => {
+    body.classList.toggle('a11y', enabled);
+    toggle.classList.toggle('active', enabled);
+  };
+
+  applyState(localStorage.getItem(A11Y_STORAGE_KEY) === 'true');
+
+  toggle.addEventListener('click', event => {
+    event.preventDefault();
+    const enabled = !body.classList.contains('a11y');
+
+    localStorage.setItem(A11Y_STORAGE_KEY, enabled);
+    applyState(enabled);
+  });
 };
 
 export const hidePreloader = () => {
