@@ -3,7 +3,10 @@ $popup_transition: 0.5s;
 .body {
   &.locked {
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
+    @media (max-width: 767px) {
+      overflow-y: hidden;
+    }
   }
 }
 
