@@ -29,11 +29,20 @@ export function goToSlide(target, { key, base = 1 } = {}) {
   }
 
   const idx = resolveIndex(swiper, target, base);
-  if (idx < 0 || idx >= swiper.slides.length) {
+  const slidesCount = swiper.params.loop
+    ? Array.from(swiper.slides).filter(el => !el.classList.contains('swiper-slide-duplicate')).length
+    : swiper.slides.length;
+
+  if (idx < 0 || idx >= slidesCount) {
     console.warn('[goToSlide] target not found:', target);
     return;
   }
-  swiper.slideTo(idx);
+
+  if (swiper.params.loop) {
+    swiper.slideToLoop(idx);
+  } else {
+    swiper.slideTo(idx);
+  }
 }
 
 export const initTabsSliderNavigation = name => {

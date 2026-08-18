@@ -2,6 +2,7 @@ import { registerNamedSwiper } from './goToSlide.js';
 
 const sliders = document.querySelectorAll('[data-slider]');
 const instances = new WeakMap();
+const customPaginationCleanups = new WeakMap();
 
 const toBool = s => String(s).toLowerCase() === 'true';
 const toSwiperValue = value => {
@@ -45,19 +46,70 @@ const updateAutoHeightParents = sliderWrapper => {
   instance.updateAutoHeight(0);
 };
 
-const updateCustomPagination = (sliderWrapper, instance) => {
-  const items = Array.from(sliderWrapper.querySelectorAll('.custom-pagination-item')).filter(
-    el => el.closest('[data-slider]') === sliderWrapper
-  );
+const initCustomPagination = (sliderWrapper, instance) => {
+  const pagination = getOwnElement(sliderWrapper, '.custom-pagination');
+  if (!pagination) return;
+
+  const items = Array.from(pagination.querySelectorAll('.custom-pagination-item'));
   if (!items.length) return;
 
-  items.forEach(item => item.classList.toggle('active', Number(item.dataset.index) === instance.realIndex));
+  const updateActiveItem = () => {
+    items.forEach(item => {
+      const isActive = Number(item.dataset.index) === instance.realIndex;
+      item.classList.toggle('active', isActive);
+      item.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  };
+
+  const activateItem = item => {
+    const index = Number(item.dataset.index);
+    if (!Number.isInteger(index) || index < 0) return;
+
+    if (instance.params.loop) {
+      instance.slideToLoop(index);
+    } else {
+      instance.slideTo(index);
+    }
+  };
+
+  const handleClick = event => {
+    const item = event.target.closest('.custom-pagination-item');
+    if (item && pagination.contains(item)) activateItem(item);
+  };
+
+  const handleKeydown = event => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+
+    const item = event.target.closest('.custom-pagination-item');
+    if (!item || !pagination.contains(item)) return;
+
+    event.preventDefault();
+    activateItem(item);
+  };
+
+  items.forEach(item => {
+    item.setAttribute('role', 'button');
+    item.setAttribute('tabindex', '0');
+  });
+
+  pagination.addEventListener('click', handleClick);
+  pagination.addEventListener('keydown', handleKeydown);
+  instance.on('realIndexChange', updateActiveItem);
+  updateActiveItem();
+
+  customPaginationCleanups.set(sliderWrapper, () => {
+    pagination.removeEventListener('click', handleClick);
+    pagination.removeEventListener('keydown', handleKeydown);
+    instance.off('realIndexChange', updateActiveItem);
+  });
 };
 
 const destroySlider = sliderWrapper => {
   const instance = instances.get(sliderWrapper);
   if (!instance) return;
 
+  customPaginationCleanups.get(sliderWrapper)?.();
+  customPaginationCleanups.delete(sliderWrapper);
   instance.destroy(true, true);
   instances.delete(sliderWrapper);
   unregisterNamedSwiper(getSliderKey(sliderWrapper));
@@ -146,9 +198,8 @@ const initSlider = sliderWrapper => {
   instances.set(sliderWrapper, instance);
   instance.on('slideChange', () => {
     updateAutoHeightParents(sliderWrapper);
-    updateCustomPagination(sliderWrapper, instance);
   });
-  updateCustomPagination(sliderWrapper, instance);
+  initCustomPagination(sliderWrapper, instance);
 
   const key = getSliderKey(sliderWrapper);
   if (key) {

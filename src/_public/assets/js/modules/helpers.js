@@ -1,26 +1,42 @@
 const normalizePath = path => path.replace(/\/$/, '') || '/';
 
-const isLinkActive = (link, currentPath) => {
+const getLinkPath = link => {
   const href = link.getAttribute('href');
-  if (!href || href === '#') return false;
+  if (!href || href.startsWith('#') || link.origin !== window.location.origin) return null;
 
-  const linkPath = normalizePath(link.pathname);
+  return normalizePath(link.pathname);
+};
 
-  // Home is only active on an exact match, otherwise it would stay
-  // highlighted on every page. Can't infer this from linkPath === '/':
-  // when the site is deployed under a subpath (GitHub Pages project
-  // sites, a hosting subfolder), the home link resolves to that subpath
-  // root, not '/'. Section links also stay active on their nested pages
-  // (e.g. "О нас" on /about/test/).
-  if (link.hasAttribute('data-home')) return currentPath === linkPath;
+const getMenuRootPath = menuLinks => {
+  const paths = menuLinks.map(getLinkPath).filter(Boolean);
+  if (!paths.length) return null;
+
+  return paths.reduce((shortestPath, path) => {
+    const shortestDepth = shortestPath.split('/').filter(Boolean).length;
+    const pathDepth = path.split('/').filter(Boolean).length;
+
+    return pathDepth < shortestDepth ? path : shortestPath;
+  });
+};
+
+const isLinkActive = (link, currentPath, menuRootPath) => {
+  const linkPath = getLinkPath(link);
+  if (!linkPath) return false;
+
+  // The shortest internal menu URL is the site root, including deployments
+  // in a hosting subfolder. It must only match exactly; section URLs may
+  // also match their nested pages.
+  if (linkPath === menuRootPath) return currentPath === linkPath;
   return currentPath === linkPath || currentPath.startsWith(linkPath + '/');
 };
 
 const setActiveMenuLinks = menuLinks => {
   const currentPath = normalizePath(window.location.pathname);
+  const links = Array.from(menuLinks).filter(link => link instanceof HTMLAnchorElement);
+  const menuRootPath = getMenuRootPath(links);
 
-  menuLinks.forEach(link => {
-    link.classList.toggle('active', isLinkActive(link, currentPath));
+  links.forEach(link => {
+    link.classList.toggle('active', isLinkActive(link, currentPath, menuRootPath));
   });
 };
 
