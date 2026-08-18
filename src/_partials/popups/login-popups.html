@@ -71,6 +71,7 @@
 
       const fields = [...e.target.querySelectorAll('input[name^="code"]')];
       const code = fields.map(field => field.value).join('');
+
       console.log(code);
 
       window.popup.open('login-success');
