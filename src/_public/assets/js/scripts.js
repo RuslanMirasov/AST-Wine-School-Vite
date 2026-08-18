@@ -12,10 +12,10 @@ window.popup = popup;
 document.addEventListener('DOMContentLoaded', () => {
   hidePreloader();
   initScrollManager();
+  initSliders();
   initNavigationMenu();
   initMegaMenu();
   initA11yToggle();
-  initSliders();
   initForms();
   initPhoneInputs('+7 000 000 00 00');
   initSelectFields();

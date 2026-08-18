@@ -1,3 +1,5 @@
+import { lockScroll, unlockScroll } from './popup.js';
+
 const normalizePath = path => path.replace(/\/$/, '') || '/';
 
 const getLinkPath = link => {
@@ -23,9 +25,6 @@ const isLinkActive = (link, currentPath, menuRootPath) => {
   const linkPath = getLinkPath(link);
   if (!linkPath) return false;
 
-  // The shortest internal menu URL is the site root, including deployments
-  // in a hosting subfolder. It must only match exactly; section URLs may
-  // also match their nested pages.
   if (linkPath === menuRootPath) return currentPath === linkPath;
   return currentPath === linkPath || currentPath.startsWith(linkPath + '/');
 };
@@ -36,14 +35,16 @@ const setActiveMenuLinks = menuLinks => {
   const menuRootPath = getMenuRootPath(links);
 
   links.forEach(link => {
-    const isActive = isLinkActive(link, currentPath, menuRootPath);
-    link.classList.toggle('active', isActive);
+    link.classList.toggle('active', isLinkActive(link, currentPath, menuRootPath));
+  });
 
-    if (isActive) {
-      const megaMenu = link.closest('[data-megamenu]');
-      const megaMenuButton = megaMenu?.previousElementSibling;
-      if (megaMenuButton?.hasAttribute('data-megamenu-button')) megaMenuButton.classList.add('active');
-    }
+  document.querySelectorAll('[data-megamenu-button]').forEach(button => {
+    const megaMenu = button.nextElementSibling;
+    if (!megaMenu?.hasAttribute('data-megamenu')) return;
+
+    const megaMenuLinks = Array.from(megaMenu.querySelectorAll('a[href]'));
+    const hasActiveLink = megaMenuLinks.some(link => isLinkActive(link, currentPath, menuRootPath));
+    button.classList.toggle('active', hasActiveLink);
   });
 };
 
@@ -51,19 +52,29 @@ export const initNavigationMenu = () => {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.navigation ');
   const menuLinks = document.querySelectorAll('.menu-link');
+  const menuLinksA = document.querySelectorAll('a.menu-link');
 
   const toggleMenu = () => {
     burger.classList.toggle('open');
-    menu.classList.toggle('open');
+    const isOpen = menu.classList.toggle('open');
+    document.body.classList.toggle('popup-is-opened', isOpen);
+
+    if (isOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
   };
 
   if (burger) burger.addEventListener('click', toggleMenu);
-  menuLinks.forEach(link => {
-    link.addEventListener('click', toggleMenu);
 
+  menuLinksA.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+
+  menuLinks.forEach(link => {
     const menuItem = link.parentElement;
-    const hasNestedContent =
-      menuItem?.tagName === 'LI' && Array.from(menuItem.children).some(element => element !== link);
+    const hasNestedContent = menuItem?.tagName === 'LI' && Array.from(menuItem.children).some(element => element !== link);
 
     if (hasNestedContent && !link.querySelector(':scope > svg')) {
       const spriteUrl = new URL('../../img/sprite.svg', import.meta.url).href;

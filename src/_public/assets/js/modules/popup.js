@@ -1,3 +1,32 @@
+export const lockScroll = () => {
+  const body = document.querySelector('.body');
+  const header = document.querySelector('.header');
+  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+  if (body) {
+    body.classList.add('locked');
+    body.style.width = `calc(100% - ${scrollbarWidth}px)`;
+  }
+
+  if (header) {
+    header.style.width = `calc(100% - ${scrollbarWidth}px)`;
+  }
+};
+
+export const unlockScroll = () => {
+  const body = document.querySelector('.body');
+  const header = document.querySelector('.header');
+
+  if (body) {
+    body.classList.remove('locked');
+    body.style.width = '100%';
+  }
+
+  if (header) {
+    header.style.width = '100%';
+  }
+};
+
 export const popup = {
   _backdrop: null,
   _popup: null,
@@ -176,25 +205,10 @@ export const popup = {
   },
 
   _lockScroll() {
-    const header = document.querySelector('.header');
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-
-    document.body.style.overflow = 'hidden';
-    document.body.style.width = `calc(100% - ${scrollbarWidth}px)`;
-
-    if (header) {
-      header.style.width = `calc(100% - ${scrollbarWidth}px)`;
-    }
+    lockScroll();
   },
 
   _unlockScroll() {
-    const header = document.querySelector('.header');
-
-    if (header) {
-      header.style.width = '100%';
-    }
-
-    document.body.style.overflow = '';
-    document.body.style.width = '100%';
+    unlockScroll();
   },
 };
