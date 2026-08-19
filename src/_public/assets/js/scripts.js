@@ -5,6 +5,7 @@ import { initDecimalInputs, initPhoneInputs, initSelectFields } from './modules/
 import { initNavigationMenu, initMegaMenu, initA11yToggle, initSearchToggle, hidePreloader } from './modules/helpers.js';
 import { initSliders } from './modules/sliders.js';
 import { initStars } from './modules/stars.js';
+import { initAccordeons } from './modules/accordeon.js';
 
 popup.init();
 window.popup = popup;
@@ -22,4 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSelectFields();
   initDecimalInputs();
   initStars();
+  initAccordeons();
 });

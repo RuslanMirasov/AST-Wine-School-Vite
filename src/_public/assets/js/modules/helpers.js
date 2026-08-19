@@ -146,16 +146,27 @@ export const initA11yToggle = () => {
   });
 };
 
+const SEARCH_WIDE_MIN_WIDTH = 1600;
+
 export const initSearchToggle = () => {
-  const form = document.querySelector('[data-search]');
+  const wrapper = document.querySelector('[data-search]');
   const toggles = document.querySelectorAll('[data-search-toggle]');
 
-  if (!form || !toggles.length) return;
+  if (!wrapper || !toggles.length) return;
+
+  const form = wrapper.querySelector('form');
 
   toggles.forEach(toggle => {
     toggle.addEventListener('click', event => {
       event.preventDefault();
-      form.classList.toggle('active');
+
+      if (window.innerWidth >= SEARCH_WIDE_MIN_WIDTH) {
+        if (toggle.hasAttribute('data-search-submit')) form?.requestSubmit();
+        if (toggle.hasAttribute('data-search-reset')) form?.reset();
+        return;
+      }
+
+      wrapper.classList.toggle('active');
     });
   });
 };

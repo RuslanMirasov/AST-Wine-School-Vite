@@ -159,6 +159,12 @@ button {
   }
 }
 
+@media (max-width: 767px) {
+  .delete-in-mobil {
+    display: none !important;
+  }
+}
+
 @media (min-width: 768px) {
   .show-in-mobil {
     display: none !important;

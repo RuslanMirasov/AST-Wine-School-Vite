@@ -105,6 +105,10 @@
 .logo {
   position: relative;
   z-index: 3;
+  margin-right: 16px;
+  @media (max-width: 1365px) {
+    margin-right: 0px;
+  }
   svg {
     width: 123px;
     @media (max-width: 1365px) {
@@ -125,6 +129,9 @@
   align-items: center;
   justify-content: center;
   z-index: 3;
+  @media (min-width: 1600px) {
+    margin: 0 auto;
+  }
 }
 
 .menu {
@@ -470,12 +477,15 @@
   opacity: 0;
   left: 0px;
   top: 100%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0);
   transition:
     height 0.3s var(--cubic),
+    box-shadow 0.3s var(--cubic),
     opacity 0.3s var(--cubic);
   &.active {
     height: 50px;
     opacity: 1;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   }
 
   form {
@@ -484,7 +494,6 @@
     backdrop-filter: blur(10px);
     padding: 8px;
     border-top: 1px solid var(--grey-border);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
   }
 
   .label {
@@ -504,6 +513,35 @@
   .inputError {
     visibility: hidden;
     pointer-events: none;
+  }
+
+  @media (min-width: 1600px) {
+    position: relative;
+    overflow: visible;
+    flex: 1;
+    width: auto;
+    max-width: 300px;
+
+    height: auto;
+    opacity: 1;
+    left: auto;
+    top: auto;
+    box-shadow: none;
+    margin-right: 16px;
+    margin-left: 16px;
+    &.active {
+      height: auto;
+      opacity: 1;
+      box-shadow: none;
+    }
+
+    form {
+      height: 32px;
+      background: none;
+      backdrop-filter: none;
+      padding: 0px;
+      border-top: none;
+    }
   }
 }
 

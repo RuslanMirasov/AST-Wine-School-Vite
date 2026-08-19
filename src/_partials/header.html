@@ -142,10 +142,22 @@
     </ul>
   </nav>
 
+  <!--search form-->
+  <div class="header-search-form" data-search>
+    <form action="%ROOT%search/" method="GET" data-form novalidate>
+      <label class="label">
+        <input type="text" name="s" class="input" required placeholder="Поиск" />
+        <button type="button" class="search-close" data-search-toggle data-search-reset>
+          <svg width="16" height="16"><use href="/assets/img/sprite.svg#close"></use></svg>
+        </button>
+      </label>
+    </form>
+  </div>
+
   <!--icons menu-->
   <ul class="header-buttons">
     <li>
-      <button type="button" class="header-button" data-search-toggle>
+      <button type="button" class="header-button" data-search-toggle data-search-submit>
         <svg width="24" height="24"><use href="/assets/img/sprite.svg#search"></use></svg>
       </button>
     </li>
@@ -170,16 +182,4 @@
   <button class="burger">
     <span>Меню бургер</span>
   </button>
-
-  <!--search form-->
-  <div class="header-search-form" data-search>
-    <form action="%ROOT%search/" method="GET" data-form novalidate>
-      <label class="label">
-        <input type="text" name="s" class="input" required placeholder="Поиск" />
-        <button type="button" class="search-close" data-search-toggle>
-          <svg width="16" height="16"><use href="/assets/img/sprite.svg#close"></use></svg>
-        </button>
-      </label>
-    </form>
-  </div>
 </header>

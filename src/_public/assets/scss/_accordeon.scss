@@ -1,0 +1,5 @@
+[data-accordeon-body] {
+  position: relative;
+  overflow: hidden;
+  transition: height 0.5s var(--cubic);
+}
