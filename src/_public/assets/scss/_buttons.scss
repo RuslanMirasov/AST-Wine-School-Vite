@@ -13,6 +13,9 @@
   &.ta--r {
     justify-content: flex-end;
   }
+  &.group {
+    gap: 10px;
+  }
 }
 
 .button {
@@ -35,6 +38,10 @@
   transition:
     color 0.3s var(--cubic),
     background-color 0.3s var(--cubic);
+
+  &.full {
+    width: 100%;
+  }
 
   &.icon-submit {
     flex-wrap: nowrap;

@@ -3,25 +3,29 @@
   <button class="popup-close" data-popup-close>
     <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
   </button>
-  <h2 class="title">Введите номер телефона</h2>
+  <h2 class="title">Вход</h2>
   <script>
     function onLoginSubmit(e) {
       e.preventDefault();
-      const phoneForCodeEl = document.querySelector('[data-phone-for-code]');
-      if (!phoneForCodeEl) return;
-      phoneForCodeEl.innerHTML = e.target.phone.value;
       window.popup.open('login-code');
     }
   </script>
   <form data-form action="#" class="form" novalidate onsubmit="onLoginSubmit(event)">
     <label class="label">
-      <input type="tel" name="phone" class="input" required placeholder="+7 ___ ___ __ __" />
+      <input type="email" name="email" class="input" placeholder="Email" required />
     </label>
     <button type="submit" class="button big magenta">
-      Получить код
+      Далее
       <svg width="21" height="21"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
     </button>
   </form>
+  <hr />
+  <p class="popup-subtitle">Войти с помощью:</p>
+  <div class="buttons group">
+    <button type="button" class="button medium full">Яндекс ID</button>
+    <button type="button" class="button medium full">ВКонтакте</button>
+    <button type="button" class="button medium full">MAX</button>
+  </div>
 </div>
 
 <!--LOGIN CODE POPUP-->
@@ -29,11 +33,8 @@
   <button class="popup-close" data-popup-close>
     <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
   </button>
-  <h2 class="title">Введите код</h2>
-  <p class="popup-subtitle">
-    Введите код из&nbsp;уведомления, отправленного на&nbsp;<span data-phone-for-code>+7 000 000 0000</span>, или&nbsp;последние 4&nbsp;цифры входящего
-    номера
-  </p>
+  <h2 class="title">Вход</h2>
+  <p class="popup-subtitle">Мы отправили проверочный код на&nbsp;ваш&nbsp;email. Введите его:</p>
 
   <script>
     function onCodeInput(e) {
@@ -131,56 +132,18 @@
     </fieldset>
 
     <div class="form-errors" data-form-errors></div>
-
-    <fieldset>
-      <label class="label">
-        <input
-          name="confirmation"
-          type="checkbox"
-          class="checkbox"
-          required
-          data-error-title="Согласие на обработку данных обязательно"
-          onchange="onCodeCheckboxChange(event)"
-        />
-        <p class="label-text">
-          <span>Согласен с&nbsp;<a href="%ROOT%" target="_blank">Условиями обработки персональных данных</a></span>
-        </p>
-      </label>
-      <label class="label">
-        <input
-          name="confirmation2"
-          type="checkbox"
-          class="checkbox"
-          required
-          data-error-title="Принятие политики конфиденциальности обязательно"
-          onchange="onCodeCheckboxChange(event)"
-        />
-        <p class="label-text">
-          <span>Принимаю <a href="%ROOT%" target="_blank">Политику конфиденциальности</a></span>
-        </p>
-      </label>
-      <label class="label">
-        <input
-          name="confirmation3"
-          type="checkbox"
-          class="checkbox"
-          required
-          data-error-title="Принятие пользовательского соглашения обязательно"
-          onchange="onCodeCheckboxChange(event)"
-        />
-        <p class="label-text">
-          <span>Принимаю <a href="%ROOT%" target="_blank">Пользовательское соглашение</a></span>
-        </p>
-      </label>
-    </fieldset>
   </form>
 
-  <button type="submit" class="button big">
-    Получить новый код
+  <button type="submit" class="button big" disabled>
+    Запросить новый код
     <svg width="21" height="21"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
   </button>
 
-  <p class="popup-subtitle">Запросить новый код в SMS можно через <span>00:36</span></p>
+  <p class="popup-subtitle">Запросить новый код можно через <span>04:59</span></p>
+
+  <hr />
+
+  <p class="popup-link" data-popup-open="login">Назад</p>
 </div>
 
 <!--LOGIN SUCCESS POPUP-->
@@ -188,6 +151,9 @@
   <button class="popup-close" data-popup-close>
     <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
   </button>
-  <h2 class="title">Вход выполнен</h2>
-  <a href="%ROOT%cart/" class="button big">Перейти к&nbsp;оформлению</a>
+  <h2 class="title">Вход</h2>
+  <p class="popup-subtitle">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
+  <button type="button" class="button big full" data-popup-close>
+    Закрыть <svg width="21" height="21"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
+  </button>
 </div>

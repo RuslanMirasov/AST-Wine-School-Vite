@@ -1,11 +1,11 @@
-<!--LOGIN POPUP-->
+<!--BUY-LOGIN POPUP-->
 <div class="popup-content" id="buy-login">
   <button class="popup-close" data-popup-close>
     <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
   </button>
   <h2 class="title">Введите номер телефона</h2>
   <script>
-    function onLoginSubmit(e) {
+    function onBuySubmit(e) {
       e.preventDefault();
       const phoneForCodeEl = document.querySelector('[data-phone-for-code]');
       if (!phoneForCodeEl) return;
@@ -13,7 +13,7 @@
       window.popup.open('login-code');
     }
   </script>
-  <form data-form action="#" class="form" novalidate onsubmit="onLoginSubmit(event)">
+  <form data-form action="#" class="form" novalidate onsubmit="onBuySubmit(event)">
     <label class="label">
       <input type="tel" name="phone" class="input" required placeholder="+7 ___ ___ __ __" />
     </label>
@@ -24,7 +24,7 @@
   </form>
 </div>
 
-<!--LOGIN CODE POPUP-->
+<!--BUY CODE POPUP-->
 <div class="popup-content" id="buy-code">
   <button class="popup-close" data-popup-close>
     <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
@@ -183,7 +183,7 @@
   <p class="popup-subtitle">Запросить новый код в SMS можно через <span>00:36</span></p>
 </div>
 
-<!--LOGIN SUCCESS POPUP-->
+<!--BUY LOGIN SUCCESS POPUP-->
 <div class="popup-content" id="buy-login-success">
   <button class="popup-close" data-popup-close>
     <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
