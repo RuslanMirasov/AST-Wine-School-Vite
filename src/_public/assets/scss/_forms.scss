@@ -74,6 +74,9 @@ input[type='number'] {
     justify-content: flex-start;
     align-items: flex-start;
     gap: calc(var(--form-gap) - 2px);
+    &.col-2 {
+      width: calc(50% - var(--form-gap));
+    }
     &.row {
       flex-direction: row;
       flex-wrap: wrap;
@@ -125,6 +128,10 @@ input[type='number'] {
   margin-bottom: var(--label-margin-bottom);
   font-family: var(--font);
   text-align: left;
+
+  .red {
+    color: var(--magenta);
+  }
 }
 
 .input {
@@ -161,7 +168,7 @@ input[type='number'] {
   }
 
   &.input--textarea {
-    height: 80px;
+    height: 128px;
   }
 
   &.invalid {

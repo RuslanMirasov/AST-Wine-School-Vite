@@ -1,11 +1,16 @@
 .callback-form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px 30px;
   background-color: var(--white);
-  max-width: 585px;
+  max-width: 800px;
   border-radius: 32px;
-  padding: 32px;
+  padding: 30px 30px 60px 30px;
 
   .title {
     display: flex;
+    width: 100%;
     align-items: center;
     gap: 12px;
     font-size: 18px;
@@ -13,4 +18,12 @@
       color: var(--magenta);
     }
   }
+}
+
+.callback-form-inner {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  width: calc((100% - 30px) / 2);
+  gap: var(--form-gap);
 }

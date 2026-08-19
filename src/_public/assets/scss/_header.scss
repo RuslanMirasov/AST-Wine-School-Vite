@@ -419,10 +419,8 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  gap: 26px;
-  @media (max-width: 1279px) {
-    gap: 16px;
-  }
+  gap: 16px;
+
   @media (max-width: 1023px) {
     margin-left: auto;
   }
@@ -520,8 +518,7 @@
     overflow: visible;
     flex: 1;
     width: auto;
-    max-width: 300px;
-
+    max-width: 350px;
     height: auto;
     opacity: 1;
     left: auto;

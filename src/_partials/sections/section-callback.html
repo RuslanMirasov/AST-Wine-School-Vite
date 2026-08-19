@@ -6,58 +6,78 @@
     };
   </script>
   <form data-form action="#" class="form callback-form" novalidate onsubmit="callbackFormSubmit(event)">
-    <h2 class="title">
+    <h2 class="title bold">
       <svg width="21" height="21"><use href="/assets/img/sprite.svg#send"></use></svg>
       Остались вопросы?
     </h2>
 
-    <label class="label">
-      <span class="label-text">Тема</span>
-      <select data-select name="theme" required>
-        <option value="">Выберите тему</option>
-        <option value="Тема 1">Тема 1</option>
-        <option value="Тема 2">Тема 2</option>
-        <option value="Тема 3">Тема 3</option>
-        <option value="Тема 4">Тема 4</option>
-      </select>
-    </label>
-
-    <label class="label">
-      <span class="label-text">Телефон</span>
-      <input type="tel" name="phone" class="input" required placeholder="+7" />
-    </label>
-
-    <label class="label">
-      <span class="label-text">Сообщение</span>
-      <textarea name="message" class="input input--textarea" required placeholder="Напишите вопрос..."></textarea>
-    </label>
-
-    <fieldset>
+    <div class="callback-form-inner">
       <label class="label">
-        <input name="confirmation" type="checkbox" class="checkbox" required data-error-title="Согласие на обработку данных обязательно" />
-        <p class="label-text">
-          <span>Согласен с&nbsp;<a href="%ROOT%" target="_blank">Условиями обработки персональных данных</a></span>
-        </p>
+        <span class="label-text">Тема<span class="red">*</span></span>
+        <select data-select name="theme" required>
+          <option value="">Выберите тему</option>
+          <option value="Тема 1">Тема 1</option>
+          <option value="Тема 2">Тема 2</option>
+          <option value="Тема 3">Тема 3</option>
+          <option value="Тема 4">Тема 4</option>
+        </select>
       </label>
-      <label class="label">
-        <input name="confirmation2" type="checkbox" class="checkbox" required data-error-title="Принятие политики конфиденциальности обязательно" />
-        <p class="label-text">
-          <span>Принимаю <a href="%ROOT%" target="_blank">Политику конфиденциальности</a></span>
-        </p>
-      </label>
-      <label class="label">
-        <input name="confirmation3" type="checkbox" class="checkbox" required data-error-title="Принятие пользовательского соглашения обязательно" />
-        <p class="label-text">
-          <span>Принимаю <a href="%ROOT%" target="_blank">Пользовательское соглашение</a></span>
-        </p>
-      </label>
-    </fieldset>
 
-    <!-- <div class="form-errors" data-form-errors></div> -->
+      <label class="label">
+        <span class="label-text">Имя</span>
+        <input type="text" name="name" data-rule="name-cyrillic" class="input" placeholder="Ваше имя" />
+      </label>
 
-    <button type="submit" class="button big magenta">
-      ОТПРАВИТЬ
-      <svg width="21" height="21"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
-    </button>
+      <label class="label">
+        <span class="label-text">Номер телефона<span class="red">*</span></span>
+        <input type="tel" name="phone" class="input" required placeholder="+7" />
+      </label>
+
+      <label class="label">
+        <span class="label-text">Email<span class="red">*</span></span>
+        <input type="email" name="email" data-rule="email" class="input" placeholder="email@ru" />
+      </label>
+    </div>
+
+    <div class="callback-form-inner">
+      <label class="label">
+        <span class="label-text">Сообщение<span class="red">*</span></span>
+        <textarea name="message" class="input input--textarea" required placeholder="Напишите вопрос..."></textarea>
+      </label>
+
+      <fieldset>
+        <label class="label">
+          <input name="confirmation" type="checkbox" class="checkbox" required data-error-title="Согласие на обработку данных обязательно" />
+          <p class="label-text">
+            <span>Согласен с&nbsp;<a href="%ROOT%" target="_blank">Условиями обработки персональных данных</a></span>
+          </p>
+        </label>
+        <label class="label">
+          <input name="confirmation2" type="checkbox" class="checkbox" required data-error-title="Принятие политики конфиденциальности обязательно" />
+          <p class="label-text">
+            <span>Принимаю <a href="%ROOT%" target="_blank">Политику конфиденциальности</a></span>
+          </p>
+        </label>
+        <label class="label">
+          <input
+            name="confirmation3"
+            type="checkbox"
+            class="checkbox"
+            required
+            data-error-title="Принятие пользовательского соглашения обязательно"
+          />
+          <p class="label-text">
+            <span>Принимаю <a href="%ROOT%" target="_blank">Пользовательское соглашение</a></span>
+          </p>
+        </label>
+      </fieldset>
+
+      <!-- <div class="form-errors" data-form-errors></div> -->
+
+      <button type="submit" class="button big magenta">
+        ОТПРАВИТЬ
+        <svg width="21" height="21"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
+      </button>
+    </div>
   </form>
 </section>

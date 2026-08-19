@@ -3,29 +3,23 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 650px;
+  height: auto;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
-  padding: 72px 30px;
+  padding: 30px;
   border-radius: 50px;
   background-color: var(--white);
 
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    backdrop-filter: blur(8px);
-  }
-
-  .promo-card-logo-background {
+  svg.promo-card-logo-background {
     z-index: 2;
+    width: 900px;
+    height: auto;
+    right: 50%;
+    top: 50%;
+    z-index: 0;
+    transform: translate(-2%, -60%);
   }
 
   .title {
@@ -37,23 +31,12 @@
     z-index: 3;
   }
 
-  .welcome-image {
-    display: block;
-    position: absolute;
-    width: 500px;
-    height: auto;
-    left: 0px;
-    bottom: 0px;
-    z-index: 3;
-  }
-
   .text {
     display: block;
     position: relative;
     max-width: 500px;
     z-index: 3;
-    margin: 0 auto;
     line-height: 1.5;
-    margin-top: 20px;
+    margin: 20px auto;
   }
 }

@@ -106,9 +106,10 @@
     width: 24.688%;
     display: flex;
     position: relative;
+    overflow: hidden;
     justify-content: flex-start;
-    align-items: flex-end;
-    align-content: flex-end;
+    align-items: flex-start;
+    align-content: flex-start;
     gap: 12px;
     border-radius: 16px;
     padding: 12px;

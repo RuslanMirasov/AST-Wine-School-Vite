@@ -1,6 +1,10 @@
 .title {
   display: inline-block;
+  font-weight: 400;
   color: var(--blue);
+  &.bold {
+    font-weight: 700;
+  }
   &.full {
     width: 100%;
   }
