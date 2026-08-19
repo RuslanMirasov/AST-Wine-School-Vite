@@ -8,6 +8,10 @@
   &.full {
     width: 100%;
   }
+  &.title--60 {
+    font-size: 60px;
+    line-height: 0.9;
+  }
   &.title--40 {
     font-size: 40px;
     line-height: 1;
@@ -45,7 +49,20 @@
     font-size: 24px;
     line-height: 1.2;
   }
+  &.smal {
+    font-size: 14px;
+    line-height: 1.2;
+  }
   &.white {
     color: var(--white);
+  }
+  &.grey {
+    color: var(--grey);
+  }
+  &.grey-dark {
+    color: var(--grey-dark);
+  }
+  &.full {
+    width: 100%;
   }
 }

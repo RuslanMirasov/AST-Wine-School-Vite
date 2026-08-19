@@ -145,6 +145,13 @@ button {
   padding: 40px 0px;
   margin: 0 auto;
   scroll-margin: 45px;
+  &.center {
+    justify-content: center;
+    text-align: center;
+  }
+  &.content {
+    gap: 16px;
+  }
 }
 
 @media (min-width: 1024px) {

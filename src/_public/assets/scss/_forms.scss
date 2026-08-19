@@ -541,3 +541,18 @@ $select_padding: 0px 16px;
     }
   }
 }
+
+.search-form {
+  width: 100%;
+  padding: 16px;
+  border-radius: 30px;
+  margin-top: 10px;
+  background-color: var(--white);
+
+  form {
+    flex-wrap: nowrap;
+    .button {
+      width: calc(var(--input-height) * 2);
+    }
+  }
+}

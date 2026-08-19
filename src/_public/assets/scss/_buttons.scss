@@ -36,6 +36,19 @@
     color 0.3s var(--cubic),
     background-color 0.3s var(--cubic);
 
+  &.icon-submit {
+    flex-wrap: nowrap;
+    border-radius: var(--input-border-radius);
+    padding: 0px;
+    min-width: var(--input-height);
+    height: var(--input-height);
+    svg {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+  }
+
   &.blue {
     background-color: var(--blue-light);
     color: var(--blue);
@@ -72,7 +85,7 @@
   &.small {
     font-size: 14px;
     height: 32px;
-    padding: 0px 40px;
+    padding: 0px 20px;
     font-weight: 400;
   }
 

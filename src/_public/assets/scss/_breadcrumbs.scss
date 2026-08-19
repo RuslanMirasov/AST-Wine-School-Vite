@@ -1,0 +1,40 @@
+.breadcrumbs {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  margin-top: 20px;
+  li {
+    display: inline-flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    font-size: 14px;
+    color: var(--grey);
+    &:after {
+      content: '/';
+      display: block;
+      margin: 0px 8px;
+      color: inherit;
+    }
+    &:last-child {
+      &:after {
+        content: none;
+      }
+    }
+
+    a {
+      transition: color 0.3s var(--cubic);
+      color: var(--grey-dark);
+      @media (hover: hover) {
+        &:hover {
+          color: var(--blue);
+        }
+      }
+    }
+  }
+}

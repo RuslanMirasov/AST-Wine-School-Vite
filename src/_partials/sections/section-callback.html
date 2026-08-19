@@ -3,6 +3,7 @@
   <script>
     const callbackFormSubmit = e => {
       e.preventDefault();
+      window.popup.open('callback-success');
     };
   </script>
   <form data-form action="#" class="form callback-form" novalidate onsubmit="callbackFormSubmit(event)">
@@ -25,7 +26,7 @@
 
       <label class="label">
         <span class="label-text">Имя</span>
-        <input type="text" name="name" data-rule="name-cyrillic" class="input" placeholder="Ваше имя" />
+        <input type="text" name="name" data-rule="name-cyrillic" class="input" placeholder="Ваше имя" minlength="2" />
       </label>
 
       <label class="label">

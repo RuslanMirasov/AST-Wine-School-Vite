@@ -1,0 +1,193 @@
+<!--LOGIN POPUP-->
+<div class="popup-content" id="buy-login">
+  <button class="popup-close" data-popup-close>
+    <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+  </button>
+  <h2 class="title">Введите номер телефона</h2>
+  <script>
+    function onLoginSubmit(e) {
+      e.preventDefault();
+      const phoneForCodeEl = document.querySelector('[data-phone-for-code]');
+      if (!phoneForCodeEl) return;
+      phoneForCodeEl.innerHTML = e.target.phone.value;
+      window.popup.open('login-code');
+    }
+  </script>
+  <form data-form action="#" class="form" novalidate onsubmit="onLoginSubmit(event)">
+    <label class="label">
+      <input type="tel" name="phone" class="input" required placeholder="+7 ___ ___ __ __" />
+    </label>
+    <button type="submit" class="button big magenta">
+      Получить код
+      <svg width="21" height="21"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
+    </button>
+  </form>
+</div>
+
+<!--LOGIN CODE POPUP-->
+<div class="popup-content" id="buy-code">
+  <button class="popup-close" data-popup-close>
+    <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+  </button>
+  <h2 class="title">Введите код</h2>
+  <p class="popup-subtitle">
+    Введите код из&nbsp;уведомления, отправленного на&nbsp;<span data-phone-for-code>+7 000 000 0000</span>, или&nbsp;последние 4&nbsp;цифры входящего
+    номера
+  </p>
+
+  <script>
+    function onCodeInput(e) {
+      const input = e.target;
+      const fields = [...input.closest('.phone-code-fields').querySelectorAll('input[name^="code"]')];
+
+      input.value = input.value.replace(/\D/g, '').slice(-1);
+
+      const firstEmpty = fields.find(field => !field.value);
+      if (firstEmpty) firstEmpty.focus();
+
+      if (fields.every(field => field.value !== '')) {
+        input.form.requestSubmit();
+      }
+    }
+
+    function onCodeKeydown(e) {
+      if (e.key !== 'Backspace' || e.target.value) return;
+
+      const fields = [...e.target.closest('.phone-code-fields').querySelectorAll('input[name^="code"]')];
+      const prev = fields[fields.indexOf(e.target) - 1];
+      if (prev) prev.focus();
+    }
+
+    function onCodeCheckboxChange(e) {
+      const form = e.target.form;
+      const fields = [...form.querySelectorAll('input[name^="code"]')];
+      if (fields.every(field => field.value !== '')) {
+        form.requestSubmit();
+      }
+    }
+
+    function onBuyCodeSubmit(e) {
+      e.preventDefault();
+
+      const fields = [...e.target.querySelectorAll('input[name^="code"]')];
+      const code = fields.map(field => field.value).join('');
+
+      console.log(code);
+
+      window.popup.open('buy-login-success');
+      e.target.reset();
+    }
+  </script>
+  <form data-form action="#" class="form" novalidate onsubmit="onBuyCodeSubmit(event)">
+    <fieldset class="row phone-code-fields">
+      <label class="label">
+        <input
+          type="number"
+          name="code1"
+          class="input"
+          min="0"
+          maxlength="1"
+          required
+          oninput="onCodeInput(event)"
+          onkeydown="onCodeKeydown(event)"
+        />
+      </label>
+      <label class="label">
+        <input
+          type="number"
+          name="code2"
+          class="input"
+          min="0"
+          maxlength="1"
+          required
+          oninput="onCodeInput(event)"
+          onkeydown="onCodeKeydown(event)"
+        />
+      </label>
+      <label class="label">
+        <input
+          type="number"
+          name="code3"
+          class="input"
+          min="0"
+          maxlength="1"
+          required
+          oninput="onCodeInput(event)"
+          onkeydown="onCodeKeydown(event)"
+        />
+      </label>
+      <label class="label">
+        <input
+          type="number"
+          name="code4"
+          class="input"
+          min="0"
+          maxlength="1"
+          required
+          oninput="onCodeInput(event)"
+          onkeydown="onCodeKeydown(event)"
+        />
+      </label>
+    </fieldset>
+
+    <div class="form-errors" data-form-errors></div>
+
+    <fieldset>
+      <label class="label">
+        <input
+          name="confirmation"
+          type="checkbox"
+          class="checkbox"
+          required
+          data-error-title="Согласие на обработку данных обязательно"
+          onchange="onCodeCheckboxChange(event)"
+        />
+        <p class="label-text">
+          <span>Согласен с&nbsp;<a href="%ROOT%" target="_blank">Условиями обработки персональных данных</a></span>
+        </p>
+      </label>
+      <label class="label">
+        <input
+          name="confirmation2"
+          type="checkbox"
+          class="checkbox"
+          required
+          data-error-title="Принятие политики конфиденциальности обязательно"
+          onchange="onCodeCheckboxChange(event)"
+        />
+        <p class="label-text">
+          <span>Принимаю <a href="%ROOT%" target="_blank">Политику конфиденциальности</a></span>
+        </p>
+      </label>
+      <label class="label">
+        <input
+          name="confirmation3"
+          type="checkbox"
+          class="checkbox"
+          required
+          data-error-title="Принятие пользовательского соглашения обязательно"
+          onchange="onCodeCheckboxChange(event)"
+        />
+        <p class="label-text">
+          <span>Принимаю <a href="%ROOT%" target="_blank">Пользовательское соглашение</a></span>
+        </p>
+      </label>
+    </fieldset>
+  </form>
+
+  <button type="submit" class="button big">
+    Получить новый код
+    <svg width="21" height="21"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
+  </button>
+
+  <p class="popup-subtitle">Запросить новый код в SMS можно через <span>00:36</span></p>
+</div>
+
+<!--LOGIN SUCCESS POPUP-->
+<div class="popup-content" id="buy-login-success">
+  <button class="popup-close" data-popup-close>
+    <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+  </button>
+  <h2 class="title">Вход выполнен</h2>
+  <a href="%ROOT%cart/" class="button big">Перейти к&nbsp;оформлению</a>
+</div>

@@ -4,8 +4,8 @@
     <load src="/_partials/base/metrix.html" />
     <load src="/_partials/base/meta.html" />
     <load src="/_partials/base/styles.html" />
-    <meta name="description" content="AST-Школа вина" />
-    <title>AST-Школа вина</title>
+    <meta name="description" content="AST - 404" />
+    <title>404</title>
   </head>
   <body>
     <div class="body">
@@ -16,16 +16,33 @@
       <!--MAIN-->
       <main class="main">
         <div class="container">
-          <load src="/_partials/sections/section__hero.html" />
-          <load src="/_partials/sections/section__welcome.html" />
+          <!--breadcrumbs-->
+          <ul class="breadcrumbs">
+            <li><a href="%ROOT%">Главная</a></li>
+            <li><span>404</span></li>
+          </ul>
+
+          <!--SECTION 404-->
+          <div class="section center content">
+            <h1 class="title title--60">404</h1>
+            <p class="text full grey-dark">Кажется, вы забрели не&nbsp;туда… Но&nbsp;это отличный повод открыть что-то&nbsp;новое!</p>
+            <div class="search-form">
+              <form data-form action="%ROOT%search/" class="form" novalidate>
+                <label class="label">
+                  <input type="text" name="s" class="input" placeholder="Поиск" required />
+                </label>
+                <button type="submit" class="button magenta icon-submit">
+                  <svg width="24" height="24"><use href="/assets/img/sprite.svg#search"></use></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
           <load src="/_partials/sections/section-curses-offline.html" />
           <load src="/_partials/sections/section-curses-online.html" />
           <load src="/_partials/sections/section-curses-seminars.html" />
           <load src="/_partials/sections/section-curses-recomendations.html" />
-          <load src="/_partials/sections/section-materials.html" />
-          <load src="/_partials/sections/section-news.html" />
           <load src="/_partials/sections/section-reviews.html" />
-          <load src="/_partials/sections/section-callback.html" />
         </div>
       </main>
 
@@ -38,7 +55,6 @@
       <div class="popup" data-popup>
         <load src="/_partials/popups/login-popups.html" />
         <load src="/_partials/popups/subscribe-popups.html" />
-        <load src="/_partials/popups/callback-popups.html" />
       </div>
     </div>
 
