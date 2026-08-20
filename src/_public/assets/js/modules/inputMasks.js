@@ -7,6 +7,7 @@ export const initSelectFields = () => {
     new Choices(select, {
       searchEnabled: false,
       shouldSort: false,
+      allowHTML: true,
     });
   });
 };

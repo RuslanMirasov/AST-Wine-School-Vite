@@ -369,6 +369,7 @@ $select_color: var(--grey-dark);
 $select_border_radius: 16px;
 $select_border: 1px solid var(--grey-border);
 $select_font_size: 16px;
+$select_dropdown_font_size: 12px;
 $select_font_family: var(--font);
 $select_font_weight: 400;
 $select_text_align: left;
@@ -387,10 +388,10 @@ $select_padding: 0px 16px;
   z-index: 10;
   transition: border 0.3s var(--cubic);
   &.is-open {
-    border-radius: $select_border_radius $select_border_radius 0px 0px;
+    border-radius: $select_border_radius $select_border_radius $select_border_radius $select_border_radius;
     border: 1px solid var(--magenta);
     .choices__inner {
-      border-radius: $select_border_radius $select_border_radius 0px 0px;
+      border-radius: $select_border_radius $select_border_radius $select_border_radius $select_border_radius;
     }
   }
   .choices__inner {
@@ -423,11 +424,16 @@ $select_padding: 0px 16px;
   text-align: $select_text_align;
   border: none;
   padding: 0 !important;
-  border-radius: 0px 0px $select_border_radius $select_border_radius;
+  border-radius: $select_border_radius $select_border_radius $select_border_radius $select_border_radius;
   font-size: $select_font_size;
   font-weight: $select_font_weight;
   color: $select_color;
   overflow: hidden;
+  .choices__item {
+    b {
+      display: none !important;
+    }
+  }
 }
 
 // Обёртка для списка опций
@@ -452,10 +458,11 @@ $select_padding: 0px 16px;
 // Выпадающий список
 .choices__list--dropdown {
   left: -1px;
+  top: calc(100% + 10px) !important;
   width: calc(100% + 2px) !important;
-  border-radius: 0px 0px $select_border_radius $select_border_radius !important;
+  border-radius: $select_border_radius $select_border_radius $select_border_radius $select_border_radius !important;
   border: none !important;
-  border-top: none !important;
+  border-top: $select_border !important;
   border-left: $select_border !important;
   border-right: $select_border !important;
   border-bottom: $select_border !important;
@@ -463,26 +470,47 @@ $select_padding: 0px 16px;
   font-weight: 500;
   text-align: left;
   background: $select_background !important;
+  box-shadow: 0px 8px 24px rgba(38, 46, 64, 0.18);
+  padding: 8px;
   transition:
     border-left 0.3s var(--cubic),
     border-right 0.3s var(--cubic),
     border-bottom 0.3s var(--cubic);
   &.is-active {
-    //background: none;
-    border-left: 1px solid var(--magenta) !important;
-    border-right: 1px solid var(--magenta) !important;
-    border-bottom: 1px solid var(--magenta) !important;
+    border-top: 1px solid var(--grey-border) !important;
+    border-left: 1px solid var(--grey-border) !important;
+    border-right: 1px solid var(--grey-border) !important;
+    border-bottom: 1px solid var(--grey-border) !important;
   }
   .choices__placeholder {
     display: none !important;
   }
   .choices__item {
+    flex-wrap: wrap;
     background: none !important;
     background-color: none !important;
     opacity: 1;
-    height: 44px !important;
+    font-size: $select_font_size !important;
+    border-radius: 10px;
+    height: auto !important;
+    padding: 0px !important;
+    b {
+      display: block !important;
+      font-size: $select_dropdown_font_size;
+      margin-top: 4px;
+      font-weight: 400;
+      width: 100%;
+      color: $select_color;
+    }
+
     &.is-highlighted {
-      background: rgba(0, 0, 0, 0.04) !important;
+      font-weight: 700;
+      color: var(--magenta);
+      background: #f8e8f2 !important;
+      b {
+        font-weight: 400;
+        color: $select_color;
+      }
     }
   }
 }
@@ -504,7 +532,7 @@ $select_padding: 0px 16px;
     align-items: center;
     align-content: center;
     height: $select_height;
-    padding: 0px 16px !important;
+    padding: 8px 12px !important;
   }
   &:before,
   &:after {
