@@ -129,7 +129,7 @@
   align-items: center;
   justify-content: center;
   z-index: 3;
-  @media (min-width: 1600px) {
+  @media (min-width: 1600px), (min-width: 550px) and (max-width: 1023px) {
     margin: 0 auto;
   }
 }
@@ -514,12 +514,12 @@
     pointer-events: none;
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: 1600px), (min-width: 550px) and (max-width: 1023px) {
     position: relative;
     overflow: visible;
     flex: 1;
     width: auto;
-    max-width: 350px;
+    max-width: 380px;
     height: auto;
     opacity: 1;
     left: auto;
@@ -540,6 +540,10 @@
       padding: 0px;
       border-top: none;
     }
+  }
+
+  @media (min-width: 550px) and (max-width: 1023px) {
+    max-width: 100%;
   }
 }
 

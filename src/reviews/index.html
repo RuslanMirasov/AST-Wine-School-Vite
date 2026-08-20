@@ -16,6 +16,11 @@
       <!--MAIN-->
       <main class="main">
         <div class="container">
+          <!--breadcrumbs-->
+          <ul class="breadcrumbs">
+            <li><a href="%ROOT%">Главная</a></li>
+            <li><span>Отзывы</span></li>
+          </ul>
           <section class="section">
             <h2 class="title title--24">Страница <span style="color: #c24191">"Отзывы"</span> в разработке...</h2>
           </section>
@@ -29,11 +34,14 @@
     <!--POPUPS-->
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
-        <load src="/_partials/popups/login-popups.html" />
-        <load src="/_partials/popups/subscribe-popups.html" />
+        <load src="/_partials/base/default-popups.html" />
       </div>
     </div>
 
+    <!--COOKIE CONFIRM POPUP-->
+    <load src="/_partials/popups/cookies-confirm-popup.html" />
+
+    <!--SCRIPTS-->
     <load src="/_partials/base/scripts.html" />
   </body>
 </html>

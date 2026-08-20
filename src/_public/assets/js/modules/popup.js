@@ -122,7 +122,7 @@ export const popup = {
       }
 
       const isCloseTarget = e.target === this._backdrop || e.target.hasAttribute('data-popup-close');
-      if (isCloseTarget) {
+      if (isCloseTarget && !this._isLocked()) {
         this.close();
       }
     });
@@ -131,10 +131,15 @@ export const popup = {
       if ((this._isOpening || this._isAnimating) && e.key === 'Escape') {
         return;
       }
-      if (e.key === 'Escape') {
+      if (e.key === 'Escape' && !this._isLocked()) {
         this.close();
       }
     });
+  },
+
+  _isLocked() {
+    const current = this._popup.querySelector('.popup-content[style*="display: flex"]');
+    return current?.hasAttribute('data-popup-lock') ?? false;
   },
 
   async _showContent(newContent) {

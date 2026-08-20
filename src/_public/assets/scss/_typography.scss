@@ -2,6 +2,9 @@
   display: inline-block;
   font-weight: 400;
   color: var(--blue);
+  &.magenta {
+    color: var(--magenta);
+  }
   &.bold {
     font-weight: 700;
   }
@@ -21,6 +24,10 @@
     font-size: 32px;
     line-height: 1;
     text-transform: uppercase;
+  }
+  &.title--30 {
+    font-size: 30px;
+    line-height: 1;
   }
   &.title--24 {
     font-size: 24px;

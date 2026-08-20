@@ -36,17 +36,15 @@
     <!--POPUPS-->
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
-        <load src="/_partials/popups/login-popups.html" />
-        <load src="/_partials/popups/subscribe-popups.html" />
-        <load src="/_partials/popups/age-confirm-popup.html" />
-
+        <load src="/_partials/base/default-popups.html" />
         <load src="/_partials/popups/callback-popups.html" />
       </div>
     </div>
 
+    <!--COOKIE CONFIRM POPUP-->
+    <load src="/_partials/popups/cookies-confirm-popup.html" />
+
+    <!--SCRIPTS-->
     <load src="/_partials/base/scripts.html" />
-    <script>
-      window.popup.open('age-confirm');
-    </script>
   </body>
 </html>

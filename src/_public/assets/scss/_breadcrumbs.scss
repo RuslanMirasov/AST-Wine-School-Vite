@@ -6,7 +6,7 @@
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  margin-top: 20px;
+  margin-top: 24px;
   li {
     display: inline-flex;
     position: relative;
@@ -14,9 +14,10 @@
     align-items: center;
     align-content: center;
     font-size: 14px;
+    font-weight: 400;
     color: var(--grey);
     &:after {
-      content: '/';
+      content: '|';
       display: block;
       margin: 0px 8px;
       color: inherit;
@@ -29,10 +30,10 @@
 
     a {
       transition: color 0.3s var(--cubic);
-      color: var(--grey-dark);
+      color: var(--magenta);
       @media (hover: hover) {
         &:hover {
-          color: var(--blue);
+          color: var(--magenta-hover);
         }
       }
     }
