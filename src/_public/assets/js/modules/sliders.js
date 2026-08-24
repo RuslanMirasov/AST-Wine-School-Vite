@@ -118,7 +118,7 @@ const destroySlider = sliderWrapper => {
 const initSlider = sliderWrapper => {
   if (instances.has(sliderWrapper)) return;
 
-  const swiper = getOwnElement(sliderWrapper, '.swiper');
+  const swiper = sliderWrapper.classList.contains('swiper') ? sliderWrapper : getOwnElement(sliderWrapper, '.swiper');
   if (!swiper) return;
 
   const {

@@ -76,6 +76,19 @@
   }
 }
 
+.promo-card-inner {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  &.col-2 {
+    max-width: calc((100% - 40px) / 2);
+  }
+}
+
 .promo-card-background {
   display: block;
   position: absolute;

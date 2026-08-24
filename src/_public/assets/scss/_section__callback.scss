@@ -18,6 +18,10 @@
       color: var(--magenta);
     }
   }
+
+  .input.input--textarea {
+    height: 166px;
+  }
 }
 
 .callback-form-inner {
