@@ -12,29 +12,29 @@
     width: 100%;
   }
   &.title--60 {
-    font-size: 60px;
+    font-size: var(--fs-60);
     line-height: 0.9;
   }
   &.title--40 {
-    font-size: 40px;
+    font-size: var(--fs-40);
     line-height: 1;
     text-transform: uppercase;
   }
   &.title--32 {
-    font-size: 32px;
+    font-size: var(--fs-32);
     line-height: 1;
     text-transform: uppercase;
   }
   &.title--30 {
-    font-size: 30px;
+    font-size: var(--fs-30);
     line-height: 1;
   }
   &.title--24 {
-    font-size: 24px;
+    font-size: var(--fs-24);
     line-height: 1.4;
   }
   &.title--14 {
-    font-size: 14px;
+    font-size: var(--fs-14);
     line-height: 1;
     text-transform: uppercase;
   }
@@ -45,19 +45,19 @@
 
 .text {
   display: block;
-  font-size: 16px;
+  font-size: var(--fs-16);
   line-height: 1.4;
   color: var(--blue);
   &.medium {
-    font-size: 18px;
+    font-size: var(--fs-18);
     line-height: 1.2;
   }
   &.big {
-    font-size: 24px;
+    font-size: var(--fs-24);
     line-height: 1.2;
   }
   &.smal {
-    font-size: 14px;
+    font-size: var(--fs-14);
     line-height: 1.2;
   }
   &.white {

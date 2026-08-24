@@ -130,7 +130,7 @@ $popup_transition: 0.5s;
 .popup-link {
   color: var(--blue);
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--fs-18);
   line-height: 1.2;
   cursor: pointer;
   border-bottom: 1px solid var(--blue);
@@ -152,14 +152,14 @@ $popup_transition: 0.5s;
   display: block;
   width: 100%;
   color: var(--grey-dark);
-  font-size: 14px;
+  font-size: var(--fs-14);
   line-height: 1.2;
   font-weight: 400;
   &.big {
-    font-size: 18px;
+    font-size: var(--fs-18);
   }
   &.medium {
-    font-size: 16px;
+    font-size: var(--fs-16);
   }
   &.ta--l {
     text-align: left;
@@ -225,7 +225,7 @@ $popup_transition: 0.5s;
 
   p {
     display: block;
-    font-size: 16px;
+    font-size: var(--fs-16);
     line-height: 1.2;
     margin-bottom: 4px;
   }
@@ -233,7 +233,7 @@ $popup_transition: 0.5s;
     display: inline;
     border-bottom: 1px solid var(--magenta);
     color: var(--magenta);
-    font-size: 16px;
+    font-size: var(--fs-16);
     line-height: 1;
   }
 }

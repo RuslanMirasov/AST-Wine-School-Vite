@@ -32,7 +32,7 @@
   align-content: center;
   gap: 32px;
   margin-top: 8px;
-  font-size: 12px;
+  font-size: var(--fs-12);
   line-height: 1.2;
   font-weight: 400;
 
@@ -97,7 +97,7 @@
   width: 50%;
   padding-right: 5px;
   .footer-menu-title {
-    font-size: 16px;
+    font-size: var(--fs-16);
     line-height: 14px;
   }
 }
@@ -110,7 +110,7 @@
 
   width: 100%;
   font-weight: 700;
-  font-size: 18px;
+  font-size: var(--fs-18);
   line-height: 1;
   opacity: 0.5;
 
@@ -131,7 +131,7 @@
   width: 100%;
   flex-direction: column;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--fs-14);
   line-height: 1.143;
 
   span {
@@ -208,7 +208,7 @@
   }
 
   .footer-menu-list {
-    font-size: 13px;
+    font-size: var(--fs-13);
   }
 
   .footer-menu {
@@ -232,7 +232,7 @@
   .copy {
     gap: 32px;
     margin-top: 8px;
-    font-size: 12px;
+    font-size: var(--fs-12);
   }
 
   .footer-logo {
@@ -255,7 +255,7 @@
   .copy {
     gap: 16px;
     margin-top: 8px;
-    font-size: 12px;
+    font-size: var(--fs-12);
     text-align: center;
     flex-direction: column;
     br {
@@ -275,7 +275,7 @@
   }
 
   .copy {
-    font-size: 14px;
+    font-size: var(--fs-14);
   }
 
   .footer-menu {
@@ -289,7 +289,7 @@
   }
 
   .footer-menu-list {
-    font-size: 14px;
+    font-size: var(--fs-14);
     &[data-accordeon-body] {
       height: 0px;
     }

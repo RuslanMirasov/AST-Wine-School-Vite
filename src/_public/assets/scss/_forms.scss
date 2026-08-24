@@ -5,7 +5,7 @@
 
   //INPUT
   --input-font-family: var(--font);
-  --input-font-size: 16px;
+  --input-font-size: var(--fs-16);
   --input-font-weight: 400;
   --input-text-transform: auto;
   --input-height: 54px;
@@ -19,7 +19,7 @@
   --invalid-border: 1px solid var(--invalid);
 
   //LABEL
-  --label-font-size: 14px;
+  --label-font-size: var(--fs-14);
   --label-font-weight: 400;
   --label-opacity: 1;
   --label-color: var(--grey-dark);
@@ -29,7 +29,7 @@
   --checkbox-size: 20px;
   --checkbox-border: 1px solid rgba(0, 0, 0, 0);
   --checkbox-radius: 6px;
-  --checkbox-font-size: 14px;
+  --checkbox-font-size: var(--fs-14);
   --checkbox-background: var(--magenta-opacity) url('../img/svg/checkbox.svg') no-repeat center center;
   --checkbox-background-checked: var(--magenta) url('../img/svg/checkbox.svg') no-repeat center center;
   --checkbox-text-color: var(--grey-dark);
@@ -41,7 +41,7 @@
 
   @media (max-width: 1439px) {
     --input-height: 54px;
-    --input-font-size: 16px;
+    --input-font-size: var(--fs-16);
     --input-border-radius: 16px;
   }
 }
@@ -213,7 +213,7 @@ input[type='number'] {
   transition: height 0.3s var(--cubic);
   color: var(--invalid);
   font-family: var(--font);
-  font-size: 12px;
+  font-size: var(--fs-12);
   line-height: 1.5;
   font-weight: 300;
   z-index: 2;
@@ -564,7 +564,7 @@ $select_padding: 0px 16px;
     width: calc((100% - 48px) / 4);
     .input {
       text-align: center;
-      font-size: 24px;
+      font-size: var(--fs-24);
       font-weight: 700;
     }
   }

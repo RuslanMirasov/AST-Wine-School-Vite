@@ -162,7 +162,7 @@
       display: flex;
       gap: 4px;
       align-items: center;
-      font-size: 14px;
+      font-size: var(--fs-14);
       font-weight: 400;
       line-height: 1.2;
       background-color: rgba(0, 0, 0, 0);
@@ -180,7 +180,7 @@
       }
       @media (max-width: 1279px) {
         gap: 4px;
-        font-size: 12px;
+        font-size: var(--fs-12);
         padding: 4px 10px;
       }
 
@@ -293,13 +293,13 @@
       column-span: all;
     }
     .menu-link {
-      font-size: 18px;
+      font-size: var(--fs-18);
       padding: 8px;
       @media (max-width: 1439px) {
-        font-size: 16px;
+        font-size: var(--fs-16);
       }
       @media (max-width: 1279px) {
-        font-size: 12px;
+        font-size: var(--fs-12);
         padding: 8px 4px;
       }
       &.active {
@@ -319,15 +319,15 @@
 .recomendations-menu {
   .title {
     font-weight: 400;
-    font-size: 14px;
+    font-size: var(--fs-14);
     line-height: 1.2;
     margin-bottom: 4px;
     opacity: 0.7;
     @media (max-width: 1279px) {
-      font-size: 12px;
+      font-size: var(--fs-12);
     }
     @media (max-width: 1023px) {
-      font-size: 14px;
+      font-size: var(--fs-14);
     }
   }
 
@@ -398,15 +398,15 @@
     }
     p {
       width: 100%;
-      font-size: 18px;
+      font-size: var(--fs-18);
       line-height: 1.1;
       padding-top: 12px;
       @media (max-width: 1279px) {
-        font-size: 14px;
+        font-size: var(--fs-14);
         padding-top: 8px;
       }
       @media (max-width: 1023px) {
-        font-size: 18px;
+        font-size: var(--fs-18);
         padding-top: 12px;
       }
     }
@@ -504,7 +504,7 @@
     line-height: 32px;
     width: 100%;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: var(--fs-14);
     padding: 0px 44px 0px 14px;
     background-color: var(--white);
   }
@@ -643,7 +643,7 @@
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
-        font-size: 20px;
+        font-size: var(--fs-20);
         font-weight: 400;
         text-align: left;
         text-wrap: wrap;
@@ -713,7 +713,7 @@
     li {
       display: block !important;
       .menu-link {
-        font-size: 20px;
+        font-size: var(--fs-20);
         padding: 12px 0px 12px 16px;
       }
     }
@@ -785,15 +785,15 @@
       }
       p {
         width: 100%;
-        font-size: 18px;
+        font-size: var(--fs-18);
         line-height: 1.1;
         padding-top: 12px;
         @media (max-width: 1279px) {
-          font-size: 14px;
+          font-size: var(--fs-14);
           padding-top: 8px;
         }
         @media (max-width: 1023px) {
-          font-size: 18px;
+          font-size: var(--fs-18);
           padding-top: 12px;
         }
       }

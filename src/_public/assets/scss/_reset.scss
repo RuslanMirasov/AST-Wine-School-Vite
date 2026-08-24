@@ -19,6 +19,13 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: var(--font);
+  font-size: var(--fs-16);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
 html,
 body,
 .body {
@@ -36,11 +43,6 @@ body,
   overscroll-behavior: none;
   background-color: var(--grey-light);
   -webkit-overflow-scrolling: touch;
-
-  font-family: var(--font);
-  font-size: 16px;
-  line-height: 1.4;
-  font-weight: 400;
 }
 
 img,

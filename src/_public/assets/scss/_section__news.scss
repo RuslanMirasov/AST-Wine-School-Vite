@@ -71,7 +71,7 @@
     align-content: center;
     gap: 5px;
     color: var(--grey);
-    font-size: 14px;
+    font-size: var(--fs-14);
     line-height: 1.2;
 
     svg {
@@ -81,7 +81,7 @@
     }
   }
   .text {
-    font-size: 18px;
+    font-size: var(--fs-18);
     line-height: 1.3;
   }
 }
