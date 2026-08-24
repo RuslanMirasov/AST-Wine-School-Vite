@@ -165,6 +165,20 @@ button {
   }
 }
 
+.list {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 8px;
+  list-style: disc;
+  padding-left: 1.2rem;
+  color: var(--magenta);
+}
+
 @media (min-width: 1024px) {
   .show-in-tablet {
     display: none !important;

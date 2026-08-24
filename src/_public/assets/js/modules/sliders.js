@@ -187,10 +187,13 @@ const initSlider = sliderWrapper => {
   }
 
   if (pagination) {
+    const paginationType = sliderWrapper.dataset.paginationType || 'bullets';
+
     options.pagination = {
       el: pagination,
+      type: paginationType,
       clickable: true,
-      dynamicBullets: true,
+      dynamicBullets: paginationType === 'bullets',
     };
   }
 

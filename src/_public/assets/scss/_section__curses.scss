@@ -40,6 +40,13 @@
   padding: 30px;
   background-color: var(--white);
   gap: 12px;
+  &.auto {
+    min-height: auto;
+  }
+  &.row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   &.medium {
     min-height: 300px;
   }
@@ -83,9 +90,13 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 12px;
+  gap: 8px;
   &.col-2 {
     max-width: calc((100% - 40px) / 2);
+  }
+
+  > .title {
+    margin-top: 1rem;
   }
 }
 
@@ -294,6 +305,42 @@
     transform: translate(0%, 0%);
     &.present-top {
       z-index: 2;
+    }
+  }
+}
+
+.you-mony-promo {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 16px;
+  margin-top: 24px;
+
+  .text {
+    color: var(--grey-text);
+  }
+
+  .magenta-link {
+    margin-left: auto;
+  }
+}
+
+.magenta-link {
+  display: inline-block;
+  color: var(--magenta);
+  font-size: var(--fs-14);
+  line-height: 1.4;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  transition: border-bottom 0.3s var(--cubic);
+  @media (hover: hover) {
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid var(--magenta);
     }
   }
 }

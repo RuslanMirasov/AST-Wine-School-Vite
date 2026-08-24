@@ -33,6 +33,14 @@
     font-size: var(--fs-24);
     line-height: 1.4;
   }
+  &.title--18 {
+    font-size: var(--fs-18);
+    line-height: 1.3;
+  }
+  &.title--16 {
+    font-size: var(--fs-16);
+    line-height: 1.5;
+  }
   &.title--14 {
     font-size: var(--fs-14);
     line-height: 1;
@@ -50,13 +58,13 @@
   color: var(--blue);
   &.medium {
     font-size: var(--fs-18);
-    line-height: 1.2;
+    line-height: 1.3;
   }
   &.big {
     font-size: var(--fs-24);
     line-height: 1.2;
   }
-  &.smal {
+  &.small {
     font-size: var(--fs-14);
     line-height: 1.2;
   }

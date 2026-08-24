@@ -1,0 +1,31 @@
+.section-teachers-sliader {
+  > .button {
+    margin-left: auto;
+  }
+
+  .swiper {
+    .swiper-slide {
+      &.swiper-slide-active + .swiper-slide,
+      &.swiper-slide-active + .swiper-slide + .swiper-slide {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  .post-slide {
+    border-radius: 50px;
+    padding: 28px;
+  }
+
+  .post-slide-image {
+    margin-bottom: 16px;
+    &:before {
+      padding-top: 53.76344%;
+    }
+  }
+  .post-slide-text {
+    margin: 0;
+    margin-bottom: auto;
+  }
+}

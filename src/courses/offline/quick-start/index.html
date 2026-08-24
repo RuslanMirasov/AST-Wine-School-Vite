@@ -25,7 +25,7 @@
           </ul>
 
           <section class="section">
-            <div class="promo-card">
+            <div class="promo-card row">
               <div class="promo-card-inner col-2">
                 <p class="text">
                   Хотите перестать теряться в&nbsp;винной карте и&nbsp;уверенно выбирать бутылку к&nbsp;ужину? Этот курс — ваш идеальный старт.
@@ -34,32 +34,49 @@
                   с&nbsp;сомелье и&nbsp;более 15&nbsp;образцов вин на&nbsp;трёх занятиях. В&nbsp;результате вы сможете не&nbsp;только блеснуть
                   знаниями в&nbsp;компании, но и&nbsp;покупать вино осознанно, получая максимум удовольствия за&nbsp;свой бюджет.
                 </p>
-                <h2>Курс создан для тех, кто:</h2>
+                <h2 class="title title--16">Курс создан для тех, кто:</h2>
                 <ul class="list">
-                  <li><p class="text">впервые слышит «терруар» и боится спросить</p></li>
-                  <li><p class="text">покупает одно и то же вино, потому что другие не понимает</p></li>
-                  <li><p class="text">хочет уверенно чувствовать себя на дегустациях и в ресторанах</p></li>
-                  <li><p class="text">планирует связать работу с вином, но не знает, с чего начать</p></li>
-                  <li><p class="text">ищет не скучную академию, а живое общение с сомелье</p></li>
+                  <li><p class="text">впервые слышит «терруар» и&nbsp;боится спросить</p></li>
+                  <li><p class="text">покупает одно и&nbsp;то&nbsp;же&nbsp;вино, потому что&nbsp;другие не&nbsp;понимает</p></li>
+                  <li><p class="text">хочет уверенно чувствовать себя на&nbsp;дегустациях и&nbsp;в&nbsp;ресторанах</p></li>
+                  <li><p class="text">планирует связать работу с&nbsp;вином, но не&nbsp;знает, с&nbsp;чего начать</p></li>
+                  <li><p class="text">ищет не&nbsp;скучную академию, а&nbsp;живое общение с&nbsp;сомелье</p></li>
                 </ul>
               </div>
               <div class="promo-card-inner col-2">
-                <div class="swiper" data-slider>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img src="/assets/img/promo/1-des.webp" alt="AST" />
+                <div class="image-slider" data-slider data-pagination-type="fraction" data-loop="true">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="image-slide">
+                          <img src="/assets/img/promo/1-des.webp" alt="AST" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="image-slide">
+                          <img src="/assets/img/promo/2-des.webp" alt="AST" />
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="image-slide">
+                          <img src="/assets/img/promo/4-des.webp" alt="AST" />
+                        </div>
+                      </div>
                     </div>
-                    <div class="swiper-slide">
-                      <img src="/assets/img/promo/1-des.webp" alt="AST" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="/assets/img/promo/1-des.webp" alt="AST" />
-                    </div>
+                  </div>
+                  <div class="arrows">
+                    <button class="arrow" data-arrow-prev></button>
+                    <div class="swiper-pagination" data-pagination></div>
+                    <button class="arrow" data-arrow-next></button>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+
+          <load src="/_partials/sections/section-materials-pdf.html" />
+          <load src="/_partials/sections/section-teachers-slider.html" />
+          <load src="/_partials/sections/section-you-money.html" />
         </div>
       </main>
 

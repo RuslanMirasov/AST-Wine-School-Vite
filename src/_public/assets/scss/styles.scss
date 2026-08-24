@@ -11,10 +11,12 @@
 @use '_section__curses';
 @use '_section__news';
 @use '_section__reviews';
+@use '_section__teachers-slider';
 @use 'section__callback';
 @use 'footer';
 @use 'breadcrumbs';
 @use 'accordeon';
+@use 'image-slider';
 @use 'popup';
 
 :root {
@@ -30,12 +32,14 @@
   --black: #0b1020;
   --white: #ffffff;
   --grey: #94a3b8;
+  --grey-text: #636669;
   --grey-dark: #6b7280;
   --grey-medium: #b2b2b2;
   --grey-light: #edf0f5;
   --grey-stars: #d6d8dd;
   --grey-border: #e5e7eb;
   --grey-menu-border: #888888;
+  --grey-button: #e2e5ea;
   --gold: #f59e0b;
   --blue: #273551;
   --blue-light: rgba(5, 67, 189, 0.102);

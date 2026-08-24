@@ -11,12 +11,24 @@
 
 .post-slide {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
   position: relative;
   flex-wrap: wrap;
   width: 100%;
   background-color: var(--white);
   padding: 24px;
   border-radius: 30px;
+
+  .title {
+    width: 100%;
+    font-weight: 700;
+  }
+
+  .magenta-link {
+    margin-top: 10px;
+  }
 }
 
 .post-slide-image {
@@ -24,9 +36,11 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  height: auto;
   background-color: var(--grey-light);
   border-radius: 30px;
   margin-bottom: 10px;
+  flex-shrink: 0;
   &:before {
     content: '';
     display: block;
@@ -64,6 +78,15 @@
   align-content: center;
   gap: 6px;
   margin-bottom: 24px;
+
+  .text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    overflow: hidden;
+  }
+
   span {
     display: flex;
     justify-content: center;
@@ -79,9 +102,5 @@
       width: 18px;
       height: 18px;
     }
-  }
-  .text {
-    font-size: var(--fs-18);
-    line-height: 1.3;
   }
 }
