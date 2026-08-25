@@ -1,0 +1,21 @@
+.gallery-slider {
+  .swiper-slide {
+    width: auto;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.gallery-image {
+  display: block;
+  width: auto;
+  height: 260px;
+  border-radius: 16px;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.gallery-image-original {
+  width: 100%;
+  max-width: 1200px;
+}

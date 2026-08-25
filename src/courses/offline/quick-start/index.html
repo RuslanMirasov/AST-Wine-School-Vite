@@ -3,7 +3,10 @@
   <head>
     <load src="/_partials/base/metrix.html" />
     <load src="/_partials/base/meta.html" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/lightbox.min.css" />
     <load src="/_partials/base/styles.html" />
+
     <meta name="description" content="AST - Быстрый старт: о вине за 3 встречи" />
     <title>Быстрый старт: о вине за 3 встречи</title>
   </head>
@@ -44,38 +47,16 @@
                 </ul>
               </div>
               <div class="promo-card-inner col-2">
-                <div class="image-slider" data-slider data-pagination-type="fraction" data-loop="true">
-                  <div class="swiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="image-slide">
-                          <img src="/assets/img/promo/1-des.webp" alt="AST" />
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="image-slide">
-                          <img src="/assets/img/promo/2-des.webp" alt="AST" />
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="image-slide">
-                          <img src="/assets/img/promo/4-des.webp" alt="AST" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="arrows">
-                    <button class="arrow" data-arrow-prev></button>
-                    <div class="swiper-pagination" data-pagination></div>
-                    <button class="arrow" data-arrow-next></button>
-                  </div>
-                </div>
+                <load src="/_partials/components/curse-slider.html" />
               </div>
             </div>
           </section>
 
           <load src="/_partials/sections/section-materials-pdf.html" />
           <load src="/_partials/sections/section-teachers-slider.html" />
+          <load src="/_partials/sections/section-gallery-slider.html" />
+          <load src="/_partials/sections/section-reviews-more.html" />
+          <load src="/_partials/sections/section-faq.html" />
           <load src="/_partials/sections/section-you-money.html" />
         </div>
       </main>
@@ -95,6 +76,7 @@
     <load src="/_partials/popups/cookies-confirm-popup.html" />
 
     <!--SCRIPTS-->
+    <script src="/assets/js/plugins/lightbox.min.js"></script>
     <load src="/_partials/base/scripts.html" />
   </body>
 </html>

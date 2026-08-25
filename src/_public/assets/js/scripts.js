@@ -11,6 +11,7 @@ import { initSliders } from './modules/sliders.js';
 import { initStars } from './modules/stars.js';
 import { initAccordeons } from './modules/accordeon.js';
 import { initCookieConfirmation } from './modules/cookie-confirm.js';
+import { initGalleries } from './modules/image-gallery.js';
 
 popup.init();
 window.popup = popup;
@@ -31,4 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordeons();
   initAgeConfirmation();
   initCookieConfirmation();
+  initGalleries();
 });

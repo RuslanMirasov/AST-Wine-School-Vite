@@ -173,10 +173,18 @@ button {
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  gap: 8px;
+  gap: 8px 2rem;
   list-style: disc;
   padding-left: 1.2rem;
   color: var(--magenta);
+  li {
+    width: 100%;
+  }
+  &.auto {
+    li {
+      width: auto;
+    }
+  }
 }
 
 @media (min-width: 1024px) {

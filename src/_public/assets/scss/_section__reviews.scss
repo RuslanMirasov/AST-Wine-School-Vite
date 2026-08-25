@@ -10,6 +10,21 @@
   .title {
     font-weight: 700;
   }
+
+  &.minify {
+    .swiper-wrapper {
+      align-items: flex-start;
+    }
+    .swiper-slide {
+      max-width: 555px;
+      opacity: 1;
+      pointer-events: auto;
+
+      .text.medium {
+        line-height: 1.5;
+      }
+    }
+  }
 }
 
 .stars {

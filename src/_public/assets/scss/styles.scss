@@ -12,6 +12,8 @@
 @use '_section__news';
 @use '_section__reviews';
 @use '_section__teachers-slider';
+@use '_section__gallery-slider';
+@use '_section__faq';
 @use 'section__callback';
 @use 'footer';
 @use 'breadcrumbs';
@@ -40,6 +42,7 @@
   --grey-border: #e5e7eb;
   --grey-menu-border: #888888;
   --grey-button: #e2e5ea;
+  --grey-promo: #e3e7ef;
   --gold: #f59e0b;
   --blue: #273551;
   --blue-light: rgba(5, 67, 189, 0.102);

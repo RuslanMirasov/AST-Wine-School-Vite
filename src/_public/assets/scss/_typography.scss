@@ -56,6 +56,9 @@
   font-size: var(--fs-16);
   line-height: 1.4;
   color: var(--blue);
+  &.bold {
+    font-weight: 700;
+  }
   &.medium {
     font-size: var(--fs-18);
     line-height: 1.3;
@@ -76,6 +79,9 @@
   }
   &.grey-dark {
     color: var(--grey-dark);
+  }
+  &.grey-text {
+    color: var(--grey-text);
   }
   &.full {
     width: 100%;
