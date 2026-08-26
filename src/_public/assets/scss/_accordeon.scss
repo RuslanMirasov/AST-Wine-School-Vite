@@ -19,7 +19,7 @@
   }
   @media (hover: hover) {
     &:hover,
-    &:focus {
+    &:focus-visible {
       .accordeon-arrow {
         background-color: var(--magenta);
         color: var(--white);

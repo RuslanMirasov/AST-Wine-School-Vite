@@ -16,7 +16,7 @@
   .button.magenta {
     @media (hover: hover) {
       &:hover,
-      &:focus {
+      &:focus-visible {
         background-color: var(--magenta-hover);
       }
     }
@@ -55,7 +55,7 @@
     border-bottom: 1px solid var(--white);
     @media (hover: hover) {
       &:hover,
-      &:focus {
+      &:focus-visible {
         opacity: 0.5;
       }
     }
@@ -144,7 +144,7 @@
     transition: color 0.3s var(--cubic);
     @media (hover: hover) {
       &:hover,
-      &:focus {
+      &:focus-visible {
         color: var(--magenta);
       }
     }
@@ -182,7 +182,7 @@
     transition: color 0.3s var(--cubic);
     @media (hover: hover) {
       &:hover,
-      &:focus {
+      &:focus-visible {
         color: var(--magenta);
       }
     }

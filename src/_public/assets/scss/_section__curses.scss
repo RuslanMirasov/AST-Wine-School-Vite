@@ -383,7 +383,7 @@
   transition: border-bottom 0.3s var(--cubic);
   @media (hover: hover) {
     &:hover,
-    &:focus {
+    &:focus-visible {
       border-bottom: 1px solid var(--magenta);
     }
   }

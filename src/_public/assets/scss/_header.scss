@@ -199,7 +199,7 @@
         background-color: var(--blue-light);
         @media (hover: hover) {
           &:hover,
-          &:focus {
+          &:focus-visible {
             color: var(--blue);
           }
         }
@@ -213,7 +213,7 @@
 
       @media (hover: hover) {
         &:hover,
-        &:focus {
+        &:focus-visible {
           color: var(--magenta);
         }
       }
@@ -310,7 +310,7 @@
         color: var(--magenta);
         @media (hover: hover) {
           &:hover,
-          &:focus {
+          &:focus-visible {
             color: var(--magenta);
           }
         }

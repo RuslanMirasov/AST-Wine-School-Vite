@@ -95,7 +95,7 @@ $popup_transition: 0.5s;
 
   @media (hover: hover) {
     &:hover,
-    &:focus {
+    &:focus-visible {
       transform: rotate(90deg);
     }
   }
@@ -141,7 +141,7 @@ $popup_transition: 0.5s;
 
   @media (hover: hover) {
     &:hover,
-    &:focus {
+    &:focus-visible {
       color: var(--magenta);
       border-bottom: 1px solid var(--magenta);
     }
