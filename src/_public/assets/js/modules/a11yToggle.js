@@ -9,6 +9,8 @@ export const initA11yToggle = () => {
   const applyState = enabled => {
     body.classList.toggle('a11y', enabled);
     toggle.classList.toggle('active', enabled);
+    toggle.setAttribute('aria-pressed', enabled);
+    toggle.setAttribute('aria-label', enabled ? 'Обычная версия сайта' : 'Версия для слабовидящих');
   };
 
   applyState(localStorage.getItem(A11Y_STORAGE_KEY) === 'true');

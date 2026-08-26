@@ -1,4 +1,25 @@
-import { lockScroll, unlockScroll } from './popup.js';
+import { lockScroll, unlockScroll, FOCUSABLE_SELECTOR } from './popup.js';
+
+const MENU_ANIMATION_DURATION = 500;
+const MOBILE_MENU_QUERY = '(max-width: 1023px)';
+
+const waitForTransition = (element, propertyName) =>
+  new Promise(resolve => {
+    const handler = event => {
+      if (event.propertyName !== propertyName) return;
+      element.removeEventListener('transitionend', handler);
+      clearTimeout(timer);
+      resolve();
+    };
+
+    element.addEventListener('transitionend', handler, { once: true });
+    const timer = setTimeout(() => {
+      element.removeEventListener('transitionend', handler);
+      resolve();
+    }, MENU_ANIMATION_DURATION + 50);
+  });
+
+const getFocusable = container => Array.from(container.querySelectorAll(FOCUSABLE_SELECTOR)).filter(el => el.offsetParent !== null);
 
 const normalizePath = path => path.replace(/\/$/, '') || '/';
 
@@ -54,22 +75,86 @@ export const initNavigationMenu = () => {
   const menuLinks = document.querySelectorAll('.menu-link');
   const menuLinksA = document.querySelectorAll('a.menu-link');
 
-  const toggleMenu = () => {
-    burger.classList.toggle('open');
-    const isOpen = menu.classList.toggle('open');
-    document.body.classList.toggle('popup-is-opened', isOpen);
+  const isMobileMenu = () => window.matchMedia(MOBILE_MENU_QUERY).matches;
 
-    if (isOpen) {
-      lockScroll();
-    } else {
-      unlockScroll();
+  const openMobileMenu = async () => {
+    burger.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('popup-is-opened');
+    lockScroll();
+
+    menu.style.display = 'flex';
+    void menu.offsetHeight; // форсируем reflow, иначе transition не подхватит смену display:none → flex
+    menu.classList.add('open');
+
+    await waitForTransition(menu, 'transform');
+    if (menu.classList.contains('open')) getFocusable(menu)[0]?.focus();
+  };
+
+  const closeMobileMenu = async () => {
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('popup-is-opened');
+    unlockScroll();
+
+    menu.classList.remove('open');
+    await waitForTransition(menu, 'transform');
+    if (!menu.classList.contains('open')) {
+      menu.style.display = 'none';
+      burger.focus();
     }
+  };
+
+  const toggleMenu = () => {
+    if (!isMobileMenu()) return;
+    if (menu.classList.contains('open')) closeMobileMenu();
+    else openMobileMenu();
   };
 
   if (burger) burger.addEventListener('click', toggleMenu);
 
   menuLinksA.forEach(link => {
-    link.addEventListener('click', toggleMenu);
+    link.addEventListener('click', () => {
+      if (isMobileMenu() && menu.classList.contains('open')) closeMobileMenu();
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (!isMobileMenu() || !menu.classList.contains('open')) return;
+
+    if (event.key === 'Escape') {
+      closeMobileMenu();
+      return;
+    }
+
+    if (event.key !== 'Tab') return;
+
+    const focusable = getFocusable(menu);
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (isMobileMenu()) return;
+
+    if (menu.classList.contains('open')) {
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('popup-is-opened');
+      unlockScroll();
+      menu.classList.remove('open');
+    }
+    menu.style.display = '';
   });
 
   menuLinks.forEach(link => {
@@ -87,21 +172,25 @@ export const initNavigationMenu = () => {
 
 export const initMegaMenu = () => {
   const items = Array.from(document.querySelectorAll('[data-megamenu-button]'))
-    .map(button => ({ button, menu: button.nextElementSibling }))
+    .map(button => ({ button, menu: button.nextElementSibling, wrapper: button.closest('li') }))
     .filter(({ menu }) => menu?.hasAttribute('data-megamenu'));
 
   if (!items.length) return;
+
+  let suppressAutoOpen = false;
 
   const closeMenu = ({ button, menu }) => {
     menu.style.height = '0px';
     button.classList.remove('open');
     menu.classList.remove('open');
+    button.setAttribute('aria-expanded', 'false');
   };
 
   const openMenu = ({ button, menu }) => {
     menu.style.height = `${menu.scrollHeight}px`;
     button.classList.add('open');
     menu.classList.add('open');
+    button.setAttribute('aria-expanded', 'true');
   };
 
   items.forEach(item => {
@@ -111,6 +200,28 @@ export const initMegaMenu = () => {
 
       items.forEach(closeMenu);
       if (!isOpen) openMenu(item);
+    });
+
+    // Открываем по клавиатурному фокусу (Tab), но не по фокусу от мышиного клика —
+    // иначе конфликтует с toggle-логикой click-обработчика выше и мигает.
+    item.wrapper.addEventListener('focusin', event => {
+      if (suppressAutoOpen || !event.target.matches(':focus-visible')) return;
+      items.filter(other => other !== item).forEach(closeMenu);
+      openMenu(item);
+    });
+
+    item.wrapper.addEventListener('focusout', event => {
+      if (item.wrapper.contains(event.relatedTarget)) return;
+      closeMenu(item);
+    });
+
+    item.wrapper.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || !item.menu.classList.contains('open')) return;
+      closeMenu(item);
+      // Возврат фокуса на кнопку не должен снова открыть меню через focusin.
+      suppressAutoOpen = true;
+      item.button.focus();
+      suppressAutoOpen = false;
     });
   });
 

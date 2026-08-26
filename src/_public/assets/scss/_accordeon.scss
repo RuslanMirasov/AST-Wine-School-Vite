@@ -17,6 +17,15 @@
       transform: rotate(180deg);
     }
   }
+  @media (hover: hover) {
+    &:hover,
+    &:focus {
+      .accordeon-arrow {
+        background-color: var(--magenta);
+        color: var(--white);
+      }
+    }
+  }
 }
 
 .accordeon-arrow {
@@ -32,12 +41,15 @@
   background-color: var(--magenta-light);
   color: var(--magenta);
   transform: rotate(0deg);
+  flex-shrink: 0;
   transition:
     background-color 0.5s var(--cubic),
     transform 0.5s var(--cubic),
     color 0.5s var(--cubic);
   svg {
     display: block;
+    width: 18px;
+    height: 10px;
     position: absolute;
   }
 }

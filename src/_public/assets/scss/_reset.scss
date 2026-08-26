@@ -6,7 +6,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  outline: none;
   -webkit-tap-highlight-color: transparent;
   backface-visibility: hidden;
 }
@@ -72,7 +71,6 @@ b strong {
 a {
   color: inherit;
   text-decoration: none;
-  outline: none;
 }
 
 ul,
@@ -100,7 +98,6 @@ button {
   cursor: pointer;
   background: none;
   color: inherit;
-  outline: none;
   &:disabled {
     cursor: auto;
     pointer-events: none;

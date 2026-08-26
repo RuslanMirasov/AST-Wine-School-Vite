@@ -1,21 +1,23 @@
 <!--HEADER-->
 <header class="header">
   <!--logo-->
-  <a href="%ROOT%" class="logo">
+  <a href="%ROOT%" class="logo" aria-label="AST Школа вина — на главную">
     <svg width="123" height="33"><use href="/assets/img/sprite.svg#logo"></use></svg>
   </a>
 
   <!--navigation menu-->
-  <nav class="navigation" data-navigation>
+  <nav class="navigation" id="site-navigation" data-navigation>
     <ul class="menu">
       <li>
         <a href="%ROOT%" class="menu-link"><span>Главная</span></a>
       </li>
 
       <li>
-        <button class="menu-link" data-megamenu-button><span>Курсы</span></button>
+        <button class="menu-link" data-megamenu-button aria-expanded="false" aria-haspopup="true" aria-controls="megamenu-courses">
+          <span>Курсы</span>
+        </button>
 
-        <div class="mega-menu" data-megamenu>
+        <div class="mega-menu" data-megamenu id="megamenu-courses">
           <div class="mega-menu-inner">
             <ul class="submenu">
               <li>
@@ -44,7 +46,7 @@
                   <div class="swiper-slide">
                     <a href="%ROOT%courses/offline/quick-start/" class="recomendation">
                       <div class="recomendation-image">
-                        <img src="/assets/img/promo/1-des.webp" alt="ASR" />
+                        <img src="/assets/img/promo/1-des.webp" alt="" />
                       </div>
                       <p>Быстрый старт: о&nbsp;вине за&nbsp;3&nbsp;встречи</p>
                     </a>
@@ -53,7 +55,7 @@
                   <div class="swiper-slide">
                     <a href="%ROOT%courses/online/wine-history/" class="recomendation">
                       <div class="recomendation-image">
-                        <img src="/assets/img/promo/2-des.webp" alt="ASR" />
+                        <img src="/assets/img/promo/2-des.webp" alt="" />
                       </div>
                       <p>История виноделия</p>
                     </a>
@@ -62,7 +64,7 @@
                   <div class="swiper-slide">
                     <a href="%ROOT%private-events/corporate-event/" class="recomendation">
                       <div class="recomendation-image">
-                        <img src="/assets/img/promo/3-full.webp" alt="ASR" />
+                        <img src="/assets/img/promo/3-full.webp" alt="" />
                       </div>
                       <p>Корпоративный праздник</p>
                     </a>
@@ -91,8 +93,10 @@
       </li>
 
       <li>
-        <button class="menu-link" data-megamenu-button><span>О нас</span></button>
-        <div class="mega-menu center" data-megamenu>
+        <button class="menu-link" data-megamenu-button aria-expanded="false" aria-haspopup="true" aria-controls="megamenu-about">
+          <span>О нас</span>
+        </button>
+        <div class="mega-menu center" data-megamenu id="megamenu-about">
           <div class="mega-menu-inner">
             <ul class="submenu">
               <li>
@@ -144,11 +148,11 @@
   </nav>
 
   <!--search form-->
-  <div class="header-search-form" data-search>
+  <div class="header-search-form" data-search id="header-search">
     <form action="%ROOT%search/" method="GET" data-form novalidate>
       <label class="label">
-        <input type="text" name="s" class="input" required placeholder="Поиск" />
-        <button type="button" class="search-close" data-search-toggle data-search-reset>
+        <input type="text" name="s" class="input" required placeholder="Поиск" aria-label="Поиск по сайту" />
+        <button type="button" class="search-close" data-search-toggle data-search-reset aria-label="Закрыть поиск">
           <svg width="16" height="16"><use href="/assets/img/sprite.svg#close"></use></svg>
         </button>
       </label>
@@ -158,29 +162,29 @@
   <!--icons menu-->
   <ul class="header-buttons">
     <li>
-      <button type="button" class="header-button" data-search-toggle data-search-submit>
+      <button type="button" class="header-button" data-search-toggle data-search-submit aria-label="Поиск" aria-expanded="false" aria-controls="header-search">
         <svg width="24" height="24"><use href="/assets/img/sprite.svg#search"></use></svg>
       </button>
     </li>
     <li>
-      <button type="button" class="header-button" data-a11y-toggle>
+      <button type="button" class="header-button" data-a11y-toggle aria-pressed="false" aria-label="Версия для слабовидящих">
         <svg width="24" height="24"><use href="/assets/img/sprite.svg#eye"></use></svg>
       </button>
     </li>
     <li>
-      <a href="%ROOT%profile/cart/" class="header-button">
+      <a href="%ROOT%profile/cart/" class="header-button" aria-label="Корзина">
         <svg width="24" height="24"><use href="/assets/img/sprite.svg#cart"></use></svg>
       </a>
     </li>
     <li>
-      <button type="button" class="header-button" data-popup-open="login">
+      <button type="button" class="header-button" data-popup-open="login" aria-label="Войти">
         <svg width="24" height="24"><use href="/assets/img/sprite.svg#login"></use></svg>
       </button>
     </li>
   </ul>
 
   <!--burger-->
-  <button class="burger">
+  <button class="burger" aria-expanded="false" aria-haspopup="true" aria-controls="site-navigation">
     <span>Меню бургер</span>
   </button>
 </header>

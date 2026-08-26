@@ -1,9 +1,9 @@
 <!--LOGIN POPUP-->
-<div class="popup-content" id="login">
+<div class="popup-content" id="login" role="dialog" aria-modal="true" aria-labelledby="login-title">
   <button class="popup-close" data-popup-close>
     <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
   </button>
-  <h2 class="title title--30">Вход</h2>
+  <h2 class="title title--30" id="login-title">Вход</h2>
   <script>
     function onLoginSubmit(e) {
       e.preventDefault();
@@ -29,8 +29,8 @@
 </div>
 
 <!--LOGIN CODE POPUP-->
-<div class="popup-content" id="login-code" data-popup-lock>
-  <h2 class="title title--30">Вход</h2>
+<div class="popup-content" id="login-code" data-popup-lock role="dialog" aria-modal="true" aria-labelledby="login-code-title">
+  <h2 class="title title--30" id="login-code-title">Вход</h2>
   <p class="popup-subtitle">Мы отправили проверочный код на&nbsp;ваш&nbsp;email. Введите его:</p>
 
   <script>
@@ -139,15 +139,15 @@
   <p class="popup-subtitle">Запросить новый код можно через <span>04:59</span></p>
   <hr />
 
-  <p class="popup-link" data-popup-open="login">Назад</p>
+  <button type="button" class="popup-link" data-popup-open="login">Назад</button>
 </div>
 
 <!--LOGIN SUCCESS POPUP-->
-<div class="popup-content" id="login-success">
+<div class="popup-content" id="login-success" role="dialog" aria-modal="true" aria-labelledby="login-success-title">
   <button class="popup-close" data-popup-close>
     <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
   </button>
-  <h2 class="title title--30">Вход</h2>
+  <h2 class="title title--30" id="login-success-title">Вход</h2>
   <p class="popup-subtitle">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
   <button type="button" class="button big full" data-popup-close>
     Закрыть <svg width="21" height="21"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>

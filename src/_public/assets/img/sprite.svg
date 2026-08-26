@@ -76,6 +76,12 @@
       <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
 
+    <!--arrow-accordeon-->
+    <symbol id="arrow-accordeon" viewBox="0 0 38 38" fill="none">
+      <path d="M26 17L19 23L12 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+
     <!--footer-logo-->
     <symbol id="footer-logo" viewBox="0 0 1240 107" fill="none">
       <path d="M0.020113 108.383L35.1432 21.1177H58.9338L93.9967 108.383H75.4305L67.815 88.6715H26.1817L18.6868 108.383H0H0.020113ZM32.0288 73.5211H62.0281L46.9983 34.4998L32.0288 73.5211Z" fill="currentColor"/>

@@ -27,9 +27,13 @@ export const unlockScroll = () => {
   }
 };
 
+export const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 export const popup = {
   _backdrop: null,
   _popup: null,
+  _opener: null,
   _scrollY: 0,
   _isOpening: false,
   _isAnimating: false,
@@ -59,11 +63,12 @@ export const popup = {
     }
 
     const isVisible = this._popup.classList.contains('visible');
-    const currentContent = this._popup.querySelector('.popup-content[style*="display: flex"]');
+    const currentContent = this._getActiveContent();
 
     if (isVisible && currentContent !== newContent) {
       await this._switchContent(newContent);
     } else if (!isVisible) {
+      this._opener = document.activeElement;
       this._scrollY = window.scrollY;
       await this._showContent(newContent);
     }
@@ -85,6 +90,9 @@ export const popup = {
     this._unlockScroll();
     this._hideAllContent();
 
+    this._opener?.focus();
+    this._opener = null;
+
     this._isOpening = false;
   },
 
@@ -94,6 +102,7 @@ export const popup = {
 
     this._hideAllContent();
     newContent.style.display = 'flex';
+    this._focusFirst(newContent);
     this._scrollBackdropToTop();
 
     this._popup.classList.add('visible');
@@ -111,7 +120,7 @@ export const popup = {
   },
 
   _bindCloseEvents() {
-    document.addEventListener('mousedown', e => {
+    document.addEventListener('click', e => {
       if (this._isOpening || this._isAnimating) return;
 
       const openBtn = e.target.closest('[data-popup-open]');
@@ -133,13 +142,46 @@ export const popup = {
       }
       if (e.key === 'Escape' && !this._isLocked()) {
         this.close();
+        return;
+      }
+
+      if (e.key === 'Tab' && this._popup.classList.contains('visible')) {
+        this._trapFocus(e);
       }
     });
   },
 
+  _trapFocus(e) {
+    const content = this._getActiveContent();
+    const focusable = content ? this._getFocusable(content) : [];
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  },
+
+  _getActiveContent() {
+    return this._popup.querySelector('.popup-content[style*="display: flex"]');
+  },
+
+  _getFocusable(container) {
+    return Array.from(container.querySelectorAll(FOCUSABLE_SELECTOR)).filter(el => el.offsetParent !== null);
+  },
+
+  _focusFirst(container) {
+    this._getFocusable(container)[0]?.focus();
+  },
+
   _isLocked() {
-    const current = this._popup.querySelector('.popup-content[style*="display: flex"]');
-    return current?.hasAttribute('data-popup-lock') ?? false;
+    return this._getActiveContent()?.hasAttribute('data-popup-lock') ?? false;
   },
 
   async _showContent(newContent) {
@@ -156,6 +198,8 @@ export const popup = {
     document.body.classList.add('popup-is-opened');
 
     await this._waitForTransition(this._backdrop);
+
+    this._focusFirst(newContent);
   },
 
   _hideAllContent() {
