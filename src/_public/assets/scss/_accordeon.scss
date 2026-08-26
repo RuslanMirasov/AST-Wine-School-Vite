@@ -5,13 +5,119 @@
 }
 
 [data-accordeon-head] {
-  svg {
+  cursor: pointer;
+  > svg,
+  > button {
     transform: rotate(0deg);
     transition: transform 0.3s var(--cubic);
   }
   &.open {
-    svg {
+    > svg,
+    > button {
       transform: rotate(180deg);
+    }
+  }
+}
+
+.accordeon-arrow {
+  display: flex;
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 38px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: var(--magenta-light);
+  color: var(--magenta);
+  transform: rotate(0deg);
+  transition:
+    background-color 0.5s var(--cubic),
+    transform 0.5s var(--cubic),
+    color 0.5s var(--cubic);
+  svg {
+    display: block;
+    position: absolute;
+  }
+}
+
+.module-accordeon {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  border-radius: 47px;
+  background-color: var(--white);
+}
+
+.module-accordeon-head {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  position: relative;
+  padding: 28px 36px;
+  .title {
+    line-height: 1.2;
+  }
+}
+
+.module-accordeon-body {
+  display: flex;
+  width: 100%;
+  gap: 56px;
+
+  padding: 0px 36px 28px 36px;
+}
+
+.module-description,
+.module-card-form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.module-description {
+  gap: 16px;
+}
+
+.module-card-form {
+  gap: 12px;
+  max-width: 300px;
+}
+
+.icon-list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+  li {
+    display: flex;
+    width: 100%;
+    min-height: 24px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 10px;
+    color: var(--grey-text);
+    &.magenta {
+      color: var(--magenta);
+    }
+    &.bold {
+      font-weight: 700;
+    }
+
+    svg {
+      display: block;
+      margin-top: 3px;
     }
   }
 }

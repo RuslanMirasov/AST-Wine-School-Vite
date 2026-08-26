@@ -8,6 +8,9 @@
   &.bold {
     font-weight: 700;
   }
+  &.regular {
+    font-weight: 400;
+  }
   &.full {
     width: 100%;
   }
@@ -53,8 +56,6 @@
 
 .text {
   display: block;
-  font-size: var(--fs-16);
-  line-height: 1.4;
   color: var(--blue);
   &.bold {
     font-weight: 700;
