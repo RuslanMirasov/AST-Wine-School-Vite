@@ -31,9 +31,14 @@
     a {
       transition: color 0.3s var(--cubic);
       color: var(--magenta);
+      outline: none;
       @media (hover: hover) {
         &:hover {
           color: var(--magenta-hover);
+        }
+        &:focus-visible {
+          color: var(--magenta-hover);
+          text-decoration: underline;
         }
       }
     }

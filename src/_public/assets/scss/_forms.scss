@@ -305,8 +305,8 @@ fieldset + .inputError {
   &:focus-visible {
     + .label-text {
       &:before {
-        border: var(--checkbox-border);
-        background: var(--magenta);
+        border: 1px solid var(--black);
+        background: var(--black);
       }
     }
   }
@@ -318,11 +318,20 @@ fieldset + .inputError {
         background-size: 100% 100%;
       }
     }
+    &:focus-visible {
+      + .label-text {
+        &:before {
+          border: 1px solid var(--black);
+          background: var(--black) url('../img/svg/checkbox.svg') no-repeat center center;
+        }
+      }
+    }
   }
 
   &.invalid {
     + .label-text {
       &:before {
+        border: 1px solid var(--checkbox-background);
         background: var(--checkbox-background);
         background-size: 0% 0%;
       }

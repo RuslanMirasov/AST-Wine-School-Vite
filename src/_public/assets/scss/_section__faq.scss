@@ -29,28 +29,51 @@
   padding: 16px 30px 16px 0px;
   cursor: pointer;
 
-  &:before,
-  &:after {
-    content: '';
-    display: block;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     position: absolute;
     right: 0px;
-    top: 28px;
-    width: 14px;
-    height: 2px;
-    border-radius: 2px;
-    background-color: var(--blue);
-    transition: transform 0.5s var(--cubic);
-    transform: rotate(0deg);
-  }
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    flex-shrink: none;
+    transform: rotate(0deg) !important;
+    outline: none;
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 14px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: var(--blue);
+      transition: transform 0.5s var(--cubic);
+      transform: rotate(0deg);
+    }
 
-  &:after {
-    transform: rotate(-90deg);
+    &:after {
+      transform: rotate(-90deg);
+    }
+
+    &:focus-visible {
+      background-color: var(--magenta);
+      &:before,
+      &:after {
+        background-color: var(--white);
+      }
+    }
   }
 
   &.open {
-    &:after {
-      transform: rotate(0deg);
+    button {
+      &:after {
+        transform: rotate(0deg);
+      }
     }
   }
 }

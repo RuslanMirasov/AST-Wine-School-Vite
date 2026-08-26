@@ -1,3 +1,15 @@
+[data-accordeon] {
+  @media (hover: hover) {
+    &:hover,
+    &:focus-visible {
+      .accordeon-arrow {
+        background-color: var(--magenta);
+        color: var(--white);
+      }
+    }
+  }
+}
+
 [data-accordeon-body] {
   position: relative;
   overflow: hidden;
@@ -9,21 +21,12 @@
   > svg,
   > button {
     transform: rotate(0deg);
-    transition: transform 0.3s var(--cubic);
+    transition: 0.5s var(--cubic);
   }
   &.open {
     > svg,
     > button {
       transform: rotate(180deg);
-    }
-  }
-  @media (hover: hover) {
-    &:hover,
-    &:focus-visible {
-      .accordeon-arrow {
-        background-color: var(--magenta);
-        color: var(--white);
-      }
     }
   }
 }
@@ -42,22 +45,22 @@
   color: var(--magenta);
   transform: rotate(0deg);
   flex-shrink: 0;
-  transition:
-    background-color 0.5s var(--cubic),
-    transform 0.5s var(--cubic),
-    color 0.5s var(--cubic);
+  outline: none;
   svg {
     display: block;
     width: 18px;
     height: 10px;
     position: absolute;
   }
+  &:focus-visible {
+    background-color: var(--magenta);
+    color: var(--white);
+  }
 }
 
 .module-accordeon {
   display: block;
   position: relative;
-  overflow: hidden;
   z-index: 1;
   width: 100%;
   border-radius: 47px;

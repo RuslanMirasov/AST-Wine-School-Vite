@@ -83,6 +83,7 @@ $popup_transition: 0.5s;
   cursor: pointer;
   color: inherit;
   transform: rotate(0deg);
+  outline: none;
   transition: transform 0.3s var(--cubic);
 
   svg {

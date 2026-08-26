@@ -108,6 +108,12 @@
   z-index: 3;
   margin-right: 16px;
   order: 1;
+  color: inherit;
+  outline: none;
+  &:focus-visible {
+    color: var(--magenta);
+  }
+
   @media (max-width: 1365px) {
     margin-right: 0px;
   }
@@ -164,6 +170,7 @@
       font-family: var(--font);
       display: flex;
       gap: 4px;
+      outline: none;
       align-items: center;
       font-size: var(--fs-14);
       font-weight: 400;
@@ -198,10 +205,13 @@
       &.active {
         background-color: var(--blue-light);
         @media (hover: hover) {
-          &:hover,
-          &:focus-visible {
+          &:hover {
             color: var(--blue);
           }
+        }
+        &:focus-visible {
+          color: var(--blue);
+          text-decoration: underline;
         }
       }
 
@@ -212,10 +222,13 @@
       }
 
       @media (hover: hover) {
-        &:hover,
-        &:focus-visible {
+        &:hover {
           color: var(--magenta);
         }
+      }
+      &:focus-visible {
+        color: var(--magenta);
+        text-decoration: underline;
       }
     }
   }
@@ -364,6 +377,11 @@
     overflow: hidden;
     z-index: 1;
     background-color: var(--white);
+    outline: none;
+    &:focus-visible {
+      background-color: var(--magenta);
+      color: var(--white);
+    }
     @media (max-width: 1365px) {
       width: 210px;
     }
@@ -447,7 +465,11 @@
 }
 
 .header-button {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  outline: none;
   width: 24px;
   height: 24px;
   @media (max-width: 1279px) {
@@ -467,6 +489,21 @@
   }
   &.active {
     color: var(--magenta);
+  }
+  @media (hover: hover) {
+    &:hover {
+      color: var(--magenta);
+    }
+  }
+  &:focus-visible {
+    &:before {
+      content: '';
+      position: absolute;
+      width: 140%;
+      height: 140%;
+      border-radius: 8px;
+      border: 1px solid var(--magenta);
+    }
   }
 }
 
@@ -564,6 +601,12 @@
   align-items: center;
   align-content: center;
   z-index: 5;
+  outline: none;
+  border-radius: 12px;
+  &:focus-visible {
+    border: 1px solid var(--magenta);
+    color: var(--magenta);
+  }
   svg {
     display: block;
     transition: color 0.3s var(--cubic);
@@ -804,5 +847,17 @@
         }
       }
     }
+  }
+}
+
+//ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ
+.a11y {
+  .header:before,
+  .mega-menu-inner,
+  .navigation,
+  .header-search-form form {
+    background: var(--white);
+    background-color: var(--white);
+    backdrop-filter: none;
   }
 }

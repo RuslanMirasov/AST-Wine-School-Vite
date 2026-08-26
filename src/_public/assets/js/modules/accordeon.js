@@ -18,26 +18,81 @@ const canInitAccordeon = accordeon => {
 
 const isOpen = accordeon => accordeon.classList.contains('open');
 
-const setAccordeonState = (accordeon, open) => {
+const ACCORDEON_ANIMATION_DURATION = 500;
+
+const waitForHeightTransition = element =>
+  new Promise(resolve => {
+    const handler = event => {
+      if (event.propertyName !== 'height') return;
+      element.removeEventListener('transitionend', handler);
+      clearTimeout(timer);
+      resolve();
+    };
+    element.addEventListener('transitionend', handler, { once: true });
+    const timer = setTimeout(() => {
+      element.removeEventListener('transitionend', handler);
+      resolve();
+    }, ACCORDEON_ANIMATION_DURATION + 50);
+  });
+
+const setAccordeonState = async (accordeon, open) => {
   const head = getOwnElement(accordeon, '[data-accordeon-head]');
   const body = getOwnElement(accordeon, '[data-accordeon-body]');
+  const toggleButton = getOwnElement(accordeon, '[data-accordeon-head] button');
   if (!body) return;
 
   accordeon.classList.toggle('open', open);
   head?.classList.toggle('open', open);
-  body.style.height = open ? `${body.scrollHeight}px` : '0px';
+  toggleButton?.setAttribute('aria-expanded', String(open));
+
+  if (open) {
+    body.style.display = ''; // снять display:none, иначе scrollHeight ниже вернёт 0
+    void body.offsetHeight; // форс reflow перед стартом transition
+    body.style.height = `${body.scrollHeight}px`;
+    await waitForHeightTransition(body);
+    // высота могла поменяться внутри (select, доп. контент) — фиксируем auto,
+    // чтобы не резало содержимое, выросшее уже после открытия
+    if (isOpen(accordeon)) {
+      body.style.overflow = 'visible';
+      body.style.height = 'auto';
+    }
+  } else {
+    // если сейчас height:auto — сначала зафиксировать текущую высоту в px и форснуть
+    // reflow, иначе анимация схлопывания не подхватится (transition не работает от auto)
+    body.style.overflow = '';
+    body.style.height = `${body.scrollHeight}px`;
+    void body.offsetHeight;
+    body.style.height = '0px';
+    await waitForHeightTransition(body);
+    // display:none только после анимации — раньше нечего было бы схлопывать.
+    // Убирает закрытые пункты из Tab-порядка.
+    if (!isOpen(accordeon)) body.style.display = 'none';
+  }
 };
 
 const updateAccordeon = accordeon => {
   const body = getOwnElement(accordeon, '[data-accordeon-body]');
+  const toggleButton = getOwnElement(accordeon, '[data-accordeon-head] button');
   if (!body) return;
+
+  toggleButton?.setAttribute('aria-expanded', String(isOpen(accordeon)));
 
   if (!canInitAccordeon(accordeon)) {
     body.style.height = '';
+    body.style.overflow = '';
+    body.style.display = '';
     return;
   }
 
-  body.style.height = isOpen(accordeon) ? `${body.scrollHeight}px` : '0px';
+  if (isOpen(accordeon)) {
+    body.style.display = '';
+    body.style.overflow = 'visible';
+    body.style.height = 'auto';
+  } else {
+    body.style.display = 'none';
+    body.style.overflow = '';
+    body.style.height = '0px';
+  }
 };
 
 const toggleAccordeon = accordeon => {

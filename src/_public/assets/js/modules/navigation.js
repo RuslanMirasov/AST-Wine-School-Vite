@@ -210,11 +210,6 @@ export const initMegaMenu = () => {
       openMenu(item);
     });
 
-    item.wrapper.addEventListener('focusout', event => {
-      if (item.wrapper.contains(event.relatedTarget)) return;
-      closeMenu(item);
-    });
-
     item.wrapper.addEventListener('keydown', event => {
       if (event.key !== 'Escape' || !item.menu.classList.contains('open')) return;
       closeMenu(item);
@@ -230,5 +225,15 @@ export const initMegaMenu = () => {
       const isOutside = !item.menu.contains(event.target) && !item.button.contains(event.target);
       if (item.menu.classList.contains('open') && isOutside) closeMenu(item);
     });
+  });
+
+  // Фокус (любой — Tab, клик, программно) вне мега-меню закрывает все; фокус внутри
+  // одного из них закрывает остальные, не трогая тот, где сейчас фокус.
+  document.addEventListener('focusin', event => {
+    // Клик по нефокусируемому месту роняет фокус на body — это не «уход», а служебный
+    // фолбэк браузера; настоящий Tab-переход на body никогда не приземляется.
+    if (event.target === document.body) return;
+    const containingItem = items.find(item => item.wrapper.contains(event.target));
+    items.filter(item => item !== containingItem).forEach(closeMenu);
   });
 };

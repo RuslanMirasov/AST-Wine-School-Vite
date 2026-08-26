@@ -114,12 +114,9 @@
   line-height: 1;
   opacity: 0.5;
 
-  @media (max-width: 767px) {
-    cursor: pointer;
-  }
-
-  svg {
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
+    cursor: auto !important;
+    button {
       display: none;
     }
   }
@@ -142,10 +139,14 @@
     display: inline-block;
     padding: 8px 0px;
     transition: color 0.3s var(--cubic);
+    outline: none;
     @media (hover: hover) {
-      &:hover,
+      &:hover {
+        color: var(--magenta);
+      }
       &:focus-visible {
         color: var(--magenta);
+        text-decoration: underline;
       }
     }
   }
@@ -180,11 +181,14 @@
     height: 24px;
     color: inherit;
     transition: color 0.3s var(--cubic);
+    outline: none;
     @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
+      &:hover {
         color: var(--magenta);
       }
+    }
+    &:focus-visible {
+      color: var(--magenta);
     }
 
     svg {
@@ -293,5 +297,44 @@
     &[data-accordeon-body] {
       height: 0px;
     }
+  }
+
+  [data-accordeon].footer-menu {
+    display: block;
+    margin-bottom: -10px;
+    .footer-menu-list li {
+      &:first-child {
+        margin-top: 16px;
+      }
+      &:last-child {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+//ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ
+.a11y {
+  .footer-menu-title {
+    opacity: 1;
+  }
+  .copy {
+    p {
+      opacity: 1;
+    }
+
+    a {
+      opacity: 1;
+      @media (hover: hover) {
+        &:hover,
+        &:focus-visible {
+          color: var(--magenta);
+          border-bottom: 1px solid var(--magenta);
+        }
+      }
+    }
+  }
+  .footer-logo {
+    opacity: 0.5;
   }
 }
