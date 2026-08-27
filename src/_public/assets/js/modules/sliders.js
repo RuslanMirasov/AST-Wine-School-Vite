@@ -50,14 +50,15 @@ const initCustomPagination = (sliderWrapper, instance) => {
   const pagination = getOwnElement(sliderWrapper, '.custom-pagination');
   if (!pagination) return;
 
-  const items = Array.from(pagination.querySelectorAll('.custom-pagination-item'));
+  // data-index/active — на <li>, кликабельная кнопка — вложенный <button class="custom-pagination-item">
+  const items = Array.from(pagination.querySelectorAll(':scope > li'));
   if (!items.length) return;
 
   const updateActiveItem = () => {
     items.forEach(item => {
       const isActive = Number(item.dataset.index) === instance.realIndex;
       item.classList.toggle('active', isActive);
-      item.setAttribute('aria-current', isActive ? 'true' : 'false');
+      item.querySelector('.custom-pagination-item')?.setAttribute('aria-current', isActive ? 'true' : 'false');
     });
   };
 
@@ -73,33 +74,17 @@ const initCustomPagination = (sliderWrapper, instance) => {
   };
 
   const handleClick = event => {
-    const item = event.target.closest('.custom-pagination-item');
+    const item = event.target.closest('.custom-pagination-item')?.closest('li');
     if (item && pagination.contains(item)) activateItem(item);
   };
 
-  const handleKeydown = event => {
-    if (event.key !== 'Enter' && event.key !== ' ') return;
-
-    const item = event.target.closest('.custom-pagination-item');
-    if (!item || !pagination.contains(item)) return;
-
-    event.preventDefault();
-    activateItem(item);
-  };
-
-  items.forEach(item => {
-    item.setAttribute('role', 'button');
-    item.setAttribute('tabindex', '0');
-  });
-
+  // role/tabindex/keydown больше не нужны — это настоящая <button>, клавиатура работает нативно
   pagination.addEventListener('click', handleClick);
-  pagination.addEventListener('keydown', handleKeydown);
   instance.on('realIndexChange', updateActiveItem);
   updateActiveItem();
 
   customPaginationCleanups.set(sliderWrapper, () => {
     pagination.removeEventListener('click', handleClick);
-    pagination.removeEventListener('keydown', handleKeydown);
     instance.off('realIndexChange', updateActiveItem);
   });
 };

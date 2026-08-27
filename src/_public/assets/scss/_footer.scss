@@ -140,6 +140,8 @@
     padding: 8px 0px;
     transition: color 0.3s var(--cubic);
     outline: none;
+    font-size: var(--fs-14);
+    line-height: 1.2;
     @media (hover: hover) {
       &:hover {
         color: var(--magenta);
