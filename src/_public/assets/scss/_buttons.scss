@@ -110,12 +110,30 @@
     background-color: var(--white);
     color: var(--magenta);
     border: 1px solid var(--magenta);
+    @media (hover: hover) {
+      &:hover,
+      &:focus-visible {
+        color: var(--white);
+        background-color: var(--blue);
+        border: 1px solid var(--blue);
+      }
+    }
   }
 
   &.medium {
     font-size: var(--fs-14);
     height: 40px;
     padding: 0px 20px;
+  }
+
+  &.normal {
+    font-size: var(--fs-16);
+    line-height: 1;
+    height: auto;
+    min-height: 36px;
+    font-weight: 400;
+    padding: 8px 14px;
+    min-width: 130px;
   }
 
   &.big {

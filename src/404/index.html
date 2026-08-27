@@ -14,7 +14,7 @@
       <load src="/_partials/header.html" />
 
       <!--MAIN-->
-      <main class="main">
+      <main class="main" id="main" tabindex="-1">
         <div class="container">
           <!--breadcrumbs-->
           <ul class="breadcrumbs">
@@ -31,7 +31,7 @@
                 <label class="label">
                   <input type="text" name="s" class="input" placeholder="Поиск" required />
                 </label>
-                <button type="submit" class="button magenta icon-submit">
+                <button type="submit" class="button magenta icon-submit" aria-label="Поиск">
                   <svg width="24" height="24"><use href="/assets/img/sprite.svg#search"></use></svg>
                 </button>
               </form>

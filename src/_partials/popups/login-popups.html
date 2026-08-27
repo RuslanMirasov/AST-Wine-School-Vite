@@ -12,7 +12,7 @@
   </script>
   <form data-form action="#" class="form" novalidate onsubmit="onLoginSubmit(event)">
     <label class="label">
-      <input type="email" name="email" class="input" placeholder="Email" required />
+      <input type="email" name="email" class="input" placeholder="Email" required autocomplete="email" />
     </label>
     <button type="submit" class="button big magenta">
       Далее
@@ -86,6 +86,7 @@
           min="0"
           maxlength="1"
           required
+          autocomplete="one-time-code"
           oninput="onCodeInput(event)"
           onkeydown="onCodeKeydown(event)"
         />
@@ -98,6 +99,7 @@
           min="0"
           maxlength="1"
           required
+          autocomplete="one-time-code"
           oninput="onCodeInput(event)"
           onkeydown="onCodeKeydown(event)"
         />
@@ -110,6 +112,7 @@
           min="0"
           maxlength="1"
           required
+          autocomplete="one-time-code"
           oninput="onCodeInput(event)"
           onkeydown="onCodeKeydown(event)"
         />
@@ -122,6 +125,7 @@
           min="0"
           maxlength="1"
           required
+          autocomplete="one-time-code"
           oninput="onCodeInput(event)"
           onkeydown="onCodeKeydown(event)"
         />

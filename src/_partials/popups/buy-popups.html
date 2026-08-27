@@ -15,7 +15,7 @@
   </script>
   <form data-form action="#" class="form" novalidate onsubmit="onBuySubmit(event)">
     <label class="label">
-      <input type="tel" name="phone" class="input" required placeholder="+7 ___ ___ __ __" />
+      <input type="tel" name="phone" class="input" required placeholder="+7 ___ ___ __ __" autocomplete="tel" />
     </label>
     <button type="submit" class="button big magenta">
       Получить код
@@ -88,6 +88,7 @@
           min="0"
           maxlength="1"
           required
+          autocomplete="one-time-code"
           oninput="onCodeInput(event)"
           onkeydown="onCodeKeydown(event)"
         />
@@ -100,6 +101,7 @@
           min="0"
           maxlength="1"
           required
+          autocomplete="one-time-code"
           oninput="onCodeInput(event)"
           onkeydown="onCodeKeydown(event)"
         />
@@ -112,6 +114,7 @@
           min="0"
           maxlength="1"
           required
+          autocomplete="one-time-code"
           oninput="onCodeInput(event)"
           onkeydown="onCodeKeydown(event)"
         />
@@ -124,6 +127,7 @@
           min="0"
           maxlength="1"
           required
+          autocomplete="one-time-code"
           oninput="onCodeInput(event)"
           onkeydown="onCodeKeydown(event)"
         />

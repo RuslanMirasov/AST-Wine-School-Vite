@@ -35,6 +35,7 @@ export class SummaryErrorRenderer extends ErrorRenderer {
   constructor(container) {
     super();
     this.container = container;
+    this.container.setAttribute('role', 'alert');
   }
 
   // Маркировка .invalid уже делается в validateForm напрямую по каждому полю —

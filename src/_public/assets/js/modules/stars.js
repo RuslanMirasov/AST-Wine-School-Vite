@@ -1,8 +1,8 @@
 const starsMarkup = spriteUrl => `
-  <div class="stars-back">
+  <div class="stars-back" aria-hidden="true">
     <svg width="96" height="16"><use href="${spriteUrl}#stars"></use></svg>
   </div>
-  <div class="stars-front">
+  <div class="stars-front" aria-hidden="true">
     <svg width="96" height="16"><use href="${spriteUrl}#stars"></use></svg>
   </div>
 `;
@@ -11,7 +11,8 @@ const renderStar = (review, spriteUrl) => {
   const rating = Math.min(5, Math.max(0, parseFloat(review.dataset.rating) || 0));
   const percent = Math.round((rating / 5) * 100);
 
-  review.innerHTML = starsMarkup(spriteUrl);
+  // beforeend, не innerHTML — сохраняет текстовую альтернативу рейтинга, уже вписанную в разметку
+  review.insertAdjacentHTML('beforeend', starsMarkup(spriteUrl));
   review.querySelector('.stars-front').style.width = `${percent}%`;
   review.dataset.starsRendered = 'true';
 };

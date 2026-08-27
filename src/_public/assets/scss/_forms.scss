@@ -409,13 +409,15 @@ $select_padding: 0px 16px;
   margin: 0 auto;
   z-index: 10;
   transition: border 0.3s var(--cubic);
-  &.is-open {
+  &.is-open,
+  &.is-focused {
     border-radius: $select_border_radius $select_border_radius $select_border_radius $select_border_radius;
     border: 1px solid var(--magenta);
     .choices__inner {
       border-radius: $select_border_radius $select_border_radius $select_border_radius $select_border_radius;
     }
   }
+
   .choices__inner {
     background: none !important;
   }
@@ -579,6 +581,46 @@ $select_padding: 0px 16px;
 
 .choices.is-open[data-type*='select-one']::after {
   transform: translate(0px, -50%) rotate(180deg);
+}
+
+.module-card-form {
+  .choices {
+    background: var(--grey-light) !important;
+    height: 40px !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--grey-light);
+    &.is-open,
+    &.is-focused {
+      border-radius: 8px;
+      border: 1px solid var(--magenta);
+      .choices__inner {
+        border-radius: 8px;
+      }
+    }
+
+    .choices__inner {
+      background: none !important;
+    }
+
+    &.invalid {
+      border: 1px solid var(--invalid);
+    }
+
+    &.is-focused {
+      &.invalid {
+        border: 1px solid var(--grey-light);
+      }
+    }
+
+    .choices__list {
+      &.choices__list--single {
+        > .choices__item {
+          height: 38px;
+          color: var(--blue);
+        }
+      }
+    }
+  }
 }
 
 .form fieldset.phone-code-fields {

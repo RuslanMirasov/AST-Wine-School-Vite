@@ -10,6 +10,8 @@ const toSwiperValue = value => {
   return normalizedValue === 'auto' ? 'auto' : Number(normalizedValue);
 };
 
+const isA11yEnabled = () => document.querySelector('.body')?.classList.contains('a11y') ?? false;
+
 const getOwnElement = (sliderWrapper, selector) => {
   return Array.from(sliderWrapper.querySelectorAll(selector)).find(el => el.closest('[data-slider]') === sliderWrapper);
 };
@@ -164,7 +166,9 @@ const initSlider = sliderWrapper => {
     };
   }
 
-  if (autoplay) {
+  // Автопрокрутка отключена в режиме для слабовидящих (ГОСТ §8) — reinitAutoplaySliders
+  // пересоздаёт слайдер при переключении режима, чтобы подхватить актуальное состояние.
+  if (autoplay && !isA11yEnabled()) {
     options.autoplay = {
       delay: autoplay,
       disableOnInteraction: false,
@@ -214,6 +218,15 @@ const linkControlledSliders = () => {
 
     master.controller.control = slave;
   });
+};
+
+export const reinitAutoplaySliders = () => {
+  sliders.forEach(sliderWrapper => {
+    if (!sliderWrapper.dataset.autoplay || !instances.has(sliderWrapper)) return;
+    destroySlider(sliderWrapper);
+    initSlider(sliderWrapper);
+  });
+  linkControlledSliders();
 };
 
 export const initSliders = () => {

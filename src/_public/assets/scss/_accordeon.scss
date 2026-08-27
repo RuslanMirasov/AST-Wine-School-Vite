@@ -107,6 +107,12 @@
 .module-card-form {
   gap: 12px;
   max-width: 300px;
+
+  .label-text {
+    font-size: var(--fs-14);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
 }
 
 .icon-list {

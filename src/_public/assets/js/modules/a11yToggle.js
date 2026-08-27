@@ -1,3 +1,5 @@
+import { reinitAutoplaySliders } from './sliders.js';
+
 const A11Y_STORAGE_KEY = 'a11y-enabled';
 
 export const initA11yToggle = () => {
@@ -11,6 +13,7 @@ export const initA11yToggle = () => {
     toggle.classList.toggle('active', enabled);
     toggle.setAttribute('aria-pressed', enabled);
     toggle.setAttribute('aria-label', enabled ? 'Обычная версия сайта' : 'Версия для слабовидящих');
+    reinitAutoplaySliders();
   };
 
   applyState(localStorage.getItem(A11Y_STORAGE_KEY) === 'true');

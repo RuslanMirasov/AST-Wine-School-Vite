@@ -114,6 +114,9 @@ export const initScrollManager = () => {
     if (!target) return false;
 
     scrollToTarget(target);
+    // preventScroll — иначе .focus() запустит свой нативный скролл поверх уже идущей анимации.
+    // На элементах без tabindex это просто no-op, безопасно для любых якорных целей на сайте.
+    target.focus({ preventScroll: true });
     return true;
   };
 

@@ -32,7 +32,7 @@
   --font: 'Mabry Pro', system-ui, -apple-system, sans-serif;
 
   //colors
-  --black: #000000;
+  --black: #0b1020;
   --white: #ffffff;
   --grey: #94a3b8;
   --grey-text: #636669;
@@ -55,21 +55,10 @@
 
   .a11y {
     //ЦВЕТА ВЕРСИИ ДЛЯ СЛАБОВИДЯЩИХ
-    --black: #0b1020;
-    --white: #ffffff;
     --grey: #536178; // было #94a3b8 (2.24:1) → 5.49:1 на grey-light
-    --grey-text: #636669; // уже 5.77:1 — без изменений
     --grey-dark: #5b6472; // было #6b7280 (4.83:1) → 5.98:1 на white, больше запаса
     --grey-medium: #5c5c5c; // было #b2b2b2 (1.68:1 на grey-button) → 5.29:1
-    --grey-light: #edf0f5;
-    --grey-stars: #d6d8dd; // декоративный, не текст — без изменений
-    --grey-border: #e5e7eb;
     --grey-menu-border: #6b6b6b; // было #888888 (3.10:1) → 4.67:1 на grey-light
-    --grey-button: #e2e5ea;
-    --grey-promo: #e3e7ef;
-    --gold: #f59e0b; // декоративные звёзды — без изменений
-    --blue: #273551; // уже 10.8-12.3:1 на всех фонах — без изменений
-    --blue-light: rgba(5, 67, 189, 0.102);
     --magenta: #a73b7f; // было #c24191 (4.12:1 на grey-light) → 5.14:1
     --magenta-hover: #ab2b7a; // было #e439a2 (3.89:1 текста поверх) → 6.25:1
     --magenta-light: rgba(167, 59, 127, 0.102); // пересчитан под новый --magenta
