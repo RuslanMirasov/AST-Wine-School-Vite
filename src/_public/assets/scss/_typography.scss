@@ -25,7 +25,8 @@
   }
   &.title--32 {
     font-size: var(--fs-32);
-    line-height: 1;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
     text-transform: uppercase;
   }
   &.title--30 {
