@@ -177,16 +177,21 @@ export const initMegaMenu = () => {
 
   if (!items.length) return;
 
-  let suppressAutoOpen = false;
-
-  const closeMenu = ({ button, menu }) => {
+  const closeMenu = async ({ button, menu }) => {
     menu.style.height = '0px';
     button.classList.remove('open');
     menu.classList.remove('open');
     button.setAttribute('aria-expanded', 'false');
+
+    await waitForTransition(menu, 'height');
+    // display:none только после анимации и только если меню не открыли заново за это время —
+    // убирает закрытую панель из Tab-порядка (Tab больше не проваливается внутрь).
+    if (!menu.classList.contains('open')) menu.style.display = 'none';
   };
 
   const openMenu = ({ button, menu }) => {
+    menu.style.display = 'block'; // CSS сам теперь display:none, сброс инлайна '' вернёт тот же none
+    void menu.offsetHeight; // форс reflow перед стартом transition
     menu.style.height = `${menu.scrollHeight}px`;
     button.classList.add('open');
     menu.classList.add('open');
@@ -202,21 +207,14 @@ export const initMegaMenu = () => {
       if (!isOpen) openMenu(item);
     });
 
-    // Открываем по клавиатурному фокусу (Tab), но не по фокусу от мышиного клика —
-    // иначе конфликтует с toggle-логикой click-обработчика выше и мигает.
-    item.wrapper.addEventListener('focusin', event => {
-      if (suppressAutoOpen || !event.target.matches(':focus-visible')) return;
-      items.filter(other => other !== item).forEach(closeMenu);
-      openMenu(item);
-    });
+    // Открытие теперь только явное (клик/Enter/Space на кнопке — нативно, т.к. это <button>).
+    // Авто-открытие по фокусу больше не нужно: пока меню закрыто — оно display:none,
+    // Tab физически не может попасть на скрытые ссылки, не нужно ничего "спасать".
 
     item.wrapper.addEventListener('keydown', event => {
       if (event.key !== 'Escape' || !item.menu.classList.contains('open')) return;
       closeMenu(item);
-      // Возврат фокуса на кнопку не должен снова открыть меню через focusin.
-      suppressAutoOpen = true;
       item.button.focus();
-      suppressAutoOpen = false;
     });
   });
 
