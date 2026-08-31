@@ -1,8 +1,8 @@
 export const nativeMessages = {
   valueMissing: {
-    default: 'Это обязательное поле!',
-    checkbox: 'Поле обязательно к заполнению',
-    radio: 'Выберите вариант!',
+    default: 'Поле обязательно к заполнению',
+    checkbox: 'Ваше согласие обязательно',
+    radio: 'Выберите вариант',
   },
   tooShort: input => `Минимальное кол-во символов: ${input.minLength}`,
   tooLong: input => `Максимальное кол-во символов: ${input.maxLength}`,
@@ -15,11 +15,11 @@ export const nativeMessages = {
 export const customRules = {
   email: {
     test: value => /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/.test(value.trim()),
-    message: 'Пожалуйста, введите корректный email',
+    message: 'Пожалуйста, укажите корректный email',
   },
   tel: {
     test: value => /^\+7 \d{3} \d{3} \d{2} \d{2}$/.test(value.trim()),
-    message: 'Пожалуйста, введите корректный телефон',
+    message: 'Пожалуйста, укажите корректный номер телефона',
   },
   decimal: {
     test: value => /^\d+(?:[.,]\d{1,2})?$/.test(value.trim()),

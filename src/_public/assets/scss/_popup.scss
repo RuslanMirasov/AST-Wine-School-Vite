@@ -138,14 +138,21 @@ $popup_transition: 0.5s;
     max-width: 558px;
   }
 
-  .title.title--24 {
-    display: flex;
-    width: 100%;
-    width: 100%;
-    justify-content: space-between;
-    line-height: 1;
-    gap: 10px;
-    text-align: left;
+  .title {
+    &.title--24,
+    &.title--40 {
+      display: flex;
+      width: 100%;
+      width: 100%;
+      justify-content: space-between;
+      line-height: 1;
+      gap: 10px;
+      text-align: left;
+    }
+  }
+
+  .text {
+    line-height: 1.5;
   }
 }
 
