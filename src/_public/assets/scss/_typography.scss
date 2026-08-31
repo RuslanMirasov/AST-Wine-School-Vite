@@ -69,6 +69,9 @@
   &.bold {
     font-weight: 700;
   }
+  &.ta--l {
+    text-align: left;
+  }
 
   &.fs-12 {
     font-size: var(--fs-14);

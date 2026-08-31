@@ -149,27 +149,6 @@ $popup_transition: 0.5s;
   }
 }
 
-.popup-link {
-  color: var(--blue);
-  font-weight: 400;
-  font-size: var(--fs-18);
-  line-height: 1.2;
-  cursor: pointer;
-  border-bottom: 1px solid var(--blue);
-  margin: 0 auto;
-  transition:
-    border-bottom 0.3s var(--cubic),
-    color 0.3s var(--cubic);
-
-  @media (hover: hover) {
-    &:hover,
-    &:focus-visible {
-      color: var(--magenta);
-      border-bottom: 1px solid var(--magenta);
-    }
-  }
-}
-
 .popup-subtitle {
   display: block;
   width: 100%;

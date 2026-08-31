@@ -14,7 +14,7 @@
     }
   </script>
 
-  <form data-form action="#" class="form grey-inputs" novalidate onsubmit="onLoginSubmit(event)">
+  <form data-form action="#" class="form form--grey" novalidate onsubmit="onLoginSubmit(event)">
     <label class="label">
       <span class="label-text">Email</span>
       <input type="email" name="email" class="input" placeholder="Email" required autocomplete="email" />
@@ -32,46 +32,20 @@
 </div>
 
 <!--LOGIN CODE POPUP-->
-<div class="popup-content" id="login-code" data-popup-lock role="dialog" aria-modal="true" aria-labelledby="login-code-title">
-  <h2 class="title title--30" id="login-code-title">Вход</h2>
-  <p class="popup-subtitle">Мы отправили проверочный код на&nbsp;ваш&nbsp;email. Введите его:</p>
+<div class="popup-content" id="login-code" role="dialog" aria-modal="true" aria-labelledby="login-code-title">
+  <h2 class="title title--24 bold" id="login-title">
+    Вход
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+  <p class="popup-subtitle">Мы отправили проверочный код на&nbsp;ваш&nbsp;email. Введите&nbsp;его:</p>
 
   <script>
-    function onCodeInput(e) {
-      const input = e.target;
-      const fields = [...input.closest('.phone-code-fields').querySelectorAll('input[name^="code"]')];
-
-      input.value = input.value.replace(/\D/g, '').slice(-1);
-
-      const firstEmpty = fields.find(field => !field.value);
-      if (firstEmpty) firstEmpty.focus();
-
-      if (fields.every(field => field.value !== '')) {
-        input.form.requestSubmit();
-      }
-    }
-
-    function onCodeKeydown(e) {
-      if (e.key !== 'Backspace' || e.target.value) return;
-
-      const fields = [...e.target.closest('.phone-code-fields').querySelectorAll('input[name^="code"]')];
-      const prev = fields[fields.indexOf(e.target) - 1];
-      if (prev) prev.focus();
-    }
-
-    function onCodeCheckboxChange(e) {
-      const form = e.target.form;
-      const fields = [...form.querySelectorAll('input[name^="code"]')];
-      if (fields.every(field => field.value !== '')) {
-        form.requestSubmit();
-      }
-    }
-
     function onLoginCodeSubmit(e) {
       e.preventDefault();
 
-      const fields = [...e.target.querySelectorAll('input[name^="code"]')];
-      const code = fields.map(field => field.value).join('');
+      const code = e.target.querySelector('input[name="code"]').value;
 
       console.log(code);
 
@@ -79,84 +53,32 @@
       e.target.reset();
     }
   </script>
-  <form data-form action="#" class="form" novalidate onsubmit="onLoginCodeSubmit(event)">
-    <fieldset class="row phone-code-fields">
-      <label class="label">
-        <input
-          type="number"
-          name="code1"
-          class="input"
-          min="0"
-          maxlength="1"
-          required
-          autocomplete="one-time-code"
-          oninput="onCodeInput(event)"
-          onkeydown="onCodeKeydown(event)"
-        />
-      </label>
-      <label class="label">
-        <input
-          type="number"
-          name="code2"
-          class="input"
-          min="0"
-          maxlength="1"
-          required
-          autocomplete="one-time-code"
-          oninput="onCodeInput(event)"
-          onkeydown="onCodeKeydown(event)"
-        />
-      </label>
-      <label class="label">
-        <input
-          type="number"
-          name="code3"
-          class="input"
-          min="0"
-          maxlength="1"
-          required
-          autocomplete="one-time-code"
-          oninput="onCodeInput(event)"
-          onkeydown="onCodeKeydown(event)"
-        />
-      </label>
-      <label class="label">
-        <input
-          type="number"
-          name="code4"
-          class="input"
-          min="0"
-          maxlength="1"
-          required
-          autocomplete="one-time-code"
-          oninput="onCodeInput(event)"
-          onkeydown="onCodeKeydown(event)"
-        />
-      </label>
-    </fieldset>
 
-    <div class="form-errors" data-form-errors></div>
+  <form data-form action="#" class="form form--grey" novalidate onsubmit="onLoginCodeSubmit(event)">
+    <label class="label label-code">
+      <input type="number" name="code" class="input" data-code="4" data-rule="code" required tabindex="-1" aria-hidden="true" />
+    </label>
+
+    <button type="button" class="link" data-popup-open="login">Назад</button>
+
+    <div class="buttons ta--l">
+      <button type="submit" class="button medium magenta">Подтвердить</button>
+    </div>
   </form>
-
-  <button type="submit" class="button big" disabled>
-    Запросить новый код
-    <svg width="21" height="21"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
-  </button>
-
-  <p class="popup-subtitle">Запросить новый код можно через <span>04:59</span></p>
-  <hr />
-
-  <button type="button" class="popup-link" data-popup-open="login">Назад</button>
 </div>
 
 <!--LOGIN SUCCESS POPUP-->
 <div class="popup-content" id="login-success" role="dialog" aria-modal="true" aria-labelledby="login-success-title">
-  <button class="popup-close" data-popup-close aria-label="Закрыть">
-    <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
-  </button>
-  <h2 class="title title--30" id="login-success-title">Вход</h2>
-  <p class="popup-subtitle">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
-  <button type="button" class="button big full" data-popup-close>
-    Закрыть <svg width="21" height="21"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
-  </button>
+  <h2 class="title title--24 bold" id="login-title">
+    Вход
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <p class="text full ta--l">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
+
+  <div class="buttons ta--l">
+    <button type="button" class="button medium magenta" data-popup-close>Закрыть</button>
+  </div>
 </div>

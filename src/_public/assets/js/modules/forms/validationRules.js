@@ -36,6 +36,10 @@ export const customRules = {
     test: value => /^[\p{Script=Cyrillic}-]+$/u.test(value.trim()),
     message: 'Разрешены только буквы кириллицы и дефис',
   },
+  code: {
+    test: (value, input) => new RegExp(`^\\d{${input.dataset.code}}$`).test(value.trim()),
+    message: 'Неверный код',
+  },
 };
 
 // Резолвится, если поле не имеет data-rule: подбирает именованное правило по type/inputmode.
