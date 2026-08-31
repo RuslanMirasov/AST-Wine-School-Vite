@@ -1,0 +1,120 @@
+.a11y-panel-wrapper {
+  pointer-events: none;
+  display: none;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  top: 0px;
+  left: 0%;
+  z-index: 1000;
+  padding: 10px 0px 50px 0px;
+  * {
+    letter-spacing: 0px !important;
+  }
+}
+
+.a11y-panel {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 10px 68px 10px 16px;
+  pointer-events: all;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  gap: 14px;
+  color: #273551 !important;
+
+  p {
+    position: relative;
+    transform: translateX(8px);
+    font-size: 14px;
+  }
+
+  span,
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid #273551;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+
+    &.bigger {
+      font-size: 22px;
+    }
+
+    &.more-bigger {
+      font-size: 30px;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 0px;
+    border-radius: 16px;
+    width: 52px;
+    height: 52px;
+    background-color: var(--magenta);
+    border: 1px solid var(--magenta);
+    color: var(--white);
+
+    &:focus-visible {
+      background-color: var(--blue);
+      border: 1px solid var(--blue);
+    }
+  }
+}
+
+.a11y-panel-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+
+  .a11y-option {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    input {
+      position: absolute;
+      z-index: -1;
+      width: 0px;
+      height: 0px;
+      opacity: 0;
+      &:checked + span {
+        background-color: rgba(5, 67, 189, 0.3);
+        color: #273551;
+      }
+      &:focus-visible + span {
+        background-color: rgba(5, 67, 189, 0.3);
+        border: 2px solid #273551;
+        color: #273551;
+      }
+    }
+  }
+}
+
+.a11y-theme-light,
+.a11y-theme-dark {
+  .a11y-panel {
+    background-color: #fff;
+    backdrop-filter: none;
+  }
+}

@@ -21,7 +21,7 @@
   align-items: center;
   align-content: center;
   background: var(--grey-light);
-  z-index: 999;
+  z-index: 9999;
   transition: opacity 1s var(--cubic);
   &.hidden {
     opacity: 0;

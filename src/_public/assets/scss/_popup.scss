@@ -3,7 +3,7 @@ $popup_transition: 0.5s;
 .body {
   &.locked {
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     @media (max-width: 767px) {
       overflow-y: hidden;
     }
@@ -11,6 +11,7 @@ $popup_transition: 0.5s;
 }
 
 .backdrop {
+  padding: 20px;
   transform: translateZ(0);
   will-change: opacity;
   -webkit-backface-visibility: hidden;
@@ -19,14 +20,15 @@ $popup_transition: 0.5s;
   display: grid;
   place-items: center;
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100%;
-  height: 100dvh;
+  height: 100svh;
   z-index: 1000;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  background: var(--blue-light);
   backdrop-filter: blur(10px);
   transition:
     opacity $popup_transition ease-in-out 0s,
@@ -34,28 +36,29 @@ $popup_transition: 0.5s;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  &.backdrop--game {
-    overflow-y: auto;
+  @media (max-width: 1024px) and (pointer: coarse) {
+    height: calc(100% + 100px);
+    padding-bottom: 120px;
   }
   &.active {
     visibility: visible;
     opacity: 1;
     pointer-events: all;
   }
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    pointer-events: none;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background: var(--blue-light);
-    opacity: 1;
-    grid-area: 1 / 1 / 2 / 2;
-  }
+  // &:before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   pointer-events: none;
+  //   left: 0px;
+  //   right: 0px;
+  //   top: 0px;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: var(--blue-light);
+  //   opacity: 1;
+  //   grid-area: 1 / 1 / 2 / 2;
+  // }
 }
 
 .popup {
@@ -73,31 +76,39 @@ $popup_transition: 0.5s;
   }
 }
 
-.popup-close {
-  display: block;
+.popup-content > .popup-close {
   position: absolute;
-  width: 20px;
-  height: 20px;
   right: 24px;
   top: 24px;
+}
+
+.popup-close {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
   color: inherit;
   transform: rotate(0deg);
+  color: var(--blue);
   outline: none;
-  transition: transform 0.3s var(--cubic);
+  transition:
+    transform 0.3s var(--cubic),
+    color 0.3s var(--cubic);
+  flex-shrink: 0;
 
   svg {
     display: block;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    color: var(--magenta);
   }
 
   @media (hover: hover) {
     &:hover,
     &:focus-visible {
       transform: rotate(90deg);
+      color: var(--magenta);
     }
   }
 }
@@ -105,26 +116,36 @@ $popup_transition: 0.5s;
 .popup-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   align-content: center;
   text-align: center;
-  gap: 18px;
+  gap: 20px;
   position: relative;
-  margin: 20px auto;
-  width: calc(100% - 30px);
+  margin: auto;
+  width: 100%;
   user-select: none;
   pointer-events: all;
-  max-width: 375px;
+  max-width: 420px;
   font-family: var(--font);
   background: var(--white);
-  padding: 50px 32px 32px;
+  padding: 32px;
   flex-shrink: 0;
-  border-radius: 30px;
+  border-radius: 24px;
   box-shadow: 0px 0px 20px var(--blue-light);
 
-  @media (max-width: 666px) {
-    padding: 50px 20px 30px;
+  &.big {
+    max-width: 558px;
+  }
+
+  .title.title--24 {
+    display: flex;
+    width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    line-height: 1;
+    gap: 10px;
+    text-align: left;
   }
 }
 
@@ -152,18 +173,19 @@ $popup_transition: 0.5s;
 .popup-subtitle {
   display: block;
   width: 100%;
-  color: var(--grey-dark);
+  color: var(--grey-text);
   font-size: var(--fs-14);
-  line-height: 1.2;
+  line-height: 1.4;
   font-weight: 400;
+  text-align: left;
   &.big {
     font-size: var(--fs-18);
   }
   &.medium {
     font-size: var(--fs-16);
   }
-  &.ta--l {
-    text-align: left;
+  &.ta--c {
+    text-align: center;
   }
   &.full {
     width: 100%;
@@ -204,21 +226,25 @@ $popup_transition: 0.5s;
 .cookeis-popup {
   display: inline-flex;
   position: relative;
-  align-items: center;
+  align-items: flex-start;
   width: auto;
-  max-width: 650px;
+  max-width: 640px;
   gap: 20px;
   background-color: var(--white);
-  padding: 24px 30px;
-  border-radius: 30px;
+  padding: 32px;
+  border-radius: 24px;
   color: var(--blue);
   font-family: var(--font);
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 50px rgba(39, 53, 81, 0.3);
   transition:
     transform 1s var(--cubic),
     opacity 1s var(--cubic);
   transform: translate(0%, 120%);
   opacity: 0;
+
+  .popup-close {
+    margin-top: 8px;
+  }
 
   .button {
     max-width: 250px;
@@ -226,15 +252,15 @@ $popup_transition: 0.5s;
 
   p {
     display: block;
-    font-size: var(--fs-16);
-    line-height: 1.2;
-    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
   }
   a {
     display: inline;
     border-bottom: 1px solid var(--magenta);
     color: var(--magenta);
-    font-size: var(--fs-16);
-    line-height: 1;
+    font-size: 14px;
+    line-height: 1.4;
   }
 }

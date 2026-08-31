@@ -1,6 +1,6 @@
 export const lockScroll = () => {
   const body = document.querySelector('.body');
-  const header = document.querySelector('.header');
+  const fixedElements = document.querySelectorAll('[data-fixed]');
   const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
   if (body) {
@@ -8,22 +8,26 @@ export const lockScroll = () => {
     body.style.width = `calc(100% - ${scrollbarWidth}px)`;
   }
 
-  if (header) {
-    header.style.width = `calc(100% - ${scrollbarWidth}px)`;
+  if (fixedElements.length > 0) {
+    fixedElements.forEach(fixedElement => {
+      fixedElement.style.width = `calc(100% - ${scrollbarWidth}px)`;
+    });
   }
 };
 
 export const unlockScroll = () => {
   const body = document.querySelector('.body');
-  const header = document.querySelector('.header');
+  const fixedElements = document.querySelectorAll('[data-fixed]');
 
   if (body) {
     body.classList.remove('locked');
     body.style.width = '100%';
   }
 
-  if (header) {
-    header.style.width = '100%';
+  if (fixedElements.length > 0) {
+    fixedElements.forEach(fixedElement => {
+      fixedElement.style.width = '100%';
+    });
   }
 };
 

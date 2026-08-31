@@ -1,0 +1,91 @@
+<div class="a11y-panel-wrapper" data-fixed>
+  <div class="a11y-panel" role="region" aria-label="Настройки версии для слабовидящих" data-a11y-panel>
+    <p>Размер шрифта:</p>
+
+    <fieldset class="a11y-panel-group">
+      <label class="a11y-option">
+        <input type="radio" name="a11y-font-size" value="normal" checked />
+        <span>A</span>
+      </label>
+      <label class="a11y-option">
+        <input type="radio" name="a11y-font-size" value="big" />
+        <span class="bigger">A</span>
+      </label>
+      <label class="a11y-option">
+        <input type="radio" name="a11y-font-size" value="large" />
+        <span class="more-bigger">A</span>
+      </label>
+    </fieldset>
+
+    <p>Интервал:</p>
+
+    <fieldset class="a11y-panel-group">
+      <label class="a11y-option" aria-label="Обычный интервал">
+        <input type="radio" name="a11y-spacing" value="normal" checked />
+        <span>
+          <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#interval-1"></use></svg>
+        </span>
+      </label>
+      <label class="a11y-option" aria-label="Увеличенный интервал">
+        <input type="radio" name="a11y-spacing" value="wide" />
+        <span>
+          <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#interval-2"></use></svg>
+        </span>
+      </label>
+      <label class="a11y-option" aria-label="Широкий интервал">
+        <input type="radio" name="a11y-spacing" value="wider" />
+        <span>
+          <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#interval-3"></use></svg>
+        </span>
+      </label>
+    </fieldset>
+
+    <p>Тема:</p>
+
+    <fieldset class="a11y-panel-group">
+      <label class="a11y-option">
+        <input type="radio" name="a11y-theme" value="color" checked />
+        <span>
+          <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#theme-color"></use></svg>
+        </span>
+      </label>
+      <label class="a11y-option">
+        <input type="radio" name="a11y-theme" value="light" />
+        <span>
+          <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#theme-light"></use></svg>
+        </span>
+      </label>
+      <label class="a11y-option">
+        <input type="radio" name="a11y-theme" value="dark" />
+        <span>
+          <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#theme-dark"></use></svg>
+        </span>
+      </label>
+    </fieldset>
+
+    <p>Изображения:</p>
+
+    <fieldset class="a11y-panel-group">
+      <label class="a11y-option">
+        <input type="radio" name="a11y-images" value="shown" checked />
+        <span>ЦВ</span>
+      </label>
+      <label class="a11y-option">
+        <input type="radio" name="a11y-images" value="grayscale" />
+        <span>ЧБ</span>
+      </label>
+      <label class="a11y-option" aria-label="Скрыть изображения">
+        <input type="radio" name="a11y-images" value="hidden" />
+        <span>
+          <svg width="15" height="15" aria-hidden="true"><use href="/assets/img/sprite.svg#close"></use></svg>
+        </span>
+      </label>
+    </fieldset>
+
+    <p>Выход:</p>
+
+    <button type="button" data-a11y-toggle aria-label="Перейти в обычный режим">
+      <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#eye"></use></svg>
+    </button>
+  </div>
+</div>

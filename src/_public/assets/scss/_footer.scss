@@ -6,11 +6,10 @@
   margin-top: 40px;
 
   .container {
-    display: flex;
-    flex-wrap: wrap;
     gap: 24px;
     max-width: 1280px;
     padding: 0px 20px;
+    align-items: flex-start;
   }
 
   .button.magenta {
@@ -42,12 +41,12 @@
 
   p {
     display: inline-block;
-    opacity: 0.2;
+    opacity: 0.5;
   }
 
   a {
     display: inline-block;
-    opacity: 0.2;
+    opacity: 0.5;
     transition:
       opacity 0.3s var(--cubic),
       color 0.3s var(--cubic),
@@ -56,7 +55,7 @@
     @media (hover: hover) {
       &:hover,
       &:focus-visible {
-        opacity: 0.5;
+        opacity: 1;
       }
     }
   }
@@ -73,7 +72,7 @@
 .footer-menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px 0px;
+  gap: 1rem 0px;
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
@@ -87,18 +86,25 @@
 
   .button {
     margin-top: 12px;
+    @media (hover: hover) {
+      &:hover,
+      &:focus-visible {
+        background: rgba(255, 255, 255, 0.5) !important;
+      }
+    }
   }
 }
 
 .footer-menu-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   width: 50%;
   padding-right: 5px;
   .footer-menu-title {
-    font-size: var(--fs-16);
-    line-height: 14px;
+    font-size: var(--fs-18);
+    opacity: 1;
+    line-height: 1;
   }
 }
 
@@ -111,7 +117,7 @@
   width: 100%;
   font-weight: 700;
   font-size: var(--fs-18);
-  line-height: 1;
+  line-height: 1.2;
   opacity: 0.5;
 
   @media (min-width: 768px) {
@@ -127,9 +133,9 @@
   position: relative;
   width: 100%;
   flex-direction: column;
-  font-weight: 400;
-  font-size: var(--fs-14);
+  font-weight: 300;
   line-height: 1.143;
+  font-size: var(--fs-14);
 
   span {
     opacity: 0.5;
@@ -140,7 +146,7 @@
     padding: 8px 0px;
     transition: color 0.3s var(--cubic);
     outline: none;
-    font-size: var(--fs-14);
+    font-size: 0.875rem;
     line-height: 1.2;
     @media (hover: hover) {
       &:hover {

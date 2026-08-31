@@ -1,5 +1,4 @@
 import { popup } from './modules/popup.js';
-import { initScrollManager } from './modules/scrollManager.js';
 import { initForms } from './modules/forms/index.js';
 import { initDecimalInputs, initPhoneInputs, initSelectFields } from './modules/inputMasks.js';
 import { initNavigationMenu, initMegaMenu } from './modules/navigation.js';
@@ -18,11 +17,10 @@ window.popup = popup;
 
 document.addEventListener('DOMContentLoaded', () => {
   hidePreloader();
-  initScrollManager();
+  initA11yToggle();
   initSliders();
   initNavigationMenu();
   initMegaMenu();
-  initA11yToggle();
   initSearchToggle();
   initForms();
   initPhoneInputs('+7 000 000 00 00');

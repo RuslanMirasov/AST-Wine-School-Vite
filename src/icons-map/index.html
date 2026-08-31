@@ -7,202 +7,230 @@
     <meta name="description" content="AST - Карта иконок" />
     <title>Карта иконок</title>
   </head>
-  <body>
-    <div class="body">
-      <!--HEADER-->
-      <load src="/_partials/preloader.html" />
-      <load src="/_partials/header.html" />
+  <body class="body">
+    <!--HEADER-->
+    <load src="/_partials/preloader.html" />
+    <load src="/_partials/header.html" />
 
-      <!--MAIN-->
-      <main class="main" id="main" tabindex="-1">
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="%ROOT%">Главная</a></li>
+        <li><span>Карта иконок</span></li>
+      </ul>
+
+      <style>
+        .icons-table {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          gap: 16px;
+        }
+        .icons-table-inner {
+          flex: 1;
+          display: flex;
+          position: relative;
+          flex-direction: column;
+          padding: 20px;
+          justify-content: flex-start;
+          align-items: center;
+          align-content: center;
+          gap: 10px;
+          background-color: var(--white);
+          min-width: 150px;
+          height: 150px;
+          border-radius: 10px;
+          box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+          text-align: center;
+        }
+        .icons-table-inner svg {
+          max-width: 100%;
+        }
+      </style>
+      <section class="section">
         <div class="container">
-          <!--breadcrumbs-->
-          <ul class="breadcrumbs">
-            <li><a href="%ROOT%">Главная</a></li>
-            <li><span>Карта иконок</span></li>
-          </ul>
+          <h1 class="title title--40">Карта иконок сайта</h1>
 
-          <style>
-            .icons-table {
-              display: flex;
-              flex-wrap: wrap;
-              width: 100%;
-              justify-content: center;
-              align-items: center;
-              gap: 16px;
-            }
-            .icons-table-inner {
-              flex: 1;
-              display: flex;
-              position: relative;
-              flex-direction: column;
-              padding: 20px;
-              justify-content: flex-start;
-              align-items: center;
-              align-content: center;
-              gap: 10px;
-              background-color: var(--white);
-              min-width: 150px;
-              height: 150px;
-              border-radius: 10px;
-              box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
-              text-align: center;
-            }
-            .icons-table-inner svg {
-              max-width: 100%;
-            }
-          </style>
-          <section class="section">
-            <h1 class="title title--40">Карта иконок сайта</h1>
-
-            <div class="icons-table">
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#preloader"></use></svg>
-                <p>#preloader</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#search"></use></svg>
-                <p>#search</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#eye"></use></svg>
-                <p>#eye</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#eye-grey"></use></svg>
-                <p>#eye-grey</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#sparkles"></use></svg>
-                <p>#sparkles</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#video"></use></svg>
-                <p>#video</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#cart"></use></svg>
-                <p>#cart</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#login"></use></svg>
-                <p>#login</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#arrow"></use></svg>
-                <p>#arrow</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
-                <p>#arrow-right</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
-                <p>#arrow-accordeon</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#vk"></use></svg>
-                <p>#vk</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#max"></use></svg>
-                <p>#max</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#send"></use></svg>
-                <p>#send</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#close"></use></svg>
-                <p>#close</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#star"></use></svg>
-                <p>#star</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#stars"></use></svg>
-                <p>#stars</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#calendar"></use></svg>
-                <p>#calendar</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#place"></use></svg>
-                <p>#place</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#clock"></use></svg>
-                <p>#clock</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#monitor"></use></svg>
-                <p>#monitor</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#phone"></use></svg>
-                <p>#phone</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#download"></use></svg>
-                <p>#download</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#star-green"></use></svg>
-                <p>#star-green</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#pdf"></use></svg>
-                <p>#pdf</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#you-money"></use></svg>
-                <p>#you-money</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#logo"></use></svg>
-                <p>#logo</p>
-              </div>
-
-              <div class="icons-table-inner">
-                <svg><use href="/assets/img/sprite.svg#footer-logo"></use></svg>
-                <p>#footer-logo</p>
-              </div>
+          <div class="icons-table">
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#preloader"></use></svg>
+              <p>#preloader</p>
             </div>
-          </section>
-        </div>
-      </main>
 
-      <!--FOOTER-->
-      <load src="/_partials/footer.html" />
-    </div>
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#search"></use></svg>
+              <p>#search</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#eye"></use></svg>
+              <p>#eye</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#eye-grey"></use></svg>
+              <p>#eye-grey</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+              <p>#sparkles</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#video"></use></svg>
+              <p>#video</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#cart"></use></svg>
+              <p>#cart</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#login"></use></svg>
+              <p>#login</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#arrow"></use></svg>
+              <p>#arrow</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
+              <p>#arrow-right</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+              <p>#arrow-accordeon</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#interval-1"></use></svg>
+              <p>#interval-1</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#interval-2"></use></svg>
+              <p>#interval-2</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#interval-3"></use></svg>
+              <p>#interval-3</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#vk"></use></svg>
+              <p>#vk</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#max"></use></svg>
+              <p>#max</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#send"></use></svg>
+              <p>#send</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#close"></use></svg>
+              <p>#close</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#star"></use></svg>
+              <p>#star</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#stars"></use></svg>
+              <p>#stars</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#calendar"></use></svg>
+              <p>#calendar</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#place"></use></svg>
+              <p>#place</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#clock"></use></svg>
+              <p>#clock</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#monitor"></use></svg>
+              <p>#monitor</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#phone"></use></svg>
+              <p>#phone</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#download"></use></svg>
+              <p>#download</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#theme-light"></use></svg>
+              <p>#theme-light</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#theme-dark"></use></svg>
+              <p>#theme-dark</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#theme-color"></use></svg>
+              <p>#theme-color</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#star-green"></use></svg>
+              <p>#star-green</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#pdf"></use></svg>
+              <p>#pdf</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#you-money"></use></svg>
+              <p>#you-money</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#logo"></use></svg>
+              <p>#logo</p>
+            </div>
+
+            <div class="icons-table-inner">
+              <svg><use href="/assets/img/sprite.svg#footer-logo"></use></svg>
+              <p>#footer-logo</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <load src="/_partials/footer.html" />
 
     <!--POPUPS-->
     <div class="backdrop" data-backdrop>

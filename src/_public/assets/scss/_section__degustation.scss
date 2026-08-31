@@ -1,0 +1,30 @@
+.section--degustation-and-seminars {
+  .content {
+    min-height: 300px;
+  }
+
+  .price-and-btn {
+    margin-top: var(--fs-16);
+  }
+
+  .title {
+    line-height: 1;
+  }
+
+  .text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    &.fs-14 {
+      font-weight: 300;
+      background-color: var(--grey-light);
+      padding: 0.375rem 1rem;
+      border-radius: 20px;
+      font-weight: 300;
+      color: var(--blue);
+    }
+  }
+}

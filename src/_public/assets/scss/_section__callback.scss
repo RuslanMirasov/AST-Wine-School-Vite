@@ -1,12 +1,16 @@
+.section-callback {
+  .content {
+    max-width: 50rem; //800px
+    border-radius: 32px;
+    margin: 0 auto;
+  }
+}
+
 .callback-form {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 18px 30px;
-  background-color: var(--white);
-  max-width: 900px;
-  border-radius: 32px;
-  padding: 30px 30px 60px 30px;
 
   .title {
     display: flex;
@@ -20,7 +24,7 @@
   }
 
   .input.input--textarea {
-    height: 84px;
+    height: 4.625rem; //74px
   }
 }
 

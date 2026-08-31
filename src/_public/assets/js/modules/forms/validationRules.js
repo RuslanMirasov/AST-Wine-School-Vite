@@ -15,11 +15,11 @@ export const nativeMessages = {
 export const customRules = {
   email: {
     test: value => /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/.test(value.trim()),
-    message: 'Введите правильный email адрес',
+    message: 'Пожалуйста, введите корректный email',
   },
   tel: {
     test: value => /^\+7 \d{3} \d{3} \d{2} \d{2}$/.test(value.trim()),
-    message: 'Введите телефон в правильном формате',
+    message: 'Пожалуйста, введите корректный телефон',
   },
   decimal: {
     test: value => /^\d+(?:[.,]\d{1,2})?$/.test(value.trim()),

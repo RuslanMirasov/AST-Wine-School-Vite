@@ -12,6 +12,19 @@ const toSwiperValue = value => {
 
 const isA11yEnabled = () => document.querySelector('.body')?.classList.contains('a11y') ?? false;
 
+// В версии для слабовидящих (ГОСТ §8) каждый слайдер показывает на 1 слайд меньше — auto и 1 не трогаем.
+const adjustForA11y = rawValue => {
+  if (!isA11yEnabled()) return rawValue;
+
+  const trimmed = String(rawValue).trim();
+  if (trimmed === 'auto') return rawValue;
+
+  const num = Number(trimmed);
+  if (!Number.isFinite(num) || num <= 1) return rawValue;
+
+  return String(num - 1);
+};
+
 const getOwnElement = (sliderWrapper, selector) => {
   return Array.from(sliderWrapper.querySelectorAll(selector)).find(el => el.closest('[data-slider]') === sliderWrapper);
 };
@@ -139,20 +152,20 @@ const initSlider = sliderWrapper => {
     direction,
     breakpoints: {
       0: {
-        slidesPerView: toSwiperValue(slidesPerView.split(',')[2]),
-        slidesPerGroup: Number(slidesPerGroup.split(',')[2]),
+        slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[2])),
+        slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[2])),
         spaceBetween: Number(spaceBetween.split(',')[2]),
         initialSlide: Number(initialSlide.split(',')[2]),
       },
       768: {
-        slidesPerView: toSwiperValue(slidesPerView.split(',')[1]),
-        slidesPerGroup: Number(slidesPerGroup.split(',')[1]),
+        slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[1])),
+        slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[1])),
         spaceBetween: Number(spaceBetween.split(',')[1]),
         initialSlide: Number(initialSlide.split(',')[1]),
       },
       1280: {
-        slidesPerView: toSwiperValue(slidesPerView.split(',')[0]),
-        slidesPerGroup: Number(slidesPerGroup.split(',')[0]),
+        slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[0])),
+        slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[0])),
         spaceBetween: Number(spaceBetween.split(',')[0]),
         initialSlide: Number(initialSlide.split(',')[0]),
       },
@@ -166,7 +179,7 @@ const initSlider = sliderWrapper => {
     };
   }
 
-  // Автопрокрутка отключена в режиме для слабовидящих (ГОСТ §8) — reinitAutoplaySliders
+  // Автопрокрутка отключена в режиме для слабовидящих (ГОСТ §8) — reinitSlidersForA11y
   // пересоздаёт слайдер при переключении режима, чтобы подхватить актуальное состояние.
   if (autoplay && !isA11yEnabled()) {
     options.autoplay = {
@@ -220,9 +233,11 @@ const linkControlledSliders = () => {
   });
 };
 
-export const reinitAutoplaySliders = () => {
+// Пересоздаёт все уже инициализированные слайдеры — нужно и для autoplay, и для
+// slidesPerView/slidesPerGroup, которые тоже зависят от isA11yEnabled().
+export const reinitSlidersForA11y = () => {
   sliders.forEach(sliderWrapper => {
-    if (!sliderWrapper.dataset.autoplay || !instances.has(sliderWrapper)) return;
+    if (!instances.has(sliderWrapper)) return;
     destroySlider(sliderWrapper);
     initSlider(sliderWrapper);
   });

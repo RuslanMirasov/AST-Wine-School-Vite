@@ -186,3 +186,34 @@ export const customRules = {
 ```
 
 ![Project Preview](./public/poster.webp)
+
+## Карта font-size (px → rem, база 16px)
+
+| px    | rem       |
+| ----- | --------- |
+| 5px   | 0.3125rem |
+| 6px   | 0.375rem  |
+| 8px   | 0.5rem    |
+| 9px   | 0.5625rem |
+| 10px  | 0.625rem  |
+| 12px  | 0.75rem   |
+| 13px  | 0.8125rem |
+| 14px  | 0.875rem  |
+| 16px  | 1rem      |
+| 17px  | 1.0625rem |
+| 18px  | 1.125rem  |
+| 20px  | 1.25rem   |
+| 22px  | 1.375rem  |
+| 24px  | 1.5rem    |
+| 30px  | 1.875rem  |
+| 32px  | 2rem      |
+| 38px  | 2.375rem  |
+| 40px  | 2.5rem    |
+| 44px  | 2.75rem   |
+| 54px  | 3.375rem  |
+| 64px  | 4rem      |
+| 74px  | 4.625rem  |
+| 168px | 10.5rem   |
+| 512px | 32rem     |
+| 555px | 34.6875rem |
+| 800px | 50rem     |

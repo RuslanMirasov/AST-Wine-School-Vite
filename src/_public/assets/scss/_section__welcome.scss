@@ -1,40 +1,24 @@
-.welcome {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  padding: 30px;
-  border-radius: 50px;
-  background-color: var(--white);
-
-  svg.promo-card-logo-background {
+.section--welcome {
+  svg.logo-background {
     z-index: 2;
     width: 900px;
     height: auto;
     right: 50%;
     top: 50%;
     z-index: 0;
-    transform: translate(-2%, -60%);
+    transform: translate(0%, -62%);
+    pointer-events: none;
   }
 
-  .title {
-    position: relative;
-    max-width: 590px;
+  .title.title--64 {
+    display: inline-flex;
+    width: auto;
     font-weight: 300;
-    font-size: var(--fs-64);
-    line-height: 1.2;
     z-index: 3;
   }
 
   .text {
-    display: block;
-    position: relative;
-    max-width: 500px;
+    max-width: 38%;
     z-index: 3;
     line-height: 1.5;
     margin: 20px auto;

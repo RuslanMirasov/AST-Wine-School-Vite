@@ -163,7 +163,7 @@ export const initNavigationMenu = () => {
 
     if (hasNestedContent && !link.querySelector(':scope > svg')) {
       const spriteUrl = new URL('../../img/sprite.svg', import.meta.url).href;
-      link.insertAdjacentHTML('beforeend', `<svg width="10" height="6"><use href="${spriteUrl}#arrow"></use></svg>`);
+      link.insertAdjacentHTML('beforeend', `<span class="nav-arrow"><svg width="10" height="6"><use href="${spriteUrl}#arrow"></use></svg></span>`);
     }
   });
 

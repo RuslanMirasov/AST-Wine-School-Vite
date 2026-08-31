@@ -1,7 +1,9 @@
 <a href="#main" class="skip-link">Перейти к основному содержанию</a>
 
+<load src="/_partials/components/a11y-panel.html" />
+
 <!--HEADER-->
-<header class="header">
+<header class="header" data-fixed>
   <!--logo-->
   <a href="%ROOT%" class="logo" aria-label="AST Школа вина — на главную">
     <svg width="123" height="33"><use href="/assets/img/sprite.svg#logo"></use></svg>
@@ -38,7 +40,7 @@
                 <a href="%ROOT%courses/offline/" class="menu-link"><span>Очные курсы</span></a>
               </li>
               <li class="full">
-                <a href="%ROOT%courses/schedule/" class="button magenta medium">Расписание всех курсов</a>
+                <a href="%ROOT%courses/schedule/" class="button medium magenta">Расписание всех курсов</a>
               </li>
             </ul>
             <div class="recomendations-menu" data-slider="submenu-slider" data-slides-per-view="auto,auto,auto" data-space-between="12,12,12">
@@ -114,6 +116,7 @@
                 <a href="%ROOT%about/diploma/" class="menu-link"><span>Профессия и диплом</span></a>
               </li>
               <li>
+                <!-- <a href="%ROOT%reviews/" class="menu-link"><span>Отзывы</span></a> -->
                 <a href="%ROOT%reviews/" class="menu-link"><span>Отзывы</span></a>
               </li>
               <li>
@@ -178,8 +181,8 @@
     </li>
     <li>
       <button type="button" class="header-button" data-a11y-toggle aria-pressed="false">
-        <svg width="24" height="24" area-hidden="true"><use href="/assets/img/sprite.svg#eye"></use></svg>
-        Версия для слабовидящих
+        <svg width="24" height="24" aria-hidden="true"><use href="/assets/img/sprite.svg#eye"></use></svg>
+        <span data-a11y-toggle-text>Версия для слабовидящих</span>
       </button>
     </li>
     <li>

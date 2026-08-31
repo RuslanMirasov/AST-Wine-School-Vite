@@ -1,6 +1,8 @@
 .section-teachers-sliader {
-  > .button {
-    margin-left: auto;
+  .container {
+    > .button {
+      margin-left: auto;
+    }
   }
 
   .swiper {
@@ -23,9 +25,5 @@
     &:before {
       padding-top: 53.76344%;
     }
-  }
-  .post-slide-text {
-    margin: 0;
-    margin-bottom: auto;
   }
 }

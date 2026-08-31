@@ -1,0 +1,95 @@
+:root {
+  font-family: var(--font);
+  font-size: 16px; //16px
+  line-height: 1.5;
+  font-weight: 400;
+
+  //font-family
+  --font: 'Mabry Pro', system-ui, -apple-system, sans-serif;
+
+  //colors
+  --black: #0b1020;
+  --white: #ffffff;
+  --grey: #b1b9ca;
+  --grey-text: #636669;
+  --grey-dark: #6b7280;
+  --grey-medium: #b2b2b2;
+  --grey-light: #edf0f5;
+  --grey-stars: #d6d8dd;
+  --grey-border: #e5e7eb;
+  --grey-menu-border: #888888;
+  --grey-button: #e2e5ea;
+  --grey-promo: #e3e7ef;
+  --gold: #f59e0b;
+  --blue: #273551;
+  --blue-text: #94a3b8;
+  --blue-light: rgba(5, 67, 189, 0.102);
+  --magenta: #c24191;
+  --magenta-hover: #e439a2;
+  --magenta-light: rgba(194, 65, 145, 0.102);
+  --magenta-opacity: rgba(228, 57, 162, 0.5);
+  --invalid: #ff0000;
+
+  //typography
+  --fs-12: 0.75rem;
+  --fs-13: 0.84375rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-30: 1.875rem;
+  --fs-32: 2rem;
+  --fs-34: 2.125rem;
+  --fs-36: 2.25rem;
+  --fs-40: 2.5rem;
+  --fs-60: 3.75rem;
+  --fs-64: 4rem;
+
+  --lh-100: 1;
+  --lh-110: 1.1;
+  --lh-120: 1.2;
+  --lh-130: 1.3;
+  --lh-140: 1.4;
+  --lh-150: 1.5;
+
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+
+  //ВЕРСИИ ДЛЯ СЛАБОВИДЯЩИХ
+  &:has(.a11y) {
+    font-size: 18px;
+    letter-spacing: 0rem;
+
+    --grey: #536178; // было #94a3b8 (2.24:1) → 5.49:1 на grey-light
+    --grey-dark: #5b6472; // было #6b7280 (4.83:1) → 5.98:1 на white, больше запаса
+    --grey-medium: #5c5c5c; // было #b2b2b2 (1.68:1 на grey-button) → 5.29:1
+    --grey-menu-border: #6b6b6b; // было #888888 (3.10:1) → 4.67:1 на grey-light
+    --magenta: #a73b7f; // было #c24191 (4.12:1 на grey-light) → 5.14:1
+    --magenta-hover: #ab2b7a; // было #e439a2 (3.89:1 текста поверх) → 6.25:1
+    --magenta-light: rgba(167, 59, 127, 0.102); // пересчитан под новый --magenta
+    --magenta-opacity: rgba(171, 43, 122, 0.5); // пересчитан под новый --magenta-hover
+    --invalid: #d90000; // было #ff0000 (4.00:1) → 5.31:1
+
+    // A+
+    &:has(.a11y-font-big) {
+      font-size: 22px;
+    }
+
+    // A++
+    &:has(.a11y-font-large) {
+      font-size: 26px;
+    }
+
+    &:has(.a11y-theme-light) {
+      --blue: #000000;
+    }
+    &:has(.a11y-theme-dark) {
+      --blue: #fff;
+      --grey: #fff; // было #94a3b8 (2.24:1) → 5.49:1 на grey-light
+      --grey-dark: #fff; // было #6b7280 (4.83:1) → 5.98:1 на white, больше запаса
+      --grey-medium: #fff; // было #b2b2b2 (1.68:1 на grey-button) → 5.29:1
+      --grey-menu-border: #fff; // было #888888 (3.10:1) → 4.67:1 на grey-light
+      --magenta: #c24191; // было #c24191 (4.12:1 на grey-light) → 5.14:1
+    }
+  }
+}

@@ -7,48 +7,46 @@
     <meta name="description" content="AST - 404" />
     <title>404</title>
   </head>
-  <body>
-    <div class="body">
-      <!--HEADER-->
-      <load src="/_partials/preloader.html" />
-      <load src="/_partials/header.html" />
+  <body class="body">
+    <!--HEADER-->
+    <load src="/_partials/preloader.html" />
+    <load src="/_partials/header.html" />
 
-      <!--MAIN-->
-      <main class="main" id="main" tabindex="-1">
-        <div class="container">
-          <!--breadcrumbs-->
-          <ul class="breadcrumbs">
-            <li><a href="%ROOT%">Главная</a></li>
-            <li><span>404</span></li>
-          </ul>
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="%ROOT%">Главная</a></li>
+        <li><span>404</span></li>
+      </ul>
 
-          <!--SECTION 404-->
-          <div class="section center content">
-            <h1 class="title title--60">404</h1>
-            <p class="text full grey-dark">Кажется, вы забрели не&nbsp;туда… Но&nbsp;это отличный повод открыть что-то&nbsp;новое!</p>
-            <div class="search-form">
-              <form data-form action="%ROOT%search/" class="form" novalidate>
-                <label class="label">
-                  <input type="text" name="s" class="input" placeholder="Поиск" required />
-                </label>
-                <button type="submit" class="button magenta icon-submit" aria-label="Поиск">
-                  <svg width="24" height="24"><use href="/assets/img/sprite.svg#search"></use></svg>
-                </button>
-              </form>
-            </div>
+      <!--SECTION 404-->
+      <div class="section">
+        <div class="container center content">
+          <h1 class="title title--60">404</h1>
+          <p class="text full grey-dark">Кажется, вы забрели не&nbsp;туда… Но&nbsp;это отличный повод открыть что-то&nbsp;новое!</p>
+          <div class="search-form">
+            <form data-form action="%ROOT%search/" class="form" novalidate>
+              <label class="label">
+                <input type="text" name="s" class="input" placeholder="Поиск" required />
+              </label>
+              <button type="submit" class="button magenta icon-submit" aria-label="Поиск">
+                <svg width="24" height="24"><use href="/assets/img/sprite.svg#search"></use></svg>
+              </button>
+            </form>
           </div>
-
-          <load src="/_partials/sections/section-curses-offline.html" />
-          <load src="/_partials/sections/section-curses-online.html" />
-          <load src="/_partials/sections/section-curses-seminars.html" />
-          <load src="/_partials/sections/section-curses-recomendations.html" />
-          <load src="/_partials/sections/section-reviews.html" />
         </div>
-      </main>
+      </div>
 
-      <!--FOOTER-->
-      <load src="/_partials/footer.html" />
-    </div>
+      <load src="/_partials/sections/section-curses-offline.html" />
+      <load src="/_partials/sections/section-curses-online.html" />
+      <load src="/_partials/sections/section-curses-seminars.html" />
+      <load src="/_partials/sections/section-curses-recomendations.html" />
+      <load src="/_partials/sections/section-reviews.html" />
+    </main>
+
+    <!--FOOTER-->
+    <load src="/_partials/footer.html" />
 
     <!--POPUPS-->
     <div class="backdrop" data-backdrop>

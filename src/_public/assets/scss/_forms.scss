@@ -8,11 +8,11 @@
   --input-font-size: var(--fs-16);
   --input-font-weight: 400;
   --input-text-transform: auto;
-  --input-height: 54px;
-  --input-padding: 16px;
+  --input-height: 3.375rem; //54px
+  --input-padding: 1rem; //16px
   --input-background: none;
   --input-border: 1px solid var(--grey-border);
-  --input-border-radius: 16px;
+  --input-border-radius: 1rem; //16px
   --input-color: var(--blue);
   --input-placeholder-color: var(--grey-dark);
   --input-placeholder-opacity: 1;
@@ -26,7 +26,7 @@
   --label-margin-bottom: 8px;
 
   //CHECKBOX
-  --checkbox-size: 20px;
+  --checkbox-size: 1.25rem; //20px
   --checkbox-border: 1px solid rgba(0, 0, 0, 0);
   --checkbox-radius: 6px;
   --checkbox-font-size: var(--fs-14);
@@ -38,12 +38,6 @@
   --radio-border: 1px solid var(--magenta-opacity);
   --radio-border-checked: 1px solid var(--magenta);
   --radio-color-checked: var(--magenta);
-
-  @media (max-width: 1439px) {
-    --input-height: 54px;
-    --input-font-size: var(--fs-16);
-    --input-border-radius: 16px;
-  }
 }
 
 input[type='number']::-webkit-outer-spin-button,
@@ -93,28 +87,6 @@ input[type='number'] {
   width: 100%;
   position: relative;
   color: inherit;
-
-  .placeholder {
-    display: flex;
-    position: absolute;
-    width: 0px;
-    height: 100%;
-    left: 18px;
-    top: -2px;
-    @media (max-width: 767px) {
-      top: 0px;
-    }
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    color: var(--input-placeholder-color);
-    opacity: 0.5;
-    transform: scale(1) translate(0px, 0px);
-    transition: transform 0.2s;
-    pointer-events: none;
-    white-space: nowrap;
-  }
 }
 
 .label-text {
@@ -214,11 +186,16 @@ input[type='number'] {
   color: var(--invalid);
   font-family: var(--font);
   font-size: var(--fs-12);
-  line-height: 1.5;
+  line-height: 1.333;
   font-weight: 300;
   z-index: 2;
   pointer-events: none;
-  padding-left: 17px;
+}
+
+.popup {
+  .inputError {
+    font-size: 12px;
+  }
 }
 
 .label-text + .inputError,
@@ -255,7 +232,7 @@ fieldset + .inputError {
     span {
       display: inline;
       font-size: var(--checkbox-font-size);
-      line-height: 1.25;
+      line-height: 1;
       a {
         display: inline;
         width: auto;
@@ -281,7 +258,7 @@ fieldset + .inputError {
       display: block;
       position: absolute;
       left: 0px;
-      top: 0px;
+      //top: 0px;
       width: var(--checkbox-size);
       height: var(--checkbox-size);
     }
@@ -385,17 +362,17 @@ fieldset + .inputError {
 }
 
 // SELECT
-$select_height: 54px;
+$select_height: 3.375rem; //54px;
 $select_background: var(--white);
 $select_color: var(--grey-dark);
-$select_border_radius: 16px;
+$select_border_radius: 1rem;
 $select_border: 1px solid var(--grey-border);
-$select_font_size: 16px;
-$select_dropdown_font_size: 12px;
+$select_font_size: 1rem;
+$select_dropdown_font_size: var(--fs-12);
 $select_font_family: var(--font);
 $select_font_weight: 400;
 $select_text_align: left;
-$select_padding: 0px 16px;
+$select_padding: 0px 1rem;
 
 .choices {
   background: none;
@@ -615,7 +592,7 @@ $select_padding: 0px 16px;
     .choices__list {
       &.choices__list--single {
         > .choices__item {
-          height: 38px;
+          height: 2.375rem; //38px
           color: var(--blue);
         }
       }
@@ -636,9 +613,9 @@ $select_padding: 0px 16px;
 
 .search-form {
   width: 100%;
-  padding: 16px;
-  border-radius: 30px;
-  margin-top: 10px;
+  padding: 1rem;
+  border-radius: 1.875rem; //30px
+  margin-top: 0.625rem; //10px
   background-color: var(--white);
 
   form {
