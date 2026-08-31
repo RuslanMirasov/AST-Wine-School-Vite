@@ -39,11 +39,26 @@
   //CHECKBOX
   --checkbox-size: 1.25rem; //20px
   --checkbox-border: 1px solid rgba(0, 0, 0, 0);
+  --checkbox-border-focus: 1px solid var(--blue);
+  --checkbox-border-checked: 1px solid rgba(0, 0, 0, 0);
+  --checkbox-border-invalid: 1px solid var(--invalid);
   --checkbox-radius: 6px;
   --checkbox-font-size: var(--fs-14);
-  --checkbox-background: var(--magenta-opacity) url('../img/svg/checkbox.svg') no-repeat center center;
+  --checkbox-font-weight: 400;
+  --checkbox-background: var(--magenta-opacity);
+  --checkbox-background-focus: var(--blue);
   --checkbox-background-checked: var(--magenta) url('../img/svg/checkbox.svg') no-repeat center center;
+  --checkbox-background-checked-focus: var(--blue) url('../img/svg/checkbox.svg') no-repeat center center;
+  --checkbox-background-invalid: none;
   --checkbox-text-color: var(--grey-dark);
+  .form--grey {
+    --checkbox-border: 1.5px solid #b2b2b2;
+    --checkbox-border-checked: 1.5px solid var(--invalid);
+    --checkbox-background: var(--white);
+    --checkbox-background-checked: var(--magenta) url('../img/svg/checkbox.svg') no-repeat center center;
+    --checkbox-font-size: var(--fs-14);
+    --checkbox-text-color: #273551;
+  }
 
   //RADIO
   --radio-border: 1px solid var(--magenta-opacity);
@@ -247,6 +262,7 @@ fieldset + .inputError {
     span {
       display: inline;
       font-size: var(--checkbox-font-size);
+      font-weight: var(--checkbox-font-weight);
       line-height: 1;
       a {
         display: inline;
@@ -286,19 +302,19 @@ fieldset + .inputError {
       border-radius: var(--checkbox-radius);
       border: var(--checkbox-border);
       background: var(--checkbox-background);
+      background-size: 100% 100%;
       background-size: 0% 0%;
       transition:
         border 0.3s var(--cubic),
-        background-color 0.3s var(--cubic),
-        background-size 0.3s var(--cubic);
+        background-color 0.3s var(--cubic);
     }
   }
 
   &:focus-visible {
     + .label-text {
       &:before {
-        border: 1px solid var(--black);
-        background: var(--black);
+        border: var(--checkbox-border-focus);
+        background: var(--checkbox-background-focus);
       }
     }
   }
@@ -306,15 +322,15 @@ fieldset + .inputError {
   &:checked {
     + .label-text {
       &:before {
+        border: var(--checkbox-border-checked);
         background: var(--checkbox-background-checked);
-        background-size: 100% 100%;
       }
     }
     &:focus-visible {
       + .label-text {
         &:before {
-          border: 1px solid var(--black);
-          background: var(--black) url('../img/svg/checkbox.svg') no-repeat center center;
+          border: var(--checkbox-border-focus);
+          background: var(--checkbox-background-checked-focus);
         }
       }
     }
@@ -323,9 +339,8 @@ fieldset + .inputError {
   &.invalid {
     + .label-text {
       &:before {
-        border: 1px solid var(--checkbox-background);
-        background: var(--checkbox-background);
-        background-size: 0% 0%;
+        border: var(--checkbox-border-invalid);
+        background: var(--checkbox-background-invalid);
       }
     }
   }
