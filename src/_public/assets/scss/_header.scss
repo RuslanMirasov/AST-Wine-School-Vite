@@ -896,7 +896,9 @@
     justify-content: flex-start;
     z-index: 5;
   }
-
+  .menu {
+    gap: 4px 1.1rem;
+  }
   .header-search-form {
     position: relative;
     overflow: visible;

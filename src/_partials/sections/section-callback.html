@@ -15,26 +15,15 @@
         </h2>
 
         <div class="callback-form-inner">
-          <!-- <label class="label">
-        <span class="label-text">Тема<span class="red">*</span></span>
-        <select data-select name="theme" required>
-          <option value="">Выберите тему</option>
-          <option value="Тема 1">Заголовок &lt;b&gt;Тема 1&lt;/b&gt;</option>
-          <option value="Тема 1">Тема 1</option>
-          <option value="Тема 2">Тема 2</option>
-          <option value="Тема 3">Тема 3</option>
-          <option value="Тема 4">Тема 4</option>
-        </select>
-      </label> -->
-
           <label class="label">
             <span class="label-text">Номер телефона<span class="red">*</span></span>
-            <input type="tel" name="phone" class="input" required placeholder="+7" autocomplete="tel" />
+            <input type="tel" name="phone" class="input" placeholder="+7" autocomplete="tel" required />
           </label>
 
           <label class="label">
-            <span class="label-text">Email<span class="red">*</span></span>
+            <span class="label-text">Email</span>
             <input type="email" name="email" data-rule="email" class="input" placeholder="email@ru" autocomplete="email" />
+            <span class="inputError"></span>
           </label>
 
           <label class="label">
@@ -46,12 +35,12 @@
         <div class="callback-form-inner">
           <label class="label">
             <span class="label-text">Сообщение<span class="red">*</span></span>
-            <textarea name="message" class="input input--textarea" required placeholder="Напишите вопрос..."></textarea>
+            <textarea name="message" class="input input--textarea" placeholder="Напишите вопрос..." required></textarea>
           </label>
 
           <fieldset>
             <label class="label">
-              <input name="confirmation" type="checkbox" class="checkbox" required data-error-title="Согласие на обработку данных обязательно" />
+              <input name="confirmation" type="checkbox" class="checkbox" data-error-title="Согласие на обработку данных обязательно" required />
               <p class="label-text">
                 <span>Согласен с&nbsp;<a href="%ROOT%" target="_blank">Условиями обработки персональных данных</a></span>
               </p>
@@ -61,28 +50,14 @@
                 name="confirmation2"
                 type="checkbox"
                 class="checkbox"
-                required
                 data-error-title="Принятие политики конфиденциальности обязательно"
+                required
               />
               <p class="label-text">
                 <span>Принимаю <a href="%ROOT%" target="_blank">Политику конфиденциальности</a></span>
               </p>
             </label>
-            <!-- <label class="label">
-          <input
-            name="confirmation3"
-            type="checkbox"
-            class="checkbox"
-            required
-            data-error-title="Принятие пользовательского соглашения обязательно"
-          />
-          <p class="label-text">
-            <span>Принимаю <a href="%ROOT%" target="_blank">Пользовательское соглашение</a></span>
-          </p>
-        </label> -->
           </fieldset>
-
-          <!-- <div class="form-errors" data-form-errors></div> -->
 
           <button type="submit" class="button full big shadow magenta">
             ОТПРАВИТЬ

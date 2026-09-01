@@ -1,6 +1,6 @@
 :root {
   //FORM
-  --form-gap: 18px;
+  --form-gap: var(--fs-18); //18px
   --form-gap-minus: -14px;
 
   //INPUT
@@ -8,20 +8,20 @@
   --input-font-size: var(--fs-16);
   --input-font-weight: 400;
   --input-text-transform: auto;
-  --input-height: 3.375rem; //54px
-  --input-padding: 1rem; //16px
+  --input-height: var(--fs-54); //54px
+  --input-padding: var(--fs-16); //16px
   --input-background: none;
   --input-border: 1px solid var(--grey-border);
-  --input-border-radius: 1rem; //16px
+  --input-border-radius: var(--fs-16); //16px
   --input-color: var(--blue);
   --input-placeholder-color: var(--grey-dark);
   --input-placeholder-opacity: 1;
   --invalid-border: 1px solid var(--invalid);
   .form--grey {
-    --input-height: 2.5rem; //40px
+    --input-height: var(--fs-40); //40px
     --input-font-size: var(--fs-14);
     --input-background: #edf0f5;
-    --input-border-radius: 0.5rem;
+    --input-border-radius: var(--fs-8);
     --input-placeholder-color: #636669;
   }
 
@@ -30,19 +30,19 @@
   --label-font-weight: 400;
   --label-opacity: 1;
   --label-color: var(--grey-dark);
-  --label-margin-bottom: 8px;
+  --label-margin-bottom: var(--fs-8);
   .form--grey {
     --label-font-weight: 700;
     --label-color: var(--blue);
   }
 
   //CHECKBOX
-  --checkbox-size: 1.25rem; //20px
+  --checkbox-size: var(--fs-20); //20px
   --checkbox-border: 1px solid rgba(0, 0, 0, 0);
   --checkbox-border-focus: 1px solid var(--blue);
   --checkbox-border-checked: 1px solid rgba(0, 0, 0, 0);
   --checkbox-border-invalid: 1px solid var(--invalid);
-  --checkbox-radius: 6px;
+  --checkbox-radius: var(--fs-6);
   --checkbox-font-size: var(--fs-14);
   --checkbox-font-weight: 400;
   --checkbox-background: var(--magenta-opacity);
@@ -252,7 +252,7 @@ fieldset + .inputError {
     position: relative;
     min-height: var(--checkbox-size);
     padding: 0px;
-    padding-left: calc(var(--checkbox-size) + 0.75rem);
+    padding-left: calc(var(--checkbox-size) + var(--fs-12));
     color: var(--checkbox-text-color);
     opacity: 1;
     margin-bottom: 0px;
@@ -289,7 +289,6 @@ fieldset + .inputError {
       display: block;
       position: absolute;
       left: 0px;
-      //top: 0px;
       width: var(--checkbox-size);
       height: var(--checkbox-size);
     }
@@ -392,17 +391,17 @@ fieldset + .inputError {
 }
 
 // SELECT
-$select_height: 3.375rem; //54px;
+$select_height: var(--fs-54); //54px;
 $select_background: var(--white);
 $select_color: var(--grey-dark);
-$select_border_radius: 1rem;
+$select_border_radius: var(--fs-16);
 $select_border: 1px solid var(--grey-border);
-$select_font_size: 1rem;
+$select_font_size: var(--fs-16);
 $select_dropdown_font_size: var(--fs-12);
 $select_font_family: var(--font);
 $select_font_weight: 400;
 $select_text_align: left;
-$select_padding: 0px 1rem;
+$select_padding: 0px var(--fs-16);
 
 .choices {
   background: none;
@@ -653,9 +652,9 @@ $select_padding: 0px 1rem;
 
 .search-form {
   width: 100%;
-  padding: 1rem;
-  border-radius: 1.875rem; //30px
-  margin-top: 0.625rem; //10px
+  padding: var(--fs-16);
+  border-radius: var(--fs-30); //30px
+  margin-top: var(--fs-10); //10px
   background-color: var(--white);
 
   form {
