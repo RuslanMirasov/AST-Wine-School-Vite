@@ -20,16 +20,12 @@ const findCommonAncestor = elements => {
   return commonAncestor;
 };
 
-// Радио-группа (несколько input[type=radio] с одинаковым name) — логически одно поле:
-// required-невалидность у браузера общая на всю группу, значит и ошибка должна быть одна.
 export const getGroupFields = (field, form) => {
   if (field.type !== 'radio' || !field.name) return [field];
 
   return Array.from(form.querySelectorAll(`input[type="radio"][name="${CSS.escape(field.name)}"]`));
 };
 
-// Anchor — место, куда крепится ошибка: само поле для обычных контролов,
-// либо ближайший общий предок всей радио-группы (обычно fieldset).
 export const resolveAnchor = (field, form) => {
   const group = getGroupFields(field, form);
   if (group.length <= 1) return field;

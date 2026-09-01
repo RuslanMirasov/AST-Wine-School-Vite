@@ -1,8 +1,6 @@
 import { nativeMessages } from './validationRules.js';
 import { resolveCustomRule } from './resolveRules.js';
 
-// typeMismatch (слабая встроенная проверка email и т.п.) сюда намеренно не входит —
-// такие поля дополнительно проверяются нашим более строгим кастомным правилом ниже.
 const NATIVE_VALIDITY_CHECKS = ['valueMissing', 'tooShort', 'tooLong', 'rangeUnderflow', 'rangeOverflow', 'stepMismatch', 'patternMismatch'];
 
 const resolveNativeMessage = (input, failedCheck) => {
@@ -11,8 +9,6 @@ const resolveNativeMessage = (input, failedCheck) => {
   }
 
   if (failedCheck === 'patternMismatch') {
-    // title — нативный атрибут-описание именно для pattern, а не data-error-text:
-    // data-error-text относится только к нашим правилам (data-rule/type), не к нативным.
     return input.title || nativeMessages.patternMismatch;
   }
 
@@ -25,12 +21,13 @@ export const validateField = input => {
 
   const { validity } = input;
   const failedCheck = NATIVE_VALIDITY_CHECKS.find(key => validity[key]);
+  const rule = resolveCustomRule(input);
 
   if (failedCheck) {
-    return { valid: false, message: resolveNativeMessage(input, failedCheck) };
+    const message = !rule && input.dataset.errorText ? input.dataset.errorText : resolveNativeMessage(input, failedCheck);
+    return { valid: false, message };
   }
 
-  const rule = resolveCustomRule(input);
   const value = input.value ?? '';
 
   if (rule && value.trim() !== '' && !rule.test(value, input)) {

@@ -25,13 +25,10 @@ export const customRules = {
     test: value => /^\d+(?:[.,]\d{1,2})?$/.test(value.trim()),
     message: 'Введите сумму, например 100.00',
   },
-  // Буквы любого алфавита (кириллица, латиница и т.д.) и дефис — для двойных
-  // фамилий вроде «Петров-Водкин». Цифры и остальные символы запрещены.
   name: {
     test: value => /^[\p{L}-]+$/u.test(value.trim()),
     message: 'Разрешены только буквы и дефис',
   },
-  // То же самое, но только кириллица — например, когда латиница в имени/фамилии не нужна.
   'name-cyrillic': {
     test: value => /^[\p{Script=Cyrillic}-]+$/u.test(value.trim()),
     message: 'Разрешены только буквы кириллицы и дефис',
@@ -42,7 +39,6 @@ export const customRules = {
   },
 };
 
-// Резолвится, если поле не имеет data-rule: подбирает именованное правило по type/inputmode.
 export const typeFallbackRules = {
   email: 'email',
   tel: 'tel',

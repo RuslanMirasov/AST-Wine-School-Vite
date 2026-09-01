@@ -1,5 +1,5 @@
 import { popup } from './modules/popup.js';
-import { initForms } from './modules/forms/index.js';
+import { initForms } from './forms/index.js';
 import { initDecimalInputs, initPhoneInputs, initSelectFields } from './modules/inputMasks.js';
 import { initNavigationMenu, initMegaMenu } from './modules/navigation.js';
 import { initA11yToggle } from './modules/a11yToggle.js';

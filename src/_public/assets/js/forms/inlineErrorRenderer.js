@@ -6,17 +6,20 @@ const errorElements = new WeakMap();
 let errorIdCounter = 0;
 
 const isFormControl = anchor => anchor.matches('input, select, textarea');
-
-// Для fieldset-анкора (радио-группа) описание вешаем на все поля группы —
-// aria-describedby должен быть на самом фокусируемом контроле, не на fieldset.
 const getDescribedFields = anchor => (isFormControl(anchor) ? [anchor] : Array.from(anchor.querySelectorAll('input, select, textarea')));
 
-// Уже существующий .inputError в разметке — отрисованный сервером (Bitrix) или
-// руками для форс-показа через .active. Ищем его, чтобы не плодить дубликат и
-// уметь снять такую ошибку по фокусу, даже если show() для неё ни разу не звался.
 const findExistingErrorElement = anchor => {
   if (isFormControl(anchor)) {
-    return anchor.closest('label')?.querySelector(`:scope > .${ERROR_CLASS}`) ?? null;
+    const label = anchor.closest('label');
+    if (!label) return null;
+
+    // Если в label несколько полей (например агрегирующее hidden-поле кода + боксы
+    // под него) — единственный .inputError внутри мог принадлежать соседнему полю,
+    // однозначно определить владельца нельзя. Пропускаем переиспользование, чтобы
+    // clear() на "чужом" поле не хватал и не схлопывал чужую ошибку (гонка анимаций).
+    if (label.querySelectorAll('input, select, textarea').length > 1) return null;
+
+    return label.querySelector(`:scope > .${ERROR_CLASS}`) ?? null;
   }
   const sibling = anchor.nextElementSibling;
   return sibling?.classList.contains(ERROR_CLASS) ? sibling : null;
@@ -43,8 +46,6 @@ const createErrorElement = anchor => {
     if (!label) return null;
     label.appendChild(errorEl);
   } else {
-    // anchor — общий предок группы (например fieldset): ошибка ставится
-    // сразу после его закрывающего тега, а не внутрь.
     anchor.insertAdjacentElement('afterend', errorEl);
   }
 

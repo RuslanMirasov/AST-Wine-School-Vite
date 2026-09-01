@@ -282,6 +282,16 @@
   // }
 }
 
+//1366
+@media (max-width: 1439px) {
+  .footer {
+    .container {
+      max-width: 1280px;
+      padding: 0px 40px;
+    }
+  }
+}
+
 //1280
 @media (max-width: 1365px) {
   .footer {
@@ -290,6 +300,7 @@
     .container {
       gap: var(--fs-40) var(--fs-24);
       max-width: 1200px;
+      padding: 0px 20px;
     }
   }
 

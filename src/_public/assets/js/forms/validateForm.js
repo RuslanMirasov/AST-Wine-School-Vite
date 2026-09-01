@@ -21,8 +21,6 @@ export const validateForm = (form, renderer) => {
     }
   });
 
-  // Схлопываем результаты в один на anchor — радио-группа даёт несколько записей
-  // с одним и тем же anchor, но ошибка должна быть выведена по нему только раз.
   const anchors = new Map();
 
   fieldResults.forEach(({ anchor, valid, message }) => {
