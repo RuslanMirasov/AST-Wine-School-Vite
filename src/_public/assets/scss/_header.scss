@@ -855,7 +855,18 @@
     }
   }
 }
-
+@media (max-width: 374px) {
+  .header-buttons {
+    gap: 10px;
+  }
+  .burger {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    margin-right: 0px;
+    right: 0;
+  }
+}
 //ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ
 
 .a11y {

@@ -6,19 +6,11 @@
   margin-top: 40px;
 
   .container {
-    gap: 24px;
+    justify-content: space-between;
+    gap: var(--fs-24);
     max-width: 1280px;
     padding: 0px 20px;
     align-items: flex-start;
-  }
-
-  .button.magenta {
-    @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
-        background-color: var(--magenta-hover);
-      }
-    }
   }
 }
 
@@ -70,22 +62,20 @@
 }
 
 .footer-menu {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
-  gap: 1rem 0px;
+  gap: var(--fs-16) 0px;
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
-  flex: 1;
-  width: calc((100% - 72px) / 4);
+  width: auto;
 
-  &:nth-child(1),
-  &:nth-child(2) {
-    max-width: 240px;
+  a {
+    text-wrap: nowrap;
   }
 
   .button {
-    margin-top: 12px;
+    margin-top: var(--fs-24);
     @media (hover: hover) {
       &:hover,
       &:focus-visible {
@@ -101,12 +91,21 @@
   flex-direction: column;
   gap: 1rem;
   width: 50%;
-  padding-right: 5px;
   .footer-menu-title {
-    font-size: var(--fs-18);
     opacity: 1;
     line-height: 1;
+    margin: 0;
   }
+}
+
+.footer-address {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: var(--fs-24);
 }
 
 .footer-menu-title {
@@ -114,7 +113,7 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
-
+  margin-bottom: var(--fs-16);
   width: 100%;
   font-weight: 700;
   font-size: var(--fs-18);
@@ -134,7 +133,7 @@
   position: relative;
   width: 100%;
   flex-direction: column;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.143;
   font-size: var(--fs-14);
 
@@ -144,7 +143,7 @@
 
   a {
     display: inline-block;
-    padding: 8px 0px;
+    padding: var(--fs-8) 0px;
     transition: color 0.3s var(--cubic);
     outline: none;
     font-size: 0.875rem;
@@ -228,7 +227,6 @@
   }
   .footer-menu-list {
     a {
-      transition: none;
       @media (hover: hover) {
         &:hover,
         &:focus-visible {
@@ -254,16 +252,9 @@
       }
     }
   }
+
   .footer-logo {
     display: none;
-  }
-  .footer-menu {
-    width: auto;
-
-    &:nth-child(1),
-    &:nth-child(2) {
-      max-width: 230px;
-    }
   }
 
   // БЕЛАЯ ТЕМА
@@ -282,20 +273,6 @@
     }
   }
 
-  // A++ | ОТСТУП ++
-  &.a11y-spacing-wider,
-  &.a11y-font-large {
-    .footer-menu {
-      flex: none;
-      width: calc((100% - 24px) / 2);
-
-      &:nth-child(1),
-      &:nth-child(2) {
-        max-width: 100%;
-      }
-    }
-  }
-
   // A+
   // &.a11y-font-big {
   // }
@@ -311,20 +288,13 @@
     padding-top: 80px;
 
     .container {
-      gap: 24px;
+      gap: var(--fs-40) var(--fs-24);
       max-width: 1200px;
     }
   }
 
   .footer-menu-list {
     font-size: var(--fs-13);
-  }
-
-  .footer-menu {
-    &:nth-child(1),
-    &:nth-child(2) {
-      max-width: 220px;
-    }
   }
 }
 
@@ -333,9 +303,6 @@
   .footer {
     display: block;
     position: relative;
-    .container {
-      gap: 40px;
-    }
   }
 
   .copy {
@@ -347,15 +314,6 @@
   .footer-logo {
     margin-top: 0px;
     margin-bottom: 0px;
-  }
-
-  .footer-menu {
-    min-width: calc(50% - 20px);
-
-    &:nth-child(1),
-    &:nth-child(2) {
-      min-width: calc(50% - 20px);
-    }
   }
 }
 
@@ -373,13 +331,13 @@
   }
 }
 
-//320
+//375
 @media (max-width: 767px) {
   .footer {
     padding-top: 50px;
     margin-top: 20px;
     .container {
-      gap: 40px;
+      gap: var(--fs-30);
     }
   }
 
@@ -404,16 +362,32 @@
     }
   }
 
+  .footer-menu-title {
+    margin: 0;
+  }
+
   [data-accordeon].footer-menu {
     display: block;
-    margin-bottom: -10px;
     .footer-menu-list li {
       &:first-child {
-        margin-top: 16px;
-      }
-      &:last-child {
-        margin-bottom: 16px;
+        margin-top: var(--fs-16);
       }
     }
+  }
+
+  .footer-address {
+    margin-top: var(--fs-16);
+  }
+}
+
+//375
+@media (max-width: 374px) {
+  .footer-address {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .footer-menu-col {
+    width: 100%;
+    margin-bottom: var(--fs-16);
   }
 }
