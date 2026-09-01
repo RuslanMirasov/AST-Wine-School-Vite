@@ -1,4 +1,5 @@
 import { reinitSlidersForA11y } from './sliders.js';
+import { updateSearchState } from './headerSearch.js';
 
 const STORAGE_KEY = 'a11y-settings';
 
@@ -92,6 +93,7 @@ export const initA11yToggle = () => {
       applyClasses();
       applyToggleButtons();
       reinitSlidersForA11y();
+      updateSearchState();
     });
   });
 

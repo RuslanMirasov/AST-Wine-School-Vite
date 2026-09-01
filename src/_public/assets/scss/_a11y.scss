@@ -1,37 +1,44 @@
 //ВЕРСИИ ДЛЯ СЛАБОВИДЯЩИХ
 .body.a11y {
+  *:not(
+    .swiper-wrapper,
+    .swiper-slide,
+    .backdrop,
+    .backdrop *,
+    [data-accordeon-body],
+    .preloader,
+    .preloader *,
+    .inputError,
+    .form-errors,
+    .mega-menu
+  ) {
+    transition: 0s !important;
+  }
+
   .a11y-panel-wrapper {
     display: flex;
   }
 
   // ОТСТУП +
-  &.a11y-spacing-wide {
-    letter-spacing: 0.05rem;
+  &.a11y-spacing-wide * {
+    letter-spacing: 0.04em;
   }
 
   // ОТСТУП ++
-  &.a11y-spacing-wider {
-    letter-spacing: 0.1rem;
+  &.a11y-spacing-wider * {
+    letter-spacing: 0.08em;
   }
 
   // БЕЛАЯ ТЕМА
   &.a11y-theme-light {
     background: var(--white);
     color: var(--black);
-
-    .footer {
-      background: var(--black);
-    }
   }
 
   // ЧЁРНАЯ ТЕМА
   &.a11y-theme-dark {
     color: #fff;
-    background: #141414;
-
-    .footer {
-      background: #000000;
-    }
+    background: var(--black);
   }
 
   // КАРТИНКИ МОНОХРОМ

@@ -173,14 +173,12 @@ button {
   display: block;
   position: relative;
   width: 100%;
-
   flex-wrap: wrap;
-
   position: relative;
   z-index: 1;
-  padding: 40px 0px;
+  padding: 2.5rem 0px;
   margin: 0 auto;
-  scroll-margin: 40px;
+  scroll-margin: 2.5rem;
   overflow: hidden;
   &.visible {
     overflow: visible;

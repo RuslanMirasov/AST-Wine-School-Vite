@@ -3,6 +3,7 @@
   display: none;
   justify-content: center;
   width: 100%;
+  min-width: 100svw;
   position: fixed;
   overflow: hidden;
   top: 0px;
@@ -27,6 +28,9 @@
   border-radius: 16px;
   gap: 14px;
   color: #273551 !important;
+  > * {
+    letter-spacing: 0 !important;
+  }
 
   p {
     position: relative;

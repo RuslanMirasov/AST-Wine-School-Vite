@@ -70,17 +70,19 @@
 
   p {
     display: block;
-    font-size: var(--fs-36);
+    font-size: 36px;
     line-height: 1;
     font-weight: 700;
     margin-top: 16px;
     text-transform: uppercase;
+    letter-spacing: 0px;
     span {
       display: block;
-      font-size: var(--fs-18);
+      font-size: 18px;
       line-height: 1;
       font-weight: 300;
       margin-top: 8px;
+      letter-spacing: 0px;
     }
   }
 }

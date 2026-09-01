@@ -252,7 +252,7 @@ fieldset + .inputError {
     position: relative;
     min-height: var(--checkbox-size);
     padding: 0px;
-    padding-left: calc(var(--checkbox-size) + 12px);
+    padding-left: calc(var(--checkbox-size) + 0.75rem);
     color: var(--checkbox-text-color);
     opacity: 1;
     margin-bottom: 0px;
