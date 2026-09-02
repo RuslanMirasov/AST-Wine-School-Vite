@@ -112,6 +112,15 @@
   }
 }
 
+//1366
+@media (max-width: 1439px) {
+  .title {
+    &.title--64 {
+      font-size: var(--fs-54);
+    }
+  }
+}
+
 //375
 @media (max-width: 767px) {
   .title {
@@ -124,6 +133,12 @@
     &.title--32 {
       font-size: var(--fs-30);
       line-height: 1.1;
+    }
+  }
+
+  .text {
+    &.fs-18 {
+      font-size: var(--fs-16);
     }
   }
 }

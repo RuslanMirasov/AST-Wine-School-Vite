@@ -47,18 +47,6 @@
   &.blue {
     color: rgba(5, 67, 189, 0.078);
   }
-  &.white {
-    right: auto;
-    left: 0px;
-    top: 50%;
-    height: 1320px;
-    width: auto;
-    color: rgba(255, 255, 255, 0.3);
-    transform: translate(10%, -64%);
-    path {
-      backdrop-filter: blur(10px);
-    }
-  }
   &.large {
     width: 694px;
     height: 694px;

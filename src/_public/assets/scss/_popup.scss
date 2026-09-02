@@ -28,8 +28,8 @@ $popup_transition: 0.5s;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background: var(--blue-light);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  //backdrop-filter: blur(10px);
   transition:
     opacity $popup_transition ease-in-out 0s,
     visibility $popup_transition ease-in-out 0s;

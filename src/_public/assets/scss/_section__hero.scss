@@ -1,5 +1,8 @@
 .section-hero {
   padding: 25px 0px;
+  .swiper {
+    overflow: hidden;
+  }
   @media (min-width: 768px) {
     .swiper-pagination {
       display: none !important;
@@ -30,14 +33,16 @@
   left: 0px;
   top: 0px;
   z-index: 0;
+  overflow: hidden;
+  &.white-gradient:before {
+    opacity: 0.5;
+    z-index: 2;
+  }
 
   .swiper {
     height: 100%;
-    overflow: hidden;
+    z-index: 1;
     .swiper-slide {
-      &:before {
-        opacity: 0.5;
-      }
       opacity: 1;
       picture {
         pointer-events: none;
@@ -253,7 +258,7 @@
 
   .hero-images-slider {
     opacity: 0.5;
-    .swiper .swiper-slide:before {
+    &.white-gradient:before {
       opacity: 1;
     }
   }
@@ -290,6 +295,9 @@
     .arrows.ta--r {
       order: 2;
       justify-content: center;
+    }
+    .tag {
+      background-color: rgba(255, 255, 255, 0.5);
     }
   }
 
@@ -333,21 +341,21 @@
   }
 
   .hero {
-    padding-top: 40%;
+    padding-top: 35%;
   }
   .hero-images-slider {
     opacity: 1;
+    height: auto;
+    &.white-gradient:before {
+      background: linear-gradient(rgba(255, 255, 255, 0) 50%, var(--white));
+    }
     .swiper {
       .swiper-slide {
-        &:before {
-          opacity: 1;
-          background: linear-gradient(rgba(0, 0, 0, 0) 20%, #fff 30%, #fff 32%);
-        }
         opacity: 1;
         picture {
           img {
             width: 100%;
-            height: 50vw;
+            height: 100%;
           }
         }
       }
