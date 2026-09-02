@@ -2,26 +2,26 @@
   <div class="container">
     <div class="hero">
       <!--Images slider-->
-      <div class="hero-images-slider" data-slider="hero-images-swiper" data-allow-touch-move="false" data-loop="true">
+      <div class="hero-images-slider" data-slider="hero-images-swiper" data-allow-touch-move="false" data-pagination-type="fraction" data-loop="true">
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide white-gradient">
               <picture>
-                <source media="(max-width: 767px)" srcset="/assets/img/promo/1-mob.webp" />
+                <source media="(max-width: 767px)" srcset="/assets/img/promo/1-full.webp" />
                 <img src="/assets/img/promo/1-full.webp" alt="" />
               </picture>
             </div>
 
             <div class="swiper-slide white-gradient">
               <picture>
-                <source media="(max-width: 767px)" srcset="/assets/img/promo/2-mob.webp" />
+                <source media="(max-width: 767px)" srcset="/assets/img/promo/2-full.webp" />
                 <img src="/assets/img/promo/2-full.webp" alt="" />
               </picture>
             </div>
 
             <div class="swiper-slide white-gradient">
               <picture>
-                <source media="(max-width: 767px)" srcset="/assets/img/promo/2-mob.webp" />
+                <source media="(max-width: 767px)" srcset="/assets/img/promo/3-full.webp" />
                 <img src="/assets/img/promo/3-full.webp" alt="" />
               </picture>
             </div>
@@ -36,6 +36,7 @@
         data-controls="hero-images-swiper"
         data-effect="fade"
         data-allow-touch-move="false"
+        data-pagination-type="fraction"
         data-autoplay="10000"
         data-loop="true"
         data-auto-height="true"
@@ -59,7 +60,7 @@
                   </li>
                 </ul>
 
-                <h2 class="title title--40 upper">Быстрый старт: о&nbsp;вине за&nbsp;3&nbsp;встречи</h2>
+                <h2 class="title title--40 upper">Быстрый старт: о&nbsp;вине за&nbsp;3 встречи</h2>
 
                 <p class="text">Всего за&nbsp;три встречи вы узнаете о&nbsp;вине всё, что&nbsp;нужно.</p>
 
@@ -104,7 +105,7 @@
         </div>
 
         <div class="arrows auto ta--r">
-          <load src="/_partials/components/slider-arrows.html" />
+          <load src="/_partials/components/slider-arrows-with-pagination.html" />
         </div>
 
         <ul class="custom-pagination">

@@ -1,5 +1,10 @@
 .section-hero {
   padding: 25px 0px;
+  @media (min-width: 768px) {
+    .swiper-pagination {
+      display: none !important;
+    }
+  }
 }
 
 .hero {
@@ -28,6 +33,7 @@
 
   .swiper {
     height: 100%;
+    overflow: hidden;
     .swiper-slide {
       &:before {
         opacity: 0.5;
@@ -222,8 +228,8 @@
     }
 
     .custom-pagination-image {
-      width: 110px;
-      height: 110px;
+      width: 90px;
+      height: 90px;
     }
 
     .custom-pagination-text {
@@ -232,8 +238,118 @@
       }
       p {
         font-size: var(--fs-12);
-        padding-top: 10px;
-        line-height: 1.2;
+      }
+    }
+  }
+}
+
+//768
+@media (max-width: 1023px) {
+  .hero {
+    height: auto;
+    max-height: 1000px;
+    padding-top: 20%;
+  }
+
+  .hero-images-slider {
+    opacity: 0.5;
+    .swiper .swiper-slide:before {
+      opacity: 1;
+    }
+  }
+
+  .custom-pagination {
+    justify-content: flex-start;
+    li {
+      min-width: 114px;
+      flex: none;
+      &.active {
+        min-width: 1px;
+        .custom-pagination-item {
+          width: calc(100vw - 114px - 114px - 80px - 24px);
+        }
+      }
+    }
+
+    .custom-pagination-image {
+      width: 90px;
+      height: 90px;
+    }
+
+    .custom-pagination-item {
+      transition: width 0.5s var(--cubic);
+      width: 114px;
+    }
+  }
+}
+
+//375
+@media (max-width: 767px) {
+  .section-hero {
+    padding: 16px 0px;
+    .arrows.ta--r {
+      order: 2;
+      justify-content: center;
+    }
+  }
+
+  .hero-content {
+    padding: 16px;
+    padding-bottom: 24px;
+    gap: 20px;
+    .title {
+      font-size: var(--fs-30);
+    }
+  }
+
+  .custom-pagination {
+    justify-content: center;
+    padding-top: 10px;
+    li {
+      min-width: 1px;
+      max-width: 140px;
+      flex: 1;
+      opacity: 0.3;
+      transition: opacity 0.5s var(--cubic);
+      &.active {
+        opacity: 1;
+        min-width: 1px;
+        .custom-pagination-item {
+          width: 100%;
+        }
+      }
+    }
+
+    .custom-pagination-image {
+      width: 100%;
+      height: 90px;
+    }
+
+    .custom-pagination-item {
+      transition: width 0.5s var(--cubic);
+      width: 100%;
+      padding: 0px;
+    }
+  }
+
+  .hero {
+    padding-top: 40%;
+  }
+  .hero-images-slider {
+    opacity: 1;
+    .swiper {
+      .swiper-slide {
+        &:before {
+          opacity: 1;
+          background: linear-gradient(rgba(0, 0, 0, 0) 20%, #fff 30%, #fff 32%);
+        }
+        opacity: 1;
+        picture {
+          img {
+            width: 100%;
+            height: 50vw;
+          }
+        }
       }
     }
   }

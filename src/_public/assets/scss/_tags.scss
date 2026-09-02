@@ -7,6 +7,9 @@
   align-items: center;
   align-content: center;
   gap: 10px;
+  @media (max-width: 767px) {
+    gap: 8px;
+  }
   flex-shrink: 0;
 
   &.auto {
@@ -39,6 +42,17 @@
     @media (max-width: 1439px) {
       font-size: var(--fs-12);
       padding: var(--fs-8) var(--fs-14);
+
+      svg {
+        width: var(--fs-14);
+        height: var(--fs-14);
+      }
+    }
+
+    //375
+    @media (max-width: 767px) {
+      font-size: var(--fs-12);
+      padding: var(--fs-8) var(--fs-12);
 
       svg {
         width: var(--fs-14);

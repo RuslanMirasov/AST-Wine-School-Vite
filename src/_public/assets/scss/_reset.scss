@@ -146,7 +146,7 @@ button {
 
 .container {
   display: flex;
-  gap: 32px;
+  gap: var(--fs-32);
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
@@ -171,6 +171,14 @@ button {
   @media (max-width: 1279px) {
     padding: 0px 20px;
   }
+
+  @media (max-width: 767px) {
+    padding: 0px 16px;
+    gap: var(--fs-24);
+  }
+  @media (max-width: 667px) {
+    max-width: 420px;
+  }
 }
 
 .section {
@@ -180,12 +188,15 @@ button {
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
-  padding: 2.5rem 0px;
+  padding: var(--fs-40) 0px;
   margin: 0 auto;
-  scroll-margin: 2.5rem;
+  scroll-margin: var(--fs-40);
   overflow: hidden;
   &.visible {
     overflow: visible;
+  }
+  @media (max-width: 767px) {
+    padding: var(--fs-32) 0px;
   }
 }
 
