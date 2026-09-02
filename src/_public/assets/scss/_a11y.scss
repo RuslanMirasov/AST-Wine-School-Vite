@@ -21,11 +21,11 @@ html {
 
     // A+
     &:has(.a11y-font-big) {
-      font-size: 19.2px;
+      font-size: 22px; //19.2px
     }
     // A++
     &:has(.a11y-font-large) {
-      font-size: 24px;
+      font-size: 32px; // 24px
     }
 
     // ОТСТУП +

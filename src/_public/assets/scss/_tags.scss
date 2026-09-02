@@ -19,25 +19,38 @@
     width: auto;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5625rem 1rem;
     color: var(--black);
     border: 1px solid var(--grey);
     border-radius: 100px;
-    font-size: var(--fs-13);
     line-height: 1;
     font-weight: 700;
     z-index: 2;
+    font-size: var(--fs-13);
+    padding: var(--fs-8) var(--fs-16);
+
+    svg {
+      display: block;
+      width: var(--fs-18);
+      height: var(--fs-18);
+      color: var(--magenta);
+    }
+
+    //1366
+    @media (max-width: 1439px) {
+      font-size: var(--fs-12);
+      padding: var(--fs-8) var(--fs-14);
+
+      svg {
+        width: var(--fs-14);
+        height: var(--fs-14);
+      }
+    }
+
     &.white {
       background-color: var(--white);
     }
     &.right {
       margin-left: auto;
-    }
-    svg {
-      display: block;
-      width: 1.125rem;
-      height: 1.125rem;
-      color: var(--magenta);
     }
   }
 }
