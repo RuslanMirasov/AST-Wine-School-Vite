@@ -28,3 +28,64 @@
     }
   }
 }
+
+//768
+@media (max-width: 1023px) {
+  .section--degustation-and-seminars {
+    .content-text.va--c {
+      margin: 0;
+      margin-bottom: auto;
+    }
+    .content {
+      min-height: 300px;
+    }
+  }
+
+  .section--recomendations {
+    .content-list__item {
+      flex: none;
+      width: 100%;
+      &.col-4 {
+        min-height: 300px;
+      }
+    }
+  }
+}
+
+//375
+@media (max-width: 767px) {
+  .section--degustation-and-seminars {
+    .content {
+      min-height: 1px;
+    }
+    .content-list__item.col-4 {
+      .content {
+        min-height: 300px;
+      }
+    }
+  }
+
+  .section--recomendations {
+    .content-list__item {
+      &.col-4 {
+        min-height: auto;
+      }
+
+      &.image-only {
+        .content {
+          padding: 0;
+        }
+        .image-background {
+          position: relative;
+          height: auto;
+          img,
+          video {
+            position: relative;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

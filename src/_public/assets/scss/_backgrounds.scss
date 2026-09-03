@@ -44,9 +44,11 @@
   z-index: 0;
   transform: translate(24%, -16%);
   color: rgba(194, 66, 145, 0.078);
+  pointer-events: none;
   &.blue {
     color: rgba(5, 67, 189, 0.078);
   }
+
   &.large {
     width: 694px;
     height: 694px;
@@ -67,6 +69,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  pointer-events: none;
   &:before {
     content: '';
     display: block;

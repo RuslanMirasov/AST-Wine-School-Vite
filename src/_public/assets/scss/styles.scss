@@ -4,7 +4,9 @@
 @use 'reset';
 @use 'typography';
 @use 'header';
+@use 'backgrounds';
 @use 'collection';
+@use 'content';
 @use 'tags';
 @use 'swiper';
 @use 'buttons';
@@ -25,6 +27,4 @@
 @use 'image-slider';
 @use 'popup';
 @use 'panel';
-@use 'content';
-@use 'backgrounds';
 @use 'a11y';

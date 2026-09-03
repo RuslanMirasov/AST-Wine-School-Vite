@@ -12,14 +12,8 @@ function compileStyles(style) {
   return sass.compile(scssEntry, { style }).css;
 }
 
-// styles.scss lives under src/_public/assets, so Vite treats it as a plain
-// static file and won't compile it. These two plugins take over that job:
-// in dev, compile on request and hot-swap the <link> on scss changes (no
-// full reload); at build time, write both a minified (linked) and an
-// expanded (unlinked, kept for reference) output.
 const hmrClientId = 'virtual:scss-hmr-client';
 const resolvedHmrClientId = '\0' + hmrClientId;
-// Vite's URL convention for \0-prefixed virtual modules: /@id/__x00__<id>.
 const hmrClientUrl = '/@id/__x00__' + hmrClientId;
 
 function scssDevPlugin() {
@@ -32,8 +26,6 @@ function scssDevPlugin() {
     load(id) {
       if (id !== resolvedHmrClientId) return;
 
-      // Hot-swaps the compiled styles.min.css link on scss changes,
-      // without a full page reload.
       return `
         if (import.meta.hot) {
           import.meta.hot.on('scss-update', () => {
@@ -73,12 +65,6 @@ function scssDevPlugin() {
   };
 }
 
-// Computes, for the page currently being processed, how many levels deep
-// it sits below the site root ("/" -> 0, "/about/" -> 1, ...) and expands
-// every "%ROOT%" token in its HTML into the matching relative prefix
-// ("./", "../", "../../", ...). Combined with base: '' below, this makes
-// a single dist/ work when dropped at any URL — domain root, a random
-// subdirectory, GitHub Pages — with no rebuild and no --base flag.
 function rootPrefix(path) {
   const depth = path.split('/').filter(Boolean).length - 1;
   return depth <= 0 ? './' : '../'.repeat(depth);

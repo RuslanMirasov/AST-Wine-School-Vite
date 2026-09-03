@@ -65,6 +65,9 @@
     }
     &.right {
       margin-left: auto;
+      @media (max-width: 767px) {
+        margin-left: 0;
+      }
     }
   }
 }

@@ -124,15 +124,19 @@
 //375
 @media (max-width: 767px) {
   .title {
-    &.title--64 {
-      font-size: var(--fs-32);
+    &.title--24 {
+      font-size: var(--fs-20);
+      line-height: 1.1;
+    }
+    &.title--32 {
+      font-size: var(--fs-28);
+      line-height: 1.1;
     }
     &.title--40 {
       font-size: var(--fs-32);
     }
-    &.title--32 {
-      font-size: var(--fs-30);
-      line-height: 1.1;
+    &.title--64 {
+      font-size: var(--fs-32);
     }
   }
 

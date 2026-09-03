@@ -262,6 +262,7 @@ export const customRules = {
 | 20px  | 1.25rem    |
 | 22px  | 1.375rem   |
 | 24px  | 1.5rem     |
+| 28px  | 1.75rem    |
 | 30px  | 1.875rem   |
 | 32px  | 2rem       |
 | 38px  | 2.375rem   |

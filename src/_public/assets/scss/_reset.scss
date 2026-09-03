@@ -173,11 +173,9 @@ button {
   }
 
   @media (max-width: 767px) {
+    max-width: 420px;
     padding: 0px 16px;
     gap: var(--fs-24);
-  }
-  @media (max-width: 667px) {
-    max-width: 420px;
   }
 }
 
@@ -273,4 +271,20 @@ button {
   color: var(--magenta);
   font-size: 14px;
   line-height: 1.4;
+}
+
+.magenta-link {
+  display: inline-block;
+  color: var(--magenta);
+  font-size: var(--fs-14);
+  line-height: 1.4;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  transition: border-bottom 0.3s var(--cubic);
+  @media (hover: hover) {
+    &:hover,
+    &:focus-visible {
+      border-bottom: 1px solid var(--magenta);
+    }
+  }
 }

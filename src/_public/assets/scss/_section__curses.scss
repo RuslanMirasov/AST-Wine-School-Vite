@@ -19,7 +19,7 @@
     overflow: hidden;
   }
 
-  .col-32 {
+  .col-3 {
     .content-text {
       max-width: 14.375rem; //230px
     }
@@ -105,18 +105,92 @@
   }
 }
 
-.magenta-link {
-  display: inline-block;
-  color: var(--magenta);
-  font-size: var(--fs-14);
-  line-height: 1.4;
-  font-weight: 700;
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
-  transition: border-bottom 0.3s var(--cubic);
-  @media (hover: hover) {
-    &:hover,
-    &:focus-visible {
-      border-bottom: 1px solid var(--magenta);
+//768
+@media (max-width: 1023px) {
+  .section--curses {
+    .content {
+      min-height: 300px;
+
+      .price-and-btn {
+        margin-top: var(--fs-10);
+      }
+    }
+    .content-text {
+      max-width: 300px;
+    }
+
+    .col-3 {
+      .content-text {
+        max-width: 300px;
+      }
+    }
+
+    .tags {
+      .tag {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  .present-certificat {
+    .content-text {
+      max-width: 350px;
+    }
+  }
+
+  .present {
+    width: 350px;
+    transform: translate(0%, 8%);
+  }
+}
+
+//375
+@media (max-width: 767px) {
+  .section--curses {
+    .container {
+      > .button {
+        margin-left: auto;
+      }
+    }
+    .content {
+      .image-background {
+        position: relative;
+        width: calc(100% + 40px);
+        left: -20px;
+        top: -20px;
+        margin-bottom: -40px;
+        &:before {
+          background: linear-gradient(rgba(255, 255, 255, 0) 50%, var(--white));
+        }
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          position: relative;
+        }
+      }
+
+      .logo-background {
+        width: 150px;
+        right: 0%;
+        top: 0%;
+        transform: translate(24%, -36%);
+      }
+    }
+  }
+
+  .present-certificat {
+    padding-top: 200px;
+    .logo-background {
+      width: 100%;
+      right: 0%;
+      top: 0%;
+      transform: translate(24%, -36%);
+    }
+
+    .present {
+      width: 180px;
+      transform: translate(-50%, 5%);
     }
   }
 }

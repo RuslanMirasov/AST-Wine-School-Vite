@@ -49,14 +49,17 @@
 .rating-sum {
   display: inline-flex;
   position: relative;
-  height: 2rem; //32px
-  justify-content: center;
+  height: var(--fs-32); //32px
+  justify-content: flex-start;
   align-items: flex-end;
   align-content: flex-end;
-  gap: 0.75rem; //12px
+  gap: var(--fs-12); //12px
   strong {
     display: block;
     line-height: var(--fs-34);
+  }
+  @media (max-width: 830px) {
+    min-width: 60%;
   }
 }
 
@@ -79,8 +82,9 @@
   align-items: flex-start;
   background-color: var(--white);
   padding: 1.5rem; //24px
-  border-radius: 30px;
-  gap: 1rem;
+  border-radius: var(--fs-30);
+  gap: var(--fs-16);
+  box-shadow: 0px 8px 24px rgba(15, 23, 42, 0.031);
 
   > .text {
     line-height: 1.5;
@@ -117,5 +121,15 @@
     display: block;
     line-height: 1;
     margin-top: 4px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section--reviews-slider {
+    .container {
+      > .buttons .button {
+        width: 100%;
+      }
+    }
   }
 }
