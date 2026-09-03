@@ -17,15 +17,15 @@ html {
     --magenta-opacity: rgba(171, 43, 122, 0.5); // пересчитан под новый --magenta-hover
     --invalid: #d90000; // было #ff0000 (4.00:1) → 5.31:1
     // A
-    font-size: 18px;
+    font-size: 16px;
 
     // A+
     &:has(.a11y-font-big) {
-      font-size: 22px; //19.2px
+      font-size: 17px; //19.2px
     }
     // A++
     &:has(.a11y-font-large) {
-      font-size: 32px; // 24px
+      font-size: 18px; // 24px
     }
 
     // ОТСТУП +
@@ -101,7 +101,8 @@ html {
       }
     }
 
-    .popup {
+    .popup,
+    .header {
       font-size: 16px;
       * {
         letter-spacing: normal !important;

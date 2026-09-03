@@ -88,7 +88,7 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  gap: 0.375rem; //6px
+  gap: var(--fs-6); //6px
   margin-bottom: 24px;
 
   .text {
@@ -105,7 +105,7 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    gap: 0.3125rem; //5px
+    gap: var(--fs-5); //5px
     color: var(--grey);
     font-size: var(--fs-14);
     line-height: 1.2;
