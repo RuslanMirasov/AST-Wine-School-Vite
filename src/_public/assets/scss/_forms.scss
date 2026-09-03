@@ -9,7 +9,8 @@
   --input-font-weight: 400;
   --input-text-transform: auto;
   --input-height: var(--fs-54); //54px
-  --input-padding: var(--fs-16); //16px
+
+  --input-padding: 10px var(--fs-16); //16px
   --input-background: none;
   --input-border: 1px solid var(--grey-border);
   --input-border-radius: var(--fs-16); //16px
@@ -64,6 +65,12 @@
   --radio-border: 1px solid var(--magenta-opacity);
   --radio-border-checked: 1px solid var(--magenta);
   --radio-color-checked: var(--magenta);
+
+  @media (max-width: 767px) {
+    --input-font-size: var(--fs-14);
+    --input-border-radius: var(--fs-10);
+    --input-height: var(--fs-40); //54px
+  }
 }
 
 input[type='number']::-webkit-outer-spin-button,

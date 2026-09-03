@@ -1,0 +1,18 @@
+//desctop + tablet
+@media (min-width: 768px) {
+  .section-materials-slider {
+    .swiper-pagination {
+      display: none;
+    }
+  }
+}
+
+//375
+@media (max-width: 767px) {
+  .section-materials-slider {
+    .arrows {
+      order: 2;
+      justify-content: center;
+    }
+  }
+}

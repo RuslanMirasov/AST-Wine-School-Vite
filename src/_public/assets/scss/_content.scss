@@ -98,6 +98,11 @@
     .content-list__item {
       min-width: 100%;
 
+      &.col-2 {
+        min-width: calc(50% - var(--fs-20));
+        max-width: 100%;
+      }
+
       &.col-3 {
         flex: none;
         min-width: 100%;
@@ -115,6 +120,10 @@
   .content-list {
     gap: var(--fs-18);
     .content-list__item {
+      &.col-2 {
+        min-width: 100%;
+      }
+
       &.col-3 {
         max-width: 100%;
       }

@@ -36,3 +36,18 @@
   width: calc((100% - 1.875rem) / 2);
   gap: var(--form-gap);
 }
+
+//375
+@media (max-width: 767px) {
+  .callback-form {
+    flex-direction: column;
+
+    .input.input--textarea {
+      height: 100px; //74px
+    }
+  }
+
+  .callback-form-inner {
+    width: 100%;
+  }
+}
