@@ -346,10 +346,12 @@
         background-color: rgba(0, 0, 0, 0);
         color: var(--magenta);
         @media (hover: hover) {
-          &:hover,
-          &:focus-visible {
+          &:hover {
             color: var(--magenta);
           }
+        }
+        &:focus-visible {
+          color: var(--magenta);
         }
       }
     }

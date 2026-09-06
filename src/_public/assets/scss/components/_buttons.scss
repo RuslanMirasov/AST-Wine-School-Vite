@@ -74,10 +74,12 @@
     background-color: var(--blue-light);
     color: var(--blue);
     @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
+      &:hover {
         background-color: var(--blue);
       }
+    }
+    &:focus-visible {
+      background-color: var(--blue);
     }
   }
 
@@ -91,12 +93,16 @@
     color: var(--magenta);
     border: 1px solid var(--magenta);
     @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
+      &:hover {
         color: var(--white);
         background-color: var(--blue);
         border: 1px solid var(--blue);
       }
+    }
+    &:focus-visible {
+      color: var(--white);
+      background-color: var(--blue);
+      border: 1px solid var(--blue);
     }
   }
 
@@ -105,22 +111,28 @@
     color: var(--blue);
     border: 1px solid #e2e5ea;
     @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
+      &:hover {
         color: var(--white);
         background-color: var(--blue);
         border: 1px solid var(--blue);
       }
+    }
+    &:focus-visible {
+      color: var(--white);
+      background-color: var(--blue);
+      border: 1px solid var(--blue);
     }
   }
 
   &.magenta {
     background-color: var(--magenta);
     @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
+      &:hover {
         background-color: var(--blue);
       }
+    }
+    &:focus-visible {
+      background-color: var(--blue);
     }
   }
 
@@ -128,11 +140,14 @@
     background-color: var(--magenta-light);
     color: var(--magenta);
     @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
+      &:hover {
         color: var(--white);
         background-color: var(--blue);
       }
+    }
+    &:focus-visible {
+      color: var(--white);
+      background-color: var(--blue);
     }
   }
 
@@ -146,7 +161,8 @@
   &.medium {
     font-weight: 400;
     font-size: var(--fs-16);
-    padding: 0.688rem 2rem;
+    padding: var(--fs-10) var(--fs-32);
+    line-height: 1;
   }
 
   &.normal {
@@ -167,10 +183,12 @@
       height: 1.25rem; // 20px
     }
     @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
+      &:hover {
         background-color: var(--magenta-hover);
       }
+    }
+    &:focus-visible {
+      background-color: var(--magenta-hover);
     }
   }
 
@@ -186,11 +204,14 @@
       font-weight: 700;
     }
     @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
+      &:hover {
         color: var(--blue);
         background-color: var(--grey-button);
       }
+    }
+    &:focus-visible {
+      color: var(--blue);
+      background-color: var(--grey-button);
     }
   }
 
@@ -199,11 +220,14 @@
   }
 
   @media (hover: hover) {
-    &:hover,
-    &:focus-visible {
+    &:hover {
       color: var(--white);
       background-color: var(--magenta);
     }
+  }
+  &:focus-visible {
+    color: var(--white);
+    background-color: var(--magenta);
   }
 
   &:disabled {

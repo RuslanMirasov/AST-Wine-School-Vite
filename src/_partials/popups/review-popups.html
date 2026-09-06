@@ -1,0 +1,45 @@
+<!--ADD REVIEW POPUP-->
+<div class="popup-content big" role="dialog" aria-modal="true" aria-labelledby="review-title" id="add-review">
+  <h2 class="title title--24 bold" id="review-title">
+    Отзыв
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <h2 class="title title--18 bold">Быстрый старт: о вине за 3 встречи</h2>
+
+  <script>
+    function onReviewSubmit(e) {
+      e.preventDefault();
+      window.popup.open('add-review-success');
+    }
+  </script>
+
+  <form data-form action="#" class="form form--grey" novalidate onsubmit="onReviewSubmit(event)">
+    <label class="label">
+      <span class="label-text">Ваш отзыв</span>
+      <textarea name="review" class="input input--textarea" placeholder="Расскажите, что вам запомнилось на курсе" required></textarea>
+    </label>
+    <p class="popup-subtitle">Оставляя отзыв, вы соглашаетесь с условиями использования сайта.</p>
+    <button type="submit" class="button medium magenta">Оставить отзыв</button>
+  </form>
+</div>
+
+<!--REVIEW SUCCESS POPUP-->
+<div class="popup-content" id="add-review-success" role="dialog" aria-modal="true" aria-labelledby="review-success-title">
+  <h2 class="title title--24 bold" id="review-success-title">
+    Отзыв
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <h2 class="title title--18 bold">Быстрый старт: о вине за 3 встречи</h2>
+
+  <p class="text full ta--l">Спасибо! Ваш отзыв отправлен. Он&nbsp;появится после прохождения проверки.</p>
+
+  <div class="buttons ta--l">
+    <button type="button" class="button medium magenta" data-popup-close>Закрыть</button>
+  </div>
+</div>

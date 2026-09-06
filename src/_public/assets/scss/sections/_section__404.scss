@@ -1,0 +1,20 @@
+.page-not-found {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: var(--fs-555);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: var(--fs-40);
+  margin: 0 auto;
+  text-align: center;
+  @media (max-width: 767px) {
+    gap: var(--fs-16);
+  }
+
+  .title {
+    line-height: 1.25;
+  }
+}

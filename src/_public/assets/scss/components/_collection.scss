@@ -3,7 +3,50 @@
   position: relative;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 24px;
+  gap: var(--fs-24);
+
+  &.col-3 {
+    > li {
+      width: calc((100% - var(--fs-24) - var(--fs-24)) / 3);
+    }
+  }
+
+  .post-card {
+    min-height: 100%;
+  }
+}
+
+// 768
+@media (max-width: 1023px) {
+  .collection {
+    &.col-3 {
+      > li {
+        width: calc((100% - var(--fs-24)) / 2);
+      }
+    }
+  }
+}
+
+// 375
+@media (max-width: 767px) {
+  .collection {
+    &.col-3 {
+      > li {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.a11y {
+  // A++
+  &.a11y-font-large {
+    .collection {
+      &.col-3 {
+        > li {
+          width: calc((100% - var(--fs-24)) / 2);
+        }
+      }
+    }
+  }
 }

@@ -71,11 +71,15 @@
   }
 
   @media (hover: hover) {
-    &:hover,
-    &:focus-visible {
+    &:hover {
       img {
         transform: scale(1.05);
       }
+    }
+  }
+  &:focus-visible {
+    img {
+      transform: scale(1.05);
     }
   }
 }
@@ -141,7 +145,7 @@
   .section-news-slider {
     .arrows {
       order: 2;
-      justify-content: center;
+      margin: 0 auto;
     }
   }
 }

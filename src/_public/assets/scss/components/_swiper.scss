@@ -30,13 +30,15 @@
     width: auto;
   }
   &.auto {
-    flex: 1;
+    display: inline-flex;
+    width: auto;
+    //flex: 1;
   }
   &.ta--l {
     justify-content: flex-start;
   }
   &.ta--r {
-    justify-content: flex-end;
+    margin-left: auto;
   }
 }
 
@@ -61,11 +63,14 @@
   }
 
   @media (hover: hover) {
-    &:hover,
-    &:focus-visible {
+    &:hover {
       color: var(--white);
       background-color: var(--magenta);
     }
+  }
+  &:focus-visible {
+    color: var(--white);
+    background-color: var(--magenta);
   }
 
   &.swiper-button-disabled {

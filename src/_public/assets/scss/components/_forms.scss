@@ -282,11 +282,14 @@ fieldset + .inputError {
           border-bottom 0.3s var(--cubic);
         border-bottom: 1px solid var(--checkbox-text-color);
         @media (hover: hover) {
-          &:hover,
-          &:focus-visible {
+          &:hover {
             color: var(--magenta);
             border-bottom: 1px solid var(--magenta);
           }
+        }
+        &:focus-visible {
+          color: var(--magenta);
+          border-bottom: 1px solid var(--magenta);
         }
       }
     }
@@ -653,21 +656,6 @@ $select_padding: 0px var(--fs-16);
       ~ .input {
         border: 1px solid var(--invalid);
       }
-    }
-  }
-}
-
-.search-form {
-  width: 100%;
-  padding: var(--fs-16);
-  border-radius: var(--fs-30); //30px
-  margin-top: var(--fs-10); //10px
-  background-color: var(--white);
-
-  form {
-    flex-wrap: nowrap;
-    .button {
-      width: calc(var(--input-height) * 2);
     }
   }
 }

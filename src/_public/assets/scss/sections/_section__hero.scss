@@ -71,6 +71,7 @@
 }
 
 .hero-text-slider {
+  margin: 0;
   max-width: 32rem; //512px
 
   .swiper-slide {
@@ -293,7 +294,7 @@
     padding: 16px 0px;
     .arrows.ta--r {
       order: 2;
-      justify-content: center;
+      margin: 0 auto;
     }
     .tag {
       background-color: rgba(255, 255, 255, 0.5);

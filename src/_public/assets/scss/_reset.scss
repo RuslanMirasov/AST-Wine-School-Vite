@@ -165,7 +165,7 @@ button {
     text-align: center;
   }
   &.gap--16 {
-    gap: 16px;
+    gap: var(--fs-16);
   }
   @media (max-width: 1439px) {
     max-width: 1280px;
@@ -285,10 +285,30 @@ button {
   font-weight: 700;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
   transition: border-bottom 0.3s var(--cubic);
+  &.fs--16 {
+    font-size: var(--fs-16);
+    font-weight: 400;
+    padding-top: 2px;
+    line-height: 1.1;
+  }
+
   @media (hover: hover) {
-    &:hover,
-    &:focus-visible {
+    &:hover {
       border-bottom: 1px solid var(--magenta);
+    }
+  }
+  &:focus-visible {
+    border-bottom: 1px solid var(--magenta);
+  }
+}
+
+.a11y {
+  // A++
+  &.a11y-font-large {
+    .magenta-link {
+      &.fs--16 {
+        font-size: 32px;
+      }
     }
   }
 }

@@ -1,11 +1,16 @@
 [data-accordeon] {
   @media (hover: hover) {
-    &:hover,
-    &:focus-visible {
+    &:hover {
       .accordeon-arrow {
         background-color: var(--magenta);
         color: var(--white);
       }
+    }
+  }
+  &:focus-visible {
+    .accordeon-arrow {
+      background-color: var(--magenta);
+      color: var(--white);
     }
   }
 }
@@ -119,7 +124,7 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--fs-8);
   li {
     display: flex;
     width: 100%;
@@ -127,7 +132,8 @@
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    gap: 10px;
+    font-size: var(--fs-16);
+    gap: var(--fs-10);
     color: var(--grey-text);
     &.magenta {
       color: var(--magenta);
@@ -139,6 +145,23 @@
     svg {
       display: block;
       margin-top: 3px;
+      &.magenta {
+        color: var(--magenta);
+      }
+    }
+  }
+}
+
+.a11y {
+  // A++
+  &.a11y-font-large {
+    .icon-list {
+      li {
+        svg {
+          width: var(--fs-20);
+          height: var(--fs-20);
+        }
+      }
     }
   }
 }

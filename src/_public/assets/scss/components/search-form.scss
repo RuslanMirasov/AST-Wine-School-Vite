@@ -1,0 +1,32 @@
+.search-form {
+  width: 100%;
+  max-width: 680px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  margin-right: auto;
+  gap: var(--fs-12);
+
+  .button {
+    margin-top: calc(var(--fs-40) / 20);
+  }
+
+  .search-input-icon {
+    width: var(--fs-20);
+    height: var(--fs-20);
+    position: absolute;
+    z-index: 3;
+    top: var(--fs-10);
+    left: var(--fs-10);
+    color: var(--grey-text);
+  }
+
+  .input {
+    background-color: var(--white);
+    height: var(--fs-40);
+    border-radius: 8px;
+    padding-left: var(--fs-44);
+  }
+}

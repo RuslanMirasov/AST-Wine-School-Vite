@@ -89,11 +89,14 @@ $popup_transition: 0.5s;
   }
 
   @media (hover: hover) {
-    &:hover,
-    &:focus-visible {
+    &:hover {
       transform: rotate(90deg);
       color: var(--magenta);
     }
+  }
+  &:focus-visible {
+    transform: rotate(90deg);
+    color: var(--magenta);
   }
 }
 
@@ -127,9 +130,9 @@ $popup_transition: 0.5s;
 
   .title {
     &.title--24,
-    &.title--40 {
+    &.title--40,
+    &.title--18 {
       display: flex;
-      width: 100%;
       width: 100%;
       justify-content: space-between;
       line-height: 1;
@@ -162,6 +165,9 @@ $popup_transition: 0.5s;
   }
   &.full {
     width: 100%;
+  }
+  &.bold {
+    font-weight: 700;
   }
 }
 

@@ -45,10 +45,12 @@
       border-bottom 0.3s var(--cubic);
     border-bottom: 1px solid var(--white);
     @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
+      &:hover {
         opacity: 1;
       }
+    }
+    &:focus-visible {
+      opacity: 1;
     }
   }
 }
@@ -73,11 +75,14 @@
   .button {
     margin-top: var(--fs-24);
     @media (hover: hover) {
-      &:hover,
-      &:focus-visible {
+      &:hover {
         background: rgba(255, 255, 255, 0.5) !important;
         color: var(--blue) !important;
       }
+    }
+    &:focus-visible {
+      background: rgba(255, 255, 255, 0.5) !important;
+      color: var(--blue) !important;
     }
   }
 }
@@ -154,10 +159,10 @@
       &:hover {
         color: var(--magenta);
       }
-      &:focus-visible {
-        color: var(--magenta);
-        text-decoration: underline;
-      }
+    }
+    &:focus-visible {
+      color: var(--magenta);
+      text-decoration: underline;
     }
   }
 
@@ -234,11 +239,14 @@
   .footer-menu-list {
     a {
       @media (hover: hover) {
-        &:hover,
-        &:focus-visible {
+        &:hover {
           text-decoration: underline;
           color: inherit;
         }
+      }
+      &:focus-visible {
+        text-decoration: underline;
+        color: inherit;
       }
     }
   }
@@ -250,11 +258,14 @@
     a {
       opacity: 1;
       @media (hover: hover) {
-        &:hover,
-        &:focus-visible {
+        &:hover {
           color: var(--magenta);
           border-bottom: 1px solid var(--magenta);
         }
+      }
+      &:focus-visible {
+        color: var(--magenta);
+        border-bottom: 1px solid var(--magenta);
       }
     }
   }
