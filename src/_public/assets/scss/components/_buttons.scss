@@ -42,8 +42,9 @@
   line-height: var(--fs-14);
   font-weight: 700;
   text-align: center;
-  outline: none;
+  //outline: none;
   flex-shrink: 0;
+  cursor: pointer;
   transition:
     color 0.3s var(--cubic),
     background-color 0.3s var(--cubic),

@@ -8,27 +8,135 @@
     <title>Поиск</title>
   </head>
   <body class="body">
-      <!--HEADER-->
-      <load src="/_partials/preloader.html" />
-      <load src="/_partials/header.html" />
+    <!--HEADER-->
+    <load src="/_partials/preloader.html" />
+    <load src="/_partials/header.html" />
 
-      <!--MAIN-->
-      <main class="main" id="main" tabindex="-1">
-        <!--breadcrumbs-->
-        <ul class="breadcrumbs">
-          <li><a href="%ROOT%">Главная</a></li>
-          <li><span>Поиск</span></li>
-        </ul>
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="%ROOT%">Главная</a></li>
+        <li><span>Результаты поиска</span></li>
+      </ul>
 
-        <section class="section">
-          <div class="container">
-            <h2 class="title title--24">Страница <span style="color: #c24191">"Поиск"</span> в разработке...</h2>
-          </div>
-        </section>
-      </main>
+      <load src="/_partials/sections/search-result.html" />
 
-      <!--FOOTER-->
-      <load src="/_partials/footer.html" />
+      <!--РЕКОМЕНДУЕМ ДЛЯ ВАС-->
+      <section class="section">
+        <div class="container">
+          <h2 class="title title--32 full upper">Рекомендуем для&nbsp;вас</h2>
+
+          <ul class="collection col-3">
+            <li>
+              <article class="post-card">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/5.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Быстрый старт: база о вине</h3>
+                  <p class="text">Всего за три встречи вы узнаете о вине всё, что нужно.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>27 июня · 15:30 · Москва</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span>5 000 ₽</span>
+                  <a href="%ROOT%courses/offline/quick-start/" class="button">Подробнее</a>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="post-card">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/6.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Вина Бордо: классика и&nbsp;современность</h3>
+                  <p class="text">Изучите виноградники левого и&nbsp;правого берега.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>10 августа · 19:00 · Санкт-Петербург</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span>7 000 ₽</span>
+                  <a href="%ROOT%courses/offline/quick-start/" class="button">Подробнее</a>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="post-card">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/7.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Дегустация как&nbsp;искусство: развиваем сенсорику</h3>
+                  <p class="text">Тренировка обоняния и&nbsp;вкуса.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>10 августа · 19:00 · Санкт-Петербург</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span>5 500 ₽</span>
+                  <a href="%ROOT%courses/offline/quick-start/" class="button">Подробнее</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <load src="/_partials/components/certificat-for-one.html" />
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <load src="/_partials/footer.html" />
 
     <!--POPUPS-->
     <div class="backdrop" data-backdrop>

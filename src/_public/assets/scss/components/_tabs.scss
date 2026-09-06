@@ -1,0 +1,13 @@
+[data-tab] {
+  display: none;
+  overflow: hidden;
+  transition: opacity 0.3s var(--cubic);
+  opacity: 0;
+  pointer-events: none;
+
+  &.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

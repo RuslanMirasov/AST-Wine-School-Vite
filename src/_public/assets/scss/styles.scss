@@ -17,6 +17,8 @@
 @use 'components/image-slider';
 @use 'components/post-card';
 @use 'components/search-form';
+@use 'components/tabs';
+@use 'components/page-pagination';
 @use 'sections/section__hero';
 @use 'sections/section__welcome';
 @use 'sections/section__curses';
@@ -28,6 +30,7 @@
 @use 'sections/section__gallery-slider';
 @use 'sections/section__faq';
 @use 'sections/section__callback';
+@use 'sections/section__search';
 @use 'sections/section__404';
 @use 'components/footer';
 @use 'components/popup';

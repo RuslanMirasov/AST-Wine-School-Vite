@@ -1,0 +1,119 @@
+<section class="section section--search-result" data-tabs="search-results">
+  <div class="container">
+    <load src="/_partials/components/search-form.html" />
+
+    <h1 class="title title--40 upper">Результаты поиска по строке «<span>ХХХ</span>»</h1>
+
+    <ul class="search-navigation">
+      <li>
+        <button class="search-navigation__btn active" data-tab-target="all">Все</button>
+      </li>
+      <li>
+        <button class="search-navigation__btn" data-tab-target="courses">Курсы</button>
+      </li>
+      <li>
+        <button class="search-navigation__btn" data-tab-target="tastings">Дегустации</button>
+      </li>
+      <li>
+        <button class="search-navigation__btn" data-tab-target="certificates">Сертификаты</button>
+      </li>
+      <li>
+        <button class="search-navigation__btn" data-tab-target="articles">Полезные материалы</button>
+      </li>
+      <li>
+        <button class="search-navigation__btn" data-tab-target="news">Новости</button>
+      </li>
+    </ul>
+
+    <!-- Контент табов -->
+    <div data-tab="all" class="search-results active">
+      <ul class="collection col--1">
+        <li>
+          <article class="post-card horisontal minify">
+            <a href="/curse/offline/quick-start/" class="post-card-image">
+              <img src="/assets/img/promo/1-des.webp" alt="Быстрый старт: о вине за 3 встречи" />
+            </a>
+
+            <div class="post-card-content">
+              <p class="search-tags">
+                <span>Очный курс</span>
+                <span class="magenta">новинка</span>
+              </p>
+              <h3 class="title title--24 bold">Быстрый старт: о вине за 3 встречи</h3>
+              <p class="text">Всего за три встречи вы узнаете о вине всё, что нужно.</p>
+              <p class="text fs-14 grey-text">Место проведения: г. Москва, ул. Новый Арбат, д. 63</p>
+
+              <div class="buttons ta--l">
+                <button type="button" class="button small regular white-border">В лист ожидания</button>
+                <a href="#" class="magenta-link fs--16">Подробнее →</a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="post-card horisontal minify">
+            <a href="/curse/offline/quick-start/" class="post-card-image">
+              <img src="/assets/img/promo/6.webp" alt="Быстрый старт: о вине за 3 встречи" />
+            </a>
+
+            <div class="post-card-content">
+              <p class="search-tags">
+                <span>Новость</span>
+              </p>
+              <h3 class="title title--24 bold">Весенняя акция: подарочные сертификаты с доп. скидкой 15%</h3>
+              <p class="text">До 5 июня сертификаты на дегустации и частные мероприятия можно купить со скидкой 15% — отличный подарок.</p>
+              <p class="text fs-14 grey-text">20 мая 2026 г.</p>
+
+              <div class="buttons ta--l">
+                <a href="#" class="magenta-link fs--16">Подробнее →</a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="post-card horisontal minify">
+            <a href="/curse/offline/quick-start/" class="post-card-image">
+              <img src="/assets/img/promo/5.webp" alt="Быстрый старт: о вине за 3 встречи" />
+            </a>
+
+            <div class="post-card-content">
+              <p class="search-tags">
+                <span>Онлайн курс</span>
+              </p>
+              <h3 class="title title--24 bold">История виноделия</h3>
+              <p class="text">В этой серии видеоуроков мы поведаем, как появилось виноделие и как оно менялось с ходом технического прогресса.</p>
+              <p class="text fs-14 grey-text">Начало: 05 мая 2026 · Онлайн</p>
+
+              <div class="buttons ta--l">
+                <a href="#" class="button small regular magenta">Подробнее →</a>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <load src="/_partials/components/page-pagination.html" />
+    </div>
+
+    <div data-tab="courses" class="search-results">
+      <load src="/_partials/components/search-empty.html" />
+    </div>
+
+    <div data-tab="tastings" class="search-results">
+      <load src="/_partials/components/search-empty.html" />
+    </div>
+
+    <div data-tab="certificates" class="search-results">
+      <load src="/_partials/components/search-empty.html" />
+    </div>
+
+    <div data-tab="articles" class="search-results">
+      <load src="/_partials/components/search-empty.html" />
+    </div>
+
+    <div data-tab="news" class="search-results">
+      <load src="/_partials/components/search-empty.html" />
+    </div>
+  </div>
+</section>
