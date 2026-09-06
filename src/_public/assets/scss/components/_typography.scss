@@ -64,7 +64,7 @@
 .text {
   display: block;
   color: var(--blue);
-  font-style: var(--fs-16);
+  font-size: var(--fs-16);
   line-height: 1.2;
   &.bold {
     font-weight: 700;
@@ -143,6 +143,46 @@
   .text {
     &.fs-18 {
       font-size: var(--fs-16);
+    }
+  }
+}
+
+.a11y {
+  // A++
+  &.a11y-font-large {
+    .title {
+      &.title--24 {
+        font-size: var(--fs-26);
+      }
+      &.title--18 {
+        font-size: var(--fs-20);
+      }
+      &.title--16 {
+        font-size: var(--fs-18);
+      }
+      &.title--14 {
+        font-size: var(--fs-16);
+      }
+    }
+
+    .text {
+      font-size: 32px;
+      line-height: 1.2;
+      &.fs-12 {
+        font-size: 24px;
+      }
+
+      &.fs-14 {
+        font-size: 28px;
+      }
+
+      &.fs-16 {
+        font-size: 32px;
+      }
+
+      &.fs-18 {
+        font-size: 34px;
+      }
     }
   }
 }

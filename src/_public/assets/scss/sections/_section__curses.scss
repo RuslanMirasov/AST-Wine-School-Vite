@@ -194,3 +194,48 @@
     }
   }
 }
+
+.a11y {
+  .section--curses {
+    .content {
+      min-height: auto;
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-content: flex-start;
+
+      .image-background {
+        min-width: calc(100% + var(--fs-30) + var(--fs-30));
+        left: calc(100% - (100% + var(--fs-30)));
+        top: calc(100% - (100% + var(--fs-30)));
+      }
+
+      .price-and-btn {
+        margin-top: var(--fs-16);
+      }
+    }
+
+    .content-text {
+      max-width: 100%;
+      margin-top: 0px;
+      margin-bottom: auto;
+      min-height: 0px;
+    }
+
+    .col-3 {
+      .content-text {
+        max-width: 100%;
+      }
+    }
+
+    .tags {
+      margin-bottom: var(--fs-16);
+    }
+  }
+
+  .present-certificat {
+    .content-text {
+      min-width: 1px;
+      max-width: 50%;
+    }
+  }
+}

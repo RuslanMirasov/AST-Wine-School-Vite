@@ -1,11 +1,10 @@
 import { reinitSlidersForA11y } from './sliders.js';
-import { updateSearchState } from './headerSearch.js';
 
 const STORAGE_KEY = 'a11y-settings';
 
 const DEFAULTS = {
   enabled: false,
-  fontSize: 'normal',
+  fontSize: 'large',
   theme: 'color',
   images: 'shown',
   spacing: 'normal',
@@ -93,7 +92,6 @@ export const initA11yToggle = () => {
       applyClasses();
       applyToggleButtons();
       reinitSlidersForA11y();
-      updateSearchState();
     });
   });
 

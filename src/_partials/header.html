@@ -157,7 +157,15 @@
   <div class="header-search-form" data-search id="header-search">
     <form action="%ROOT%search/" method="GET" data-form novalidate>
       <label class="label">
-        <input type="text" name="s" class="input" required placeholder="Поиск" aria-label="Поиск по сайту" />
+        <input
+          type="text"
+          name="s"
+          class="input"
+          required
+          placeholder="Поиск"
+          aria-label="Поиск по сайту"
+          data-error-text="Введите поисковый запрос"
+        />
         <button type="button" class="search-close" data-search-toggle data-search-reset aria-label="Закрыть поиск">
           <svg width="16" height="16"><use href="/assets/img/sprite.svg#close"></use></svg>
         </button>

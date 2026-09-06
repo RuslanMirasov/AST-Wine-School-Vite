@@ -5,6 +5,9 @@ html {
   font-family: var(--font);
   line-height: 1.5;
   font-weight: 400;
+  @media (max-width: 359px) {
+    font-size: 14px;
+  }
 
   &:has(.a11y) {
     --grey: #536178; // было #94a3b8 (2.24:1) → 5.49:1 на grey-light
@@ -16,16 +19,18 @@ html {
     --magenta-light: rgba(167, 59, 127, 0.102); // пересчитан под новый --magenta
     --magenta-opacity: rgba(171, 43, 122, 0.5); // пересчитан под новый --magenta-hover
     --invalid: #d90000; // было #ff0000 (4.00:1) → 5.31:1
-    // A
-    font-size: 16px;
 
-    // A+
-    &:has(.a11y-font-big) {
-      font-size: 17px; //19.2px
-    }
-    // A++
-    &:has(.a11y-font-large) {
-      font-size: 18px; // 24px
+    // A | A+ | A++
+    @media (min-width: 1024px) {
+      font-size: 18px;
+      // A+
+      &:has(.a11y-font-big) {
+        font-size: 20px;
+      }
+      // A++
+      &:has(.a11y-font-large) {
+        font-size: 22px; // 24px
+      }
     }
 
     // ОТСТУП +
@@ -81,14 +86,7 @@ html {
 
     // ЧЁРНАЯ ТЕМА
     &:has(.a11y-theme-dark) {
-      --blue: #fff;
-      --grey: #fff; // было #94a3b8 (2.24:1) → 5.49:1 на grey-light
-      --grey-dark: #fff; // было #6b7280 (4.83:1) → 5.98:1 на white, больше запаса
-      --grey-medium: #fff; // было #b2b2b2 (1.68:1 на grey-button) → 5.29:1
-      --grey-menu-border: #fff; // было #888888 (3.10:1) → 4.67:1 на grey-light
-      --magenta: #c24191; // было #c24191 (4.12:1 на grey-light) → 5.14:1
       .body {
-        color: var(--white);
         background: var(--black);
       }
       .popup {
@@ -123,6 +121,7 @@ html {
       --fs-20: 20px;
       --fs-22: 22px;
       --fs-24: 24px;
+      --fs-25: 25px;
       --fs-26: 26px;
       --fs-28: 28px;
       --fs-30: 30px;
@@ -142,23 +141,27 @@ html {
       --fs-800: 800px;
     }
 
-    *:not(
-      .swiper-wrapper,
-      .swiper-slide,
-      .backdrop,
-      .backdrop *,
-      [data-accordeon-body],
-      .preloader,
-      .preloader *,
-      .inputError,
-      .form-errors,
-      .mega-menu
-    ) {
-      transition: 0s !important;
-    }
+    // *:not(
+    //   .a11y-panel,
+    //   .header,
+    //   .swiper-wrapper,
+    //   .swiper-slide,
+    //   .backdrop,
+    //   .main,
+    //   .backdrop *,
+    //   [data-accordeon-body],
+    //   .preloader,
+    //   .preloader *,
+    //   .inputError,
+    //   .form-errors,
+    //   .mega-menu
+    // ) {
+    //   transition: 0s !important;
+    // }
 
-    .a11y-panel-wrapper {
-      display: flex;
+    .a11y-panel {
+      transform: translateY(0%);
+      pointer-events: auto;
     }
   }
 }

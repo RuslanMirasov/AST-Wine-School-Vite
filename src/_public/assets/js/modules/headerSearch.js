@@ -2,21 +2,10 @@ const SEARCH_WIDE_MIN_WIDTH = 1600;
 const SEARCH_WIDE_RANGE_MIN_WIDTH = 550;
 const SEARCH_WIDE_RANGE_MAX_WIDTH = 1023;
 
-const isA11yEnabled = () => document.querySelector('.body')?.classList.contains('a11y') ?? false;
-
-// В версии для слабовидящих поле поиска всегда развёрнуто — как на самых широких экранах.
 const isSearchWide = () => {
-  if (isA11yEnabled()) return true;
-
   const width = window.innerWidth;
   return width >= SEARCH_WIDE_MIN_WIDTH || (width >= SEARCH_WIDE_RANGE_MIN_WIDTH && width <= SEARCH_WIDE_RANGE_MAX_WIDTH);
 };
-
-let syncSearchState = () => {};
-
-// Пересчитать открытость поля извне (например, при live-переключении a11y-режима
-// без перезагрузки страницы) — resize-событие в этот момент не происходит.
-export const updateSearchState = () => syncSearchState();
 
 export const initSearchToggle = () => {
   const wrapper = document.querySelector('[data-search]');
@@ -43,8 +32,6 @@ export const initSearchToggle = () => {
 
     searchButton?.setAttribute('aria-expanded', String(isOpen));
   };
-
-  syncSearchState = syncState;
 
   const openSearch = ({ focusInput = false } = {}) => {
     wrapper.classList.add('active');

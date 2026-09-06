@@ -41,7 +41,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 50px;
-  padding: 1.875rem; //30px
+  padding: var(--fs-30); //30px
   &.row {
     flex-direction: row;
     flex-wrap: wrap;
@@ -137,5 +137,37 @@
   .content {
     border-radius: 30px;
     padding: 20px;
+  }
+}
+
+.a11y {
+  .content-list {
+    .content-list__item {
+      &.col-2,
+      &.col-3,
+      &.col-4 {
+        min-width: 36%;
+        max-width: calc(50% - var(--fs-26));
+      }
+    }
+  }
+
+  .content {
+    &.light {
+      .title,
+      .text {
+        color: var(--blue);
+      }
+    }
+  }
+
+  .content-text {
+    &.gap--12 {
+      gap: var(--fs-16);
+    }
+
+    &.gap--20 {
+      gap: var(--fs-24);
+    }
   }
 }

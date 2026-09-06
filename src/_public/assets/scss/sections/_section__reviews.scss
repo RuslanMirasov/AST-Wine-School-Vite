@@ -133,3 +133,46 @@
     }
   }
 }
+
+.a11y {
+  .review {
+    .stars {
+      display: block;
+      width: auto;
+      height: auto;
+      position: relative;
+      font-size: var(--fs-16);
+      padding: var(--fs-6) var(--fs-20);
+      border-radius: var(--fs-24);
+      background-color: var(--grey-light);
+      .stars-back,
+      .stars-front {
+        display: none;
+      }
+    }
+  }
+
+  // A++
+  &.a11y-font-large {
+    .reviews-slider {
+      .swiper-slide {
+        &.swiper-slide-active + .swiper-slide + .swiper-slide {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .review {
+      .stars {
+        font-size: var(--fs-20);
+      }
+    }
+
+    .review-person-image {
+      width: var(--fs-60); // 50px
+      height: var(--fs-60); // 50px
+      border-radius: var(--fs-60); // 50px
+    }
+  }
+}
