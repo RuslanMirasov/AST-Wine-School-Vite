@@ -1,51 +1,36 @@
-<div class="page-pagination-wrapper">
-  <button type="button" class="button magenta">Показать еще</button>
+<nav class="page-pagination" aria-label="Навигация по странице результатов поиска">
+  <ul class="page-pagination-list">
+    <li>
+      <span class="page-pagination-link disabled" aria-label="На первую страницу" title="На первую страницу">&laquo;</span>
+    </li>
+    <li>
+      <span class="page-pagination-link disabled" aria-label="На предыдущую страницу" title="На предыдущую страницу">&lsaquo;</span>
+    </li>
+    <li>
+      <span class="page-pagination-link active" aria-current="page" aria-label="Страница 1, текущая страница"> 1 </span>
+    </li>
 
-  <p class="text grey-text">Вы посмотрели все найденные записи.</p>
+    <li>
+      <a href="?page=2" class="page-pagination-link">2</a>
+    </li>
 
-  <nav class="page-pagination" aria-label="Навигация по странице результатов поиска">
-    <ul class="page-pagination-list">
-      <!-- Первая страница -->
-      <li>
-        <span class="page-pagination-link disabled" aria-label="На первую страницу" title="На первую страницу"> &laquo; </span>
-      </li>
+    <li>
+      <span class="page-pagination-link" aria-hidden="true">&hellip;</span>
+    </li>
 
-      <!-- Предыдущая страница -->
-      <li>
-        <span class="page-pagination-link disabled" aria-label="На предыдущую страницу" title="На предыдущую страницу"> &lsaquo; </span>
-      </li>
+    <li>
+      <a href="?page=68" class="page-pagination-link">68</a>
+    </li>
+    <li>
+      <a href="?page=69" class="page-pagination-link">69</a>
+    </li>
 
-      <!-- Страница 1 (активная) и 2-->
-      <li>
-        <span class="page-pagination-link active" aria-current="page" aria-label="Страница 1, текущая страница"> 1 </span>
-      </li>
+    <li>
+      <a href="?page=2" class="page-pagination-link" aria-label="На следующую страницу" title="На следующую страницу">&rsaquo;</a>
+    </li>
 
-      <li>
-        <a href="?page=2" class="page-pagination-link">2</a>
-      </li>
-
-      <!-- Многоточие (неклицаемо) -->
-      <li>
-        <span class="page-pagination-link" aria-hidden="true">&hellip;</span>
-      </li>
-
-      <!-- Страницы 68, 69 -->
-      <li>
-        <a href="?page=68" class="page-pagination-link">68</a>
-      </li>
-      <li>
-        <a href="?page=69" class="page-pagination-link">69</a>
-      </li>
-
-      <!-- Следующая страница -->
-      <li>
-        <a href="?page=2" class="page-pagination-link" aria-label="На следующую страницу" title="На следующую страницу"> &rsaquo; </a>
-      </li>
-
-      <!-- Последняя страница -->
-      <li>
-        <a href="?page=69" class="page-pagination-link" aria-label="На последнюю страницу" title="На последнюю страницу"> &raquo; </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+    <li>
+      <a href="?page=69" class="page-pagination-link" aria-label="На последнюю страницу" title="На последнюю страницу">&raquo;</a>
+    </li>
+  </ul>
+</nav>

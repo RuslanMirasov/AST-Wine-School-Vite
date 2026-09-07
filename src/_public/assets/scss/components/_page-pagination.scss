@@ -43,16 +43,25 @@
     color 0.3s var(--cubic),
     background-color 0.3s var(--cubic),
     opacity 0.3s var(--cubic);
+
+  &.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &.active,
+  &:focus-visible {
+    color: var(--white);
+    background-color: var(--magenta);
+  }
+}
+
+a.page-pagination-link {
   @media (hover: hover) {
     &:hover {
       color: var(--white);
       background-color: var(--magenta);
     }
-  }
-
-  &.disabled {
-    opacity: 0.3;
-    pointer-events: none;
   }
 
   &.active,

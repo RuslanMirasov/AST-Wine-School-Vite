@@ -1,0 +1,201 @@
+.service-mix {
+  display: flex;
+  width: 100%;
+  gap: var(--fs-24);
+  padding-top: var(--fs-24);
+
+  .service-mix-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fs-24);
+    width: calc((100% - var(--fs-24)) / 2);
+  }
+
+  .service-mix__item {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--fs-8);
+    break-inside: avoid;
+    position: relative;
+    border-radius: var(--fs-30);
+
+    .text {
+      line-height: 1.5;
+    }
+
+    .magenta-link {
+      margin-top: auto;
+    }
+
+    &.service-mix__item--degustations {
+      flex: 1;
+      padding: var(--fs-28);
+      background-color: var(--white);
+      .text {
+        max-width: 70%;
+      }
+    }
+
+    &.service-mix__item--images {
+      gap: var(--fs-24);
+      flex-direction: row;
+    }
+
+    &.service-mix__item--curses {
+      flex: 1;
+      padding: var(--fs-28);
+      background-color: var(--blue);
+      > * {
+        color: var(--white);
+      }
+      a {
+        &:hover,
+        &:focus-visible {
+          border-bottom: 1px solid var(--white);
+        }
+      }
+      .text {
+        max-width: 40%;
+      }
+      .phone-image {
+        position: absolute;
+        pointer-events: none;
+        right: 0px;
+        bottom: 0px;
+        width: 71.5%;
+        border-radius: 0px 0px var(--fs-30) 0px;
+      }
+    }
+
+    &.service-mix__item--events {
+      min-height: 240px;
+      flex-direction: column;
+      padding: var(--fs-28);
+      background-color: var(--grey-promo);
+      overflow: hidden;
+      > * {
+        z-index: 2;
+      }
+      .logo-background {
+        color: var(--blue-light);
+        z-index: 0;
+        left: 30%;
+        top: 45%;
+        width: 80%;
+        opacity: 0.5;
+      }
+      .text {
+        position: relative;
+        max-width: 70%;
+      }
+    }
+  }
+}
+
+.service-mix-image {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: calc((100% - var(--fs-24)) / 2);
+  min-height: 100%;
+  img {
+    display: block;
+    width: 100%;
+    border-radius: var(--fs-30);
+    pointer-events: none;
+    &.absolute {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+//768
+@media (max-width: 1023px) {
+  .service-mix {
+    gap: var(--fs-16);
+    padding-top: 0px;
+
+    .service-mix-col {
+      gap: var(--fs-16);
+      width: calc((100% - var(--fs-16)) / 2);
+    }
+
+    .service-mix__item {
+      &.service-mix__item--degustations {
+        padding: var(--fs-24);
+        .text {
+          max-width: 100%;
+        }
+      }
+
+      &.service-mix__item--images {
+        gap: var(--fs-16);
+      }
+
+      &.service-mix__item--curses {
+        padding: var(--fs-24);
+
+        .text {
+          max-width: 50%;
+        }
+      }
+
+      &.service-mix__item--events {
+        padding: var(--fs-24);
+        .text {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .service-mix-image {
+    width: calc((100% - var(--fs-16)) / 2);
+  }
+}
+
+//375
+@media (max-width: 767px) {
+  .service-mix {
+    flex-direction: column;
+    .service-mix-col {
+      width: 100%;
+    }
+
+    .service-mix__item {
+      .magenta-link {
+        margin-top: var(--fs-8);
+      }
+      &.service-mix__item--degustations {
+        padding: var(--fs-20);
+      }
+
+      &.service-mix__item--curses {
+        padding: var(--fs-20);
+
+        .text {
+          max-width: 50%;
+          font-size: var(--fs-14);
+        }
+        .phone-image {
+          width: 68%;
+        }
+      }
+
+      &.service-mix__item--events {
+        min-height: 1px;
+        padding: var(--fs-20);
+      }
+    }
+  }
+
+  .service-mix-image {
+    width: calc((100% - var(--fs-16)) / 2);
+  }
+}
