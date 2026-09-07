@@ -2,6 +2,12 @@
   .container {
     gap: var(--fs-40);
   }
+  //375
+  @media (max-width: 767px) {
+    .container {
+      gap: var(--fs-32);
+    }
+  }
 }
 
 .search-navigation {
@@ -46,5 +52,9 @@
   .title {
     line-height: 1.25;
     margin-bottom: var(--fs-12);
+  }
+
+  @media (max-width: 767px) {
+    padding: var(--fs-32) var(--fs-20);
   }
 }

@@ -61,3 +61,16 @@
     background-color: var(--magenta);
   }
 }
+
+// 375
+@media (max-width: 767px) {
+  .page-pagination-list {
+    gap: 4px;
+  }
+  .page-pagination-link {
+    border-radius: var(--fs-8);
+    font-size: var(--fs-12);
+    width: var(--fs-32);
+    height: var(--fs-32);
+  }
+}
