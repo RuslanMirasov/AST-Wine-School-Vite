@@ -145,6 +145,7 @@
     svg {
       display: block;
       margin-top: 3px;
+      flex-shrink: 0;
       &.magenta {
         color: var(--magenta);
       }

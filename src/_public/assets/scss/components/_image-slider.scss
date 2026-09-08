@@ -1,5 +1,8 @@
 .image-slider {
-  width: 100%;
+  width: 48%;
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
 
   .swiper {
     border-radius: 30px;
