@@ -613,7 +613,8 @@ $select_padding: 0px var(--fs-16);
   transform: translate(0px, -50%) rotate(180deg);
 }
 
-.module-card-form {
+.module-card-form,
+.curse-hero {
   .choices {
     background: var(--grey-light) !important;
     height: 40px !important;
@@ -695,5 +696,45 @@ $select_padding: 0px var(--fs-16);
     align-items: center;
     align-content: center;
     z-index: 2;
+  }
+}
+
+.radio-buttons {
+  display: inline-flex;
+  position: relative;
+  width: auto;
+  height: var(--fs-36);
+  background-color: var(--white);
+  padding: 4px;
+  border-radius: var(--fs-36);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  .label {
+    display: inline-block;
+    width: auto;
+  }
+
+  .radio-button {
+    display: none;
+    + .label-text {
+      font-size: var(--fs-14);
+      font-weight: 500;
+      line-height: 1.2857;
+      margin: 0;
+      padding: 5px 14px;
+      border-radius: var(--fs-14);
+      cursor: pointer;
+      transition:
+        background-color 0.3s var(--cubic),
+        color 0.3s var(--cubic);
+    }
+
+    &:checked + .label-text {
+      background-color: var(--magenta);
+      color: var(--white);
+    }
   }
 }

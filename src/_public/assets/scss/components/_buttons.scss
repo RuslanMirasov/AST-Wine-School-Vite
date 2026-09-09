@@ -130,7 +130,7 @@
   &.blue-border {
     background-color: var(--white);
     color: var(--blue);
-    border: 1px solid #e2e5ea;
+    border: 1px solid var(--grey-button);
     @media (hover: hover) {
       &:hover {
         color: var(--white);
