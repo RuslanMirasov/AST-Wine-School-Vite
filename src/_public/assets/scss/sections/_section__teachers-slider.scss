@@ -2,6 +2,9 @@
   .container {
     > .button {
       margin-left: auto;
+      @media (max-width: 767px) {
+        margin-left: 0px;
+      }
     }
   }
 
@@ -15,15 +18,20 @@
     }
   }
 
-  .post-slide {
-    border-radius: 50px;
-    padding: 28px;
+  .title {
+    line-height: 1.3;
+  }
+  .text {
+    line-height: 1.5;
   }
 
-  .post-slide-image {
-    margin-bottom: 16px;
+  a.magenta-link {
+    margin-top: auto;
+  }
+
+  .post-card-image {
     &:before {
-      padding-top: 53.76344%;
+      padding-top: 54%;
     }
   }
 }

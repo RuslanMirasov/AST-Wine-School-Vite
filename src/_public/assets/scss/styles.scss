@@ -18,10 +18,12 @@
 @use 'components/post-card';
 @use 'components/search-form';
 @use 'components/tabs';
+@use 'components/icon-list';
 @use 'components/page-pagination';
 @use 'sections/section__hero';
 @use 'sections/section__welcome';
 @use 'sections/section__curses';
+@use 'sections/section__curse-modules';
 @use 'sections/section__degustation';
 @use 'sections/section__news';
 @use 'sections/section__reviews';
@@ -33,6 +35,8 @@
 @use 'sections/section__search';
 @use 'sections/section__grid';
 @use 'sections/section__curse-description';
+@use 'sections/section__you-money';
+@use 'sections/section__diploma';
 @use 'sections/section__404';
 @use 'components/footer';
 @use 'components/popup';

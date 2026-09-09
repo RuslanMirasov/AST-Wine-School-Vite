@@ -3,6 +3,7 @@ import { validateForm } from './validateForm.js';
 import { getGroupFields, resolveAnchor } from './resolveAnchor.js';
 import { getRenderer } from './factory.js';
 import { initCodeInputs } from './inputCode.js';
+import { initCountInputs } from './inputCount.js';
 
 const FORM_SELECTOR = '[data-form]';
 const FIELD_SELECTOR = 'input, select, textarea';
@@ -63,6 +64,7 @@ const onSubmit = e => {
 
 export const initForms = () => {
   initCodeInputs();
+  initCountInputs();
   document.addEventListener('focusin', onFieldFocus);
   document.addEventListener('change', onFieldChange);
   document.addEventListener('submit', onSubmit, true);

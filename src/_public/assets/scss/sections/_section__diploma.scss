@@ -1,0 +1,100 @@
+.diploma {
+  padding: var(--fs-40);
+  padding-left: var(--fs-64);
+  .logo-background {
+    opacity: 0.6;
+  }
+  .button {
+    min-width: 130px;
+  }
+  .content-text {
+    width: 55%;
+    .text {
+      line-height: 1.5;
+    }
+  }
+}
+
+.certificat {
+  display: block;
+  width: 420px;
+  height: auto;
+  position: absolute;
+  right: var(--fs-64);
+  bottom: 0px;
+  z-index: 0;
+  transform: rotate(4deg) translateY(4%);
+  transition: 0.5s transform var(--cubic);
+  border-radius: 10px;
+}
+
+@media (hover: hover) {
+  .content {
+    &:hover {
+      .certificat {
+        transform: rotate(4deg) translateY(-6%);
+      }
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .diploma {
+    padding: var(--fs-32);
+    padding-left: var(--fs-32);
+    .content-text {
+      width: 60%;
+    }
+  }
+
+  .certificat {
+    width: 350px;
+    right: var(--fs-32);
+  }
+}
+
+@media (max-width: 1023px) {
+  .diploma {
+    .content-text {
+      width: 100%;
+    }
+  }
+
+  .certificat {
+    width: 350px;
+    max-width: 100%;
+    position: relative;
+    right: auto;
+    margin: 0 auto;
+    margin-top: var(--fs-32);
+    transform: rotate(4deg) translateY(0%);
+  }
+}
+
+@media (max-width: 767px) {
+  .diploma {
+    padding: var(--fs-32) var(--fs-20);
+    padding-left: var(--fs-20);
+    .content-text {
+      width: 100%;
+    }
+    .logo-background {
+      width: 65%;
+      height: auto;
+      top: 0px;
+      right: 0px;
+      transform: translate(20%, -20%);
+      opacity: 1;
+    }
+  }
+
+  .certificat {
+    width: 350px;
+    max-width: 100%;
+    position: relative;
+    right: auto;
+    margin: 0 auto;
+    margin-top: var(--fs-32);
+    transform: rotate(4deg) translateY(0%);
+  }
+}

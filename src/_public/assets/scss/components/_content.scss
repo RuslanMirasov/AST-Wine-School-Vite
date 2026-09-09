@@ -42,6 +42,15 @@
   align-items: flex-start;
   border-radius: 50px;
   padding: var(--fs-30); //30px
+  &.pad--40 {
+    padding: var(--fs-40);
+  }
+  &.pad--32 {
+    padding: var(--fs-32);
+  }
+  &.pad--24 {
+    padding: var(--fs-24);
+  }
   &.row {
     flex-direction: row;
     flex-wrap: wrap;
@@ -141,6 +150,11 @@
   .content {
     border-radius: 30px;
     padding: 20px;
+    &.pad--32,
+    &.pad--24,
+    &.pad--40 {
+      padding: 20px;
+    }
   }
 }
 

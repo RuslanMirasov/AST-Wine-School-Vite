@@ -3,10 +3,15 @@
   position: relative;
   width: 100%;
   flex-direction: column;
-  padding: var(--fs-30);
+  align-items: flex-start;
+  padding: var(--fs-28);
   border-radius: var(--fs-50);
   background-color: var(--white);
   gap: var(--fs-24);
+
+  &.gap--16 {
+    gap: var(--fs-16);
+  }
 
   .title,
   .text {
@@ -82,7 +87,7 @@
   overflow: hidden;
   z-index: 1;
   width: 100%;
-  border-radius: var(--fs-22);
+  border-radius: var(--fs-30);
   &:before {
     content: '';
     display: block;
@@ -198,9 +203,6 @@
 // 768
 @media (max-width: 1023px) {
   .post-card {
-    padding: var(--fs-24);
-    gap: var(--fs-16);
-
     &.horisontal {
       padding: var(--fs-24);
 

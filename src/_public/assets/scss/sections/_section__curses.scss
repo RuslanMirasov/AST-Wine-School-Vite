@@ -33,40 +33,6 @@
   }
 }
 
-.certificat {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  width: 100%;
-  max-width: 600px;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  right: 0px;
-  top: 0px;
-  z-index: 0;
-  transform: translateY(12%);
-  transition: 0.5s transform var(--cubic);
-
-  .certificat-image {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    max-width: 360px;
-    box-shadow:
-      -3px 5px 14px rgba(82, 25, 48, 0.271),
-      -13px 22px 25px rgba(82, 25, 48, 0.239);
-    transform: rotate(4deg);
-    img {
-      width: 100%;
-    }
-    &.invers {
-      transform: rotate(-4deg);
-    }
-  }
-}
-
 .price-and-btn {
   display: flex;
   position: relative;
@@ -82,26 +48,6 @@
     line-height: 1;
     font-weight: 700;
     color: var(--blue);
-  }
-}
-
-.you-mony-promo {
-  display: flex;
-  position: relative;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  gap: 16px;
-  margin-top: 24px;
-
-  .text {
-    color: var(--grey-text);
-  }
-
-  .magenta-link {
-    margin-left: auto;
   }
 }
 

@@ -1,0 +1,29 @@
+.you-money {
+  padding: var(--fs-40);
+  @media (max-width: 1023px) {
+    padding: var(--fs-24) var(--fs-20);
+  }
+}
+.you-money-promo {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 16px;
+  margin-top: 24px;
+
+  .text {
+    color: var(--grey-text);
+    line-height: 1.5;
+  }
+
+  .magenta-link {
+    margin-left: auto;
+    @media (max-width: 1023px) {
+      margin-left: 0px;
+    }
+  }
+}

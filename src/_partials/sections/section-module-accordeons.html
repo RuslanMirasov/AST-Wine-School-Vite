@@ -1,6 +1,6 @@
-<section class="section">
+<section class="section section--course-modules">
   <div class="container">
-    <h2 class="title title--32">Модули курса</h2>
+    <h2 class="title title--32 upper">Модули курса</h2>
 
     <div class="collection">
       <div class="module-accordeon" data-accordeon data-accordeon-group="modules">
@@ -40,20 +40,26 @@
 
             <form data-form action="#" class="module-card-form" novalidate>
               <label class="label">
-                <span class="label-text">Выберите дату посещения<span class="red">*</span></span>
-                <select data-select name="theme" required>
-                  <option value="">Выберите тему</option>
-                  <option value="Тема 1">13 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
-                  <option value="Тема 1">16 июля 2026 &lt;b&gt;четверг, 18:00&lt;/b&gt;</option>
-                  <option value="Тема 1">20 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
+                <span class="label-text">Дата старта</span>
+                <select data-select name="start-date" required>
+                  <option value="13 июля 2026">13 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
+                  <option value="16 июля 2026">16 июля 2026 &lt;b&gt;четверг, 18:00&lt;/b&gt;</option>
+                  <option value="20 июля 2026">20 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
                 </select>
               </label>
-              <p class="text bold">Осталось мест: 12</p>
-              <p class="text medium bold">1 500 ₽</p>
+              <p class="text fs-16 bold">Осталось мест: 12</p>
+              <p class="text fs-18 bold">1 500 ₽</p>
               <div class="buttons group ta--l">
-                <button type="submit" class="button regular magenta">В корзину</button>
-                <button type="button" class="button regular white-border">В лист ожидания</button>
+                <button type="submit" class="button medium regular magenta">В корзину</button>
+                <!-- <button type="button" class="button medium regular white-border">В лист ожидания</button> -->
               </div>
+              <!-- <div class="buttons gap--12 ta--l">
+                <label class="label lebel--count" aria-live="polite" aria-atomic="true">
+                  <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
+                  <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество товара" />
+                  <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
+                </label>
+              </div> -->
             </form>
           </div>
         </div>
@@ -96,19 +102,22 @@
 
             <form data-form action="#" class="module-card-form" novalidate>
               <label class="label">
-                <span class="label-text">Выберите дату посещения<span class="red">*</span></span>
-                <select data-select name="theme" required>
-                  <option value="">Выберите тему</option>
-                  <option value="Тема 1">13 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
-                  <option value="Тема 1">16 июля 2026 &lt;b&gt;четверг, 18:00&lt;/b&gt;</option>
-                  <option value="Тема 1">20 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
+                <span class="label-text">Дата старта</span>
+                <select data-select name="start-date" required>
+                  <option value="13 июля 2026">13 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
+                  <option value="16 июля 2026">16 июля 2026 &lt;b&gt;четверг, 18:00&lt;/b&gt;</option>
+                  <option value="20 июля 2026">20 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
                 </select>
               </label>
-              <p class="text bold">Осталось мест: 12</p>
-              <p class="text medium bold">1 500 ₽</p>
-              <div class="buttons group ta--l">
-                <button type="submit" class="button normal magenta">В корзину</button>
-                <button type="button" class="button normal white-border">В лист ожидания</button>
+              <p class="text fs-16 bold">Осталось мест: 12</p>
+              <p class="text fs-18 bold">1 500 ₽</p>
+              <div class="buttons gap--12 ta--l">
+                <label class="label lebel--count" aria-live="polite" aria-atomic="true">
+                  <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
+                  <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество товара" />
+                  <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
+                </label>
+                <button type="button" class="button medium regular white-border">Корзина</button>
               </div>
             </form>
           </div>
@@ -154,9 +163,8 @@
 
             <form data-form action="#" class="module-card-form" novalidate>
               <label class="label">
-                <span class="label-text">Выберите дату посещения<span class="red">*</span></span>
+                <span class="label-text">Дата старта</span>
                 <select data-select name="theme" required>
-                  <option value="">Выберите тему</option>
                   <option value="Тема 1">13 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
                   <option value="Тема 1">16 июля 2026 &lt;b&gt;четверг, 18:00&lt;/b&gt;</option>
                   <option value="Тема 1">20 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
@@ -165,8 +173,7 @@
               <p class="text bold">Осталось мест: 12</p>
               <p class="text medium bold">1 500 ₽</p>
               <div class="buttons group ta--l">
-                <button type="submit" class="button normal magenta">В корзину</button>
-                <button type="button" class="button normal white-border">В лист ожидания</button>
+                <button type="submit" class="button medium magenta">В корзину</button>
               </div>
             </form>
           </div>

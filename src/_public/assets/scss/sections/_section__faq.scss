@@ -5,7 +5,7 @@
   overflow: hidden;
   z-index: 1;
   padding: 40px;
-  border-radius: 50px;
+  border-radius: var(--fs-50);
   background-color: var(--grey-promo);
 
   .title {
@@ -15,7 +15,7 @@
 
 .faq-list {
   display: block;
-  margin-top: 16px;
+  margin-top: var(--fs-16);
 }
 
 .faq-head {
@@ -26,7 +26,7 @@
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  padding: 16px 30px 16px 0px;
+  padding: var(--fs-16) var(--fs-30) var(--fs-16) 0px;
   cursor: pointer;
 
   button {
@@ -36,9 +36,9 @@
     align-content: center;
     position: absolute;
     right: 0px;
-    width: 24px;
-    height: 24px;
-    border-radius: 24px;
+    width: var(--fs-24);
+    height: var(--fs-24);
+    border-radius: var(--fs-24);
     background-color: rgba(0, 0, 0, 0);
     flex-shrink: none;
     transform: rotate(0deg) !important;
@@ -48,7 +48,7 @@
       content: '';
       display: block;
       position: absolute;
-      width: 14px;
+      width: var(--fs-14);
       height: 2px;
       border-radius: 2px;
       background-color: var(--blue);
@@ -86,9 +86,29 @@
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
-  gap: 14px;
+  gap: var(--fs-14);
 
   .title {
     margin-bottom: -0.2rem;
+  }
+
+  .text {
+    line-height: 1.5;
+    a {
+      font-size: inherit;
+    }
+  }
+}
+
+//375
+@media (max-width: 767px) {
+  .faq {
+    padding: var(--fs-26) var(--fs-20);
+    border-radius: var(--fs-32);
+    background-color: var(--grey-promo);
+  }
+
+  .faq-head {
+    padding: var(--fs-14) var(--fs-30) var(--fs-14) 0px;
   }
 }

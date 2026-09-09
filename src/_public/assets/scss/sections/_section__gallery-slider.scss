@@ -1,8 +1,8 @@
 .gallery-slider {
   .swiper-slide {
     width: auto;
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
 }
 
@@ -10,6 +10,9 @@
   display: block;
   width: auto;
   height: 260px;
+  @media (max-width: 767px) {
+    height: 200px;
+  }
   border-radius: 16px;
   cursor: pointer;
   pointer-events: all;

@@ -1,0 +1,46 @@
+.icon-list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--fs-8);
+  li {
+    display: flex;
+    width: 100%;
+    min-height: 24px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    font-size: var(--fs-16);
+    gap: var(--fs-10);
+    color: var(--grey-text);
+    &.magenta {
+      color: var(--magenta);
+    }
+    &.bold {
+      font-weight: 700;
+    }
+
+    svg {
+      display: block;
+      margin-top: 3px;
+      flex-shrink: 0;
+      &.magenta {
+        color: var(--magenta);
+      }
+    }
+  }
+}
+
+.a11y {
+  // A++
+  &.a11y-font-large {
+    .icon-list {
+      li {
+        svg {
+          width: var(--fs-20);
+          height: var(--fs-20);
+        }
+      }
+    }
+  }
+}

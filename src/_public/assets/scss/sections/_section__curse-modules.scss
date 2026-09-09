@@ -1,0 +1,142 @@
+.section--course-modules {
+  overflow: visible;
+  z-index: 5;
+}
+
+.accordeon-arrow {
+  display: flex;
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 38px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: var(--magenta-light);
+  color: var(--magenta);
+  transform: rotate(0deg);
+  flex-shrink: 0;
+  outline: none;
+  svg {
+    display: block;
+    width: 18px;
+    height: 10px;
+    position: absolute;
+  }
+  &:focus-visible {
+    background-color: var(--magenta);
+    color: var(--white);
+  }
+}
+
+.module-accordeon {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: var(--fs-50);
+  background-color: var(--white);
+  &.open {
+    z-index: 2;
+  }
+}
+
+.module-accordeon-head {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  position: relative;
+  gap: var(--fs-16);
+  padding: var(--fs-28) var(--fs-36);
+  .title {
+    line-height: 1.25;
+  }
+}
+
+.module-accordeon-body {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 56px;
+  padding: 0px var(--fs-36) var(--fs-36) var(--fs-36);
+}
+
+.module-description,
+.module-card-form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.module-description {
+  gap: var(--fs-16);
+  .text {
+    line-height: 1.5;
+  }
+}
+
+.module-card-form {
+  gap: var(--fs-12);
+  max-width: 300px;
+  flex-shrink: 0;
+
+  .label-text {
+    font-size: var(--fs-14);
+    font-weight: 700;
+    margin-bottom: var(--fs-12);
+  }
+}
+
+//768
+@media (max-width: 1023px) {
+  .module-accordeon-body {
+    gap: var(--fs-32);
+  }
+  .module-description {
+    flex: none;
+    width: 100%;
+  }
+}
+
+//375
+@media (max-width: 767px) {
+  .module-accordeon {
+    border-radius: var(--fs-32);
+  }
+
+  .module-accordeon-head {
+    gap: var(--fs-16);
+    padding: var(--fs-20) var(--fs-20);
+    .title {
+      font-size: var(--fs-18);
+    }
+  }
+  .module-accordeon-body {
+    gap: var(--fs-20);
+    padding: 0px var(--fs-20) var(--fs-20) var(--fs-20);
+  }
+  .module-description {
+    flex: none;
+    width: 100%;
+  }
+  .accordeon-arrow {
+    width: 25px;
+    height: 25px;
+    background-color: var(--magenta);
+    color: var(--white);
+
+    svg {
+      position: absolute;
+      width: 16px;
+      height: 6px;
+    }
+  }
+}

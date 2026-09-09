@@ -9,6 +9,13 @@
 
 .section--reviews-more {
   .container {
+    @media (max-width: 767px) {
+      > .buttons {
+        min-width: 100%;
+        justify-content: flex-start;
+      }
+    }
+
     > .button {
       align-self: flex-end;
     }

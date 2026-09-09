@@ -34,6 +34,7 @@
 // 375
 @media (max-width: 767px) {
   .collection {
+    gap: var(--fs-16);
     &.col-3 {
       > li {
         width: 100%;
