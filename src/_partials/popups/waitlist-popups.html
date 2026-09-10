@@ -1,0 +1,78 @@
+<!--ADD REVIEW POPUP-->
+<div class="popup-content big" role="dialog" aria-modal="true" aria-labelledby="add-to-wait-list-title" id="add-to-wait-list">
+  <h2 class="title title--24 bold" id="add-to-wait-list-title">
+    Отправка в лист ожидания
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <h2 class="title title--18 bold">Быстрый старт: база о&nbsp;вине за&nbsp;3 встречи</h2>
+
+  <p class="popup-subtitle">Отправьте ваши данные, и мы свяжемся с вами, когда появится возможность записаться на курс.</p>
+
+  <script>
+    function onAddToListSubmit(e) {
+      e.preventDefault();
+      window.popup.open('add-to-wait-list-success');
+    }
+  </script>
+
+  <form data-form action="#" class="form form--grey" novalidate onsubmit="onAddToListSubmit(event)">
+    <label class="label">
+      <span class="label-text">Фамилия <span class="red">*</span></span>
+      <input type="text" name="surname" class="input" data-rule="name-cyrillic" placeholder="Иванов" required />
+    </label>
+
+    <label class="label">
+      <span class="label-text">Имя <span class="red">*</span></span>
+      <input type="text" name="name" class="input" data-rule="name-cyrillic" placeholder="Иванов" required />
+    </label>
+
+    <label class="label">
+      <span class="label-text">Отчество</span>
+      <input type="text" name="lastname" class="input" data-rule="name-cyrillic" placeholder="Иванович" />
+    </label>
+
+    <label class="label">
+      <span class="label-text">Телефон <span class="red">*</span></span>
+      <input type="tel" name="phone" class="input" placeholder="+7 ___ ___ __ __" required />
+    </label>
+
+    <label class="label">
+      <span class="label-text">Email <span class="red">*</span></span>
+      <input type="email" name="email" class="input" placeholder="ivanov@mail.ru" required />
+    </label>
+
+    <label class="label auto" aria-live="polite" aria-atomic="true">
+      <span class="label-text">Количество посетителей</span>
+      <div class="lebel--count" aria-live="polite" aria-atomic="true">
+        <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
+        <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество товара" />
+        <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
+      </div>
+    </label>
+
+    <div class="buttons ta--l">
+      <button type="submit" class="button medium magenta">Отправить заявку</button>
+    </div>
+  </form>
+</div>
+
+<!--REVIEW SUCCESS POPUP-->
+<div class="popup-content" id="add-to-wait-list-success" role="dialog" aria-modal="true" aria-labelledby="add-to-wait-list-success-title">
+  <h2 class="title title--24 bold" id="add-to-wait-list-success-title">
+    Отправка в лист ожидания
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <h2 class="title title--18 bold">Быстрый старт: база о&nbsp;вине за&nbsp;3 встречи</h2>
+
+  <p class="text full ta--l">Спасибо! Ваша заявка принята. Мы свяжемся с&nbsp;вами, когда появится возможность записаться на&nbsp;курс.</p>
+
+  <div class="buttons ta--l">
+    <a href="/profile/waitlist" class="button medium magenta">Посмотреть лист ожидания</a>
+  </div>
+</div>

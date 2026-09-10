@@ -120,6 +120,11 @@ input[type='number'] {
   width: 100%;
   position: relative;
   color: inherit;
+  &.auto {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+  }
 }
 
 .label-text {
@@ -675,27 +680,34 @@ $select_padding: 0px var(--fs-16);
   }
 }
 
-.label.lebel--count {
-  display: flex;
-  justify-content: space-between;
-  max-width: 112px;
-  height: var(--fs-36);
-
-  .plus,
-  .minus {
-    display: flex;
+.label {
+  .lebel--count {
+    display: inline-flex;
     position: relative;
-    width: var(--fs-36);
+    justify-content: space-between;
+    width: 112px;
     height: var(--fs-36);
-    border-radius: var(--fs-36);
-    border: 2px solid var(--grey-light);
-    background-color: var(--white);
-    flex-wrap: wrap;
-    font-size: var(--fs-18);
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    z-index: 2;
+
+    .input {
+      border-radius: 100px;
+    }
+
+    .plus,
+    .minus {
+      display: flex;
+      position: relative;
+      width: var(--fs-36);
+      height: var(--fs-36);
+      border-radius: var(--fs-36);
+      border: 2px solid var(--grey-light);
+      background-color: var(--white);
+      flex-wrap: wrap;
+      font-size: var(--fs-18);
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      z-index: 2;
+    }
   }
 }
 
@@ -703,7 +715,9 @@ $select_padding: 0px var(--fs-16);
   display: inline-flex;
   position: relative;
   width: auto;
-  height: var(--fs-36);
+  height: auto;
+  min-height: var(--fs-36);
+
   background-color: var(--white);
   padding: 4px;
   border-radius: var(--fs-36);

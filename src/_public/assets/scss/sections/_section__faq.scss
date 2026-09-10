@@ -7,15 +7,14 @@
   padding: 40px;
   border-radius: var(--fs-50);
   background-color: var(--grey-promo);
-
-  .title {
-    font-weight: 700;
-  }
 }
 
 .faq-list {
   display: block;
   margin-top: var(--fs-16);
+  .title {
+    font-weight: 700;
+  }
 }
 
 .faq-head {
