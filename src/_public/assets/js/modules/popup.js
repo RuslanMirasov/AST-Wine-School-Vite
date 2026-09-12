@@ -124,6 +124,12 @@ export const popup = {
   },
 
   _bindCloseEvents() {
+    let mousedownTarget = null;
+
+    document.addEventListener('mousedown', e => {
+      mousedownTarget = e.target;
+    });
+
     document.addEventListener('click', e => {
       if (this._isOpening || this._isAnimating) return;
 
@@ -134,8 +140,10 @@ export const popup = {
         return;
       }
 
-      const isCloseTarget = e.target === this._backdrop || e.target.hasAttribute('data-popup-close');
-      if (isCloseTarget && !this._isLocked()) {
+      const isBackdropClick = e.target === this._backdrop && mousedownTarget === this._backdrop;
+      const isCloseButton = e.target.hasAttribute('data-popup-close');
+
+      if ((isBackdropClick || isCloseButton) && !this._isLocked()) {
         this.close();
       }
     });

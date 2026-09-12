@@ -7,6 +7,10 @@
       pointer-events: all;
     }
   }
+
+  .tags .tag {
+    border: 1px solid var(--grey-button);
+  }
 }
 
 .post-slide {
@@ -26,6 +30,13 @@
 
   .magenta-link {
     margin-top: var(--fs-16);
+  }
+
+  .content-text {
+    min-height: 100%;
+    .magenta-link {
+      margin-top: auto;
+    }
   }
 
   .post-slide-text {

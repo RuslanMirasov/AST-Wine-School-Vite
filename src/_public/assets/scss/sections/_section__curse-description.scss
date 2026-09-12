@@ -1,17 +1,68 @@
 .curse-description {
-  gap: var(--fs-40);
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--fs-40);
   padding: var(--fs-32);
+
+  .content-text.gap--24 {
+    width: 100%;
+    max-width: calc(100% - 40px - 598px);
+    flex: 1;
+  }
+
+  .image-slider {
+    max-width: 598px;
+  }
+
+  .button.button-pdf {
+    width: 100%;
+    max-width: 452px;
+    justify-content: space-between;
+    span {
+      flex: 1;
+      text-align: left;
+    }
+  }
+
   .title--16 {
     margin-bottom: -16px;
   }
+
   .text {
     line-height: 1.5;
   }
-  @media (max-width: 1023px) {
+
+  &.compact {
+    .image-slider {
+      max-width: 434px;
+      .image-slide {
+        &:before {
+          padding-top: 87.55%;
+        }
+      }
+    }
+    .content-text.gap--24 {
+      max-width: calc(100% - 40px - 434px);
+    }
+  }
+
+  @media (max-width: 1279px) {
     flex-direction: column;
     gap: var(--fs-32);
     padding: var(--fs-30);
+    .content-text.gap--24 {
+      max-width: 100%;
+      flex: auto;
+    }
+
+    .image-slider {
+      margin: 0 auto;
+    }
+    &.compact {
+      .content-text.gap--24 {
+        max-width: 100%;
+      }
+    }
   }
   @media (max-width: 767px) {
     gap: var(--fs-24);

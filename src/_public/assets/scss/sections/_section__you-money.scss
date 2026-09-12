@@ -4,7 +4,8 @@
     padding: var(--fs-24) var(--fs-20);
   }
 }
-.you-money-promo {
+
+.pay-methods {
   display: flex;
   position: relative;
   width: 100%;
@@ -12,12 +13,36 @@
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  gap: 16px;
+  gap: var(--fs-16) var(--fs-32);
   margin-top: 24px;
 
+  .pay-methods-logos {
+    display: inline-flex;
+    position: relative;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    gap: var(--fs-14);
+    img {
+      height: 42px;
+      @media (max-width: 767px) {
+        height: 32px;
+      }
+    }
+  }
+
   .text {
+    flex: 1;
+    display: inline-block;
+    width: auto;
     color: var(--grey-text);
     line-height: 1.5;
+    @media (max-width: 1279px) {
+      flex: auto;
+      display: inline-block;
+    }
   }
 
   .magenta-link {

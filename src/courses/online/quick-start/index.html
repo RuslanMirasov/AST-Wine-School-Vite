@@ -21,77 +21,44 @@
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
         <li><a href="%ROOT%courses/">Курсы</a></li>
-        <li><a href="%ROOT%courses/offline/">Очные курсы</a></li>
-        <li><span>Быстрый старт: о вине за 3 встречи</span></li>
+        <li><a href="%ROOT%courses/online/">Онлайн-курсы</a></li>
+        <li><span>Быстрый старт: онлайн-курс для начинающих</span></li>
       </ul>
 
       <!--SECTION CURSE HERO-->
       <section class="section section--curse-hero">
         <div class="container">
-          <form data-form novalidate class="curse-hero">
+          <form data-form novalidate class="curse-hero dark">
             <div class="image-background">
-              <img src="/assets/img/promo/1-single.webp" alt="Описание картинки курса" />
+              <img src="/assets/img/promo/3-single.webp" alt="Описание картинки курса" />
             </div>
 
             <ul class="tags auto">
               <li class="tag">
-                <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
-                Новинка
-              </li>
-              <li class="tag">
-                <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
-                Москва
-              </li>
-
-              <li>
-                <fieldset class="radio-buttons">
-                  <label class="label">
-                    <input name="curse-level" type="radio" class="radio-button" value="Начинающим" checked />
-                    <p class="label-text">Начинающим</p>
-                  </label>
-                  <label class="label">
-                    <input name="curse-level" type="radio" class="radio-button" value="Продвинутым" />
-                    <p class="label-text">Продвинутым</p>
-                  </label>
-                  <label class="label">
-                    <input name="curse-level" type="radio" class="radio-button" value="Профессионалам" />
-                    <p class="label-text">Профессионалам</p>
-                  </label>
-                </fieldset>
+                <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                Онлайн
               </li>
             </ul>
 
             <div class="content-text gap--12">
-              <h1 class="title title--40 upper">Быстрый старт: база о&nbsp;вине за&nbsp;3 встречи</h1>
+              <h1 class="title title--40 upper">Быстрый старт: онлайн-курс для начинающих</h1>
             </div>
 
             <div class="curse-hero-fields">
               <div class="curse-hero-fields__left">
                 <fieldset class="fieldset">
-                  <h3 class="title title--16 bold">Дата старта курса</h3>
-                  <label class="label">
-                    <select data-select name="start-date" required>
-                      <option value="13 июля 2026">13 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
-                      <option value="16 июля 2026">16 июля 2026 &lt;b&gt;четверг, 18:00&lt;/b&gt;</option>
-                      <option value="20 июля 2026">20 июля 2026 &lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
-                    </select>
-                  </label>
-                </fieldset>
-
-                <fieldset class="fieldset">
-                  <h3 class="title title--16 bold">Осталось мест: 12</h3>
                   <ul class="icon-list">
                     <li>
-                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
-                      <span>С понедельника по&nbsp;субботу с&nbsp;18:00 до&nbsp;20:30</span>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#video"></use></svg>
+                      <span>Онлайн — занимайтесь когда угодно и где угодно</span>
                     </li>
                     <li>
                       <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#clock"></use></svg>
                       <span>3 занятия по 2,5 часа</span>
                     </li>
                     <li>
-                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
-                      <span>г. Москва, ул. Новый Арбат, д. 63</span>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                      <span>Срок доступа к материалам курса с момента оплаты: 180 дней</span>
                     </li>
                     <li class="bold">
                       <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#phone"></use></svg>
@@ -100,12 +67,19 @@
                   </ul>
                 </fieldset>
               </div>
+
               <div class="curse-hero-fields__right">
                 <p class="text fs-14 grey-text">Стоимость курса</p>
                 <h3 class="title title--32 bold">4 500 ₽</h3>
                 <div class="buttons gap--12 ta--l">
-                  <button type="submit" class="button medium magenta">В корзину</button>
-                  <button type="button" class="button medium white-border" data-popup-open="add-to-wait-list">В лист ожидания</button>
+                  <label class="label auto" aria-live="polite" aria-atomic="true">
+                    <div class="lebel--count" aria-live="polite" aria-atomic="true">
+                      <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
+                      <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество товара" />
+                      <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
+                    </div>
+                  </label>
+                  <button type="button" class="button medium regular white-border">Корзина</button>
                 </div>
               </div>
             </div>
@@ -116,7 +90,7 @@
       <!--SECTION ABOUT CURSE-->
       <section class="section">
         <div class="container">
-          <div class="content curse-description">
+          <div class="content curse-description compact">
             <div class="content-text gap--24">
               <h3 class="title title--24 bold">Хотите перестать теряться в&nbsp;винной карте и&nbsp;уверенно выбирать бутылку к&nbsp;ужину?</h3>
 
@@ -143,6 +117,17 @@
                 <li><p class="text">планирует связать работу с&nbsp;вином, но не&nbsp;знает, с&nbsp;чего начать</p></li>
                 <li><p class="text">ищет не&nbsp;скучную академию, а&nbsp;живое общение с&nbsp;сомелье</p></li>
               </ul>
+
+              <ul class="icon-list">
+                <li>
+                  <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#video"></use></svg>
+                  <span>Доступ через браузер. Рекомендуется стабильное интернет-соединение</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                  <span>Обучение начинается сразу после оплаты</span>
+                </li>
+              </ul>
             </div>
 
             <load src="/_partials/components/curse-slider.html" />
@@ -165,11 +150,44 @@
       </section>
 
       <load src="/_partials/sections/section-module-accordeons.html" />
-      <load src="/_partials/sections/section-gallery-slider.html" />
+
+      <!--NEED MORE TIME-->
+      <section class="section">
+        <div class="container">
+          <div class="content grey">
+            <div class="content-text gap--24">
+              <h2 class="title title--32 upper">Нужно больше времени?</h2>
+              <p class="text">
+                Заканчивается срок доступа к&nbsp;курсу? Продлите его на&nbsp;удобный срок — все ваши прогресс и&nbsp;материалы сохранятся!
+              </p>
+              <div class="buttons gap--24 ta--l">
+                <button type="button" class="extend-btn blue">
+                  <span class="text fs-16">Продлить на</span>
+                  <strong class="text fs-24">+1 месяц</strong>
+                </button>
+
+                <button type="button" class="extend-btn">
+                  <span class="text fs-16">Продлить на</span>
+                  <strong class="text fs-24">+3 месяца</strong>
+                </button>
+
+                <button type="button" class="extend-btn">
+                  <span class="text fs-16">Продлить на</span>
+                  <strong class="text fs-24">+6 месяцев</strong>
+                </button>
+              </div>
+              <button type="button" class="button magenta medium">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <load src="/_partials/sections/section-interface-slider.html" />
       <load src="/_partials/sections/section-reviews-slider.html" />
       <load src="/_partials/sections/section-reviews-more.html" />
       <load src="/_partials/sections/section-faq.html" />
       <load src="/_partials/sections/section-you-money.html" />
+      <load src="/_partials/sections/section-alreadysee-slider.html" />
     </main>
 
     <!--FOOTER-->

@@ -4,6 +4,22 @@
   line-height: 1.2;
   color: var(--blue);
 
+  &.title--confirm {
+    position: relative;
+    padding: var(--fs-8) var(--fs-16) var(--fs-8) var(--fs-40);
+    background-color: var(--grey-light);
+    border-radius: var(--fs-10);
+    font-weight: 700;
+    svg {
+      color: var(--magenta);
+      width: var(--fs-40);
+      height: var(--fs-40);
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+  }
+
   &.magenta {
     color: var(--magenta);
   }

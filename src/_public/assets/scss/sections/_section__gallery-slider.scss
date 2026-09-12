@@ -1,4 +1,5 @@
-.gallery-slider {
+.gallery-slider,
+.interface-slider {
   .swiper-slide {
     width: auto;
     opacity: 1 !important;
@@ -6,16 +7,27 @@
   }
 }
 
-.gallery-image {
+.gallery-image,
+.interface-image {
   display: block;
   width: auto;
+  border-radius: 16px;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.gallery-image {
   height: 260px;
   @media (max-width: 767px) {
     height: 200px;
   }
-  border-radius: 16px;
-  cursor: pointer;
-  pointer-events: all;
+}
+
+.interface-image {
+  height: 355px;
+  @media (max-width: 767px) {
+    height: 200px;
+  }
 }
 
 .gallery-image-original {

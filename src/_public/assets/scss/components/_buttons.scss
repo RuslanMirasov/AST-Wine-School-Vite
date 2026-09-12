@@ -22,23 +22,22 @@
   &.gap--12 {
     gap: var(--fs-12);
   }
+
+  &.gap--16 {
+    gap: var(--fs-16);
+  }
   &.auto {
     flex: 1;
     gap: 18px;
   }
-  @media (max-width: 599px) {
-    &.buttons--pdf {
-      .button.button-pdf {
-        min-width: 100%;
-        justify-content: space-between;
-        span {
-          max-width: 50vw;
-        }
-      }
-    }
-  }
   @media (max-width: 767px) {
     gap: var(--fs-16);
+    &.gap--12 {
+      gap: var(--fs-12);
+    }
+    &.gap--16 {
+      gap: var(--fs-16);
+    }
   }
 }
 
@@ -235,6 +234,9 @@
       color: var(--blue);
       background-color: var(--grey-button);
     }
+    @media (max-width: 767px) {
+      padding: var(--fs-14) var(--fs-20);
+    }
   }
 
   &.shadow {
@@ -265,5 +267,25 @@
 .section--degustation-and-seminars {
   .button {
     min-width: 8.625rem; //138px
+  }
+}
+
+.extend-btn {
+  display: inline-block;
+  background-color: var(--white);
+  border-radius: var(--fs-30);
+  padding: var(--fs-24) var(--fs-28);
+  text-align: left;
+  line-height: 1.25;
+  min-width: 225px;
+  .text.fs-16 {
+    color: var(--grey-text);
+    margin-bottom: 4px;
+  }
+  &.blue {
+    background-color: var(--blue);
+    .text {
+      color: var(--white);
+    }
   }
 }

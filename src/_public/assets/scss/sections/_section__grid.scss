@@ -178,7 +178,10 @@
 
       &.service-mix__item--curses {
         padding: var(--fs-20);
-
+        min-height: 214px;
+        .magenta-link {
+          margin-top: auto;
+        }
         .text {
           max-width: 50%;
           font-size: var(--fs-14);

@@ -16,6 +16,10 @@
   color: var(--blue);
   padding: var(--fs-32);
   border-radius: var(--fs-50);
+  @media (max-width: 767px) {
+    padding: var(--fs-24) var(--fs-20) var(--fs-20) var(--fs-20);
+    border-radius: var(--fs-32);
+  }
   &.dark {
     background-color: var(--blue);
     color: var(--white);
@@ -31,7 +35,8 @@
     }
     .image-background {
       &:before {
-        background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+        background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        opacity: 0.5;
       }
     }
   }
@@ -60,6 +65,9 @@
   .image-background {
     overflow: hidden;
     border-radius: var(--fs-50);
+    @media (max-width: 767px) {
+      border-radius: var(--fs-32);
+    }
     &:before {
       content: '';
       position: absolute;
@@ -103,6 +111,9 @@
     border-radius: var(--fs-24);
     background-color: var(--white);
     padding: var(--fs-28) var(--fs-32);
+    @media (max-width: 767px) {
+      padding: var(--fs-16) var(--fs-16);
+    }
   }
 
   .curse-hero-fields__left {
@@ -135,9 +146,14 @@
   }
 
   .fieldset {
-    &:first-child {
-      width: 38%;
-      min-width: 180px;
+    min-width: 38%;
+    @media (max-width: 1279px) {
+      width: 100%;
+      min-width: 100%;
+    }
+    &:last-child {
+      width: 100%;
+      min-width: auto;
     }
     .title--16 {
       margin-bottom: var(--fs-12);

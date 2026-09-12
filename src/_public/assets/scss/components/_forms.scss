@@ -550,6 +550,8 @@ $select_padding: 0px var(--fs-16);
     background-color: none !important;
     opacity: 1;
     font-size: $select_font_size !important;
+    line-height: 1.1;
+    font-weight: 500;
     border-radius: 10px;
     height: auto !important;
     padding: 0px !important;
@@ -563,11 +565,9 @@ $select_padding: 0px var(--fs-16);
     }
 
     &.is-highlighted {
-      font-weight: 700;
       color: var(--magenta);
       background: #f8e8f2 !important;
       b {
-        font-weight: 400;
         color: $select_color;
       }
     }
@@ -707,6 +707,7 @@ $select_padding: 0px var(--fs-16);
       align-items: center;
       align-content: center;
       z-index: 2;
+      color: var(--blue);
     }
   }
 }
