@@ -206,6 +206,7 @@
         color: var(--blue);
         pointer-events: auto;
         outline: none;
+        flex-shrink: 0;
         transition:
           transform 0.3s var(--cubic),
           color 0.3s var(--cubic);
