@@ -10,6 +10,10 @@
   margin-top: var(--fs-24);
   max-width: 1440px;
   padding: 0px 50px;
+  @media (min-width: 1920px) {
+    max-width: 1720px;
+    padding: 0px;
+  }
   @media (max-width: 1439px) {
     max-width: 1280px;
     padding: 0px 40px;

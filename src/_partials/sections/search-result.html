@@ -1,6 +1,9 @@
 <section class="section section--search-result" data-tabs="search-results">
   <div class="container">
-    <load src="/_partials/components/search-form.html" />
+    <form action="%ROOT%search/" class="search-form" method="GET" data-form novalidate>
+      <load src="/_partials/components/search-form.html" />
+      <button type="submit" class="button magenta medium regular">Найти</button>
+    </form>
 
     <h1 class="title title--40 upper">Результаты поиска по строке «<span>ХХХ</span>»</h1>
 

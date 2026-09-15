@@ -122,10 +122,7 @@ button {
   height: auto;
   transform: translate(0%, 20px);
   opacity: 0;
-  transition:
-    padding-top 0.6s var(--cubic),
-    transform 0.6s var(--cubic),
-    opacity 0.6s var(--cubic);
+  animation: mainFadeIn 0.8s var(--cubic) forwards paused;
   padding-top: 80px;
   @media (max-width: 1439px) {
     padding-top: 60px;
@@ -143,7 +140,17 @@ button {
 
 .loaded {
   .main {
-    transform: translate(0%, 0px);
+    animation-play-state: running;
+  }
+}
+
+@keyframes mainFadeIn {
+  from {
+    transform: translate(0%, 20px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
     opacity: 1;
   }
 }
@@ -167,6 +174,12 @@ button {
   &.gap--16 {
     gap: var(--fs-16);
   }
+
+  @media (min-width: 1920px) {
+    max-width: 1720px;
+    padding: 0px;
+  }
+
   @media (max-width: 1439px) {
     max-width: 1280px;
     padding: 0px 40px;
@@ -230,14 +243,14 @@ button {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1152px) {
   .show-in-tablet {
     display: none !important;
   }
 }
 
-@media (max-width: 1023px) {
-  .delete-in-tablet {
+@media (max-width: 1151px) {
+  *.delete-in-tablet {
     display: none !important;
   }
 }

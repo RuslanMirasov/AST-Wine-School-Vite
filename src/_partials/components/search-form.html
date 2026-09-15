@@ -1,7 +1,9 @@
-<form data-form action="%ROOT%search/" class="form search-form" novalidate>
-  <label class="label">
-    <svg width="20" height="20" class="search-input-icon"><use href="/assets/img/sprite.svg#search-input"></use></svg>
-    <input type="text" name="s" class="input" placeholder="Поиск по сайту" required />
-  </label>
-  <button type="submit" class="button magenta medium" aria-label="Поиск по сайту">Найти</button>
-</form>
+<label class="label">
+  <button type="submit" class="search-submit-icon" aria-label="Отправка формы поиска">
+    <svg width="20" height="20"><use href="/assets/img/sprite.svg#search-input"></use></svg>
+  </button>
+  <input type="text" name="s" class="input" required placeholder="Поиск" aria-label="Поиск по сайту" data-error-text="Введите запрос" />
+  <button type="reset" class="search-close" aria-label="Очистить форму поиска">
+    <svg width="16" height="16"><use href="/assets/img/sprite.svg#close"></use></svg>
+  </button>
+</label>

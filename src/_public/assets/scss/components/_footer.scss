@@ -299,6 +299,16 @@
   // }
 }
 
+//1920
+@media (min-width: 1920px) {
+  .footer {
+    .container {
+      max-width: 1720px;
+      padding: 0px;
+    }
+  }
+}
+
 //1366
 @media (max-width: 1439px) {
   .footer {

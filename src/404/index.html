@@ -25,7 +25,11 @@
       <!--БЛИЖАЙШИЕ КУРСЫ-->
       <section class="section">
         <div class="container">
-          <load src="/_partials/components/search-form.html" />
+          <form action="%ROOT%search/" class="search-form" method="GET" data-form novalidate>
+            <load src="/_partials/components/search-form.html" />
+            <button type="submit" class="button magenta medium regular">Найти</button>
+          </form>
+
           <h2 class="title title--32 full upper">Ближайшие курсы</h2>
 
           <h2 class="title title--24 bold">Очные</h2>

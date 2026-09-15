@@ -1,6 +1,6 @@
 const SEARCH_WIDE_MIN_WIDTH = 1600;
 const SEARCH_WIDE_RANGE_MIN_WIDTH = 550;
-const SEARCH_WIDE_RANGE_MAX_WIDTH = 1023;
+const SEARCH_WIDE_RANGE_MAX_WIDTH = 1151;
 
 const isSearchWide = () => {
   const width = window.innerWidth;
@@ -10,15 +10,15 @@ const isSearchWide = () => {
 export const initSearchToggle = () => {
   const wrapper = document.querySelector('[data-search]');
   const toggles = document.querySelectorAll('[data-search-toggle]');
-  const searchButton = document.querySelector('[data-search-submit]');
 
   if (!wrapper || !toggles.length) return;
 
-  const form = wrapper.querySelector('form');
   const input = wrapper.querySelector('.input');
   const wrapperFocusables = Array.from(wrapper.querySelectorAll('input, button'));
 
-  const isInsideSearch = el => wrapper.contains(el) || (searchButton?.contains(el) ?? false);
+  // Кнопка-триггер физически лежит вне [data-search] (отдельный li в .header-buttons) —
+  // без этого клик по ней сам же документный обработчик тут же считает «кликом снаружи».
+  const isInsideSearch = el => wrapper.contains(el) || Array.from(toggles).some(toggle => toggle.contains(el));
 
   // Пока поле схлопнуто (height:0/overflow:hidden), убираем input и крестик из Tab —
   // иначе клавиатура проваливается в невидимые элементы раньше кнопки-триггера.
@@ -30,7 +30,7 @@ export const initSearchToggle = () => {
       else el.setAttribute('tabindex', '-1');
     });
 
-    searchButton?.setAttribute('aria-expanded', String(isOpen));
+    toggles.forEach(toggle => toggle.setAttribute('aria-expanded', String(isOpen)));
   };
 
   const openSearch = ({ focusInput = false } = {}) => {
@@ -48,12 +48,7 @@ export const initSearchToggle = () => {
     toggle.addEventListener('click', event => {
       event.preventDefault();
 
-      if (toggle.hasAttribute('data-search-reset')) form?.reset();
-
-      if (isSearchWide()) {
-        if (toggle.hasAttribute('data-search-submit')) form?.requestSubmit();
-        return;
-      }
+      if (isSearchWide()) return;
 
       if (wrapper.classList.contains('active')) {
         closeSearch();
@@ -84,7 +79,9 @@ export const initSearchToggle = () => {
   wrapper.addEventListener('keydown', event => {
     if (event.key !== 'Escape' || isSearchWide()) return;
     closeSearch();
-    searchButton?.focus();
+    Array.from(toggles)
+      .find(toggle => toggle.offsetParent !== null)
+      ?.focus();
   });
 
   window.addEventListener('resize', syncState);

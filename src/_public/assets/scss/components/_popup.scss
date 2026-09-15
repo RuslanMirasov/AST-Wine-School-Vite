@@ -27,7 +27,6 @@ $popup_transition: 0.5s;
 
   -webkit-overflow-scrolling: touch;
   background: rgba(0, 0, 0, 0.5);
-  //backdrop-filter: blur(10px);
   transition:
     opacity $popup_transition ease-in-out 0s,
     visibility $popup_transition ease-in-out 0s;
@@ -126,6 +125,10 @@ $popup_transition: 0.5s;
 
   &.big {
     max-width: 558px;
+  }
+
+  &.small {
+    max-width: 344px;
   }
 
   .title {

@@ -1,8 +1,7 @@
 <a href="#header" class="skip-link">Перейти к меню</a>
+<a href="#main" class="skip-link">Перейти к основному содержанию</a>
 
 <load src="/_partials/components/a11y-panel.html" />
-
-<a href="#main" class="skip-link">Перейти к основному содержанию</a>
 
 <!--HEADER-->
 <header class="header" id="header" data-fixed>
@@ -18,12 +17,16 @@
         <a href="%ROOT%" class="menu-link"><span>Главная</span></a>
       </li>
 
-      <li>
-        <button class="menu-link" data-megamenu-button aria-expanded="false" aria-haspopup="true" aria-controls="megamenu-courses">
-          <span>Курсы</span>
-        </button>
+      <li class="have-submenu">
+        <span class="menu-link">
+          <a href="%ROOT%courses/">Курсы</a>
 
-        <div class="mega-menu" data-megamenu id="megamenu-courses">
+          <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+            <svg width="10" height="6"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+          </button>
+        </span>
+
+        <div class="mega-menu" data-megamenu>
           <div class="mega-menu-inner">
             <ul class="submenu">
               <li>
@@ -42,11 +45,11 @@
                 <a href="%ROOT%courses/offline/" class="menu-link"><span>Очные курсы</span></a>
               </li>
               <li class="full">
-                <a href="%ROOT%courses/schedule/" class="button medium magenta">Расписание всех курсов</a>
+                <a href="%ROOT%courses/schedule/" class="button medium magenta regular">Расписание всех курсов</a>
               </li>
             </ul>
 
-            <div class="recomendations-menu" data-slider="submenu-slider" data-slides-per-view="auto,auto,auto" data-space-between="12,12,12">
+            <div class="recomendations-menu" data-slider="submenu-slider" data-slides-per-view="auto,auto,auto,auto" data-space-between="12,12,12,12">
               <h2 class="title">Рекомендуем</h2>
               <div class="swiper">
                 <div class="swiper-wrapper">
@@ -99,54 +102,76 @@
         <a href="%ROOT%gift-certificates/" class="menu-link"><span>Подарочные сертификаты</span></a>
       </li>
 
-      <li>
-        <button class="menu-link" data-megamenu-button aria-expanded="false" aria-haspopup="true" aria-controls="megamenu-about">
-          <span>О нас</span>
-        </button>
-        <div class="mega-menu center" data-megamenu id="megamenu-about">
+      <li class="have-submenu">
+        <span class="menu-link">
+          <a href="%ROOT%about/">О нас</a>
+
+          <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+            <svg width="10" height="6"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+          </button>
+        </span>
+
+        <div class="mega-menu center" data-megamenu>
           <div class="mega-menu-inner">
             <ul class="submenu">
               <li>
                 <a href="%ROOT%about/history/" class="menu-link"><span>История школы</span></a>
               </li>
+
               <li>
                 <a href="%ROOT%about/teachers/" class="menu-link"><span>Преподаватели</span></a>
               </li>
+
               <li>
                 <a href="%ROOT%about/classrooms/" class="menu-link"><span>Учебный класс</span></a>
               </li>
+
               <li>
-                <a href="%ROOT%about/diploma/" class="menu-link"><span>Профессия и диплом</span></a>
+                <a href="%ROOT%about/diploma/" class="menu-link"><span>Профессия и&nbsp;диплом</span></a>
               </li>
+
               <li>
-                <!-- <a href="%ROOT%reviews/" class="menu-link"><span>Отзывы</span></a> -->
                 <a href="%ROOT%reviews/" class="menu-link"><span>Отзывы</span></a>
               </li>
+
               <li>
                 <a href="%ROOT%about/posts/" class="menu-link"><span>Новости</span></a>
               </li>
+
               <li>
                 <a href="%ROOT%about/materials/" class="menu-link"><span>Полезные материалы</span></a>
               </li>
+
               <li>
                 <a href="%ROOT%about/videos/" class="menu-link"><span>Видеобиблиотека</span></a>
               </li>
-              <li>
+
+              <li class="delete-in-tablet">
                 <a href="%ROOT%profile/referral-program/" class="menu-link"><span>Реферальная программа</span></a>
               </li>
-              <li>
+
+              <li class="delete-in-tablet">
                 <a href="%ROOT%about/contacts/" class="menu-link"><span>Контакты</span></a>
               </li>
-            </ul>
-          </div>
-          <div class="mega-menu-inner">
-            <ul class="submenu">
-              <li>
+
+              <li class="delete-in-tablet full">
                 <a href="%ROOT%about/disclosure/" class="menu-link"><span>Сведения об образовательной организации</span></a>
               </li>
             </ul>
           </div>
         </div>
+      </li>
+
+      <li class="show-in-tablet">
+        <a href="%ROOT%profile/referral-program/" class="menu-link"><span>Реферальная программа</span></a>
+      </li>
+
+      <li class="show-in-tablet">
+        <a href="%ROOT%about/contacts/" class="menu-link"><span>Контакты</span></a>
+      </li>
+
+      <li class="show-in-tablet">
+        <a href="%ROOT%about/disclosure/" class="menu-link"><span>Сведения об образовательной организации</span></a>
       </li>
 
       <li class="show-in-tablet">
@@ -157,47 +182,48 @@
 
   <!--search form-->
   <div class="header-search-form" data-search id="header-search">
-    <form action="%ROOT%search/" method="GET" data-form novalidate>
-      <label class="label">
-        <input type="text" name="s" class="input" required placeholder="Поиск" aria-label="Поиск по сайту" data-error-text="Введите запрос" />
-        <button type="button" class="search-close" data-search-toggle data-search-reset aria-label="Закрыть поиск">
-          <svg width="16" height="16"><use href="/assets/img/sprite.svg#close"></use></svg>
-        </button>
-      </label>
+    <form action="%ROOT%search/" class="search-form" method="GET" data-form novalidate>
+      <load src="/_partials/components/search-form.html" />
     </form>
   </div>
 
   <!--icons menu-->
   <ul class="header-buttons">
-    <li>
+    <li class="search-toggle-el">
       <button
         type="button"
         class="header-button"
         data-search-toggle
-        data-search-submit
-        aria-label="Поиск"
+        aria-label="Открыть форму поиска"
         aria-expanded="false"
         aria-controls="header-search"
       >
         <svg width="24" height="24"><use href="/assets/img/sprite.svg#search"></use></svg>
       </button>
     </li>
+
     <li>
       <button type="button" class="header-button" data-a11y-toggle aria-pressed="false">
         <svg width="24" height="24" aria-hidden="true"><use href="/assets/img/sprite.svg#eye"></use></svg>
         <span data-a11y-toggle-text>Версия для слабовидящих</span>
       </button>
     </li>
+
     <li>
       <a href="%ROOT%profile/cart/" class="header-button" aria-label="Корзина">
         <svg width="24" height="24"><use href="/assets/img/sprite.svg#cart"></use></svg>
         <span class="basket-counter">5</span>
       </a>
     </li>
+
     <li>
       <button type="button" class="header-button" data-popup-open="login" aria-label="Войти">
         <svg width="24" height="24"><use href="/assets/img/sprite.svg#login"></use></svg>
       </button>
+
+      <!-- <a href="%ROOT%profile/" class="header-button" aria-label="Профиль">
+        <svg width="24" height="24"><use href="/assets/img/sprite.svg#profile"></use></svg>
+      </a> -->
     </li>
   </ul>
 

@@ -55,6 +55,9 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
+  &.full {
+    flex: none;
+  }
 
   &.light {
     .title,

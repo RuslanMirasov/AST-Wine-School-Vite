@@ -2,7 +2,8 @@ import { registerNamedSwiper } from './goToSlide.js';
 
 const sliders = document.querySelectorAll('[data-slider]');
 const instances = new WeakMap();
-const customPaginationCleanups = new WeakMap();
+const linkedSliders = new WeakSet();
+const clickLinkedSliders = new WeakSet();
 
 const toBool = s => String(s).toLowerCase() === 'true';
 const toSwiperValue = value => {
@@ -61,57 +62,14 @@ const updateAutoHeightParents = sliderWrapper => {
   instance.updateAutoHeight(0);
 };
 
-const initCustomPagination = (sliderWrapper, instance) => {
-  const pagination = getOwnElement(sliderWrapper, '.custom-pagination');
-  if (!pagination) return;
-
-  // data-index/active — на <li>, кликабельная кнопка — вложенный <button class="custom-pagination-item">
-  const items = Array.from(pagination.querySelectorAll(':scope > li'));
-  if (!items.length) return;
-
-  const updateActiveItem = () => {
-    items.forEach(item => {
-      const isActive = Number(item.dataset.index) === instance.realIndex;
-      item.classList.toggle('active', isActive);
-      item.querySelector('.custom-pagination-item')?.setAttribute('aria-current', isActive ? 'true' : 'false');
-    });
-  };
-
-  const activateItem = item => {
-    const index = Number(item.dataset.index);
-    if (!Number.isInteger(index) || index < 0) return;
-
-    if (instance.params.loop) {
-      instance.slideToLoop(index);
-    } else {
-      instance.slideTo(index);
-    }
-  };
-
-  const handleClick = event => {
-    const item = event.target.closest('.custom-pagination-item')?.closest('li');
-    if (item && pagination.contains(item)) activateItem(item);
-  };
-
-  // role/tabindex/keydown больше не нужны — это настоящая <button>, клавиатура работает нативно
-  pagination.addEventListener('click', handleClick);
-  instance.on('realIndexChange', updateActiveItem);
-  updateActiveItem();
-
-  customPaginationCleanups.set(sliderWrapper, () => {
-    pagination.removeEventListener('click', handleClick);
-    instance.off('realIndexChange', updateActiveItem);
-  });
-};
-
 const destroySlider = sliderWrapper => {
   const instance = instances.get(sliderWrapper);
   if (!instance) return;
 
-  customPaginationCleanups.get(sliderWrapper)?.();
-  customPaginationCleanups.delete(sliderWrapper);
   instance.destroy(true, true);
   instances.delete(sliderWrapper);
+  linkedSliders.delete(sliderWrapper);
+  clickLinkedSliders.delete(sliderWrapper);
   unregisterNamedSwiper(getSliderKey(sliderWrapper));
 };
 
@@ -125,16 +83,17 @@ const initSlider = sliderWrapper => {
     autoplay = '',
     effect = 'slide',
     speed = '600',
-    spaceBetween = '0,0,0',
-    slidesPerView = '1,1,1',
-    slidesPerGroup = '1,1,1',
-    loop = false,
+    spaceBetween = '0,0,0,0',
+    slidesPerView = '1,1,1,1',
+    slidesPerGroup = '1,1,1,1',
+    loop = 'false',
     centered = false,
     centeredSlidesBounds = true,
-    initialSlide = '0,0,0',
+    initialSlide = '0,0,0,0',
     direction = 'horizontal',
     allowTouchMove = 'true',
     autoHeight = 'false',
+    slideToClickedSlide = 'false',
   } = sliderWrapper.dataset;
 
   const arrowPrev = getOwnElement(sliderWrapper, '[data-arrow-prev]');
@@ -144,26 +103,33 @@ const initSlider = sliderWrapper => {
   const options = {
     allowTouchMove: toBool(allowTouchMove),
     autoHeight: toBool(autoHeight),
+    slideToClickedSlide: toBool(slideToClickedSlide),
     effect,
     speed,
-    loop,
+    loop: toBool(loop),
     centeredSlides: toBool(centered),
     centeredSlidesBounds: toBool(centeredSlidesBounds),
     direction,
     breakpoints: {
       0: {
+        slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[3])),
+        slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[3])),
+        spaceBetween: Number(spaceBetween.split(',')[3]),
+        initialSlide: Number(initialSlide.split(',')[3]),
+      },
+      768: {
         slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[2])),
         slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[2])),
         spaceBetween: Number(spaceBetween.split(',')[2]),
         initialSlide: Number(initialSlide.split(',')[2]),
       },
-      768: {
+      1280: {
         slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[1])),
         slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[1])),
         spaceBetween: Number(spaceBetween.split(',')[1]),
         initialSlide: Number(initialSlide.split(',')[1]),
       },
-      1280: {
+      1920: {
         slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[0])),
         slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[0])),
         spaceBetween: Number(spaceBetween.split(',')[0]),
@@ -179,8 +145,6 @@ const initSlider = sliderWrapper => {
     };
   }
 
-  // Автопрокрутка отключена в режиме для слабовидящих (ГОСТ §8) — reinitSlidersForA11y
-  // пересоздаёт слайдер при переключении режима, чтобы подхватить актуальное состояние.
   if (autoplay && !isA11yEnabled()) {
     options.autoplay = {
       delay: autoplay,
@@ -204,7 +168,6 @@ const initSlider = sliderWrapper => {
   instance.on('slideChange', () => {
     updateAutoHeightParents(sliderWrapper);
   });
-  initCustomPagination(sliderWrapper, instance);
 
   const key = getSliderKey(sliderWrapper);
   if (key) {
@@ -220,21 +183,92 @@ const updateSlider = sliderWrapper => {
   }
 };
 
-const linkControlledSliders = () => {
-  sliders.forEach(sliderWrapper => {
-    const controlsKey = sliderWrapper.dataset.controls;
-    if (!controlsKey) return;
-
-    const master = instances.get(sliderWrapper);
-    const slave = window.swipers?.[controlsKey];
-    if (!master || !slave) return;
-
-    master.controller.control = slave;
+// Когда slidesPerView follower'а близок к общему числу слайдов, Swiper физически
+// не может проскроллить до запрошенного индекса и подтягивает activeIndex к максимально
+// достижимому — нативный .swiper-slide-active в этом случае не соответствует реальному
+// целевому слайду. Поэтому подсветку ведём вручную, независимо от scroll-позиции.
+const setManualActiveSlide = (swiper, index) => {
+  if (swiper.destroyed) return;
+  swiper.slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
   });
 };
 
-// Пересоздаёт все уже инициализированные слайдеры — нужно и для autoplay, и для
-// slidesPerView/slidesPerGroup, которые тоже зависят от isA11yEnabled().
+// Swiper Controller (controller.control) синхронизирует слайдеры через низкоуровневый
+// translate — с разными effect (fade + slide) это ломает анимацию у слейва (мгновенный
+// прыжок вместо перехода). Поэтому синхронизируем вручную через slideChange + slideToLoop —
+// каждый слайдер анимирует переход собственным API-вызовом со своим эффектом.
+const linkControlledSliders = () => {
+  sliders.forEach(sliderWrapper => {
+    if (linkedSliders.has(sliderWrapper)) return;
+
+    const controlsKeys = sliderWrapper.dataset.controls
+      ?.split(',')
+      .map(key => key.trim())
+      .filter(Boolean);
+    if (!controlsKeys?.length) return;
+
+    const master = instances.get(sliderWrapper);
+    if (!master) return;
+
+    const followers = controlsKeys.map(key => window.swipers?.[key]).filter(Boolean);
+    if (!followers.length) return;
+
+    // slideChange ещё не срабатывал на старте (мастер уже на своём initialSlide) —
+    // проставляем актуальное состояние сразу, не дожидаясь первой смены слайда.
+    followers.forEach(follower => setManualActiveSlide(follower, master.realIndex));
+
+    master.on('slideChange', () => {
+      // reinitSlidersForA11y уничтожает слайдеры по одному — Swiper при своём
+      // destroy() ещё раз эмитит slideChange, и этот обработчик (уже устаревший,
+      // с замыканием на старые instance) может успеть сработать раньше, чем мы
+      // его снимем. Соседние followers к этому моменту могут быть уже уничтожены.
+      if (master.destroyed) return;
+
+      followers.forEach(follower => {
+        if (follower.destroyed) return;
+
+        setManualActiveSlide(follower, master.realIndex);
+        // .active меняет ширину слайда по CSS (slidesPerView: 'auto') — без update()
+        // Swiper использует устаревшую геометрию (slidesGrid/snapGrid) и промахивается
+        // мимо реальной позиции при следующем переходе.
+        follower.update();
+        // Без "оптимизации" по realIndex: когда контента не хватает для скролла до
+        // нужного слайда, Swiper не обновляет realIndex, но translate всё равно
+        // сдвигается — realIndex и реальная позиция скролла расходятся. slideTo
+        // безопасно вызывать всегда, даже если уже там (это no-op).
+        follower.params.loop ? follower.slideToLoop(master.realIndex) : follower.slideTo(master.realIndex);
+      });
+    });
+
+    linkedSliders.add(sliderWrapper);
+  });
+};
+
+// data-click-target — клик по слайду здесь не двигает сам этот слайдер, а командует
+// указанному слайдеру перейти к тому же индексу. Тот, в свою очередь, через свой
+// data-controls сам разошлёт изменение всем своим followers (в т.ч. обратно сюда) —
+// единственный источник истины остаётся один, вся логика идёт через него.
+const linkClickTargets = () => {
+  sliders.forEach(sliderWrapper => {
+    if (clickLinkedSliders.has(sliderWrapper)) return;
+
+    const targetKey = sliderWrapper.dataset.clickTarget?.trim();
+    if (!targetKey) return;
+
+    const source = instances.get(sliderWrapper);
+    const target = window.swipers?.[targetKey];
+    if (!source || !target) return;
+
+    source.on('click', () => {
+      if (source.clickedIndex == null) return;
+      target.params.loop ? target.slideToLoop(source.clickedIndex) : target.slideTo(source.clickedIndex);
+    });
+
+    clickLinkedSliders.add(sliderWrapper);
+  });
+};
+
 export const reinitSlidersForA11y = () => {
   sliders.forEach(sliderWrapper => {
     if (!instances.has(sliderWrapper)) return;
@@ -242,15 +276,18 @@ export const reinitSlidersForA11y = () => {
     initSlider(sliderWrapper);
   });
   linkControlledSliders();
+  linkClickTargets();
 };
 
 export const initSliders = () => {
   if (sliders.length > 0) {
     sliders.forEach(updateSlider);
     linkControlledSliders();
+    linkClickTargets();
     window.addEventListener('resize', () => {
       sliders.forEach(updateSlider);
       linkControlledSliders();
+      linkClickTargets();
     });
   }
 };

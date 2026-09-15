@@ -1,7 +1,7 @@
 import { lockScroll, unlockScroll, FOCUSABLE_SELECTOR } from './popup.js';
 
 const MENU_ANIMATION_DURATION = 500;
-const MOBILE_MENU_QUERY = '(max-width: 1023px)';
+const MOBILE_MENU_QUERY = '(max-width: 1151px)';
 
 const waitForTransition = (element, propertyName) =>
   new Promise(resolve => {
@@ -60,7 +60,7 @@ const setActiveMenuLinks = menuLinks => {
   });
 
   document.querySelectorAll('[data-megamenu-button]').forEach(button => {
-    const megaMenu = button.nextElementSibling;
+    const megaMenu = button.closest('.menu-link')?.nextElementSibling;
     if (!megaMenu?.hasAttribute('data-megamenu')) return;
 
     const megaMenuLinks = Array.from(megaMenu.querySelectorAll('a[href]'));
@@ -157,22 +157,12 @@ export const initNavigationMenu = () => {
     menu.style.display = '';
   });
 
-  menuLinks.forEach(link => {
-    const menuItem = link.parentElement;
-    const hasNestedContent = menuItem?.tagName === 'LI' && Array.from(menuItem.children).some(element => element !== link);
-
-    if (hasNestedContent && !link.querySelector(':scope > svg')) {
-      const spriteUrl = new URL('../../img/sprite.svg', import.meta.url).href;
-      link.insertAdjacentHTML('beforeend', `<span class="nav-arrow"><svg width="10" height="6"><use href="${spriteUrl}#arrow"></use></svg></span>`);
-    }
-  });
-
   setActiveMenuLinks(menuLinks);
 };
 
 export const initMegaMenu = () => {
   const items = Array.from(document.querySelectorAll('[data-megamenu-button]'))
-    .map(button => ({ button, menu: button.nextElementSibling, wrapper: button.closest('li') }))
+    .map(button => ({ button, menu: button.closest('.menu-link')?.nextElementSibling, wrapper: button.closest('li') }))
     .filter(({ menu }) => menu?.hasAttribute('data-megamenu'));
 
   if (!items.length) return;

@@ -1,0 +1,122 @@
+.calendar-filters {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: var(--fs-12);
+
+  .search-form {
+    max-width: 192px;
+  }
+
+  @media (max-width: 1099px) {
+    flex-wrap: wrap;
+    .search-form {
+      flex: 1;
+      max-width: 100%;
+    }
+    .filters {
+      flex: auto;
+      width: 100%;
+      order: 2;
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: var(--fs-12);
+  li {
+    flex: 1;
+  }
+}
+
+.filter-btn {
+  display: inline-block;
+  position: relative;
+  background-color: var(--grey-promo);
+  border-radius: var(--fs-16);
+  font-size: var(--fs-16);
+  line-height: 1.5;
+  font-family: var(--font);
+  padding: var(--fs-14) var(--fs-50) var(--fs-14) var(--fs-16);
+  text-wrap: nowrap;
+  width: 100%;
+  text-align: left;
+  svg {
+    position: absolute;
+    right: var(--fs-10);
+    top: var(--fs-10);
+    width: var(--fs-32);
+    height: var(--fs-32);
+  }
+  @media (max-width: 1099px) {
+    border-radius: var(--fs-8);
+    padding: var(--fs-8) var(--fs-40) var(--fs-8) var(--fs-16);
+    svg {
+      right: 3px;
+      top: 3px;
+    }
+  }
+}
+
+.filter-checkboxes {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  gap: 8px;
+
+  .label {
+    cursor: pointer;
+    background-color: var(--grey-light);
+    padding: var(--fs-8) var(--fs-12);
+    border-radius: var(--fs-12);
+  }
+
+  .checkbox {
+    + .label-text {
+      font-size: var(--fs-14);
+      color: var(--blue);
+      &:before {
+        border: 1px solid var(--grey-promo);
+        background: var(--grey-promo);
+      }
+    }
+
+    &:focus-visible {
+      + .label-text {
+        &:before {
+          border: 1px solid var(--magenta);
+          background: var(--grey-promo);
+        }
+      }
+    }
+
+    &:checked {
+      + .label-text {
+        &:before {
+          border: var(--checkbox-border-checked);
+          background: var(--checkbox-background-checked);
+        }
+      }
+      &:focus-visible {
+        + .label-text {
+          &:before {
+            border: var(--checkbox-border-focus);
+            background: var(--checkbox-background-checked-focus);
+          }
+        }
+      }
+    }
+  }
+}
