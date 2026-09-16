@@ -229,10 +229,6 @@ const linkControlledSliders = () => {
         if (follower.destroyed) return;
 
         setManualActiveSlide(follower, master.realIndex);
-        // .active меняет ширину слайда по CSS (slidesPerView: 'auto') — без update()
-        // Swiper использует устаревшую геометрию (slidesGrid/snapGrid) и промахивается
-        // мимо реальной позиции при следующем переходе.
-        follower.update();
         // Без "оптимизации" по realIndex: когда контента не хватает для скролла до
         // нужного слайда, Swiper не обновляет realIndex, но translate всё равно
         // сдвигается — realIndex и реальная позиция скролла расходятся. slideTo
