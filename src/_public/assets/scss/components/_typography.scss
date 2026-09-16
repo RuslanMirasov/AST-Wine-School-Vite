@@ -137,6 +137,15 @@
   }
 }
 
+//Tablet
+@media (max-width: 1151px) {
+  .title {
+    &.title--64 {
+      font-size: var(--fs-44);
+    }
+  }
+}
+
 //375
 @media (max-width: 767px) {
   .title {
