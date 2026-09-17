@@ -162,6 +162,11 @@
       > .buttons.ta--r {
         justify-content: flex-start;
       }
+      @media (max-width: 599px) {
+        > .title {
+          width: 100%;
+        }
+      }
     }
   }
 }

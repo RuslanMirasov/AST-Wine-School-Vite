@@ -59,7 +59,7 @@
   display: block;
   width: 100%;
   height: auto;
-  opacity: 0.14;
+  opacity: 0.2;
   margin-top: 8px;
 }
 
@@ -82,6 +82,9 @@
   width: auto;
   .footer-menu-title {
     opacity: 1;
+    @media (max-width: 767px) {
+      opacity: 0.5;
+    }
     line-height: 1;
     margin: 0;
   }
@@ -396,6 +399,21 @@
     flex-direction: column;
     br {
       display: block;
+    }
+    p {
+      opacity: 0.2;
+    }
+
+    a {
+      opacity: 0.2;
+      // @media (hover: hover) {
+      //   &:hover {
+      //     opacity: 1;
+      //   }
+      // }
+      // &:focus-visible {
+      //   opacity: 1;
+      // }
     }
   }
 

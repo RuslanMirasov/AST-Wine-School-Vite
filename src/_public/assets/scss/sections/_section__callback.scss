@@ -39,6 +39,19 @@
 
 //375
 @media (max-width: 767px) {
+  .section-callback {
+    padding-bottom: 0px;
+    margin-bottom: -20px;
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .content {
+      border-radius: var(--fs-32) var(--fs-32) 0px 0px;
+      padding-bottom: 60px;
+      padding-top: 30px;
+    }
+  }
   .callback-form {
     flex-direction: column;
 
