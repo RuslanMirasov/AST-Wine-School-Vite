@@ -2,22 +2,22 @@
 <section
   class="section section--reviews-more"
   data-slider
-  data-slides-per-view="auto,auto,auto"
-  data-space-between="24,24,24"
+  data-slides-per-view="auto,auto,auto,auto"
+  data-space-between="24,24,24,16"
   data-pagination-type="fraction"
 >
   <div class="container">
     <h2 class="title title--32 upper">Другие отзывы</h2>
 
     <div class="buttons auto ta--r">
-      <a href="#" class="button medium regular magenta" data-popup-open="add-review">Оставить отзыв</a>
+      <a href="#" class="button medium magenta regular" data-popup-open="add-review">Оставить отзыв</a>
     </div>
 
     <div class="arrows auto">
-      <load src="/_partials/components/slider-arrows-with-pagination.html" />
+      <load src="/_partials/components/slider-arrows.html" />
     </div>
 
-    <div class="swiper reviews-slider minify">
+    <div class="swiper reviews-slider more">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <article class="review">
@@ -49,6 +49,10 @@
           </article>
         </div>
       </div>
+    </div>
+
+    <div class="buttons">
+      <a href="#" class="button magenta medium regular">Смотреть все</a>
     </div>
   </div>
 </section>

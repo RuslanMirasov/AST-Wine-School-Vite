@@ -1,3 +1,15 @@
+.section-news-slider,
+.section-materials-slider {
+  @media (max-width: 599px) {
+    .container {
+      align-items: flex-end;
+    }
+    .title--32 {
+      width: calc(100% - 94px - 24px);
+    }
+  }
+}
+
 .posts-slider {
   .swiper-slide {
     &.swiper-slide-active + .swiper-slide,
@@ -5,6 +17,12 @@
     &.swiper-slide-active + .swiper-slide + .swiper-slide + .swiper-slide {
       opacity: 1;
       pointer-events: all;
+    }
+    @media (min-width: 1920px) {
+      &.swiper-slide-active + .swiper-slide + .swiper-slide + .swiper-slide + .swiper-slide {
+        opacity: 1;
+        pointer-events: all;
+      }
     }
   }
 
@@ -22,10 +40,10 @@
   flex-wrap: wrap;
   width: 100%;
   background-color: var(--white);
-  padding: var(--fs-24); //24px
-  border-radius: var(--fs-30); //30px
+  padding: var(--fs-24);
+  border-radius: var(--fs-50);
   @media (max-width: 767px) {
-    padding: var(--fs-20);
+    padding: var(--fs-16);
   }
 
   .magenta-link {
@@ -39,14 +57,10 @@
     }
   }
 
-  .post-slide-text {
-    margin-bottom: auto;
-  }
-
   .buttons {
-    margin-top: var(--fs-20);
+    margin-top: var(--fs-16);
     .button {
-      min-width: 10.5rem; //168px
+      min-width: 10.5rem;
       @media (max-width: 767px) {
         width: 100%;
       }
@@ -62,6 +76,9 @@
   height: auto;
   background-color: var(--grey-light);
   border-radius: var(--fs-30);
+  @media (max-width: 767px) {
+    border-radius: var(--fs-38);
+  }
   margin-bottom: var(--fs-10); //10px
   flex-shrink: 0;
   &:before {
@@ -104,7 +121,7 @@
   align-items: center;
   align-content: center;
   gap: var(--fs-6); //6px
-  margin-bottom: 24px;
+  margin-bottom: auto;
 
   .text {
     display: -webkit-box;
@@ -120,7 +137,7 @@
       align-items: center;
       align-content: center;
       gap: var(--fs-5); //5px
-      color: var(--grey);
+      color: var(--grey-medium);
       line-height: 1.2;
       svg {
         display: block;
@@ -131,20 +148,11 @@
   }
 }
 
-//desctop + tablet
-@media (min-width: 768px) {
-  .section-news-slider {
-    .swiper-pagination {
-      display: none;
-    }
-  }
-}
-
 //1024
 @media (max-width: 1279px) {
   .posts-slider {
     .swiper-slide {
-      width: 282px;
+      width: 316px;
       opacity: 1;
       pointer-events: all;
     }
@@ -153,10 +161,9 @@
 
 //375
 @media (max-width: 767px) {
-  .section-news-slider {
-    .arrows {
-      order: 2;
-      margin: 0 auto;
+  .posts-slider {
+    .swiper-slide {
+      width: 275px;
     }
   }
 }
