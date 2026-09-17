@@ -8,11 +8,10 @@
       display: none !important;
     }
   }
-
+  .tag {
+    border: 1px solid var(--grey);
+  }
   .dark {
-    .tag {
-      background-color: var(--white);
-    }
     .title,
     .text {
       color: var(--white);

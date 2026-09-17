@@ -74,16 +74,6 @@
 
   .button {
     margin-top: var(--fs-24);
-    @media (hover: hover) {
-      &:hover {
-        background: rgba(255, 255, 255, 0.5) !important;
-        color: var(--blue) !important;
-      }
-    }
-    &:focus-visible {
-      background: rgba(255, 255, 255, 0.5) !important;
-      color: var(--blue) !important;
-    }
   }
 }
 

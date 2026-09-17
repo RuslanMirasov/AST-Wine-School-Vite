@@ -27,9 +27,6 @@
 
   .tags {
     margin-bottom: var(--fs-12);
-    .tag {
-      border: 1px solid rgba(177, 185, 202, 0.6);
-    }
   }
 }
 
@@ -51,16 +48,28 @@
   }
 }
 
+@media (max-width: 1151px) {
+  .section--curses {
+    .title--40 {
+      margin-bottom: var(--fs-40);
+    }
+  }
+}
+
 //768
 @media (max-width: 1023px) {
   .section--curses {
+    .container {
+      > .button {
+        margin-left: auto;
+      }
+    }
     .content {
-      min-height: 300px;
-
       .price-and-btn {
         margin-top: var(--fs-10);
       }
     }
+
     .content-text {
       max-width: 300px;
     }
@@ -77,66 +86,54 @@
       }
     }
   }
-
-  .present-certificat {
-    .content-text {
-      max-width: 350px;
-    }
-  }
-
-  .present {
-    width: 350px;
-    transform: translate(0%, 8%);
-  }
 }
 
 //375
 @media (max-width: 767px) {
   .section--curses {
+    .title--40 {
+      margin-bottom: 0px;
+    }
     .container {
       > .button {
         margin-left: auto;
       }
     }
+
     .content {
+      min-height: 340px;
+
+      .content-text {
+        max-width: 230px;
+      }
+
       .image-background {
         position: relative;
-        width: calc(100% + 40px);
-        left: -20px;
-        top: -20px;
-        margin-bottom: -40px;
+        width: calc(100% + 48px);
+        height: 200px;
+        left: -24px;
+        top: -24px;
+        margin-bottom: -50px;
         &:before {
           background: linear-gradient(rgba(255, 255, 255, 0) 50%, var(--white));
         }
         img {
           display: block;
-          width: 100%;
-          height: auto;
-          position: relative;
+          width: auto;
+          max-width: 150%;
+          min-width: 100%;
+          height: 100%;
+          left: auto;
+          right: 0px;
         }
       }
 
       .logo-background {
-        width: 150px;
+        width: 320px;
         right: 0%;
         top: 0%;
-        transform: translate(24%, -36%);
+        transform: translate(50%, -20%);
       }
-    }
-  }
-
-  .present-certificat {
-    padding-top: 200px;
-    .logo-background {
-      width: 100%;
-      right: 0%;
-      top: 0%;
-      transform: translate(24%, -36%);
-    }
-
-    .present {
-      width: 180px;
-      transform: translate(-50%, 5%);
     }
   }
 }
@@ -175,13 +172,6 @@
 
     .tags {
       margin-bottom: var(--fs-16);
-    }
-  }
-
-  .present-certificat {
-    .content-text {
-      min-width: 1px;
-      max-width: 50%;
     }
   }
 }

@@ -58,13 +58,22 @@
   line-height: var(--fs-14);
   font-weight: 700;
   text-align: center;
-  //outline: none;
+  outline: none;
   flex-shrink: 0;
   cursor: pointer;
   transition:
     color 0.3s var(--cubic),
     background-color 0.3s var(--cubic),
     border 0.3s var(--cubic);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--magenta);
+    }
+  }
+  &:focus-visible {
+    background-color: var(--magenta);
+  }
 
   &.regular {
     font-weight: 400;
@@ -92,17 +101,28 @@
     color: var(--blue);
     @media (hover: hover) {
       &:hover {
-        background-color: var(--blue);
+        background-color: var(--blue-light-hover);
       }
     }
     &:focus-visible {
-      background-color: var(--blue);
+      background-color: var(--blue-light-hover);
     }
   }
 
   &.white {
     background-color: var(--white);
+    border: 1px solid var(--white);
     color: var(--magenta);
+    @media (hover: hover) {
+      &:hover {
+        border: 1px solid var(--magenta);
+        background-color: #f9ecf4;
+      }
+    }
+    &:focus-visible {
+      border: 1px solid var(--magenta);
+      background-color: #f9ecf4;
+    }
   }
 
   &.white-border {
@@ -114,15 +134,11 @@
     }
     @media (hover: hover) {
       &:hover {
-        color: var(--white);
-        background-color: var(--blue);
-        border: 1px solid var(--blue);
+        background-color: #f9ecf4;
       }
     }
     &:focus-visible {
-      color: var(--white);
-      background-color: var(--blue);
-      border: 1px solid var(--blue);
+      background-color: #f9ecf4;
     }
   }
 
@@ -148,11 +164,11 @@
     background-color: var(--magenta);
     @media (hover: hover) {
       &:hover {
-        background-color: var(--blue);
+        background-color: var(--magenta-hover);
       }
     }
     &:focus-visible {
-      background-color: var(--blue);
+      background-color: var(--magenta-hover);
     }
   }
 
@@ -161,13 +177,11 @@
     color: var(--magenta);
     @media (hover: hover) {
       &:hover {
-        color: var(--white);
-        background-color: var(--blue);
+        background-color: var(--magenta-light-hover);
       }
     }
     &:focus-visible {
-      color: var(--white);
-      background-color: var(--blue);
+      background-color: var(--magenta-light-hover);
     }
   }
 
@@ -241,18 +255,6 @@
 
   &.shadow {
     box-shadow: 0px 13.5px 31.5px -11.25px rgba(189, 68, 134, 0.302);
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      color: var(--white);
-      background-color: var(--magenta);
-    }
-  }
-
-  &:focus-visible {
-    color: var(--white);
-    background-color: var(--magenta);
   }
 
   &:disabled {

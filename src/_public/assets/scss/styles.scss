@@ -20,12 +20,12 @@
 @use 'components/tabs';
 @use 'components/icon-list';
 @use 'components/page-pagination';
+@use 'components/certificat-for-one';
 @use 'sections/section__hero';
 @use 'sections/section__welcome';
 @use 'sections/section__curses';
 @use 'sections/section__curse-hero';
 @use 'sections/section__curse-modules';
-@use 'sections/section__degustation';
 @use 'sections/section__calendar';
 @use 'sections/section__news';
 @use 'sections/section__reviews';
@@ -40,6 +40,7 @@
 @use 'sections/section__you-money';
 @use 'sections/section__diploma';
 @use 'sections/section__404';
+@use 'sections/section__degustation';
 @use 'components/footer';
 @use 'components/popup';
 @use 'a11y__panel';

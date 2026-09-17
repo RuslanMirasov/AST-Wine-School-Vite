@@ -29,6 +29,45 @@
   }
 }
 
+.section--recomendations {
+  .image-background {
+    img,
+    video {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+//1920
+@media (min-width: 1920px) {
+  .section--recomendations {
+    .content-list__item {
+      min-height: 330px;
+      &.col-4 {
+        max-width: 344px;
+      }
+      &.col-1 {
+        flex: 1;
+        min-width: 820px;
+        .logo-background {
+          transform: translate(14%, 0%);
+        }
+      }
+      .content {
+        min-height: 100%;
+      }
+    }
+
+    .present-certificat {
+      .content-text {
+        max-width: 330px;
+      }
+    }
+  }
+}
+
 //768
 @media (max-width: 1023px) {
   .section--degustation-and-seminars {
@@ -37,16 +76,15 @@
       margin-bottom: auto;
     }
     .content {
-      min-height: 300px;
+      min-height: 260px;
     }
   }
 
   .section--recomendations {
     .content-list__item {
-      flex: none;
-      width: 100%;
+      min-width: 50%;
       &.col-4 {
-        min-height: 300px;
+        min-height: 260px;
       }
     }
   }
@@ -60,7 +98,7 @@
     }
     .content-list__item.col-4 {
       .content {
-        min-height: 300px;
+        min-height: 350px;
       }
     }
   }
@@ -69,21 +107,15 @@
     .content-list__item {
       &.col-4 {
         min-height: auto;
+        width: 100%;
+        flex: auto;
       }
 
       &.image-only {
         .content {
           padding: 0;
-        }
-        .image-background {
-          position: relative;
-          height: auto;
-          img,
-          video {
-            position: relative;
-            width: 100%;
-            height: auto;
-          }
+          min-height: 260px;
+          border-radius: 50px;
         }
       }
     }

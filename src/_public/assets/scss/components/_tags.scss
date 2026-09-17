@@ -23,7 +23,8 @@
     align-items: center;
     gap: 0.5rem;
     color: var(--black);
-    border: 1px solid var(--grey);
+    border: 1px solid var(--grey-button);
+    background-color: var(--white);
     border-radius: 100px;
     line-height: 1;
     font-weight: 700;
@@ -63,12 +64,6 @@
 
     &.white {
       background-color: var(--white);
-    }
-    &.right {
-      margin-left: auto;
-      @media (max-width: 767px) {
-        margin-left: 0;
-      }
     }
   }
 }
