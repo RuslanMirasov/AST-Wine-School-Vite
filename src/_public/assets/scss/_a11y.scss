@@ -115,6 +115,7 @@ html {
       --fs-12: 12px;
       --fs-13: 13px;
       --fs-14: 14px;
+      --fs-15: 15px;
       --fs-16: 16px;
       --fs-17: 17px;
       --fs-18: 18px;
@@ -141,24 +142,6 @@ html {
       --fs-555: 555px;
       --fs-800: 800px;
     }
-
-    // *:not(
-    //   .a11y-panel,
-    //   .header,
-    //   .swiper-wrapper,
-    //   .swiper-slide,
-    //   .backdrop,
-    //   .main,
-    //   .backdrop *,
-    //   [data-accordeon-body],
-    //   .preloader,
-    //   .preloader *,
-    //   .inputError,
-    //   .form-errors,
-    //   .mega-menu
-    // ) {
-    //   transition: 0s !important;
-    // }
 
     .a11y-panel {
       transform: translateY(0%);

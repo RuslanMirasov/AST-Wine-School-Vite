@@ -1,7 +1,6 @@
 import { lockScroll, unlockScroll, FOCUSABLE_SELECTOR } from './popup.js';
 
 const MENU_ANIMATION_DURATION = 500;
-const MOBILE_MENU_QUERY = '(max-width: 1151px)';
 
 const waitForTransition = (element, propertyName) =>
   new Promise(resolve => {
@@ -75,7 +74,12 @@ export const initNavigationMenu = () => {
   const menuLinks = document.querySelectorAll('.menu-link');
   const menuLinksA = document.querySelectorAll('a.menu-link');
 
-  const isMobileMenu = () => window.matchMedia(MOBILE_MENU_QUERY).matches;
+  const isMobileMenu = () => {
+    const body = document.body;
+    const hasBigFont = body.classList.contains('a11y-font-big') || body.classList.contains('a11y-font-large');
+    const maxWidth = hasBigFont ? 1365 : body.classList.contains('a11y') ? 1279 : 1151;
+    return window.matchMedia(`(max-width: ${maxWidth}px)`).matches;
+  };
 
   const openMobileMenu = async () => {
     burger.classList.add('open');

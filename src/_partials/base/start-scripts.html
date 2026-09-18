@@ -1,0 +1,49 @@
+<script>
+  (function () {
+    var STORAGE_KEY = 'a11y-settings';
+    var DEFAULTS = {
+      enabled: false,
+      fontSize: 'large',
+      theme: 'color',
+      images: 'shown',
+      spacing: 'normal',
+    };
+    var CLASS_MAP = {
+      fontSize: { big: 'a11y-font-big', large: 'a11y-font-large' },
+      theme: { light: 'a11y-theme-light', dark: 'a11y-theme-dark' },
+      images: { grayscale: 'a11y-images-grayscale', hidden: 'a11y-images-hidden' },
+      spacing: { wide: 'a11y-spacing-wide', wider: 'a11y-spacing-wider' },
+    };
+
+    var settings = DEFAULTS;
+    try {
+      var saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if (saved && typeof saved === 'object') settings = Object.assign({}, DEFAULTS, saved);
+    } catch (e) {}
+
+    var body = document.body;
+
+    if (settings.enabled) {
+      body.classList.add('a11y');
+
+      Object.keys(CLASS_MAP).forEach(function (key) {
+        var className = CLASS_MAP[key][settings[key]];
+        if (className) body.classList.add(className);
+      });
+    }
+
+    var updateBreakpointClasses = function () {
+      var width = window.innerWidth;
+      var hasBigFont = body.classList.contains('a11y-font-big') || body.classList.contains('a11y-font-large');
+      var tabletMaxWidth = hasBigFont ? 1365 : body.classList.contains('a11y') ? 1279 : 1151;
+
+      body.classList.toggle('tablet', width >= 768 && width <= tabletMaxWidth);
+      body.classList.toggle('mobil', width <= 767);
+    };
+
+    window.updateBreakpointClasses = updateBreakpointClasses;
+    updateBreakpointClasses();
+    window.addEventListener('resize', updateBreakpointClasses);
+    window.addEventListener('orientationchange', updateBreakpointClasses);
+  })();
+</script>

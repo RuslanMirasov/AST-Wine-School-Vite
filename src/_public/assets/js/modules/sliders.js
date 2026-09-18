@@ -92,7 +92,7 @@ const initSlider = sliderWrapper => {
     initialSlide = '0,0,0,0',
     direction = 'horizontal',
     allowTouchMove = 'true',
-    autoHeight = 'false',
+    autoHeight = 'false,false,false,false',
     slideToClickedSlide = 'false',
   } = sliderWrapper.dataset;
 
@@ -102,7 +102,6 @@ const initSlider = sliderWrapper => {
 
   const options = {
     allowTouchMove: toBool(allowTouchMove),
-    autoHeight: toBool(autoHeight),
     slideToClickedSlide: toBool(slideToClickedSlide),
     effect,
     speed,
@@ -116,24 +115,28 @@ const initSlider = sliderWrapper => {
         slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[3])),
         spaceBetween: Number(spaceBetween.split(',')[3]),
         initialSlide: Number(initialSlide.split(',')[3]),
+        autoHeight: toBool(autoHeight.split(',')[3]),
       },
       768: {
         slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[2])),
         slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[2])),
         spaceBetween: Number(spaceBetween.split(',')[2]),
         initialSlide: Number(initialSlide.split(',')[2]),
+        autoHeight: toBool(autoHeight.split(',')[2]),
       },
       1280: {
         slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[1])),
         slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[1])),
         spaceBetween: Number(spaceBetween.split(',')[1]),
         initialSlide: Number(initialSlide.split(',')[1]),
+        autoHeight: toBool(autoHeight.split(',')[1]),
       },
       1920: {
         slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[0])),
         slidesPerGroup: Number(adjustForA11y(slidesPerGroup.split(',')[0])),
         spaceBetween: Number(spaceBetween.split(',')[0]),
         initialSlide: Number(initialSlide.split(',')[0]),
+        autoHeight: toBool(autoHeight.split(',')[0]),
       },
     },
   };
@@ -214,9 +217,15 @@ const linkControlledSliders = () => {
     const followers = controlsKeys.map(key => window.swipers?.[key]).filter(Boolean);
     if (!followers.length) return;
 
+    // .active нужен только кастомной пагинации (её CSS завязан на этот класс) — остальным
+    // followers (например картинкам) он ни для чего не используется.
+    const needsManualActive = follower => follower.el.closest('.custom-pagination') !== null;
+
     // slideChange ещё не срабатывал на старте (мастер уже на своём initialSlide) —
     // проставляем актуальное состояние сразу, не дожидаясь первой смены слайда.
-    followers.forEach(follower => setManualActiveSlide(follower, master.realIndex));
+    followers.forEach(follower => {
+      if (needsManualActive(follower)) setManualActiveSlide(follower, master.realIndex);
+    });
 
     master.on('slideChange', () => {
       // reinitSlidersForA11y уничтожает слайдеры по одному — Swiper при своём
@@ -225,15 +234,26 @@ const linkControlledSliders = () => {
       // его снимем. Соседние followers к этому моменту могут быть уже уничтожены.
       if (master.destroyed) return;
 
-      followers.forEach(follower => {
-        if (follower.destroyed) return;
+      // slideTo/slideToLoop у пагинации, если реально нужно проскроллить, форсирует
+      // синхронный reflow (измерения offsetWidth и т.п.) — в том же такте, что и старт
+      // autoHeight-перехода у мастера, это схлопывает CSS-transition высоты в мгновенный
+      // прыжок (браузер не успевает отрисовать стартовый кадр до реflow). Двойной rAF
+      // даёт браузеру отрисовать этот кадр до того, как мы что-то форсируем.
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (master.destroyed) return;
 
-        setManualActiveSlide(follower, master.realIndex);
-        // Без "оптимизации" по realIndex: когда контента не хватает для скролла до
-        // нужного слайда, Swiper не обновляет realIndex, но translate всё равно
-        // сдвигается — realIndex и реальная позиция скролла расходятся. slideTo
-        // безопасно вызывать всегда, даже если уже там (это no-op).
-        follower.params.loop ? follower.slideToLoop(master.realIndex) : follower.slideTo(master.realIndex);
+          followers.forEach(follower => {
+            if (follower.destroyed) return;
+
+            if (needsManualActive(follower)) setManualActiveSlide(follower, master.realIndex);
+            // Без "оптимизации" по realIndex: когда контента не хватает для скролла до
+            // нужного слайда, Swiper не обновляет realIndex, но translate всё равно
+            // сдвигается — realIndex и реальная позиция скролла расходятся. slideTo
+            // безопасно вызывать всегда, даже если уже там (это no-op).
+            follower.params.loop ? follower.slideToLoop(master.realIndex) : follower.slideTo(master.realIndex);
+          });
+        });
       });
     });
 

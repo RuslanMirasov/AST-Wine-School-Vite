@@ -54,6 +54,11 @@ export const initA11yToggle = () => {
     body.classList.toggle('a11y', settings.enabled);
     body.classList.remove(...ALL_MODIFIER_CLASSES);
 
+    // Модификаторы (шрифт/тема/картинки/интервалы) остаются в настройках всегда,
+    // но на body попадают только пока сам режим включён — иначе в обычной версии
+    // висел бы, например, a11y-font-large без самого .a11y.
+    if (!settings.enabled) return;
+
     Object.entries(CLASS_MAP).forEach(([key, valueMap]) => {
       const className = valueMap[settings[key]];
       if (className) body.classList.add(className);
@@ -91,6 +96,7 @@ export const initA11yToggle = () => {
       saveSettings(settings);
       applyClasses();
       applyToggleButtons();
+      window.updateBreakpointClasses?.();
       reinitSlidersForA11y();
     });
   });
@@ -105,5 +111,6 @@ export const initA11yToggle = () => {
     settings[key] = input.value;
     saveSettings(settings);
     applyClasses();
+    window.updateBreakpointClasses?.();
   });
 };

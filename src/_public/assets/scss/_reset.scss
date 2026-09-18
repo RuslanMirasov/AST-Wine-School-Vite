@@ -247,7 +247,22 @@ button {
   }
 }
 
+// В a11y-режиме порог tablet/mobil сдвинут (см. start-scripts.html) — базовый
+// @media выше не знает об этом сдвиге, поэтому дублируем правило по классам.
+body:not(.tablet):not(.mobil) {
+  .show-in-tablet {
+    display: none !important;
+  }
+}
+
 @media (max-width: 1151px) {
+  *.delete-in-tablet {
+    display: none !important;
+  }
+}
+
+body.tablet,
+body.mobil {
   *.delete-in-tablet {
     display: none !important;
   }
