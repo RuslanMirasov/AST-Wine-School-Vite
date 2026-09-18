@@ -107,3 +107,12 @@
     }
   }
 }
+
+.a11y-theme-dark {
+  .logo-background {
+    color: rgba(255, 255, 255, 0.1);
+    &.blue {
+      color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}

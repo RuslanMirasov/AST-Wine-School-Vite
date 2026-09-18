@@ -52,6 +52,11 @@
     color 0.3s var(--cubic),
     border 0.3s var(--cubic);
 
+  svg {
+    width: var(--fs-24);
+    height: var(--fs-24);
+  }
+
   &:focus-visible {
     border: 1px solid var(--magenta);
   }

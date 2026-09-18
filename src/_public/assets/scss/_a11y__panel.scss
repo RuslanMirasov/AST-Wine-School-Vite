@@ -115,10 +115,31 @@
   }
 }
 
-.a11y-theme-light,
 .a11y-theme-dark {
   .a11y-panel {
-    background-color: var(--grey-light);
-    backdrop-filter: none;
+    background-color: var(--blue);
+    border-bottom: none;
+    color: var(--white);
+  }
+
+  .a11y-panel-group {
+    .a11y-option {
+      input {
+        + span {
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          background-color: rgba(255, 255, 255, 0);
+        }
+        &:checked + span {
+          border: 1px solid var(--white);
+          background-color: var(--white);
+          color: var(--black);
+        }
+        &:focus-visible + span {
+          border: 1px solid var(--magenta);
+          background-color: var(--magenta);
+          color: var(--white);
+        }
+      }
+    }
   }
 }

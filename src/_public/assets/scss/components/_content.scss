@@ -198,17 +198,8 @@
       &.col-2,
       &.col-3,
       &.col-4 {
-        min-width: 36%;
-        max-width: calc(50% - var(--fs-26));
-      }
-    }
-  }
-
-  .content {
-    &.light {
-      .title,
-      .text {
-        color: var(--blue);
+        min-width: 100%;
+        max-width: 100%;
       }
     }
   }
@@ -221,5 +212,12 @@
     &.gap--20 {
       gap: var(--fs-24);
     }
+  }
+}
+
+.a11y-theme-dark {
+  .content {
+    background-color: var(--blue);
+    color: var(--white);
   }
 }

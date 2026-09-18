@@ -248,10 +248,20 @@ button {
 }
 
 // В a11y-режиме порог tablet/mobil сдвинут (см. start-scripts.html) — базовый
-// @media выше не знает об этом сдвиге, поэтому дублируем правило по классам.
+// @media выше не знает об этом сдвиге и продолжает срабатывать по реальной ширине
+// (например, скрывает на 1200px, хотя JS с a11y-порогом 1279 уже считает это tablet).
+// Поэтому не только дублируем скрытие по классам, но и явно возвращаем видимость
+// для tablet/mobil, перекрывая !important базового @media.
 body:not(.tablet):not(.mobil) {
   .show-in-tablet {
     display: none !important;
+  }
+}
+
+body.tablet,
+body.mobil {
+  .show-in-tablet {
+    display: block !important;
   }
 }
 

@@ -115,9 +115,17 @@
   font-size: var(--fs-18);
   line-height: 1.2;
   opacity: 0.5;
-  gap: var(--fs-16);
-  svg {
-    margin-top: 3px;
+  gap: var(--fs-8);
+  button {
+    transform: translateY(-7%);
+    width: var(--fs-26);
+    height: var(--fs-26);
+    svg {
+      position: relative;
+
+      width: 100%;
+      height: 100%;
+    }
   }
 
   @media (min-width: 768px) {
@@ -218,11 +226,26 @@
       padding-bottom: 50px;
     }
     .container {
-      max-width: 1440px;
+      max-width: 1340px;
       padding: 0px 50px;
       gap: 2.5rem 24px;
-      @media (max-width: 1279px) {
+      @media (min-width: 1920px) {
+        max-width: 1720px;
+      }
+
+      @media (max-width: 1439px) {
+        max-width: 1280px;
+        padding: 0px var(--fs-20);
+      }
+
+      @media (max-width: 1151px) {
+        padding: 0px 32px;
+        gap: var(--fs-24);
+      }
+
+      @media (max-width: 767px) {
         padding: 0px 16px;
+        gap: var(--fs-24);
       }
     }
   }
@@ -267,6 +290,24 @@
     display: none;
   }
 
+  @media (max-width: 1151px) and (min-width: 768px) {
+    .footer .container {
+      display: flex;
+      .footer-menu {
+        &:nth-child(4) {
+          margin-top: 0px;
+        }
+      }
+    }
+
+    &.a11y-spacing-wide,
+    &.a11y-spacing-wider {
+      .footer .container {
+        justify-content: space-around;
+      }
+    }
+  }
+
   // БЕЛАЯ ТЕМА
   &.a11y-theme-light {
     .footer {
@@ -278,18 +319,10 @@
   // ЧЁРНАЯ ТЕМА
   &.a11y-theme-dark {
     .footer {
-      background: var(--black);
-      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      background: var(--blue);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
-
-  // A+
-  // &.a11y-font-big {
-  // }
-
-  // A++
-  // &.a11y-font-large {
-  // }
 }
 
 //1920
@@ -373,7 +406,7 @@
 //768
 @media (max-width: 1151px) {
   .copy {
-    gap: 50px;
+    gap: 24px 50px;
     margin-bottom: var(--fs-32);
     font-size: var(--fs-10);
   }
