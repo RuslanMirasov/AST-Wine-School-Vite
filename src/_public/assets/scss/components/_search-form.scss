@@ -99,3 +99,19 @@
     }
   }
 }
+
+.a11y {
+  .search-submit-icon {
+    svg {
+      color: var(--blue);
+    }
+  }
+
+  .search-close {
+    svg {
+      width: var(--fs-12);
+      height: var(--fs-12);
+      color: var(--blue);
+    }
+  }
+}

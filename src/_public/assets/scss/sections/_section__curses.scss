@@ -142,37 +142,40 @@
   @media (min-width: 768px) {
     .section--curses {
       .content {
-        min-height: auto;
-        justify-content: flex-start;
-        align-items: flex-start;
-        align-content: flex-start;
-
-        .image-background {
-          min-width: calc(100% + var(--fs-30) + var(--fs-30));
-          left: calc(100% - (100% + var(--fs-30)));
-          top: calc(100% - (100% + var(--fs-30)));
-        }
-
-        .price-and-btn {
-          margin-top: var(--fs-16);
-        }
+        min-height: 0px;
       }
 
       .content-text {
-        max-width: 100%;
-        margin-top: 0px;
-        margin-bottom: auto;
-        min-height: 0px;
+        max-width: 500px;
+        margin-bottom: var(--fs-16);
       }
 
       .col-3 {
         .content-text {
-          max-width: 100%;
+          max-width: 500px;
         }
       }
 
-      .tags {
-        margin-bottom: var(--fs-16);
+      .logo-background {
+        width: 65%;
+        height: auto;
+      }
+
+      .image-background:not(.image-only *) {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin-bottom: var(--fs-24);
+        border-radius: var(--fs-30);
+        overflow: hidden;
+        img,
+        video {
+          position: relative;
+          right: auto;
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }

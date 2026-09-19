@@ -38,6 +38,7 @@ html {
       img,
       video,
       [style*='background-image'],
+      .main svg,
       picture {
         filter: grayscale(100%);
       }

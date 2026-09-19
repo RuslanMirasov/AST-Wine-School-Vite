@@ -191,17 +191,22 @@
       }
     }
 
-    // A++
-    &.a11y-font-large {
+    .reviews-slider {
+      .swiper-slide {
+        width: 700px;
+      }
+    }
+
+    @media (max-width: 1151px) {
       .reviews-slider {
         .swiper-slide {
-          &.swiper-slide-active + .swiper-slide + .swiper-slide {
-            opacity: 0;
-            pointer-events: none;
-          }
+          width: 500px;
         }
       }
+    }
 
+    // A++
+    &.a11y-font-large {
       .review {
         .stars {
           font-size: var(--fs-20);
@@ -218,6 +223,9 @@
 
   &.a11y-theme-dark {
     .review {
+      background-color: var(--blue);
+    }
+    .review-person-image {
       background-color: var(--blue);
     }
   }

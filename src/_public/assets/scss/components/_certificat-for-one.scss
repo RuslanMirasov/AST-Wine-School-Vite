@@ -106,3 +106,26 @@
     }
   }
 }
+
+.a11y {
+  @media (min-width: 768px) {
+    .present-certificat {
+      .content-text {
+        max-width: 50%;
+      }
+    }
+  }
+  @media (min-width: 1920px) {
+    .section--recomendations .present-certificat .content-text {
+      max-width: 50%;
+    }
+  }
+
+  &.a11y-images-hidden {
+    .present-certificat {
+      .content-text {
+        max-width: 100%;
+      }
+    }
+  }
+}

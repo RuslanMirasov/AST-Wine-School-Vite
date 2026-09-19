@@ -93,20 +93,6 @@
         content: none;
       }
     }
-
-    .image-background:not(.image-only *) {
-      position: relative;
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      img,
-      video {
-        position: relative;
-        right: auto;
-        width: 100%;
-        height: auto;
-      }
-    }
   }
 }
 

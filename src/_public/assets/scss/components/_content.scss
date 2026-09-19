@@ -196,16 +196,92 @@
   @media (min-width: 768px) {
     .content-list {
       .content-list__item {
-        &.col-2,
-        &.col-3,
-        &.col-4 {
+        &.col-1 {
+          flex: none;
           min-width: 100%;
-          max-width: 100%;
+        }
+
+        &.col-2,
+        &.col-3 {
+          min-width: 30%;
+          max-width: calc(50% - var(--fs-26));
+        }
+        &.col-4 {
+          min-width: 25%;
+          max-width: calc(25% - var(--fs-26));
+          &.image-only {
+            min-width: 30%;
+            max-width: calc(40% - var(--fs-26));
+          }
+        }
+
+        @media (max-width: 1279px) {
+          &.col-1 {
+            min-width: 100%;
+            max-width: 100%;
+          }
+          &.col-2 {
+            min-width: 54%;
+            max-width: 100%;
+          }
+          &.col-4 {
+            min-width: 35%;
+            max-width: 35%;
+            &.image-only {
+              min-width: 30%;
+              max-width: calc(35% - var(--fs-26));
+            }
+          }
+        }
+
+        @media (max-width: 1151px) {
+          &.col-1 {
+            min-width: 100%;
+            max-width: 100%;
+          }
+          &.col-2,
+          &.col-3 {
+            min-width: 100%;
+            max-width: 100%;
+          }
+          &.col-4 {
+            min-width: 50%;
+            max-width: 50%;
+            min-height: 360px;
+            &.image-only {
+              min-width: 50%;
+              max-width: 50%;
+              min-height: 360px;
+            }
+          }
+        }
+      }
+    }
+
+    &.a11y-images-hidden {
+      .content {
+        &.light {
+          .title,
+          .text {
+            color: var(--blue);
+          }
+        }
+      }
+    }
+
+    &.a11y-theme-dark {
+      .content {
+        &.light {
+          .title,
+          .text {
+            color: var(--white);
+          }
         }
       }
     }
 
     .content-text {
+      max-width: 100%;
       &.gap--12 {
         gap: var(--fs-16);
       }
