@@ -218,6 +218,22 @@
 
 //ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ
 .a11y {
+  .footer-menu-title {
+    opacity: 1;
+  }
+  .copy {
+    p {
+      opacity: 1;
+    }
+
+    a {
+      opacity: 1;
+    }
+  }
+  .footer-logo {
+    display: none;
+  }
+
   @media (min-width: 768px) {
     .footer {
       padding-top: 4rem;
@@ -250,9 +266,7 @@
         }
       }
     }
-    .footer-menu-title {
-      opacity: 1;
-    }
+
     .footer-menu-list {
       a {
         @media (hover: hover) {
@@ -268,12 +282,7 @@
       }
     }
     .copy {
-      p {
-        opacity: 1;
-      }
-
       a {
-        opacity: 1;
         @media (hover: hover) {
           &:hover {
             color: var(--magenta);
@@ -285,10 +294,6 @@
           border-bottom: 1px solid var(--magenta);
         }
       }
-    }
-
-    .footer-logo {
-      display: none;
     }
 
     @media (max-width: 1151px) and (min-width: 768px) {
@@ -306,6 +311,20 @@
         .footer .container {
           justify-content: space-around;
         }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &.a11y-font-big {
+      .footer-menu-list a {
+        font-size: var(--fs-16);
+      }
+    }
+
+    &.a11y-font-large {
+      .footer-menu-list a {
+        font-size: var(--fs-18);
       }
     }
   }

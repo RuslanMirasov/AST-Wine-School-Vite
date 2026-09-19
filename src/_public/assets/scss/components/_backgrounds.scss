@@ -117,4 +117,7 @@
       color: rgba(255, 255, 255, 0.1);
     }
   }
+  .section--curses .content .image-background:before {
+    background: linear-gradient(rgba(255, 255, 255, 0) 50%, var(--blue));
+  }
 }

@@ -223,3 +223,10 @@
     color: var(--white);
   }
 }
+
+.a11y-theme-light {
+  .content {
+    background-color: var(--white);
+    color: var(--black);
+  }
+}

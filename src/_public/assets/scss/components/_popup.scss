@@ -287,3 +287,43 @@ $popup_transition: 0.5s;
     transform: translateY(3%);
   }
 }
+
+// ТЕМНАЯ ТЕМА
+.a11y-theme-dark {
+  .popup-close {
+    color: var(--white);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--magenta);
+      }
+    }
+    &:focus-visible {
+      color: var(--magenta);
+    }
+  }
+
+  .popup-content {
+    background: var(--blue);
+  }
+
+  .popup-subtitle {
+    color: var(--grey-text);
+  }
+
+  .cookeis-popup {
+    background-color: var(--blue);
+    color: var(--white);
+
+    a {
+      border-bottom: 1px solid var(--white);
+      color: var(--white);
+    }
+  }
+
+  .age-border {
+    svg {
+      color: Var(--white);
+    }
+  }
+}

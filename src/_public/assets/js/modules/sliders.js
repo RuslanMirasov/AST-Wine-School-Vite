@@ -259,9 +259,17 @@ const linkClickTargets = () => {
 export const updateSlidersAutoHeight = () => {
   sliders.forEach(sliderWrapper => {
     const instance = instances.get(sliderWrapper);
-    if (!instance || instance.destroyed || !instance.params.autoHeight) return;
+    if (!instance || instance.destroyed) return;
 
-    instance.updateAutoHeight();
+    if (instance.params.autoHeight) {
+      instance.updateAutoHeight();
+      return;
+    }
+
+    // На брейкпоинте, где autoHeight выключен, Swiper сам не сбрасывает инлайн-высоту,
+    // выставленную им же на предыдущем брейкпоинте — без этого высота зависает навсегда,
+    // пока не перезагрузить страницу (новый инстанс создаётся ещё без инлайн-стиля).
+    if (instance.wrapperEl.style.height) instance.wrapperEl.style.height = '';
   });
 };
 
@@ -275,6 +283,9 @@ export const reinitSlidersForA11y = () => {
   linkClickTargets();
 };
 
+// Swiper пересчитывает autoHeight только при смене активного слайда (transitionStart/slideTo),
+// не при ресайзе контейнера — .update() тоже это не покрывает, нужен явный updateAutoHeight()
+// (updateSlidersAutoHeight также сбрасывает высоту, если на новом брейкпоинте autoHeight выключен).
 const handleResize = debounce(() => {
   sliders.forEach(updateSlider);
   linkControlledSliders();
@@ -284,6 +295,13 @@ const handleResize = debounce(() => {
     const instance = instances.get(sliderWrapper);
     if (instance && !instance.destroyed) instance.update();
   });
+
+  // offsetHeight-измерение в updateAutoHeight форсирует reflow сразу после update()/
+  // пересоздания слайдеров выше — откладываем на тик, чтобы не форсировать его в том же
+  // синхронном блоке. setTimeout, а не requestAnimationFrame: rAF не выполняется вовсе,
+  // пока вкладка свёрнута/не в фокусе (в т.ч. открытые DevTools), а именно этот сценарий
+  // и есть основной кейс бага — высота не должна зависеть от того, рисует ли вкладка кадры.
+  setTimeout(updateSlidersAutoHeight, 0);
 }, 300);
 
 export const initSliders = () => {

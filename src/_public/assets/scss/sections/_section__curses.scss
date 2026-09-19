@@ -138,7 +138,7 @@
   }
 }
 
-.a11y {
+.body.a11y {
   @media (min-width: 768px) {
     .section--curses {
       .content {
@@ -174,6 +174,12 @@
       .tags {
         margin-bottom: var(--fs-16);
       }
+    }
+  }
+
+  &.a11y-theme-dark {
+    .price-and-btn span {
+      color: var(--white);
     }
   }
 }

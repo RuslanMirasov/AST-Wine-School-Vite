@@ -172,7 +172,7 @@
   }
 }
 
-.a11y {
+.body.a11y {
   @media (min-width: 768px) {
     .review {
       .stars {
@@ -213,6 +213,12 @@
         height: var(--fs-60); // 50px
         border-radius: var(--fs-60); // 50px
       }
+    }
+  }
+
+  &.a11y-theme-dark {
+    .review {
+      background-color: var(--blue);
     }
   }
 }

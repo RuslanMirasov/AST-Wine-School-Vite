@@ -64,3 +64,15 @@
     width: 100%;
   }
 }
+
+.body.a11y {
+  &.a11y-theme-light {
+    .section-callback {
+      .content {
+        box-shadow: none;
+        background-color: var(--grey-light);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

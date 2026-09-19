@@ -67,3 +67,53 @@
     }
   }
 }
+
+.body.a11y {
+  @media (max-width: 767px) {
+    &.a11y-font-big {
+      .tags {
+        .tag {
+          font-size: var(--fs-14);
+          svg {
+            width: var(--fs-14);
+            height: var(--fs-14);
+          }
+        }
+      }
+    }
+
+    &.a11y-font-large {
+      .tags {
+        .tag {
+          font-size: var(--fs-15);
+          svg {
+            width: var(--fs-15);
+            height: var(--fs-15);
+          }
+        }
+      }
+    }
+  }
+}
+
+// ТЕМНАЯ ТЕМА
+.a11y-theme-dark {
+  .tags {
+    .tag {
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background-color: var(--blue);
+
+      svg {
+        color: var(--white);
+      }
+
+      &.white {
+        background-color: var(--blue);
+      }
+    }
+  }
+  .section--curses .tags .tag {
+    background-color: rgba(39, 53, 81, 0.7);
+  }
+}
