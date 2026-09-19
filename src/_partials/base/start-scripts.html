@@ -43,7 +43,14 @@
 
     window.updateBreakpointClasses = updateBreakpointClasses;
     updateBreakpointClasses();
-    window.addEventListener('resize', updateBreakpointClasses);
-    window.addEventListener('orientationchange', updateBreakpointClasses);
+
+    var resizeTimer;
+    var handleResize = function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(updateBreakpointClasses, 300);
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
   })();
 </script>

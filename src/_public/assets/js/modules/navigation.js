@@ -1,4 +1,5 @@
 import { lockScroll, unlockScroll, FOCUSABLE_SELECTOR } from './popup.js';
+import { debounce } from './helpers.js';
 
 const MENU_ANIMATION_DURATION = 500;
 
@@ -148,18 +149,21 @@ export const initNavigationMenu = () => {
     }
   });
 
-  window.addEventListener('resize', () => {
-    if (isMobileMenu()) return;
+  window.addEventListener(
+    'resize',
+    debounce(() => {
+      if (isMobileMenu()) return;
 
-    if (menu.classList.contains('open')) {
-      burger.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('popup-is-opened');
-      unlockScroll();
-      menu.classList.remove('open');
-    }
-    menu.style.display = '';
-  });
+      if (menu.classList.contains('open')) {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('popup-is-opened');
+        unlockScroll();
+        menu.classList.remove('open');
+      }
+      menu.style.display = '';
+    }, 300),
+  );
 
   setActiveMenuLinks(menuLinks);
 };

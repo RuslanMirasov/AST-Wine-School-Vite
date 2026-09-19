@@ -118,18 +118,20 @@
 }
 
 .a11y {
-  .section--welcome {
-    svg.logo-background {
-      width: 420px;
-      height: 420px;
-      right: 0px;
-      top: 0px;
-      transform: translate(24%, -16%);
-    }
+  @media (min-width: 768px) {
+    .section--welcome {
+      svg.logo-background {
+        width: 420px;
+        height: 420px;
+        right: 0px;
+        top: 0px;
+        transform: translate(24%, -16%);
+      }
 
-    .text {
-      max-width: 100%;
-      line-height: 1.5;
+      .text {
+        max-width: 100%;
+        line-height: 1.5;
+      }
     }
   }
 }

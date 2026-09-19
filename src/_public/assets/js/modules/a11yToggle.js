@@ -1,4 +1,4 @@
-import { reinitSlidersForA11y } from './sliders.js';
+import { reinitSlidersForA11y, updateSlidersAutoHeight } from './sliders.js';
 
 const STORAGE_KEY = 'a11y-settings';
 
@@ -112,5 +112,8 @@ export const initA11yToggle = () => {
     saveSettings(settings);
     applyClasses();
     window.updateBreakpointClasses?.();
+
+    // Только шрифт и интервалы меняют высоту контента слайдов — тема/картинки нет.
+    if (key === 'fontSize' || key === 'spacing') updateSlidersAutoHeight();
   });
 };

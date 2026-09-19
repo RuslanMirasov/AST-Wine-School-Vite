@@ -212,6 +212,39 @@
       }
     }
   }
+
+  @media (max-width: 767px) {
+    &.a11y-font-large {
+      .title {
+        &.title--16 {
+          font-size: var(--fs-18);
+        }
+        &.title--14 {
+          font-size: var(--fs-16);
+        }
+      }
+
+      .text {
+        font-size: 20px;
+        line-height: 1.2;
+        &.fs-12 {
+          font-size: 14px;
+        }
+
+        &.fs-14 {
+          font-size: 16px;
+        }
+
+        &.fs-16 {
+          font-size: 20px;
+        }
+
+        &.fs-18 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
 }
 
 .a11y-theme-dark {

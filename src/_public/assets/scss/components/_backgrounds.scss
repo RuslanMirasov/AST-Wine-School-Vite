@@ -86,24 +86,26 @@
 }
 
 .a11y {
-  .white-gradient,
-  .dark-gradient {
-    &:before {
-      content: none;
+  @media (min-width: 768px) {
+    .white-gradient,
+    .dark-gradient {
+      &:before {
+        content: none;
+      }
     }
-  }
 
-  .image-background:not(.image-only *) {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    img,
-    video {
+    .image-background:not(.image-only *) {
       position: relative;
-      right: auto;
       width: 100%;
+      max-width: 500px;
       height: auto;
+      img,
+      video {
+        position: relative;
+        right: auto;
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }

@@ -44,12 +44,13 @@
 }
 
 .a11y {
-  // A++
-  &.a11y-font-large {
-    .collection {
-      &.col-3 {
-        > li {
-          width: calc((100% - var(--fs-24)) / 2);
+  @media (min-width: 768px) {
+    &.a11y-font-large {
+      .collection {
+        &.col-3 {
+          > li {
+            width: calc((100% - var(--fs-24)) / 2);
+          }
         }
       }
     }

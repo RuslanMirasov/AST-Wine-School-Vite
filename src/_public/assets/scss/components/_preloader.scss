@@ -87,25 +87,23 @@
   }
 }
 
-.a11y {
-  &.a11y-theme-dark {
-    .preloader {
-      background: var(--blue);
+.a11y-theme-dark {
+  .preloader {
+    background: var(--blue);
+  }
+
+  .preloader-center {
+    .preloader-logo {
+      color: var(--magenta);
+
+      &:before {
+        border-top: 2px solid var(--white);
+        border-right: 2px solid var(--white);
+      }
     }
 
-    .preloader-center {
-      .preloader-logo {
-        color: var(--magenta);
-
-        &:before {
-          border-top: 2px solid var(--white);
-          border-right: 2px solid var(--white);
-        }
-      }
-
-      p {
-        color: var(--white);
-      }
+    p {
+      color: var(--white);
     }
   }
 }

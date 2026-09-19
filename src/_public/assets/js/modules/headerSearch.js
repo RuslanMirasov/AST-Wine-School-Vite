@@ -1,3 +1,5 @@
+import { debounce } from './helpers.js';
+
 const SEARCH_WIDE_MIN_WIDTH = 1600;
 const SEARCH_WIDE_RANGE_MIN_WIDTH = 550;
 const SEARCH_WIDE_RANGE_MAX_WIDTH = 1151;
@@ -16,12 +18,8 @@ export const initSearchToggle = () => {
   const input = wrapper.querySelector('.input');
   const wrapperFocusables = Array.from(wrapper.querySelectorAll('input, button'));
 
-  // Кнопка-триггер физически лежит вне [data-search] (отдельный li в .header-buttons) —
-  // без этого клик по ней сам же документный обработчик тут же считает «кликом снаружи».
   const isInsideSearch = el => wrapper.contains(el) || Array.from(toggles).some(toggle => toggle.contains(el));
 
-  // Пока поле схлопнуто (height:0/overflow:hidden), убираем input и крестик из Tab —
-  // иначе клавиатура проваливается в невидимые элементы раньше кнопки-триггера.
   const syncState = () => {
     const isOpen = isSearchWide() || wrapper.classList.contains('active');
 
@@ -58,19 +56,12 @@ export const initSearchToggle = () => {
     });
   });
 
-  // Фокус (Tab, клик, программно) вне поля и кнопки-триггера — закрыть. Свайп/драг
-  // ничего не фокусирует, поэтому это правило их не задевает (в отличие от старого
-  // focusout + relatedTarget, который на touch давал relatedTarget=null и закрывал зря).
   document.addEventListener('focusin', event => {
     if (isSearchWide() || !wrapper.classList.contains('active')) return;
-    // Клик по нефокусируемому месту роняет фокус на body — это не «уход», а служебный
-    // фолбэк браузера; настоящий Tab-переход на body никогда не приземляется.
     if (event.target === document.body) return;
     if (!isInsideSearch(event.target)) closeSearch();
   });
 
-  // Клик по некликабельному месту вне поля тоже должен закрывать — focusin для этого
-  // не сработает, если клик ничего не фокусирует.
   document.addEventListener('click', event => {
     if (isSearchWide() || !wrapper.classList.contains('active')) return;
     if (!isInsideSearch(event.target)) closeSearch();
@@ -84,7 +75,7 @@ export const initSearchToggle = () => {
       ?.focus();
   });
 
-  window.addEventListener('resize', syncState);
+  window.addEventListener('resize', debounce(syncState, 300));
 
   syncState();
 };

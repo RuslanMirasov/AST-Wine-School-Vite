@@ -218,92 +218,94 @@
 
 //ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ
 .a11y {
-  .footer {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    @media (max-width: 767px) {
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
-    .container {
-      max-width: 1340px;
-      padding: 0px 50px;
-      gap: 2.5rem 24px;
-      @media (min-width: 1920px) {
-        max-width: 1720px;
-      }
-
-      @media (max-width: 1439px) {
-        max-width: 1280px;
-        padding: 0px var(--fs-20);
-      }
-
-      @media (max-width: 1151px) {
-        padding: 0px 32px;
-        gap: var(--fs-24);
-      }
-
+  @media (min-width: 768px) {
+    .footer {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
       @media (max-width: 767px) {
-        padding: 0px 16px;
-        gap: var(--fs-24);
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .container {
+        max-width: 1340px;
+        padding: 0px 50px;
+        gap: 2.5rem 24px;
+        @media (min-width: 1920px) {
+          max-width: 1720px;
+        }
+
+        @media (max-width: 1439px) {
+          max-width: 1280px;
+          padding: 0px var(--fs-20);
+        }
+
+        @media (max-width: 1151px) {
+          padding: 0px 32px;
+          gap: var(--fs-24);
+        }
+
+        @media (max-width: 767px) {
+          padding: 0px 16px;
+          gap: var(--fs-24);
+        }
       }
     }
-  }
-  .footer-menu-title {
-    opacity: 1;
-  }
-  .footer-menu-list {
-    a {
-      @media (hover: hover) {
-        &:hover {
+    .footer-menu-title {
+      opacity: 1;
+    }
+    .footer-menu-list {
+      a {
+        @media (hover: hover) {
+          &:hover {
+            text-decoration: underline;
+            color: inherit;
+          }
+        }
+        &:focus-visible {
           text-decoration: underline;
           color: inherit;
         }
       }
-      &:focus-visible {
-        text-decoration: underline;
-        color: inherit;
+    }
+    .copy {
+      p {
+        opacity: 1;
       }
-    }
-  }
-  .copy {
-    p {
-      opacity: 1;
-    }
 
-    a {
-      opacity: 1;
-      @media (hover: hover) {
-        &:hover {
+      a {
+        opacity: 1;
+        @media (hover: hover) {
+          &:hover {
+            color: var(--magenta);
+            border-bottom: 1px solid var(--magenta);
+          }
+        }
+        &:focus-visible {
           color: var(--magenta);
           border-bottom: 1px solid var(--magenta);
         }
       }
-      &:focus-visible {
-        color: var(--magenta);
-        border-bottom: 1px solid var(--magenta);
-      }
     }
-  }
 
-  .footer-logo {
-    display: none;
-  }
+    .footer-logo {
+      display: none;
+    }
 
-  @media (max-width: 1151px) and (min-width: 768px) {
-    .footer .container {
-      display: flex;
-      .footer-menu {
-        &:nth-child(4) {
-          margin-top: 0px;
+    @media (max-width: 1151px) and (min-width: 768px) {
+      .footer .container {
+        display: flex;
+        .footer-menu {
+          &:nth-child(4) {
+            margin-top: 0px;
+          }
         }
       }
-    }
 
-    &.a11y-spacing-wide,
-    &.a11y-spacing-wider {
-      .footer .container {
-        justify-content: space-around;
+      &.a11y-spacing-wide,
+      &.a11y-spacing-wider {
+        .footer .container {
+          justify-content: space-around;
+        }
       }
     }
   }

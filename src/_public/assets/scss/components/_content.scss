@@ -193,24 +193,26 @@
 }
 
 .a11y {
-  .content-list {
-    .content-list__item {
-      &.col-2,
-      &.col-3,
-      &.col-4 {
-        min-width: 100%;
-        max-width: 100%;
+  @media (min-width: 768px) {
+    .content-list {
+      .content-list__item {
+        &.col-2,
+        &.col-3,
+        &.col-4 {
+          min-width: 100%;
+          max-width: 100%;
+        }
       }
     }
-  }
 
-  .content-text {
-    &.gap--12 {
-      gap: var(--fs-16);
-    }
+    .content-text {
+      &.gap--12 {
+        gap: var(--fs-16);
+      }
 
-    &.gap--20 {
-      gap: var(--fs-24);
+      &.gap--20 {
+        gap: var(--fs-24);
+      }
     }
   }
 }
