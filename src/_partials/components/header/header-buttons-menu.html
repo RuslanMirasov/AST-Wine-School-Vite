@@ -1,0 +1,47 @@
+<!--icons menu-->
+<ul class="header-buttons">
+  <li class="search-toggle-el">
+    <button
+      type="button"
+      class="header-button"
+      data-search-toggle
+      aria-label="Открыть форму поиска"
+      aria-expanded="false"
+      aria-controls="header-search"
+    >
+      <svg width="24" height="24"><use href="/assets/img/sprite.svg#search"></use></svg>
+    </button>
+  </li>
+
+  <li>
+    <button type="button" class="header-button" data-a11y-toggle aria-pressed="false">
+      <svg width="24" height="24" aria-hidden="true"><use href="/assets/img/sprite.svg#eye"></use></svg>
+      <span data-a11y-toggle-text>Версия для слабовидящих</span>
+    </button>
+  </li>
+
+  <li>
+    <a href="%ROOT%profile/cart/" class="header-button" aria-label="Корзина">
+      <svg width="24" height="24"><use href="/assets/img/sprite.svg#cart"></use></svg>
+      <span class="basket-counter">5</span>
+    </a>
+  </li>
+
+  <li>
+    <button type="button" class="header-button" data-popup-open="login" aria-label="Войти">
+      <svg width="24" height="24"><use href="/assets/img/sprite.svg#login"></use></svg>
+    </button>
+
+    <!-- <a href="%ROOT%profile/" class="header-button" aria-label="Профиль">
+      <svg width="24" height="24"><use href="/assets/img/sprite.svg#profile"></use></svg>
+    </a> -->
+  </li>
+
+  <li class="burger-el">
+    <button class="header-button burger" aria-label="меню бургер" aria-expanded="false" aria-haspopup="true" aria-controls="site-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </li>
+</ul>

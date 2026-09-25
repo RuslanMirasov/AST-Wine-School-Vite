@@ -3,7 +3,9 @@
 @use 'a11y';
 @use 'components/preloader';
 @use 'reset';
-@use 'components/header';
+@use 'components/header-new';
+@use 'components/navigation';
+@use 'components/header-buttons-menu';
 @use 'components/swiper';
 @use 'components/typography';
 @use 'components/backgrounds';

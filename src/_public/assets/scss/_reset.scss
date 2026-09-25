@@ -123,19 +123,7 @@ button {
   transform: translate(0%, 20px);
   opacity: 0;
   animation: mainFadeIn 0.8s var(--cubic) forwards paused;
-  padding-top: 80px;
-  @media (max-width: 1439px) {
-    padding-top: 60px;
-  }
-}
-
-.a11y {
-  .main {
-    padding-top: 120px;
-    @media (max-width: 1439px) {
-      padding-top: 100px;
-    }
-  }
+  padding-top: 45px;
 }
 
 .loaded {
@@ -241,51 +229,26 @@ button {
   }
 }
 
-@media (min-width: 1152px) {
-  .show-in-tablet {
+@media (min-width: 1280px) {
+  *.show-in-tablet {
     display: none !important;
   }
 }
 
-// В a11y-режиме порог tablet/mobil сдвинут (см. start-scripts.html) — базовый
-// @media выше не знает об этом сдвиге и продолжает срабатывать по реальной ширине
-// (например, скрывает на 1200px, хотя JS с a11y-порогом 1279 уже считает это tablet).
-// Поэтому не только дублируем скрытие по классам, но и явно возвращаем видимость
-// для tablet/mobil, перекрывая !important базового @media.
-body:not(.tablet):not(.mobil) {
-  .show-in-tablet {
-    display: none !important;
-  }
-}
-
-body.tablet,
-body.mobil {
-  .show-in-tablet {
-    display: block !important;
-  }
-}
-
-@media (max-width: 1151px) {
-  *.delete-in-tablet {
-    display: none !important;
-  }
-}
-
-body.tablet,
-body.mobil {
+@media (max-width: 1279px) {
   *.delete-in-tablet {
     display: none !important;
   }
 }
 
 @media (max-width: 767px) {
-  .delete-in-mobil {
+  *.delete-in-mobil {
     display: none !important;
   }
 }
 
 @media (min-width: 768px) {
-  .show-in-mobil {
+  *.show-in-mobil {
     display: none !important;
   }
 }
@@ -350,6 +313,9 @@ body.mobil {
 
 .a11y {
   // A++
+  .main {
+    padding-top: 85px;
+  }
   &.a11y-font-large {
     .magenta-link {
       &.fs--16 {

@@ -1,0 +1,181 @@
+<!--navigation menu-->
+<nav class="navigation" id="site-navigation" data-navigation>
+  <div class="mobil-search-form show-in-mobil">
+    <form action="%ROOT%search/" class="search-form" method="GET" data-form novalidate>
+      <load src="/_partials/components/header/search-form.html" />
+    </form>
+  </div>
+  <ul class="menu">
+    <li class="have-submenu">
+      <a href="%ROOT%courses/" class="menu-link">Курсы</a>
+
+      <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+        <svg width="10" height="6"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+      </button>
+
+      <div class="mega-menu" data-megamenu>
+        <ul class="submenu">
+          <li>
+            <a href="%ROOT%courses/beginners/" class="menu-link"><span>Для начинающих</span></a>
+          </li>
+          <li>
+            <a href="%ROOT%courses/advanced/" class="menu-link"><span>Для продвинутых</span></a>
+          </li>
+          <li>
+            <a href="%ROOT%courses/professionals/" class="menu-link"><span>Для профессионалов</span></a>
+          </li>
+          <li>
+            <a href="%ROOT%courses/online/" class="menu-link"><span>Онлайн курсы</span></a>
+          </li>
+          <li>
+            <a href="%ROOT%courses/offline/" class="menu-link"><span>Очные курсы</span></a>
+          </li>
+          <li class="full delete-in-mobil">
+            <a href="%ROOT%courses/schedule/" class="button regular">Расписание всех курсов</a>
+          </li>
+        </ul>
+
+        <div
+          class="recomendations-menu delete-in-tablet"
+          data-slider="submenu-slider"
+          data-slides-per-view="auto,auto,auto,auto"
+          data-space-between="12,12,12,12"
+        >
+          <h2 class="title">Рекомендуем</h2>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="%ROOT%courses/offline/quick-start/" class="recomendation">
+                  <div class="recomendation-image">
+                    <img src="/assets/img/promo/1-des.webp" alt="Описание изображения" />
+                  </div>
+                  <p class="cut-2">Быстрый старт: о&nbsp;вине за&nbsp;3&nbsp;встречи</p>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="%ROOT%courses/online/wine-history/" class="recomendation">
+                  <div class="recomendation-image">
+                    <img src="/assets/img/promo/2-des.webp" alt="Описание изображения" />
+                  </div>
+                  <p class="cut-2">История виноделия</p>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="%ROOT%private-events/corporate-event/" class="recomendation">
+                  <div class="recomendation-image">
+                    <img src="/assets/img/promo/3-full.webp" alt="Описание изображения" />
+                  </div>
+                  <p class="cut-2">Корпоративный праздник</p>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="%ROOT%private-events/corporate-event/" class="recomendation">
+                  <div class="recomendation-image">
+                    <img src="/assets/img/promo/2-single.webp" alt="Описание изображения" />
+                  </div>
+                  <p class="cut-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consectetur ratione, sequi itaque delectus quasi reprehenderit
+                    atque fugiat! Expedita, sequi? Cupiditate enim vel iusto nulla voluptatum dicta nesciunt consequatur accusantium.
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <a href="%ROOT%events/" class="menu-link"><span>Календарь мероприятий</span></a>
+    </li>
+
+    <li>
+      <a href="%ROOT%tastings/" class="menu-link"><span>Дегустации</span></a>
+    </li>
+
+    <li>
+      <a href="%ROOT%private-events/" class="menu-link"><span>Частные мероприятия</span></a>
+    </li>
+
+    <li>
+      <a href="%ROOT%gift-certificates/" class="menu-link"><span>Подарочные сертификаты</span></a>
+    </li>
+
+    <li class="have-submenu">
+      <a href="%ROOT%about/" class="menu-link">О нас</a>
+
+      <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+        <svg width="10" height="6"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+      </button>
+
+      <div class="mega-menu center" data-megamenu>
+        <ul class="submenu">
+          <li>
+            <a href="%ROOT%about/history/" class="menu-link"><span>История школы</span></a>
+          </li>
+
+          <li>
+            <a href="%ROOT%about/teachers/" class="menu-link"><span>Преподаватели</span></a>
+          </li>
+
+          <li>
+            <a href="%ROOT%about/classrooms/" class="menu-link"><span>Учебный класс</span></a>
+          </li>
+
+          <li>
+            <a href="%ROOT%about/diploma/" class="menu-link"><span>Профессия и&nbsp;диплом</span></a>
+          </li>
+
+          <li>
+            <a href="%ROOT%reviews/" class="menu-link"><span>Отзывы</span></a>
+          </li>
+
+          <li>
+            <a href="%ROOT%about/posts/" class="menu-link"><span>Новости</span></a>
+          </li>
+
+          <li>
+            <a href="%ROOT%about/materials/" class="menu-link"><span>Полезные материалы</span></a>
+          </li>
+
+          <li>
+            <a href="%ROOT%about/videos/" class="menu-link"><span>Видеобиблиотека</span></a>
+          </li>
+
+          <li class="delete-in-tablet">
+            <a href="%ROOT%profile/referral-program/" class="menu-link"><span>Реферальная программа</span></a>
+          </li>
+
+          <li class="delete-in-tablet">
+            <a href="%ROOT%about/contacts/" class="menu-link"><span>Контакты</span></a>
+          </li>
+
+          <li class="delete-in-tablet">
+            <a href="%ROOT%about/disclosure/" class="menu-link"><span>Сведения об образовательной организации</span></a>
+          </li>
+        </ul>
+
+        <load src="/_partials/components/socials.html" />
+      </div>
+    </li>
+
+    <li class="show-in-tablet">
+      <a href="%ROOT%profile/referral-program/" class="menu-link"><span>Реферальная программа</span></a>
+    </li>
+
+    <li class="show-in-tablet">
+      <a href="%ROOT%about/contacts/" class="menu-link"><span>Контакты</span></a>
+    </li>
+
+    <li class="show-in-tablet">
+      <a href="%ROOT%about/disclosure/" class="menu-link"><span>Сведения об образовательной организации</span></a>
+    </li>
+
+    <li class="show-in-tablet">
+      <load src="/_partials/components/socials.html" />
+    </li>
+  </ul>
+</nav>

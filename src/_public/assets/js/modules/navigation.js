@@ -30,41 +30,28 @@ const getLinkPath = link => {
   return normalizePath(link.pathname);
 };
 
-const getMenuRootPath = menuLinks => {
-  const paths = menuLinks.map(getLinkPath).filter(Boolean);
-  if (!paths.length) return null;
-
-  return paths.reduce((shortestPath, path) => {
-    const shortestDepth = shortestPath.split('/').filter(Boolean).length;
-    const pathDepth = path.split('/').filter(Boolean).length;
-
-    return pathDepth < shortestDepth ? path : shortestPath;
-  });
-};
-
-const isLinkActive = (link, currentPath, menuRootPath) => {
+// Главная ('/') подсвечивается только на самой себе: '/' + '/' = '//', с него не начинается ни один путь.
+const isLinkActive = (link, currentPath) => {
   const linkPath = getLinkPath(link);
   if (!linkPath) return false;
 
-  if (linkPath === menuRootPath) return currentPath === linkPath;
   return currentPath === linkPath || currentPath.startsWith(linkPath + '/');
 };
 
 const setActiveMenuLinks = menuLinks => {
   const currentPath = normalizePath(window.location.pathname);
   const links = Array.from(menuLinks).filter(link => link instanceof HTMLAnchorElement);
-  const menuRootPath = getMenuRootPath(links);
 
   links.forEach(link => {
-    link.classList.toggle('active', isLinkActive(link, currentPath, menuRootPath));
+    link.classList.toggle('active', isLinkActive(link, currentPath));
   });
 
   document.querySelectorAll('[data-megamenu-button]').forEach(button => {
-    const megaMenu = button.closest('.menu-link')?.nextElementSibling;
-    if (!megaMenu?.hasAttribute('data-megamenu')) return;
+    const megaMenu = button.closest('.have-submenu')?.querySelector('[data-megamenu]');
+    if (!megaMenu) return;
 
     const megaMenuLinks = Array.from(megaMenu.querySelectorAll('a[href]'));
-    const hasActiveLink = megaMenuLinks.some(link => isLinkActive(link, currentPath, menuRootPath));
+    const hasActiveLink = megaMenuLinks.some(link => isLinkActive(link, currentPath));
     button.classList.toggle('active', hasActiveLink);
   });
 };
@@ -76,10 +63,7 @@ export const initNavigationMenu = () => {
   const menuLinksA = document.querySelectorAll('a.menu-link');
 
   const isMobileMenu = () => {
-    const body = document.body;
-    const hasBigFont = body.classList.contains('a11y-font-big') || body.classList.contains('a11y-font-large');
-    const maxWidth = hasBigFont ? 1365 : body.classList.contains('a11y') ? 1279 : 1151;
-    return window.matchMedia(`(max-width: ${maxWidth}px)`).matches;
+    return window.matchMedia(`(max-width: 1279px)`).matches;
   };
 
   const openMobileMenu = async () => {
@@ -89,7 +73,7 @@ export const initNavigationMenu = () => {
     lockScroll();
 
     menu.style.display = 'flex';
-    void menu.offsetHeight; // форсируем reflow, иначе transition не подхватит смену display:none → flex
+    void menu.offsetHeight;
     menu.classList.add('open');
 
     await waitForTransition(menu, 'transform');
@@ -162,7 +146,7 @@ export const initNavigationMenu = () => {
         menu.classList.remove('open');
       }
       menu.style.display = '';
-    }, 300),
+    }, 300)
   );
 
   setActiveMenuLinks(menuLinks);
@@ -170,8 +154,11 @@ export const initNavigationMenu = () => {
 
 export const initMegaMenu = () => {
   const items = Array.from(document.querySelectorAll('[data-megamenu-button]'))
-    .map(button => ({ button, menu: button.closest('.menu-link')?.nextElementSibling, wrapper: button.closest('li') }))
-    .filter(({ menu }) => menu?.hasAttribute('data-megamenu'));
+    .map(button => {
+      const wrapper = button.closest('.have-submenu');
+      return { button, menu: wrapper?.querySelector('[data-megamenu]'), wrapper };
+    })
+    .filter(({ menu }) => menu);
 
   if (!items.length) return;
 
@@ -182,14 +169,12 @@ export const initMegaMenu = () => {
     button.setAttribute('aria-expanded', 'false');
 
     await waitForTransition(menu, 'height');
-    // display:none только после анимации и только если меню не открыли заново за это время —
-    // убирает закрытую панель из Tab-порядка (Tab больше не проваливается внутрь).
     if (!menu.classList.contains('open')) menu.style.display = 'none';
   };
 
   const openMenu = ({ button, menu }) => {
-    menu.style.display = 'block'; // CSS сам теперь display:none, сброс инлайна '' вернёт тот же none
-    void menu.offsetHeight; // форс reflow перед стартом transition
+    menu.style.display = 'flex';
+    void menu.offsetHeight;
     menu.style.height = `${menu.scrollHeight}px`;
     button.classList.add('open');
     menu.classList.add('open');
@@ -205,10 +190,6 @@ export const initMegaMenu = () => {
       if (!isOpen) openMenu(item);
     });
 
-    // Открытие теперь только явное (клик/Enter/Space на кнопке — нативно, т.к. это <button>).
-    // Авто-открытие по фокусу больше не нужно: пока меню закрыто — оно display:none,
-    // Tab физически не может попасть на скрытые ссылки, не нужно ничего "спасать".
-
     item.wrapper.addEventListener('keydown', event => {
       if (event.key !== 'Escape' || !item.menu.classList.contains('open')) return;
       closeMenu(item);
@@ -216,18 +197,25 @@ export const initMegaMenu = () => {
     });
   });
 
+  // click срабатывает и когда кнопку зажали внутри меню, а отпустили снаружи (target — общий предок),
+  // поэтому снаружи должны быть оба конца: и pointerdown, и click. У клавиатурного click pointerdown нет.
+  let pointerDownTarget = null;
+  document.addEventListener('pointerdown', event => {
+    pointerDownTarget = event.target;
+  });
+
   document.addEventListener('click', event => {
+    const startTarget = pointerDownTarget ?? event.target;
+    pointerDownTarget = null;
+
     items.forEach(item => {
-      const isOutside = !item.menu.contains(event.target) && !item.button.contains(event.target);
+      const isInside = target => item.menu.contains(target) || item.button.contains(target);
+      const isOutside = !isInside(startTarget) && !isInside(event.target);
       if (item.menu.classList.contains('open') && isOutside) closeMenu(item);
     });
   });
 
-  // Фокус (любой — Tab, клик, программно) вне мега-меню закрывает все; фокус внутри
-  // одного из них закрывает остальные, не трогая тот, где сейчас фокус.
   document.addEventListener('focusin', event => {
-    // Клик по нефокусируемому месту роняет фокус на body — это не «уход», а служебный
-    // фолбэк браузера; настоящий Tab-переход на body никогда не приземляется.
     if (event.target === document.body) return;
     const containingItem = items.find(item => item.wrapper.contains(event.target));
     items.filter(item => item !== containingItem).forEach(closeMenu);

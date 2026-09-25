@@ -1,0 +1,25 @@
+<a href="#header" class="skip-link">Перейти к меню</a>
+<a href="#main" class="skip-link">Перейти к основному содержанию</a>
+
+<load src="/_partials/components/a11y-panel.html" />
+
+<!--HEADER-->
+<header class="header" id="header" data-fixed>
+  <div class="container">
+    <!--logo-->
+    <a href="%ROOT%" class="logo" aria-label="AST Школа вина — на главную">
+      <svg width="123" height="33"><use href="/assets/img/sprite.svg#logo"></use></svg>
+    </a>
+
+    <load src="/_partials/components/header/navigation.html" />
+
+    <!--search form-->
+    <div class="header-search-form" data-search id="header-search">
+      <form action="%ROOT%search/" class="search-form" method="GET" data-form novalidate>
+        <load src="/_partials/components/header/search-form.html" />
+      </form>
+    </div>
+
+    <load src="/_partials/components/header/header-buttons-menu.html" />
+  </div>
+</header>

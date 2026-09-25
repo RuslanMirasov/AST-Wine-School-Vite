@@ -198,6 +198,7 @@
     color: inherit;
     transition: color 0.3s var(--cubic);
     outline: none;
+
     @media (hover: hover) {
       &:hover {
         color: var(--magenta);
