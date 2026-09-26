@@ -4,7 +4,6 @@ import { debounce } from './helpers.js';
 const sliders = document.querySelectorAll('[data-slider]');
 const instances = new WeakMap();
 const linkedSliders = new WeakSet();
-const clickLinkedSliders = new WeakSet();
 
 const toBool = s => String(s).toLowerCase() === 'true';
 const toSwiperValue = value => {
@@ -70,7 +69,6 @@ const destroySlider = sliderWrapper => {
   instance.destroy(true, true);
   instances.delete(sliderWrapper);
   linkedSliders.delete(sliderWrapper);
-  clickLinkedSliders.delete(sliderWrapper);
   unregisterNamedSwiper(getSliderKey(sliderWrapper));
 };
 
@@ -187,13 +185,6 @@ const updateSlider = sliderWrapper => {
   }
 };
 
-const setManualActiveSlide = (swiper, index) => {
-  if (swiper.destroyed) return;
-  swiper.slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-  });
-};
-
 const linkControlledSliders = () => {
   sliders.forEach(sliderWrapper => {
     if (linkedSliders.has(sliderWrapper)) return;
@@ -210,12 +201,6 @@ const linkControlledSliders = () => {
     const followers = controlsKeys.map(key => window.swipers?.[key]).filter(Boolean);
     if (!followers.length) return;
 
-    const needsManualActive = follower => follower.el.closest('.custom-pagination') !== null;
-
-    followers.forEach(follower => {
-      if (needsManualActive(follower)) setManualActiveSlide(follower, master.realIndex);
-    });
-
     master.on('slideChange', () => {
       if (master.destroyed) return;
 
@@ -225,7 +210,6 @@ const linkControlledSliders = () => {
 
           followers.forEach(follower => {
             if (follower.destroyed) return;
-            if (needsManualActive(follower)) setManualActiveSlide(follower, master.realIndex);
             follower.params.loop ? follower.slideToLoop(master.realIndex) : follower.slideTo(master.realIndex);
           });
         });
@@ -233,26 +217,6 @@ const linkControlledSliders = () => {
     });
 
     linkedSliders.add(sliderWrapper);
-  });
-};
-
-const linkClickTargets = () => {
-  sliders.forEach(sliderWrapper => {
-    if (clickLinkedSliders.has(sliderWrapper)) return;
-
-    const targetKey = sliderWrapper.dataset.clickTarget?.trim();
-    if (!targetKey) return;
-
-    const source = instances.get(sliderWrapper);
-    const target = window.swipers?.[targetKey];
-    if (!source || !target) return;
-
-    source.on('click', () => {
-      if (source.clickedIndex == null) return;
-      target.params.loop ? target.slideToLoop(source.clickedIndex) : target.slideTo(source.clickedIndex);
-    });
-
-    clickLinkedSliders.add(sliderWrapper);
   });
 };
 
@@ -280,7 +244,6 @@ export const reinitSlidersForA11y = () => {
     initSlider(sliderWrapper);
   });
   linkControlledSliders();
-  linkClickTargets();
 };
 
 // Swiper пересчитывает autoHeight только при смене активного слайда (transitionStart/slideTo),
@@ -289,7 +252,6 @@ export const reinitSlidersForA11y = () => {
 const handleResize = debounce(() => {
   sliders.forEach(updateSlider);
   linkControlledSliders();
-  linkClickTargets();
 
   sliders.forEach(sliderWrapper => {
     const instance = instances.get(sliderWrapper);
@@ -308,7 +270,6 @@ export const initSliders = () => {
   if (sliders.length > 0) {
     sliders.forEach(updateSlider);
     linkControlledSliders();
-    linkClickTargets();
     window.addEventListener('resize', handleResize);
   }
 };

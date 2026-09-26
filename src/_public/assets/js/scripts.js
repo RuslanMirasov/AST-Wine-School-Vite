@@ -7,6 +7,7 @@ import { initSearchToggle } from './modules/headerSearch.js';
 import { hidePreloader } from './modules/preloader.js';
 import { initAgeConfirmation } from './modules/ageConfirmation.js';
 import { initSliders } from './modules/sliders.js';
+import { initHeroPagination } from './modules/hero-pagination.js';
 import { initStars } from './modules/stars.js';
 import { initAccordeons } from './modules/accordeon.js';
 import { initCookieConfirmation } from './modules/cookie-confirm.js';
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   hidePreloader();
   initA11yToggle();
   initSliders();
+  initHeroPagination();
   initNavigationMenu();
   initMegaMenu();
   initSearchToggle();

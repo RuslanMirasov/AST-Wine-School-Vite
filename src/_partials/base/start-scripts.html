@@ -31,26 +31,5 @@
         if (className) body.classList.add(className);
       });
     }
-
-    var updateBreakpointClasses = function () {
-      var width = window.innerWidth;
-      var hasBigFont = body.classList.contains('a11y-font-big') || body.classList.contains('a11y-font-large');
-      var tabletMaxWidth = hasBigFont ? 1365 : body.classList.contains('a11y') ? 1279 : 1151;
-
-      body.classList.toggle('tablet', width >= 768 && width <= tabletMaxWidth);
-      body.classList.toggle('mobil', width <= 767);
-    };
-
-    window.updateBreakpointClasses = updateBreakpointClasses;
-    updateBreakpointClasses();
-
-    var resizeTimer;
-    var handleResize = function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(updateBreakpointClasses, 300);
-    };
-
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('orientationchange', handleResize);
   })();
 </script>

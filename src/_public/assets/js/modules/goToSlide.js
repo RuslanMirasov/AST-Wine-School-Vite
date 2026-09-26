@@ -45,23 +45,5 @@ export function goToSlide(target, { key, base = 1 } = {}) {
   }
 }
 
-export const initTabsSliderNavigation = name => {
-  const buttons = document.querySelectorAll('#prizes [data-prizes-nav]');
-  const swiper = window.swipers?.[name];
-
-  if (!swiper || !buttons.length) return;
-
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      const index = Number(button.dataset.prizesNav);
-
-      swiper.slideTo(index);
-
-      buttons.forEach(item => item.classList.remove('active'));
-      button.classList.add('active');
-    });
-  });
-};
-
 window.goToSlide = goToSlide;
 window.registerNamedSwiper = registerNamedSwiper;

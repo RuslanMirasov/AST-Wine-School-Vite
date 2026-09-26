@@ -5,11 +5,18 @@
   padding-top: 94px;
   margin-top: 40px;
 
+  hr {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--white);
+    opacity: 0.5;
+    margin: 16px 0px;
+  }
+
   .container {
     justify-content: space-between;
     gap: var(--fs-24);
-    max-width: 1280px;
-    padding: 0px 20px;
     align-items: flex-start;
   }
 }
@@ -82,9 +89,6 @@
   width: auto;
   .footer-menu-title {
     opacity: 1;
-    @media (max-width: 767px) {
-      opacity: 0.5;
-    }
     line-height: 1;
     margin: 0;
   }
@@ -114,7 +118,6 @@
   font-weight: 700;
   font-size: var(--fs-18);
   line-height: 1.2;
-  opacity: 0.5;
   gap: var(--fs-8);
   button {
     transform: translateY(-7%);
@@ -404,23 +407,21 @@
 //TABLET
 @media (max-width: 1151px) and (min-width: 768px) {
   .footer {
+    padding-top: 60px;
     .container {
-      display: block;
-      columns: 2;
-      column-gap: var(--fs-16);
+      gap: 40px;
       padding: 0px 32px;
-
       .footer-menu {
-        margin-bottom: var(--fs-32);
-        &:nth-child(4) {
-          margin-top: 120px;
-        }
+        width: calc(50% - 20px);
       }
 
-      .copy,
-      .footer-logo {
-        column-span: all;
+      hr {
+        margin-bottom: -40px;
       }
+    }
+
+    .footer-logo {
+      display: none;
     }
   }
 }
@@ -438,37 +439,37 @@
 @media (max-width: 767px) {
   .footer {
     padding-top: 50px;
+    padding-bottom: 50px;
     margin-top: 20px;
     .container {
       max-width: 420px;
-      gap: var(--fs-30);
+      gap: var(--fs-32);
       padding: 0px 16px;
+    }
+
+    hr {
+      margin: 0;
     }
   }
 
   .copy {
-    gap: 16px;
+    gap: var(--fs-24);
     margin-top: 8px;
-    font-size: var(--fs-14);
+    font-size: var(--fs-12);
     text-align: center;
     flex-direction: column;
+    max-width: 310px;
+    margin: 0 auto;
     br {
-      display: block;
+      display: none;
     }
     p {
-      opacity: 0.2;
+      opacity: 0.5;
     }
 
     a {
-      opacity: 0.2;
-      // @media (hover: hover) {
-      //   &:hover {
-      //     opacity: 1;
-      //   }
-      // }
-      // &:focus-visible {
-      //   opacity: 1;
-      // }
+      opacity: 0.5;
+      font-size: var(--fs-12);
     }
   }
 
@@ -487,7 +488,9 @@
   }
 
   .footer-menu-list {
-    font-size: var(--fs-14);
+    a {
+      font-size: var(--fs-16);
+    }
     &[data-accordeon-body] {
       height: 0px;
     }
@@ -509,6 +512,11 @@
 
   .footer-address {
     margin-top: var(--fs-16);
+    gap: var(--fs-32) var(--fs-22);
+  }
+
+  .footer-logo {
+    display: none;
   }
 }
 

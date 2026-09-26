@@ -96,7 +96,6 @@ export const initA11yToggle = () => {
       saveSettings(settings);
       applyClasses();
       applyToggleButtons();
-      window.updateBreakpointClasses?.();
       reinitSlidersForA11y();
     });
   });
@@ -111,7 +110,6 @@ export const initA11yToggle = () => {
     settings[key] = input.value;
     saveSettings(settings);
     applyClasses();
-    window.updateBreakpointClasses?.();
 
     // Только шрифт и интервалы меняют высоту контента слайдов — тема/картинки нет.
     if (key === 'fontSize' || key === 'spacing') updateSlidersAutoHeight();
