@@ -1,5 +1,5 @@
 .section--welcome {
-  svg.logo-background {
+  .logo-background {
     width: 900px;
     height: auto;
     right: 50%;
@@ -31,7 +31,7 @@
       min-height: 245px;
     }
     svg.logo-background {
-      transform: translate(-30%, -62%) scaleX(-1);
+      transform: translate(-20%, -62%);
     }
 
     .text {
