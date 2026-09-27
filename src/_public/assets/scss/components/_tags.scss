@@ -40,6 +40,12 @@
       flex-shrink: 0;
     }
 
+    &.green {
+      svg {
+        color: var(--green);
+      }
+    }
+
     //1366
     @media (max-width: 1439px) {
       font-size: var(--fs-12);

@@ -1,17 +1,26 @@
 .section--curses {
   .content {
     min-height: 360px;
+
+    .tags {
+      margin-bottom: var(--fs-12);
+    }
+
+    .price-and-btn {
+      margin-top: var(--fs-5);
+      @media (max-width: 767px) {
+        margin-top: var(--fs-16);
+      }
+    }
   }
 
   .content-text {
     max-width: 18.75rem; //300px
     margin-top: auto;
-    margin-bottom: 10px;
   }
 
   .text,
   .title {
-    line-height: 1;
     display: -webkit-box;
     -webkit-line-clamp: 5;
     line-clamp: 5;
@@ -19,14 +28,12 @@
     overflow: hidden;
   }
 
-  .col-3 {
-    .content-text {
-      max-width: 14.375rem; //230px
+  .content-list__item {
+    &.col-3 {
+      .content-text {
+        max-width: 14.375rem; //230px
+      }
     }
-  }
-
-  .tags {
-    margin-bottom: var(--fs-12);
   }
 }
 
@@ -40,7 +47,7 @@
   align-content: center;
   gap: 12px;
   z-index: 2;
-  span {
+  .price {
     font-size: var(--fs-24);
     line-height: 1;
     font-weight: 700;
@@ -48,10 +55,10 @@
   }
 }
 
-@media (max-width: 1151px) {
-  .section--curses {
-    .title--40 {
-      margin-bottom: var(--fs-40);
+.dark {
+  .price-and-btn {
+    .price {
+      color: var(--white);
     }
   }
 }
@@ -62,11 +69,6 @@
     .container {
       > .button {
         margin-left: auto;
-      }
-    }
-    .content {
-      .price-and-btn {
-        margin-top: var(--fs-10);
       }
     }
 
@@ -181,7 +183,7 @@
   }
 
   &.a11y-theme-dark {
-    .price-and-btn span {
+    .price-and-btn .price {
       color: var(--white);
     }
   }

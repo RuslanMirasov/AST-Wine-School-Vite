@@ -1,33 +1,34 @@
 <script>
   (function () {
-    var STORAGE_KEY = 'a11y-settings';
-    var DEFAULTS = {
+    const STORAGE_KEY = 'a11y-settings';
+    const DEFAULTS = {
       enabled: false,
       fontSize: 'large',
       theme: 'color',
       images: 'shown',
       spacing: 'normal',
     };
-    var CLASS_MAP = {
+    const CLASS_MAP = {
       fontSize: { big: 'a11y-font-big', large: 'a11y-font-large' },
       theme: { light: 'a11y-theme-light', dark: 'a11y-theme-dark' },
       images: { grayscale: 'a11y-images-grayscale', hidden: 'a11y-images-hidden' },
       spacing: { wide: 'a11y-spacing-wide', wider: 'a11y-spacing-wider' },
     };
 
-    var settings = DEFAULTS;
+    let settings = DEFAULTS;
+
     try {
-      var saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
       if (saved && typeof saved === 'object') settings = Object.assign({}, DEFAULTS, saved);
     } catch (e) {}
 
-    var body = document.body;
+    const body = document.body;
 
     if (settings.enabled) {
       body.classList.add('a11y');
 
       Object.keys(CLASS_MAP).forEach(function (key) {
-        var className = CLASS_MAP[key][settings[key]];
+        const className = CLASS_MAP[key][settings[key]];
         if (className) body.classList.add(className);
       });
     }

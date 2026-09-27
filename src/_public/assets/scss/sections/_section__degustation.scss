@@ -1,29 +1,27 @@
 .section--degustation-and-seminars {
+  .content-list .content-list__item.col-3:last-child {
+    flex: none;
+    max-width: 318px;
+    width: 318px;
+    min-width: 318px;
+    min-height: 300px;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
   .content {
     min-height: 300px;
-  }
-
-  .price-and-btn {
-    margin-top: var(--fs-16);
-  }
-
-  .title {
-    line-height: 1;
+    .price-and-btn {
+      margin-top: auto;
+    }
   }
 
   .text {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-
     &.fs-14 {
       font-weight: 300;
       background-color: var(--grey-light);
       padding: var(--fs-6) var(--fs-16);
       border-radius: 20px;
-      font-weight: 300;
       color: var(--blue);
     }
   }
@@ -38,84 +36,27 @@
       height: 100%;
     }
   }
-}
 
-//1920
-@media (min-width: 1920px) {
-  .section--recomendations {
-    .content-list__item {
-      min-height: 330px;
-      &.col-4 {
-        max-width: 344px;
-      }
-      &.col-1 {
-        flex: 1;
+  .content-list__item {
+    &.image-only {
+      flex: none;
+      width: 318px;
+      max-width: 318px;
+      min-height: 200px;
+    }
+    &:last-child {
+      @media (min-width: 1024px) {
         min-width: 820px;
-        .logo-background {
-          transform: translate(14%, 0%);
-        }
-      }
-      .content {
-        min-height: 100%;
-      }
-    }
-
-    .present-certificat {
-      .content-text {
-        max-width: 330px;
-      }
-    }
-  }
-}
-
-//768
-@media (max-width: 1023px) {
-  .section--degustation-and-seminars {
-    .content-text.va--c {
-      margin: 0;
-      margin-bottom: auto;
-    }
-    .content {
-      min-height: 260px;
-    }
-  }
-
-  .section--recomendations {
-    .content-list__item {
-      min-width: 50%;
-      &.col-4 {
-        min-height: 260px;
-      }
-    }
-  }
-}
-
-//375
-@media (max-width: 767px) {
-  .section--degustation-and-seminars {
-    .content {
-      min-height: 1px;
-    }
-    .content-list__item.col-4 {
-      .content {
-        min-height: 350px;
       }
     }
   }
 
-  .section--recomendations {
-    .content-list__item {
-      &.col-4 {
-        min-height: auto;
-        width: 100%;
-        flex: auto;
-      }
-
-      &.image-only {
-        .content {
-          padding: 0;
-          min-height: 260px;
-          border-radius: 50px;
+  .content {
+    .buttons {
+      margin-top: auto;
+      @media (max-width: 767px) {
+        .button {
+          width: 100%;
         }
       }
     }

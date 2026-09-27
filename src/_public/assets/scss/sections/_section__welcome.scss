@@ -56,17 +56,15 @@
 //1024
 @media (max-width: 1151px) {
   .section--welcome {
-    .content {
-      padding-bottom: 150px;
-    }
     svg.logo-background {
-      width: 633px;
+      width: 610px;
       right: 0%;
-      top: 25%;
-      transform: translate(20%, 0%);
+      top: 0%;
+      transform: translate(16%, 0%);
     }
 
     .content.row {
+      padding: var(--fs-32);
       flex-direction: column;
     }
 
@@ -78,7 +76,7 @@
 
     .text {
       max-width: 100%;
-      margin: var(--fs-20) 0px var(--fs-16) 0px;
+      margin: var(--fs-20) 0px var(--fs-8) 0px;
       font-size: var(--fs-16);
     }
   }
@@ -87,21 +85,18 @@
 //375
 @media (max-width: 767px) {
   .section--welcome {
-    .container {
-      padding: 0;
-    }
     svg.logo-background {
       width: 362px;
       right: 0%;
       top: auto;
       bottom: 0px;
-      transform: translate(10%, 10%);
+      transform: translate(99px, 99px);
     }
 
     .content.row {
       flex-direction: column;
-      padding: var(--fs-24);
-      padding-bottom: 150px;
+      border-radius: var(--fs-30);
+      padding: var(--fs-20);
     }
 
     .title.title--64 {
@@ -112,7 +107,8 @@
 
     .text {
       max-width: 100%;
-      margin: var(--fs-20) 0px var(--fs-16) 0px;
+      margin: 0px;
+      margin-top: var(--fs-16);
     }
   }
 }

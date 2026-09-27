@@ -1,7 +1,8 @@
 .section-callback {
   .content {
     max-width: 50rem; //800px
-    border-radius: var(--fs-32);
+    border-radius: var(--fs-30);
+    padding: var(--fs-30);
     margin: 0 auto;
     box-shadow: 0px 18px 48px rgba(15, 23, 42, 0.031);
   }
@@ -11,7 +12,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--fs-18) var(--fs-30); //18px 30px
+  gap: var(--fs-18) var(--fs-32);
 
   .title {
     display: flex;
@@ -25,7 +26,7 @@
   }
 
   .input.input--textarea {
-    height: 4.625rem; //74px
+    height: 5.625rem;
   }
 }
 
@@ -33,27 +34,19 @@
   display: flex;
   position: relative;
   flex-wrap: wrap;
-  width: calc((100% - 1.875rem) / 2);
+  width: calc((100% - var(--fs-32)) / 2);
   gap: var(--form-gap);
 }
 
 //375
-@media (max-width: 767px) {
+@media (max-width: 860px) {
   .section-callback {
     padding-bottom: 0px;
-    margin-bottom: -20px;
-    .container {
-      padding-left: 0px;
-      padding-right: 0px;
-    }
-    .content {
-      border-radius: var(--fs-32) var(--fs-32) 0px 0px;
-      padding-bottom: 60px;
-      padding-top: 30px;
-    }
   }
+
   .callback-form {
     flex-direction: column;
+    padding-bottom: var(--fs-40);
 
     .input.input--textarea {
       height: 100px; //74px
@@ -62,6 +55,23 @@
 
   .callback-form-inner {
     width: 100%;
+  }
+}
+
+//767
+@media (max-width: 767px) {
+  .section-callback {
+    padding-bottom: var(--fs-30);
+    .content {
+      border-radius: var(--fs-30);
+      padding: var(--fs-20);
+    }
+  }
+  .callback-form {
+    padding-bottom: 0px;
+    .button {
+      width: 100%;
+    }
   }
 }
 
