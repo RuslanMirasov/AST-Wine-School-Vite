@@ -81,7 +81,7 @@
                       <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
                     </div>
                   </label>
-                  <button type="button" class="button medium regular white-border">Корзина</button>
+                  <button type="button" class="button white-border"><span>Корзина</span></button>
                 </div>
               </div>
             </div>
@@ -120,7 +120,7 @@
                 <li><p class="text">ищет не&nbsp;скучную академию, а&nbsp;живое общение с&nbsp;сомелье</p></li>
               </ul>
 
-              <ul class="icon-list">
+              <ul class="icon-list grey">
                 <li>
                   <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#video"></use></svg>
                   <span>Доступ через браузер. Рекомендуется стабильное интернет-соединение</span>
@@ -156,30 +156,32 @@
       <!--NEED MORE TIME-->
       <section class="section">
         <div class="container">
-          <div class="content grey">
-            <div class="content-text gap--24">
+          <div class="content row gap--24 grey need-time">
+            <div class="content-text gap--12">
               <h2 class="title title--32 upper">Нужно больше времени?</h2>
-              <p class="text">
+              <p class="text grey-text">
                 Заканчивается срок доступа к&nbsp;курсу? Продлите его на&nbsp;удобный срок — все ваши прогресс и&nbsp;материалы сохранятся!
               </p>
-              <div class="buttons gap--24 ta--l">
-                <button type="button" class="extend-btn blue">
-                  <span class="text fs-16">Продлить на</span>
-                  <strong class="text fs-24">+1 месяц</strong>
-                </button>
-
-                <button type="button" class="extend-btn">
-                  <span class="text fs-16">Продлить на</span>
-                  <strong class="text fs-24">+3 месяца</strong>
-                </button>
-
-                <button type="button" class="extend-btn">
-                  <span class="text fs-16">Продлить на</span>
-                  <strong class="text fs-24">+6 месяцев</strong>
-                </button>
-              </div>
-              <button type="button" class="button magenta medium">В корзину</button>
             </div>
+
+            <form action="#" class="more-time-form">
+              <fieldset class="more-time-form-fields">
+                <label>
+                  <input type="radio" name="extand-curse" value="Продлить на +1 месяц" checked />
+                  <span class="text">Продлить на <b>+1 месяц</b></span>
+                </label>
+                <label>
+                  <input type="radio" name="extand-curse" value="Продлить на +3 месяц" />
+                  <span class="text">Продлить на <b>+3 месяца</b></span>
+                </label>
+                <label>
+                  <input type="radio" name="extand-curse" value="Продлить на +6 месяцев" />
+                  <span class="text">Продлить на <b>+6 месяцев</b></span>
+                </label>
+              </fieldset>
+
+              <button type="submit" class="button"><span>В корзину</span></button>
+            </form>
           </div>
         </div>
       </section>

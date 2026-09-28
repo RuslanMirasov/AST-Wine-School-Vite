@@ -582,8 +582,6 @@ $select_padding: 0px var(--fs-16);
   position: relative;
   width: auto;
   height: auto;
-  min-height: var(--fs-36);
-
   background-color: var(--white);
   padding: 4px;
   border-radius: var(--fs-36);
@@ -615,6 +613,18 @@ $select_padding: 0px var(--fs-16);
     &:checked + .label-text {
       background-color: var(--magenta);
       color: var(--white);
+    }
+  }
+
+  @media (max-width: 767px) {
+    display: flex;
+
+    width: 100%;
+    .radio-button {
+      + .label-text {
+        font-size: var(--fs-10);
+        padding: 5px 10px;
+      }
     }
   }
 }

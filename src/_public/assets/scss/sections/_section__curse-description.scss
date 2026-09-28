@@ -13,7 +13,7 @@
 
   .button.button-pdf {
     width: 100%;
-    max-width: 452px;
+    max-width: 400px;
     justify-content: space-between;
     span {
       flex: 1;
@@ -37,9 +37,6 @@
           padding-top: 87.55%;
         }
       }
-    }
-    .content-text.gap--24 {
-      max-width: calc(100% - 40px - 434px);
     }
   }
 

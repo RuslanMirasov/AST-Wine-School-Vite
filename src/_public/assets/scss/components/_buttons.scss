@@ -227,26 +227,6 @@
   }
 }
 
-.extend-btn {
-  display: inline-block;
-  background-color: var(--white);
-  border-radius: var(--fs-30);
-  padding: var(--fs-24) var(--fs-28);
-  text-align: left;
-  line-height: 1.25;
-  min-width: 225px;
-  .text.fs-16 {
-    color: var(--grey-text);
-    margin-bottom: 4px;
-  }
-  &.blue {
-    background-color: var(--blue);
-    .text {
-      color: var(--white);
-    }
-  }
-}
-
 .a11y-theme-dark {
   .button {
     color: var(--black);

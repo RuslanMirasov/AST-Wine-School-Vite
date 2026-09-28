@@ -37,3 +37,29 @@
   width: 100%;
   max-width: 1200px;
 }
+
+@media (max-width: 599px) {
+  .section--image-slider,
+  .section-materials-slider {
+    .container {
+      align-items: flex-end;
+      > .title {
+        max-width: calc(100% - var(--fs-38) - var(--fs-38) - var(--fs-8) - var(--fs-24));
+      }
+
+      .arrows {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.section-materials-slider {
+  .posts-slider {
+    .post-slide {
+      .buttons {
+        margin-top: auto;
+      }
+    }
+  }
+}

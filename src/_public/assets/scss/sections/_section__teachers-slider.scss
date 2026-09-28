@@ -29,15 +29,18 @@
           pointer-events: auto;
         }
       }
-      @media (max-width: 767px) {
+      @media (max-width: 1279px) {
         width: calc(100vw - 32px);
         max-width: 354px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      @media (max-width: 767px) {
+        .buttons {
+          justify-content: flex-start;
+        }
       }
     }
-  }
-
-  a.magenta-link {
-    margin-top: auto;
   }
 
   .post-card-image {

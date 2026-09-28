@@ -167,3 +167,57 @@
     }
   }
 }
+
+@media (max-width: 1023px) {
+  .curse-hero {
+    background-color: var(--blue);
+    overflow: hidden;
+
+    .content-text {
+      flex: auto;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 150px;
+      color: var(--white);
+      .title,
+      .text {
+        color: var(--white);
+      }
+      b,
+      strong,
+      a {
+        border-bottom: 1px solid var(--white);
+      }
+    }
+
+    .image-background {
+      position: absolute;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 0px;
+
+      &:before {
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background: linear-gradient(rgba(0, 0, 0, 0) 50%, var(--blue) 100%, var(--blue) 100%);
+      }
+    }
+
+    &.dark {
+      .image-background {
+        &:before {
+          left: 0px;
+          top: 0px;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          opacity: 1;
+          background: linear-gradient(rgba(0, 0, 0, 0) 50%, var(--blue) 100%, var(--blue) 100%);
+        }
+      }
+    }
+  }
+}

@@ -129,15 +129,7 @@
     width: 100%;
   }
   .accordeon-arrow {
-    width: 25px;
-    height: 25px;
-    background-color: var(--magenta);
-    color: var(--white);
-
-    svg {
-      position: absolute;
-      width: 16px;
-      height: 6px;
-    }
+    width: var(--fs-24);
+    height: var(--fs-24);
   }
 }
