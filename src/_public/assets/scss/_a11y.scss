@@ -76,25 +76,32 @@ html {
 
     // ЧЁРНАЯ ТЕМА
     &:has(.a11y-theme-dark) {
-      --grey: rgba(255, 255, 255, 0.8);
+      --black: #ffffff;
+      --white: #3d3e3f;
+      --blue: #ffffff;
+      --grey-light: #2d2e30;
+      --blue-light: #ffffff;
+      --blue-light-hover: #c24191;
+      --magenta: #c24191;
+      --magenta-hover: #aa397f;
+      --magenta-light: #c24191;
+      --magenta-light-hover: #aa397f;
+      --magenta-opacity: rgba(228, 57, 162, 1);
+      --grey-border: rgba(255, 255, 255, 0.3);
+      --grey-medium: rgba(255, 255, 255, 0.3);
       --grey-text: rgba(255, 255, 255, 0.8);
       --grey-dark: rgba(255, 255, 255, 0.8);
-      --grey-medium: rgba(255, 255, 255, 0.8);
-      --grey-light: rgba(255, 255, 255, 0.8);
-      --grey-stars: rgba(255, 255, 255, 0.8);
-      --grey-border: rgba(255, 255, 255, 0.8);
-      --grey-menu-border: rgba(255, 255, 255, 0.8);
-      --grey-button: rgba(255, 255, 255, 0.8);
-      --grey-promo: rgba(255, 255, 255, 0.8);
-      .body {
-        background: var(--black);
-      }
-      --magenta: #f580c8;
-      --invalid: rgb(240, 132, 132);
-      .popup {
-        --blue: #273551;
-        --magenta: #c24191;
-      }
+      --grey: rgba(255, 255, 255, 0.3);
+      --grey-menu-border: rgba(255, 255, 255, 0.3);
+      --blue-text: rgba(255, 255, 255, 0.8);
+
+      --grey-stars: #d6d8dd;
+      --grey-button: #e2e5ea;
+      --grey-promo: #e3e7ef;
+      --gold: #f59e0b;
+
+      --invalid: #e0483c;
+      --green: #8fc78f;
     }
 
     .popup,

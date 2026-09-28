@@ -114,22 +114,22 @@
 }
 
 .a11y {
-  &.a11y-theme-light {
-    .section--welcome {
-      .content {
-        border-radius: 0px;
-        padding: 0px;
-      }
-      .logo-background {
-        display: none;
-      }
-      @media (max-width: 767px) {
-        .content {
-          padding: 16px;
-        }
-      }
-    }
-  }
+  // &.a11y-theme-light {
+  //   .section--welcome {
+  //     .content {
+  //       border-radius: 0px;
+  //       padding: 0px;
+  //     }
+  //     .logo-background {
+  //       display: none;
+  //     }
+  //     @media (max-width: 767px) {
+  //       .content {
+  //         padding: 16px;
+  //       }
+  //     }
+  //   }
+  // }
 
   &.a11y-images-hidden {
     .section--welcome {

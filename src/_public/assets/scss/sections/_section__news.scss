@@ -217,9 +217,8 @@
   }
 
   &.a11y-theme-dark {
-    .post-slide,
-    .post-slide-image {
-      background-color: var(--blue);
+    .post-slide-text .text.fs-14 {
+      color: rgba(255, 255, 255, 0.6);
     }
   }
 }

@@ -247,95 +247,31 @@
   }
 }
 
-.body.a11y {
+.a11y-theme-dark {
   .button {
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--magenta-hover);
-      }
-    }
-    &:focus-visible {
-      background-color: var(--magenta-hover);
-    }
+    color: var(--black);
 
     &.blue {
-      background-color: var(--blue);
       color: var(--white);
       @media (hover: hover) {
         &:hover {
-          background-color: var(--magenta-hover);
+          color: var(--black);
         }
       }
       &:focus-visible {
-        background-color: var(--magenta-hover);
-        border: 1px solid var(--magenta-hover);
+        color: var(--black);
       }
     }
 
-    &.magenta {
-      background-color: var(--magenta);
-      @media (hover: hover) {
-        &:hover {
-          background-color: var(--magenta-hover);
-        }
-      }
-      &:focus-visible {
-        background-color: var(--magenta-hover);
-      }
-    }
-
-    &.magenta-light {
-      background-color: var(--magenta);
+    &.blue-light {
       color: var(--white);
       @media (hover: hover) {
         &:hover {
-          background-color: var(--magenta-hover);
+          color: var(--black);
         }
       }
       &:focus-visible {
-        border: 1px solid var(--magenta-hover);
-        background-color: var(--magenta-hover);
-      }
-    }
-  }
-
-  &.a11y-theme-dark {
-    .button {
-      background-color: var(--white);
-      color: var(--blue);
-      @media (hover: hover) {
-        &:hover {
-          background-color: var(--magenta-hover);
-          color: var(--white);
-        }
-      }
-      &.blue {
-        background-color: var(--white);
-        color: var(--blue);
-        @media (hover: hover) {
-          &:hover {
-            background-color: var(--magenta-hover);
-            color: var(--white);
-          }
-        }
-        &:focus-visible {
-          background-color: var(--magenta-hover);
-          border: 1px solid var(--magenta-hover);
-        }
-      }
-
-      &.magenta,
-      &.magenta-light {
-        background-color: var(--magenta-hover);
-        color: var(--white);
-        @media (hover: hover) {
-          &:hover {
-            background-color: var(--magenta);
-          }
-        }
-        &:focus-visible {
-          background-color: var(--magenta);
-        }
+        color: var(--black);
       }
     }
   }

@@ -411,21 +411,6 @@
       }
     }
 
-    &.a11y-theme-dark {
-      .section-hero {
-        .title,
-        .text {
-          color: var(--white);
-        }
-        .dark {
-          .title,
-          .text {
-            color: var(--white);
-          }
-        }
-      }
-    }
-
     .hero {
       flex-wrap: wrap;
       justify-content: flex-start;
@@ -566,18 +551,18 @@
     }
   }
 
-  &.a11y-theme-dark {
-    .section-hero {
-      .title,
-      .text {
-        color: var(--white);
-      }
-      .dark {
-        .title,
-        .text {
-          color: var(--white);
-        }
-      }
-    }
-  }
+  // &.a11y-theme-dark {
+  //   .section-hero {
+  //     .title,
+  //     .text {
+  //       color: var(--white);
+  //     }
+  //     .dark {
+  //       .title,
+  //       .text {
+  //         color: var(--white);
+  //       }
+  //     }
+  //   }
+  // }
 }

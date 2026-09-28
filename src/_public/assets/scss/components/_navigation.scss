@@ -50,13 +50,6 @@
 
         &.active {
           color: var(--magenta);
-          .nav-arrow {
-            background-color: var(--magenta-light);
-            &:focus-visible {
-              background: var(--magenta);
-              color: var(--white);
-            }
-          }
           &:focus-visible {
             text-decoration: underline;
           }
@@ -214,6 +207,7 @@
         font-size: var(--fs-18);
         line-height: 1.1;
         padding-top: var(--fs-12);
+        color: var(--blue);
       }
     }
   }
@@ -498,6 +492,18 @@
 
     @media (max-width: 1279px) and (min-width: 768px) {
       display: none;
+    }
+  }
+}
+
+//ТЁМНАЯ ТЕМА
+.a11y-theme-dark {
+  .nav-arrow {
+    background: var(--black);
+    color: var(--white);
+    &:focus-visible {
+      background: var(--magenta);
+      color: var(--black);
     }
   }
 }

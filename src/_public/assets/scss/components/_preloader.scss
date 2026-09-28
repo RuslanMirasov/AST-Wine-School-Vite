@@ -88,22 +88,16 @@
 }
 
 .a11y-theme-dark {
-  .preloader {
-    background: var(--blue);
-  }
-
   .preloader-center {
     .preloader-logo {
-      color: var(--magenta);
-
       &:before {
-        border-top: 2px solid var(--white);
-        border-right: 2px solid var(--white);
+        border-top: 2px solid var(--blue);
+        border-right: 2px solid var(--blue);
       }
     }
 
     p {
-      color: var(--white);
+      color: var(--blue);
     }
   }
 }

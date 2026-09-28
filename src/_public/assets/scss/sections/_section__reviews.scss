@@ -199,7 +199,7 @@
       justify-content: space-between;
       align-items: flex-end;
       > .title {
-        max-width: 200px;
+        max-width: calc(100% - 130px);
       }
 
       .button {
@@ -268,11 +268,8 @@
   }
 
   &.a11y-theme-dark {
-    .review {
-      background-color: var(--blue);
-    }
-    .review-person-image {
-      background-color: var(--blue);
+    .stars {
+      color: var(--blue);
     }
   }
 }

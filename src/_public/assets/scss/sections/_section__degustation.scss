@@ -1,12 +1,30 @@
 .section--degustation-and-seminars {
-  .content-list .content-list__item.col-3:last-child {
-    flex: none;
-    max-width: 318px;
-    width: 318px;
-    min-width: 318px;
-    min-height: 300px;
-    @media (max-width: 767px) {
-      display: none;
+  .content-list .content-list__item.col-3 {
+    @media (max-width: 1023px) {
+      flex: 1;
+      min-width: 50%;
+      max-width: 100%;
+      .content {
+        min-height: 100px;
+      }
+    }
+    &:last-child {
+      flex: none;
+      max-width: 318px;
+      width: 318px;
+      min-width: 318px;
+      min-height: 300px;
+      @media (max-width: 1279px) {
+        width: 296px;
+        min-width: 296px;
+      }
+      @media (max-width: 1023px) {
+        width: 310px;
+        min-width: 310px;
+      }
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
   }
   .content {
@@ -44,6 +62,25 @@
       max-width: 318px;
       min-height: 200px;
     }
+    @media (max-width: 1023px) {
+      &.image-only {
+        width: 260px;
+        max-width: 260px;
+      }
+      &:last-child {
+        min-width: 100%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      min-width: 100%;
+      &.image-only {
+        width: 420px;
+        max-width: 100%;
+        min-width: 260px;
+      }
+    }
+
     &:last-child {
       @media (min-width: 1024px) {
         min-width: 820px;
@@ -64,13 +101,13 @@
 }
 
 // ТЕМНАЯ ТЕМА
-.a11y-theme-dark {
-  .section--degustation-and-seminars {
-    .text {
-      &.fs-14 {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: var(--white);
-      }
-    }
-  }
-}
+// .a11y-theme-dark {
+//   .section--degustation-and-seminars {
+//     .text {
+//       &.fs-14 {
+//         background-color: rgba(255, 255, 255, 0.1);
+//         color: var(--white);
+//       }
+//     }
+//   }
+// }
