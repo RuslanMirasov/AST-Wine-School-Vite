@@ -8,6 +8,7 @@ export const initSelectFields = () => {
       searchEnabled: false,
       shouldSort: false,
       allowHTML: true,
+      itemSelectText: '',
     });
   });
 };

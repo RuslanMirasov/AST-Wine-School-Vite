@@ -419,9 +419,9 @@ fieldset + .inputError {
 }
 
 // SELECT
-$select_height: var(--fs-54); //54px;
+$select_height: var(--fs-50); //54px;
 $select_background: var(--white);
-$select_color: var(--grey-dark);
+$select_color: var(--blue);
 $select_border_radius: var(--fs-16);
 $select_border: 1px solid var(--grey-border);
 $select_font_size: var(--fs-16);
@@ -432,228 +432,92 @@ $select_text_align: left;
 $select_padding: 0px var(--fs-16);
 
 .choices {
-  background: none;
-  border-radius: $select_border_radius;
+  color: $select_color;
   width: 100%;
-  height: $select_height !important;
-  background: $select_background;
-  font-family: $select_font_family;
-  text-align: $select_text_align;
-  border: $select_border;
-  margin: 0 auto;
-  z-index: 10;
-  transition: border 0.3s var(--cubic);
-  &.is-open,
-  &.is-focused {
-    border-radius: $select_border_radius $select_border_radius $select_border_radius $select_border_radius;
-    border: 1px solid var(--magenta);
-    .choices__inner {
-      border-radius: $select_border_radius $select_border_radius $select_border_radius $select_border_radius;
-    }
+  height: $select_height;
+
+  &[data-type*='select-one']::after {
+    content: '';
+    width: var(--fs-24);
+    height: var(--fs-24);
+    border: none;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    background: url('../img/svg/select.svg') no-repeat center center;
+    transition: transform 0.3s;
+    transform: translateY(-50%) rotate(0deg);
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .choices__inner {
-    background: none !important;
-  }
-
-  &.invalid {
-    border: 1px solid var(--invalid);
-  }
-
-  &.is-focused {
-    &.invalid {
-      border: $select_border;
-    }
-  }
-}
-
-.choices__placeholder {
-  opacity: 1;
-}
-
-.choices[data-type*='select-one'] .choices__input {
-  padding: 0;
-  border-bottom: none;
-  margin: 0;
-}
-// Видимая часть select (заголовок)
-.choices__inner {
-  width: calc(100% - 40px);
-  text-align: $select_text_align;
-  border: none;
-  padding: 0 !important;
-  border-radius: $select_border_radius $select_border_radius $select_border_radius $select_border_radius;
-  font-size: $select_font_size;
-  font-weight: $select_font_weight;
-  color: $select_color;
-  overflow: hidden;
-  .choices__item {
-    b {
-      display: none !important;
-    }
-  }
-}
-
-// Обёртка для списка опций
-.choices__list {
-  border: none !important;
-  overflow: hidden;
-  padding: 0px;
-  background: none;
-  &.choices__list--single {
-    background: none !important;
-    padding: $select_padding !important;
-    > .choices__item {
-      margin: 0;
-      height: $select_height;
-      padding: 0px !important;
-      font-size: $select_font_size;
-      margin-top: 0;
-    }
-  }
-}
-
-// Выпадающий список
-.choices__list--dropdown {
-  left: -1px;
-  top: calc(100% + 10px) !important;
-  width: calc(100% + 2px) !important;
-  border-radius: $select_border_radius $select_border_radius $select_border_radius $select_border_radius !important;
-  border: none !important;
-  border-top: $select_border !important;
-  border-left: $select_border !important;
-  border-right: $select_border !important;
-  border-bottom: $select_border !important;
-  font-size: $select_font_size !important;
-  font-weight: 500;
-  text-align: left;
-  background: $select_background !important;
-  box-shadow: 0px 8px 24px rgba(38, 46, 64, 0.18);
-  padding: 8px;
-  transition:
-    border-left 0.3s var(--cubic),
-    border-right 0.3s var(--cubic),
-    border-bottom 0.3s var(--cubic);
-  &.is-active {
-    border-top: 1px solid var(--grey-border) !important;
-    border-left: 1px solid var(--grey-border) !important;
-    border-right: 1px solid var(--grey-border) !important;
-    border-bottom: 1px solid var(--grey-border) !important;
-  }
-  .choices__placeholder {
-    display: none !important;
-  }
-  .choices__item {
-    flex-wrap: wrap;
-    background: none !important;
-    background-color: none !important;
-    opacity: 1;
-    font-size: $select_font_size !important;
-    line-height: 1.1;
-    font-weight: 500;
-    border-radius: 10px;
-    height: auto !important;
-    padding: 0px !important;
-    b {
-      display: block !important;
-      font-size: $select_dropdown_font_size;
-      margin-top: 4px;
-      font-weight: 400;
-      width: 100%;
-      color: $select_color;
-    }
-
-    &.is-highlighted {
-      color: var(--magenta);
-      background: #f8e8f2 !important;
-      b {
-        color: $select_color;
-      }
-    }
-  }
-}
-
-// Элемент внутри списка
-.choices__item {
-  display: block;
-  background: none !important;
-  background-color: none !important;
-  box-shadow: none;
-  font-size: $select_font_size !important;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 !important;
-  color: $select_color;
-  &.choices__item--selectable {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
     height: $select_height;
-    padding: 8px 12px !important;
-  }
-  &:before,
-  &:after {
-    content: none !important;
-  }
-}
-.choices[data-type*='select-one'] {
-  background: $select_background !important;
-  background-color: $select_background !important;
-}
-.choices[data-type*='select-one']::after {
-  width: 24px;
-  height: 24px;
-  border: none !important;
-  margin: 0 !important;
-  top: 50%;
-  right: 16px;
-  background: url('../img/svg/select.svg') no-repeat center center;
-  transform: translate(0px, -50%) rotate(0deg);
-  transition: 0.3s;
-}
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: none;
 
-.choices.is-open[data-type*='select-one']::after {
-  transform: translate(0px, -50%) rotate(180deg);
-}
-
-.module-card-form,
-.curse-hero {
-  .choices {
-    background: var(--grey-light) !important;
-    height: 40px !important;
-    border-radius: 8px !important;
-    border: 1px solid var(--grey-light);
-    &.is-open,
-    &.is-focused {
-      border-radius: 8px;
-      border: 1px solid var(--magenta);
-      .choices__inner {
-        border-radius: 8px;
+    .choices__list.choices__list--single {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: center;
+      height: $select_height;
+      padding: 0px var(--fs-16);
+      margin: 0;
+      background: $select_background;
+      border: 1px solid var(--grey-button);
+      border-radius: $select_border_radius;
+      b {
+        display: none;
+      }
+      .choices__item.choices__item--selectable {
+        font-size: var(--fs-16);
+        font-weight: 400;
+        line-height: 1.3;
+        font-family: var(--font);
       }
     }
+  }
 
-    .choices__inner {
-      background: none !important;
-    }
-
-    &.invalid {
-      border: 1px solid var(--invalid);
-    }
-
-    &.is-focused {
-      &.invalid {
-        border: 1px solid var(--grey-light);
+  .choices__list.choices__list--dropdown {
+    border: 1px solid var(--grey-button);
+    border-radius: var(--fs-16);
+    box-shadow: 0px 8px 24px rgba(38, 46, 64, 0.18);
+    padding: var(--fs-8);
+    .choices__item--selectable {
+      font-style: 14px;
+      font-weight: 400;
+      line-height: 1;
+      font-family: var(--font);
+      padding: 8px 12px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0);
+      b {
+        display: block;
+        width: 100%;
+        font-size: 12px;
+        font-weight: 400;
+        font-family: var(--font);
+        color: var(--grey-text);
+        margin-top: 4px;
       }
-    }
-
-    .choices__list {
-      &.choices__list--single {
-        > .choices__item {
-          height: 2.375rem; //38px
-          color: var(--blue);
+      &:hover {
+        background-color: var(--magenta-light);
+        color: var(--magenta);
+        font-weight: 700;
+        b {
+          font-weight: 400;
         }
       }
+    }
+  }
+
+  &.is-open {
+    &[data-type*='select-one']::after {
+      transform: translateY(-50%) rotate(180deg);
     }
   }
 }
@@ -686,6 +550,7 @@ $select_padding: 0px var(--fs-16);
     justify-content: space-between;
     width: 112px;
     height: var(--fs-36);
+    z-index: 0;
 
     .input {
       border-radius: 100px;

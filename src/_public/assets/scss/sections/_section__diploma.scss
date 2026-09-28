@@ -1,7 +1,6 @@
 .diploma {
   min-width: 100%;
-  padding: var(--fs-40);
-  padding-left: var(--fs-64);
+  min-height: 276px;
   .logo-background {
     opacity: 0.6;
   }
@@ -24,7 +23,7 @@
   right: var(--fs-64);
   bottom: 0px;
   z-index: 0;
-  transform: rotate(4deg) translateY(4%);
+  transform: rotate(4deg) translateY(14%);
   transition: 0.5s transform var(--cubic);
   border-radius: 10px;
 }
@@ -33,7 +32,7 @@
   .content {
     &:hover {
       .certificat {
-        transform: rotate(4deg) translateY(-6%);
+        transform: rotate(4deg) translateY(0%);
       }
     }
   }
@@ -41,8 +40,6 @@
 
 @media (max-width: 1279px) {
   .diploma {
-    padding: var(--fs-32);
-    padding-left: var(--fs-32);
     .content-text {
       width: 60%;
     }
@@ -74,8 +71,6 @@
 
 @media (max-width: 767px) {
   .diploma {
-    padding: var(--fs-32) var(--fs-20);
-    padding-left: var(--fs-20);
     .content-text {
       width: 100%;
     }

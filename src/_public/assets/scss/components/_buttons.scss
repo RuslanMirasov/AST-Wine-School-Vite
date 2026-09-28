@@ -170,11 +170,11 @@
     border: 1px solid var(--grey-button);
     @media (hover: hover) {
       &:hover {
-        border: 1px solid var(--blue);
+        border: 1px solid var(--magenta);
       }
     }
     &:focus-visible {
-      border: 1px solid var(--blue);
+      border: 1px solid var(--magenta);
     }
   }
 
@@ -194,10 +194,10 @@
   }
 
   &.button-pdf {
-    background-color: var(--grey-button);
+    background-color: var(--grey-light);
     color: var(--grey-medium);
     gap: 1rem;
-    padding: var(--fs-20) var(--fs-32);
+    padding: var(--fs-20) var(--fs-24);
     span {
       color: var(--blue);
       font-size: var(--fs-16);

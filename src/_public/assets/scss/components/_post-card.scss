@@ -17,7 +17,6 @@
   .text {
     display: block;
     width: 100%;
-    line-height: 1;
   }
 
   .tags {
@@ -40,7 +39,8 @@
     }
   }
 
-  > .price-and-btn {
+  > .price-and-btn,
+  .buttons {
     margin-top: auto;
   }
   // > .icon-list {

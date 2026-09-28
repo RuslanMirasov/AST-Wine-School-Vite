@@ -1,11 +1,46 @@
-.you-money {
-  padding: var(--fs-40);
-  @media (max-width: 1023px) {
-    padding: var(--fs-24) var(--fs-20);
+.section--pay-methods {
+  .container {
+    gap: var(--fs-35);
+    @media (max-width: 767px) {
+      gap: var(--fs-24);
+    }
   }
 }
 
-.pay-methods {
+.you-money {
+  padding: var(--fs-40);
+  min-width: 45%;
+  min-height: 300px;
+  @media (max-width: 1023px) {
+    padding: var(--fs-24) var(--fs-20);
+  }
+  @media (max-width: 767px) {
+    min-width: 100%;
+    min-height: 30px;
+  }
+
+  .title,
+  .text {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .text {
+    max-width: 374px;
+    color: var(--grey-text);
+  }
+
+  .logo-background {
+    right: 0px;
+    top: 50%;
+    z-index: 0;
+    transform: translate(12%, -50%);
+  }
+}
+
+.pay-methods-logos {
   display: flex;
   position: relative;
   width: 100%;
@@ -13,42 +48,14 @@
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  gap: var(--fs-16) var(--fs-32);
+  gap: var(--fs-12);
   margin-top: 24px;
-
-  .pay-methods-logos {
-    display: inline-flex;
-    position: relative;
-    width: auto;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    gap: var(--fs-14);
-    img {
-      height: 42px;
-      @media (max-width: 767px) {
-        height: 32px;
-      }
-    }
-  }
-
-  .text {
-    flex: 1;
-    display: inline-block;
-    width: auto;
-    color: var(--grey-text);
-    line-height: 1.5;
-    @media (max-width: 1279px) {
-      flex: auto;
-      display: inline-block;
-    }
-  }
-
-  .magenta-link {
-    margin-left: auto;
-    @media (max-width: 1023px) {
-      margin-left: 0px;
+  margin-bottom: 24px;
+  z-index: 2;
+  img {
+    height: 42px;
+    @media (max-width: 767px) {
+      height: 32px;
     }
   }
 }

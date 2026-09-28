@@ -11,9 +11,12 @@
 .interface-image {
   display: block;
   width: auto;
-  border-radius: 16px;
   cursor: pointer;
   pointer-events: all;
+  border-radius: var(--fs-50);
+  @media (max-width: 767px) {
+    border-radius: var(--fs-30);
+  }
 }
 
 .gallery-image {

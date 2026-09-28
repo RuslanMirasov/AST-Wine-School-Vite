@@ -108,6 +108,11 @@
     line-height: 1.2;
   }
 
+  &.fs-32 {
+    font-size: var(--fs-32);
+    line-height: 1.2;
+  }
+
   &.white {
     color: var(--white);
   }

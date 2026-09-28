@@ -1,12 +1,9 @@
 .curse-description {
   flex-direction: row;
   flex-wrap: wrap;
-  gap: var(--fs-40);
-  padding: var(--fs-32);
+  gap: var(--fs-40) var(--fs-40);
 
   .content-text.gap--24 {
-    width: 100%;
-    max-width: calc(100% - 40px - 598px);
     flex: 1;
   }
 

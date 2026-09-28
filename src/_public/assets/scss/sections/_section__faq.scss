@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  padding: 40px;
+  padding: var(--fs-40);
   border-radius: var(--fs-50);
   background-color: var(--grey-promo);
 }

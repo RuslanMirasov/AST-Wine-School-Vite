@@ -6,6 +6,14 @@
         margin-left: 0px;
       }
     }
+    @media (max-width: 767px) {
+      > .title {
+        width: 100%;
+      }
+      .arrows {
+        margin-left: auto;
+      }
+    }
   }
 
   .swiper {
@@ -15,14 +23,17 @@
         opacity: 1;
         pointer-events: auto;
       }
+      @media (min-width: 1920px) {
+        &.swiper-slide-active + .swiper-slide + .swiper-slide + .swiper-slide {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+      @media (max-width: 767px) {
+        width: calc(100vw - 32px);
+        max-width: 354px;
+      }
     }
-  }
-
-  .title {
-    line-height: 1.3;
-  }
-  .text {
-    line-height: 1.5;
   }
 
   a.magenta-link {

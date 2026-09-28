@@ -50,6 +50,12 @@
   &.blue {
     color: rgba(5, 67, 189, 0.078);
   }
+  &.grey {
+    color: var(--grey-promo);
+    opacity: 0.4;
+    width: 480px;
+    height: 480px;
+  }
 
   &.large {
     width: 694px;

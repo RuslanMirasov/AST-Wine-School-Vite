@@ -132,6 +132,10 @@
     gap: var(--fs-24);
   }
 
+  &.gap--36 {
+    gap: var(--fs-36);
+  }
+
   &.va--c {
     margin: auto;
   }
@@ -326,16 +330,8 @@
   }
 }
 
-// .a11y-theme-dark {
-//   .content {
-//     background-color: var(--blue);
-//     color: var(--white);
-//   }
-// }
-
-// .a11y-theme-light {
-//   .content {
-//     background-color: var(--white);
-//     color: var(--black);
-//   }
-// }
+.a11y-theme-dark {
+  .content.grey {
+    background-color: var(--white);
+  }
+}
