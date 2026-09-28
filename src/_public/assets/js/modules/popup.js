@@ -141,7 +141,7 @@ export const popup = {
       }
 
       const isBackdropClick = e.target === this._backdrop && mousedownTarget === this._backdrop;
-      const isCloseButton = e.target.hasAttribute('data-popup-close');
+      const isCloseButton = !!e.target.closest('[data-popup-close]');
 
       if ((isBackdropClick || isCloseButton) && !this._isLocked()) {
         this.close();

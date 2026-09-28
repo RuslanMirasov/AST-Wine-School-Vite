@@ -1,13 +1,13 @@
 <!--ADD REVIEW POPUP-->
 <div class="popup-content big" role="dialog" aria-modal="true" aria-labelledby="review-title" id="add-review">
-  <h2 class="title title--24 bold" id="review-title">
-    Отзыв
+  <h2 class="popup-title" id="review-title">
+    <span>Отзыв</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
     </button>
   </h2>
 
-  <h2 class="title title--18 bold">Быстрый старт: о вине за 3 встречи</h2>
+  <h2 class="popup-title fs-18">Быстрый старт: о вине за 3 встречи</h2>
 
   <script>
     function onReviewSubmit(e) {
@@ -16,30 +16,30 @@
     }
   </script>
 
-  <form data-form action="#" class="form form--grey" novalidate onsubmit="onReviewSubmit(event)">
+  <form data-form action="#" class="form" novalidate onsubmit="onReviewSubmit(event)">
     <label class="label">
       <span class="label-text">Ваш отзыв</span>
       <textarea name="review" class="input input--textarea" placeholder="Расскажите, что вам запомнилось на курсе" required></textarea>
     </label>
-    <p class="popup-subtitle">Оставляя отзыв, вы соглашаетесь с условиями использования сайта.</p>
-    <button type="submit" class="button medium magenta">Оставить отзыв</button>
+    <p class="popup-subtitle">Оставляя отзыв, вы соглашаетесь с <a href="#" class="link">условиями использования сайта</a>.</p>
+    <button type="submit" class="button"><span>Оставить отзыв</span></button>
   </form>
 </div>
 
 <!--REVIEW SUCCESS POPUP-->
 <div class="popup-content" id="add-review-success" role="dialog" aria-modal="true" aria-labelledby="review-success-title">
-  <h2 class="title title--24 bold" id="review-success-title">
-    Отзыв
+  <h2 class="popup-title" id="review-success-title">
+    <span>Отзыв</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
     </button>
   </h2>
 
-  <h2 class="title title--18 bold">Быстрый старт: о вине за 3 встречи</h2>
+  <h2 class="popup-title fs-18">Быстрый старт: о вине за 3 встречи</h2>
 
   <p class="text full ta--l">Спасибо! Ваш отзыв отправлен. Он&nbsp;появится после прохождения проверки.</p>
 
   <div class="buttons ta--l">
-    <button type="button" class="button medium magenta" data-popup-close>Закрыть</button>
+    <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
   </div>
 </div>

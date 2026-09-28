@@ -27,17 +27,6 @@
     top: 0px;
     z-index: 2;
     padding: var(--fs-8);
-
-    .tag {
-      flex-shrink: 0;
-      background-color: var(--white);
-      padding: var(--fs-8) var(--fs-16);
-      font-weight: 500;
-      border: 1px solid var(--grey-button);
-      svg {
-        display: block;
-      }
-    }
   }
 
   &.horisontal {

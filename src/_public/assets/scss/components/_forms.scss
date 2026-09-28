@@ -8,14 +8,14 @@
   --input-font-size: var(--fs-16);
   --input-font-weight: 400;
   --input-text-transform: auto;
-  --input-height: var(--fs-54); //54px
+  --input-height: var(--fs-50); //54px
 
-  --input-padding: 10px var(--fs-16); //16px
+  --input-padding: var(--fs-14) var(--fs-16); //16px
   --input-background: var(--white);
-  --input-border: 1px solid var(--grey-border);
+  --input-border: 1px solid var(--grey-button);
   --input-border-radius: var(--fs-16); //16px
   --input-color: var(--blue);
-  --input-placeholder-color: var(--grey-dark);
+  --input-placeholder-color: var(--grey-text);
   --input-placeholder-opacity: 1;
   --invalid-border: 1px solid var(--invalid);
   .form--grey {
@@ -30,10 +30,10 @@
   --label-font-size: var(--fs-14);
   --label-font-weight: 400;
   --label-opacity: 1;
-  --label-color: var(--grey-dark);
-  --label-margin-bottom: var(--fs-8);
+  --label-color: var(--grey-text);
+  --label-margin-bottom: var(--fs-9);
   .form--grey {
-    --label-font-weight: 700;
+    --label-font-weight: 400;
     --label-color: var(--blue);
   }
 
@@ -190,7 +190,6 @@ input[type='number'] {
     color: var(--blue);
     text-align: center;
     font-size: var(--input-font-size);
-    background-color: var(--grey-light);
     padding: 0px var(--fs-36);
     z-index: 1;
   }
@@ -700,9 +699,10 @@ $select_padding: 0px var(--fs-16);
       height: var(--fs-36);
       border-radius: var(--fs-36);
       border: 2px solid var(--grey-light);
-      background-color: var(--white);
+      background-color: var(--grey-light);
       flex-wrap: wrap;
       font-size: var(--fs-18);
+      line-height: 1;
       justify-content: center;
       align-items: center;
       align-content: center;

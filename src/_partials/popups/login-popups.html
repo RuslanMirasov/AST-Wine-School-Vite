@@ -1,6 +1,6 @@
 <!--LOGIN POPUP-->
 <div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="login-title" id="login">
-  <h2 class="title title--24 bold" id="login-title">
+  <h2 class="popup-title" id="login-title">
     Вход
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
@@ -14,30 +14,40 @@
     }
   </script>
 
-  <form data-form action="#" class="form form--grey" novalidate onsubmit="onLoginSubmit(event)">
+  <form data-form action="#" class="form" novalidate onsubmit="onLoginSubmit(event)">
     <label class="label">
       <span class="label-text">Email</span>
       <input type="email" name="email" class="input" placeholder="name@mail.ru" required autocomplete="email" />
     </label>
-    <button type="submit" class="button medium magenta">Далее</button>
+    <button type="submit" class="button"><span>Далее</span></button>
   </form>
 
   <div class="buttons group">
     <p class="popup-subtitle">Войти с помощью:</p>
-    <button type="button" class="button blue-border medium full">Яндекс ID</button>
-    <button type="button" class="button blue-border medium full">ВКонтакте</button>
-    <button type="button" class="button blue-border medium full">MAX</button>
+    <button type="button" class="button blue-border full">
+      <svg width="20" height="20"><use href="/assets/img/sprite.svg#yandex-color"></use></svg>
+      <span>Яндекс ID</span>
+    </button>
+    <button type="button" class="button blue-border full">
+      <svg width="20" height="20"><use href="/assets/img/sprite.svg#vk-color"></use></svg>
+      <span>ВКонтакте</span>
+    </button>
+    <button type="button" class="button blue-border full">
+      <svg width="20" height="20"><use href="/assets/img/svg/max.svg"></use></svg>
+      <span>MAX</span>
+    </button>
   </div>
 </div>
 
 <!--LOGIN CODE POPUP-->
 <div class="popup-content" id="login-code" role="dialog" aria-modal="true" aria-labelledby="login-code-title">
-  <h2 class="title title--24 bold" id="login-title">
+  <h2 class="popup-title" id="login-title">
     Вход
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
     </button>
   </h2>
+
   <p class="popup-subtitle">Мы отправили проверочный код на&nbsp;ваш&nbsp;email. Введите&nbsp;его:</p>
 
   <script>
@@ -53,7 +63,7 @@
     }
   </script>
 
-  <form data-form action="#" class="form form--grey" novalidate onsubmit="onLoginCodeSubmit(event)">
+  <form data-form action="#" class="form" novalidate onsubmit="onLoginCodeSubmit(event)">
     <label class="label label-code">
       <input type="number" name="code" class="input" data-code="4" data-rule="code" required tabindex="-1" aria-hidden="true" />
     </label>
@@ -61,23 +71,16 @@
     <button type="button" class="link" data-popup-open="login">Назад</button>
 
     <div class="buttons ta--l">
-      <button type="submit" class="button medium magenta">Подтвердить</button>
+      <button type="submit" class="button"><span>Подтвердить</span></button>
     </div>
   </form>
 </div>
 
 <!--LOGIN SUCCESS POPUP-->
 <div class="popup-content" id="login-success" role="dialog" aria-modal="true" aria-labelledby="login-success-title">
-  <h2 class="title title--24 bold" id="login-title">
-    Вход
-    <button class="popup-close" data-popup-close aria-label="Закрыть">
-      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
-    </button>
-  </h2>
-
   <p class="text full ta--l">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
 
   <div class="buttons ta--l">
-    <button type="button" class="button medium magenta" data-popup-close>Закрыть</button>
+    <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
   </div>
 </div>

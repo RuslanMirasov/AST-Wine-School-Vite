@@ -1,7 +1,7 @@
 <!--SUBSCRIBE POPUP-->
 <div class="popup-content" id="subscribe" role="dialog" aria-modal="true" aria-labelledby="subscribe-title">
-  <h2 class="title title--24 bold" id="login-title">
-    Подписка на рассылку
+  <h2 class="popup-title" id="login-title">
+    <span>Подписка на рассылку</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
     </button>
@@ -16,7 +16,7 @@
     }
   </script>
 
-  <form data-form action="#" class="form form--grey" novalidate onsubmit="onSubscribeFormSubmit(event)">
+  <form data-form action="#" class="form" novalidate onsubmit="onSubscribeFormSubmit(event)">
     <label class="label">
       <span class="label-text">Email</span>
       <input type="email" name="email" placeholder="Введите email" class="input subscribe-input" required autocomplete="email" />
@@ -32,23 +32,23 @@
     </fieldset>
 
     <div class="buttons ta--l">
-      <button type="submit" class="button medium magenta">Подписаться</button>
+      <button type="submit" class="button"><span>Подписаться</span></button>
     </div>
   </form>
 </div>
 
 <!--SUBSCRIBE SUCCESS POPUP-->
 <div class="popup-content" id="subscribe-success" role="dialog" aria-modal="true" aria-labelledby="subscribe-success-title">
-  <h2 class="title title--24 bold" id="login-title">
-    Подписка оформлена
+  <h2 class="popup-title" id="login-title">
+    <span>Подписка оформлена</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
     </button>
   </h2>
 
-  <p class="popup-subtitle">Спасибо! Ваша заявка принята.</p>
+  <p class="text full ta--l">Спасибо! Ваша заявка принята.</p>
 
-  <div class="buttons ta--l">
-    <button type="submit" class="button medium magenta" data-popup-close>Закрыть</button>
+  <div class="buttons ta--l full">
+    <button type="submit" class="button" data-popup-close><span>Закрыть</span></button>
   </div>
 </div>

@@ -25,8 +25,12 @@
     }
   }
 
+  .input {
+    height: var(--fs-54);
+  }
+
   .input.input--textarea {
-    height: 5.625rem;
+    height: 5.7rem;
   }
 }
 

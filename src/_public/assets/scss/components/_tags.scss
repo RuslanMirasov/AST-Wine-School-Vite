@@ -29,7 +29,7 @@
     line-height: 1;
     font-weight: 700;
     z-index: 2;
-    font-size: var(--fs-13);
+    font-size: var(--fs-14);
     padding: var(--fs-8) var(--fs-16);
 
     svg {
@@ -48,24 +48,7 @@
 
     //1366
     @media (max-width: 1439px) {
-      font-size: var(--fs-12);
-      padding: var(--fs-8) var(--fs-14);
-
-      svg {
-        width: var(--fs-14);
-        height: var(--fs-14);
-      }
-    }
-
-    //375
-    @media (max-width: 767px) {
-      font-size: var(--fs-12);
-      padding: var(--fs-8) var(--fs-12);
-
-      svg {
-        width: var(--fs-14);
-        height: var(--fs-14);
-      }
+      font-weight: 500;
     }
 
     &.white {
