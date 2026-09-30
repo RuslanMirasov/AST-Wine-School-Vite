@@ -13,19 +13,14 @@
     gap: var(--fs-16);
   }
 
+  .tags {
+    gap: var(--fs-12);
+  }
+
   .title,
   .text {
     display: block;
     width: 100%;
-  }
-
-  .tags {
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    top: 0px;
-    z-index: 2;
-    padding: var(--fs-8);
   }
 
   &.horisontal {
@@ -50,7 +45,7 @@
 
   &.minify {
     &.horisontal {
-      padding: var(--fs-32);
+      padding: var(--fs-24);
 
       .title {
         line-height: 1.25;
@@ -65,9 +60,22 @@
       }
 
       .post-card-image {
-        max-width: 220px;
+        max-width: 260px;
         &:before {
           padding-top: 72%;
+        }
+      }
+
+      .post-card-content {
+        gap: var(--fs-10);
+        .buttons {
+          margin-top: var(--fs-8);
+          @media (max-width: 419px) {
+            gap: var(--fs-8);
+            .button {
+              width: 100%;
+            }
+          }
         }
       }
     }
@@ -85,6 +93,15 @@
     display: block;
     width: 100%;
     padding-top: 60%;
+  }
+
+  .tags {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    padding: var(--fs-8);
   }
 
   img,
@@ -156,32 +173,6 @@
 
   > .magenta-link {
     font-weight: 400;
-  }
-}
-
-.search-tags {
-  display: flex;
-  position: relative;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  gap: var(--fs-12);
-  span {
-    display: inline-block;
-    width: auto;
-    line-height: 1.2;
-    font-size: var(--fs-14);
-    color: var(--grey-text);
-    &.magenta {
-      color: var(--white);
-      background-color: var(--magenta);
-      border-radius: 100px;
-      font-size: var(--fs-12);
-      line-height: 1.2;
-      padding: 4px var(--fs-12);
-    }
   }
 }
 

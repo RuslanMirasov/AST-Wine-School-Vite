@@ -45,6 +45,10 @@
   border-radius: var(--fs-50);
   padding: var(--fs-30);
 
+  &.auto {
+    height: auto;
+  }
+
   &.pad--40 {
     padding: var(--fs-40);
   }
@@ -68,6 +72,9 @@
   }
   &.gap--12 {
     gap: var(--fs-12);
+  }
+  &.gap--8 {
+    gap: var(--fs-8);
   }
 
   &.row {
@@ -99,6 +106,10 @@
       color: rgba(255, 255, 255, 0.1);
     }
   }
+  &.no--bg {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid var(--grey-promo);
+  }
 }
 
 .content-text {
@@ -110,6 +121,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: var(--fs-16);
+
+  &.gap--8 {
+    gap: var(--fs-8);
+  }
 
   &.gap--12 {
     gap: var(--fs-12);

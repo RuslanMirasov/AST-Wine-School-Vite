@@ -17,9 +17,17 @@
     width: auto;
   }
 
-  .tag {
+  .text {
+    display: inline-block;
+    width: auto;
+  }
+
+  li {
     display: inline-flex;
     width: auto;
+  }
+
+  .tag {
     align-items: center;
     gap: 0.5rem;
     color: var(--black);

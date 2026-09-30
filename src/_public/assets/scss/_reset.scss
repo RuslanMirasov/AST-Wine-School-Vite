@@ -161,6 +161,12 @@ button {
   &.gap--16 {
     gap: var(--fs-16);
   }
+  &.gap--24 {
+    gap: var(--fs-24);
+  }
+  &.gap--40 {
+    gap: var(--fs-40);
+  }
 
   @media (min-width: 1920px) {
     max-width: 1720px;
@@ -209,10 +215,14 @@ button {
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  gap: 8px 2rem;
+  gap: var(--fs-8) var(--fs-32);
   list-style: disc;
   padding-left: 1.2rem;
   color: var(--magenta);
+  &.no--dot {
+    list-style: none;
+    padding-left: 0px;
+  }
 
   li {
     width: 100%;

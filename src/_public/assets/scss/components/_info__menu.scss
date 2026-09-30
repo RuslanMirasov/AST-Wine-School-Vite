@@ -1,0 +1,25 @@
+.info-menu {
+  background-color: var(--grey-promo);
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--fs-16);
+  z-index: 1;
+
+  a {
+    display: block;
+    font-size: 16px;
+    padding: var(--fs-12) var(--fs-16);
+    background-color: rgba(0, 0, 0, 0);
+    &.active,
+    &:focus-visible {
+      background-color: #cdd4e2;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #cdd4e2;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 .search-form {
   width: 100%;
-  height: var(--fs-35);
+  height: var(--fs-40);
   display: inline-flex;
   gap: var(--fs-12);
 
@@ -9,27 +9,16 @@
   }
 
   .input {
-    height: var(--fs-35);
+    height: 100%;
     line-height: 1;
     width: 100%;
-    border-radius: var(--fs-12);
     font-size: var(--fs-14);
     padding: 0px var(--fs-40);
     background-color: var(--white);
+    border-radius: var(--fs-16);
     &:not(:focus):not(:focus-visible):not(.invalid) {
       border: 1px solid var(--grey-border);
     }
-  }
-
-  .inputError {
-    position: absolute;
-    pointer-events: none;
-    max-width: 60%;
-    min-height: var(--fs-33);
-    line-height: var(--fs-33);
-    background-color: var(--white);
-    left: var(--fs-40);
-    top: -1px;
   }
 }
 
@@ -39,8 +28,8 @@
   top: 0px;
   left: 0px;
   width: var(--fs-40);
-  height: var(--fs-35);
-  border-radius: var(--fs-12);
+  height: 100%;
+  border-radius: var(--fs-16);
   border: 1px solid rgba(0, 0, 0, 0);
   flex-wrap: wrap;
   justify-content: center;
@@ -70,14 +59,14 @@
   top: 0px;
   cursor: pointer;
   width: var(--fs-44);
-  height: var(--fs-35);
+  height: calc(100% - 1px);
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
   z-index: 5;
   outline: none;
-  border-radius: var(--fs-12);
+  border-radius: var(--fs-16);
 
   &:focus-visible {
     border: 1px solid var(--magenta);

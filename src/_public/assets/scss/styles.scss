@@ -3,7 +3,7 @@
 @use 'a11y';
 @use 'components/preloader';
 @use 'reset';
-@use 'components/header-new';
+@use 'components/header';
 @use 'components/navigation';
 @use 'components/header-buttons-menu';
 @use 'components/swiper';
@@ -23,6 +23,8 @@
 @use 'components/icon-list';
 @use 'components/page-pagination';
 @use 'components/certificat-for-one';
+@use 'components/info__menu';
+@use 'sections/section__page';
 @use 'sections/section__hero';
 @use 'sections/section__welcome';
 @use 'sections/section__curses';

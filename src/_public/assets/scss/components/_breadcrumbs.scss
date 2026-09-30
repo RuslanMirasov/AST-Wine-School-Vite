@@ -8,20 +8,22 @@
   align-content: center;
   margin: 0 auto;
   margin-top: var(--fs-24);
-  max-width: 1440px;
-  padding: 0px 50px;
+  max-width: 1340px;
   @media (min-width: 1920px) {
     max-width: 1720px;
-    padding: 0px;
   }
+
   @media (max-width: 1439px) {
     max-width: 1280px;
-    padding: 0px 40px;
+    padding: 0px 20px;
   }
+
+  @media (max-width: 1151px) {
+    padding: 0px 32px;
+  }
+
   @media (max-width: 767px) {
-    max-width: 420px;
     padding: 0px 16px;
-    margin-top: var(--fs-16);
   }
   li {
     display: inline-flex;

@@ -149,7 +149,7 @@ export const initNavigationMenu = () => {
     }, 300)
   );
 
-  setActiveMenuLinks(menuLinks);
+  setActiveMenuLinks(document.querySelectorAll('.menu-link, .info-menu a'));
 };
 
 export const initMegaMenu = () => {

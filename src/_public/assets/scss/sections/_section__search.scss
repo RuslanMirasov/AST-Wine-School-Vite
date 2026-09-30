@@ -5,7 +5,7 @@
   //375
   @media (max-width: 767px) {
     .container {
-      gap: var(--fs-32);
+      gap: var(--fs-24);
     }
   }
 }
@@ -19,6 +19,16 @@
   align-items: center;
   align-content: center;
   gap: var(--fs-12);
+  @media (max-width: 767px) {
+    gap: var(--fs-8);
+    li {
+      flex: 1;
+      .search-navigation__btn {
+        width: 100%;
+        text-wrap: nowrap;
+      }
+    }
+  }
 }
 
 .search-navigation__btn {

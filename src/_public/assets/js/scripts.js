@@ -13,6 +13,7 @@ import { initAccordeons } from './modules/accordeon.js';
 import { initCookieConfirmation } from './modules/cookie-confirm.js';
 import { initGalleries } from './modules/image-gallery.js';
 import { initTabs } from './modules/tabs.js';
+import { initStickySidebar } from './modules/stickySidebar.js';
 
 popup.init();
 window.popup = popup;
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPhoneInputs('+7 000 000 00 00');
   initSelectFields();
   initDecimalInputs();
+  initStickySidebar();
   initStars();
   initAccordeons();
   initAgeConfirmation();

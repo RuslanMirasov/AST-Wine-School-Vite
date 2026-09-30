@@ -1,11 +1,13 @@
 <section class="section section--search-result" data-tabs="search-results">
   <div class="container">
-    <form action="%ROOT%search/" class="search-form" method="GET" data-form novalidate>
-      <load src="/_partials/components/header/search-form.html" />
-      <button type="submit" class="button magenta medium regular">Найти</button>
-    </form>
+    <div class="search-404">
+      <form action="%ROOT%search/" class="search-form" method="GET" data-form novalidate>
+        <load src="/_partials/components/header/search-form.html" />
+        <button type="submit" class="button"><span>Найти</span></button>
+      </form>
+    </div>
 
-    <h1 class="title title--40 upper">Результаты поиска по строке «<span>ХХХ</span>»</h1>
+    <h1 class="title title--40 upper full">Результаты поиска по строке «<span>ХХХ</span>»</h1>
 
     <ul class="search-navigation">
       <li>
@@ -38,17 +40,20 @@
             </a>
 
             <div class="post-card-content">
-              <p class="search-tags">
-                <span>Очный курс</span>
-                <span class="magenta">новинка</span>
-              </p>
+              <ul class="tags">
+                <li><p class="text fs-14 grey-medium">Очный курс</p></li>
+                <li class="tag green">
+                  <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                  Новинка
+                </li>
+              </ul>
               <h3 class="title title--24 bold">Быстрый старт: о вине за 3 встречи</h3>
               <p class="text">Всего за три встречи вы узнаете о вине всё, что нужно.</p>
-              <p class="text fs-14 grey-text">Место проведения: г. Москва, ул. Новый Арбат, д. 63</p>
+              <p class="text fs-14 grey-medium">Место проведения: г. Москва, ул. Новый Арбат, д. 63</p>
 
               <div class="buttons ta--l">
-                <button type="button" class="button small regular white-border">В лист ожидания</button>
-                <a href="#" class="magenta-link fs--16">Подробнее →</a>
+                <button type="button" class="button"><span>В лист ожидания</span></button>
+                <a href="#" class="button white-border"><span>Подробнее</span></a>
               </div>
             </div>
           </article>
@@ -61,15 +66,15 @@
             </a>
 
             <div class="post-card-content">
-              <p class="search-tags">
-                <span>Новость</span>
-              </p>
+              <ul class="tags">
+                <li><p class="text fs-14 grey-medium">Новость</p></li>
+              </ul>
               <h3 class="title title--24 bold">Весенняя акция: подарочные сертификаты с доп. скидкой 15%</h3>
               <p class="text">До 5 июня сертификаты на дегустации и частные мероприятия можно купить со скидкой 15% — отличный подарок.</p>
-              <p class="text fs-14 grey-text">20 мая 2026 г.</p>
+              <p class="text fs-14 grey-medium">20 мая 2026 г.</p>
 
               <div class="buttons ta--l">
-                <a href="#" class="magenta-link fs--16">Подробнее →</a>
+                <a href="#" class="button white-border"><span>Подробнее</span></a>
               </div>
             </div>
           </article>
@@ -82,15 +87,15 @@
             </a>
 
             <div class="post-card-content">
-              <p class="search-tags">
-                <span>Онлайн курс</span>
-              </p>
+              <ul class="tags">
+                <li><p class="text fs-14 grey-medium">Онлайн курс</p></li>
+              </ul>
               <h3 class="title title--24 bold">История виноделия</h3>
               <p class="text">В этой серии видеоуроков мы поведаем, как появилось виноделие и как оно менялось с ходом технического прогресса.</p>
-              <p class="text fs-14 grey-text">Начало: 05 мая 2026 · Онлайн</p>
+              <p class="text fs-14 grey-medium">Начало: 05 мая 2026 · Онлайн</p>
 
               <div class="buttons ta--l">
-                <a href="#" class="button small regular magenta">Подробнее →</a>
+                <a href="#" class="button white-border"><span>Подробнее</span></a>
               </div>
             </div>
           </article>
@@ -98,9 +103,9 @@
       </ul>
 
       <div class="page-pagination-wrapper">
-        <button type="button" class="button magenta">Показать еще</button>
+        <button type="button" class="button blue-light"><span>Показать еще</span></button>
 
-        <p class="text grey-text">Вы посмотрели все найденные записи.</p>
+        <!-- <p class="text grey-text">Вы посмотрели все найденные записи.</p> -->
         <load src="/_partials/components/page-pagination.html" />
       </div>
     </div>
