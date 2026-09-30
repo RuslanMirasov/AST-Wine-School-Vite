@@ -36,12 +36,41 @@
   }
 }
 
+.page-accordeon {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: var(--fs-30);
+  background-color: var(--white);
+  &.open {
+    z-index: 2;
+  }
+}
+
+.page-accordeon-head {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  position: relative;
+  gap: var(--fs-16);
+  padding: var(--fs-24) var(--fs-32);
+  .title {
+    line-height: 1.25;
+  }
+}
+
 .accordeon-text {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   gap: var(--fs-20);
-  padding: 0px var(--fs-36) var(--fs-36) var(--fs-36);
+  padding: 0px var(--fs-32) var(--fs-32) var(--fs-32);
   .text {
     width: 100%;
   }

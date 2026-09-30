@@ -327,6 +327,58 @@ button {
   }
 }
 
+.docs-list {
+  display: block;
+  width: 100%;
+  position: relative;
+  li {
+    border-top: 1px solid rgba(38, 54, 82, 0.122);
+    a {
+      display: flex;
+      position: relative;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: center;
+      gap: var(--fs-8);
+      padding: var(--fs-20) 0px;
+      .content-text {
+        b {
+          line-height: 1.1;
+        }
+        span {
+          line-height: 1.5;
+        }
+        gap: 0px;
+      }
+
+      b {
+        transition: color 0.3s var(--cubic);
+      }
+
+      svg {
+        width: var(--fs-32);
+        height: var(--fs-32);
+        flex-shrink: 0;
+      }
+      .content-text + svg {
+        transition: color 0.3s var(--cubic);
+        color: var(--grey-medium);
+        margin-left: auto;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          .content-text + svg,
+          b {
+            color: var(--magenta);
+          }
+        }
+      }
+    }
+  }
+}
+
 .a11y {
   // A++
   .main {

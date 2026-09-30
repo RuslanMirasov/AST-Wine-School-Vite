@@ -49,6 +49,10 @@
     height: auto;
   }
 
+  &.br--30 {
+    border-radius: var(--fs-30);
+  }
+
   &.pad--40 {
     padding: var(--fs-40);
   }
