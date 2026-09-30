@@ -290,6 +290,12 @@ button {
   color: var(--magenta);
   font-size: inherit;
   line-height: inherit;
+  &.with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--fs-8);
+    border: none;
+  }
 }
 
 .magenta-link {
