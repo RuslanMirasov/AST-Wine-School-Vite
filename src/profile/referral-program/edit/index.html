@@ -20,7 +20,8 @@
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
         <li><a href="%ROOT%profile/">Личный кабинет</a></li>
-        <li><span>Редактирование профиля</span></li>
+        <li><a href="%ROOT%profile/referral-program/">Реферальная программа</a></li>
+        <li><span>Редактирование</span></li>
       </ul>
 
       <section class="section pad--32">
@@ -40,7 +41,7 @@
           <!--PAGE CONTENT-->
           <div class="page-content">
             <div class="profile-content profile-info">
-              <h2 class="title title--32 upper">Профиль</h2>
+              <h2 class="title title--32 upper">Настройки выплат</h2>
 
               <form data-form action="#" class="form" novalidate>
                 <fieldset class="col--2">
@@ -62,92 +63,64 @@
 
                 <fieldset class="col--2">
                   <label class="label">
-                    <span class="label-text">Электронная почта *</span>
-                    <input
-                      type="email"
-                      name="email"
-                      class="input"
-                      placeholder="name@mail.ru"
-                      value="chekobrat@mail.ru"
-                      required
-                      autocomplete="email"
-                    />
+                    <span class="label-text">Тип получателя *</span>
+                    <select data-select name="person-type" required>
+                      <option value="физическое лицо">физическое лицо</option>
+                      <option value="юридическое лицо">юридическое лицо</option>
+                    </select>
                   </label>
 
                   <label class="label">
-                    <span class="label-text">Номер телефона *</span>
-                    <input
-                      type="tel"
-                      name="phone"
-                      class="input"
-                      required
-                      placeholder="+7 ___ ___ __ __"
-                      value="+7 900 000 00 00"
-                      autocomplete="tel"
-                    />
+                    <span class="label-text">ИНН *</span>
+                    <input type="text" name="inn" class="input" required inputmode="numeric" maxlength="12" value="0123456789" />
                   </label>
-
-                  <label class="label">
-                    <span class="label-text">Дата рождения *</span>
-                    <input type="date" name="birthday" class="input" required placeholder="__.__.____" value="2001-04-28" />
-                  </label>
-
-                  <p class="text fs-12 grey-text">Участие в мероприятиях доступно только с 18 лет</p>
                 </fieldset>
 
-                <fieldset>
+                <h3 class="title title--24 bold">Банковские реквизиты</h3>
+
+                <fieldset class="col--2">
                   <label class="label">
-                    <input name="confirmation-1" type="checkbox" class="checkbox" />
-                    <p class="label-text">
-                      <span>Получать полезные новости на мою почту</span>
-                    </p>
-                  </label>
-                  <label class="label">
+                    <span class="label-text">Расчетный счет *</span>
                     <input
-                      name="confirmation-2"
-                      type="checkbox"
-                      class="checkbox"
+                      type="text"
+                      name="checking-account"
+                      class="input"
                       required
-                      checked
-                      data-error-text="Согласие на обработку данных обязательно"
+                      inputmode="numeric"
+                      maxlength="20"
+                      value="40817810099910004320"
                     />
-                    <p class="label-text">
-                      <span>Согласен с&nbsp;<a href="#" target="_blank" class="red">Условиями обработки персональных данных</a></span>
-                    </p>
                   </label>
 
                   <label class="label">
+                    <span class="label-text">Корреспондентский счет *</span>
                     <input
-                      name="policy"
-                      type="checkbox"
-                      class="checkbox"
+                      type="text"
+                      name="correspondent-account"
+                      class="input"
                       required
-                      checked
-                      data-error-text="Принятие политики конфиденциальности обязательно"
+                      inputmode="numeric"
+                      maxlength="20"
+                      value="30101810400000000220"
                     />
-                    <p class="label-text">
-                      <span>Принимаю <a href="#" target="_blank" class="red">Политику конфиденциальности</a></span>
-                    </p>
+                  </label>
+                </fieldset>
+
+                <fieldset class="col--2">
+                  <label class="label">
+                    <span class="label-text">БИК *</span>
+                    <input type="text" name="bik" class="input" required inputmode="numeric" maxlength="9" value="044525225" />
                   </label>
 
                   <label class="label">
-                    <input
-                      name="terms-of-use"
-                      type="checkbox"
-                      class="checkbox"
-                      required
-                      checked
-                      data-error-text="Принятие пользовательского соглашения обязательно"
-                    />
-                    <p class="label-text">
-                      <span>Принимаю <a href="#" target="_blank" class="red">Пользовательское соглашение</a></span>
-                    </p>
+                    <span class="label-text">Наименование банка *</span>
+                    <input type="text" name="bank-name" class="input" required value="ПАО Сбербанк" />
                   </label>
                 </fieldset>
 
                 <div class="buttons ta--l gap--12">
                   <button type="submit" class="button"><span>Сохранить</span></button>
-                  <a href="%ROOT%profile/" class="button white-border"><span>Отмена</span></a>
+                  <a href="%ROOT%profile/referral-program/" class="button white-border"><span>Отмена</span></a>
                 </div>
               </form>
             </div>

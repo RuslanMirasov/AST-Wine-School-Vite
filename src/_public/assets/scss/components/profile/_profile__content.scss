@@ -1,7 +1,7 @@
 .profile-content {
   display: flex;
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
   width: 100%;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -29,6 +29,10 @@
         width: calc((100% - var(--fs-24)) / 2);
       }
     }
+
+    .title {
+      width: 100%;
+    }
   }
 
   .title--24,
@@ -43,6 +47,11 @@
   .title--32 {
     align-items: flex-start;
     align-content: flex-start;
+  }
+
+  > .title--24,
+  > .title--32 {
+    gap: var(--fs-6);
   }
 }
 

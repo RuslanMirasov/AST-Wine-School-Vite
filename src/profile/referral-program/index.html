@@ -42,73 +42,126 @@
             <div class="profile-content profile-info">
               <h2 class="title title--32 upper">
                 <span>Реферальный промокод</span>
-                <button type="button" class="help">
+                <button type="button" class="help" data-popup-open="referal-promo">
                   <svg width="20" height="20"><use href="/assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
+
+              <div class="profle-promocode">
+                <strong data-copy>PROMO123</strong>
+                <button type="button" class="button" data-copy-to-buffer><span>Скопировать</span></button>
+              </div>
             </div>
 
             <div class="profile-content profile-info">
               <h2 class="title title--32 upper">
                 <span>Статистика</span>
-                <button type="button" class="help">
+                <button type="button" class="help" data-popup-open="profile-statistic">
                   <svg width="20" height="20"><use href="/assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
+
+              <div class="content br--30 pad--32 grey col--2">
+                <h3 class="title title--40 magenta">156</h3>
+                <p class="text grey-text">Заказы</p>
+              </div>
+              <div class="content br--30 pad--32 grey col--2">
+                <h3 class="title title--40 magenta">220&nbsp;000&nbsp;₽</h3>
+                <p class="text grey-text">Начислено за все время</p>
+              </div>
             </div>
 
             <div class="profile-content profile-info">
               <h2 class="title title--32 upper">
                 Настройки выплат
-                <button type="button" class="help">
+                <button type="button" class="help" data-popup-open="pay-settings">
                   <svg width="20" height="20"><use href="/assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
 
-              <a href="%ROOT%profile/edit/" class="button white-border"><span>Редактировать</span></a>
+              <a href="%ROOT%profile/referral-program/edit/" class="button white-border"><span>Редактировать</span></a>
 
-              <!-- <div class="content-text gap--20 col--2">
+              <div class="content-text gap--20 col--2">
                 <p class="text">
-                  <span class="text fs-12 grey-text">Фамилия</span>
-                  Черноморепоколенопереходященский
+                  <span class="text fs-12 grey-text">Тип получателя</span>
+                  физическое лицо
                 </p>
 
                 <p class="text">
-                  <span class="text fs-12 grey-text">Имя</span>
-                  Константин
-                </p>
-
-                <p class="text">
-                  <span class="text fs-12 grey-text">Отчество</span>
-                  Братиславович
+                  <span class="text fs-12 grey-text">Ф.И.О.</span>
+                  Черноморепоколенопереходященский Константин Братиславович
                 </p>
               </div>
 
               <div class="content-text gap--20 col--2">
                 <p class="text">
-                  <span class="text fs-12 grey-text">Электронная почта</span>
-                  <a href="mailto:chekobrat@mail.ru">chekobrat@mail.ru</a>
+                  <span class="text fs-12 grey-text">ИНН</span>
+                  0123456789
+                </p>
+              </div>
+
+              <h3 class="title title--24 bold">Банковские реквизиты</h3>
+
+              <div class="content-text gap--20 col--2">
+                <p class="text">
+                  <span class="text fs-12 grey-text">Расчетный счет</span>
+                  40817810099910004320
                 </p>
 
                 <p class="text">
-                  <span class="text fs-12 grey-text">Номер телефона</span>
-                  <a href="tel:+79000000000">+7 900 000 00 00</a>
+                  <span class="text fs-12 grey-text">БИК</span>
+                  044525225
+                </p>
+              </div>
+
+              <div class="content-text gap--20 col--2">
+                <p class="text">
+                  <span class="text fs-12 grey-text">Корреспондентский счет</span>
+                  30101810400000000220
                 </p>
 
                 <p class="text">
-                  <span class="text fs-12 grey-text">Дата рождения</span>
-                  28.04.2001
+                  <span class="text fs-12 grey-text">Наименование банка</span>
+                  ПАО Сбербанк
                 </p>
-              </div> -->
+              </div>
             </div>
 
             <div class="profile-content profile-info">
               <h2 class="title title--32 upper">
                 <span>Документооборот</span>
-                <button type="button" class="help">
+                <button type="button" class="help" data-popup-open="profile-docs">
                   <svg width="20" height="20"><use href="/assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
+
+              <div class="buttons ta--l">
+                <a href="/assets/pdf/document.pdf" class="button button-pdf" target="_blank">
+                  <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                  <span>Договор присоединения (PDF)</span>
+                  <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                </a>
+              </div>
+
+              <h3 class="title title--24 bold">
+                <span>Отчетный период</span>
+                <button type="button" class="help" data-popup-open="profile-period">
+                  <svg width="20" height="20"><use href="/assets/img/sprite.svg#help"></use></svg>
+                </button>
+              </h3>
+
+              <form action="#" method="GET" class="form period-form">
+                <label class="label">
+                  <select data-select name="period" required>
+                    <option value="июнь 2026">июнь 2026</option>
+                    <option value="июль 2026">июль 2026</option>
+                    <option value="август 2026">август 2026</option>
+                    <option value="сентябрь 2026">сентябрь 2026</option>
+                  </select>
+                </label>
+
+                <button type="submit" class="button"><span>Выгрузить акт</span></button>
+              </form>
             </div>
           </div>
         </div>
@@ -122,6 +175,7 @@
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
         <load src="/_partials/base/default-popups.html" />
+        <load src="/_partials/popups/lk-popups.html" />
       </div>
     </div>
 

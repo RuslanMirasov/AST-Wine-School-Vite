@@ -252,3 +252,30 @@
     height: 100%;
   }
 }
+
+.profle-promocode {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  gap: var(--fs-16);
+
+  strong {
+    font-size: var(--fs-24);
+    font-weight: 700;
+    line-height: 1;
+    padding: var(--fs-14) var(--fs-24);
+    border-radius: var(--fs-16);
+    background-color: var(--grey-light);
+  }
+}
+
+.period-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  .label {
+    max-width: 280px;
+  }
+}
