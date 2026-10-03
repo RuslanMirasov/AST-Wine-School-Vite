@@ -101,7 +101,7 @@ input[type='number'] {
     justify-content: flex-start;
     align-items: flex-start;
     gap: calc(var(--form-gap) - 2px);
-    &.col-2 {
+    &.col--2 {
       width: calc(50% - var(--form-gap));
     }
     &.row {
@@ -139,8 +139,9 @@ input[type='number'] {
   font-family: var(--font);
   text-align: left;
 
-  .red {
-    color: var(--magenta);
+  a.red,
+  a.magenta {
+    color: var(--magenta) !important;
   }
 }
 

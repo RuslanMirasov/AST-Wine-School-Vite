@@ -199,11 +199,17 @@ button {
   margin: 0 auto;
   scroll-margin: var(--fs-40);
   overflow: hidden;
+  &.pad--32 {
+    padding: var(--fs-32) 0px;
+  }
   &.visible {
     overflow: visible;
   }
   @media (max-width: 767px) {
     padding: var(--fs-24) 0px;
+    &.pad--32 {
+      padding: var(--fs-24) 0px;
+    }
   }
 }
 

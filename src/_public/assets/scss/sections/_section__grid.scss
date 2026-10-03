@@ -19,13 +19,14 @@
     gap: var(--fs-8);
     break-inside: avoid;
     position: relative;
-    border-radius: var(--fs-30);
+    border-radius: var(--fs-50);
 
     .text {
       line-height: 1.5;
+      margin-bottom: var(--fs-16);
     }
 
-    .magenta-link {
+    .button {
       margin-top: auto;
     }
 
@@ -64,7 +65,8 @@
         pointer-events: none;
         right: 0px;
         bottom: 0px;
-        width: 71.5%;
+        width: auto;
+        height: 108%;
         border-radius: 0px 0px var(--fs-30) 0px;
       }
     }
@@ -103,7 +105,7 @@
   img {
     display: block;
     width: 100%;
-    border-radius: var(--fs-30);
+    border-radius: var(--fs-50);
     pointer-events: none;
     &.absolute {
       position: absolute;
@@ -169,9 +171,6 @@
     }
 
     .service-mix__item {
-      .magenta-link {
-        margin-top: var(--fs-8);
-      }
       &.service-mix__item--degustations {
         padding: var(--fs-20);
       }
@@ -179,7 +178,7 @@
       &.service-mix__item--curses {
         padding: var(--fs-20);
         min-height: 214px;
-        .magenta-link {
+        .button {
           margin-top: auto;
         }
         .text {
@@ -187,7 +186,7 @@
           font-size: var(--fs-14);
         }
         .phone-image {
-          width: 68%;
+          height: 106%;
         }
       }
 

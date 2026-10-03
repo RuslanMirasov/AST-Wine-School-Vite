@@ -56,12 +56,11 @@
 .search-empty {
   display: block;
   width: 100%;
-  border-radius: var(--fs-30);
+  border-radius: var(--fs-50);
   background-color: var(--white);
-  padding: var(--fs-44);
+  padding: var(--fs-40);
   .title {
-    line-height: 1.25;
-    margin-bottom: var(--fs-12);
+    margin-bottom: var(--fs-8);
   }
 
   @media (max-width: 767px) {

@@ -1,0 +1,42 @@
+.profile-name {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--fs-4);
+  padding: var(--fs-12) var(--fs-16);
+  border-radius: var(--fs-16);
+  background-color: var(--grey-promo);
+
+  .text {
+    position: relative;
+    width: 100%;
+    padding-right: var(--fs-32);
+    .help {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+  }
+}
+
+.help {
+  display: block;
+  width: var(--fs-20);
+  height: var(--fs-20);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--grey-medium);
+  transition: color 0.3s var(--cubic);
+
+  &:focus-visible {
+    color: var(--magenta);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

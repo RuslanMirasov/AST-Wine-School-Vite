@@ -14,6 +14,7 @@ import { initCookieConfirmation } from './modules/cookie-confirm.js';
 import { initGalleries } from './modules/image-gallery.js';
 import { initTabs } from './modules/tabs.js';
 import { initStickySidebar } from './modules/stickySidebar.js';
+import { initCopyToBuffer } from './modules/copy.js';
 
 popup.init();
 window.popup = popup;
@@ -37,4 +38,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCookieConfirmation();
   initGalleries();
   initTabs();
+  initCopyToBuffer();
 });

@@ -1,0 +1,43 @@
+.profile-menu {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--fs-4);
+}
+
+.profile-menu-link {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--fs-12);
+  border-radius: var(--fs-16);
+  padding: var(--fs-12) var(--fs-16);
+  color: var(--blue);
+  background-color: rgba(0, 0, 0, 0);
+  transition:
+    color 0.3s var(--cubic),
+    background-color 0.3s var(--cubic);
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--blue);
+      background-color: var(--grey-promo);
+    }
+  }
+
+  &:focus-visible {
+    color: var(--blue);
+    background-color: var(--grey-promo);
+  }
+
+  &.active {
+    background-color: var(--blue);
+    color: var(--white);
+  }
+
+  &.magenta {
+    color: var(--magenta);
+  }
+}

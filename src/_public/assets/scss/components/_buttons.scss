@@ -53,7 +53,7 @@
   align-content: center;
   min-height: var(--fs-40);
   gap: 10px;
-  padding: 8px var(--fs-28);
+  padding: var(--fs-8) var(--fs-32);
   border-radius: 100px;
   color: var(--white);
   background-color: var(--magenta);
@@ -86,6 +86,8 @@
 
   &.full {
     width: 100%;
+    padding-left: var(--fs-16);
+    padding-right: var(--fs-16);
   }
 
   &.icon-submit {
@@ -151,9 +153,6 @@
     background-color: var(--white);
     color: var(--magenta);
     border: 1px solid var(--magenta);
-    &.medium {
-      padding: var(--fs-9) var(--fs-24);
-    }
     @media (hover: hover) {
       &:hover {
         background-color: #f9ecf4;
@@ -166,15 +165,19 @@
 
   &.blue-border {
     background-color: var(--white);
-    color: var(--blue);
     border: 1px solid var(--grey-button);
+    span {
+      color: var(--blue);
+    }
     @media (hover: hover) {
       &:hover {
         border: 1px solid var(--magenta);
+        background-color: #f9ecf4;
       }
     }
     &:focus-visible {
       border: 1px solid var(--magenta);
+      background-color: #f9ecf4;
     }
   }
 

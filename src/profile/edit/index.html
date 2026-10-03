@@ -4,8 +4,8 @@
     <load src="/_partials/base/metrix.html" />
     <load src="/_partials/base/meta.html" />
     <load src="/_partials/base/styles.html" />
-    <meta name="description" content="AST - Редактирование профиля" />
-    <title>Редактирование профиля</title>
+    <meta name="description" content="AST - Личный кабинет" />
+    <title>Личный кабинет</title>
   </head>
   <body class="body">
     <!--START SCRIPTS-->
@@ -19,13 +19,139 @@
       <!--breadcrumbs-->
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
-        <li><a href="%ROOT%profile/">Профиль</a></li>
+        <li><a href="%ROOT%profile/">Личный кабинет</a></li>
         <li><span>Редактирование профиля</span></li>
       </ul>
 
-      <section class="section">
+      <section class="section pad--32">
         <div class="container">
-          <h2 class="title title--24">Страница <span style="color: #c24191">"Редактирование профиля"</span> в разработке...</h2>
+          <h1 class="title title--40 upper">Личный кабинет</h1>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="container">
+          <!--SIDEBAR-->
+          <aside class="sidebar small left-side" data-sticky-sidebar>
+            <load src="/_partials/components/profile/profile-neme.html" />
+            <load src="/_partials/components/menus/profile-menu.html" />
+          </aside>
+
+          <!--PAGE CONTENT-->
+          <div class="page-content">
+            <div class="profile-content profile-info">
+              <h2 class="title title--32 upper">Профиль</h2>
+
+              <form data-form action="#" class="form" novalidate>
+                <fieldset class="col--2">
+                  <label class="label">
+                    <span class="label-text">Фамилия *</span>
+                    <input type="text" name="sername" class="input" required value="Черноморепоколенопереходященский" />
+                  </label>
+
+                  <label class="label">
+                    <span class="label-text">Имя *</span>
+                    <input type="text" name="name" class="input" required value="Константин" />
+                  </label>
+
+                  <label class="label">
+                    <span class="label-text">Отчество</span>
+                    <input type="text" name="lastname" class="input" value="Братиславович" />
+                  </label>
+                </fieldset>
+
+                <fieldset class="col--2">
+                  <label class="label">
+                    <span class="label-text">Электронная почта *</span>
+                    <input
+                      type="email"
+                      name="email"
+                      class="input"
+                      placeholder="name@mail.ru"
+                      value="chekobrat@mail.ru"
+                      required
+                      autocomplete="email"
+                    />
+                  </label>
+
+                  <label class="label">
+                    <span class="label-text">Номер телефона *</span>
+                    <input
+                      type="tel"
+                      name="phone"
+                      class="input"
+                      required
+                      placeholder="+7 ___ ___ __ __"
+                      value="+7 900 000 00 00"
+                      autocomplete="tel"
+                    />
+                  </label>
+
+                  <label class="label">
+                    <span class="label-text">Дата рождения *</span>
+                    <input type="date" name="birthday" class="input" required placeholder="__.__.____" value="2001-04-28" />
+                  </label>
+
+                  <p class="text fs-12 grey-text">Участие в мероприятиях доступно только с 18 лет</p>
+                </fieldset>
+
+                <fieldset>
+                  <label class="label">
+                    <input name="confirmation-1" type="checkbox" class="checkbox" />
+                    <p class="label-text">
+                      <span>Получать полезные новости на мою почту</span>
+                    </p>
+                  </label>
+                  <label class="label">
+                    <input
+                      name="confirmation-2"
+                      type="checkbox"
+                      class="checkbox"
+                      required
+                      checked
+                      data-error-text="Согласие на обработку данных обязательно"
+                    />
+                    <p class="label-text">
+                      <span>Согласен с&nbsp;<a href="#" target="_blank" class="red">Условиями обработки персональных данных</a></span>
+                    </p>
+                  </label>
+
+                  <label class="label">
+                    <input
+                      name="policy"
+                      type="checkbox"
+                      class="checkbox"
+                      required
+                      checked
+                      data-error-text="Принятие политики конфиденциальности обязательно"
+                    />
+                    <p class="label-text">
+                      <span>Принимаю <a href="#" target="_blank" class="red">Политику конфиденциальности</a></span>
+                    </p>
+                  </label>
+
+                  <label class="label">
+                    <input
+                      name="terms-of-use"
+                      type="checkbox"
+                      class="checkbox"
+                      required
+                      checked
+                      data-error-text="Принятие пользовательского соглашения обязательно"
+                    />
+                    <p class="label-text">
+                      <span>Принимаю <a href="#" target="_blank" class="red">Пользовательское соглашение</a></span>
+                    </p>
+                  </label>
+                </fieldset>
+
+                <div class="buttons ta--l gap--12">
+                  <button type="submit" class="button"><span>Сохранить</span></button>
+                  <a href="%ROOT%profile/" class="button white-border"><span>Отмена</span></a>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </main>

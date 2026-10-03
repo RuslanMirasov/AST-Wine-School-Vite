@@ -19,13 +19,435 @@
       <!--breadcrumbs-->
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
-        <li><a href="%ROOT%profile/">Профиль</a></li>
+        <li><a href="%ROOT%profile/">Личный кабинет</a></li>
         <li><span>Заказы</span></li>
       </ul>
 
-      <section class="section">
+      <section class="section pad--32">
         <div class="container">
-          <h2 class="title title--24">Страница <span style="color: #c24191">"Заказы"</span> в разработке...</h2>
+          <h1 class="title title--40 upper">Личный кабинет</h1>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="container">
+          <!--SIDEBAR-->
+          <aside class="sidebar small left-side" data-sticky-sidebar>
+            <load src="/_partials/components/profile/profile-neme.html" />
+            <load src="/_partials/components/menus/profile-menu.html" />
+          </aside>
+
+          <!--PAGE CONTENT-->
+          <div class="page-content" data-tabs="orders">
+            <ul class="search-navigation">
+              <li>
+                <button class="search-navigation__btn active" data-tab-target="all">Все заказы</button>
+              </li>
+              <li>
+                <button class="search-navigation__btn" data-tab-target="wait-of-pay">Ожидают оплаты</button>
+              </li>
+              <li>
+                <button class="search-navigation__btn" data-tab-target="already-pay">Оплаченные</button>
+              </li>
+              <li>
+                <button class="search-navigation__btn" data-tab-target="compleated">Завершенные</button>
+              </li>
+            </ul>
+
+            <!--Все заказы-->
+            <div data-tab="all">
+              <div class="orders-list">
+                <!--ЗАКАЗ 1-->
+                <div class="profile-content pad--32">
+                  <div class="order-image">
+                    <img src="/assets/img/promo/10.webp" alt="Описание заказа" />
+                  </div>
+                  <div class="order-text">
+                    <h3 class="title title--24 bold">Быстрый старт: о вине за 3 встречи</h3>
+
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                        Очный
+                      </li>
+                      <li class="tag green">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                        Новинка
+                      </li>
+                    </ul>
+
+                    <ul class="status-list">
+                      <li class="status">Ожидает оплаты</li>
+                      <li class="status warning">14 дней до окончания срока</li>
+                    </ul>
+
+                    <p class="text grey-text">Всего за три встречи вы узнаете о вине все, что нужно.</p>
+
+                    <ul class="icon-list gap--6">
+                      <li>
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                        <span class="text fs-14 grey-text">Начало: 05 мая 2026 15:30</span>
+                      </li>
+                      <li>
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                        <span class="text fs-14 grey-text">Место проведения: г. Москва, ул. Новый Арбат, д. 63</span>
+                      </li>
+                    </ul>
+
+                    <div class="buttons gap--12 ta--r">
+                      <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                    </div>
+                  </div>
+
+                  <div class="buttons gap--12">
+                    <button type="button" class="button full"><span>Оплатить</span></button>
+                  </div>
+                </div>
+
+                <!--ЗАКАЗ 2-->
+                <div class="profile-content pad--32">
+                  <div class="order-image">
+                    <img src="/assets/img/promo/19.webp" alt="Описание заказа" />
+                  </div>
+                  <div class="order-text">
+                    <h3 class="title title--24 bold">История виноделия</h3>
+
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                        Онлайн
+                      </li>
+                      <li class="tag green">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                        Новинка
+                      </li>
+                    </ul>
+
+                    <ul class="status-list">
+                      <li class="status done">Оплачен</li>
+                      <li class="status warning">14 дней до окончания срока</li>
+                    </ul>
+
+                    <p class="text grey-text">
+                      В&nbsp;этой серии видеоуроков мы поведаем, как появилось виноделие и&nbsp;как оно менялось с&nbsp;ходом технического прогресса.
+                    </p>
+
+                    <ul class="icon-list gap--6">
+                      <li>
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                        <span class="text fs-14 grey-text">Начало: 05 мая 2026 17:00</span>
+                      </li>
+                      <li>
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                        <span class="text fs-14 grey-text">Срок доступа: 05 июля 2026</span>
+                      </li>
+                    </ul>
+
+                    <div class="buttons gap--12 ta--r">
+                      <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                    </div>
+                  </div>
+
+                  <div class="need-time">
+                    <div class="content-text gap--8">
+                      <h2 class="title title--18 bold">Нужно больше времени?</h2>
+                      <p class="text grey-text">
+                        Заканчивается срок доступа к&nbsp;курсу? Продлите его на&nbsp;удобный срок — все ваши прогресс и&nbsp;материалы сохранятся!
+                      </p>
+                    </div>
+
+                    <form action="#" class="more-time-form">
+                      <fieldset class="more-time-form-fields">
+                        <label>
+                          <input type="radio" name="extand-curse" value="Продлить на +1 месяц" checked="" />
+                          <span class="text">Продлить на <b>+1 месяц</b></span>
+                        </label>
+                        <label>
+                          <input type="radio" name="extand-curse" value="Продлить на +3 месяц" />
+                          <span class="text">Продлить на <b>+3 месяца</b></span>
+                        </label>
+                        <label>
+                          <input type="radio" name="extand-curse" value="Продлить на +6 месяцев" />
+                          <span class="text">Продлить на <b>+6 месяцев</b></span>
+                        </label>
+                      </fieldset>
+
+                      <button type="submit" class="button"><span>В корзину</span></button>
+                    </form>
+                  </div>
+                </div>
+
+                <!--ЗАКАЗ 3-->
+                <div class="profile-content pad--32">
+                  <div class="order-image">
+                    <img src="/assets/img/promo/19.webp" alt="Описание заказа" />
+                  </div>
+                  <div class="order-text">
+                    <h3 class="title title--24 bold">История виноделия</h3>
+
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                        Онлайн
+                      </li>
+                      <li class="tag green">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                        Новинка
+                      </li>
+                    </ul>
+
+                    <ul class="status-list">
+                      <li class="status end">Мероприятие завершено</li>
+                      <li class="status warning">14 дней до окончания срока</li>
+                    </ul>
+
+                    <p class="text grey-text">
+                      В&nbsp;этой серии видеоуроков мы поведаем, как появилось виноделие и&nbsp;как оно менялось с&nbsp;ходом технического прогресса.
+                    </p>
+
+                    <div class="buttons gap--12 ta--r">
+                      <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                    </div>
+                  </div>
+                </div>
+
+                <!--ЗАКАЗ 4-->
+                <div class="profile-content pad--32">
+                  <div class="order-image">
+                    <img src="/assets/img/promo/20.webp" alt="Описание заказа" />
+                  </div>
+                  <div class="order-text">
+                    <h3 class="title title--24 bold">Подарочный сертификат</h3>
+
+                    <ul class="status-list">
+                      <li class="status">Ожидает оплаты</li>
+                      <li class="status warning">14 дней до окончания срока</li>
+                    </ul>
+
+                    <p class="text grey-text">Номинал: 10&nbsp;000&nbsp;₽</p>
+
+                    <div class="buttons gap--12 ta--r">
+                      <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                    </div>
+                  </div>
+
+                  <div class="buttons gap--12">
+                    <button type="button" class="button full"><span>Оплатить</span></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="buttons profile-load-more">
+                <button type="button" class="button blue-light"><span>Показать еще</span></button>
+              </div>
+            </div>
+
+            <!--Ожидают оплаты-->
+            <div data-tab="wait-of-pay">
+              <div class="orders-list">
+                <!--ЗАКАЗ 1-->
+                <div class="profile-content pad--32">
+                  <div class="order-image">
+                    <img src="/assets/img/promo/10.webp" alt="Описание заказа" />
+                  </div>
+                  <div class="order-text">
+                    <h3 class="title title--24 bold">Быстрый старт: о вине за 3 встречи</h3>
+
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                        Очный
+                      </li>
+                      <li class="tag green">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                        Новинка
+                      </li>
+                    </ul>
+
+                    <ul class="status-list">
+                      <li class="status">Ожидает оплаты</li>
+                      <li class="status warning">14 дней до окончания срока</li>
+                    </ul>
+
+                    <p class="text grey-text">Всего за три встречи вы узнаете о вине все, что нужно.</p>
+
+                    <ul class="icon-list gap--6">
+                      <li>
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                        <span class="text fs-14 grey-text">Начало: 05 мая 2026 15:30</span>
+                      </li>
+                      <li>
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                        <span class="text fs-14 grey-text">Место проведения: г. Москва, ул. Новый Арбат, д. 63</span>
+                      </li>
+                    </ul>
+
+                    <div class="buttons gap--12 ta--r">
+                      <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                    </div>
+                  </div>
+
+                  <div class="buttons gap--12">
+                    <button type="button" class="button full"><span>Оплатить</span></button>
+                  </div>
+                </div>
+
+                <!--ЗАКАЗ 4-->
+                <div class="profile-content pad--32">
+                  <div class="order-image">
+                    <img src="/assets/img/promo/20.webp" alt="Описание заказа" />
+                  </div>
+                  <div class="order-text">
+                    <h3 class="title title--24 bold">Подарочный сертификат</h3>
+
+                    <ul class="status-list">
+                      <li class="status">Ожидает оплаты</li>
+                      <li class="status warning">14 дней до окончания срока</li>
+                    </ul>
+
+                    <p class="text grey-text">Номинал: 10&nbsp;000&nbsp;₽</p>
+
+                    <div class="buttons gap--12 ta--r">
+                      <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                    </div>
+                  </div>
+
+                  <div class="buttons gap--12">
+                    <button type="button" class="button full"><span>Оплатить</span></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="buttons profile-load-more">
+                <button type="button" class="button blue-light"><span>Показать еще</span></button>
+              </div>
+            </div>
+
+            <!--Оплаченные-->
+            <div data-tab="already-pay">
+              <div class="orders-list">
+                <!--ЗАКАЗ 2-->
+                <div class="profile-content pad--32">
+                  <div class="order-image">
+                    <img src="/assets/img/promo/19.webp" alt="Описание заказа" />
+                  </div>
+                  <div class="order-text">
+                    <h3 class="title title--24 bold">История виноделия</h3>
+
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                        Онлайн
+                      </li>
+                      <li class="tag green">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                        Новинка
+                      </li>
+                    </ul>
+
+                    <ul class="status-list">
+                      <li class="status done">Оплачен</li>
+                      <li class="status warning">14 дней до окончания срока</li>
+                    </ul>
+
+                    <p class="text grey-text">
+                      В&nbsp;этой серии видеоуроков мы поведаем, как появилось виноделие и&nbsp;как оно менялось с&nbsp;ходом технического прогресса.
+                    </p>
+
+                    <ul class="icon-list gap--6">
+                      <li>
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                        <span class="text fs-14 grey-text">Начало: 05 мая 2026 17:00</span>
+                      </li>
+                      <li>
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                        <span class="text fs-14 grey-text">Срок доступа: 05 июля 2026</span>
+                      </li>
+                    </ul>
+
+                    <div class="buttons gap--12 ta--r">
+                      <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                    </div>
+                  </div>
+
+                  <div class="need-time">
+                    <div class="content-text gap--8">
+                      <h2 class="title title--18 bold">Нужно больше времени?</h2>
+                      <p class="text grey-text">
+                        Заканчивается срок доступа к&nbsp;курсу? Продлите его на&nbsp;удобный срок — все ваши прогресс и&nbsp;материалы сохранятся!
+                      </p>
+                    </div>
+
+                    <form action="#" class="more-time-form">
+                      <fieldset class="more-time-form-fields">
+                        <label>
+                          <input type="radio" name="extand-curse" value="Продлить на +1 месяц" checked="" />
+                          <span class="text">Продлить на <b>+1 месяц</b></span>
+                        </label>
+                        <label>
+                          <input type="radio" name="extand-curse" value="Продлить на +3 месяц" />
+                          <span class="text">Продлить на <b>+3 месяца</b></span>
+                        </label>
+                        <label>
+                          <input type="radio" name="extand-curse" value="Продлить на +6 месяцев" />
+                          <span class="text">Продлить на <b>+6 месяцев</b></span>
+                        </label>
+                      </fieldset>
+
+                      <button type="submit" class="button"><span>В корзину</span></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="buttons profile-load-more">
+                <button type="button" class="button blue-light"><span>Показать еще</span></button>
+              </div>
+            </div>
+
+            <!--Завершенные-->
+            <div data-tab="compleated">
+              <div class="orders-list">
+                <!--ЗАКАЗ 3-->
+                <div class="profile-content pad--32">
+                  <div class="order-image">
+                    <img src="/assets/img/promo/19.webp" alt="Описание заказа" />
+                  </div>
+                  <div class="order-text">
+                    <h3 class="title title--24 bold">История виноделия</h3>
+
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                        Онлайн
+                      </li>
+                      <li class="tag green">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                        Новинка
+                      </li>
+                    </ul>
+
+                    <ul class="status-list">
+                      <li class="status end">Мероприятие завершено</li>
+                      <li class="status warning">14 дней до окончания срока</li>
+                    </ul>
+
+                    <p class="text grey-text">
+                      В&nbsp;этой серии видеоуроков мы поведаем, как появилось виноделие и&nbsp;как оно менялось с&nbsp;ходом технического прогресса.
+                    </p>
+
+                    <div class="buttons gap--12 ta--r">
+                      <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="buttons profile-load-more">
+                <button type="button" class="button blue-light"><span>Показать еще</span></button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

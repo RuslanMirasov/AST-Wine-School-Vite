@@ -82,6 +82,11 @@
   .button {
     margin-top: var(--fs-24);
   }
+
+  > .footer-menu-title {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: var(--fs-14);
+  }
 }
 
 .footer-menu-col {
@@ -119,6 +124,7 @@
   font-size: var(--fs-18);
   line-height: 1.2;
   gap: var(--fs-8);
+
   button {
     transform: translateY(-7%);
     width: var(--fs-26);

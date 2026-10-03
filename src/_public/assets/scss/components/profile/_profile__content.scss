@@ -1,0 +1,57 @@
+.profile-content {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background-color: var(--white);
+  border-radius: var(--fs-30);
+  padding: var(--fs-40);
+  gap: var(--fs-24);
+
+  &.pad--32 {
+    padding: var(--fs-32);
+  }
+
+  .col--2 {
+    width: calc((100% - var(--fs-40)) / 2);
+    .label {
+      width: 100%;
+    }
+  }
+
+  .form {
+    gap: var(--fs-40) var(--fs-24);
+    fieldset {
+      gap: var(--form-gap);
+      &.col--2 {
+        width: calc((100% - var(--fs-24)) / 2);
+      }
+    }
+  }
+
+  .title--24,
+  .title--32 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    gap: var(--fs-12);
+  }
+
+  .title--32 {
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+}
+
+.profile-info {
+  > .button {
+    margin-left: auto;
+  }
+
+  > .title {
+    min-width: 60%;
+  }
+}

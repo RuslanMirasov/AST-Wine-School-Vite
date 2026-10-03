@@ -31,9 +31,11 @@ const getLinkPath = link => {
 };
 
 // Главная ('/') подсвечивается только на самой себе: '/' + '/' = '//', с него не начинается ни один путь.
+// Ссылки с [data-exact] подсвечиваются только при точном совпадении пути (корень раздела, напр. /profile).
 const isLinkActive = (link, currentPath) => {
   const linkPath = getLinkPath(link);
   if (!linkPath) return false;
+  if (link.hasAttribute('data-exact')) return currentPath === linkPath;
 
   return currentPath === linkPath || currentPath.startsWith(linkPath + '/');
 };
@@ -149,7 +151,7 @@ export const initNavigationMenu = () => {
     }, 300)
   );
 
-  setActiveMenuLinks(document.querySelectorAll('.menu-link, .info-menu a'));
+  setActiveMenuLinks(document.querySelectorAll('.menu-link, .info-menu a, .profile-menu-link'));
 };
 
 export const initMegaMenu = () => {
