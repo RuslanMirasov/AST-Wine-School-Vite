@@ -1,7 +1,6 @@
 .profile-content {
   display: flex;
   position: relative;
-  //overflow: hidden;
   width: 100%;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -11,6 +10,7 @@
   gap: var(--fs-24);
 
   &.pad--32 {
+    overflow: hidden;
     padding: var(--fs-32);
   }
 
