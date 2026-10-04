@@ -47,9 +47,9 @@
   background-color: var(--white);
   padding: var(--fs-24);
   border-radius: var(--fs-50);
+  min-height: 388px;
   @media (max-width: 767px) {
     padding: var(--fs-20);
-    //border-radius: var(--fs-24);
     border-radius: var(--fs-30);
   }
 
@@ -131,9 +131,9 @@
 
   .text {
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    line-clamp: 4;
+    line-clamp: 3;
     overflow: hidden;
     line-height: 1.3;
 

@@ -45,12 +45,14 @@
   }
   &.title--40 {
     font-size: var(--fs-40);
+    letter-spacing: -0.01em;
   }
   &.title--34 {
     font-size: var(--fs-34);
   }
   &.title--32 {
     font-size: var(--fs-32);
+    letter-spacing: -0.005em;
     line-height: 1.18;
   }
   &.title--30 {
@@ -137,6 +139,9 @@
   &.full {
     width: 100%;
   }
+  &.under {
+    border-bottom: 1px solid var(--magenta);
+  }
 }
 
 .cut-2,
@@ -168,6 +173,16 @@
 .cut-6 {
   line-clamp: 6;
   -webkit-line-clamp: 6;
+}
+
+// Обрезка до N строк с кнопкой «Читать полностью» (readMore.js).
+// Число строк приходит из data-read-more через переменную --read-more-lines.
+[data-read-more]:not(.is-expanded) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: var(--read-more-lines);
+  -webkit-line-clamp: var(--read-more-lines);
 }
 
 //375

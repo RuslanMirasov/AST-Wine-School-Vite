@@ -9,6 +9,15 @@
           flex-direction: column;
   gap: var(--fs-8);
 }
+.icon-list.gap--6 {
+  gap: var(--fs-6);
+}
+.icon-list.magenta li {
+  color: var(--magenta);
+}
+.icon-list.grey li {
+  color: var(--grey-text);
+}
 .icon-list li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,19 +34,28 @@
       align-content: flex-start;
   font-size: var(--fs-16);
   gap: var(--fs-10);
-  color: var(--grey-text);
+  color: var(--blue);
 }
 .icon-list li.magenta {
   color: var(--magenta);
 }
+.icon-list li.grey {
+  color: var(--grey-text);
+}
 .icon-list li.bold {
   font-weight: 700;
 }
+.icon-list li span,
+.icon-list li a {
+  display: inline-block;
+  min-height: var(--fs-18);
+}
 .icon-list li svg {
   display: block;
-  margin-top: 3px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  width: var(--fs-18);
+  height: var(--fs-18);
 }
 .icon-list li svg.magenta {
   color: var(--magenta);
