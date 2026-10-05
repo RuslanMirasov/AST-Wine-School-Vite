@@ -5823,6 +5823,7 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   }
   .hero-text-slider .swiper-slide {
     padding: var(--fs-32);
+    padding-bottom: 0px;
     padding-top: 130px;
     padding-bottom: 0px;
   }
@@ -5830,6 +5831,7 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 @media (max-width: 1023px) and (max-width: 767px) {
   .hero-text-slider .swiper-slide {
     padding: var(--fs-16);
+    padding-bottom: 0px;
   }
 }
 @media (max-width: 1023px) {

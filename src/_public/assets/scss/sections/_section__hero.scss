@@ -283,8 +283,10 @@
 
     .swiper-slide {
       padding: var(--fs-32);
+      padding-bottom: 0px;
       @media (max-width: 767px) {
         padding: var(--fs-16);
+        padding-bottom: 0px;
       }
       padding-top: 130px;
       padding-bottom: 0px;
