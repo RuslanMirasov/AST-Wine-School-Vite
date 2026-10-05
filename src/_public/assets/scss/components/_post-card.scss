@@ -4,7 +4,7 @@
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--fs-28);
+  padding: var(--fs-30);
   border-radius: var(--fs-50);
   background-color: var(--white);
   gap: var(--fs-24);
@@ -30,7 +30,7 @@
 
     .post-card-image {
       max-width: 400px;
-      border-radius: var(--fs-30);
+      border-radius: var(--fs-22);
     }
   }
 

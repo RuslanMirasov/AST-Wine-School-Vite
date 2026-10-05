@@ -1,6 +1,13 @@
 .present-certificat {
   .buttons {
     margin-top: auto;
+    @media (max-width: 767px) {
+      position: absolute;
+      width: calc(100% - 40px);
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+    }
   }
   .logo-background {
     width: 694px;
@@ -13,6 +20,7 @@
 
   .content-text {
     max-width: 50%;
+
     @media (max-width: 1023px) {
       max-width: 340px;
     }

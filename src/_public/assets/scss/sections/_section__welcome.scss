@@ -71,7 +71,10 @@
     .title.title--40 {
       display: block;
       width: 100%;
-      max-width: 100%;
+      max-width: 554px;
+      br {
+        display: none;
+      }
     }
 
     .text {

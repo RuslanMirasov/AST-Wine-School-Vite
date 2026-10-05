@@ -2447,6 +2447,11 @@ button:disabled {
 .collection.col-3 > li {
   width: calc((100% - var(--fs-24) - var(--fs-24)) / 3);
 }
+@media (min-width: 1920px) {
+  .collection.col-3 > li {
+    width: calc((100% - var(--fs-24) - var(--fs-24) - var(--fs-24)) / 4);
+  }
+}
 .collection .post-card {
   min-height: 100%;
 }
@@ -4074,7 +4079,7 @@ fieldset + .inputError {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: var(--fs-28);
+  padding: var(--fs-30);
   border-radius: var(--fs-50);
   background-color: var(--white);
   gap: var(--fs-24);
@@ -4102,7 +4107,7 @@ fieldset + .inputError {
 }
 .post-card.horisontal .post-card-image {
   max-width: 400px;
-  border-radius: var(--fs-30);
+  border-radius: var(--fs-22);
 }
 .post-card > .price-and-btn,
 .post-card .buttons {
@@ -4604,6 +4609,15 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 }
 .present-certificat .buttons {
   margin-top: auto;
+}
+@media (max-width: 767px) {
+  .present-certificat .buttons {
+    position: absolute;
+    width: calc(100% - 40px);
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
 }
 .present-certificat .logo-background {
   width: 694px;
@@ -5361,6 +5375,53 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   margin-top: var(--fs-8);
 }
 
+.order-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: var(--fs-16);
+  padding: var(--fs-32);
+  border-radius: var(--fs-30);
+  background-color: var(--white);
+}
+
+.order-sum {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: var(--fs-16);
+  padding-top: var(--fs-16);
+  border-top: 1px solid var(--grey-button);
+}
+
+.order-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.order-table td {
+  padding: var(--fs-8) 0px;
+  text-align: left;
+}
+.order-table td:last-child {
+  text-align: right;
+}
+.order-table td button {
+  display: inline-block;
+}
+
 .page .container {
   -webkit-box-align: unset;
       -ms-flex-align: unset;
@@ -5746,7 +5807,7 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
     max-width: 370px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .hero {
     padding: 0;
     min-height: 1px;
@@ -5761,11 +5822,21 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
     max-width: 100%;
   }
   .hero-text-slider .swiper-slide {
-    padding: var(--fs-16);
+    padding: var(--fs-32);
     padding-top: 130px;
     padding-bottom: 0px;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(55%, var(--blue)), to(var(--blue)));
-    background: linear-gradient(rgba(0, 0, 0, 0) 0%, var(--blue) 55%, var(--blue));
+  }
+}
+@media (max-width: 1023px) and (max-width: 767px) {
+  .hero-text-slider .swiper-slide {
+    padding: var(--fs-16);
+  }
+}
+@media (max-width: 1023px) {
+  .hero-text-slider .swiper-slide .content-text {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   .hero-text-slider .title,
   .hero-text-slider .text {
@@ -5774,17 +5845,24 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   .hero-text-slider .text {
     font-size: var(--fs-15);
   }
+}
+@media (max-width: 1023px) and (max-width: 767px) {
   .hero-text-slider .button {
     width: 100%;
-    margin-top: auto;
   }
+}
+@media (max-width: 1023px) {
   .hero-images-slider {
     position: relative;
     height: 400px;
     margin-bottom: -194px;
   }
   .hero-images-slider .swiper .swiper-slide.white-gradient:before, .hero-images-slider .swiper .swiper-slide.dark-gradient:before {
-    content: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(var(--blue)));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), var(--blue));
+    opacity: 1;
+    height: 40%;
+    top: 60%;
   }
   .hero-images-slider .swiper .swiper-slide {
     height: 400px;
@@ -6096,7 +6174,10 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   .section--welcome .title.title--40 {
     display: block;
     width: 100%;
-    max-width: 100%;
+    max-width: 554px;
+  }
+  .section--welcome .title.title--40 br {
+    display: none;
   }
   .section--welcome .text {
     max-width: 100%;

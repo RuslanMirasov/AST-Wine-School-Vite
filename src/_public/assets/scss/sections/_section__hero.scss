@@ -266,7 +266,7 @@
 }
 
 // MOBIL
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .hero {
     padding: 0;
     min-height: 1px;
@@ -282,10 +282,15 @@
     max-width: 100%;
 
     .swiper-slide {
-      padding: var(--fs-16);
+      padding: var(--fs-32);
+      @media (max-width: 767px) {
+        padding: var(--fs-16);
+      }
       padding-top: 130px;
       padding-bottom: 0px;
-      background: linear-gradient(rgba(0, 0, 0, 0) 0%, var(--blue) 55%, var(--blue));
+      .content-text {
+        justify-content: flex-end;
+      }
     }
 
     .title,
@@ -298,8 +303,9 @@
     }
 
     .button {
-      width: 100%;
-      margin-top: auto;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
     }
   }
 
@@ -312,7 +318,10 @@
       .swiper-slide {
         &.white-gradient:before,
         &.dark-gradient:before {
-          content: none;
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0), var(--blue));
+          opacity: 1;
+          height: 40%;
+          top: 60%;
         }
         height: 400px;
         picture {
