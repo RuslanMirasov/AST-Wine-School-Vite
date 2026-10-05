@@ -20,6 +20,10 @@
   flex-shrink: 0;
   align-self: flex-start;
 
+  &.gap--8 {
+    gap: var(--fs-8);
+  }
+
   &.medium {
     max-width: var(--fs-320);
   }

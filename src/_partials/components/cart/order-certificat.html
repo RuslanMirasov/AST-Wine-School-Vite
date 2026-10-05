@@ -1,0 +1,34 @@
+<div class="order-details gap--12">
+  <h3 class="title title--18 bold">Применить сертификат</h3>
+
+  <form data-form action="#" class="order-promocode-form" novalidate>
+    <label class="label">
+      <input
+        name="order-certificat-promo"
+        type="text"
+        class="input"
+        value="36ZC-XQT7-839"
+        placeholder="ХХХХ-ХХХХ-ХХХ"
+        required
+        data-error-text="Такого сертификата не найдено."
+      />
+    </label>
+    <button type="submit" class="button white-border"><span>Найти</span></button>
+  </form>
+
+  <p class="text fs-14">Найден сертификат с&nbsp;остатком 850&nbsp;₽. Какую сумму из&nbsp;остатка применить к&nbsp;заказу?</p>
+
+  <form data-form action="#" class="order-promocode-form" novalidate>
+    <label class="label">
+      <input
+        name="order-certificat-sum"
+        type="number"
+        class="input"
+        value="250"
+        required
+        data-error-text="Сумма не должна превышать остаток на сертификате."
+      />
+    </label>
+    <button type="submit" class="button"><span>Применить</span></button>
+  </form>
+</div>

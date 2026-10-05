@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <load src="/_partials/base/metrix.html" />
+    <load src="/_partials/base/meta.html" />
+    <load src="/_partials/base/styles.html" />
+    <meta name="description" content="AST - Оформление заказа" />
+    <title>Оформление заказа</title>
+  </head>
+  <body class="body">
+    <!--START SCRIPTS-->
+    <load src="/_partials/base/start-scripts.html" />
+    <!--HEADER-->
+    <load src="/_partials/preloader.html" />
+    <load src="/_partials/components/header/header.html" />
+
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="%ROOT%">Главная</a></li>
+        <li><a href="%ROOT%cart/">Корзина</a></li>
+        <li><span>Оформление заказа</span></li>
+      </ul>
+
+      <section class="section">
+        <div class="container">
+          <div class="content-text gap--40">
+            <h1 class="title title--40 upper">Оформление заказа</h1>
+
+            <ul class="cart-steps">
+              <li class="active"><span>Корзина</span></li>
+              <li class="current"><span>Оформление</span></li>
+              <li><span>Оплата</span></li>
+              <li><span>Готово</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="container gap--24">
+          <!--SIDEBAR-->
+          <aside class="sidebar gap--8 right-side" data-sticky-sidebar>
+            <load src="/_partials/components/cart/order-yours.html" />
+            <load src="/_partials/components/cart/order-details.html" />
+            <load src="/_partials/components/cart/payment-protected.html" />
+          </aside>
+
+          <!--PAGE CONTENT-->
+          <div class="page-content">
+            <div class="profile-content customer-data" data-tabs="entity">
+              <h2 class="title title--32 upper">Данные покупателя</h2>
+
+              <div class="buttons full ta--l gap--12">
+                <button type="button" class="button button--tab active" data-tab-target="individual"><span>Физическое лицо</span></button>
+                <button type="button" class="button button--tab" data-tab-target="legal-entity"><span>Юридическое лицо</span></button>
+              </div>
+
+              <div data-tab="individual">
+                <form data-form="" action="#" class="form" novalidate>
+                  <fieldset class="col--2">
+                    <label class="label">
+                      <span class="label-text">Фамилия *</span>
+                      <input type="text" name="sername" class="input" required value="" />
+                    </label>
+
+                    <label class="label">
+                      <span class="label-text">Имя *</span>
+                      <input type="text" name="name" class="input" required value="" />
+                    </label>
+
+                    <label class="label">
+                      <span class="label-text">Отчество</span>
+                      <input type="text" name="lastname" class="input" value="" />
+                    </label>
+                  </fieldset>
+
+                  <fieldset class="col--2">
+                    <label class="label">
+                      <span class="label-text">Электронная почта *</span>
+                      <input type="email" name="email" class="input" required autocomplete="email" />
+                    </label>
+
+                    <label class="label">
+                      <span class="label-text">Номер телефона *</span>
+                      <input type="tel" name="phone" class="input" placeholder="+7 ___ ___ __ __" required />
+                    </label>
+                  </fieldset>
+
+                  <fieldset class="col--2">
+                    <label class="label">
+                      <span class="label-text">Наименование юридического лица</span>
+                      <input type="text" name="legal-entity-name" class="input" required value="" />
+                    </label>
+
+                    <label class="label">
+                      <span class="label-text">ИНН *</span>
+                      <input
+                        type="number"
+                        name="inn"
+                        class="input"
+                        required
+                        inputmode="numeric"
+                        maxlength="12"
+                        value=""
+                        placeholder="10 или 12 цифр"
+                      />
+                    </label>
+                  </fieldset>
+
+                  <fieldset class="col--2">
+                    <label class="label">
+                      <span class="label-text">БИК *</span>
+                      <input type="text" name="bik" class="input" required="" inputmode="numeric" maxlength="9" value="044525225" />
+                    </label>
+
+                    <label class="label">
+                      <span class="label-text">Наименование банка *</span>
+                      <input type="text" name="bank-name" class="input" required="" value="ПАО Сбербанк" />
+                    </label>
+                  </fieldset>
+                </form>
+              </div>
+              <div data-tab="legal-entity">
+                <p class="text">куку</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <load src="/_partials/footer.html" />
+
+    <!--POPUPS-->
+    <div class="backdrop" data-backdrop>
+      <div class="popup" data-popup>
+        <load src="/_partials/base/default-popups.html" />
+      </div>
+    </div>
+
+    <!--COOKIE CONFIRM POPUP-->
+    <load src="/_partials/popups/cookies-confirm-popup.html" />
+
+    <!--SCRIPTS-->
+    <load src="/_partials/base/scripts.html" />
+  </body>
+</html>

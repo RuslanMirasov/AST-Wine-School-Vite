@@ -26,13 +26,12 @@
         <div class="container gap--40">
           <h1 class="title title--40 upper">Календарь мероприятий</h1>
 
+          <form action="%ROOT%search/" class="search-form" method="GET" data-form novalidate>
+            <load src="/_partials/components/header/search-form.html" />
+          </form>
+
           <!--ФИЛЬТР-->
           <form action="%ROOT%events/" class="calendar-filters" id="filter-form">
-            <label class="label search-form">
-              <svg width="20" height="20" class="search-input-icon"><use href="/assets/img/sprite.svg#search-input"></use></svg>
-              <input type="text" name="s" class="input" placeholder="Поиск" />
-            </label>
-
             <ul class="filters">
               <!--Тип мероприятия-->
               <li>

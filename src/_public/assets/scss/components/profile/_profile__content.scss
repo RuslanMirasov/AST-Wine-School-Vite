@@ -53,6 +53,63 @@
   > .title--32 {
     gap: var(--fs-6);
   }
+
+  > .buttons {
+    width: var(--fs-200);
+    flex-shrink: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    &.full {
+      width: 100%;
+    }
+  }
+
+  .need-time {
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    padding-top: var(--fs-24);
+    padding-left: calc(160px + var(--fs-24));
+    flex-wrap: nowrap;
+    gap: var(--fs-24);
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 200%;
+      transform: translateX(-10%);
+      height: 1px;
+      background-color: var(--grey-button);
+    }
+
+    .more-time-form {
+      .more-time-form-fields {
+        flex-direction: column;
+        label {
+          flex: none;
+          width: 100%;
+          .text {
+            display: flex;
+            position: relative;
+            width: 100%;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            gap: var(--fs-8);
+            b {
+              display: inline-block;
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .profile-info {

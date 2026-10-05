@@ -7,6 +7,12 @@
   padding: var(--fs-32);
   border-radius: var(--fs-30);
   background-color: var(--white);
+  &.grey {
+    background-color: var(--grey-promo);
+  }
+  &.gap--12 {
+    gap: var(--fs-12);
+  }
 }
 
 .order-sum {
@@ -25,6 +31,7 @@
   border-spacing: 0;
 
   td {
+    vertical-align: top;
     padding: var(--fs-8) 0px;
     text-align: left;
     &:last-child {
@@ -32,7 +39,129 @@
     }
 
     button {
-      display: inline-block;
+      display: block;
+      margin-left: auto;
+      line-height: 1;
     }
+  }
+
+  tr {
+    &:first-child {
+      td {
+        padding-top: 0px;
+      }
+    }
+    &:last-child {
+      td {
+        padding-bottom: 0px;
+      }
+    }
+  }
+}
+
+.order-promocode-form {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: var(--fs-12);
+  .button {
+    margin-top: var(--fs-5);
+  }
+}
+
+.payment-protected {
+  display: flex;
+  position: relative;
+  padding-left: var(--fs-36);
+  width: 100%;
+  flex-direction: column;
+  gap: 2px;
+
+  svg {
+    width: var(--fs-24);
+    height: var(--fs-24);
+    position: absolute;
+    left: 0px;
+    top: var(--fs-4);
+  }
+}
+
+.cart-steps {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  background-color: var(--white);
+  padding: var(--fs-20) var(--fs-32);
+  border-radius: var(--fs-30);
+
+  counter-reset: step;
+
+  li {
+    display: flex;
+    align-items: center;
+    counter-increment: step;
+    color: var(--grey-text);
+    &:after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: var(--fs-40);
+      background-color: var(--grey-promo);
+      margin: 0px var(--fs-16);
+    }
+    &:last-child {
+      &:after {
+        content: none;
+      }
+    }
+    &:before {
+      content: counter(step);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: var(--fs-32);
+      height: var(--fs-32);
+      flex-shrink: 0;
+
+      margin-right: var(--fs-12);
+
+      border-radius: 50%;
+      background-color: var(--grey-promo);
+
+      font-size: var(--fs-14);
+      font-weight: 700;
+      color: var(--grey-text);
+    }
+
+    &.current {
+      color: var(--blue);
+      &:before {
+        background-color: var(--magenta);
+        color: var(--white);
+      }
+    }
+    &.active {
+      color: var(--blue);
+      &:before {
+        content: '✓';
+        background-color: var(--green);
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.customer-data {
+  [data-tab] {
+    width: 100%;
+  }
+
+  .form {
+    gap: var(--fs-50) var(--fs-24);
   }
 }

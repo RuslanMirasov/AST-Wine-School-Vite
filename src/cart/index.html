@@ -22,59 +22,94 @@
         <li><span>Корзина</span></li>
       </ul>
 
-      <section class="section pad--32">
+      <section class="section">
         <div class="container">
-          <h1 class="title title--40 upper">Личный кабинет</h1>
+          <div class="content-text gap--40">
+            <h1 hidden>Личный кабинет</h1>
+
+            <ul class="cart-steps">
+              <li class="current"><span>Корзина</span></li>
+              <li><span>Оформление</span></li>
+              <li><span>Оплата</span></li>
+              <li><span>Готово</span></li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <section class="page">
-        <div class="container">
+        <div class="container gap--24">
           <!--SIDEBAR-->
-          <aside class="sidebar right-side" data-sticky-sidebar>
+          <aside class="sidebar gap--8 right-side" data-sticky-sidebar>
+            <load src="/_partials/components/cart/order-yours.html" />
             <load src="/_partials/components/cart/order-details.html" />
+            <load src="/_partials/components/cart/order-promocode.html" />
+            <load src="/_partials/components/cart/order-certificat.html" />
+            <load src="/_partials/components/cart/payment-protected.html" />
           </aside>
 
           <!--PAGE CONTENT-->
           <div class="page-content">
-            <div class="profile-content profile-info">
-              <h2 class="title title--32 upper">Профиль</h2>
-
-              <a href="%ROOT%profile/edit/" class="button white-border"><span>Редактировать</span></a>
-
-              <div class="content-text gap--20 col--2">
-                <p class="text">
-                  <span class="text fs-12 grey-text">Фамилия</span>
-                  Черноморепоколенопереходященский
-                </p>
-
-                <p class="text">
-                  <span class="text fs-12 grey-text">Имя</span>
-                  Константин
-                </p>
-
-                <p class="text">
-                  <span class="text fs-12 grey-text">Отчество</span>
-                  Братиславович
-                </p>
+            <!--ЗАКАЗ 1-->
+            <div class="profile-content pad--32">
+              <div class="order-image fix-height">
+                <img src="/assets/img/promo/10.webp" alt="Описание заказа" />
               </div>
 
-              <div class="content-text gap--20 col--2">
-                <p class="text">
-                  <span class="text fs-12 grey-text">Электронная почта</span>
-                  <a href="mailto:chekobrat@mail.ru">chekobrat@mail.ru</a>
-                </p>
+              <div class="order-text gap--8">
+                <h3 class="title title--24 bold">Быстрый старт: о вине за 3 встречи</h3>
+                <p class="text fs-14 grey-text">Очный курс</p>
+                <b class="text fs-16">Встреча №2</b>
 
-                <p class="text">
-                  <span class="text fs-12 grey-text">Номер телефона</span>
-                  <a href="tel:+79000000000">+7 900 000 00 00</a>
-                </p>
-
-                <p class="text">
-                  <span class="text fs-12 grey-text">Дата рождения</span>
-                  28.04.2001
-                </p>
+                <ul class="icon-list gap--6 grey">
+                  <li>
+                    <svg width="18" height="18"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span class="text">Начало: 05 мая 2026 17:00</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span class="text">г. Москва, ул. Новый Арбат, д. 63</span>
+                  </li>
+                </ul>
               </div>
+
+              <form action="#" class="order-settings">
+                <b class="text fs-24">1&nbsp;000&nbsp;₽</b>
+                <p class="text grey-medium line-through">1&nbsp;500&nbsp;₽</p>
+                <label class="label auto" aria-live="polite" aria-atomic="true">
+                  <div class="label--count" aria-live="polite" aria-atomic="true">
+                    <button type="button" class="minus" data-input-minus="" aria-label="Уменьшить количество">-</button>
+                    <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество товара" />
+                    <button type="button" class="plus" data-input-plus="" aria-label="Увеличить количество">+</button>
+                  </div>
+                </label>
+                <button type="button" class="text fs-14 magenta">Удалить</button>
+              </form>
+            </div>
+
+            <!--ЗАКАЗ 2-->
+            <div class="profile-content pad--32">
+              <div class="order-image fix-height">
+                <img src="/assets/img/promo/20.webp" alt="Описание заказа" />
+              </div>
+
+              <div class="order-text gap--8">
+                <h3 class="title title--24 bold">Подарочный сертификат</h3>
+                <p class="text fs-14 grey-text">Подарочный сертификат</p>
+                <b class="text fs-16">Номинал: 10&nbsp;000&nbsp;₽</b>
+              </div>
+
+              <form action="#" class="order-settings">
+                <b class="text fs-24">10&nbsp;000&nbsp;₽</b>
+                <label class="label auto" aria-live="polite" aria-atomic="true">
+                  <div class="label--count" aria-live="polite" aria-atomic="true">
+                    <button type="button" class="minus" data-input-minus="" aria-label="Уменьшить количество">-</button>
+                    <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество товара" />
+                    <button type="button" class="plus" data-input-plus="" aria-label="Увеличить количество">+</button>
+                  </div>
+                </label>
+                <button type="button" class="text fs-14 magenta">Удалить</button>
+              </form>
             </div>
           </div>
         </div>

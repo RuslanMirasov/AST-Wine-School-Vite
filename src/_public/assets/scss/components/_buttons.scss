@@ -163,6 +163,27 @@
     }
   }
 
+  &.button--tab {
+    background-color: var(--white);
+    color: var(--magenta);
+    border: 1px solid var(--magenta);
+    @media (hover: hover) {
+      &:hover {
+        background-color: #f9ecf4;
+      }
+    }
+    &:focus-visible {
+      background-color: #f9ecf4;
+    }
+
+    &.active {
+      background-color: var(--magenta);
+      color: var(--white);
+      border: 1px solid var(--magenta);
+      pointer-events: none;
+    }
+  }
+
   &.blue-border {
     background-color: var(--white);
     border: 1px solid var(--grey-button);

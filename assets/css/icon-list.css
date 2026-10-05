@@ -15,7 +15,7 @@
 .icon-list.magenta li {
   color: var(--magenta);
 }
-.icon-list.grey li {
+.icon-list.grey li * {
   color: var(--grey-text);
 }
 .icon-list li {
