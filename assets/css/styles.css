@@ -2069,6 +2069,10 @@ button:disabled {
   font-size: var(--fs-18);
   line-height: 1.3;
 }
+.text.fs-20 {
+  font-size: var(--fs-20);
+  line-height: 1.3;
+}
 .text.fs-24 {
   font-size: var(--fs-24);
   line-height: 1.2;
