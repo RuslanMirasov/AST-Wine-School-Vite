@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <load src="/_partials/base/metrix.html" />
+    <load src="/_partials/base/meta.html" />
+    <load src="/_partials/base/styles.html" />
+    <meta name="description" content="AST - Личный кабинет" />
+    <title>Личный кабинет</title>
+  </head>
+  <body class="body">
+    <!--START SCRIPTS-->
+    <load src="/_partials/base/start-scripts.html" />
+    <!--HEADER-->
+    <load src="/_partials/preloader.html" />
+    <load src="/_partials/components/header/header.html" />
+
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="%ROOT%">Главная</a></li>
+        <li><span>Корзина</span></li>
+      </ul>
+
+      <section class="section pad--32">
+        <div class="container">
+          <h1 class="title title--40 upper">Личный кабинет</h1>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="container">
+          <!--SIDEBAR-->
+          <aside class="sidebar small left-side" data-sticky-sidebar>
+            <load src="/_partials/components/profile/profile-neme.html" />
+            <load src="/_partials/components/menus/profile-menu.html" />
+          </aside>
+
+          <!--PAGE CONTENT-->
+          <div class="page-content">
+            <div class="profile-content profile-info">
+              <h2 class="title title--32 upper">Профиль</h2>
+
+              <a href="%ROOT%profile/edit/" class="button white-border"><span>Редактировать</span></a>
+
+              <div class="content-text gap--20 col--2">
+                <p class="text">
+                  <span class="text fs-12 grey-text">Фамилия</span>
+                  Черноморепоколенопереходященский
+                </p>
+
+                <p class="text">
+                  <span class="text fs-12 grey-text">Имя</span>
+                  Константин
+                </p>
+
+                <p class="text">
+                  <span class="text fs-12 grey-text">Отчество</span>
+                  Братиславович
+                </p>
+              </div>
+
+              <div class="content-text gap--20 col--2">
+                <p class="text">
+                  <span class="text fs-12 grey-text">Электронная почта</span>
+                  <a href="mailto:chekobrat@mail.ru">chekobrat@mail.ru</a>
+                </p>
+
+                <p class="text">
+                  <span class="text fs-12 grey-text">Номер телефона</span>
+                  <a href="tel:+79000000000">+7 900 000 00 00</a>
+                </p>
+
+                <p class="text">
+                  <span class="text fs-12 grey-text">Дата рождения</span>
+                  28.04.2001
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <load src="/_partials/footer.html" />
+
+    <!--POPUPS-->
+    <div class="backdrop" data-backdrop>
+      <div class="popup" data-popup>
+        <load src="/_partials/base/default-popups.html" />
+        <load src="/_partials/popups/lk-popups.html" />
+      </div>
+    </div>
+
+    <!--COOKIE CONFIRM POPUP-->
+    <load src="/_partials/popups/cookies-confirm-popup.html" />
+
+    <!--SCRIPTS-->
+    <load src="/_partials/base/scripts.html" />
+  </body>
+</html>
