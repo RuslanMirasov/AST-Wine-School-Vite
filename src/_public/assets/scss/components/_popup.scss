@@ -44,6 +44,10 @@ $popup_transition: 0.5s;
   }
 }
 
+.basicLightbox {
+  background: rgba(39, 53, 81, 0.9);
+}
+
 .popup {
   position: relative;
   transition: $popup_transition;

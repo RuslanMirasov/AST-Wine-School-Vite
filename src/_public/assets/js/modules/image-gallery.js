@@ -4,11 +4,13 @@ export const initGalleries = () => {
   if (!galleriesList.length) return;
 
   const onGalleryClick = e => {
-    e.preventDefault();
-
     if (e.target.nodeName !== 'IMG') return;
 
     const originalImageUrl = e.target.dataset.source;
+    if (!originalImageUrl) return;
+
+    e.preventDefault();
+
     const description = e.target.alt;
     const instance = basicLightbox.create(`<img src="${originalImageUrl}" alt="${description}" class="gallery-image-original" />`);
     instance.show();

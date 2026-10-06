@@ -16,6 +16,7 @@ import { initTabs } from './modules/tabs.js';
 import { initStickySidebar } from './modules/stickySidebar.js';
 import { initCopyToBuffer } from './modules/copy.js';
 import { initReadMore } from './modules/readMore.js';
+import { initVideoPlayer } from './modules/videoPlayer.js';
 
 popup.init();
 window.popup = popup;
@@ -41,4 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initTabs();
   initCopyToBuffer();
   initReadMore();
+  initVideoPlayer();
 });
