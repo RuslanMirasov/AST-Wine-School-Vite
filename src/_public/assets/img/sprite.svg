@@ -385,6 +385,16 @@
       <path d="M19.9373 13.75C19.9373 13.3703 19.6295 13.0625 19.2498 13.0625C18.8701 13.0625 18.5623 13.3703 18.5623 13.75V14.6667C18.5623 16.8183 16.8181 18.5625 14.6665 18.5625H13.7498C13.3701 18.5625 13.0623 18.8703 13.0623 19.25C13.0623 19.6297 13.3701 19.9375 13.7498 19.9375H14.6665C17.5775 19.9375 19.9373 17.5777 19.9373 14.6667V13.75Z" fill="currentColor"/>
     </symbol> 
 
+    <!--menu-->
+    <symbol id="menu" viewBox="0 0 30 24" fill="none">
+      <line x1="9" y1="18.916" x2="25" y2="18.916" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="9" y1="12.584" x2="25" y2="12.584" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="9" y1="6.25" x2="25" y2="6.25" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="5" y1="18.916" x2="7" y2="18.916" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="5" y1="12.584" x2="7" y2="12.584" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="5" y1="6.25" x2="7" y2="6.25" stroke="currentColor" stroke-width="1.5"/>
+    </symbol> 
+
 
 
 

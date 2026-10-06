@@ -63,6 +63,15 @@
   .title {
     line-height: 1.25;
   }
+
+  @media (max-width: 767px) {
+    padding: var(--fs-20) var(--fs-16);
+    .title {
+      font-size: var(--fs-20);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+  }
 }
 
 .accordeon-text {
@@ -73,5 +82,14 @@
   padding: 0px var(--fs-32) var(--fs-32) var(--fs-32);
   .text {
     width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    padding: 0px var(--fs-16) var(--fs-16) var(--fs-16);
+    .text {
+      .text.fs-12.grey-text {
+        padding-bottom: 4px;
+      }
+    }
   }
 }

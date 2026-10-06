@@ -185,6 +185,9 @@ button {
   @media (max-width: 767px) {
     padding: 0px 16px;
     gap: var(--fs-24);
+    &.gap--40 {
+      gap: var(--fs-24);
+    }
   }
 }
 
@@ -348,10 +351,20 @@ button {
   font-size: inherit;
   line-height: inherit;
   &.with-icon {
-    display: inline-flex;
+    display: block;
+    position: relative;
+    padding-left: 20px;
     align-items: center;
     gap: var(--fs-8);
     border: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    svg {
+      position: absolute;
+      left: 0px;
+      top: 3px;
+    }
   }
 }
 
@@ -399,8 +412,8 @@ button {
       position: relative;
       width: 100%;
       justify-content: flex-start;
-      align-items: center;
-      align-content: center;
+      align-items: flex-start;
+      align-content: flex-start;
       gap: var(--fs-8);
       padding: var(--fs-20) 0px;
       .content-text {
