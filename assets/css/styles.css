@@ -2479,6 +2479,12 @@ button:disabled {
   z-index: 1;
   pointer-events: none;
 }
+@media (min-width: 1024px) {
+  .white-gradient:before,
+  .dark-gradient:before {
+    width: 50%;
+  }
+}
 
 .white-gradient:before {
   background: -webkit-gradient(linear, left top, right top, from(var(--white)), to(rgba(255, 255, 255, 0)));
@@ -2937,7 +2943,7 @@ button:disabled {
   background-color: var(--white);
   border-radius: 100px;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 500;
   z-index: 2;
   font-size: var(--fs-14);
   padding: var(--fs-8) var(--fs-16);
@@ -4720,8 +4726,21 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
     height: var(--fs-32);
   }
 }
+@media (max-width: 767px) {
+  .present-certificat:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: var(--fs-40);
+    left: 0px;
+    bottom: 0px;
+    background-color: var(--white);
+    z-index: 1;
+  }
+}
 .present-certificat .buttons {
   margin-top: auto;
+  z-index: 2;
 }
 @media (max-width: 767px) {
   .present-certificat .buttons {
@@ -4757,7 +4776,7 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 }
 @media (max-width: 767px) {
   .present-certificat {
-    padding-bottom: 246px;
+    padding-bottom: 300px;
   }
   .present-certificat .logo-background {
     width: 368px;
@@ -4829,9 +4848,9 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 @media (max-width: 767px) {
   .present {
     width: 320px;
-    -webkit-transform: translate(0%, 16%);
-        -ms-transform: translate(0%, 16%);
-            transform: translate(0%, 16%);
+    -webkit-transform: translate(0%, 4%);
+        -ms-transform: translate(0%, 4%);
+            transform: translate(0%, 4%);
   }
   .present .present-top {
     -webkit-transform: translate(4%, -8%);
@@ -5762,6 +5781,9 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
      object-fit: contain;
   cursor: pointer;
 }
+.video-player.is-idle .video-player-video {
+  cursor: none;
+}
 
 .video-player-controls {
   display: -webkit-box;
@@ -5778,6 +5800,12 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   gap: var(--fs-12);
   padding: var(--fs-20) var(--fs-24);
   z-index: 3;
+  -webkit-transition: opacity 0.5s var(--cubic), visibility 0.5s var(--cubic);
+  transition: opacity 0.5s var(--cubic), visibility 0.5s var(--cubic);
+}
+.video-player.is-idle .video-player-controls {
+  opacity: 0;
+  visibility: hidden;
 }
 .video-player-controls::before {
   content: "";
@@ -6121,10 +6149,6 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   z-index: 0;
   overflow: hidden;
 }
-.hero-images-slider.white-gradient:before {
-  opacity: 0.5;
-  z-index: 2;
-}
 .hero-images-slider .swiper {
   height: 100%;
   z-index: 1;
@@ -6144,6 +6168,11 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 .hero-images-slider .swiper .swiper-slide picture img {
   width: 100%;
   height: 100%;
+}
+@media (min-width: 1024px) {
+  .hero-images-slider .swiper .swiper-slide:before {
+    width: 50%;
+  }
 }
 
 .hero-text-slider {
@@ -6839,6 +6868,24 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 @media (max-width: 1023px) {
   .section--curses .content-list__item.col-3-3 {
     min-width: 100%;
+  }
+}
+@media (min-width: 1920px) {
+  .section--curses .logo-background {
+    width: 396px;
+    height: 396px;
+    -webkit-transform: translate(14%, -20%);
+        -ms-transform: translate(14%, -20%);
+            transform: translate(14%, -20%);
+  }
+}
+@media (max-width: 1023px) {
+  .section--curses .logo-background {
+    width: 428px;
+    height: 428px;
+    -webkit-transform: translate(14%, -14%);
+        -ms-transform: translate(14%, -14%);
+            transform: translate(14%, -14%);
   }
 }
 
@@ -7609,6 +7656,7 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   .post-slide {
     padding: var(--fs-20);
     border-radius: var(--fs-30);
+    min-height: 379px;
   }
 }
 .post-slide .magenta-link {
@@ -8334,7 +8382,7 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   height: var(--fs-54);
 }
 .callback-form .input.input--textarea {
-  height: 5.7rem;
+  height: 6.2rem;
 }
 
 .callback-form-inner {

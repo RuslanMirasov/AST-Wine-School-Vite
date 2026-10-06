@@ -1,6 +1,19 @@
 .present-certificat {
+  @media (max-width: 767px) {
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: var(--fs-40);
+      left: 0px;
+      bottom: 0px;
+      background-color: var(--white);
+      z-index: 1;
+    }
+  }
   .buttons {
     margin-top: auto;
+    z-index: 2;
     @media (max-width: 767px) {
       position: absolute;
       width: calc(100% - 40px);
@@ -30,7 +43,7 @@
   }
 
   @media (max-width: 767px) {
-    padding-bottom: 246px;
+    padding-bottom: 300px;
     .logo-background {
       width: 368px;
       height: 368px;
@@ -75,7 +88,7 @@
   transform: translate(-8%, 28%);
   @media (max-width: 767px) {
     width: 320px;
-    transform: translate(0%, 16%);
+    transform: translate(0%, 4%);
     .present-top {
       transform: translate(4%, -8%);
     }

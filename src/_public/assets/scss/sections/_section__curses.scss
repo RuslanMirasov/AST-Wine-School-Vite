@@ -34,6 +34,19 @@
       }
     }
   }
+
+  .logo-background {
+    @media (min-width: 1920px) {
+      width: 396px;
+      height: 396px;
+      transform: translate(14%, -20%);
+    }
+    @media (max-width: 1023px) {
+      width: 428px;
+      height: 428px;
+      transform: translate(14%, -14%);
+    }
+  }
 }
 
 .price-and-btn {
