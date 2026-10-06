@@ -6231,7 +6231,6 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 .sidebar-mobil-button span {
   display: block;
   position: relative;
-  min-height: 24px;
   font-weight: 500;
   font-size: var(--fs-16);
   text-align: left;
