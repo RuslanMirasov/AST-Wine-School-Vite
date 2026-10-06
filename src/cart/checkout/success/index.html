@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <load src="/_partials/base/metrix.html" />
+    <load src="/_partials/base/meta.html" />
+    <load src="/_partials/base/styles.html" />
+    <meta name="description" content="AST - Оформление заказа" />
+    <title>Оформление заказа</title>
+  </head>
+  <body class="body">
+    <!--START SCRIPTS-->
+    <load src="/_partials/base/start-scripts.html" />
+    <!--HEADER-->
+    <load src="/_partials/preloader.html" />
+    <load src="/_partials/components/header/header.html" />
+
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="%ROOT%">Главная</a></li>
+        <li><a href="%ROOT%cart/">Корзина</a></li>
+        <li><span>Оформление заказа</span></li>
+      </ul>
+
+      <section class="section">
+        <div class="container gap--40">
+          <ul class="cart-steps">
+            <li class="active"><span>Корзина</span></li>
+            <li class="active"><span>Оформление</span></li>
+            <li class="active"><span>Оплата</span></li>
+            <li class="current"><span>Готово</span></li>
+          </ul>
+
+          <div class="content pad--40 gap--16">
+            <svg width="56" height="56"><use href="/assets/img/sprite.svg#success"></use></svg>
+            <h1 class="title title--40 upper">Спасибо за заказ №123456!</h1>
+            <p class="text">Оплата прошла успешно.</p>
+
+            <div class="buttons gap--12 ta--l">
+              <a href="%ROOT%profile/orders/" class="button magenta-light"><span>Посмотреть мои заказы</span></a>
+              <a href="%ROOT%events/" class="button white-border"><span>Календарь мероприятий</span></a>
+            </div>
+          </div>
+
+          <ul class="collection">
+            <li class="col--63">
+              <div class="content grey pad--40 gap--16">
+                <h2 class="title title--24 bold">Что вы купили</h2>
+
+                <table class="order-table" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <b class="text">Быстрый старт: о вине за 3 встречи</b>
+                      <span class="text fs-14 grey-text">Очный курс · Встреча №2 · 14&nbsp;июля&nbsp;2026, 18:00</span>
+                    </td>
+                    <td>
+                      <b class="text">1&nbsp;000&nbsp;₽</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b class="text">Подарочный сертификат</b>
+                      <span class="text fs-14 grey-text">Номинал: 10&nbsp;000&nbsp;₽ · отправлен на почту</span>
+                    </td>
+                    <td>
+                      <b class="text fs-18">1&nbsp;000&nbsp;₽</b>
+                    </td>
+                  </tr>
+                </table>
+
+                <table class="order-table" cellspacing="0" cellpadding="0">
+                  <tr class="bordered">
+                    <td><b class="text fs-18">Итого оплачено</b></td>
+                    <td><b class="text fs-18 magenta">11&nbsp;000 ₽</b></td>
+                  </tr>
+                </table>
+              </div>
+            </li>
+
+            <li class="col--37">
+              <div class="content pad--40 gap--16">
+                <h2 class="title title--24 bold">Что дальше</h2>
+                <ol class="ol">
+                  <li>
+                    <b class="text">Письмо с деталями</b>
+                    <span class="text fs-14">Чек и памятка по заказу уже на вашей почте</span>
+                  </li>
+                  <li>
+                    <b class="text">Все в личном кабинете</b>
+                    <span class="text fs-14">Даты, адреса и доступы всегда под рукой</span>
+                  </li>
+                  <li>
+                    <b class="text">Ждите напоминания</b>
+                    <span class="text fs-14">О дате события или отправке сертификата</span>
+                  </li>
+                </ol>
+                <div class="content-text gap--2">
+                  <b class="text fs-14">Остались вопросы?</b>
+                  <a href="mailto:info@ast.school" class="text fs-14 magenta">info@ast.school</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <load src="/_partials/components/certificat-for-one.html" />
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <load src="/_partials/footer.html" />
+
+    <!--POPUPS-->
+    <div class="backdrop" data-backdrop>
+      <div class="popup" data-popup>
+        <load src="/_partials/base/default-popups.html" />
+      </div>
+    </div>
+
+    <!--COOKIE CONFIRM POPUP-->
+    <load src="/_partials/popups/cookies-confirm-popup.html" />
+
+    <!--SCRIPTS-->
+    <load src="/_partials/base/scripts.html" />
+  </body>
+</html>

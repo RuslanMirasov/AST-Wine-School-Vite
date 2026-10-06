@@ -57,7 +57,49 @@
                 <button type="button" class="button button--tab" data-tab-target="legal-entity"><span>Юридическое лицо</span></button>
               </div>
 
+              <!--ФИЗИЧЕСКОЕ ЛИЦО-->
               <div data-tab="individual">
+                <form data-form="" action="#" class="form" novalidate>
+                  <fieldset class="col--2">
+                    <label class="label">
+                      <span class="label-text">Фамилия *</span>
+                      <input type="text" name="sername" class="input" required value="" />
+                    </label>
+
+                    <label class="label">
+                      <span class="label-text">Имя *</span>
+                      <input type="text" name="name" class="input" required value="" />
+                    </label>
+
+                    <label class="label">
+                      <span class="label-text">Отчество</span>
+                      <input type="text" name="lastname" class="input" value="" />
+                    </label>
+                  </fieldset>
+
+                  <fieldset class="col--2">
+                    <label class="label">
+                      <span class="label-text">Электронная почта *</span>
+                      <input type="email" name="email" class="input" required autocomplete="email" />
+                    </label>
+
+                    <label class="label">
+                      <span class="label-text">Номер телефона *</span>
+                      <input type="tel" name="phone" class="input" placeholder="+7 ___ ___ __ __" required />
+                    </label>
+
+                    <label class="label">
+                      <span class="label-text">Дата рождения *</span>
+                      <input type="date" name="birthday" class="input" required value="" placeholder="дд.мм.гггг" />
+                    </label>
+
+                    <p class="text fs-12 grey-text">Участие в мероприятиях доступно только с 18 лет.</p>
+                  </fieldset>
+                </form>
+              </div>
+
+              <!--ЮРИДИЧЕСКОЕ ЛИЦО-->
+              <div data-tab="legal-entity">
                 <form data-form="" action="#" class="form" novalidate>
                   <fieldset class="col--2">
                     <label class="label">
@@ -91,7 +133,7 @@
                   <fieldset class="col--2">
                     <label class="label">
                       <span class="label-text">Наименование юридического лица</span>
-                      <input type="text" name="legal-entity-name" class="input" required value="" />
+                      <input type="text" name="legal-entity-name" class="input" required value="" placeholder="Наименование" />
                     </label>
 
                     <label class="label">
@@ -111,19 +153,16 @@
 
                   <fieldset class="col--2">
                     <label class="label">
-                      <span class="label-text">БИК *</span>
-                      <input type="text" name="bik" class="input" required="" inputmode="numeric" maxlength="9" value="044525225" />
+                      <span class="label-text">Юридический адрес</span>
+                      <input type="text" name="adress" class="input" required value="" placeholder="Адрес" />
                     </label>
 
                     <label class="label">
-                      <span class="label-text">Наименование банка *</span>
-                      <input type="text" name="bank-name" class="input" required="" value="ПАО Сбербанк" />
+                      <span class="label-text">КПП</span>
+                      <input type="number" name="kpp" inputmode="numeric" maxlength="9" class="input" required="" value="" placeholder="9 цифр" />
                     </label>
                   </fieldset>
                 </form>
-              </div>
-              <div data-tab="legal-entity">
-                <p class="text">куку</p>
               </div>
             </div>
           </div>

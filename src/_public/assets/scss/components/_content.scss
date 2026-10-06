@@ -128,7 +128,12 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: var(--fs-16);
-
+  &.gap--2 {
+    gap: var(--fs-2);
+  }
+  &.gap--4 {
+    gap: var(--fs-4);
+  }
   &.gap--8 {
     gap: var(--fs-8);
   }

@@ -7,6 +7,12 @@
 
   li {
     width: 100%;
+    &.col--63 {
+      max-width: calc(63.880597% - (var(--fs-24) / 2));
+    }
+    &.col--37 {
+      max-width: calc(36.119403% - (var(--fs-24) / 2));
+    }
   }
 
   &.col-3 {

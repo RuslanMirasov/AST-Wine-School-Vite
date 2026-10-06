@@ -13,6 +13,11 @@
   &.gap--12 {
     gap: var(--fs-12);
   }
+
+  .title--24,
+  .title--18 {
+    line-height: 1;
+  }
 }
 
 .order-sum {
@@ -22,11 +27,12 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--fs-16);
-  padding-top: var(--fs-16);
+  padding-top: var(--fs-12);
   border-top: 1px solid var(--grey-button);
 }
 
 .order-table {
+  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
 
@@ -54,6 +60,15 @@
     &:last-child {
       td {
         padding-bottom: 0px;
+      }
+    }
+
+    &.bordered {
+      td {
+        padding-top: var(--fs-16);
+        padding-bottom: var(--fs-16);
+        border-top: 1px solid var(--grey-medium);
+        border-bottom: 1px solid var(--grey-medium);
       }
     }
   }
