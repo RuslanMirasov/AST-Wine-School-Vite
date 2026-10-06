@@ -226,15 +226,27 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  left: calc(100% + var(--fs-12));
-  top: 0px;
+  right: 24px;
+  top: 24px;
   background-color: rgba(0, 0, 0, 0.4);
   width: var(--fs-40);
   height: var(--fs-40);
   border-radius: var(--fs-40);
+  z-index: 4;
 
-  svg {
-    color: var(--white);
+  .popup-close {
+    width: 75%;
+    height: 75%;
+    svg {
+      color: var(--white);
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: var(--fs-24);
+    height: var(--fs-24);
+    right: 16px;
+    top: 16px;
   }
 }
 

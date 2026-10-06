@@ -889,6 +889,11 @@ button:disabled {
 .docs-list li a .content-text span {
   line-height: 1.5;
 }
+@media (max-width: 767px) {
+  .docs-list li a .content-text span {
+    padding-top: 4px;
+  }
+}
 .docs-list li a .content-text {
   gap: 0px;
 }
@@ -2156,6 +2161,11 @@ button:disabled {
 .text.fs-20 {
   font-size: var(--fs-20);
   line-height: 1.3;
+}
+@media (max-width: 767px) {
+  .text.fs-20 {
+    font-size: var(--fs-18);
+  }
 }
 .text.fs-24 {
   font-size: var(--fs-24);
@@ -6036,15 +6046,28 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  left: calc(100% + var(--fs-12));
-  top: 0px;
+  right: 24px;
+  top: 24px;
   background-color: rgba(0, 0, 0, 0.4);
   width: var(--fs-40);
   height: var(--fs-40);
   border-radius: var(--fs-40);
+  z-index: 4;
 }
-.player-close svg {
+.player-close .popup-close {
+  width: 75%;
+  height: 75%;
+}
+.player-close .popup-close svg {
   color: var(--white);
+}
+@media (max-width: 767px) {
+  .player-close {
+    width: var(--fs-24);
+    height: var(--fs-24);
+    right: 16px;
+    top: 16px;
+  }
 }
 
 .player-play-button {
@@ -7601,6 +7624,11 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
             flex: none;
     width: 100%;
   }
+  .module-card-form {
+    max-width: 400px;
+    margin-left: 0px;
+    margin-right: auto;
+  }
 }
 @media (max-width: 767px) {
   .module-accordeon {
@@ -7611,7 +7639,9 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
     padding: var(--fs-20) var(--fs-20);
   }
   .module-accordeon-head .title {
-    font-size: var(--fs-18);
+    font-size: var(--fs-16);
+    line-height: 1.1;
+    font-weight: 500;
   }
   .module-accordeon-body {
     gap: var(--fs-20);
@@ -8948,11 +8978,17 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   }
 }
 
-.section--pay-methods .container {
+.pay-methods {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: var(--fs-35);
 }
 @media (max-width: 767px) {
-  .section--pay-methods .container {
+  .pay-methods {
     gap: var(--fs-24);
   }
 }

@@ -1,9 +1,10 @@
-.section--pay-methods {
-  .container {
-    gap: var(--fs-35);
-    @media (max-width: 767px) {
-      gap: var(--fs-24);
-    }
+.pay-methods {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: var(--fs-35);
+  @media (max-width: 767px) {
+    gap: var(--fs-24);
   }
 }
 

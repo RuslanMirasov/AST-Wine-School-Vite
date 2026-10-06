@@ -105,6 +105,11 @@
     flex: none;
     width: 100%;
   }
+  .module-card-form {
+    max-width: 400px;
+    margin-left: 0px;
+    margin-right: auto;
+  }
 }
 
 //375
@@ -117,7 +122,9 @@
     gap: var(--fs-16);
     padding: var(--fs-20) var(--fs-20);
     .title {
-      font-size: var(--fs-18);
+      font-size: var(--fs-16);
+      line-height: 1.1;
+      font-weight: 500;
     }
   }
   .module-accordeon-body {

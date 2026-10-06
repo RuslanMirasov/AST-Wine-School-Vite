@@ -422,6 +422,9 @@ button {
         }
         span {
           line-height: 1.5;
+          @media (max-width: 767px) {
+            padding-top: 4px;
+          }
         }
         gap: 0px;
       }
