@@ -120,6 +120,8 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    flex-shrink: 0;
+    line-height: 24px;
   }
   svg {
     flex-shrink: 0;

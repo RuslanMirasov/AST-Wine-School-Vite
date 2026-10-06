@@ -6237,6 +6237,9 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  line-height: 24px;
 }
 .sidebar-mobil-button svg {
   -ms-flex-negative: 0;
