@@ -337,7 +337,8 @@ fieldset + .inputError {
         transition:
           color 0.3s var(--cubic),
           border-bottom 0.3s var(--cubic);
-        border-bottom: 1px solid var(--checkbox-text-color);
+        color: var(--magenta);
+        border-bottom: 1px solid var(--magenta);
         @media (hover: hover) {
           &:hover {
             color: var(--magenta);
