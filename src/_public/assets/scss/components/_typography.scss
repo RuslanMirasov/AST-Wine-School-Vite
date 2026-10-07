@@ -157,7 +157,7 @@
 .cut-4,
 .cut-5,
 .cut-6 {
-  display: -webkit-box;
+  display: -webkit-box !important;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

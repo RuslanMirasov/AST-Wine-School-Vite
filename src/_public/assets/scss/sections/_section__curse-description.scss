@@ -63,3 +63,17 @@
     padding: var(--fs-20);
   }
 }
+
+@media (max-width: 1023px) {
+  .curse-description .button.button-pdf {
+    width: calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
+}
+
+@media (max-width: 767px) {
+  .curse-description .button.button-pdf {
+    width: 100%;
+    max-width: 100%;
+  }
+}

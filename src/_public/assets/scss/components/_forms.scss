@@ -595,6 +595,9 @@ $select_padding: 0px var(--fs-16);
   justify-content: center;
   align-items: center;
   align-content: center;
+  &.freez {
+    pointer-events: none;
+  }
 
   .label {
     display: inline-block;
@@ -611,6 +614,7 @@ $select_padding: 0px var(--fs-16);
       padding: 5px 14px;
       border-radius: var(--fs-14);
       cursor: pointer;
+      color: var(--grey-text);
       transition:
         background-color 0.3s var(--cubic),
         color 0.3s var(--cubic);
@@ -628,8 +632,12 @@ $select_padding: 0px var(--fs-16);
     width: 100%;
     .radio-button {
       + .label-text {
-        font-size: var(--fs-10);
+        font-size: var(--fs-12);
         padding: 5px 10px;
+        @media (max-width: 359px) {
+          padding: 5px 8px;
+        }
+        font-weight: 400;
       }
     }
   }

@@ -16,6 +16,9 @@
   color: var(--blue);
   padding: var(--fs-32);
   border-radius: var(--fs-50);
+  @media (max-width: 1279px) {
+    background-color: var(--blue);
+  }
   @media (max-width: 767px) {
     padding: var(--fs-24) var(--fs-20) var(--fs-20) var(--fs-20);
     border-radius: var(--fs-30);
@@ -45,8 +48,27 @@
     flex: 1;
     width: 50%;
     max-width: 638px;
+    @media (max-width: 1279px) {
+      flex: auto;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 260px;
+      color: var(--white);
+      .title,
+      .text {
+        color: var(--white);
+      }
+      b,
+      strong,
+      a {
+        border-bottom: 1px solid var(--white);
+      }
+    }
     @media (max-width: 1023px) {
       width: 100%;
+    }
+    @media (max-width: 767px) {
+      margin-top: 180px;
     }
 
     z-index: 2;
@@ -61,22 +83,39 @@
 
   .image-background {
     overflow: hidden;
+    top: -2px;
     border-radius: var(--fs-50);
-    @media (max-width: 767px) {
-      border-radius: var(--fs-32);
-    }
+
     &:before {
       content: '';
       position: absolute;
       left: 0px;
       top: 0px;
-      width: 100%;
+      width: 50%;
       height: 100%;
       z-index: 2;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0) 60%);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
       @media (max-width: 1279px) {
         background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 100%);
       }
+    }
+
+    @media (max-width: 1279px) {
+      height: 460px;
+      border-radius: 0px;
+      border-radius: var(--fs-50) var(--fs-50) 0px 0px;
+      background-color: var(--blue);
+      &:before {
+        width: 100%;
+        height: 40%;
+        top: auto;
+        bottom: 0px;
+        z-index: 2;
+        background: linear-gradient(0deg, var(--blue) 0%, rgba(0, 0, 0, 0) 100%);
+      }
+    }
+    @media (max-width: 767px) {
+      border-radius: var(--fs-32) var(--fs-32) 0px 0px;
     }
   }
 }
@@ -88,10 +127,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--fs-24);
-  @media (max-width: 1279px) {
-    align-items: flex-end;
-  }
-  @media (max-width: 1023px) {
+
+  @media (max-width: 767px) {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--fs-14);
@@ -109,7 +146,7 @@
     padding: var(--fs-28) var(--fs-32);
     @media (max-width: 767px) {
       padding: var(--fs-20) var(--fs-20);
-      border-radius: var(--fs-30);
+      border-radius: var(--fs-24);
       .buttons {
         .button {
           width: 100%;
@@ -136,7 +173,13 @@
     max-width: 380px;
     flex-direction: column;
     @media (max-width: 1023px) {
+      max-width: 280px;
+    }
+    @media (max-width: 767px) {
       max-width: 100%;
+      .buttons {
+        gap: var(--fs-16);
+      }
     }
     .buttons {
       margin-top: auto;
@@ -170,29 +213,20 @@
 
 @media (max-width: 1023px) {
   .curse-hero {
+    width: calc(100% + 32px + 32px);
+    min-width: calc(100% + 32px + 32px);
+    left: -32px;
+    @media (max-width: 767px) {
+      width: calc(100% + 16px + 16px);
+      min-width: calc(100% + 16px + 16px);
+      left: -16px;
+    }
     background-color: var(--blue);
     overflow: hidden;
 
-    .content-text {
-      flex: auto;
-      width: 100%;
-      max-width: 100%;
-      margin-top: 150px;
-      color: var(--white);
-      .title,
-      .text {
-        color: var(--white);
-      }
-      b,
-      strong,
-      a {
-        border-bottom: 1px solid var(--white);
-      }
-    }
-
     .image-background {
       position: absolute;
-      height: 300px;
+      height: 400px;
       overflow: hidden;
       border-radius: 0px;
 

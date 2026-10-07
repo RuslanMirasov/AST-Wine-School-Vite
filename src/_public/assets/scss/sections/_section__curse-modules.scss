@@ -115,14 +115,15 @@
 //375
 @media (max-width: 767px) {
   .module-accordeon {
-    border-radius: var(--fs-32);
+    border-radius: var(--fs-30);
   }
 
   .module-accordeon-head {
     gap: var(--fs-16);
     padding: var(--fs-20) var(--fs-20);
+    align-items: flex-start;
     .title {
-      font-size: var(--fs-16);
+      font-size: var(--fs-20);
       line-height: 1.1;
       font-weight: 500;
     }
@@ -136,7 +137,7 @@
     width: 100%;
   }
   .accordeon-arrow {
-    width: var(--fs-24);
-    height: var(--fs-24);
+    width: var(--fs-32);
+    height: var(--fs-32);
   }
 }

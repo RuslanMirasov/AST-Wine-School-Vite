@@ -38,22 +38,10 @@
   .buttons {
     margin-top: auto;
   }
-  // > .icon-list {
-  //   margin-top: auto;
-  //   margin-bottom: -12px;
-  // }
 
   &.minify {
     &.horisontal {
       padding: var(--fs-24);
-
-      .title {
-        line-height: 1.25;
-      }
-
-      .text {
-        line-height: 1.4;
-      }
 
       .buttons {
         gap: var(--fs-12);
@@ -88,6 +76,7 @@
   z-index: 1;
   width: 100%;
   border-radius: var(--fs-24);
+  min-height: 200px;
   &:before {
     content: '';
     display: block;
@@ -167,10 +156,6 @@
   align-content: flex-start;
   gap: var(--fs-12);
 
-  > .text {
-    line-height: 1.5;
-  }
-
   > .magenta-link {
     font-weight: 400;
   }
@@ -182,11 +167,6 @@
     padding: var(--fs-24);
     border-radius: var(--fs-36);
     gap: var(--fs-16);
-
-    .title,
-    .text {
-      line-height: 1.1;
-    }
 
     &.horisontal {
       padding: var(--fs-24);
@@ -211,10 +191,6 @@
       .post-card-image {
         border-radius: var(--fs-24);
         max-width: 240px;
-      }
-
-      .text {
-        line-height: 1.5;
       }
     }
 
