@@ -16,14 +16,186 @@
 
     <!--MAIN-->
     <main class="main" id="main" tabindex="-1">
-      <!--breadcrumbs-->
-      <ul class="breadcrumbs">
-        <li><a href="%ROOT%">Главная</a></li>
-        <li><a href="%ROOT%tastings/">Дегустации</a></li>
-        <li><span>Дегустация</span></li>
-      </ul>
+      <!--HERO-->
+      <div class="section degustation-single-hero">
+        <picture class="image-background">
+          <source media="(max-width: 767px)" srcset="/assets/img/degustations/hero-bg.webp" />
+          <img src="/assets/img/degustations/hero-bg.webp" alt="" />
+        </picture>
+        <div class="container">
+          <!--breadcrumbs-->
+          <ul class="breadcrumbs dark">
+            <li><a href="%ROOT%">Главная</a></li>
+            <li><a href="%ROOT%tastings/">Дегустации</a></li>
+            <li><span>Дегустация</span></li>
+          </ul>
 
-      <section class="section">
+          <div class="content-text gap--8">
+            <ul class="tags auto">
+              <li class="tag">
+                <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                Дегустация
+              </li>
+              <li class="tag">
+                <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                Москва
+              </li>
+              <li class="tag green">
+                <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                Новинка
+              </li>
+            </ul>
+
+            <h1 class="title title--40 upper">Ночная Афродита</h1>
+            <p class="text fs-18">Ночная прогулка по&nbsp;рекам с&nbsp;летними винами: дегустация и&nbsp;романтика</p>
+          </div>
+
+          <div class="collage">
+            <div class="col--2">
+              <div class="content pad--32">
+                <form action="#" class="form order-degustation-form">
+                  <label class="label">
+                    <p class="label-text">Выберите время</p>
+                    <select data-select name="start-time" required>
+                      <option value="13 июля 2026 18:00">13 июля 2026 18:00</option>
+                      <option value="16 июля 2026 19:30">16 июля 2026 19:30</option>
+                      <option value="20 июля 2026 13:00">20 июля 2026 13:00</option>
+                    </select>
+                  </label>
+
+                  <h3 class="title title--16 bold">Осталось мест: 12</h3>
+
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                      <span>С понедельника по&nbsp;субботу с&nbsp;18:00 до&nbsp;20:30</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#clock"></use></svg>
+                      <span>Длительность: 2,5 часа</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Москва, ул. Новый Арбат, д. 63</span>
+                    </li>
+                    <li class="bold magenta">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#phone"></use></svg>
+                      <a href="tel:+70000000000">+7 000 000 00 00</a>
+                    </li>
+                  </ul>
+
+                  <div class="price-and-btn">
+                    <div class="content-text gap--8">
+                      <span class="text fs-14 grey-text regular">Стоимость участия</span>
+                      <span class="price">134&nbsp;500&nbsp;₽</span>
+                    </div>
+
+                    <a href="./courses/offline/quick-start/" class="button"><span>В корзину</span></a>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="col--2">
+              <div class="image-slider" data-slider data-pagination-type="fraction" data-loop="true">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="image-slide">
+                        <img src="/assets/img/degustations/slider.webp" alt="Фотография с занятия" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="image-slide">
+                        <img src="/assets/img/degustations/slider.webp" alt="Фотография с занятия" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="image-slide">
+                        <img src="/assets/img/degustations/slider.webp" alt="Фотография с занятия" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="arrows">
+                  <load src="/_partials/components/slider-arrows-with-pagination.html" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col--2">
+              <div class="content pad--32 gap--16 grey">
+                <p class="text">
+                  🍷 Винная дегустация — путешествие в&nbsp;мир вкуса и&nbsp;удовольствия. Приглашаем вас на&nbsp;изысканную дегустацию вин, где
+                  каждый бокал расскажет свою уникальную историю. Вы познакомитесь с&nbsp;тщательно отобранными винами, узнаете секреты их
+                  производства, особенности сортов винограда и&nbsp;тонкости профессиональной оценки вкуса и&nbsp;аромата.
+                </p>
+                <p class="text">
+                  В&nbsp;уютной атмосфере вас ждет увлекательное путешествие по&nbsp;винным регионам мира, яркие гастрономические сочетания
+                  и&nbsp;новые вкусовые открытия. Независимо от&nbsp;того, являетесь ли вы ценителем вина или&nbsp;только начинаете знакомство
+                  с&nbsp;этим удивительным напитком, дегустация подарит вам незабываемые впечатления, новые знания и&nbsp;приятное общение.
+                </p>
+                <p class="text">Позвольте себе вечер наслаждения, вдохновения и&nbsp;настоящей винной культуры.</p>
+              </div>
+
+              <div class="content pad--32 gap--24">
+                <h2 class="title title--32 upper">Образцы для дегустации</h2>
+                <ul class="list">
+                  <li><p class="text">Domaine de la Romanée-Conti 1945</p></li>
+                  <li><p class="text">Screaming Eagle Cabernet Sauvignon 1992</p></li>
+                  <li><p class="text">Château Mouton Rothschild 1945 (Jeroboam)</p></li>
+                  <li><p class="text">Château Cheval Blanc 1947</p></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col--2">
+              <h2 class="title title--32 upper full">Ведущие дегустации</h2>
+
+              <div class="col--2">
+                <article class="post-card gap--16">
+                  <a href="../../../about/teachers/teacher/" class="post-card-image">
+                    <img src="/assets/img/teachers/1.webp" alt="Воскресенская Анна Михайловна" />
+                  </a>
+
+                  <div class="content-text">
+                    <h3 class="title title--18 bold">Воскресенская Анна Михайловна</h3>
+                    <p class="text fs-14 grey-text cut-4">
+                      Эксперт с&nbsp;уникальным статусом «Кавалеры Ордена Вина Испании» и&nbsp;сертифицированный преподаватель по...
+                    </p>
+                  </div>
+
+                  <div class="buttons ta--r">
+                    <a href="../../../about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col--2">
+                <article class="post-card gap--16 empty">
+                  <!-- <a href="../../../about/teachers/teacher/" class="post-card-image">
+                    <img src="/assets/img/teachers/1.webp" alt="Воскресенская Анна Михайловна" />
+                  </a>
+
+                  <div class="content-text">
+                    <h3 class="title title--18 bold">Воскресенская Анна Михайловна</h3>
+                    <p class="text fs-14 grey-text cut-4">
+                      Эксперт с&nbsp;уникальным статусом «Кавалеры Ордена Вина Испании» и&nbsp;сертифицированный преподаватель по...
+                    </p>
+                  </div>
+
+                  <div class="buttons ta--r">
+                    <a href="../../../about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                  </div> -->
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section order-privat-event">
         <div class="container">
           <div class="collage">
             <div class="col--3-8">
@@ -46,46 +218,111 @@
                 </picture>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="col--3-8">
-              <div class="content card-banner">1</div>
+      <section class="section section--collage">
+        <div class="container">
+          <div class="collage">
+            <div class="col--2">
+              <div class="content-text gap--24">
+                <h2 class="title title--32 upper">Лучшие моменты с&nbsp;дегустаций</h2>
+                <p class="text">
+                  Посмотрите, как&nbsp;сияют лица наших гостей! И у&nbsp;вашего друга может быть так&nbsp;же. Просто подарите ему сертификат
+                  на&nbsp;эту дегустацию — и&nbsp;он окажется в&nbsp;центре таких же&nbsp;ярких впечатлений.
+                </p>
+                <div class="buttons ta--l gap--12">
+                  <button type="button" class="button"><span>Записаться</span></button>
+                  <button type="button" class="button white-border"><span>Подарить другу</span></button>
+                </div>
+              </div>
+
+              <div class="col--2">
+                <div class="collage-image big-vertical">
+                  <img src="/assets/img/degustations/collage-3.webp" alt="Описание изображения" />
+                </div>
+              </div>
+
+              <div class="col--2">
+                <div class="collage-image">
+                  <img src="/assets/img/degustations/collage-4.webp" alt="Описание изображения" />
+                </div>
+                <div class="collage-image">
+                  <img src="/assets/img/degustations/collage-5.webp" alt="Описание изображения" />
+                </div>
+              </div>
+
+              <div class="collage-image horisontal">
+                <img src="/assets/img/degustations/collage-6.webp" alt="Описание изображения" />
+              </div>
             </div>
 
-            <div class="col--5-8">
-              <div class="content card-banner">1</div>
+            <div class="col--2">
+              <div class="collage-image big">
+                <img src="/assets/img/degustations/collage-2.webp" alt="Описание изображения" />
+              </div>
+              <div class="col--2">
+                <div class="collage-image vertical">
+                  <img src="/assets/img/degustations/collage-7.webp" alt="Описание изображения" />
+                </div>
+              </div>
+              <div class="col--2">
+                <div class="collage-image vertical">
+                  <img src="/assets/img/degustations/collage-8.webp" alt="Описание изображения" />
+                </div>
+              </div>
+              <div class="collage-image horisontal">
+                <img src="/assets/img/degustations/collage-9.webp" alt="Описание изображения" />
+              </div>
             </div>
 
-            <div class="col--8">
-              <div class="content card-banner">1</div>
-            </div>
-            <div class="col--8">
-              <div class="content card-banner">1</div>
-            </div>
-            <div class="col--8">
-              <div class="content card-banner">1</div>
-            </div>
-            <div class="col--8">
-              <div class="content card-banner">1</div>
-            </div>
-            <div class="col--8">
-              <div class="content card-banner">1</div>
-            </div>
-            <div class="col--8">
-              <div class="content card-banner">1</div>
-            </div>
-            <div class="col--8">
-              <div class="content card-banner">1</div>
-            </div>
-            <div class="col--8">
-              <div class="content card-banner">1</div>
+            <div class="col--1 show-in-mobil">
+              <div class="buttons">
+                <button type="button" class="button magenta-light"><span>Показать еще</span></button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section testing-global-info">
         <div class="container">
+          <load src="/_partials/sections/section-faq-degustation.html" />
           <load src="/_partials/components/certificat-for-one.html" />
+
+          <ul class="content-list">
+            <li class="content-list__item">
+              <div class="content you-money">
+                <h2 class="title title--32 upper">Способы оплаты</h2>
+
+                <div class="pay-methods-logos">
+                  <img src="/assets/img/pay/youmoney.webp" alt="youmoney" />
+                  <img src="/assets/img/pay/visa.webp" alt="visa" />
+                  <img src="/assets/img/pay/mastercard.webp" alt="mastercard" />
+                  <img src="/assets/img/pay/mir.webp" alt="mir" />
+                  <img src="/assets/img/pay/spb.webp" alt="spb" />
+                </div>
+
+                <p class="text">«Оплатите курс по&nbsp;частям — без&nbsp;переплаты. Рассрочка до&nbsp;6&nbsp;месяцев через партнёрские банки.</p>
+              </div>
+            </li>
+
+            <li class="content-list__item col-4">
+              <article class="content gap--12 light">
+                <div class="image-background gradient">
+                  <video autoplay="" muted="" loop="" playsinline="">
+                    <source src="/assets/img/promo/3-des.mp4" type="video/mp4" />
+                  </video>
+                </div>
+
+                <div class="content-text full va--b ta--c">
+                  <h3 class="title title--24 bold">Все дегустации</h3>
+                  <a href="./tastings/" class="button magenta"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+          </ul>
         </div>
       </section>
     </main>

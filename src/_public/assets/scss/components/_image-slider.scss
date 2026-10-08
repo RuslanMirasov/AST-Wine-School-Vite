@@ -2,7 +2,10 @@
   width: 100%;
 
   .swiper {
-    border-radius: 30px;
+    border-radius: var(--fs-50);
+    @media (max-width: 767px) {
+      border-radius: var(--fs-30);
+    }
     overflow: hidden;
     .swiper-slide {
       opacity: 1;
