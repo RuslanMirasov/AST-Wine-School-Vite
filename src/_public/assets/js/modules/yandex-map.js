@@ -1,6 +1,7 @@
 const API_URL = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
-const MARKERS_URL = '/assets/json/markers.json';
-const PIN_IMAGE = '/assets/img/pin.webp';
+// Пути считаем от самого модуля: сайт может лежать в подпапке (GitHub Pages), и путь от корня домена там не сработает
+const MARKERS_URL = new URL('../../json/markers.json', import.meta.url).href;
+const PIN_IMAGE = new URL('../../img/pin.webp', import.meta.url).href;
 const PIN_SIZE = [36, 50];
 const PIN_OFFSET = [-18, -50];
 
