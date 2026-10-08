@@ -103,6 +103,7 @@ button {
   cursor: pointer;
   background: none;
   color: inherit;
+  font-family: var(--font);
   &:disabled {
     cursor: auto;
     pointer-events: none;

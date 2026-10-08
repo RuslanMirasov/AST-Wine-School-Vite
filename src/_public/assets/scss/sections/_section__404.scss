@@ -10,12 +10,19 @@
   gap: var(--fs-40);
   margin: 0 auto;
   text-align: center;
+
+  &.full {
+    max-width: 100%;
+  }
   @media (max-width: 767px) {
     gap: var(--fs-16);
   }
 
   .title {
     line-height: 1.25;
+  }
+  .text {
+    width: 100%;
   }
 }
 

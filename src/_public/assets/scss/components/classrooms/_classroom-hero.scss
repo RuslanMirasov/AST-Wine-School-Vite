@@ -1,0 +1,57 @@
+.section--classroom-hero {
+  .content {
+    display: inline-flex;
+    width: 100%;
+    flex: auto;
+    height: auto;
+    gap: var(--fs-4);
+  }
+  .col--3 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .content.grey.pad--32 {
+    flex: 0 0 auto;
+    &:first-child {
+      flex: 1 1 auto;
+    }
+  }
+
+  .content-text {
+    max-width: 888px;
+    margin-left: auto;
+    @media (min-width: 1920px) {
+      max-width: 1200px;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .col--3,
+    .col--2-3 {
+      min-width: 100%;
+      width: 100%;
+    }
+    .col--3 {
+      flex-direction: row;
+      .content {
+        width: calc((100% - var(--fs-24)) / 2);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .col--3 {
+      flex-direction: column;
+      .content {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.classroom-hero-image {
+  min-height: 420px;
+  @media (max-width: 767px) {
+    min-height: 220px;
+  }
+}

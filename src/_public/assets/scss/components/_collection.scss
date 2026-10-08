@@ -30,6 +30,15 @@
 }
 
 .post-card-collection {
+  .container > .title--40 + .button {
+    margin-left: auto;
+  }
+  .page-not-found {
+    order: 3;
+  }
+  .post-card {
+    box-shadow: rgba(15, 23, 42, 0.03) 0px 8px 24px;
+  }
   .collage {
     @media (max-width: 1023px) {
       .col--3 {

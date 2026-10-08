@@ -1,12 +1,10 @@
 const API_URL = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
-// Пути считаем от самого модуля: сайт может лежать в подпапке (GitHub Pages), и путь от корня домена там не сработает
 const MARKERS_URL = new URL('../../json/markers.json', import.meta.url).href;
 const PIN_IMAGE = new URL('../../img/pin.webp', import.meta.url).href;
 const PIN_SIZE = [36, 50];
 const PIN_OFFSET = [-18, -50];
 
 const ALL_GROUP = 'all';
-// Координаты в json и здесь: [долгота, широта]
 const DEFAULT_CENTER = [37.617635, 55.755814];
 const DEFAULT_ZOOM = 10;
 const POINT_ZOOM = 16;
@@ -72,7 +70,6 @@ const loadPoints = async () => {
 const createMap = async () => {
   const [ymaps, loadedPoints] = await Promise.all([loadApi(), loadPoints()]);
 
-  // API по умолчанию ждёт [широта, долгота], порядок зависит от параметра coordorder при подключении
   const toApiOrder = ([longitude, latitude]) => (ymaps.meta.coordinatesOrder === 'longlat' ? [longitude, latitude] : [latitude, longitude]);
 
   points = loadedPoints.map(point => ({ ...point, coordinates: toApiOrder(point.coordinates) }));
@@ -81,7 +78,7 @@ const createMap = async () => {
   map = new ymaps.Map(
     mapElement,
     { center: points[0]?.coordinates || toApiOrder(DEFAULT_CENTER), zoom: DEFAULT_ZOOM, controls: [] },
-    { suppressMapOpenBlock: true },
+    { suppressMapOpenBlock: true }
   );
 
   collection = new ymaps.GeoObjectCollection();
@@ -122,7 +119,7 @@ const createPlacemark = point => {
       iconImageHref: PIN_IMAGE,
       iconImageSize: PIN_SIZE,
       iconImageOffset: PIN_OFFSET,
-    },
+    }
   );
 };
 

@@ -167,10 +167,16 @@
 
   &.gap--20 {
     gap: var(--fs-20);
+    @media (max-width: 767px) {
+      gap: var(--fs-16);
+    }
   }
 
   &.gap--24 {
     gap: var(--fs-24);
+    @media (max-width: 767px) {
+      gap: var(--fs-16);
+    }
   }
 
   &.gap--36 {
