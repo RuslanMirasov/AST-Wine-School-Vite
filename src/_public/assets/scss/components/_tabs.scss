@@ -1,5 +1,6 @@
 [data-tab] {
   display: none;
+  width: 100%;
   overflow: hidden;
   transition: opacity 0.3s var(--cubic);
   opacity: 0;

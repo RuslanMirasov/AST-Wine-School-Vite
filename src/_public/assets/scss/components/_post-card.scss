@@ -1,6 +1,7 @@
 .post-card {
   display: flex;
   position: relative;
+  overflow: hidden;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
@@ -8,6 +9,16 @@
   border-radius: var(--fs-50);
   background-color: var(--white);
   gap: var(--fs-24);
+
+  &.dark {
+    background-color: var(--blue);
+    .title,
+    .text,
+    .icon-list span,
+    .price {
+      color: var(--white);
+    }
+  }
 
   &.gap--16 {
     gap: var(--fs-16);
@@ -37,6 +48,9 @@
   > .price-and-btn,
   .buttons {
     margin-top: auto;
+    &.mt--0 {
+      margin: 0px;
+    }
   }
 
   &.minify {

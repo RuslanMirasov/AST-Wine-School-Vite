@@ -22,46 +22,434 @@
         <li><span>Дегустации</span></li>
       </ul>
 
+      <!--HERO-->
       <section class="section">
         <div class="container">
-          <h2 class="title title--24">Страница <span style="color: #c24191">"Дегустации"</span> в разработке...</h2>
+          <div class="collage degustations-hero">
+            <!--левая часть-->
+            <div class="col--2">
+              <div class="content grey pad--38 gap--16">
+                <h1 class="text fs-14 magenta">ДЕГУСТАЦИИ AST «ШКОЛЫ ВИНА»</h1>
+                <h2 class="title title--40 upper">Искусство момента</h2>
+                <p class="text fs-20">
+                  Тематические встречи, редкие винтажи и&nbsp;глубокое погружение в&nbsp;терруары под руководством лучших сомелье России.
+                </p>
+              </div>
+
+              <div class="col--2">
+                <div class="content grey pad--38">
+                  <h3 class="title title--40">15+</h3>
+                  <p class="text">событий в месяц</p>
+                </div>
+              </div>
+
+              <div class="col--2">
+                <div class="content grey pad--38">
+                  <div class="group-icons">
+                    <div class="stars-back" aria-hidden="true">
+                      <svg width="101" height="23"><use href="http://localhost:5173/assets/img/sprite.svg#gruppa"></use></svg>
+                    </div>
+                    <div class="stars-front" aria-hidden="true">
+                      <svg width="101" height="23"><use href="http://localhost:5173/assets/img/sprite.svg#gruppa"></use></svg>
+                    </div>
+                  </div>
+                  <p class="text">Малые группы</p>
+                </div>
+              </div>
+            </div>
+
+            <!--правая часть-->
+            <div class="col--2 degustations-hero-image">
+              <div class="content grey pad--38 va--b dark">
+                <picture class="image-background dark-gradient">
+                  <source media="(max-width: 767px)" srcset="/assets/img/degustations/5.webp" />
+                  <img src="/assets/img/degustations/5.webp" alt="" />
+                </picture>
+                <div class="content-text"><h2 class="title title--24 bold">Ночная Афродита</h2></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--HERO-->
+      <section class="section section--degistation-list" data-tabs>
+        <div class="container">
+          <h2 class="title title--32 upper">Предстоящие дегустации</h2>
+
+          <!--Навигация по городам-->
+          <ul class="search-navigation">
+            <li>
+              <p class="text grey-text">Город:</p>
+            </li>
+            <li>
+              <button class="search-navigation__btn active" data-tab-target="all">Все</button>
+            </li>
+            <li>
+              <button class="search-navigation__btn" data-tab-target="moskow">Москва</button>
+            </li>
+            <li>
+              <button class="search-navigation__btn" data-tab-target="spb">Санкт-Петербург</button>
+            </li>
+          </ul>
+
+          <!--Все-->
+          <div data-tab="all">
+            <div class="collage">
+              <!--1-->
+              <div class="col--1">
+                <div class="col--2-3">
+                  <article class="content curse-card gap--16 dark">
+                    <picture class="image-background dark-gradient">
+                      <source media="(max-width: 767px)" srcset="/assets/img/degustations/4.webp" />
+                      <img src="/assets/img/degustations/4.webp" alt="" />
+                    </picture>
+
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                        Дегустация
+                      </li>
+                    </ul>
+
+                    <div class="content-text gap--12">
+                      <h3 class="title title--24 bold">Второй Российский винодельческий форум</h3>
+                      <p class="text">Редкое сочетание вина, воды и ночного города: прогулка по рекам, летние вина и развод мостов.</p>
+                      <ul class="icon-list">
+                        <li>
+                          <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                          <span>20 - 22 июня, 16:30</span>
+                        </li>
+                        <li>
+                          <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                          <span>пос. Абрау-Дюрсо, ул. Промышленная, д. 19</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="price-and-btn">
+                      <span class="price">5 000 ₽</span>
+                      <a href="%ROOT%tastings/tasting/" class="button"><span>Подробнее</span></a>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col--3">
+                  <div class="content grey gap--16 br--32">
+                    <p class="text">
+                      Редкое сочетание вина, воды и&nbsp;ночного города. Вы получаете не&nbsp;просто дегустацию, а&nbsp;полноценное впечатление:
+                      прогулку по&nbsp;рекам и&nbsp;каналам, летние вина, развод мостов и&nbsp;романтическую атмосферу. Такой вечер остаётся
+                      в&nbsp;памяти надолго и&nbsp;легко становится одним из&nbsp;самых ярких событий сезона.
+                    </p>
+                  </div>
+
+                  <div class="content grey gap--16 br--32">
+                    <h3 class="title title--40">2-8 <b class="text fs-16">образцов вин за&nbsp;встречу</b></h3>
+                    <p class="text magenta">«Каждая дегустация — это не&nbsp;просто лекция, а&nbsp;диалог с&nbsp;вином и&nbsp;экспертом»</p>
+                  </div>
+                </div>
+              </div>
+
+              <!--2-->
+              <div class="col--3">
+                <article class="post-card">
+                  <a href="/curse/offline/quick-start/" class="post-card-image">
+                    <img src="/assets/img/promo/10.webp" alt="Быстрый старт: база о вине" />
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                        Дегустация
+                      </li>
+                    </ul>
+                  </a>
+
+                  <div class="post-card-text">
+                    <h3 class="title title--24 bold">Большая летняя дегустация: 10&nbsp;вин для&nbsp;пикника</h3>
+                    <p class="text grey-text cut-4">
+                      Редкое сочетание вина, воды и&nbsp;ночного города: прогулка по&nbsp;рекам и&nbsp;каналам, летние вина, развод мостов
+                      и&nbsp;романтическая атмосфера.
+                    </p>
+                  </div>
+
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                      <span>20 - 22 июня, 16:30</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>пос. Абрау-Дюрсо, ул.&nbsp;Промышленная, д.&nbsp;19</span>
+                    </li>
+                  </ul>
+
+                  <div class="price-and-btn">
+                    <span class="price">5 000 ₽</span>
+                    <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <!--3-->
+              <div class="col--3">
+                <article class="post-card">
+                  <a href="/curse/offline/quick-start/" class="post-card-image">
+                    <img src="/assets/img/promo/11.webp" alt="Быстрый старт: база о вине" />
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                        Дегустация
+                      </li>
+                    </ul>
+                  </a>
+
+                  <div class="post-card-text">
+                    <h3 class="title title--24 bold">Ночная Афродита: прогулка по&nbsp;рекам и&nbsp;каналам</h3>
+                    <p class="text grey-text cut-4">
+                      Под открытым небом пробуем лёгкие белые, розовые и&nbsp;красные вина, которые идеально подходят для&nbsp;жарких дней.
+                    </p>
+                  </div>
+
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                      <span>27 июня, 15:30</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Москва, ул. Новый Арбат, д. 63</span>
+                    </li>
+                  </ul>
+
+                  <div class="price-and-btn">
+                    <span class="price">3 500 ₽</span>
+                    <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <!--4-->
+              <div class="col--3">
+                <article class="post-card">
+                  <a href="/curse/offline/quick-start/" class="post-card-image">
+                    <img src="/assets/img/promo/12.webp" alt="Быстрый старт: база о вине" />
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                        Дегустация
+                      </li>
+                    </ul>
+                  </a>
+
+                  <div class="post-card-text">
+                    <h3 class="title title--24 bold">Дегустация как&nbsp;искусство: развиваем сенсорику</h3>
+                    <p class="text grey-text cut-4">
+                      Тренировка обоняния и&nbsp;вкуса: научитесь распознавать ароматы и&nbsp;определять качество вина по&nbsp;цвету, запаху
+                      и&nbsp;текстуре.
+                    </p>
+                  </div>
+
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                      <span>4 июля, 19:00</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                    </li>
+                  </ul>
+
+                  <div class="price-and-btn">
+                    <span class="price">5 500 ₽</span>
+                    <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <!--5-->
+              <div class="col--3">
+                <article class="post-card">
+                  <a href="/curse/offline/quick-start/" class="post-card-image">
+                    <img src="/assets/img/promo/13.webp" alt="Быстрый старт: база о вине" />
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                        Дегустация
+                      </li>
+                    </ul>
+                  </a>
+
+                  <div class="post-card-text">
+                    <h3 class="title title--24 bold">Вина Бордо: классика и&nbsp;современность</h3>
+                    <p class="text grey-text cut-4">
+                      Изучите знаменитые виноградники левого и&nbsp;правого берега, разберитесь в&nbsp;классификации 1855 года и&nbsp;попробуйте
+                      6&nbsp;образцов.
+                    </p>
+                  </div>
+
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                      <span>4 июля, 19:00</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                    </li>
+                  </ul>
+
+                  <div class="price-and-btn">
+                    <span class="price">5 500 ₽</span>
+                    <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <!--6-->
+              <div class="col--3">
+                <article class="post-card">
+                  <a href="/curse/offline/quick-start/" class="post-card-image">
+                    <img src="/assets/img/promo/14.webp" alt="Быстрый старт: база о вине" />
+                    <ul class="tags">
+                      <li class="tag">
+                        <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                        Дегустация
+                      </li>
+                    </ul>
+                  </a>
+
+                  <div class="post-card-text">
+                    <h3 class="title title--24 bold">Игристые России: от&nbsp;Абрау до&nbsp;Крыма</h3>
+                    <p class="text grey-text cut-4">
+                      Сравниваем классику и&nbsp;резервуарный метод, разбираемся в&nbsp;дозаже и&nbsp;учимся читать этикетку игристого.
+                    </p>
+                  </div>
+
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                      <span>18 августа, 18:30</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Москва, ул. Новый Арбат, д. 63</span>
+                    </li>
+                  </ul>
+
+                  <div class="price-and-btn">
+                    <span class="price">7 000 ₽</span>
+                    <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <!--7-->
+              <div class="col--3">
+                <article class="post-card dark">
+                  <picture class="image-background">
+                    <source media="(max-width: 767px)" srcset="/assets/img/degustations/3.webp" />
+                    <img src="/assets/img/degustations/3.webp" alt="" />
+                  </picture>
+                  <div class="content-text va--b">
+                    <h3 class="title title--24 bold">
+                      Частная дегустация под ваш повод: свадьба, корпоратив, день рождения или встреча с друзьями. Приедем на вашу площадку или примем
+                      в нашем зале.
+                    </h3>
+                  </div>
+                  <div class="price-and-btn mt--0">
+                    <a href="%ROOT%tastings/tasting/" class="button"><span>Подробнее</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col--1">
+                <div class="buttons">
+                  <button type="button" class="button blue-light"><span>Показать ещё</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Москва-->
+          <div data-tab="moskow">
+            <div class="search-empty">
+              <h3 class="title title--24 bold">По вашему запросу ничего не&nbsp;найдено.</h3>
+              <p class="text grey-text">Описание...</p>
+            </div>
+          </div>
+
+          <!--Санкт-Петербург-->
+          <div data-tab="spb">
+            <div class="search-empty">
+              <h3 class="title title--24 bold">По вашему запросу ничего не&nbsp;найдено.</h3>
+              <p class="text grey-text">Описание...</p>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="section">
         <div class="container gap--40">
-          <article class="content gap--12">
+          <div class="collage degustations-hero">
+            <!--левая часть-->
+            <div class="col--2">
+              <div class="content grey pad--38 gap--16">
+                <h2 class="text fs-14 magenta">ПОЧЕМУ AST</h2>
+                <h2 class="title title--32 upper">Больше чем просто <br />дегустация</h2>
+
+                <div class="collage why-ast-desc">
+                  <div class="col--2">
+                    <div class="content-text gap--8">
+                      <b class="text">Правильная посуда</b>
+                      <p class="text fs-14 grey-text">Используем профессиональное стекло для&nbsp;максимального раскрытия аромата.</p>
+                    </div>
+                  </div>
+                  <div class="col--2">
+                    <div class="content-text gap--8">
+                      <b class="text">Редкие вина</b>
+                      <p class="text fs-14 grey-text">Открываем бутылки, которые сложно найти в&nbsp;рознице или заказать по&nbsp;бокалам.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--правая часть-->
+            <div class="col--2 degustations-hero-image">
+              <div class="content grey">
+                <picture class="image-background">
+                  <source media="(max-width: 767px)" srcset="/assets/img/degustations/2.webp" />
+                  <img src="/assets/img/degustations/2.webp" alt="" />
+                </picture>
+              </div>
+            </div>
+          </div>
+
+          <!--LINK TO CLASSROOMS-->
+          <div class="content gap--20 card-banner">
             <picture class="image-background white-gradient">
-              <source media="(max-width: 767px)" srcset="/assets/img/promo/1-des.webp" />
-              <img src="/assets/img/promo/1-des.webp" alt="" />
+              <source media="(max-width: 767px)" srcset="/assets/img/degustations/1.webp" />
+              <img src="/assets/img/degustations/1.webp" alt="" />
             </picture>
 
             <ul class="tags">
               <li class="tag">
-                <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
-                Очный
-              </li>
-              <li class="tag">
-                <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
-                Москва
-              </li>
-              <li class="tag green">
-                <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
-                Новинка
+                <svg width="18" height="18"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                ПРОСТРАНСТВА AST
               </li>
             </ul>
 
             <div class="content-text gap--12">
-              <h3 class="title title--24 bold">Быстрый старт: база&nbsp;о&nbsp;вине</h3>
-              <p class="text">Всего за три встречи вы узнаете о&nbsp;вине всё, что&nbsp;нужно.</p>
-              <span class="text fs-14 grey-dark">27 июня • 15:30</span>
+              <h3 class="title title--32 upper">Наши залы в&nbsp;Москве и&nbsp;Санкт-Петербурге</h3>
+              <p class="text">
+                Дегустационные залы с&nbsp;погребом, проекцией и&nbsp;посадкой до&nbsp;150&nbsp;гостей. Или приедем на&nbsp;вашу площадку.
+              </p>
             </div>
 
-            <div class="price-and-btn">
-              <span class="price">5 000 ₽</span>
-              <a href="./courses/offline/quick-start/" class="button"><span>Подробнее</span></a>
+            <div class="buttons mt--16 ta--l">
+              <a href="%ROOT%classrooms/" class="button blue"><span>Подробнее</span></a>
             </div>
-          </article>
+          </div>
 
           <load src="/_partials/components/certificat-for-one.html" />
           <load src="/_partials/sections/section-pay-methods.html" />

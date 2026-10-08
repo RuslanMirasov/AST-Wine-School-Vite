@@ -44,7 +44,9 @@
   align-items: flex-start;
   border-radius: var(--fs-50);
   padding: var(--fs-30);
-
+  &.va--b {
+    justify-content: flex-end;
+  }
   &.auto {
     height: auto;
   }
@@ -53,8 +55,15 @@
     border-radius: var(--fs-30);
   }
 
+  &.br--32 {
+    border-radius: var(--fs-32);
+  }
+
   &.pad--40 {
     padding: var(--fs-40);
+  }
+  &.pad--38 {
+    padding: var(--fs-38);
   }
   &.pad--32 {
     padding: var(--fs-32);
@@ -106,9 +115,11 @@
     background-color: var(--blue);
 
     .title,
-    .text {
+    .text,
+    .icon-list span {
       color: var(--white);
     }
+
     .logo-background {
       color: rgba(255, 255, 255, 0.1);
     }
@@ -254,8 +265,12 @@
   .content {
     padding: var(--fs-20);
     border-radius: var(--fs-30);
+    &.br--32 {
+      border-radius: var(--fs-30);
+    }
     &.pad--32,
     &.pad--24,
+    &.pad--38,
     &.pad--40 {
       padding: var(--fs-20);
     }

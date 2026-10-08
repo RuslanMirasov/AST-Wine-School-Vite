@@ -54,7 +54,7 @@
   position: relative;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   align-content: center;
   gap: 12px;
@@ -64,6 +64,16 @@
     line-height: 1;
     font-weight: 700;
     color: var(--blue);
+    margin-right: auto;
+  }
+  .button {
+    margin-left: auto;
+  }
+  @media (max-width: 767px) {
+    justify-content: flex-end;
+    .button {
+      margin-left: 0px;
+    }
   }
 }
 
@@ -71,6 +81,71 @@
   .price-and-btn {
     .price {
       color: var(--white);
+    }
+  }
+}
+
+.curse-card {
+  .image-background {
+    &:before {
+      width: 70%;
+    }
+  }
+
+  .tags {
+    margin-bottom: var(--fs-16);
+  }
+
+  .content-text {
+    margin-top: auto;
+    max-width: var(--fs-400);
+    .title,
+    .text {
+      max-width: var(--fs-300);
+      @media (max-width: 767px) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &.dark {
+      background-color: var(--blue);
+      .title,
+      .text,
+      .icon-list span,
+      .price {
+        color: var(--white);
+      }
+
+      .image-background {
+        &:before {
+          background: linear-gradient(rgba(0, 0, 0, 0), var(--blue));
+        }
+      }
+
+      .button.blue {
+        border: 1px solid var(--grey);
+      }
+    }
+
+    .content-text {
+      margin-top: 200px;
+    }
+
+    .image-background {
+      height: 300px;
+      &:before {
+        width: 100%;
+        height: 30%;
+        top: auto;
+        bottom: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0), var(--white));
+      }
+    }
+
+    .buttons {
+      margin-top: auto;
     }
   }
 }

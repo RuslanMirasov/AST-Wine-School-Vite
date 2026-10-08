@@ -7,18 +7,33 @@
   align-items: center;
   align-content: center;
   gap: 32px;
+  &.mt--auto {
+    margin-top: auto;
+  }
+  &.mt--16 {
+    margin-top: var(--fs-16);
+  }
+  &.mt--12 {
+    margin-top: var(--fs-12);
+  }
+  &.mt--8 {
+    margin-top: var(--fs-8);
+  }
+
   &.ta--l {
     justify-content: flex-start;
   }
   &.ta--r {
     justify-content: flex-end;
   }
+
   &.group {
     gap: 8px;
     .popup-subtitle {
       margin-bottom: 4px;
     }
   }
+
   &.gap--12 {
     gap: var(--fs-12);
   }

@@ -64,6 +64,7 @@
   }
 
   @media (max-width: 767px) {
-    padding: var(--fs-32) var(--fs-20);
+    padding: var(--fs-20);
+    border-radius: var(--fs-30);
   }
 }

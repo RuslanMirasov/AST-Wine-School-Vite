@@ -55,6 +55,38 @@
   }
 }
 
+.group-icons {
+  display: flex;
+  align-items: center;
+  width: 101px;
+  height: 48px;
+  @media (max-width: 767px) {
+    height: 32px;
+  }
+  position: relative;
+  font-size: 0px;
+
+  .stars-back,
+  .stars-front {
+    display: block;
+    width: 101px;
+    height: 23px;
+  }
+
+  .stars-front {
+    position: absolute;
+    width: 40%;
+    left: 0px;
+    overflow: hidden;
+    color: var(--magenta);
+  }
+
+  .stars-back {
+    color: var(--magenta);
+    opacity: 0.5;
+  }
+}
+
 .rating-sum {
   display: inline-flex;
   position: relative;
