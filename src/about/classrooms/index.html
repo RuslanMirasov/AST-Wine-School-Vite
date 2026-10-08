@@ -4,8 +4,8 @@
     <load src="/_partials/base/metrix.html" />
     <load src="/_partials/base/meta.html" />
     <load src="/_partials/base/styles.html" />
-    <meta name="description" content="AST - Наши залы" />
-    <title>Наши залы</title>
+    <meta name="description" content="AST - Дегустационные залы" />
+    <title>Дегустационные залы</title>
   </head>
   <body class="body">
     <!--START SCRIPTS-->
@@ -23,9 +23,639 @@
         <li><span>Наши залы</span></li>
       </ul>
 
+      <section class="section section--classrooms">
+        <div class="container">
+          <h1 class="title title--40 upper">Дегустационные залы</h1>
+
+          <!--Карта-->
+          <div class="yandex-map-wrapper">
+            <ul class="search-navigation">
+              <li>
+                <b class="text grey-text">Город:</b>
+              </li>
+              <li>
+                <button class="search-navigation__btn active" data-map-group="all">Все</button>
+              </li>
+              <li>
+                <button class="search-navigation__btn" data-map-group="moscow">Москва</button>
+              </li>
+              <li>
+                <button class="search-navigation__btn" data-map-group="spb">Санкт-Петербург</button>
+              </li>
+            </ul>
+
+            <button type="button" class="button white-border" data-map-toggle data-toggle-text="Показать карту"><span>Свернуть карту</span></button>
+
+            <div class="yandex-map active" data-map></div>
+          </div>
+
+          <!--Список залов-->
+          <div class="collage">
+            <!--1-->
+            <div class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/17.webp" alt="Зал «Гранд Крю Eurocave CC Extra Lux»" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Зал «Гранд Крю Eurocave CC Extra Lux»</h3>
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Санкт-Петербург, ул. Дорога на Турухтанные острова, д. 184</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span>Вместимость: 200 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text fs-14 grey-text cut-4">
+                    Флагманский зал с&nbsp;двойной высотой потолка и&nbsp;антикварной винной коллекцией. Оснащен системой климат-контроля Eurocave
+                    и&nbsp;акустическими панелями.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="%ROOT%tastings/tasting/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--2-->
+            <div class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/16.webp" alt="Зал «Терруар»" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Зал «Терруар»</h3>
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Москва, ул. Новый Арбат, д. 63</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span>Вместимость: 85 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text fs-14 grey-text cut-4">
+                    Камерное пространство на&nbsp;85&nbsp;мест с&nbsp;профессиональной системой контроля температуры и&nbsp;влажности Cantherm.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="%ROOT%tastings/tasting/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--3-->
+            <div class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/15.webp" alt="VIP-зал «Резерв»" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">VIP-зал «Резерв»</h3>
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>пос. Абрау-Дюрсо, ул. Промышленная, д. 19</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span>Вместимость: 20 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text fs-14 grey-text cut-4">
+                    Закрытый VIP-зал на&nbsp;20&nbsp;персон для&nbsp;вертикальных дегустаций и&nbsp;закрытых презентаций. Декантеры Riedel
+                    и&nbsp;система Coravin.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="%ROOT%tastings/tasting/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--4-->
+            <div class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/14.webp" alt="Зал «Купаж»" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Зал «Купаж»</h3>
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Санкт-Петербург, ул. Строителей, д. 184</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span>Вместимость: 130 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text fs-14 grey-text cut-4">
+                    Просторный зал с&nbsp;панорамным остеклением и&nbsp;регулируемым освещением Lutron с&nbsp;нейтральным спектром.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="%ROOT%tastings/tasting/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--5-->
+            <div class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/13.webp" alt="Зал «Баррик»" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Зал «Баррик»</h3>
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Краснодар, ул. Красная, д. 45</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span>Вместимость: 50 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text fs-14 grey-text cut-4">
+                    Уютный зал в&nbsp;стиле бочковой комнаты, облицованный дубовыми панелями из&nbsp;бургундских бочек.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="%ROOT%tastings/tasting/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--6-->
+            <div class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/12.webp" alt="Зал «Декантер»" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Зал «Декантер»</h3>
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Сочи, ул. Приморская, д. 78</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span>Вместимость: 40 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text fs-14 grey-text cut-4">
+                    Элегантный зал на&nbsp;берегу моря с&nbsp;панорамными окнами и&nbsp;профессиональной станцией декантации.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="%ROOT%tastings/tasting/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--7-->
+            <div class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/11.webp" alt="Зал «Миллезим»" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Зал «Миллезим»</h3>
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Казань, ул. Баумана, д. 31</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span>Вместимость: 60 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text fs-14 grey-text cut-4">
+                    Зал-архив с&nbsp;подборкой миллезимных вин из&nbsp;частных коллекций и&nbsp;температурными витринами EuroCave.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="%ROOT%tastings/tasting/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--8-->
+            <div class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/9.webp" alt="Зал «Нуар»" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Зал «Нуар»</h3>
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Екатеринбург, ул. Ленина, д. 52</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span>Вместимость: 30 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text fs-14 grey-text cut-4">
+                    Камерный зал для&nbsp;дегустаций в&nbsp;полной темноте — формат, обостряющий обоняние и&nbsp;вкусовое восприятие.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="%ROOT%tastings/tasting/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--9-->
+            <div class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/8.webp" alt="Зал «Солера»" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Зал «Солера»</h3>
+                  <ul class="icon-list grey">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span>г. Ростов-на-Дону, пр. Буденновский, д. 88</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span>Вместимость: 75 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text fs-14 grey-text cut-4">Зал в&nbsp;андалусском стиле, посвященный крепленым винам и&nbsp;системе солера.</p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="%ROOT%tastings/tasting/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--ОЧНЫЕ КУРСЫ-->
+      <section class="section post-card-collection">
+        <div class="container">
+          <h2 class="title title--40 full upper">Ближайшие мероприятия</h2>
+          <h2 class="title title--32 upper bold">Очные</h2>
+
+          <a href="%ROOT%courses/offline/" class="button magenta-light"><span>Cмотреть все</span></a>
+
+          <div class="collage">
+            <!--1-->
+            <div class="col--3">
+              <article class="post-card">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/10.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Большая летняя дегустация: 10&nbsp;вин для&nbsp;пикника</h3>
+                  <p class="text grey-text cut-4">
+                    Редкое сочетание вина, воды и&nbsp;ночного города: прогулка по&nbsp;рекам и&nbsp;каналам, летние вина, развод мостов
+                    и&nbsp;романтическая атмосфера.
+                  </p>
+                </div>
+
+                <ul class="icon-list grey">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>20 - 22 июня, 16:30</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>пос. Абрау-Дюрсо, ул.&nbsp;Промышленная, д.&nbsp;19</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--2-->
+            <div class="col--3">
+              <article class="post-card">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/10.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Большая летняя дегустация: 10&nbsp;вин для&nbsp;пикника</h3>
+                  <p class="text grey-text cut-4">
+                    Редкое сочетание вина, воды и&nbsp;ночного города: прогулка по&nbsp;рекам и&nbsp;каналам, летние вина, развод мостов
+                    и&nbsp;романтическая атмосфера.
+                  </p>
+                </div>
+
+                <ul class="icon-list grey">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>20 - 22 июня, 16:30</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>пос. Абрау-Дюрсо, ул.&nbsp;Промышленная, д.&nbsp;19</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--3-->
+            <div class="col--3">
+              <article class="post-card">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/10.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Большая летняя дегустация: 10&nbsp;вин для&nbsp;пикника</h3>
+                  <p class="text grey-text cut-4">
+                    Редкое сочетание вина, воды и&nbsp;ночного города: прогулка по&nbsp;рекам и&nbsp;каналам, летние вина, развод мостов
+                    и&nbsp;романтическая атмосфера.
+                  </p>
+                </div>
+
+                <ul class="icon-list grey">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>20 - 22 июня, 16:30</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>пос. Абрау-Дюрсо, ул.&nbsp;Промышленная, д.&nbsp;19</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--ОНЛАЙН КУРСЫ-->
+      <section class="section post-card-collection">
+        <div class="container">
+          <h2 class="title title--32 upper bold">Онлайн</h2>
+          <a href="%ROOT%courses/online/" class="button blue-light"><span>Посмотреть все</span></a>
+
+          <div class="collage">
+            <!--1-->
+            <div class="col--3">
+              <article class="post-card">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/10.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                      Онлайн
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Большая летняя дегустация: 10&nbsp;вин для&nbsp;пикника</h3>
+                  <p class="text grey-text cut-4">
+                    Редкое сочетание вина, воды и&nbsp;ночного города: прогулка по&nbsp;рекам и&nbsp;каналам, летние вина, развод мостов
+                    и&nbsp;романтическая атмосфера.
+                  </p>
+                </div>
+
+                <ul class="icon-list grey">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>20 - 22 июня, 16:30</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>пос. Абрау-Дюрсо, ул.&nbsp;Промышленная, д.&nbsp;19</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--2-->
+            <div class="col--3">
+              <article class="post-card">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/10.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                      Онлайн
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Большая летняя дегустация: 10&nbsp;вин для&nbsp;пикника</h3>
+                  <p class="text grey-text cut-4">
+                    Редкое сочетание вина, воды и&nbsp;ночного города: прогулка по&nbsp;рекам и&nbsp;каналам, летние вина, развод мостов
+                    и&nbsp;романтическая атмосфера.
+                  </p>
+                </div>
+
+                <ul class="icon-list grey">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>20 - 22 июня, 16:30</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>пос. Абрау-Дюрсо, ул.&nbsp;Промышленная, д.&nbsp;19</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--ДЕГУСТАЦИИ И СЕМИНАРЫ-->
+      <section class="section post-card-collection">
+        <div class="container">
+          <h2 class="title title--32 upper">Дегустации и семинары</h2>
+
+          <div class="collage">
+            <!--1-->
+            <div class="col--3">
+              <article class="post-card">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/10.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                      Дегустация
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Большая летняя дегустация: 10&nbsp;вин для&nbsp;пикника</h3>
+                  <p class="text grey-text cut-4">
+                    Редкое сочетание вина, воды и&nbsp;ночного города: прогулка по&nbsp;рекам и&nbsp;каналам, летние вина, развод мостов
+                    и&nbsp;романтическая атмосфера.
+                  </p>
+                </div>
+
+                <ul class="icon-list grey">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>20 - 22 июня, 16:30</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>пос. Абрау-Дюрсо, ул.&nbsp;Промышленная, д.&nbsp;19</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--2-->
+            <div class="col--3">
+              <article class="post-card">
+                <a href="/curse/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/10.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                      Дегустация
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Большая летняя дегустация: 10&nbsp;вин для&nbsp;пикника</h3>
+                  <p class="text grey-text cut-4">
+                    Редкое сочетание вина, воды и&nbsp;ночного города: прогулка по&nbsp;рекам и&nbsp;каналам, летние вина, развод мостов
+                    и&nbsp;романтическая атмосфера.
+                  </p>
+                </div>
+
+                <ul class="icon-list grey">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>20 - 22 июня, 16:30</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>пос. Абрау-Дюрсо, ул.&nbsp;Промышленная, д.&nbsp;19</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="%ROOT%tastings/tasting/" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--3-->
+            <div class="col--3">
+              <article class="post-card dark">
+                <div class="image-background gradient">
+                  <video autoplay="" muted="" loop="" playsinline="">
+                    <source src="/assets/img/promo/3-des.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="content-text va--b ta--c">
+                  <h3 class="title title--24 bold">Все дегустации</h3>
+                </div>
+                <div class="price-and-btn mt--0 ta--c">
+                  <a href="%ROOT%tastings/tasting/" class="button"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="container">
-          <h2 class="title title--24">Страница <span style="color: #c24191">"Наши залы"</span> в разработке...</h2>
+          <load src="/_partials/components/certificat-for-one.html" />
         </div>
       </section>
     </main>
@@ -44,6 +674,7 @@
     <load src="/_partials/popups/cookies-confirm-popup.html" />
 
     <!--SCRIPTS-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=54a78c1e-ad47-46be-99d8-9d26e3b87442&lang=ru_RU" type="text/javascript"></script>
     <load src="/_partials/base/scripts.html" />
   </body>
 </html>

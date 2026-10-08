@@ -59,6 +59,12 @@
   align-content: center;
   gap: 12px;
   z-index: 2;
+  &.ta--c {
+    justify-content: center;
+    .button {
+      margin: 0;
+    }
+  }
   .price {
     font-size: var(--fs-24);
     line-height: 1;

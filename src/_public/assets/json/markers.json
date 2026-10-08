@@ -1,18 +1,22 @@
 {
   "points": [
     {
+      "id": "office-moscow",
       "pointType": "Office",
-      "description": "Россия, г. Москва, 117461, ул. Каховка, д. 23",
+      "category": "moscow",
       "title": "Офис в Москве",
+      "description": "Россия, г. Москва, 117461, ул. Каховка, д. 23",
       "url": "https://yandex.com/maps/213/moscow/house/ulitsa_kakhovka_23/Z04YcwBkTEMGQFtvfXp0dXhlZg==/?indoorLevel=1&ll=37.574561%2C55.654462&z=17.67",
-      "coordinates": [ 37.574560999999974, 55.65446206907376 ]
+      "coordinates": [37.574560999999974, 55.65446206907376]
     },
     {
+      "id": "office-spb",
       "pointType": "Office",
-      "description": "Санкт-Петербург, Выборгская наб, д. 45 литера Е, помещ. 3-н офис 81",
+      "category": "spb",
       "title": "Офис в Санкт-Петербурге",
+      "description": "Санкт-Петербург, Выборгская наб, д. 45 литера Е, помещ. 3-н офис 81",
       "url": "https://yandex.com/maps/2/saint-petersburg/house/vyborgskaya_naberezhnaya_45ye/Z0kYdQRkT0cCQFtjfXV2c3VjZg==/?ll=30.334625%2C59.972902&z=17.67",
-      "coordinates": [ 30.33462499999999, 59.97290156410492 ]
+      "coordinates": [30.33462499999999, 59.97290156410492]
     }
   ]
 }
