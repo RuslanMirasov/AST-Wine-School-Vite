@@ -21,17 +21,17 @@
   <form data-form action="#" class="form" novalidate onsubmit="onAddToListSubmit(event)">
     <label class="label">
       <span class="label-text">Фамилия <span class="red">*</span></span>
-      <input type="text" name="surname" class="input" data-rule="name-cyrillic" required />
+      <input type="text" name="surname" class="input" data-rule="name-cyrillic" minlength="2" required />
     </label>
 
     <label class="label">
       <span class="label-text">Имя <span class="red">*</span></span>
-      <input type="text" name="name" class="input" data-rule="name-cyrillic" required />
+      <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required />
     </label>
 
     <label class="label">
       <span class="label-text">Отчество</span>
-      <input type="text" name="lastname" class="input" data-rule="name-cyrillic" />
+      <input type="text" name="lastname" class="input" data-rule="name-cyrillic" minlength="2" />
     </label>
 
     <label class="label">

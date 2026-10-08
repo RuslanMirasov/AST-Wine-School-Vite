@@ -475,6 +475,7 @@ $select_padding: 0px var(--fs-16);
   color: $select_color;
   width: 100%;
   height: $select_height;
+  text-align: $select_text_align;
 
   &[data-type*='select-one']::after {
     content: '';

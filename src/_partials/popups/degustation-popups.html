@@ -1,0 +1,95 @@
+<!--ADD REVIEW POPUP-->
+<div class="popup-content big" role="dialog" aria-modal="true" aria-labelledby="degustation-order-title" id="degustation-order">
+  <h2 class="popup-title" id="degustation-order-title">
+    <span>&nbsp;</span>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <script>
+    function onDegustationOrderSubmit(e) {
+      e.preventDefault();
+      window.popup.open('degustation-order-success');
+    }
+  </script>
+
+  <form data-form action="#" class="form" novalidate onsubmit="onDegustationOrderSubmit(event)">
+    <label class="label">
+      <span class="label-text">Ф.И.О. <span class="red">*</span></span>
+      <input type="text" name="fullname" class="input" placeholder="Ваши Ф.И.О." data-rule="fullname-cyrillic" minlength="2" required autocomplete="name" />
+    </label>
+
+    <label class="label">
+      <span class="label-text">Email <span class="red">*</span></span>
+      <input type="email" name="email" class="input" placeholder="email@ru" required autocomplete="email" />
+    </label>
+
+    <label class="label">
+      <span class="label-text">Телефон <span class="red">*</span></span>
+      <input type="tel" name="phone" class="input" placeholder="+7" required />
+    </label>
+
+    <label class="label auto" aria-live="polite" aria-atomic="true">
+      <span class="label-text">Ориентировочное количество гостей</span>
+      <div class="label--count" aria-live="polite" aria-atomic="true">
+        <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
+        <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество гостей" />
+        <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
+      </div>
+    </label>
+
+    <label class="label">
+      <span class="label-text">Город <span class="red">*</span></span>
+      <select data-select name="city" required>
+        <option value="Москва">Москва</option>
+        <option value="Санкт-Петербург">Санкт-Петербург</option>
+      </select>
+    </label>
+
+    <label class="label">
+      <span class="label-text">Предполагаемая дата</span>
+      <input type="date" name="date" class="input" value="" placeholder="дд.мм.гггг" />
+    </label>
+
+    <label class="label">
+      <span class="label-text">Комментарий</span>
+      <textarea name="comment" class="input input--textarea" placeholder="Повод, площадка, бюджет"></textarea>
+    </label>
+
+    <fieldset>
+      <label class="label">
+        <input name="confirmation" type="checkbox" class="checkbox" required data-error-text="Согласие на обработку данных обязательно" />
+        <p class="label-text">
+          <span>Согласен с&nbsp;<a href="%ROOT%" target="_blank">Условиями обработки персональных данных</a></span>
+        </p>
+      </label>
+      <label class="label">
+        <input name="privacy" type="checkbox" class="checkbox" required data-error-text="Необходимо принять политику конфиденциальности" />
+        <p class="label-text">
+          <span>Принимаю <a href="%ROOT%" target="_blank">Политику конфиденциальности</a></span>
+        </p>
+      </label>
+    </fieldset>
+
+    <div class="buttons ta--l">
+      <button type="submit" class="button"><span>Заказать</span></button>
+    </div>
+  </form>
+</div>
+
+<!--REVIEW SUCCESS POPUP-->
+<div class="popup-content" id="degustation-order-success" role="dialog" aria-modal="true" aria-labelledby="degustation-order-success-title">
+  <h2 class="popup-title" id="degustation-order-success-title">
+    <span>Спасибо! Ваш запрос получен.</span>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <p class="text full ta--l">Спасибо! Ваш запрос получен. <br />Менеджер свяжется с вами в ближайшее время.</p>
+
+  <div class="buttons ta--l">
+    <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
+  </div>
+</div>
