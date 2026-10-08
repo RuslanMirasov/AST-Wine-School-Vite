@@ -17,7 +17,16 @@
   <form data-form action="#" class="form" novalidate onsubmit="onDegustationOrderSubmit(event)">
     <label class="label">
       <span class="label-text">Ф.И.О. <span class="red">*</span></span>
-      <input type="text" name="fullname" class="input" placeholder="Ваши Ф.И.О." data-rule="fullname-cyrillic" minlength="2" required autocomplete="name" />
+      <input
+        type="text"
+        name="fullname"
+        class="input"
+        placeholder="Ваши Ф.И.О."
+        data-rule="fullname-cyrillic"
+        minlength="2"
+        required
+        autocomplete="name"
+      />
     </label>
 
     <label class="label">
@@ -81,13 +90,13 @@
 <!--REVIEW SUCCESS POPUP-->
 <div class="popup-content" id="degustation-order-success" role="dialog" aria-modal="true" aria-labelledby="degustation-order-success-title">
   <h2 class="popup-title" id="degustation-order-success-title">
-    <span>Спасибо! Ваш запрос получен.</span>
+    <span>Спасибо! <br />Ваш запрос получен.</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
     </button>
   </h2>
 
-  <p class="text full ta--l">Спасибо! Ваш запрос получен. <br />Менеджер свяжется с вами в ближайшее время.</p>
+  <p class="text full ta--l">Спасибо! Ваш запрос получен. Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время.</p>
 
   <div class="buttons ta--l">
     <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
