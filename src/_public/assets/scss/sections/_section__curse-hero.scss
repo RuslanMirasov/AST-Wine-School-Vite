@@ -26,6 +26,13 @@
   &.dark {
     background-color: var(--blue);
     color: var(--white);
+    // От 1280px картинка закрывает блок целиком, затемнение идёт в чёрный, а не в синий фон
+    @media (min-width: 1280px) {
+      background-color: #000;
+      .image-background {
+        --fade-from: rgba(0, 0, 0, 0.5);
+      }
+    }
     .content-text {
       * {
         color: var(--white);
@@ -34,12 +41,6 @@
       strong,
       a {
         border-bottom: 1px solid var(--white);
-      }
-    }
-    .image-background {
-      &:before {
-        background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-        opacity: 0.5;
       }
     }
   }
@@ -85,34 +86,19 @@
     overflow: hidden;
     top: -2px;
     border-radius: var(--fs-50);
-
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 50%;
-      height: 100%;
-      z-index: 2;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-      @media (max-width: 1279px) {
-        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 100%);
-      }
-    }
+    // Засвет края маской, цвет — фон .curse-hero (переменные описаны в _backgrounds.scss)
+    --fade-direction: 90deg;
+    --fade-size: 70%;
+    -webkit-mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
+    mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
 
     @media (max-width: 1279px) {
       height: 460px;
       border-radius: 0px;
       border-radius: var(--fs-50) var(--fs-50) 0px 0px;
       background-color: var(--blue);
-      &:before {
-        width: 100%;
-        height: 40%;
-        top: auto;
-        bottom: 0px;
-        z-index: 2;
-        background: linear-gradient(0deg, var(--blue) 0%, rgba(0, 0, 0, 0) 100%);
-      }
+      --fade-direction: 0deg;
+      --fade-size: 40%;
     }
     @media (max-width: 767px) {
       border-radius: var(--fs-32) var(--fs-32) 0px 0px;
@@ -229,29 +215,7 @@
       height: 400px;
       overflow: hidden;
       border-radius: 0px;
-
-      &:before {
-        left: 0px;
-        top: 0px;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-        background: linear-gradient(rgba(0, 0, 0, 0) 50%, var(--blue) 100%, var(--blue) 100%);
-      }
-    }
-
-    &.dark {
-      .image-background {
-        &:before {
-          left: 0px;
-          top: 0px;
-          width: 100%;
-          height: 100%;
-          z-index: 2;
-          opacity: 1;
-          background: linear-gradient(rgba(0, 0, 0, 0) 50%, var(--blue) 100%, var(--blue) 100%);
-        }
-      }
+      --fade-size: 50%;
     }
   }
 }

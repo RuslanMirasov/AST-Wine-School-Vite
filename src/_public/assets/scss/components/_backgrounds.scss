@@ -65,43 +65,45 @@
   }
 }
 
-.white-gradient,
-.dark-gradient {
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    @media (min-width: 1024px) {
-      width: 50%;
-    }
+// Засвет / затемнение края картинки. Маска растворяет картинку в фон блока под ней, поэтому цвет эффекта —
+// это background-color родителя (накладка :before поверх картинки давала кайму по скруглённым краям).
+// --fade-direction — в какую сторону проявляется картинка
+// --fade-size — на каком расстоянии от края она проявлена полностью
+// --fade-from — плотность картинки у самого края (по умолчанию скрыта полностью)
+.image-background.white-gradient,
+.image-background.dark-gradient,
+.swiper-slide.white-gradient img,
+.swiper-slide.dark-gradient img {
+  --fade-direction: 90deg;
+  --fade-size: 100%;
+  -webkit-mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
+  mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
+  @media (min-width: 1024px) {
+    --fade-size: 50%;
   }
 }
 
-.white-gradient {
-  &:before {
-    background: linear-gradient(90deg, var(--white), rgba(255, 255, 255, 0));
+// Затемнение чёрное, а фон тёмных блоков синий: там, где картинка закрывает блок целиком, подкладываем чёрный
+@media (min-width: 768px) {
+  .content:has(> .image-background.dark-gradient) {
+    background-color: var(--black);
   }
 }
 
-.dark-gradient {
-  &:before {
-    background: linear-gradient(90deg, var(--black), rgba(255, 255, 255, 0));
+@media (min-width: 1024px) {
+  .swiper-slide.dark-gradient {
+    background-color: var(--black);
   }
 }
 
 .a11y {
   @media (min-width: 768px) {
-    .white-gradient,
-    .dark-gradient {
-      &:before {
-        content: none;
-      }
+    .image-background.white-gradient,
+    .image-background.dark-gradient,
+    .swiper-slide.white-gradient img,
+    .swiper-slide.dark-gradient img {
+      -webkit-mask-image: none;
+      mask-image: none;
     }
   }
 }

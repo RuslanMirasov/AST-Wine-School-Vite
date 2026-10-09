@@ -14,13 +14,8 @@
       width: 100%;
     }
     .dark-gradient {
-      &:before {
-        width: 100%;
-        height: 40%;
-        top: auto;
-        bottom: 0px;
-        background: linear-gradient(rgba(0, 0, 0, 0), var(--blue));
-      }
+      --fade-direction: 0deg;
+      --fade-size: 40%;
     }
   }
 }
