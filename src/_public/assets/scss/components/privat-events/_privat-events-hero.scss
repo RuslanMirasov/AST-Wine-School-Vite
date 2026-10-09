@@ -1,0 +1,74 @@
+.section--privat-events-hero {
+  .content {
+    display: inline-flex;
+    width: 100%;
+    flex: auto;
+    height: auto;
+    gap: var(--fs-4);
+  }
+  .col--2-3 {
+    .content-text {
+      max-width: 490px;
+      margin-right: auto;
+      margin-left: 0px;
+    }
+  }
+  .col--3 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  // Градиент маской вместо накладки :before — сквозь фон .content, без каймы по скруглению
+  .image-background.white-gradient {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000);
+    mask-image: linear-gradient(90deg, transparent, #000);
+    &:before {
+      content: none;
+    }
+    @media (min-width: 1024px) {
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 50%);
+      mask-image: linear-gradient(90deg, transparent, #000 50%);
+    }
+    @media (min-width: 768px) {
+      .a11y & {
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+    }
+  }
+  .content.grey.pad--32 {
+    flex: 0 0 auto;
+    &:first-child {
+      flex: 1 1 auto;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .col--3,
+    .col--2-3 {
+      min-width: 100%;
+      width: 100%;
+    }
+    .col--3 {
+      flex-direction: row;
+      .content {
+        width: calc((100% - var(--fs-24)) / 2);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .col--3 {
+      flex-direction: column;
+      .content {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.privat-events-hero-image {
+  min-height: 420px;
+  @media (max-width: 767px) {
+    min-height: 220px;
+  }
+}
