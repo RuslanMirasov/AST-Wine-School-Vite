@@ -43,6 +43,15 @@
   &.title--60 {
     font-size: var(--fs-60);
   }
+  &.title--56 {
+    font-size: var(--fs-56);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  &.title--44 {
+    font-size: var(--fs-44);
+    letter-spacing: -0.01em;
+  }
   &.title--40 {
     font-size: var(--fs-40);
     letter-spacing: -0.01em;
@@ -210,12 +219,16 @@
         font-size: var(--fs-24);
       }
     }
-    &.title--40 {
+    &.title--40,
+    &.title--44 {
       font-size: var(--fs-28);
       line-height: var(--fs-32);
     }
     &.title--64 {
       font-size: var(--fs-32);
+    }
+    &.title--56 {
+      font-size: var(--fs-38);
     }
   }
 

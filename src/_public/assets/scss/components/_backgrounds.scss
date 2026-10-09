@@ -70,14 +70,15 @@
 // --fade-direction — в какую сторону проявляется картинка
 // --fade-size — на каком расстоянии от края она проявлена полностью
 // --fade-from — плотность картинки у самого края (по умолчанию скрыта полностью)
+// --fade-hold — до какого расстояния от края держится плотность --fade-from, дальше картинка начинает проявляться
 .image-background.white-gradient,
 .image-background.dark-gradient,
 .swiper-slide.white-gradient img,
 .swiper-slide.dark-gradient img {
   --fade-direction: 90deg;
   --fade-size: 100%;
-  -webkit-mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
-  mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
+  -webkit-mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent) var(--fade-hold, 0%), #000 var(--fade-size));
+  mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent) var(--fade-hold, 0%), #000 var(--fade-size));
   @media (min-width: 1024px) {
     --fade-size: 50%;
   }

@@ -10,6 +10,10 @@ export const initSelectFields = () => {
       allowHTML: true,
       itemSelectText: '',
     });
+
+    // Селект лежит внутри <label>: клик по label браузер передаёт родному <select>, и на iOS
+    // вместе со списком Choices открывается системный барабан выбора
+    select.closest('label')?.addEventListener('click', event => event.preventDefault());
   });
 };
 

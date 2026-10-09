@@ -8,7 +8,8 @@
   }
   .col--2-3 {
     .content-text {
-      max-width: 490px;
+      width: 80%;
+      max-width: 420px;
       margin-right: auto;
       margin-left: 0px;
     }
@@ -16,6 +17,18 @@
   .col--3 {
     flex-direction: column;
     flex-wrap: nowrap;
+  }
+  .image-background.white-gradient {
+    --fade-direction: 110deg;
+    --fade-from: rgba(0, 0, 0, 0.1);
+    --fade-hold: 50%;
+    --fade-size: 90%;
+    @media (min-width: 1024px) {
+      --fade-size: 70%;
+      --fade-from: rgba(0, 0, 0, 0.15);
+      --fade-hold: 40%;
+      --fade-direction: 120deg;
+    }
   }
   .content.grey.pad--32 {
     flex: 0 0 auto;
@@ -50,6 +63,9 @@
 
 .privat-events-hero-image {
   min-height: 420px;
+  &.dark {
+    background-color: var(--black);
+  }
   @media (max-width: 767px) {
     min-height: 220px;
   }
