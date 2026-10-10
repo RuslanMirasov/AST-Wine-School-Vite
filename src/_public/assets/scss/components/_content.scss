@@ -44,6 +44,10 @@
   align-items: flex-start;
   border-radius: var(--fs-50);
   padding: var(--fs-30);
+  &.ta--c {
+    align-items: center;
+    text-align: center;
+  }
   &.va--b {
     justify-content: flex-end;
   }
