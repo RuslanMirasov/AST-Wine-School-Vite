@@ -63,6 +63,32 @@
       background-color: var(--white);
     }
   }
+
+  &.minify {
+    .tag,
+    .tag .text {
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .tag {
+      padding: var(--fs-6) var(--fs-12);
+      min-height: auto;
+      font-size: var(--fs-14);
+      line-height: 1;
+      border: none;
+      background-color: var(--grey-light);
+    }
+  }
+}
+
+.dark,
+.blue,
+.grey,
+.magenta {
+  .tags .tag {
+    background-color: var(--white);
+  }
 }
 
 .body.a11y {

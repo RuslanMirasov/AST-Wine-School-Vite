@@ -1,122 +1,103 @@
-.mood {
-  .content {
-    min-height: 320px;
-    .content-text {
-      margin-bottom: var(--fs-12);
+.mood-card {
+  min-height: 320px;
+  .content-text {
+    margin-bottom: var(--fs-12);
+  }
+
+  &.dark {
+    background-color: var(--black);
+  }
+  &.blue {
+    background-color: var(--blue);
+  }
+  &.magenta {
+    background-color: var(--magenta);
+  }
+
+  &.dark,
+  &.blue,
+  &.magenta {
+    .logo-background {
+      color: var(--grey-promo);
+      opacity: 0.15;
+    }
+    .content-text > .title,
+    .content-text > .text,
+    .info-table {
+      color: var(--white);
     }
 
-    &.dark {
-      background-color: var(--black);
-    }
-    &.blue {
-      background-color: var(--blue);
-    }
-    &.magenta {
-      background-color: var(--magenta);
+    .tags .tag {
+      background-color: var(--white);
     }
 
-    &.dark,
-    &.blue,
-    &.magenta {
-      .logo-background {
-        color: var(--grey-promo);
-        opacity: 0.15;
-      }
-      .content-text > .title,
-      .content-text > .text,
-      .info-table {
-        color: var(--white);
-      }
-
-      .tags .tag {
-        background-color: var(--white);
-      }
-
-      .info-table {
-        ul {
-          li {
-            .text {
-              color: var(--white);
-              &.grey-text {
-                opacity: 0.7;
-              }
+    .info-table {
+      ul {
+        li {
+          .text {
+            color: var(--white);
+            &.grey-text {
+              opacity: 0.7;
             }
-            border-right: 1px solid rgba(255, 255, 255, 0.5);
-            &:last-child {
-              border-right: none;
-              padding-right: 0px;
-            }
+          }
+          border-right: 1px solid rgba(255, 255, 255, 0.5);
+          &:last-child {
+            border-right: none;
+            padding-right: 0px;
           }
         }
       }
     }
-
-    .image-background {
-      --fade-size: 100%;
-      --fade-from: rgba(0, 0, 0, 0.5);
-      --fade-hold: 50%;
-      --fade-direction: 90deg;
-      img {
-        opacity: 0.8;
-      }
-    }
   }
 
-  .tags {
-    .tag,
-    .tag .text {
-      color: var(--blue);
-      font-weight: 500;
-    }
-
-    .tag {
-      padding: var(--fs-6) var(--fs-12);
-      min-height: auto;
-      font-size: var(--fs-14);
-      line-height: 1;
-      border: none;
-      background-color: var(--grey-light);
+  .image-background {
+    --fade-size: 100%;
+    --fade-from: rgba(0, 0, 0, 0.5);
+    --fade-hold: 50%;
+    --fade-direction: 90deg;
+    img {
+      opacity: 0.8;
     }
   }
+}
 
-  .info-table {
+.info-table {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--fs-12);
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+
+  ul {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: var(--fs-12);
     position: relative;
-    z-index: 2;
-    margin-top: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    gap: var(--fs-16);
 
-    ul {
-      display: flex;
-      position: relative;
-      width: 100%;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: center;
-      align-content: center;
-      gap: var(--fs-16);
-
-      li {
-        border-right: 1px solid rgba(0, 0, 0, 0.3);
-        padding-right: var(--fs-16);
-        &:last-child {
-          border-right: none;
-          padding-right: 0px;
-        }
+    li {
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
+      padding-right: var(--fs-16);
+      &:last-child {
+        border-right: none;
+        padding-right: 0px;
       }
     }
   }
+}
 
-  .logo-background {
-    top: 50%;
-    width: 480px;
-    height: 480px;
-    transform: translate(20%, -50%) rotate(-10deg);
-    color: rgba(5, 67, 189, 0.078);
-  }
+.logo-background {
+  top: 50%;
+  width: 480px;
+  height: 480px;
+  transform: translate(20%, -50%) rotate(-10deg);
+  color: rgba(5, 67, 189, 0.078);
 }
 
 .mood-button {
@@ -167,13 +148,18 @@
       width: 100%;
     }
   }
-}
-
-@media (max-width: 767px) {
-  .mood {
+  .mood-card {
+    min-height: 1px;
     .tags {
       margin-bottom: var(--fs-50);
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .mood-card {
+    min-height: 1px;
+
     .logo-background {
       top: 0%;
       width: 280px;
@@ -188,9 +174,9 @@
       }
     }
 
-    .magenta,
-    .blue,
-    .dark {
+    &.magenta,
+    &.blue,
+    &.dark {
       .mood-button {
         &.white {
           background-color: var(--white);

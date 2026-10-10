@@ -27,7 +27,9 @@
   .col--5-8,
   .col--6,
   .col--7,
-  .col--8 {
+  .col--7-15,
+  .col--8,
+  .col--8-15 {
     display: inline-flex;
     height: auto;
     position: relative;
@@ -99,8 +101,17 @@
     width: calc((100% - (var(--fs-24) * 6)) / 7);
   }
 
+  // 7/15 + 8/15 — пара «616 + 700» при контейнере 1340px
+  .col--7-15 {
+    width: calc(46.666666% - (var(--fs-24) / 2));
+  }
+
   .col--8 {
     width: calc((100% - (var(--fs-24) * 7)) / 8);
+  }
+
+  .col--8-15 {
+    width: calc(53.333333% - (var(--fs-24) / 2));
   }
 
   @media (max-width: 767px) {
@@ -121,7 +132,9 @@
     .col--5-8,
     .col--6,
     .col--7,
-    .col--8 {
+    .col--7-15,
+    .col--8,
+    .col--8-15 {
       gap: var(--fs-16);
     }
     .col--2 {
@@ -169,8 +182,14 @@
     .col--7 {
       width: calc((100% - (var(--fs-16) * 6)) / 7);
     }
+    .col--7-15 {
+      width: calc(46.666666% - (var(--fs-16) / 2));
+    }
     .col--8 {
       width: calc((100% - (var(--fs-16) * 7)) / 8);
+    }
+    .col--8-15 {
+      width: calc(53.333333% - (var(--fs-16) / 2));
     }
   }
 }

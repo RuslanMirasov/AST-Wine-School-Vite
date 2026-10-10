@@ -62,11 +62,97 @@
 }
 
 .privat-events-hero-image {
-  min-height: 420px;
+  min-height: 460px;
   &.dark {
     background-color: var(--black);
   }
   @media (max-width: 767px) {
     min-height: 220px;
+  }
+}
+
+.section--event-hero {
+  .content {
+    display: inline-flex;
+    width: 100%;
+    flex: auto;
+    height: auto;
+    gap: var(--fs-4);
+  }
+
+  .image-background.white-gradient {
+    --fade-size: 100%;
+    --fade-from: rgba(0, 0, 0, 0.5);
+    --fade-hold: 60%;
+    --fade-direction: 180deg;
+  }
+
+  .collage .col--8-15 {
+    .buttons {
+      margin-top: var(--fs-16);
+    }
+  }
+
+  // Верхний блок забирает всю свободную высоту, ряд .col--1 под ним остаётся по контенту
+  .collage .col--7-15 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    > .content {
+      flex: 1 1 auto;
+    }
+    > .col--1 {
+      flex: 0 0 auto;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .col--2 {
+      min-width: 100%;
+      width: 100%;
+    }
+
+    .collage {
+      .col--7-15,
+      .col--1 {
+        gap: var(--fs-16);
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .col--2 {
+      min-width: calc((100% - var(--fs-24)) / 2);
+      width: calc((100% - var(--fs-24)) / 2);
+    }
+
+    .collage {
+      .col--8-15,
+      .col--7-15,
+      .col--1 {
+        width: 100%;
+        gap: var(--fs-24);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .col--2 {
+      min-width: 100%;
+      width: 100%;
+    }
+
+    .collage {
+      .col--8-15,
+      .col--7-15,
+      .col--1 {
+        gap: var(--fs-16);
+      }
+
+      .buttons {
+        .button {
+          width: 100%;
+        }
+      }
+    }
   }
 }

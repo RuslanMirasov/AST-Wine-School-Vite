@@ -1,0 +1,33 @@
+.section--others-formats {
+  .container {
+    > .button {
+      margin-left: auto;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .section--others-formats {
+    .collage {
+      .col--3 {
+        width: calc((100% - var(--fs-24)) / 2);
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .section--others-formats {
+    .container {
+      > .button {
+        order: 2;
+        width: 100%;
+      }
+    }
+    .collage {
+      .col--3 {
+        width: 100%;
+      }
+    }
+  }
+}

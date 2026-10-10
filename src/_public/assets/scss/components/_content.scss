@@ -93,6 +93,9 @@
   &.gap--8 {
     gap: var(--fs-8);
   }
+  &.gap--4 {
+    gap: var(--fs-4);
+  }
 
   &.row {
     flex-direction: row;
