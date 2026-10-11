@@ -20,6 +20,7 @@ import { initVideoPlayer } from './modules/videoPlayer.js';
 import { initYandexMap } from './modules/yandex-map.js';
 import { initCertificateOrder } from './modules/certificat-order.js';
 import { initCertificatePreview } from './modules/certificat-preview.js';
+import { initDatepickers } from './plugins/airDatepicker.js';
 
 popup.init();
 window.popup = popup;
@@ -49,4 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initYandexMap();
   initCertificateOrder();
   initCertificatePreview();
+  initDatepickers();
 });

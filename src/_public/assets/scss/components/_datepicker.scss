@@ -1,0 +1,101 @@
+.air-datepicker.air-datepicker {
+  --adp-font-family: var(--font);
+  --adp-font-size: var(--fs-13);
+  --adp-border-radius: var(--fs-16);
+  --adp-cell-border-radius: var(--fs-8);
+  --adp-btn-border-radius: var(--fs-8);
+  --adp-padding: var(--fs-8);
+
+  // фон и текст
+  --adp-background-color: var(--white);
+  --adp-color: var(--blue);
+  --adp-color-secondary: var(--grey-text);
+  --adp-color-other-month: var(--grey-text);
+  --adp-color-other-month-hover: var(--grey-text);
+  --adp-color-disabled: var(--grey-text);
+  --adp-accent-color: var(--magenta);
+
+  // дни недели
+  --adp-day-name-color: var(--magenta);
+  --adp-day-name-color-hover: var(--magenta);
+
+  // кнопки, стрелки и даты — на белом фоне, при наведении светло-серые
+  --adp-background-color-hover: var(--grey-light);
+  --adp-background-color-active: var(--grey-light);
+  --adp-cell-background-color-hover: var(--grey-light);
+
+  // сегодняшняя и выбранная даты
+  --adp-color-current-date: var(--blue);
+  --adp-cell-background-color-selected: var(--magenta);
+  --adp-cell-background-color-selected-hover: var(--magenta);
+  --adp-background-color-selected-other-month: var(--magenta);
+  --adp-background-color-selected-other-month-focused: var(--magenta);
+
+  // навигация и кнопки под календарём
+  --adp-nav-arrow-color: var(--blue);
+  --adp-nav-color-secondary: var(--grey-text);
+  --adp-btn-color: var(--blue);
+  --adp-btn-color-hover: var(--blue);
+
+  // рамки
+  --adp-border-color: var(--grey-promo);
+  --adp-border-color-inner: var(--grey-light);
+  --adp-border-color-inline: var(--grey-promo);
+
+  // Ячейки — отдельные плитки: свой фон и зазор между ними
+  .air-datepicker-body--cells {
+    gap: var(--fs-4);
+  }
+
+  // Дни — квадратные: высота ряда берётся от ширины ячейки
+  .air-datepicker-body--cells.-days- {
+    grid-auto-rows: auto;
+
+    .air-datepicker-cell {
+      aspect-ratio: 1;
+    }
+  }
+
+  // «Хвостик» у угла календаря, указывающий на поле
+  .air-datepicker--pointer {
+    display: none;
+  }
+
+  .air-datepicker-cell {
+    background-color: var(--white);
+
+    &.-focus- {
+      background-color: var(--grey-light);
+    }
+
+    &.-current- {
+      background-color: var(--magenta-light);
+    }
+
+    &.-selected-,
+    &.-selected-.-current-,
+    &.-selected-.-focus- {
+      background-color: var(--magenta);
+      color: var(--white);
+    }
+
+    &.-disabled- {
+      opacity: 0.5;
+    }
+
+    // Дни соседних месяцев приглушены; выбранный день остаётся ярким
+    &.-other-month-:not(.-selected-) {
+      opacity: 0.4;
+    }
+  }
+
+  .air-datepicker-nav--action,
+  .air-datepicker-nav--title {
+    border-radius: var(--fs-8);
+  }
+}
+
+// Затемнение мобильного режима — выше попапов, как и сам календарь
+.air-datepicker-overlay.air-datepicker-overlay {
+  z-index: 1099;
+}
