@@ -18,6 +18,8 @@ import { initCopyToBuffer } from './modules/copy.js';
 import { initReadMore } from './modules/readMore.js';
 import { initVideoPlayer } from './modules/videoPlayer.js';
 import { initYandexMap } from './modules/yandex-map.js';
+import { initCertificateOrder } from './modules/certificat-order.js';
+import { initCertificatePreview } from './modules/certificat-preview.js';
 
 popup.init();
 window.popup = popup;
@@ -45,4 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initReadMore();
   initVideoPlayer();
   initYandexMap();
+  initCertificateOrder();
+  initCertificatePreview();
 });

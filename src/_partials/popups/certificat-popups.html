@@ -1,0 +1,335 @@
+<!--ЗАКАЗ СЕРТИФИКАТА ШАГ 2 (электронный сертификат: другу или себе)-->
+<div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="cert-order-step-2-title" id="cert-order-step-2">
+  <h2 class="popup-title" id="cert-order-step-2-title">
+    <b class="text fs-18">Кому предназначен сертификат?</b>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <fieldset class="certificat-order-part" data-cert-group="step-2" data-cert-scenario="electronic">
+    <!--ПОЛУЧАТЕЛЬ-->
+    <div class="buttons gap--12 ta--l">
+      <b class="text fs-14 full">Получатель</b>
+      <label class="label-for-radio-button">
+        <input
+          type="radio"
+          name="recipient"
+          data-cert-field="recipient"
+          data-cert-recipient="friend"
+          value="Другу"
+          form="certificate-order"
+          checked
+        />
+        <p class="radio-button"><span>Другу</span></p>
+      </label>
+
+      <label class="label-for-radio-button">
+        <input type="radio" name="recipient" data-cert-field="recipient" data-cert-recipient="me" value="Себе" form="certificate-order" />
+        <p class="radio-button"><span>Себе</span></p>
+      </label>
+    </div>
+
+    <!--ПОЛЯ ДЛЯ ВАРИАНТА «ДРУГУ»-->
+    <div class="certificat-order-fields" data-cert-recipient-block="friend">
+      <label class="label">
+        <span class="label-text">Электронная почта получателя *</span>
+        <input
+          type="email"
+          name="email-holder"
+          class="input"
+          placeholder="email@ru"
+          required
+          autocomplete="off"
+          form="certificate-order"
+          data-cert-field="email-holder"
+        />
+      </label>
+
+      <label class="label">
+        <span class="label-text">Напишите сообщение от&nbsp;дарителя *</span>
+        <textarea
+          name="message"
+          data-rule="cert-message"
+          class="input input--textarea"
+          placeholder="Сообщение"
+          required
+          form="certificate-order"
+          data-cert-field="message"
+        ></textarea>
+        <span class="text fs-12 grey-text">Максимально 200&nbsp;символов.</span>
+      </label>
+
+      <label class="label">
+        <span class="label-text">Электронная почта дарителя *</span>
+        <input
+          type="email"
+          name="email-sender"
+          class="input"
+          placeholder="email@ru"
+          required
+          autocomplete="email"
+          form="certificate-order"
+          data-cert-field="email-sender"
+        />
+      </label>
+    </div>
+
+    <!--ПОЛЯ ДЛЯ ВАРИАНТА «СЕБЕ»-->
+    <div class="certificat-order-fields" data-cert-recipient-block="me" hidden>
+      <label class="label">
+        <span class="label-text">Напишите подпись для&nbsp;сертификата *</span>
+        <textarea
+          name="message"
+          data-rule="cert-message"
+          class="input input--textarea"
+          placeholder="Сообщение"
+          required
+          disabled
+          form="certificate-order"
+          data-cert-field="message"
+        ></textarea>
+        <span class="text fs-12 grey-text">Максимально 200&nbsp;символов.</span>
+      </label>
+
+      <label class="label">
+        <span class="label-text">Электронная почта получателя *</span>
+        <input
+          type="email"
+          name="email-holder"
+          class="input"
+          placeholder="email@ru"
+          required
+          disabled
+          autocomplete="email"
+          form="certificate-order"
+          data-cert-field="email-holder"
+        />
+      </label>
+    </div>
+
+    <div class="buttons gap--12 ta--r">
+      <button type="button" class="button" onclick="toCertStep('cert-checkout', 'step-2')"><span>Далее</span></button>
+    </div>
+  </fieldset>
+</div>
+
+<!--ЗАКАЗ СЕРТИФИКАТА ШАГ 2 (печатный сертификат: сообщение от дарителя)-->
+<div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="cert-order-step-2-printed-title" id="cert-order-step-2-printed">
+  <h2 class="popup-title" id="cert-order-step-2-printed-title">
+    <b class="text fs-18">Сообщение от&nbsp;дарителя</b>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <fieldset class="certificat-order-part" data-cert-group="step-2-printed" data-cert-scenario="printed">
+    <div class="certificat-order-fields">
+      <label class="label">
+        <span class="label-text">Напишите сообщение от&nbsp;дарителя *</span>
+        <textarea
+          name="message"
+          data-rule="cert-message"
+          class="input input--textarea"
+          placeholder="Сообщение"
+          required
+          form="certificate-order"
+          data-cert-field="message"
+        ></textarea>
+        <span class="text fs-12 grey-text">Максимально 200&nbsp;символов.</span>
+      </label>
+
+      <label class="label">
+        <span class="label-text">Email</span>
+        <input
+          type="email"
+          name="email-sender"
+          class="input"
+          placeholder="email@ru"
+          autocomplete="email"
+          form="certificate-order"
+          data-cert-field="email-sender"
+        />
+        <span class="text fs-12 grey-text">Для&nbsp;отправки электронного сертификата вам на&nbsp;почту. Не&nbsp;обязательно.</span>
+      </label>
+    </div>
+
+    <div class="buttons gap--12 ta--r">
+      <button type="button" class="button" onclick="toCertStep('cert-checkout', 'step-2-printed')"><span>Далее</span></button>
+    </div>
+  </fieldset>
+</div>
+
+<!--ЗАКАЗ СЕРТИФИКАТА ШАГ 2 (для компании)-->
+<div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="cert-order-step-2-company-title" id="cert-order-step-2-company">
+  <h2 class="popup-title" id="cert-order-step-2-company-title">
+    <b class="text fs-18">Сертификаты для&nbsp;компании</b>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <fieldset class="certificat-order-part" data-cert-group="step-2-company" data-cert-scenario="company">
+    <div class="certificat-order-fields">
+      <label class="label">
+        <span class="label-text">Электронная почта получателя *</span>
+        <input
+          type="email"
+          name="email-holder"
+          class="input"
+          placeholder="email@ru"
+          required
+          autocomplete="email"
+          form="certificate-order"
+          data-cert-field="email-holder"
+        />
+      </label>
+
+      <label class="label auto" aria-live="polite" aria-atomic="true">
+        <span class="label-text">Количество сертификатов *</span>
+        <div class="label--count" aria-live="polite" aria-atomic="true">
+          <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
+          <input
+            type="number"
+            name="count"
+            class="input input--count"
+            min="1"
+            max="999"
+            value="1"
+            required
+            aria-label="Количество сертификатов"
+            data-error-text="Пожалуйста, укажите число, больше нуля"
+            form="certificate-order"
+            data-cert-field="count"
+          />
+          <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
+        </div>
+      </label>
+
+      <label class="label">
+        <span class="label-text">Напишите сообщение от&nbsp;дарителя *</span>
+        <textarea
+          name="message"
+          data-rule="cert-message"
+          class="input input--textarea"
+          placeholder="Сообщение"
+          required
+          form="certificate-order"
+          data-cert-field="message"
+        ></textarea>
+        <span class="text fs-12 grey-text">Максимально 200&nbsp;символов.</span>
+      </label>
+
+      <label class="label">
+        <input name="logo" type="checkbox" class="checkbox" value="Да" form="certificate-order" data-cert-field="logo" />
+        <p class="label-text">
+          <span>Добавить логотип компании</span>
+        </p>
+      </label>
+      <span class="text fs-12 grey-text">Органично встроим ваш логотип.</span>
+    </div>
+
+    <div class="buttons gap--12 ta--r">
+      <button type="button" class="button" onclick="toCertStep('cert-checkout', 'step-2-company')"><span>Далее</span></button>
+    </div>
+  </fieldset>
+</div>
+
+<!--ЗАКАЗ СЕРТИФИКАТА ШАГ 3 (Проверка заказа)-->
+<div class="popup-content medium" role="dialog" aria-modal="true" aria-labelledby="cert-checkout-title" id="cert-checkout">
+  <h2 class="popup-title" id="cert-checkout-title">
+    <b class="text fs-18">Проверьте и отправьте сертификат в корзину</b>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <div class="cert-checkout">
+    <b class="text fs-16 full">Сумма сертификата: <span data-nominal-final>0</span> ₽</b>
+    <img src="/assets/img/certificates/template-1-thumb.webp" alt="Выбранный шаблон сертификата" data-template-thumb-final />
+    <div class="buttons gap--12">
+      <button type="button" class="button white-border full" data-popup-open="change-cert-template"><span>Поменять оформление</span></button>
+      <button type="button" class="button white-border full" data-cert-preview><span>Посмотреть</span></button>
+    </div>
+  </div>
+
+  <div class="buttons gap--12 ta--r">
+    <button type="button" class="button white-border" onclick="toCertStep('cert-order-step-2')"><span>Назад</span></button>
+    <button type="submit" class="button" form="certificate-order"><span>Отправить в корзину</span></button>
+  </div>
+</div>
+
+<!--ЗАКАЗ СЕРТИФИКАТА (Поменять оформление)-->
+<div class="popup-content large" role="dialog" aria-modal="true" aria-labelledby="cert-change-template-title" id="change-cert-template">
+  <h2 class="popup-title" id="cert-change-template-title">
+    <b class="text fs-18">Выберите шаблон сертификата *</b>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <ul class="change-cert-template">
+    <li data-template-number="1" class="checked">
+      <img src="/assets/img/certificates/template-1-thumb.webp" alt="Выбранный шаблон сертификата" />
+      <button type="button" class="button white-border full" data-cert-preview><span>Посмотреть</span></button>
+    </li>
+    <li data-template-number="2">
+      <img src="/assets/img/certificates/template-2-thumb.webp" alt="Выбранный шаблон сертификата" />
+      <button type="button" class="button white-border full" data-cert-preview><span>Посмотреть</span></button>
+    </li>
+    <li data-template-number="3">
+      <img src="/assets/img/certificates/template-3-thumb.webp" alt="Выбранный шаблон сертификата" />
+      <button type="button" class="button white-border full" data-cert-preview><span>Посмотреть</span></button>
+    </li>
+    <li data-template-number="4">
+      <img src="/assets/img/certificates/template-4-thumb.webp" alt="Выбранный шаблон сертификата" />
+      <button type="button" class="button white-border full" data-cert-preview><span>Посмотреть</span></button>
+    </li>
+    <li data-template-number="5">
+      <img src="/assets/img/certificates/template-5-thumb.webp" alt="Выбранный шаблон сертификата" />
+      <button type="button" class="button white-border full" data-cert-preview><span>Посмотреть</span></button>
+    </li>
+    <li data-template-number="6">
+      <img src="/assets/img/certificates/template-6-thumb.webp" alt="Выбранный шаблон сертификата" />
+      <button type="button" class="button white-border full" data-cert-preview><span>Посмотреть</span></button>
+    </li>
+  </ul>
+
+  <div class="buttons gap--12 ta--r">
+    <button type="button" class="button" data-popup-open="cert-checkout"><span>Готово</span></button>
+  </div>
+</div>
+
+<!--ПРЕВЬЮ ГОТОВОГО СЕРТИФИКАТА-->
+<div hidden data-cert-preview-source>
+  <div class="certificat-responsive-preview-wrapper">
+    <div class="certificat-responsive-preview" data-template-current="1">
+      <div class="certificat-responsive-preview__logo">
+        <svg width="253" height="64"><use href="/assets/img/sprite.svg#logo"></use></svg>
+        <!-- <img
+                src="https://free-png.ru/wp-content/uploads/2020/10/58136-logo-brand-adidas-sports-free-transparent-image-hd-2d531720.png"
+                alt=""
+              /> -->
+      </div>
+      <h3 class="certificat-responsive-preview__title">ПОДАРОЧНЫЙ СЕРТИФИКАТ</h3>
+
+      <p class="certificat-responsive-preview__message" data-message-final></p>
+
+      <div class="certificat-responsive-preview__info">
+        <strong class="certificat-responsive-preview__nominal">Номинал: <span data-nominal-final>0</span> ₽</strong>
+        <p class="certificat-responsive-preview__code">Код сертификата: <span data-code-final>ХХХХ-XХХХ-ХХХ</span></p>
+      </div>
+
+      <p class="certificat-responsive-preview__footer">
+        Настоящий сертификат удостоверяет право его предъявителя на получение услуг «Школа вина AST» на сумму, указанную в сертификате. Срок действия
+        — 24 месяца с даты покупки. По истечении срока сертификат считается недействительным. Сертификат может быть использован для оплаты любых услуг
+        Школы: курсов (очных и онлайн), дегустаций, мастер-классов, частных мероприятий и подарочных наборов. Сертификат не подлежит обмену на
+        денежные средства и возврату. Номинал можно использовать как полностью, так и частями — остаток сохраняется на балансе до истечения срока
+        действия. При оплате услуги, стоимость которой превышает оставшийся баланс, разница доплачивается держателем на месте. Сертификат может быть
+        передан третьим лицам. Для использования необходимо предъявить сертификат в оригинале (печатная версия) или электронный вариант с уникальным
+        кодом. Школа оставляет за собой право вносить изменения в условия обслуживания. Полная информация — на сайте astwine.ru. По вопросам активации
+        обращайтесь по телефону +7 (495) XXX-XX-XX.
+      </p>
+    </div>
+  </div>
+</div>

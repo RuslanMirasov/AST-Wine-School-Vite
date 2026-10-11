@@ -12,6 +12,20 @@ export const nativeMessages = {
   patternMismatch: 'Неверный формат поля',
 };
 
+const createCertMessageRule = () => {
+  let extraChars = 0;
+
+  return {
+    test: value => {
+      extraChars = value.length - 200;
+      return extraChars <= 0;
+    },
+    get message() {
+      return `Сократите количество символов сообщения на ${extraChars}`;
+    },
+  };
+};
+
 export const customRules = {
   email: {
     test: value => /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/.test(value.trim()),
@@ -37,6 +51,7 @@ export const customRules = {
     test: value => /^[\p{Script=Cyrillic}-]+(?: +[\p{Script=Cyrillic}-]+)*$/u.test(value.trim()),
     message: 'Разрешены только буквы кириллицы, дефис и пробел',
   },
+  'cert-message': createCertMessageRule(),
   code: {
     test: (value, input) => new RegExp(`^\\d{${input.dataset.code}}$`).test(value.trim()),
     message: 'Неверный код',

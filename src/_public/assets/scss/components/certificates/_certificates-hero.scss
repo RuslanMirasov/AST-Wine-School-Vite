@@ -1,0 +1,192 @@
+.section--certificates-hero {
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &[data-arrow-prev] {
+      left: var(--fs-24);
+    }
+
+    &[data-arrow-next] {
+      right: var(--fs-24);
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .col--3 {
+    .content {
+      .button {
+        margin-top: auto;
+      }
+      @media (max-width: 1279px) {
+        .title.title--32 {
+          font-size: var(--fs-24);
+        }
+        img {
+          max-width: 180px;
+        }
+        .text {
+          font-size: var(--fs-16);
+          max-width: 600px;
+          @media (max-width: 1023px) {
+            font-size: var(--fs-18);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .col--3,
+    .col--2-3 {
+      min-width: 100%;
+      width: 100%;
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+.certificats-slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--fs-50);
+  background-color: var(--grey-promo);
+
+  .swiper-slide {
+    min-height: 412px;
+    @media (max-width: 1023px) {
+      min-height: 376px;
+    }
+    @media (max-width: 767px) {
+      min-height: 420px;
+    }
+    background-color: var(--black);
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+    padding: var(--fs-24);
+    img {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+
+      --fade-direction: 0deg;
+      --fade-from: rgba(0, 0, 0, 0.3);
+      --fade-size: 50%;
+      --fade-hold: 10%;
+      -webkit-mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent) var(--fade-hold, 0%), #000 var(--fade-size));
+      mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent) var(--fade-hold, 0%), #000 var(--fade-size));
+    }
+
+    .content-text {
+      align-items: center;
+      text-align: center;
+      padding-left: var(--fs-50);
+      padding-right: var(--fs-50);
+      padding-bottom: var(--fs-40);
+      @media (max-width: 767px) {
+        padding-left: var(--fs-0);
+        padding-right: var(--fs-0);
+        padding-bottom: var(--fs-30);
+      }
+      > * {
+        color: var(--white);
+      }
+    }
+  }
+
+  .swiper-pagination {
+    width: 100%;
+    overflow: visible;
+    position: absolute;
+    left: 0px;
+    bottom: var(--fs-40);
+    justify-content: center;
+    @media (max-width: 1279px) {
+      bottom: var(--fs-32);
+    }
+    @media (max-width: 767px) {
+      bottom: var(--fs-28);
+    }
+    .swiper-pagination-bullet {
+      position: relative;
+      left: 0px !important;
+      top: 0px !important;
+      background-color: var(--white);
+      opacity: 0.4;
+      width: var(--fs-8);
+      height: var(--fs-8);
+      transform: none;
+      transition:
+        background-color 0.3s var(--cubic),
+        opacity 0.3s var(--cubic);
+      padding: 0;
+      margin: 0px var(--fs-4);
+      &.swiper-pagination-bullet-active {
+        opacity: 1;
+        background-color: var(--magenta);
+      }
+
+      @media (max-width: 767px) {
+        // Полоски как в custom-pagination на главной: активная заполняется за время автопрокрутки (data-autoplay="8000")
+        width: 36px;
+        height: 4px;
+        border-radius: 2px;
+        overflow: hidden;
+        opacity: 1;
+        background-color: rgba(255, 255, 255, 0.25);
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: auto;
+          right: 0px;
+          top: 0px;
+          width: 100%;
+          height: 100%;
+          border-radius: 2px;
+          background-color: var(--white);
+          // Уходя, заливка сжимается к правому краю; заполняется активная — от левого
+          transform: scaleX(0);
+          transform-origin: right center;
+          transition: transform 0.3s var(--cubic);
+        }
+        &.swiper-pagination-bullet-active {
+          background-color: rgba(255, 255, 255, 0.25);
+          &:before {
+            transform-origin: left center;
+            transform: scaleX(1);
+            transition: transform 8s linear;
+          }
+          // Первый буллет Swiper создаёт уже активным — без стартового состояния он был бы закрашен сразу
+          @starting-style {
+            &:before {
+              transform: scaleX(0);
+            }
+          }
+        }
+        // В версии для слабовидящих автопрокрутка отключена — активная полоска просто закрашена
+        .a11y &.swiper-pagination-bullet-active:before {
+          transition: none;
+        }
+      }
+    }
+  }
+}
+
+.certificates-hero-image {
+  max-width: 230px;
+}

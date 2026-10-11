@@ -50,6 +50,21 @@ const getSliderKey = sliderWrapper => {
   return key || null;
 };
 
+// data-thumbs="ключ" на основном слайдере: слайдер с таким data-slider становится его миниатюрами
+const getThumbsWrapper = sliderWrapper => {
+  const key = sliderWrapper.dataset.thumbs?.trim();
+  if (!key) return null;
+
+  return Array.from(sliders).find(item => item !== sliderWrapper && getSliderKey(item) === key) || null;
+};
+
+const getThumbsDependents = sliderWrapper => {
+  const key = getSliderKey(sliderWrapper);
+  if (!key) return [];
+
+  return Array.from(sliders).filter(item => item.dataset.thumbs?.trim() === key);
+};
+
 const unregisterNamedSwiper = key => {
   if (!key || !window.swipers) return;
   delete window.swipers[key];
@@ -70,6 +85,9 @@ const destroySlider = sliderWrapper => {
   instances.delete(sliderWrapper);
   linkedSliders.delete(sliderWrapper);
   unregisterNamedSwiper(getSliderKey(sliderWrapper));
+
+  // Основной слайдер держит ссылку на уничтоженные миниатюры — пересоздаётся вместе с ними
+  getThumbsDependents(sliderWrapper).forEach(destroySlider);
 };
 
 const initSlider = sliderWrapper => {
@@ -77,6 +95,13 @@ const initSlider = sliderWrapper => {
 
   const swiper = sliderWrapper.classList.contains('swiper') ? sliderWrapper : getOwnElement(sliderWrapper, '.swiper');
   if (!swiper) return;
+
+  // Миниатюры должны быть созданы раньше основного слайдера
+  const thumbsWrapper = getThumbsWrapper(sliderWrapper);
+  if (thumbsWrapper && !instances.has(thumbsWrapper) && canInitOnCurrentBreakpoint(thumbsWrapper)) {
+    initSlider(thumbsWrapper);
+    if (instances.has(sliderWrapper)) return;
+  }
 
   const {
     autoplay = '',
@@ -165,6 +190,11 @@ const initSlider = sliderWrapper => {
     };
   }
 
+  const thumbsSwiper = thumbsWrapper && instances.get(thumbsWrapper);
+  if (thumbsSwiper) {
+    options.thumbs = { swiper: thumbsSwiper };
+  }
+
   const instance = new Swiper(swiper, options);
   instances.set(sliderWrapper, instance);
   instance.on('slideChange', () => {
@@ -175,6 +205,10 @@ const initSlider = sliderWrapper => {
   if (key) {
     registerNamedSwiper(key, instance);
   }
+
+  getThumbsDependents(sliderWrapper).forEach(dependent => {
+    if (!instances.has(dependent)) updateSlider(dependent);
+  });
 };
 
 const updateSlider = sliderWrapper => {
@@ -184,6 +218,10 @@ const updateSlider = sliderWrapper => {
     destroySlider(sliderWrapper);
   }
 };
+
+// Слайдеры могли быть пересозданы (брейкпоинт, версия для слабовидящих) — модули, которые
+// подписаны на конкретный экземпляр Swiper, по этому событию привязываются заново
+const notifySlidersUpdated = () => document.dispatchEvent(new CustomEvent('sliders:updated'));
 
 const linkControlledSliders = () => {
   sliders.forEach(sliderWrapper => {
@@ -244,6 +282,7 @@ export const reinitSlidersForA11y = () => {
     initSlider(sliderWrapper);
   });
   linkControlledSliders();
+  notifySlidersUpdated();
 };
 
 // Swiper пересчитывает autoHeight только при смене активного слайда (transitionStart/slideTo),
@@ -252,6 +291,7 @@ export const reinitSlidersForA11y = () => {
 const handleResize = debounce(() => {
   sliders.forEach(updateSlider);
   linkControlledSliders();
+  notifySlidersUpdated();
 
   sliders.forEach(sliderWrapper => {
     const instance = instances.get(sliderWrapper);

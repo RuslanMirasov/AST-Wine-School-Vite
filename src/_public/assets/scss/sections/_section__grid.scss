@@ -190,6 +190,7 @@
         .text {
           max-width: 50%;
           font-size: var(--fs-14);
+          z-index: 2;
         }
         .phone-image {
           height: 106%;

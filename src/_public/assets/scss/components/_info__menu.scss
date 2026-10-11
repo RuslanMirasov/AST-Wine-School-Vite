@@ -55,12 +55,12 @@
       &.active,
       &:focus-visible {
         font-weight: 500;
-        background-color: #edf0f5;
+        background-color: var(--grey-light);
       }
 
       @media (hover: hover) {
         &:hover {
-          background-color: #edf0f5;
+          background-color: var(--grey-light);
         }
       }
     }

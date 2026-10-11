@@ -8,10 +8,13 @@ import { initCountInputs } from './inputCount.js';
 const FORM_SELECTOR = '[data-form]';
 const FIELD_SELECTOR = 'input, select, textarea';
 
+// Поле может лежать вне тега формы и быть привязано к ней атрибутом form
+const getOwnerForm = field => field.closest(FORM_SELECTOR) || (field.form?.matches(FORM_SELECTOR) ? field.form : null);
+
 const onFieldFocus = e => {
   if (!e.target.matches(FIELD_SELECTOR)) return;
 
-  const form = e.target.closest(FORM_SELECTOR);
+  const form = getOwnerForm(e.target);
   if (!form) return;
 
   const renderer = getRenderer(form);
@@ -23,7 +26,7 @@ const onFieldChange = e => {
   const field = e.target;
   if (field.type !== 'checkbox' && field.type !== 'radio') return;
 
-  const form = field.closest(FORM_SELECTOR);
+  const form = getOwnerForm(field);
   if (!form) return;
 
   const renderer = getRenderer(form);

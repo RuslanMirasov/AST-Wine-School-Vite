@@ -152,6 +152,10 @@ export const popup = {
       if ((this._isOpening || this._isAnimating) && e.key === 'Escape') {
         return;
       }
+      // Поверх попапа открыт лайтбокс (basicLightbox) — Escape относится к нему, попап остаётся открытым
+      if (e.key === 'Escape' && document.querySelector('.basicLightbox')) {
+        return;
+      }
       if (e.key === 'Escape' && !this._isLocked()) {
         this.close();
         return;
