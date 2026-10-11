@@ -7,8 +7,6 @@ const DISPLAY_FORMAT = 'dd.MM.yyyy';
 // Формат, в котором дата уходит с формой, — тот же, что отправляет родное поле type="date"
 const VALUE_FORMAT = 'yyyy-MM-dd';
 const MOBILE_MAX_WIDTH = 767;
-// Выше подложки попапов (1000): часть полей с датой стоит внутри попапов
-const PICKER_Z_INDEX = '1100';
 
 let pluginPromise = null;
 
@@ -67,7 +65,7 @@ const initField = (field, AirDatepicker) => {
   // Дата выбирается только в календаре. readonly не подходит: такие поля браузер не проверяет на required
   field.addEventListener('beforeinput', event => event.preventDefault());
 
-  const picker = new AirDatepicker(field, {
+  new AirDatepicker(field, {
     dateFormat: DISPLAY_FORMAT,
     altField: valueField,
     altFieldDateFormat: VALUE_FORMAT,
@@ -82,7 +80,6 @@ const initField = (field, AirDatepicker) => {
     },
   });
 
-  picker.$datepicker.style.setProperty('--adp-z-index', PICKER_Z_INDEX);
 };
 
 export const initDatepickers = async () => {
