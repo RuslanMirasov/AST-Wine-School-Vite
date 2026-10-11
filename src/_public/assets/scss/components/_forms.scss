@@ -67,9 +67,7 @@
   --radio-color-checked: var(--magenta);
 
   @media (max-width: 767px) {
-    --input-font-size: var(--fs-14);
-    --input-border-radius: var(--fs-10);
-    --input-height: var(--fs-40); //54px
+    --input-height: var(--fs-50); //54px
   }
 }
 
@@ -219,6 +217,8 @@ input[type='number'] {
 
   &.input--textarea {
     height: 128px;
+    padding-top: var(--fs-12);
+    padding-bottom: var(--fs-12);
   }
 
   &.input--count {

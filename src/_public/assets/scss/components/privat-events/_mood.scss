@@ -59,6 +59,14 @@
       opacity: 0.8;
     }
   }
+
+  .logo-background {
+    top: 50%;
+    width: 480px;
+    height: 480px;
+    transform: translate(20%, -50%) rotate(-10deg);
+    color: rgba(5, 67, 189, 0.078);
+  }
 }
 
 .info-table {
@@ -90,14 +98,6 @@
       }
     }
   }
-}
-
-.logo-background {
-  top: 50%;
-  width: 480px;
-  height: 480px;
-  transform: translate(20%, -50%) rotate(-10deg);
-  color: rgba(5, 67, 189, 0.078);
 }
 
 .mood-button {

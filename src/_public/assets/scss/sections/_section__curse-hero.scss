@@ -84,9 +84,8 @@
 
   .image-background {
     overflow: hidden;
-    top: -2px;
+    top: 0px;
     border-radius: var(--fs-50);
-    // Засвет края маской, цвет — фон .curse-hero (переменные описаны в _backgrounds.scss)
     --fade-direction: 90deg;
     --fade-size: 70%;
     -webkit-mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
