@@ -292,6 +292,17 @@
   }
 }
 
+.certificat-order-fields:not(:has([data-cert-logo-toggle]:checked)) .label--file {
+  display: none;
+}
+
+.label--file .file-info {
+  display: none;
+}
+.label--file:has(input:valid) .file-info {
+  display: flex;
+}
+
 //1024
 @media (max-width: 1151px) {
   .certificate-order .right-side {

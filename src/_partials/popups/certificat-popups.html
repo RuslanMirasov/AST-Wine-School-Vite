@@ -57,7 +57,7 @@
           form="certificate-order"
           data-cert-field="message"
         ></textarea>
-        <span class="text fs-12 grey-text">Максимально 200&nbsp;символов.</span>
+        <span class="text fs-12 grey-text">Максимально 300&nbsp;символов.</span>
       </label>
 
       <label class="label">
@@ -89,7 +89,7 @@
           form="certificate-order"
           data-cert-field="message"
         ></textarea>
-        <span class="text fs-12 grey-text">Максимально 200&nbsp;символов.</span>
+        <span class="text fs-12 grey-text">Максимально 300&nbsp;символов.</span>
       </label>
 
       <label class="label">
@@ -136,7 +136,7 @@
           form="certificate-order"
           data-cert-field="message"
         ></textarea>
-        <span class="text fs-12 grey-text">Максимально 200&nbsp;символов.</span>
+        <span class="text fs-12 grey-text">Максимально 300&nbsp;символов.</span>
       </label>
 
       <label class="label">
@@ -217,15 +217,41 @@
           form="certificate-order"
           data-cert-field="message"
         ></textarea>
-        <span class="text fs-12 grey-text">Максимально 200&nbsp;символов.</span>
+        <span class="text fs-12 grey-text">Максимально 300&nbsp;символов.</span>
       </label>
 
       <label class="label">
-        <input name="logo" type="checkbox" class="checkbox" value="Да" form="certificate-order" data-cert-field="logo" />
+        <input name="logo-checkbox" type="checkbox" class="checkbox" data-cert-logo-toggle />
         <p class="label-text">
           <span>Добавить логотип компании</span>
         </p>
       </label>
+
+      <label class="label label--file" data-file-field>
+        <input type="file" name="logo" data-rule="images-only" data-max-size="10" form="certificate-order" required data-cert-logo />
+
+        <span type="button" class="button white-border">
+          <svg width="17" height="23">
+            <use href="/assets/img/sprite.svg#file"></use>
+          </svg>
+          <span>Прикрепить файл</span>
+        </span>
+
+        <span class="text fs-12 grey-text">Максимальный размер файла 10 МБ</span>
+
+        <div class="file-info">
+          <svg width="20" height="20">
+            <use href="/assets/img/sprite.svg#pdf"></use>
+          </svg>
+          <span class="text fs-14" data-file-name>file.pdf</span>
+          <button type="button" data-file-clear>
+            <svg width="24" height="24">
+              <use href="/assets/img/sprite.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+      </label>
+
       <span class="text fs-12 grey-text">Органично встроим ваш логотип.</span>
     </div>
 
@@ -305,11 +331,8 @@
   <div class="certificat-responsive-preview-wrapper">
     <div class="certificat-responsive-preview" data-template-current="1">
       <div class="certificat-responsive-preview__logo">
-        <svg width="253" height="64"><use href="/assets/img/sprite.svg#logo"></use></svg>
-        <!-- <img
-                src="https://free-png.ru/wp-content/uploads/2020/10/58136-logo-brand-adidas-sports-free-transparent-image-hd-2d531720.png"
-                alt=""
-              /> -->
+        <svg width="253" height="64" data-logo-default><use href="/assets/img/sprite.svg#logo"></use></svg>
+        <img alt="Логотип компании" data-logo-final style="display: none" />
       </div>
       <h3 class="certificat-responsive-preview__title">ПОДАРОЧНЫЙ СЕРТИФИКАТ</h3>
 

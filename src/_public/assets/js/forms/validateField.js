@@ -46,7 +46,10 @@ export const validateField = input => {
   const value = input.value ?? '';
 
   if (rule && value.trim() !== '' && !rule.test(value, input)) {
-    return { valid: false, message: input.dataset.ruleErrorText || input.dataset.errorText || rule.message };
+    // message у правила — строка или функция от значения и поля (когда текст зависит от того, что введено)
+    const ruleMessage = typeof rule.message === 'function' ? rule.message(value, input) : rule.message;
+
+    return { valid: false, message: input.dataset.ruleErrorText || input.dataset.errorText || ruleMessage };
   }
 
   return { valid: true };

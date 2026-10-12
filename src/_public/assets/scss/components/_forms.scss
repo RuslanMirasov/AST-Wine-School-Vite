@@ -653,3 +653,78 @@ $select_padding: 0px var(--fs-16);
     }
   }
 }
+
+.label.label--file {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: var(--fs-12);
+  .button {
+    padding-left: var(--fs-18);
+    padding-right: var(--fs-18);
+  }
+  // Поле скрыто только визуально: с display: none оно выпадает из обхода клавишей Tab
+  // и файл нельзя прикрепить с клавиатуры
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  &:has(input:focus-visible) .button {
+    outline: 2px solid var(--magenta);
+    outline-offset: 2px;
+  }
+  // Блок с именем файла виден, только когда файл выбран (класс ставит forms/inputFile.js)
+  .file-info {
+    display: none;
+  }
+  &.has-file .file-info {
+    display: flex;
+  }
+  > .text {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+.file-info {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: var(--fs-8);
+  padding: var(--fs-12) var(--fs-16);
+  background-color: var(--grey-light);
+  border-radius: var(--fs-16);
+  > svg {
+    color: var(--magenta);
+  }
+  .text {
+    display: block;
+    width: auto;
+    flex: 1;
+    line-height: 1;
+    margin: 0;
+  }
+  button {
+    display: flex;
+    position: relative;
+    width: var(--fs-24);
+    height: var(--fs-24);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: auto;
+    color: var(--grey-text);
+  }
+}
