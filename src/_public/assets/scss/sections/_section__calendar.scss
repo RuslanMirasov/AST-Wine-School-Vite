@@ -78,18 +78,22 @@
 
   .label {
     cursor: pointer;
-    background-color: var(--grey-light);
-    padding: var(--fs-8) var(--fs-12);
-    border-radius: var(--fs-12);
   }
 
   .checkbox {
     + .label-text {
       font-size: var(--fs-14);
       color: var(--blue);
+      background-color: var(--grey-light);
+      padding: var(--fs-10) var(--fs-10) var(--fs-10) var(--fs-40);
+      border-radius: var(--fs-12);
       &:before {
-        border: 1px solid var(--grey-promo);
-        background: var(--grey-promo);
+        width: var(--fs-20);
+        height: var(--fs-20);
+        border: 1px solid var(--magenta);
+        background: var(--magenta);
+        opacity: 0.5;
+        left: var(--fs-8);
       }
     }
 
@@ -104,7 +108,9 @@
 
     &:checked {
       + .label-text {
+        background-color: var(--magenta-light);
         &:before {
+          opacity: 1;
           border: var(--checkbox-border-checked);
           background: var(--checkbox-background-checked);
         }
