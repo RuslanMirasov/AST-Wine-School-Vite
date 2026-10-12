@@ -37,6 +37,13 @@
             <load src="/_partials/components/menus/profile-menu.html" />
           </aside>
 
+          <!--PROFILE MOBIL MENU BUTTON-->
+          <button type="button" class="profile-mobil-menu-button" data-popup-open="profile-navigation">
+            <svg width="20" height="20"><use href="/assets/img/sprite.svg#user"></use></svg>
+            <span>Редактировать профиль</span>
+            <svg width="30" height="24"><use href="/assets/img/sprite.svg#menu"></use></svg>
+          </button>
+
           <!--PAGE CONTENT-->
           <div class="page-content">
             <div class="profile-content profile-info">
@@ -46,7 +53,15 @@
                 <fieldset class="col--2">
                   <label class="label">
                     <span class="label-text">Фамилия *</span>
-                    <input type="text" name="sername" class="input" data-rule="name-cyrillic" minlength="2" required value="Черноморепоколенопереходященский" />
+                    <input
+                      type="text"
+                      name="sername"
+                      class="input"
+                      data-rule="name-cyrillic"
+                      minlength="2"
+                      required
+                      value="Черноморепоколенопереходященский"
+                    />
                   </label>
 
                   <label class="label">

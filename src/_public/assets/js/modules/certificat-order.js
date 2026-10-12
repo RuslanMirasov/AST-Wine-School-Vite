@@ -377,13 +377,6 @@ export const initCertificateOrder = () => {
 
     helperNames.forEach(name => event.formData.delete(name));
   });
-
-  // Временно: вместо перехода в корзину данные финальной формы выводятся в консоль.
-  // Сюда событие доходит только после успешной проверки формы
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    console.log('Заказ сертификата:', Object.fromEntries(new FormData(form).entries()));
-  });
 };
 
 if (typeof window !== 'undefined') {

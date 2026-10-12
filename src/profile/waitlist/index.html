@@ -37,6 +37,13 @@
             <load src="/_partials/components/menus/profile-menu.html" />
           </aside>
 
+          <!--PROFILE MOBIL MENU BUTTON-->
+          <button type="button" class="profile-mobil-menu-button" data-popup-open="profile-navigation">
+            <svg width="20" height="20"><use href="/assets/img/sprite.svg#waitlist"></use></svg>
+            <span>Лист ожидания</span>
+            <svg width="30" height="24"><use href="/assets/img/sprite.svg#menu"></use></svg>
+          </button>
+
           <!--PAGE CONTENT-->
           <div class="page-content">
             <p class="text grey-text">Мы свяжемся с вами, когда появится возможность записаться на мероприятия в вашем листе ожидания.</p>
@@ -85,7 +92,7 @@
                   </div>
                 </div>
 
-                <div class="buttons gap--12">
+                <div class="buttons delete-order">
                   <button type="button" class="remove-button">
                     <svg width="24" height="24"><use href="/assets/img/sprite.svg#delete"></use></svg>
                   </button>
@@ -137,16 +144,16 @@
                   </div>
                 </div>
 
-                <div class="buttons gap--12">
+                <div class="buttons delete-order">
                   <button type="button" class="remove-button">
                     <svg width="24" height="24"><use href="/assets/img/sprite.svg#delete"></use></svg>
                   </button>
                 </div>
               </div>
-            </div>
 
-            <div class="buttons profile-load-more">
-              <button type="button" class="button blue-light"><span>Показать еще</span></button>
+              <div class="buttons profile-load-more">
+                <button type="button" class="button blue-light"><span>Показать еще</span></button>
+              </div>
             </div>
 
             <!--ПУСТО-->

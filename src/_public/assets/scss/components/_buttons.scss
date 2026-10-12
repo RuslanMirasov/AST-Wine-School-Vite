@@ -257,6 +257,8 @@
     }
     @media (max-width: 767px) {
       padding: var(--fs-14) var(--fs-20);
+      flex-direction: row;
+      flex-wrap: nowrap;
     }
   }
 

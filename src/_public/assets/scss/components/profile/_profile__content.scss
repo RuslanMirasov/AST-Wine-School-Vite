@@ -56,6 +56,7 @@
 
   > .buttons {
     width: var(--fs-200);
+    //width: auto;
     flex-shrink: 0;
     justify-content: flex-start;
     align-items: flex-start;
@@ -101,6 +102,7 @@
             align-items: center;
             align-content: center;
             gap: var(--fs-8);
+            text-wrap: nowrap;
             b {
               display: inline-block;
               width: auto;
@@ -119,5 +121,10 @@
 
   > .title {
     min-width: 60%;
+  }
+  .text {
+    hyphens: auto;
+    hyphenate-limit-chars: 14 4 4;
+    overflow-wrap: anywhere;
   }
 }

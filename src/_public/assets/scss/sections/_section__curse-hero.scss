@@ -161,9 +161,10 @@
       max-width: 280px;
     }
     @media (max-width: 767px) {
+      gap: var(--fs-16);
       max-width: 100%;
       .buttons {
-        gap: var(--fs-16);
+        gap: var(--fs-8);
       }
     }
     .buttons {
