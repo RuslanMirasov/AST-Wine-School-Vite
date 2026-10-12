@@ -15,9 +15,14 @@ const resolveFieldTitle = anchor => {
   return field?.placeholder || field?.name || '';
 };
 
-const resolveCustomErrorText = anchor => {
+// Все свои тексты поля: data-error-text и точечные data-*-error-text
+const resolveCustomErrorTexts = anchor => {
   const field = isFormControl(anchor) ? anchor : anchor.querySelector('input, select, textarea');
-  return field?.dataset.errorText || null;
+  if (!field) return [];
+
+  return Object.entries(field.dataset)
+    .filter(([key]) => key === 'errorText' || key.endsWith('ErrorText'))
+    .map(([, text]) => text);
 };
 
 export class SummaryErrorRenderer extends ErrorRenderer {
@@ -36,9 +41,8 @@ export class SummaryErrorRenderer extends ErrorRenderer {
 
     this.container.innerHTML = errors
       .map(({ anchor, message }) => {
-        const customText = resolveCustomErrorText(anchor);
-        if (customText && customText === message) {
-          return `<span class="${ERROR_CLASS}" style="height:auto">${customText}</span>`;
+        if (resolveCustomErrorTexts(anchor).includes(message)) {
+          return `<span class="${ERROR_CLASS}" style="height:auto">${message}</span>`;
         }
 
         const title = resolveFieldTitle(anchor);

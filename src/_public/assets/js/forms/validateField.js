@@ -3,6 +3,18 @@ import { resolveCustomRule } from './resolveRules.js';
 
 const NATIVE_VALIDITY_CHECKS = ['valueMissing', 'tooShort', 'tooLong', 'rangeUnderflow', 'rangeOverflow', 'stepMismatch', 'patternMismatch'];
 
+// Свой текст для конкретной проверки: data-required-error-text, data-minlength-error-text и т.д.
+// Если атрибут задан, он важнее всего остального; если нет — работает прежняя логика и словарь
+const OWN_ERROR_TEXT_KEYS = {
+  valueMissing: 'requiredErrorText',
+  tooShort: 'minlengthErrorText',
+  tooLong: 'maxlengthErrorText',
+  rangeUnderflow: 'minErrorText',
+  rangeOverflow: 'maxErrorText',
+  stepMismatch: 'stepErrorText',
+  patternMismatch: 'patternErrorText',
+};
+
 const resolveNativeMessage = (input, failedCheck) => {
   if (failedCheck === 'valueMissing') {
     return nativeMessages.valueMissing[input.type] || nativeMessages.valueMissing.default;
@@ -24,6 +36,9 @@ export const validateField = input => {
   const rule = resolveCustomRule(input);
 
   if (failedCheck) {
+    const ownText = input.dataset[OWN_ERROR_TEXT_KEYS[failedCheck]];
+    if (ownText) return { valid: false, message: ownText };
+
     const message = !rule && input.dataset.errorText ? input.dataset.errorText : resolveNativeMessage(input, failedCheck);
     return { valid: false, message };
   }
@@ -31,7 +46,7 @@ export const validateField = input => {
   const value = input.value ?? '';
 
   if (rule && value.trim() !== '' && !rule.test(value, input)) {
-    return { valid: false, message: input.dataset.errorText || rule.message };
+    return { valid: false, message: input.dataset.ruleErrorText || input.dataset.errorText || rule.message };
   }
 
   return { valid: true };
