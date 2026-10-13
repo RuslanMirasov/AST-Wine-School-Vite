@@ -38,7 +38,7 @@
         </div>
       </section>
 
-      <section class="page">
+      <section class="page" data-tabs="entity" data-unanimated>
         <div class="container gap--24">
           <!--SIDEBAR-->
           <aside class="sidebar gap--8 right-side" data-sticky-sidebar>
@@ -49,7 +49,7 @@
 
           <!--PAGE CONTENT-->
           <div class="page-content">
-            <div class="profile-content customer-data" data-tabs="entity">
+            <div class="profile-content customer-data">
               <h2 class="title title--32 upper">Данные покупателя</h2>
 
               <div class="buttons full ta--l gap--12">
@@ -58,112 +58,91 @@
               </div>
 
               <!--ФИЗИЧЕСКОЕ ЛИЦО-->
-              <div data-tab="individual">
-                <form data-form="" action="#" class="form" novalidate>
-                  <fieldset class="col--2">
-                    <label class="label">
-                      <span class="label-text">Фамилия *</span>
-                      <input type="text" name="sername" class="input" data-rule="name-cyrillic" minlength="2" required value="" />
-                    </label>
+              <form data-form action="%ROOT%cart/success/" class="form" id="cart-checkout-form" novalidate>
+                <fieldset class="col--2">
+                  <label class="label">
+                    <span class="label-text">Фамилия *</span>
+                    <input type="text" name="sername" class="input" data-rule="name-cyrillic" minlength="2" required value="" />
+                  </label>
 
-                    <label class="label">
-                      <span class="label-text">Имя *</span>
-                      <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="" />
-                    </label>
+                  <label class="label">
+                    <span class="label-text">Имя *</span>
+                    <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="" />
+                  </label>
 
-                    <label class="label">
-                      <span class="label-text">Отчество</span>
-                      <input type="text" name="lastname" class="input" data-rule="name-cyrillic" minlength="2" value="" />
-                    </label>
-                  </fieldset>
+                  <label class="label">
+                    <span class="label-text">Отчество</span>
+                    <input type="text" name="lastname" class="input" data-rule="name-cyrillic" minlength="2" value="" />
+                  </label>
+                </fieldset>
 
-                  <fieldset class="col--2">
-                    <label class="label">
-                      <span class="label-text">Электронная почта *</span>
-                      <input type="email" name="email" class="input" required autocomplete="email" />
-                    </label>
+                <fieldset class="col--2">
+                  <label class="label">
+                    <span class="label-text">Электронная почта *</span>
+                    <input type="email" name="email" class="input" required autocomplete="email" />
+                  </label>
 
-                    <label class="label">
-                      <span class="label-text">Номер телефона *</span>
-                      <input type="tel" name="phone" class="input" placeholder="+7 ___ ___ __ __" required />
-                    </label>
+                  <label class="label">
+                    <span class="label-text">Номер телефона *</span>
+                    <input type="tel" name="phone" class="input" placeholder="+7 ___ ___ __ __" required />
+                  </label>
 
-                    <label class="label">
-                      <span class="label-text">Дата рождения *</span>
-                      <input type="date" name="birthday" class="input" required value="" placeholder="(выберите дату)" />
-                    </label>
+                  <label class="label" data-tab="individual">
+                    <span class="label-text">Дата рождения *</span>
+                    <input type="date" name="birthday" class="input" required value="" placeholder="(выберите дату)" />
+                  </label>
 
-                    <p class="text fs-12 grey-text">Участие в мероприятиях доступно только с 18 лет.</p>
-                  </fieldset>
-                </form>
-              </div>
+                  <p class="text fs-12 grey-text" data-tab="individual">Участие в мероприятиях доступно только с 18 лет.</p>
+                </fieldset>
+
+                <fieldset class="col--2" data-tab="legal-entity">
+                  <label class="label">
+                    <span class="label-text">Наименование юридического лица</span>
+                    <input type="text" name="legal-entity-name" class="input" required value="" placeholder="Наименование" data-invoice-field />
+                  </label>
+
+                  <label class="label">
+                    <span class="label-text">ИНН *</span>
+                    <input
+                      type="number"
+                      name="inn"
+                      class="input"
+                      required
+                      inputmode="numeric"
+                      maxlength="12"
+                      data-rule="inn"
+                      value=""
+                      placeholder="10 или 12 цифр"
+                      data-invoice-field
+                    />
+                  </label>
+                </fieldset>
+
+                <fieldset class="col--2" data-tab="legal-entity">
+                  <label class="label">
+                    <span class="label-text">Юридический адрес</span>
+                    <input type="text" name="adress" class="input" required value="" placeholder="Адрес" data-invoice-field />
+                  </label>
+
+                  <label class="label">
+                    <span class="label-text">КПП</span>
+                    <input
+                      type="number"
+                      name="kpp"
+                      class="input"
+                      required
+                      inputmode="numeric"
+                      maxlength="9"
+                      data-rule="kpp"
+                      value=""
+                      placeholder="9 цифр"
+                      data-invoice-field
+                    />
+                  </label>
+                </fieldset>
+              </form>
 
               <!--ЮРИДИЧЕСКОЕ ЛИЦО-->
-              <div data-tab="legal-entity">
-                <form data-form="" action="#" class="form" novalidate>
-                  <fieldset class="col--2">
-                    <label class="label">
-                      <span class="label-text">Фамилия *</span>
-                      <input type="text" name="sername" class="input" data-rule="name-cyrillic" minlength="2" required value="" />
-                    </label>
-
-                    <label class="label">
-                      <span class="label-text">Имя *</span>
-                      <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="" />
-                    </label>
-
-                    <label class="label">
-                      <span class="label-text">Отчество</span>
-                      <input type="text" name="lastname" class="input" data-rule="name-cyrillic" minlength="2" value="" />
-                    </label>
-                  </fieldset>
-
-                  <fieldset class="col--2">
-                    <label class="label">
-                      <span class="label-text">Электронная почта *</span>
-                      <input type="email" name="email" class="input" required autocomplete="email" />
-                    </label>
-
-                    <label class="label">
-                      <span class="label-text">Номер телефона *</span>
-                      <input type="tel" name="phone" class="input" placeholder="+7 ___ ___ __ __" required />
-                    </label>
-                  </fieldset>
-
-                  <fieldset class="col--2">
-                    <label class="label">
-                      <span class="label-text">Наименование юридического лица</span>
-                      <input type="text" name="legal-entity-name" class="input" required value="" placeholder="Наименование" />
-                    </label>
-
-                    <label class="label">
-                      <span class="label-text">ИНН *</span>
-                      <input
-                        type="number"
-                        name="inn"
-                        class="input"
-                        required
-                        inputmode="numeric"
-                        maxlength="12"
-                        value=""
-                        placeholder="10 или 12 цифр"
-                      />
-                    </label>
-                  </fieldset>
-
-                  <fieldset class="col--2">
-                    <label class="label">
-                      <span class="label-text">Юридический адрес</span>
-                      <input type="text" name="adress" class="input" required value="" placeholder="Адрес" />
-                    </label>
-
-                    <label class="label">
-                      <span class="label-text">КПП</span>
-                      <input type="number" name="kpp" inputmode="numeric" maxlength="9" class="input" required="" value="" placeholder="9 цифр" />
-                    </label>
-                  </fieldset>
-                </form>
-              </div>
             </div>
           </div>
         </div>

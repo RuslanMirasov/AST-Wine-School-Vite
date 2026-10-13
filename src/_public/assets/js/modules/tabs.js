@@ -24,70 +24,116 @@ const setActiveButton = (tabsGroup, tabName) => {
   });
 };
 
+const FIELD_SELECTOR = 'input, select, textarea';
+const INACTIVE_TAB_SELECTOR = '[data-tab]:not(.active)';
+
+// Поля закрытых панелей отключаются: скрытое поле иначе продолжает проверяться и уходит с формой.
+// disabled ставится самим полям (у div такого атрибута нет), а отключённое нами поле помечается,
+// чтобы при открытии панели не включить то, что было отключено в разметке или другим скриптом
+const syncTabFields = tabsGroup => {
+  tabsGroup.querySelectorAll(FIELD_SELECTOR).forEach(field => {
+    if (!field.closest('[data-tab]')) return;
+
+    // Учитываются и вложенные группы: поле отключено, пока закрыта хотя бы одна панель над ним
+    if (field.closest(INACTIVE_TAB_SELECTOR)) {
+      if (field.disabled) return;
+
+      field.disabled = true;
+      field.dataset.tabDisabled = '';
+    } else if ('tabDisabled' in field.dataset) {
+      field.disabled = false;
+      delete field.dataset.tabDisabled;
+    }
+  });
+};
+
+// Панелей с одним именем в группе может быть несколько — они открываются и закрываются вместе
 const ensureActiveTab = tabsGroup => {
   const tabs = getGroupItems(tabsGroup, '[data-tab]');
 
   if (tabs.length === 0) return null;
 
-  const activeTabs = tabs.filter(tab => tab.classList.contains('active'));
-  const activeTab = activeTabs[0] || tabs[0];
+  const activeTab = tabs.find(tab => tab.classList.contains('active')) || tabs[0];
+  const activeName = activeTab.dataset.tab;
 
   tabs.forEach(tab => {
-    tab.classList.toggle('active', tab === activeTab);
+    tab.classList.toggle('active', tab.dataset.tab === activeName);
   });
 
-  setActiveButton(tabsGroup, activeTab.dataset.tab);
+  setActiveButton(tabsGroup, activeName);
+  syncTabFields(tabsGroup);
 
   return activeTab;
 };
 
-export const openTab = (groupName, tabName) => {
+const TAB_FADE_DURATION = 300;
+// <… data-tabs="имя" data-unanimated> — панели этой группы меняются сразу, без затухания и появления
+const UNANIMATED_ATTRIBUTE = 'data-unanimated';
+// Последняя запрошенная вкладка группы: при быстрых кликах подряд открывается только она
+const requestedTabs = new WeakMap();
+
+// Ждём, пока панель погаснет. Таймер — на случай, если transitionend не придёт
+// (панель лежит в скрытом блоке или уже прозрачна)
+const waitForFade = element =>
+  new Promise(resolve => {
+    const done = () => {
+      element.removeEventListener('transitionend', done);
+      clearTimeout(timer);
+      resolve();
+    };
+    const timer = setTimeout(done, TAB_FADE_DURATION + 50);
+
+    element.addEventListener('transitionend', done);
+  });
+
+export const openTab = async (groupName, tabName) => {
   const tabsGroup = getTabsGroup(groupName);
 
   if (!tabsGroup || tabName === undefined || tabName === null) return;
 
-  const buttons = getGroupItems(tabsGroup, '[data-tab-target]');
+  const name = String(tabName);
   const tabs = getGroupItems(tabsGroup, '[data-tab]');
-  const button = buttons.find(item => item.dataset.tabTarget === String(tabName));
-  const targetTab = tabs.find(item => item.dataset.tab === String(tabName));
-  const activeTab = tabs.find(item => item.classList.contains('active'));
+  const targetTabs = tabs.filter(item => item.dataset.tab === name);
+  const activeTabs = tabs.filter(item => item.classList.contains('active'));
 
-  if (!targetTab || targetTab === activeTab) return;
+  if (targetTabs.length === 0 || (requestedTabs.get(tabsGroup) ?? activeTabs[0]?.dataset.tab) === name) return;
 
-  const showNewTab = () => {
-    targetTab.style.opacity = '0';
-    targetTab.classList.add('active');
+  const isAnimated = !tabsGroup.hasAttribute(UNANIMATED_ATTRIBUTE);
 
+  requestedTabs.set(tabsGroup, name);
+  setActiveButton(tabsGroup, name);
+
+  if (isAnimated && activeTabs.length > 0) {
+    activeTabs.forEach(tab => {
+      tab.style.opacity = '0';
+    });
+
+    await waitForFade(activeTabs[0]);
+
+    // Пока панели гасли, выбрали другую вкладку — её откроет свой вызов
+    if (requestedTabs.get(tabsGroup) !== name) return;
+  }
+
+  tabs.forEach(tab => {
+    if (tab.dataset.tab !== name) tab.classList.remove('active');
+  });
+
+  targetTabs.forEach(tab => {
+    tab.style.opacity = isAnimated ? '0' : '';
+    tab.classList.add('active');
+  });
+
+  syncTabFields(tabsGroup);
+
+  if (!isAnimated) return;
+
+  requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        targetTab.style.opacity = '1';
+      targetTabs.forEach(tab => {
+        tab.style.opacity = '1';
       });
     });
-  };
-
-  if (activeTab) {
-    activeTab.style.opacity = '0';
-
-    const handleTransitionEnd = () => {
-      activeTab.removeEventListener('transitionend', handleTransitionEnd);
-      activeTab.classList.remove('active');
-      showNewTab();
-    };
-
-    activeTab.addEventListener('transitionend', handleTransitionEnd, { once: true });
-  } else {
-    showNewTab();
-  }
-
-  if (button) {
-    const activeButton = buttons.find(item => item.classList.contains('active'));
-    if (activeButton) {
-      activeButton.classList.remove('active');
-    }
-    button.classList.add('active');
-  } else {
-    setActiveButton(tabsGroup, targetTab.dataset.tab);
-  }
+  });
 };
 
 export const initTabs = () => {

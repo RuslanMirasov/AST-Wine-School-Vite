@@ -548,4 +548,36 @@
   .buttons.contract-documents {
     order: 0 !important;
   }
+
+  .order-settings {
+    max-width: 100%;
+
+    align-items: flex-start;
+    gap: var(--fs-8);
+    order: 4;
+    .text {
+      max-width: 100%;
+      order: 2;
+      &.fs-24 {
+        margin-top: 6px;
+      }
+    }
+    .label {
+      position: absolute;
+      right: 0px;
+      order: 1;
+    }
+    button.text {
+      display: inline-flex;
+      width: auto;
+    }
+  }
+
+  .cart-success {
+    .buttons {
+      .button {
+        width: 100%;
+      }
+    }
+  }
 }

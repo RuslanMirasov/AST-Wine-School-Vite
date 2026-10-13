@@ -28,10 +28,13 @@
     </tr>
   </table>
 
-  <form action="#" class="order-sum">
+  <div class="order-sum">
     <span class="title title--24 bold">Итого</span>
     <span class="title title--24 bold">11&nbsp;000&nbsp;₽</span>
-    <button type="submit" class="button full white-border"><span>Получить счет на&nbsp;оплату</span></button>
-    <button type="submit" class="button full"><span>Подтвердить заказ</span></button>
-  </form>
+
+    <button type="submit" class="button full white-border" form="cart-checkout-form" data-tab="legal-entity" data-invoice-button disabled>
+      <span>Получить счет на&nbsp;оплату</span>
+    </button>
+    <button type="submit" class="button full" form="cart-checkout-form"><span>Оплатить</span></button>
+  </div>
 </div>

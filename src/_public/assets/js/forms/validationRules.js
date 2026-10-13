@@ -94,6 +94,14 @@ export const customRules = {
   },
   file: createFileRule(),
   'images-only': createFileRule(IMAGE_FORMATS),
+  inn: {
+    test: value => /^(?:\d{10}|\d{12})$/.test(value.trim()),
+    message: 'Пожалуйста, укажите корректный ИНН: 10 цифр для организации или 12 для ИП',
+  },
+  kpp: {
+    test: value => /^\d{9}$/.test(value.trim()),
+    message: 'Пожалуйста, укажите корректный КПП: 9 цифр',
+  },
   code: {
     test: (value, input) => new RegExp(`^\\d{${input.dataset.code}}$`).test(value.trim()),
     message: 'Неверный код',

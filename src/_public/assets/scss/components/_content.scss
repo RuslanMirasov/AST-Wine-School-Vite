@@ -193,8 +193,12 @@
   &.gap--36 {
     gap: var(--fs-36);
   }
+
   &.gap--40 {
     gap: var(--fs-40);
+    @media (max-width: 767px) {
+      gap: var(--fs-24);
+    }
   }
 
   &.va--c {

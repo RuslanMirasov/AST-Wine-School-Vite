@@ -28,7 +28,6 @@
 @use 'components/profile/profile__menu';
 @use 'components/profile/profile__content';
 @use 'components/profile/profile__orders';
-@use 'components/cart/cart__sidebar';
 @use 'components/video__player';
 @use 'components/degustation/hero';
 @use 'components/degustation/degustation-list';
@@ -45,6 +44,7 @@
 @use 'components/certificates/certificates-hero';
 @use 'components/certificates/order-form';
 @use 'components/certificates/certificat-preview';
+@use 'components/cart/cart__sidebar';
 @use 'components/collage';
 @use 'components/datepicker';
 @use 'sections/section__page';

@@ -71,6 +71,15 @@
     &.left-side {
       order: 2;
     }
+    &.gap--8.right-side {
+      gap: var(--fs-24);
+    }
+  }
+
+  @media (max-width: 767px) {
+    &.gap--8.right-side {
+      gap: var(--fs-8);
+    }
   }
 }
 

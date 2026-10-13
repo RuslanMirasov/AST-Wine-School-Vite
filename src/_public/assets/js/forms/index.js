@@ -5,6 +5,7 @@ import { getRenderer } from './factory.js';
 import { initCodeInputs } from './inputCode.js';
 import { initCountInputs } from './inputCount.js';
 import { initFileInputs } from './inputFile.js';
+import { initCartInvoiceButton } from './cart-invoice-button.js';
 
 const FORM_SELECTOR = '[data-form]';
 const FIELD_SELECTOR = 'input, select, textarea';
@@ -70,6 +71,7 @@ export const initForms = () => {
   initCodeInputs();
   initCountInputs();
   initFileInputs();
+  initCartInvoiceButton();
   document.addEventListener('focusin', onFieldFocus);
   document.addEventListener('change', onFieldChange);
   document.addEventListener('submit', onSubmit, true);

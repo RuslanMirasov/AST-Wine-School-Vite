@@ -1,5 +1,6 @@
 import { validateField } from './validateField.js';
 import { resolveAnchor } from './resolveAnchor.js';
+import { scrollToFirstError } from './scrollToError.js';
 
 const FIELD_SELECTOR = 'input, select, textarea';
 
@@ -45,6 +46,7 @@ export const validateForm = (form, renderer) => {
 
   if (errors.length > 0) {
     renderer.renderSummary(errors);
+    scrollToFirstError(errors);
   } else {
     renderer.clearSummary();
   }
