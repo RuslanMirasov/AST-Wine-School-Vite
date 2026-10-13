@@ -21,6 +21,7 @@ import { initYandexMap } from './modules/yandex-map.js';
 import { initCertificateOrder } from './modules/certificat-order.js';
 import { initCertificatePreview } from './modules/certificat-preview.js';
 import { initDatepickers } from './plugins/airDatepicker.js';
+import { initEventFilters } from './modules/event-filters.js';
 
 popup.init();
 window.popup = popup;
@@ -51,4 +52,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCertificateOrder();
   initCertificatePreview();
   initDatepickers();
+  initEventFilters();
 });
