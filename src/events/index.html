@@ -40,46 +40,46 @@
             <ul class="filters">
               <!--Тип мероприятия-->
               <li>
-                <button type="button" class="filter-btn" data-popup-open="event-type">
-                  Тип мероприятия
+                <button type="button" class="filter-btn" data-popup-open="event-type" data-filter-button="event-type">
+                  <span data-filter-text>Тип мероприятия</span>
                   <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
                 </button>
               </li>
 
               <!--Формат-->
               <li>
-                <button type="button" class="filter-btn" data-popup-open="event-format">
-                  Формат
+                <button type="button" class="filter-btn" data-popup-open="event-format" data-filter-button="event-format">
+                  <span data-filter-text>Формат</span>
                   <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
                 </button>
               </li>
 
               <!--Уровень-->
               <li>
-                <button type="button" class="filter-btn" data-popup-open="event-level">
-                  Уровень
+                <button type="button" class="filter-btn" data-popup-open="event-level" data-filter-button="event-level">
+                  <span data-filter-text>Уровень</span>
                   <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
                 </button>
               </li>
 
               <!--Город-->
               <li>
-                <button type="button" class="filter-btn" data-popup-open="event-city">
-                  Город
+                <button type="button" class="filter-btn" data-popup-open="event-city" data-filter-button="event-city">
+                  <span data-filter-text>Город</span>
                   <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
                 </button>
               </li>
 
               <!--Зал-->
               <li>
-                <button type="button" class="filter-btn" data-popup-open="event-place">
-                  Зал
+                <button type="button" class="filter-btn" data-popup-open="event-place" data-filter-button="event-place">
+                  <span data-filter-text>Зал</span>
                   <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
                 </button>
               </li>
             </ul>
 
-            <button type="reset" class="magenta-link regular reset-filters">Сбросить фильтр</button>
+            <button type="reset" class="magenta-link regular reset-filters" data-filter-reset-apply>Сбросить фильтр</button>
           </form>
         </div>
       </section>
@@ -340,7 +340,7 @@
         </ul>
 
         <div class="buttons gap--12">
-          <button type="reset" class="button magenta-light" form="event-filter-form"><span>Сбросить</span></button>
+          <button type="reset" class="button magenta-light" form="event-filter-form" data-filter-reset-apply><span>Сбросить</span></button>
           <button type="submit" class="button" form="event-filter-form" data-filters-close><span>Применить</span></button>
         </div>
       </div>

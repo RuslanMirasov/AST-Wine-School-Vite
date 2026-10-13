@@ -280,6 +280,12 @@
   align-content: center;
   gap: var(--fs-8);
   margin-left: auto;
+  @media (max-width: 1151px) {
+    margin-left: 0px;
+  }
+  @media (max-width: 1023px) {
+    max-width: 100%;
+  }
 
   .input {
     padding-left: var(--fs-44);
