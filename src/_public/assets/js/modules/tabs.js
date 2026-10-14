@@ -47,14 +47,20 @@ const syncTabFields = tabsGroup => {
   });
 };
 
-// Панелей с одним именем в группе может быть несколько — они открываются и закрываются вместе
+const getActiveButtonName = tabsGroup => {
+  return getGroupItems(tabsGroup, '[data-tab-target]').find(button => button.classList.contains('active'))?.dataset.tabTarget;
+};
+
+// Панелей с одним именем в группе может быть несколько — они открываются и закрываются вместе.
+// Стартовая вкладка берётся с активной кнопки, без неё — с активной или первой панели.
+// У вкладки может не быть своих панелей (например, у физлица нет доп. полей) — тогда закрыты все панели группы
 const ensureActiveTab = tabsGroup => {
   const tabs = getGroupItems(tabsGroup, '[data-tab]');
+  const activeName = getActiveButtonName(tabsGroup) ?? (tabs.find(tab => tab.classList.contains('active')) || tabs[0])?.dataset.tab;
 
-  if (tabs.length === 0) return null;
+  if (activeName === undefined) return null;
 
-  const activeTab = tabs.find(tab => tab.classList.contains('active')) || tabs[0];
-  const activeName = activeTab.dataset.tab;
+  const activeTab = tabs.find(tab => tab.dataset.tab === activeName) || null;
 
   tabs.forEach(tab => {
     tab.classList.toggle('active', tab.dataset.tab === activeName);
@@ -95,8 +101,11 @@ export const openTab = async (groupName, tabName) => {
   const tabs = getGroupItems(tabsGroup, '[data-tab]');
   const targetTabs = tabs.filter(item => item.dataset.tab === name);
   const activeTabs = tabs.filter(item => item.classList.contains('active'));
+  const hasButton = getGroupItems(tabsGroup, '[data-tab-target]').some(button => button.dataset.tabTarget === name);
+  const currentName = requestedTabs.get(tabsGroup) ?? getActiveButtonName(tabsGroup) ?? activeTabs[0]?.dataset.tab;
 
-  if (targetTabs.length === 0 || (requestedTabs.get(tabsGroup) ?? activeTabs[0]?.dataset.tab) === name) return;
+  // Неизвестное имя (нет ни панели, ни кнопки) игнорируем, чтобы случайно не закрыть все панели
+  if ((targetTabs.length === 0 && !hasButton) || currentName === name) return;
 
   const isAnimated = !tabsGroup.hasAttribute(UNANIMATED_ATTRIBUTE);
 

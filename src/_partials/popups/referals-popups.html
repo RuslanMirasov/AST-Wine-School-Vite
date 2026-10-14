@@ -1,0 +1,59 @@
+<!--PARTNER CODE SEND POPUP-->
+<div class="popup-content" id="partner-code-send" role="dialog" aria-modal="true" aria-labelledby="partner-code-send-title">
+  <h2 class="popup-title" id="partner-code-send-title">
+    Подтвердите почту
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <p class="popup-subtitle">Мы отправили проверочный код на&nbsp;вашу почту. Введите его, чтобы завершить регистрацию партнера.</p>
+
+  <script>
+    function onPartnerCodeCurrent(e) {
+      e.preventDefault();
+
+      const code = e.target.querySelector('input[name="partner-code"]').value;
+      console.log(code);
+      window.popup.open('partner-code-send-success');
+      e.target.reset();
+    }
+  </script>
+
+  <form data-form action="#" class="form" novalidate onsubmit="onPartnerCodeCurrent(event)">
+    <label class="label label-code">
+      <input
+        type="number"
+        name="partner-code"
+        class="input"
+        data-code="4"
+        data-rule="code"
+        required
+        tabindex="-1"
+        aria-hidden="true"
+        data-required-error-text="Неверный код"
+      />
+    </label>
+
+    <button type="button" class="text fs-14 bold magenta">Отправить код повторно</button>
+
+    <div class="buttons ta--l">
+      <button type="submit" class="button"><span>Подтвердить</span></button>
+    </div>
+  </form>
+</div>
+
+<!--LOGIN SUCCESS POPUP-->
+<div class="popup-content" id="partner-code-send-success" role="dialog" aria-modal="true" aria-labelledby="partner-code-send-success-title">
+  <h2 class="popup-title" id="partner-code-send-title">
+    Вы зарегистрированы как&nbsp;партнер
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+  <p class="text full ta--l">Персональный промокод и&nbsp;статистика переходов уже ждут вас в&nbsp;личном кабинете.</p>
+
+  <div class="buttons ta--l">
+    <a href="%ROOT%profile/referral-program/" class="button"><span>В личный кабинет</span></a>
+  </div>
+</div>
