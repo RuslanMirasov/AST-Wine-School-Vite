@@ -4,13 +4,11 @@
     <load src="/_partials/base/metrix.html" />
     <load src="/_partials/base/meta.html" />
     <load src="/_partials/base/styles.html" />
-    <meta name="description" content="AST - Мероприятие" />
-    <title>Мероприятие</title>
+    <meta name="description" content="AST - Календарь мероприятий" />
+    <title>Календарь мероприятий</title>
   </head>
   <body class="body">
-    <!--START SCRIPTS-->
     <load src="/_partials/base/start-scripts.html" />
-    <!--HEADER-->
     <load src="/_partials/preloader.html" />
     <load src="/_partials/components/header/header.html" />
 
@@ -20,12 +18,463 @@
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
         <li><a href="%ROOT%events/">Календарь мероприятий</a></li>
-        <li><span>Мероприятие</span></li>
+        <li><span>27&nbsp;июня</span></li>
       </ul>
 
+      <!--HERO (ФОРМА ПОИСКА КАЛЕНДАРЬ И ФИЛЬТРЫ)-->
+      <section class="section section-event-calendar">
+        <!--Аккордеон: кнопка «Показать календарь» в ленте дней раскрывает сетку месяца под фильтрами-->
+        <div class="container gap--40" data-accordeon>
+          <h1 class="title title--40 upper">Календарь мероприятий</h1>
+
+          <form action="%ROOT%search/" class="search-form-with-filter" method="GET" data-form novalidate>
+            <load src="/_partials/components/header/search-form.html" />
+
+            <button type="button" class="filter-toggle-button" data-filter-toggle-button>
+              <svg width="20" height="20"><use href="/assets/img/sprite.svg#filter"></use></svg>
+            </button>
+          </form>
+
+          <load src="/_partials/components/calendar/calendar-slider.html" />
+
+          <!--ФИЛЬТР-->
+          <form action="%ROOT%events/event/" class="calendar-filters" id="event-filter-form">
+            <ul class="filters">
+              <!--Тип мероприятия-->
+              <li>
+                <button type="button" class="filter-btn" data-popup-open="event-type" data-filter-button="event-type">
+                  <span data-filter-text>Тип мероприятия</span>
+                  <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+                </button>
+              </li>
+
+              <!--Формат-->
+              <li>
+                <button type="button" class="filter-btn" data-popup-open="event-format" data-filter-button="event-format">
+                  <span data-filter-text>Формат</span>
+                  <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+                </button>
+              </li>
+
+              <!--Уровень-->
+              <li>
+                <button type="button" class="filter-btn" data-popup-open="event-level" data-filter-button="event-level">
+                  <span data-filter-text>Уровень</span>
+                  <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+                </button>
+              </li>
+
+              <!--Город-->
+              <li>
+                <button type="button" class="filter-btn" data-popup-open="event-city" data-filter-button="event-city">
+                  <span data-filter-text>Город</span>
+                  <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+                </button>
+              </li>
+
+              <!--Зал-->
+              <li>
+                <button type="button" class="filter-btn" data-popup-open="event-place" data-filter-button="event-place">
+                  <span data-filter-text>Зал</span>
+                  <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+                </button>
+              </li>
+            </ul>
+
+            <button type="reset" class="magenta-link regular reset-filters" data-filter-reset-apply>Сбросить фильтр</button>
+          </form>
+
+          <div data-accordeon-body style="display: none">
+            <load src="/_partials/components/calendar/event-calendar.html" />
+          </div>
+        </div>
+      </section>
+
+      <!--МЕРОПРИЯТИЯ 27 ИЮНЯ-->
+      <section class="section section--classrooms">
+        <div class="container">
+          <h2 class="title title--32 upper">Мероприятия 27&nbsp;июня</h2>
+
+          <div class="collage">
+            <!--1-->
+            <div class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/10.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Быстрый старт: база о вине за 3 встречи</h3>
+                  <p class="text">Всего за три встречи вы узнаете о вине всё, что нужно.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>27 июня · 15:30 · Москва</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--2-->
+            <div class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/6.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                      Онлайн
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">История виноделия</h3>
+                  <p class="text">В этой серии видеоуроков мы поведаем, как появилось виноделие.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
+                    <span>Видеоуроки в записи</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>Доступ открывается после покупки</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--3-->
+            <div class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/17.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                      Дегустация
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Вина Бордо: классика и&nbsp;современность</h3>
+                  <p class="text">Изучите виноградники левого и&nbsp;правого берега.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>10 августа · 19:00 · Санкт-Петербург</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--4-->
+            <div class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/18.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Быстрый старт: база о вине за 3 встречи</h3>
+                  <p class="text">Всего за три встречи вы узнаете о вине всё, что нужно.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>27 июня · 15:30 · Москва</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--5-->
+            <div class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/19.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Быстрый старт: база о вине за 3 встречи</h3>
+                  <p class="text">Всего за три встречи вы узнаете о вине всё, что нужно.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>27 июня · 15:30 · Москва</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--6-->
+            <div class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/8.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Быстрый старт: база о вине за 3 встречи</h3>
+                  <p class="text">Всего за три встречи вы узнаете о вине всё, что нужно.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>27 июня · 15:30 · Москва</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--(ЕСЛИ НИЧЕГО НЕ НАЙДЕНО)-->
       <section class="section">
         <div class="container">
-          <h2 class="title title--24">Страница <span style="color: #c24191">"Мероприятие"</span> в разработке...</h2>
+          <h2 class="title title--32 upper">Мероприятия 27&nbsp;июня</h2>
+          <div class="page-not-found full">
+            <img src="/assets/img/404.webp" alt="" width="264" class="page-not-found-image" />
+            <div class="content-text gap--16">
+              <h2 class="title title--32 bold ta-c full">Подходящих мероприятий не найдено.</h2>
+              <p class="text fs-18">Попробуйте другие настройки фильтра или выберите другой день.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--СЕРТИФИКАТ В ПОДАРОК ЗА 1 МИНУТУ-->
+      <section class="section">
+        <div class="container">
+          <load src="/_partials/components/certificat-for-one.html" />
+        </div>
+      </section>
+
+      <!--МЕРОПРИЯТИЯ, КОТОРЫЕ МОГУТ БЫТЬ ВАМ ИНТЕРЕСНЫ-->
+      <section class="section post-card-collection">
+        <div class="container">
+          <h2 class="title title--32 upper">Мероприятия, которые могут быть вам интересны</h2>
+
+          <ul class="collage">
+            <li class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/16.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Быстрый старт: база о вине за 3 встречи</h3>
+                  <p class="text">Всего за три встречи вы узнаете о вине всё, что нужно.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>27 июня · 15:30 · Москва</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/6.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                      Онлайн
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">История виноделия</h3>
+                  <p class="text">В этой серии видеоуроков мы поведаем, как появилось виноделие.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
+                    <span>Видеоуроки в записи</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>Доступ открывается после покупки</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/17.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                      Дегустация
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Вина Бордо: классика и&nbsp;современность</h3>
+                  <p class="text">Изучите виноградники левого и&nbsp;правого берега.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>10 августа · 19:00 · Санкт-Петербург</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
@@ -37,11 +486,116 @@
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
         <load src="/_partials/base/default-popups.html" />
+        <load src="/_partials/popups/filter-popups.html" />
       </div>
     </div>
 
     <!--COOKIE CONFIRM POPUP-->
     <load src="/_partials/popups/cookies-confirm-popup.html" />
+
+    <!--ФИЛЬТРЫ ДЛЯ МОБИЛЬНОЙ ВЕРСИИ-->
+    <div class="filter-backdrop" data-filters-backdrop data-filters-close>
+      <div class="filter-mobil-menu">
+        <h2 class="popup-title">
+          <span>Фильтры</span>
+          <button class="popup-close" data-filters-close aria-label="Закрыть">
+            <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+          </button>
+        </h2>
+
+        <ul class="filter-accordeons">
+          <!--Тип мероприятия-->
+          <li>
+            <div class="filter-accordeon" data-accordeon data-accordeon-group="filter">
+              <div class="filter-accordeon-head" data-accordeon-head>
+                <p class="text fs-16 grey-text">Тип мероприятия</p>
+                <button type="button" aria-expanded="false" aria-label="Развернуть">
+                  <svg width="18" height="18"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+              <div data-accordeon-body>
+                <div class="filter-accordeon-body">
+                  <load src="/_partials/components/calendar/filter-inputs-event-type.html" />
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!--Формат-->
+          <li>
+            <div class="filter-accordeon" data-accordeon data-accordeon-group="filter">
+              <div class="filter-accordeon-head" data-accordeon-head>
+                <p class="text fs-16 grey-text">Формат</p>
+                <button type="button" aria-expanded="false" aria-label="Развернуть">
+                  <svg width="18" height="18"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+              <div data-accordeon-body>
+                <div class="filter-accordeon-body">
+                  <load src="/_partials/components/calendar/filter-inputs-event-format.html" />
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!--Уровень-->
+          <li>
+            <div class="filter-accordeon" data-accordeon data-accordeon-group="filter">
+              <div class="filter-accordeon-head" data-accordeon-head>
+                <p class="text fs-16 grey-text">Уровень</p>
+                <button type="button" aria-expanded="false" aria-label="Развернуть">
+                  <svg width="18" height="18"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+              <div data-accordeon-body>
+                <div class="filter-accordeon-body">
+                  <load src="/_partials/components/calendar/filter-inputs-event-level.html" />
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!--Город-->
+          <li>
+            <div class="filter-accordeon" data-accordeon data-accordeon-group="filter">
+              <div class="filter-accordeon-head" data-accordeon-head>
+                <p class="text fs-16 grey-text">Город</p>
+                <button type="button" aria-expanded="false" aria-label="Развернуть">
+                  <svg width="18" height="18"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+              <div data-accordeon-body>
+                <div class="filter-accordeon-body">
+                  <load src="/_partials/components/calendar/filter-inputs-event-city.html" />
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!--Зал-->
+          <li>
+            <div class="filter-accordeon" data-accordeon data-accordeon-group="filter">
+              <div class="filter-accordeon-head" data-accordeon-head>
+                <p class="text fs-16 grey-text">Зал</p>
+                <button type="button" aria-expanded="false" aria-label="Развернуть">
+                  <svg width="18" height="18"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+              <div data-accordeon-body>
+                <div class="filter-accordeon-body">
+                  <load src="/_partials/components/calendar/filter-inputs-event-place.html" />
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="buttons gap--12">
+          <button type="reset" class="button magenta-light" form="event-filter-form" data-filter-reset-apply><span>Сбросить</span></button>
+          <button type="submit" class="button" form="event-filter-form" data-filters-close><span>Применить</span></button>
+        </div>
+      </div>
+    </div>
 
     <!--SCRIPTS-->
     <load src="/_partials/base/scripts.html" />
