@@ -196,7 +196,11 @@
         order: 5;
         margin: 0;
       }
-
+      > .title {
+        max-width: calc(100% - 110px);
+        hyphens: auto;
+        hyphenate-limit-chars: 14 4 4;
+      }
       > .buttons {
         flex: none;
         margin: 0;
@@ -206,6 +210,23 @@
 
       .arrows {
         margin-left: auto;
+      }
+    }
+
+    &.long-title {
+      .title.title--32.upper {
+        max-width: 100%;
+      }
+      .container {
+        > .buttons {
+          margin: 0;
+          width: auto;
+          order: 0;
+          .button {
+            margin: 0;
+            width: auto;
+          }
+        }
       }
     }
   }
@@ -230,9 +251,6 @@
     .container {
       justify-content: space-between;
       align-items: flex-end;
-      > .title {
-        max-width: calc(100% - 130px);
-      }
 
       .button {
         width: 100%;

@@ -129,6 +129,9 @@
     .text,
     .icon-list span {
       color: var(--white);
+      &.grey-medium {
+        color: var(--grey-medium);
+      }
     }
 
     .logo-background {

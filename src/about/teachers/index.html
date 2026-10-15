@@ -23,9 +23,669 @@
         <li><span>Преподаватели</span></li>
       </ul>
 
+      <!--HERO-->
+      <section class="section">
+        <div class="container gap--24">
+          <div class="content pad--40 gap--12">
+            <h1 class="title title--40 upper">Узнайте, кто ведет наши программы</h1>
+            <p class="text fs-18 grey-text">
+              На этой странице вы найдете преподавателей и&nbsp;ведущих, сможете до&nbsp;начала занятий познакомиться, а&nbsp;также оставить отзыв.
+              Преподаватели «Школы вина AST» — это команда практикующих экспертов, которые не&nbsp;просто знают теорию, но&nbsp;и&nbsp;живут вином.
+              Каждый из&nbsp;них — сертифицированный специалист с&nbsp;международным признанием и&nbsp;многолетним опытом работы в&nbsp;ресторанном
+              бизнесе, винодельческих хозяйствах и&nbsp;образовательных проектах.
+            </p>
+          </div>
+
+          <!--ПОИСК-->
+          <form data-form action="#" class="form teachers-search" novalidate>
+            <label class="label label--icon">
+              <svg width="20" height="20"><use href="/assets/img/sprite.svg#search"></use></svg>
+              <input type="text" name="teacher-search" class="input" placeholder="Поиск по имени или фамилии" required />
+            </label>
+            <label class="label">
+              <select data-select name="city">
+                <option value="">Город</option>
+                <option value="Москва">Москва</option>
+                <option value="Санкт-Петербург">Санкт-Петербург</option>
+              </select>
+            </label>
+            <button type="submit" class="button"><span>Найти</span></button>
+          </form>
+
+          <!--ФИЛЬТР ПО БУКВАМ-->
+          <form action="#" class="letters-range-scroll">
+            <fieldset class="letters-range">
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="А" />
+                <span class="search-navigation__btn">А</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Б" />
+                <span class="search-navigation__btn">Б</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="В" />
+                <span class="search-navigation__btn">В</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Г" />
+                <span class="search-navigation__btn">Г</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Д" />
+                <span class="search-navigation__btn">Д</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Е" />
+                <span class="search-navigation__btn">Е</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Ж" />
+                <span class="search-navigation__btn">Ж</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="З" />
+                <span class="search-navigation__btn">З</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="И" />
+                <span class="search-navigation__btn">И</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Й" />
+                <span class="search-navigation__btn">Й</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="К" />
+                <span class="search-navigation__btn">К</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Л" />
+                <span class="search-navigation__btn">Л</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="М" />
+                <span class="search-navigation__btn">М</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Н" />
+                <span class="search-navigation__btn">Н</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="О" />
+                <span class="search-navigation__btn">О</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="П" />
+                <span class="search-navigation__btn">П</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Р" />
+                <span class="search-navigation__btn">Р</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="С" />
+                <span class="search-navigation__btn">С</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Т" />
+                <span class="search-navigation__btn">Т</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="У" />
+                <span class="search-navigation__btn">У</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Ф" />
+                <span class="search-navigation__btn">Ф</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Х" />
+                <span class="search-navigation__btn">Х</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Ц" />
+                <span class="search-navigation__btn">Ц</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Ч" />
+                <span class="search-navigation__btn">Ч</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Ш" />
+                <span class="search-navigation__btn">Ш</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Щ" />
+                <span class="search-navigation__btn">Щ</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Э" />
+                <span class="search-navigation__btn">Э</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Ю" />
+                <span class="search-navigation__btn">Ю</span>
+              </label>
+              <label>
+                <input type="checkbox" name="letter" class="letter" value="Я" />
+                <span class="search-navigation__btn">Я</span>
+              </label>
+            </fieldset>
+          </form>
+
+          <!--СПИСОК УЧИТИЛЕЙ-->
+          <ul class="collage teachers-list">
+            <!--1-->
+            <li class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/about/teachers/teacher/" class="post-card-image">
+                  <img src="/assets/img/teachers/10.webp" alt="Антон Субботин" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Антон Субботин</h3>
+                  <b class="text fs-14 magenta cut-4">Руководитель образовательного центра AST, Кавалер Ордена Вина Испании</b>
+                  <p class="text fs-14 grey-text">
+                    Эксперт с&nbsp;уникальным статусом «Кавалеры Ордена Вина Испании» и&nbsp;сертифицированный преподаватель по&nbsp;международным
+                    программам.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="/about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <!--2-->
+            <li class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/about/teachers/teacher/" class="post-card-image">
+                  <img src="/assets/img/teachers/11.webp" alt="Екатерина Смирнова" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Екатерина Смирнова</h3>
+                  <b class="text fs-14 magenta cut-4">Ведущий лектор профессиональных программ</b>
+                  <p class="text fs-14 grey-text">
+                    Один из&nbsp;ключевых преподавателей AST, специализирующийся на&nbsp;подготовке профессионалов индустрии.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="/about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <!--3-->
+            <li class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/about/teachers/teacher/" class="post-card-image">
+                  <img src="/assets/img/teachers/12.webp" alt="Влад Лесничий" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Влад Лесничий</h3>
+                  <b class="text fs-14 magenta cut-4">Эксперт по&nbsp;международным винам и&nbsp;дегустациям</b>
+                  <p class="text fs-14 grey-text">
+                    Признанный специалист, чьи занятия помогают студентам «раскрыть» свой вкус и&nbsp;научиться понимать вино на&nbsp;глубоком уровне.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="/about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <!--4-->
+            <li class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/about/teachers/teacher/" class="post-card-image">
+                  <img src="/assets/img/teachers/13.webp" alt="Антон Субботин" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Антон Субботин</h3>
+                  <b class="text fs-14 magenta cut-4">Руководитель образовательного центра AST, Кавалер Ордена Вина Испании</b>
+                  <p class="text fs-14 grey-text">
+                    Эксперт с&nbsp;уникальным статусом «Кавалеры Ордена Вина Испании» и&nbsp;сертифицированный преподаватель по&nbsp;международным
+                    программам.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="/about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <!--5-->
+            <li class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/about/teachers/teacher/" class="post-card-image">
+                  <img src="/assets/img/teachers/14.webp" alt="Константин Комсомольск-на-амуровский" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Константин Комсомольск-на-амуровский</h3>
+                  <b class="text fs-14 magenta cut-4">Ведущий лектор профессиональных программ</b>
+                  <p class="text fs-14 grey-text">
+                    Один из&nbsp;ключевых преподавателей AST, специализирующийся на&nbsp;подготовке профессионалов индустрии.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="/about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <!--6-->
+            <li class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/about/teachers/teacher/" class="post-card-image">
+                  <img src="/assets/img/teachers/15.webp" alt="Влад Лесничий" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Влад Лесничий</h3>
+                  <b class="text fs-14 magenta cut-4">Эксперт по&nbsp;международным винам и&nbsp;дегустациям</b>
+                  <p class="text fs-14 grey-text">
+                    Признанный специалист, чьи занятия помогают студентам «раскрыть» свой вкус и&nbsp;научиться понимать вино на&nbsp;глубоком уровне.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="/about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <!--7-->
+            <li class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/about/teachers/teacher/" class="post-card-image">
+                  <img src="/assets/img/teachers/16.webp" alt="Анастасия Петрова" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Анастасия Петрова</h3>
+                  <b class="text fs-14 magenta cut-4">Руководитель образовательного центра AST, Кавалер Ордена Вина Испании</b>
+                  <p class="text fs-14 grey-text">
+                    Эксперт с&nbsp;уникальным статусом «Кавалеры Ордена Вина Испании» и&nbsp;сертифицированный преподаватель по&nbsp;международным
+                    программам.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="/about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <!--8-->
+            <li class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/about/teachers/teacher/" class="post-card-image">
+                  <img src="/assets/img/teachers/17.webp" alt="Константин Комсомольск-на-амуровский" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Константин Комсомольск-на-амуровский</h3>
+                  <b class="text fs-14 magenta cut-4">Ведущий лектор профессиональных программ</b>
+                  <p class="text fs-14 grey-text">
+                    Один из&nbsp;ключевых преподавателей AST, специализирующийся на&nbsp;подготовке профессионалов индустрии.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="/about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <!--9-->
+            <li class="col--3">
+              <article class="post-card gap--16 pad--24">
+                <a href="/about/teachers/teacher/" class="post-card-image">
+                  <img src="/assets/img/teachers/18.webp" alt="Влад Лесничий" />
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Влад Лесничий</h3>
+                  <b class="text fs-14 magenta cut-4">Эксперт по&nbsp;международным винам и&nbsp;дегустациям</b>
+                  <p class="text fs-14 grey-text">
+                    Признанный специалист, чьи занятия помогают студентам «раскрыть» свой вкус и&nbsp;научиться понимать вино на&nbsp;глубоком уровне.
+                  </p>
+                </div>
+
+                <div class="price-and-btn">
+                  <a href="/about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <div class="buttons">
+            <button class="button load-more blue-light"><span>Показать еще</span></button>
+          </div>
+        </div>
+      </section>
+
+      <!--ПОПУЛЯРНЫЕ МЕРОПРИЯТИЯ-->
+      <section class="section post-card-collection">
+        <div class="container">
+          <h2 class="title title--32 upper">Популярные мероприятия</h2>
+
+          <ul class="collage">
+            <li class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/16.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#sparkles"></use></svg>
+                      Очный
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Быстрый старт: база о вине за 3 встречи</h3>
+                  <p class="text">Всего за три встречи вы узнаете о вине всё, что нужно.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>27 июня · 15:30 · Москва</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/6.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
+                      Онлайн
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">История виноделия</h3>
+                  <p class="text">В этой серии видеоуроков мы поведаем, как появилось виноделие.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
+                    <span>Видеоуроки в записи</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>Доступ открывается после покупки</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="col--3">
+              <article class="post-card gap--16">
+                <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/promo/17.webp" alt="Быстрый старт: база о вине" />
+                  <ul class="tags">
+                    <li class="tag">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#degustation"></use></svg>
+                      Дегустация
+                    </li>
+                    <li class="tag green">
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#star-green"></use></svg>
+                      Новинка
+                    </li>
+                  </ul>
+                </a>
+
+                <div class="post-card-text">
+                  <h3 class="title title--24 bold">Вина Бордо: классика и&nbsp;современность</h3>
+                  <p class="text">Изучите виноградники левого и&nbsp;правого берега.</p>
+                </div>
+
+                <ul class="icon-list">
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#calendar"></use></svg>
+                    <span>10 августа · 19:00 · Санкт-Петербург</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
+                    <span>г. Санкт-Петербург, Невский пр., д. 100</span>
+                  </li>
+                </ul>
+
+                <div class="price-and-btn">
+                  <span class="price">5 000 ₽</span>
+                  <a href="#" type="button" class="button blue-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!--ПОЛЕЗНЫЕ МАТЕРИАЛЫ-->
       <section class="section">
         <div class="container">
-          <h2 class="title title--24">Страница <span style="color: #c24191">"Преподаватели"</span> в разработке...</h2>
+          <h2 class="title title--32 upper">Полезные материалы</h2>
+
+          <ul class="collage teachers-materials">
+            <li class="col--4">
+              <article class="content grey pad--24 gap--24">
+                <a href="/courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/posts/9-thumb.webp" alt="Описание изображения" />
+                </a>
+
+                <div class="content-text gap--8">
+                  <h3 class="title title--24 bold">Как читать винную этикетку: подробный гид для новичков</h3>
+                  <p class="text grey-medium fs-12">12 марта 2026 г.</p>
+                  <p class="text grey-text">
+                    Разбираем каждый элемент этикетки: сорт, регион, год урожая, выдержку и скрытые маркетинговые уловки производителей.
+                  </p>
+                </div>
+
+                <div class="buttons ta--r mt--auto">
+                  <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="col--4">
+              <article class="content grey pad--24 gap--24">
+                <a href="/courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/posts/10-thumb.webp" alt="Описание изображения" />
+                </a>
+
+                <div class="content-text gap--8">
+                  <h3 class="title title--24 bold">Пять главных сортов красного винограда, которые нужно попробовать каждому</h3>
+                  <p class="text grey-medium fs-12">22 апреля 2026 г.</p>
+                  <p class="text grey-text">Каберне Совиньон, Пино Нуар, Мерло, Сира и Санджовезе — гид по характерам, ароматам и лучшим регионам.</p>
+                </div>
+
+                <div class="buttons ta--r mt--auto">
+                  <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="col--4">
+              <article class="content grey pad--24 gap--24">
+                <a href="/courses/offline/quick-start/" class="post-card-image">
+                  <img src="/assets/img/posts/11-thumb.webp" alt="Описание изображения" />
+                </a>
+
+                <div class="content-text gap--8">
+                  <h3 class="title title--24 bold">Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам</h3>
+                  <p class="text grey-medium fs-12">15 мая 2026 г.</p>
+                  <p class="text grey-text">Почему один Шардоне маслянистый, а другой — свежий и хрустящий? Разбираем три столпа белого виноделия.</p>
+                </div>
+
+                <div class="buttons ta--r mt--auto">
+                  <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </li>
+
+            <li class="col--4">
+              <article class="content grey pad--24 gap--24">
+                <picture class="image-background">
+                  <source media="(max-width: 767px)" srcset="/assets/img/posts/12-thumb.webp" />
+                  <img src="/assets/img/posts/12-thumb.webp" alt="" />
+                </picture>
+                <div class="buttons mt--auto">
+                  <a href="#" class="button"><span>Смотреть все</span></a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!--ОТЗЫВЫ О ПРЕПОДАВАТЕЛЯХ-->
+      <section
+        class="section section--reviews-more long-title"
+        data-slider
+        data-slides-per-view="auto,3,auto,1"
+        data-space-between="24,24,24,24"
+        data-pagination-type="fraction"
+      >
+        <div class="container">
+          <h2 class="title title--32 upper">Отзывы о преподавателях</h2>
+
+          <div class="buttons auto ta--r">
+            <a href="#" class="button" data-popup-open="add-review"><span>Оставить отзыв</span></a>
+          </div>
+
+          <div class="arrows auto">
+            <load src="/_partials/components/slider-arrows.html" />
+          </div>
+
+          <div class="swiper reviews-slider more">
+            <div class="swiper-wrapper">
+              <!--1-->
+              <div class="swiper-slide">
+                <article class="review">
+                  <p class="text" data-read-more="6">
+                    «Я всегда боялась, что вино — это слишком сложно и&nbsp;снобистски. Оказалось, нет. За три вечера я&nbsp;научилась читать этикетку
+                    и&nbsp;даже однажды в ресторане поправила официанта, который принёс не&nbsp;то&nbsp;вино! Огромное спасибо Анжелике — очень
+                    понятно и&nbsp;вкусно.»
+                  </p>
+                  <p class="text fs-14 bold grey-text">— Екатерина, 56 лет</p>
+                </article>
+              </div>
+
+              <!--2-->
+              <div class="swiper-slide">
+                <article class="review">
+                  <p class="text" data-read-more="6">
+                    «Быстрый старт» — идеальное название. Действительно быстро, структурированно и&nbsp;без воды. После курса купил три бутылки
+                    в&nbsp;магазине — и все три оказались удачными. До&nbsp;этого брал “кота в&nbsp;мешке”. Спасибо школе!»
+                  </p>
+                  <p class="text fs-14 bold grey-text">— Алексей, 48 лет</p>
+                </article>
+              </div>
+
+              <!--3-->
+              <div class="swiper-slide">
+                <article class="review">
+                  <p class="text" data-read-more="6">
+                    «Курс — огонь. Думал, что уже что-то знаю, но после модуля про терруары понял, что раньше просто угадывал. Советую всем друзьям.»
+                  </p>
+                  <p class="text fs-14 bold grey-text">— Дмитрий, 32 года</p>
+                </article>
+              </div>
+
+              <!--4-->
+              <div class="swiper-slide">
+                <article class="review">
+                  <p class="text" data-read-more="6">
+                    «Я всегда боялась, что вино — это слишком сложно и&nbsp;снобистски. Оказалось, нет. За три вечера я&nbsp;научилась читать этикетку
+                    и&nbsp;даже однажды в ресторане поправила официанта, который принёс не&nbsp;то&nbsp;вино! Огромное спасибо Анжелике — очень
+                    понятно и&nbsp;вкусно.»
+                  </p>
+                  <p class="text fs-14 bold grey-text">— Екатерина, 56 лет</p>
+                </article>
+              </div>
+
+              <!--5-->
+              <div class="swiper-slide">
+                <article class="review">
+                  <p class="text" data-read-more="6">
+                    Давно хотела разобраться в вине, но не знала, с чего начать. Курс оказался именно тем, что нужно: понятные объяснения, живые
+                    примеры и дегустации на каждом занятии. Преподаватели отвечают на любые вопросы и не перегружают терминами. Теперь спокойно
+                    выбираю вино в магазине и ресторане. Давно хотела разобраться в вине, но не знала, с чего начать. Курс оказался именно тем, что
+                    нужно: понятные объяснения, живые примеры и дегустации на каждом занятии. Преподаватели отвечают на любые вопросы и не перегружают
+                    терминами. Теперь спокойно выбираю вино в магазине и ресторане.
+                  </p>
+                  <p class="text fs-14 bold grey-text">— Ольга, 40 лет</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="button magenta-light"><span>Смотреть все</span></a>
+        </div>
+      </section>
+
+      <!--ГОТОВЫ УЧИТЬСЯ У ЛУЧШИХ?-->
+      <section class="section">
+        <div class="container">
+          <div class="content dark pad--40 gap--24 teachers-bunner">
+            <div class="teachers-bunner-image">
+              <div class="flower">
+                <svg width="694" height="694" aria-hidden="true">
+                  <use href="/assets/img/sprite.svg#preloader"></use>
+                </svg>
+              </div>
+              <img src="/assets/img/teachers/banner.webp" alt="Готовы учиться у лучших?" />
+            </div>
+
+            <div class="content-text gap--8">
+              <h2 class="title title--32 upper">Готовы учиться у&nbsp;лучших?</h2>
+              <p class="text grey-medium">
+                Преподаватели Школы вина AST — это не&nbsp;просто лекторы, а&nbsp;практики с&nbsp;богатым опытом работы в&nbsp;винной индустрии.
+                Каждый из&nbsp;них сочетает глубокие теоретические знания с&nbsp;богатой практикой, а&nbsp;их занятия — это всегда живой диалог.
+              </p>
+            </div>
+
+            <div class="buttons gap--12 ta--l">
+              <a href="%ROOT%courses/" class="button"><span>Выбрать курс</span></a>
+              <a href="%ROOT%events/" class="button white-border"><span>Календарь мероприятий</span></a>
+            </div>
+          </div>
         </div>
       </section>
     </main>

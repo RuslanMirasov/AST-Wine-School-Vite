@@ -65,7 +65,17 @@
 
   <form data-form action="#" class="form" novalidate onsubmit="onLoginCodeSubmit(event)">
     <label class="label label-code">
-      <input type="number" name="code" class="input" data-code="4" data-rule="code" required tabindex="-1" aria-hidden="true" />
+      <input
+        type="number"
+        name="code"
+        class="input"
+        data-code="4"
+        data-rule="code"
+        required
+        tabindex="-1"
+        aria-hidden="true"
+        data-required-error-text="Неверный код"
+      />
     </label>
 
     <button type="button" class="link" data-popup-open="login">Назад</button>

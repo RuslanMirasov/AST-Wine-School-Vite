@@ -270,6 +270,19 @@
   }
 }
 
+[data-read-more-btn] {
+  margin-top: -12px;
+  @media (max-width: 767px) {
+    margin-top: -8px;
+  }
+}
+
+.button.load-more {
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
 .a11y-theme-dark {
   .button {
     color: var(--black);
