@@ -109,6 +109,9 @@
 .teachers-search,
 .teachers-list {
   margin-top: var(--fs-16);
+  .post-card {
+    min-height: 400px;
+  }
 }
 
 //1920
@@ -161,8 +164,11 @@
         }
       }
     }
-    .button {
-      width: 100%;
+    .buttons {
+      .button {
+        margin-top: var(--fs-16);
+        width: 100%;
+      }
     }
   }
 }
@@ -315,5 +321,121 @@
       width: 100%;
       height: 280px;
     }
+  }
+}
+
+.section--teacher-hero .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 638px;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    'text   photo'
+    'bottom photo';
+  row-gap: var(--fs-16);
+  @media (max-width: 1439px) {
+    grid-template-columns: minmax(0, 1fr) 520px;
+  }
+  @media (max-width: 1151px) {
+    grid-template-columns: minmax(0, 1fr) 400px;
+  }
+  // В столбик: фото, текст на всю ширину, под ним стаж с кнопкой
+  @media (max-width: 1023px) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-template-areas:
+      'photo'
+      'text'
+      'bottom';
+  }
+}
+
+.teacher-descrition {
+  display: contents;
+
+  .title {
+    line-height: 1.1;
+  }
+
+  > .content {
+    grid-area: text;
+    align-self: stretch;
+    height: auto;
+  }
+}
+
+.teacher-descrition__bottom {
+  display: flex;
+  position: relative;
+  width: 100%;
+  grid-area: bottom;
+  align-self: start;
+  align-items: flex-end;
+  gap: var(--fs-16);
+
+  .content {
+    flex: 1;
+    height: auto;
+
+    &:not(:last-child) {
+      flex: 0 0 calc(50% - var(--fs-8));
+    }
+  }
+
+  .button {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  // Стаж и кнопка на всю ширину, один под другим
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    .content:not(:last-child) {
+      flex: none;
+    }
+
+    .button {
+      width: 100%;
+      margin-left: 0px;
+    }
+  }
+}
+
+.teacher-thumbnail {
+  width: 100%;
+  grid-area: photo;
+  align-self: start;
+  justify-self: start;
+  max-width: 638px;
+  border-radius: var(--fs-50);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 95.924764%;
+  }
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  @media (max-width: 1439px) {
+    max-width: 520px;
+  }
+  @media (max-width: 1151px) {
+    max-width: 400px;
+  }
+  @media (max-width: 1023px) {
+    max-width: 440px;
+  }
+  @media (max-width: 767px) {
+    border-radius: var(--fs-30);
   }
 }

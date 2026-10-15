@@ -1,13 +1,15 @@
 .air-datepicker.air-datepicker {
-  // Выше подложки попапов (1000) и затемнения мобильного режима (1099). Задаётся здесь, а не из скрипта:
-  // библиотека при каждом открытии перезаписывает инлайн-стили календаря
   --adp-z-index: 1100;
   --adp-font-family: var(--font);
-  --adp-font-size: var(--fs-13);
-  --adp-border-radius: var(--fs-16);
+  --adp-font-size: var(--fs-16);
+  --adp-border-radius: var(--fs-24);
   --adp-cell-border-radius: var(--fs-8);
   --adp-btn-border-radius: var(--fs-8);
-  --adp-padding: var(--fs-8);
+  --adp-padding: var(--fs-20);
+  // Дни — плашки на всю ширину колонки, высотой 38px
+  --adp-day-cell-height: 38px;
+  // В мобильном режиме библиотека берёт высоту из своей переменной
+  --adp-mobile-day-cell-height: 38px;
 
   // фон и текст
   --adp-background-color: var(--white);
@@ -19,8 +21,8 @@
   --adp-accent-color: var(--magenta);
 
   // дни недели
-  --adp-day-name-color: var(--magenta);
-  --adp-day-name-color-hover: var(--magenta);
+  --adp-day-name-color: var(--grey-text);
+  --adp-day-name-color-hover: var(--grey-text);
 
   // кнопки, стрелки и даты — на белом фоне, при наведении светло-серые
   --adp-background-color-hover: var(--grey-light);
@@ -35,28 +37,48 @@
   --adp-background-color-selected-other-month-focused: var(--magenta);
 
   // навигация и кнопки под календарём
-  --adp-nav-arrow-color: var(--blue);
+  --adp-nav-arrow-color: var(--grey-text);
   --adp-nav-color-secondary: var(--grey-text);
   --adp-btn-color: var(--blue);
   --adp-btn-color-hover: var(--blue);
 
-  // рамки
-  --adp-border-color: var(--grey-promo);
+  // рамки: снаружи календарь без рамки, только тень
+  --adp-border-color: transparent;
   --adp-border-color-inner: var(--grey-light);
   --adp-border-color-inline: var(--grey-promo);
 
-  // Ячейки — отдельные плитки: свой фон и зазор между ними
-  .air-datepicker-body--cells {
-    gap: var(--fs-4);
+  box-shadow: 0px 8px 24px rgba(38, 46, 64, 0.18);
+
+  // Месяц и год по центру, стрелки рядом с ними; без линии под навигацией
+  .air-datepicker-nav {
+    justify-content: center;
+    gap: var(--fs-16);
+    border-bottom: none;
   }
 
-  // Дни — квадратные: высота ряда берётся от ширины ячейки
-  .air-datepicker-body--cells.-days- {
-    grid-auto-rows: auto;
+  .air-datepicker-nav--title {
+    font-size: var(--fs-18);
+    font-weight: 700;
+    color: var(--blue);
+  }
 
-    .air-datepicker-cell {
-      aspect-ratio: 1;
-    }
+  .air-datepicker-body--day-names {
+    margin: 0px 0px var(--fs-12);
+    column-gap: var(--fs-6);
+  }
+
+  .air-datepicker-body--day-name {
+    font-size: var(--fs-14);
+  }
+
+  // Ячейки — отдельные плитки: свой фон и зазор между ними.
+  // Зазор по горизонтали тот же, что у дней недели, иначе колонки разъедутся
+  .air-datepicker-body--cells {
+    gap: var(--fs-6);
+  }
+
+  .air-datepicker-body--cells.-days- {
+    row-gap: var(--fs-12);
   }
 
   // «Хвостик» у угла календаря, указывающий на поле
@@ -65,10 +87,14 @@
   }
 
   .air-datepicker-cell {
-    background-color: var(--white);
+    background-color: var(--grey-light);
+
+    &:hover {
+      background-color: var(--grey-promo);
+    }
 
     &.-focus- {
-      background-color: var(--grey-light);
+      background-color: var(--grey-promo);
     }
 
     &.-current- {
@@ -80,10 +106,12 @@
     &.-selected-.-focus- {
       background-color: var(--magenta);
       color: var(--white);
+      font-weight: 700;
     }
 
+    // Недоступные дни — на том же сером фоне, бледным текстом
     &.-disabled- {
-      opacity: 0.5;
+      color: var(--grey-medium);
     }
 
     // Дни соседних месяцев приглушены; выбранный день остаётся ярким

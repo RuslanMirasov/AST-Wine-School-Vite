@@ -6,9 +6,16 @@ const FIELD_SELECTOR = 'input[type="date"]';
 const DISPLAY_FORMAT = 'dd.MM.yyyy';
 // Формат, в котором дата уходит с формой, — тот же, что отправляет родное поле type="date"
 const VALUE_FORMAT = 'yyyy-MM-dd';
-const MOBILE_MAX_WIDTH = 767;
+// Мобильный режим (окно по центру экрана) — по типу устройства, а не по ширине: планшет с экраном 1280px
+// тоже сенсорный. Сенсорное устройство без мыши — нет наведения и «грубый» указатель (палец)
+const TOUCH_QUERY = '(hover: none) and (pointer: coarse)';
+// Отступ между полем и календарём
+const OFFSET = 4;
 
 let pluginPromise = null;
+// Поле → его календарь. По полю находим календарь при фокусе; сам селектор после инициализации не подходит:
+// поле становится type="text"
+const pickers = new Map();
 
 const loadPlugin = () => {
   if (pluginPromise) return pluginPromise;
@@ -55,6 +62,34 @@ const createValueField = field => {
   return valueField;
 };
 
+// Календарь шириной с поле, под ним; если снизу не помещается, а сверху места больше — над полем.
+// Вызывается библиотекой при каждом открытии и смене вида (дни/месяцы/годы), а нами — при ресайзе и повороте.
+// На сенсорных устройствах не используется: там календарь открывается окном по центру экрана
+const positionCalendar = ({ $datepicker, $target }) => {
+  const rect = $target.getBoundingClientRect();
+
+  // Сначала ширина: от неё зависит высота календаря
+  $datepicker.style.setProperty('--adp-width', `${rect.width}px`);
+
+  const height = $datepicker.offsetHeight;
+  const spaceBelow = window.innerHeight - rect.bottom;
+  const spaceAbove = rect.top;
+  const openUp = spaceBelow < height + OFFSET && spaceAbove > spaceBelow;
+  const top = openUp ? rect.top - height - OFFSET : rect.bottom + OFFSET;
+
+  $datepicker.style.left = `${rect.left + window.scrollX}px`;
+  $datepicker.style.top = `${top + window.scrollY}px`;
+};
+
+// Библиотека вызывает функцию расстановки и в мобильном режиме, где календарь position: fixed, — и он уезжает
+// за экран. Поэтому на сенсорных устройствах оставляем её стандартную расстановку
+const getModeOptions = isTouch => ({
+  isMobile: isTouch,
+  position: isTouch ? 'bottom left' : positionCalendar,
+});
+
+const isTouchDevice = () => window.matchMedia(TOUCH_QUERY).matches;
+
 const initField = (field, AirDatepicker) => {
   const initialDate = parseDate(field.value);
   const valueField = createValueField(field);
@@ -65,14 +100,17 @@ const initField = (field, AirDatepicker) => {
   // Дата выбирается только в календаре. readonly не подходит: такие поля браузер не проверяет на required
   field.addEventListener('beforeinput', event => event.preventDefault());
 
-  new AirDatepicker(field, {
+  const picker = new AirDatepicker(field, {
     dateFormat: DISPLAY_FORMAT,
     altField: valueField,
     altFieldDateFormat: VALUE_FORMAT,
     selectedDates: initialDate ? [initialDate] : [],
     autoClose: true,
+    // «Июль 2026» вместо «Июль, 2026»; дни соседних месяцев не показываем — на их месте пустые ячейки
+    navTitles: { days: 'MMMM yyyy' },
+    showOtherMonths: false,
     buttons: ['clear'],
-    isMobile: window.innerWidth <= MOBILE_MAX_WIDTH,
+    ...getModeOptions(isTouchDevice()),
     // Библиотека меняет значение без событий — сообщаем о нём остальным скриптам (валидация, сохранение)
     onSelect: () => {
       field.dispatchEvent(new Event('input', { bubbles: true }));
@@ -80,6 +118,31 @@ const initField = (field, AirDatepicker) => {
     },
   });
 
+  pickers.set(field, picker);
+};
+
+// Режим проверяется при каждом открытии: календарь открывается по фокусу на поле, а этот обработчик
+// на документе в фазе перехвата срабатывает раньше обработчика библиотеки на самом поле.
+// Так неважно, что было до открытия: ресайз, поворот, эмуляция устройства в DevTools, отстёгнутая клавиатура
+const onFieldFocus = event => {
+  const picker = pickers.get(event.target);
+  if (!picker) return;
+
+  const isTouch = isTouchDevice();
+  if (picker.opts.isMobile === isTouch) return;
+
+  picker.update(getModeOptions(isTouch));
+  // Класс своей расстановки библиотека ставит только при создании и при смене режима не снимает.
+  // Оставшийся на мобилке, он отключает центрирование окна (translate -50%), и календарь съезжает вправо вниз
+  picker.$datepicker.classList.toggle('-custom-position-', !isTouch);
+};
+
+// Ресайз и поворот экрана: открытый календарь на десктопе переставляем под поле с его новой шириной.
+// В мобильном режиме окно по центру держит сама библиотека
+const onResize = () => {
+  pickers.forEach(picker => {
+    if (picker.visible && !picker.opts.isMobile) picker.setPosition();
+  });
 };
 
 export const initDatepickers = async () => {
@@ -91,6 +154,11 @@ export const initDatepickers = async () => {
     const AirDatepicker = await loadPlugin();
 
     fields.forEach(field => initField(field, AirDatepicker));
+
+    // Именно focus, а не focusin: браузеры шлют focusin уже после focus, когда библиотека календарь открыла.
+    // focus не всплывает, но на документе в фазе перехвата его видно
+    document.addEventListener('focus', onFieldFocus, true);
+    window.addEventListener('resize', onResize);
   } catch (error) {
     console.error(error);
   }
