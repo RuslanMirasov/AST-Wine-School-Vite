@@ -23,6 +23,7 @@
         <li><span>Контакты</span></li>
       </ul>
 
+      <!--HERO-->
       <section class="section">
         <div class="container gap--40">
           <h1 class="title title--40 upper full">Контакты</h1>
@@ -33,10 +34,11 @@
           </p>
 
           <div class="collage contacts">
+            <!--МОСКВА-->
             <div class="col--2">
               <article class="post-card gap--16 pad--24">
-                <div class="post-card-image">
-                  <img src="/assets/img/teachers/10.webp" alt="Антон Субботин" />
+                <div class="post-card-image" data-popup-open="contacts">
+                  <img src="/assets/img/contacts/moscow.webp" alt="Антон Субботин" />
                 </div>
 
                 <h3 class="title title--24 bold">Москва</h3>
@@ -52,14 +54,16 @@
                 </ul>
 
                 <div class="buttons ta--r">
-                  <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                  <button type="button" class="button magenta-light" data-popup-open="contacts"><span>Подробнее</span></button>
                 </div>
               </article>
             </div>
+
+            <!--СПБ-->
             <div class="col--2">
               <article class="post-card gap--16 pad--24">
                 <div class="post-card-image">
-                  <img src="/assets/img/teachers/10.webp" alt="Санкт-Петербург" />
+                  <img src="/assets/img/contacts/spb.webp" alt="Санкт-Петербург" />
                 </div>
 
                 <h3 class="title title--24 bold">Санкт-Петербург</h3>
@@ -83,6 +87,230 @@
         </div>
       </section>
 
+      <!--СВЯЖИТЕСЬ С НАМИ-->
+      <section class="section">
+        <div class="container">
+          <div class="content pad--40 contacts-callback-form">
+            <div class="left-side">
+              <div class="content-text gap--16">
+                <h2 class="title title--32 upper">Свяжитесь с&nbsp;нами</h2>
+                <p class="text fs-20 magenta">Есть вопрос? Мы всегда открыты к&nbsp;диалогу.</p>
+                <p class="text grey-text">
+                  Напишите нам, и&nbsp;мы с&nbsp;удовольствием проконсультируем вас по&nbsp;любому направлению: подберем курс под ваш уровень,
+                  расскажем о&nbsp;ближайших дегустациях и&nbsp;мастер-классах, поможем организовать частное мероприятие или&nbsp;корпоративный выезд.
+                  Также ответим на&nbsp;вопросы о&nbsp;подарочных сертификатах, условиях участия и&nbsp;форматах обучения — очном или&nbsp;онлайн. Мы
+                  ценим ваше время и&nbsp;стараемся давать максимально полезные и&nbsp;развернутые ответы.
+                </p>
+              </div>
+            </div>
+
+            <script>
+              const onContactsCallbackSubmit = e => {
+                e.preventDefault();
+                e.target.reset();
+                window.popup.open('contacts-callback-success');
+              };
+            </script>
+
+            <form data-form action="#" class="form" enctype="multipart/form-data" onsubmit="onContactsCallbackSubmit(event)" novalidate>
+              <label class="label col--2">
+                <span class="label-text">Имя <span class="red">*</span></span>
+                <input
+                  type="text"
+                  name="name"
+                  class="input"
+                  placeholder="Имя"
+                  data-rule="name-cyrillic"
+                  minlength="2"
+                  required
+                  data-required-error-text="Пожалуйста, укажите ваше имя"
+                  autocomplete="given-name"
+                />
+              </label>
+
+              <label class="label col--2">
+                <span class="label-text">Город <span class="red">*</span></span>
+                <select data-select name="city" required data-required-error-text="Пожалуйста, выберите город">
+                  <option value="">(выберите)</option>
+                  <option value="Москва">Москва</option>
+                  <option value="Санкт-Петербург">Санкт-Петербург</option>
+                </select>
+              </label>
+
+              <fieldset class="row">
+                <label class="label">
+                  <input type="radio" name="person-type" class="radio" value="Физ. лицо" checked />
+                  <p class="label-text"><span>Физ. лицо</span></p>
+                </label>
+                <label class="label">
+                  <input type="radio" name="person-type" class="radio" value="Юр. лицо" />
+                  <p class="label-text"><span>Юр. лицо</span></p>
+                </label>
+              </fieldset>
+
+              <label class="label col--2">
+                <span class="label-text">Электронная почта <span class="red">*</span></span>
+                <input
+                  type="email"
+                  name="email"
+                  class="input"
+                  placeholder="Email"
+                  required
+                  data-required-error-text="Пожалуйста, укажите ваш Email"
+                  autocomplete="email"
+                />
+              </label>
+
+              <label class="label col--2">
+                <span class="label-text">Телефон для связи <span class="red">*</span></span>
+                <input type="tel" name="phone" class="input" placeholder="+7" required data-required-error-text="Пожалуйста, укажите ваш телефон" />
+              </label>
+
+              <label class="label">
+                <span class="label-text">Ваше сообщение <span class="red">*</span></span>
+                <textarea
+                  name="comment"
+                  class="input input--textarea"
+                  placeholder="Комментарий"
+                  required
+                  data-required-error-text="Пожалуйста, напишите ваше сообщение"
+                ></textarea>
+              </label>
+
+              <label class="label label--file" data-file-field>
+                <input type="file" name="file" data-max-size="10" />
+
+                <span class="button white-border">
+                  <svg width="18" height="18"><use href="/assets/img/sprite.svg#file"></use></svg>
+                  <span>Прикрепить файл</span>
+                </span>
+
+                <span class="text fs-12 grey-text">Максимальный размер файла 10 МБ</span>
+
+                <div class="file-info-wrapper">
+                  <div class="file-info">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                    <span class="text fs-14" data-file-name>file.pdf</span>
+                    <button type="button" data-file-clear aria-label="Удалить файл">
+                      <svg width="24" height="24"><use href="/assets/img/sprite.svg#close"></use></svg>
+                    </button>
+                  </div>
+                </div>
+              </label>
+
+              <fieldset>
+                <label class="label">
+                  <input name="confirmation" type="checkbox" class="checkbox" required data-error-text="Согласие на обработку данных обязательно" />
+                  <p class="label-text">
+                    <span>Согласен с&nbsp;<a href="#" target="_blank">Условиями обработки персональных данных</a></span>
+                  </p>
+                </label>
+              </fieldset>
+
+              <div class="buttons ta--l">
+                <button type="submit" class="button">
+                  <span>Отправить</span>
+                  <svg width="18" height="18"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!--СМИ-->
+      <section class="section section--smi">
+        <div class="container">
+          <div class="collage">
+            <div class="col--2">
+              <div class="content grey pad--40 gap--12">
+                <h2 class="title title--32 upper">Реквизиты</h2>
+                <div class="details">
+                  <b class="text grey-text">Москва <br />ул. Каховка, д. 23</b>
+                  <p class="text grey-text">ИНН XXXXXXXXXX</p>
+                  <p class="text grey-text">ОГРН XXXXXXXXXX</p>
+                  <p class="text">
+                    <a href="/assets/pdf/document.pdf" class="link" download>Скачать полные реквизиты</a>
+                  </p>
+                </div>
+                <div class="details">
+                  <b class="text grey-text">Санкт-Петербург <br />пр. Добролюбова, д.19</b>
+                  <p class="text grey-text">ИНН XXXXXXXXXX</p>
+                  <p class="text grey-text">ОГРН XXXXXXXXXX</p>
+                  <p class="text">
+                    <a href="/assets/pdf/document.pdf" class="link" download>Скачать полные реквизиты</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col--2">
+              <div class="content grey pad--40 gap--12">
+                <h2 class="title title--32 upper">Для СМИ</h2>
+
+                <a href="/assets/pdf/document.pdf" class="file-info full" download>
+                  <svg width="24" height="24"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                  <span class="text fs-14">Руководство по&nbsp;использованию фирменного стиля (PDF)</span>
+                  <svg width="24" height="24" class="download-icon"><use href="/assets/img/sprite.svg#download"></use></svg>
+                </a>
+
+                <a href="/assets/pdf/document.pdf" class="file-info full" download>
+                  <svg width="24" height="24"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                  <span class="text fs-14">AST Логотип (PDF)</span>
+                  <svg width="24" height="24" class="download-icon"><use href="/assets/img/sprite.svg#download"></use></svg>
+                </a>
+
+                <p class="text">
+                  <a href="#" class="link">Отправить запрос на сотрудничество</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--ПОДПИСКА-->
+      <section class="section section--subscribe">
+        <div class="container">
+          <div class="content grey pad--40">
+            <svg width="954" height="954" class="logo-background" aria-hidden="true">
+              <use href="/assets/img/sprite.svg#preloader"></use>
+            </svg>
+
+            <div class="content-text gap--8">
+              <h2 class="title title--24 bold">Подпишитесь на&nbsp;рассылку и&nbsp;будьте в&nbsp;курсе последних событий Школы вина AST</h2>
+              <p class="text grey-text">Только анонсы мероприятий и&nbsp;нужные предложения — без спама.</p>
+            </div>
+
+            <script>
+              function onSubscribeSectionFormSubmit(e) {
+                e.preventDefault();
+                e.target.reset();
+                window.popup.open('subscribe-success');
+              }
+            </script>
+
+            <form data-form action="#" class="form" novalidate onsubmit="onSubscribeSectionFormSubmit(event)">
+              <label class="label">
+                <input type="email" name="email" placeholder="Введите email" class="input subscribe-input" required autocomplete="email" />
+              </label>
+
+              <fieldset>
+                <label class="label">
+                  <input name="confirmation" type="checkbox" class="checkbox" required data-error-text="Согласие на обработку данных обязательно" />
+                  <p class="label-text">
+                    <span>Согласен с&nbsp;<a href="%ROOT%" target="_blank">Условиями обработки персональных данных</a></span>
+                  </p>
+                </label>
+              </fieldset>
+
+              <div class="buttons ta--l">
+                <button type="submit" class="button"><span>Подписаться</span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="container">
           <load src="/_partials/sections/section-grid.html" />
@@ -97,6 +325,7 @@
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
         <load src="/_partials/base/default-popups.html" />
+        <load src="/_partials/popups/contacts-popups.html" />
       </div>
     </div>
 

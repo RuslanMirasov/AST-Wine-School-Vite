@@ -1,5 +1,9 @@
 $popup_transition: 0.5s;
 
+[data-popup-open] {
+  cursor: pointer;
+}
+
 .body {
   &.locked {
     overflow-x: hidden;
