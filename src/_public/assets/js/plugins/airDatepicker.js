@@ -11,6 +11,8 @@ const VALUE_FORMAT = 'yyyy-MM-dd';
 const TOUCH_QUERY = '(hover: none) and (pointer: coarse)';
 // Отступ между полем и календарём
 const OFFSET = 4;
+// Минимальная ширина календаря: у узкого поля он шире поля, чтобы дни не сплющивало
+const MIN_WIDTH = 320;
 
 let pluginPromise = null;
 // Поле → его календарь. По полю находим календарь при фокусе; сам селектор после инициализации не подходит:
@@ -68,8 +70,10 @@ const createValueField = field => {
 const positionCalendar = ({ $datepicker, $target }) => {
   const rect = $target.getBoundingClientRect();
 
+  const width = Math.max(rect.width, MIN_WIDTH);
+
   // Сначала ширина: от неё зависит высота календаря
-  $datepicker.style.setProperty('--adp-width', `${rect.width}px`);
+  $datepicker.style.setProperty('--adp-width', `${width}px`);
 
   const height = $datepicker.offsetHeight;
   const spaceBelow = window.innerHeight - rect.bottom;
@@ -77,7 +81,10 @@ const positionCalendar = ({ $datepicker, $target }) => {
   const openUp = spaceBelow < height + OFFSET && spaceAbove > spaceBelow;
   const top = openUp ? rect.top - height - OFFSET : rect.bottom + OFFSET;
 
-  $datepicker.style.left = `${rect.left + window.scrollX}px`;
+  // Календарь шире поля не должен вылезать за правый край экрана — тогда сдвигаем его влево
+  const left = Math.max(OFFSET, Math.min(rect.left, document.documentElement.clientWidth - width - OFFSET));
+
+  $datepicker.style.left = `${left + window.scrollX}px`;
   $datepicker.style.top = `${top + window.scrollY}px`;
 };
 

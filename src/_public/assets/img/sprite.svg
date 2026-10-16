@@ -436,6 +436,12 @@
       <path d="M1.00024 1.00012L20.0527 34.0001L1.00024 67" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </symbol> 
 
+    <!--email-->
+    <symbol id="email" viewBox="0 0 20 20" fill="none">
+      <path d="M16.1105 4.1665H3.88824C2.66094 4.1665 1.66602 5.16143 1.66602 6.38873V13.6109C1.66602 14.8382 2.66094 15.8332 3.88824 15.8332H16.1105C17.3378 15.8332 18.3327 14.8382 18.3327 13.6109V6.38873C18.3327 5.16143 17.3378 4.1665 16.1105 4.1665Z" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M2.5 5.8335L9.03333 10.4668C9.61111 10.8779 10.3889 10.8779 10.9667 10.4668L17.5 5.8335" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol> 
+
 
 
 

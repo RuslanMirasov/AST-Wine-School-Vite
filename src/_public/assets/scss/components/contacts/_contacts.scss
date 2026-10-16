@@ -1,0 +1,13 @@
+.constcts-description {
+  width: 100%;
+  max-width: calc((100% - var(--fs-24)) / 2);
+}
+
+.contacts {
+  .post-card-image {
+    border-radius: var(--fs-30);
+    &:before {
+      padding-top: 42.62295%;
+    }
+  }
+}
