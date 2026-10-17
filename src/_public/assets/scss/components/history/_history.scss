@@ -1,0 +1,256 @@
+.section--news-list {
+  .container {
+    > .button {
+      margin-left: auto;
+      @media (max-width: 767px) {
+        order: 2;
+        width: 100%;
+      }
+    }
+  }
+
+  .collage .col--3 {
+    @media (max-width: 1023px) {
+      width: calc((100% - var(--fs-24)) / 2);
+    }
+    @media (max-width: 767px) {
+      min-width: 100%;
+      .button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.section--history {
+  .container {
+    > .text.fs-20 {
+      @media (max-width: 767px) {
+        font-size: var(--fs-16);
+      }
+    }
+  }
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: var(--fs-24);
+  width: calc(100% - var(--fs-44) - var(--fs-44));
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+
+  li {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: var(--fs-24);
+    @media (max-width: 767px) {
+      width: calc(100% - var(--fs-44));
+      margin-left: var(--fs-44);
+    }
+    .line-stop {
+      opacity: 0;
+      &:first-child {
+        opacity: 1;
+      }
+    }
+
+    .history__info {
+      order: 1;
+    }
+    .history__images {
+      order: 2;
+    }
+    &:nth-child(2n) {
+      .history__info {
+        order: 2;
+      }
+      .history__images {
+        order: 1;
+      }
+      @media (max-width: 767px) {
+        margin-left: 0px;
+      }
+    }
+    @media (max-width: 1023px) {
+      gap: var(--fs-16);
+      .history__info {
+        order: 1;
+      }
+      .history__images {
+        order: 2;
+      }
+      &:nth-child(2n) {
+        .history__info {
+          order: 1;
+        }
+        .history__images {
+          order: 2;
+        }
+      }
+    }
+  }
+}
+
+.history__images,
+.history__info {
+  display: flex;
+  position: relative;
+  width: calc((100% - var(--fs-24)) / 2);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: var(--fs-12);
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
+}
+
+.history__images {
+  img {
+    width: 100%;
+    min-height: 240px;
+    border-radius: var(--fs-30);
+    @media (max-width: 1151px) {
+      min-height: 1px;
+    }
+    @media (max-width: 767px) {
+      border-radius: var(--fs-24);
+    }
+  }
+}
+
+.history__info {
+  .content {
+    flex: auto;
+    height: auto;
+    border-radius: var(--fs-30);
+    @media (max-width: 767px) {
+      border-radius: var(--fs-24);
+    }
+  }
+}
+
+// Линия через точки .line-stop — рисует modules/history-lines.js
+.history__line {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+  pointer-events: none;
+
+  path {
+    fill: none;
+    stroke: var(--svg-line);
+    stroke-width: 1px;
+  }
+
+  // Пройденная часть — поверх основной линии, толще и ярче. Длину задаёт скрипт через stroke-dashoffset
+  .history__line-progress {
+    stroke: var(--magenta);
+    stroke-width: 2px;
+  }
+}
+
+// Позицию на линии задаёт скрипт через transform, от левого верхнего угла .history
+.indicator {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  // Двигается при прокрутке — отдельный слой, без перерисовки страницы
+  will-change: transform;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  z-index: 3;
+  will-change: transform;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: var(--magenta);
+    border-radius: 50px;
+    z-index: 2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    left: -5px;
+    top: -5px;
+    background-color: var(--svg-line);
+    border-radius: 50px;
+    z-index: 1;
+    animation: pulse 1s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}
+
+.line-stop {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--magenta);
+  border: 5px solid var(--grey-light);
+  &.left-top {
+    left: 0px;
+    top: 0px;
+    transform: translate(-44px, 40px);
+    @media (max-width: 767px) {
+      transform: translate(-44px, 26px);
+    }
+  }
+  &.left-bottom {
+    left: 0px;
+    bottom: 0px;
+    transform: translate(-44px, -40px);
+  }
+  &.bottom-left {
+    left: 0px;
+    top: 100%;
+    transform: translate(45px, 16px);
+  }
+  &.bottom-right {
+    right: 0px;
+    top: 100%;
+    transform: translate(-45px, 16px);
+  }
+  &.right-top {
+    right: 0px;
+    top: 0px;
+    transform: translate(44px, 30px);
+    @media (max-width: 767px) {
+      transform: translate(44px, 14px);
+    }
+  }
+  &.right-bottom {
+    right: 0px;
+    bottom: 0px;
+    transform: translate(44px, -40px);
+  }
+}

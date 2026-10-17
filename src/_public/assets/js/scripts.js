@@ -23,6 +23,7 @@ import { initCertificatePreview } from './modules/certificat-preview.js';
 import { initDatepickers } from './plugins/airDatepicker.js';
 import { initEventFilters } from './modules/event-filters.js';
 import { initEventFilterSelection } from './modules/event-filter-selection.js';
+import { initHistoryLines } from './modules/history-lines.js';
 
 popup.init();
 window.popup = popup;
@@ -55,4 +56,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initDatepickers();
   initEventFilters();
   initEventFilterSelection();
+  initHistoryLines();
 });
