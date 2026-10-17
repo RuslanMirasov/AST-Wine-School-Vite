@@ -1,9 +1,17 @@
 <!--REVIEW SUCCESS POPUP-->
-<div class="popup-content hauge" id="contacts-popup" role="dialog" aria-modal="true" aria-labelledby="contacts-popup-title" data-tabs>
+<div
+  class="popup-content hauge"
+  id="contacts-popup"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="contacts-popup-title"
+  data-tabs="contacts"
+  data-unanimated
+>
   <h2 class="popup-title" id="contacts-popup-title">
     <span>
       Контакты в
-      <span data-tab="moskow">Москве</span>
+      <span data-tab="moscow">Москве</span>
       <span data-tab="spb">Санкт-Петербурге</span>
     </span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
@@ -13,145 +21,239 @@
 
   <ul class="search-navigation">
     <li>
-      <button class="search-navigation__btn" data-tab-target="moskow">Москва</button>
+      <button class="search-navigation__btn active" data-tab-target="moscow" data-map-group="moscow">Москва</button>
     </li>
     <li>
-      <button class="search-navigation__btn" data-tab-target="spb">Санкт-Петербург</button>
+      <button class="search-navigation__btn" data-tab-target="spb" data-map-group="spb">Санкт-Петербург</button>
     </li>
   </ul>
 
+  <div class="contacts-info">
+    <div class="contacts-info__text" data-tab="moscow">
+      <p class="text">
+        <span class="text fs-12 grey-text">Адрес</span>
+        <span>Россия, г. Москва, 117461, ул. Каховка, д. 23</span>
+      </p>
+
+      <p class="text">
+        <span class="text fs-12 grey-text">Как добраться</span>
+        <span>От станции метро Зюзино 1 минута</span>
+      </p>
+
+      <p class="text">
+        <span class="text fs-12 grey-text">Телефон</span>
+        <a href="tel:+74959939999">+7 (495) 993-99-99</a>
+      </p>
+
+      <p class="text">
+        <span class="text fs-12 grey-text">Почта</span>
+        <a href="mailto:msk@ast.school" class="link no-border">msk@ast.school</a>
+      </p>
+
+      <p class="text">
+        <span class="text fs-12 grey-text">График работы</span>
+        <a href="tel:+74959939999">Пн-пт 9:00-18:00</a>
+      </p>
+
+      <div class="content-text gap--2">
+        <p class="text fs-12 grey-text">Мы в соцсетях</p>
+        <ul class="socials">
+          <li>
+            <a href="#" target="_blank" aria-label="ВКонтакте">
+              <svg width="24" height="24"><use href="/assets/img/sprite.svg#vk"></use></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" aria-label="MAX">
+              <svg width="24" height="24"><use href="/assets/img/sprite.svg#max"></use></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contacts-info__text" data-tab="spb">
+      <p class="text">
+        <span class="text fs-12 grey-text">Адрес</span>
+        <span>195277, город Санкт-Петербург, Выборгская наб, д. 45 литера Е, помещ. 3-н офис 81</span>
+      </p>
+
+      <p class="text">
+        <span class="text fs-12 grey-text">Как добраться</span>
+        <span>???</span>
+      </p>
+
+      <p class="text">
+        <span class="text fs-12 grey-text">Телефон</span>
+        <a href="tel:+78127507057">+7 (812) 750-7057</a>
+      </p>
+
+      <p class="text">
+        <span class="text fs-12 grey-text">Почта</span>
+        <a href="mailto:school.spb@ast-inter.ru" class="link no-border">school.spb@ast-inter.ru</a>
+      </p>
+
+      <p class="text">
+        <span class="text fs-12 grey-text">График работы</span>
+        <a href="tel:+74959939999">Пн-пт 10:00-19:00</a>
+      </p>
+
+      <div class="content-text gap--2">
+        <p class="text fs-12 grey-text">Мы в соцсетях</p>
+        <ul class="socials">
+          <li>
+            <a href="#" target="_blank" aria-label="ВКонтакте">
+              <svg width="24" height="24"><use href="/assets/img/sprite.svg#vk"></use></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" aria-label="MAX">
+              <svg width="24" height="24"><use href="/assets/img/sprite.svg#max"></use></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contacts-info__map">
+      <div class="yandex-map active" data-map data-map-default="moscow"></div>
+    </div>
+  </div>
+
+  <!--Готовы помочь вам по вопросам-->
   <div class="contacts-team">
     <h3 class="title title--32 upper">Готовы помочь вам по вопросам</h3>
-    <div data-tab="moskow">
+    <div data-tab="moscow">
       <ul class="collage">
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-1.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Елена Соколова</a>
+            <p class="text fs-14 grey-text">Руководитель образовательного центра AST</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-2.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Михаил Морозов</a>
+            <p class="text fs-14 grey-text">Ведущий лектор профессиональных программ</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-3.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Марина Волкова</a>
+            <p class="text fs-14 grey-text">Эксперт по международным винам и дегустациям</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-4.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Игнатий Кузнецов</a>
+            <p class="text fs-14 grey-text">Эксперт по международным винам и дегустациям</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-5.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Наталья Орлова</a>
+            <p class="text fs-14 grey-text">Руководитель образовательного центра AST</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-6.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Владимир Лебедев</a>
+            <p class="text fs-14 grey-text">Ведущий лектор профессиональных программ</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-7.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Анна Романова</a>
+            <p class="text fs-14 grey-text">Эксперт по международным винам и дегустациям</p>
           </article>
         </li>
       </ul>
     </div>
+
     <div data-tab="spb">
       <ul class="collage">
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-empty.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Имя Фамилия</a>
+            <p class="text fs-14 grey-text">Описание...</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-empty.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Имя Фамилия</a>
+            <p class="text fs-14 grey-text">Описание...</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-empty.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Имя Фамилия</a>
+            <p class="text fs-14 grey-text">Описание...</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-empty.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Имя Фамилия</a>
+            <p class="text fs-14 grey-text">Описание...</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-empty.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Имя Фамилия</a>
+            <p class="text fs-14 grey-text">Описание...</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-empty.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Имя Фамилия</a>
+            <p class="text fs-14 grey-text">Описание...</p>
           </article>
         </li>
         <li class="col--4">
           <article class="contacts-team__item">
             <div class="thumbnail">
-              <img src="/assets/img/contacts/team=1.webp" alt="Описание изображения" />
+              <img src="/assets/img/contacts/contact-empty.webp" alt="Описание изображения" />
             </div>
-            <a href="#" class="link">sssssssssssss</a>
-            <p class="text fs-14 grey-text">sssssssss</p>
+            <a href="#" class="link">Имя Фамилия</a>
+            <p class="text fs-14 grey-text">Описание...</p>
           </article>
         </li>
       </ul>
@@ -159,7 +261,7 @@
   </div>
 </div>
 
-<!--REVIEW SUCCESS POPUP-->
+<!--CONTACTS CALLBACK SUCCESS POPUP-->
 <div class="popup-content medium" id="contacts-callback-success" role="dialog" aria-modal="true" aria-labelledby="contacts-callback-success-title">
   <h2 class="popup-title" id="contacts-callback-success-title">
     <span>Спасибо! Ваш запрос получен.</span>

@@ -1,3 +1,5 @@
+import { debounce } from './helpers.js';
+
 const API_URL = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
 const MARKERS_URL = new URL('../../json/markers.json', import.meta.url).href;
 const PIN_IMAGE = new URL('../../img/pin.webp', import.meta.url).href;
@@ -11,6 +13,7 @@ const POINT_ZOOM = 16;
 const BOUNDS_MARGIN = 60;
 const MAP_ANIMATION_DURATION = 500;
 const BUTTONS_SELECTOR = '[data-map-group], [data-map-point]';
+const RESIZE_DELAY = 300;
 
 let mapElement = null;
 let toggleButton = null;
@@ -19,6 +22,7 @@ let collection = null;
 let points = [];
 let mapPromise = null;
 let currentFilter = { group: ALL_GROUP };
+let lastViewportWidth = 0;
 
 const escapeHtml = value => {
   return String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
@@ -183,6 +187,25 @@ export const openMap = async () => {
   }
 };
 
+// Карта при создании ставит своему внутреннему блоку ширину контейнера в пикселях. После ресайза, поворота
+// экрана или переключения эмуляции в DevTools этот блок остаётся старой ширины и распирает родителя
+// (в попапе контактов — шире экрана). Поэтому карту пересоздаём под новую ширину.
+// Меняется только высота окна (на мобилке прячется адресная строка) — пересоздавать незачем
+const onResize = () => {
+  if (window.innerWidth === lastViewportWidth) return;
+  lastViewportWidth = window.innerWidth;
+
+  // Карта ещё не создана или создаётся прямо сейчас — она и так возьмёт актуальную ширину
+  if (!map) return;
+
+  map.destroy();
+  map = null;
+  collection = null;
+  mapPromise = null;
+
+  if (isOpen()) openMap();
+};
+
 export const closeMap = () => {
   if (!mapElement) return;
 
@@ -212,6 +235,10 @@ export const initYandexMap = () => {
 
   if (!mapElement) return;
 
+  // <div data-map data-map-default="moscow"> — стартовая группа меток; без атрибута показываются все
+  if (mapElement.dataset.mapDefault) currentFilter = { group: mapElement.dataset.mapDefault };
+  setActiveButton();
+
   const wrapper = mapElement.parentElement;
 
   toggleButton = wrapper.querySelector('[data-map-toggle]');
@@ -229,9 +256,11 @@ export const initYandexMap = () => {
     } else {
       showMapGroup(button.dataset.mapGroup);
     }
-
-    if (!wrapper.contains(button)) wrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
+
+  // resize срабатывает и при повороте экрана, и при переключении эмуляции в DevTools
+  lastViewportWidth = window.innerWidth;
+  window.addEventListener('resize', debounce(onResize, RESIZE_DELAY));
 
   if (isOpen()) openMap();
 };

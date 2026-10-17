@@ -351,6 +351,9 @@ button {
   color: var(--magenta);
   font-size: inherit;
   line-height: inherit;
+  &.no-border {
+    border-bottom: none;
+  }
   &.with-icon {
     display: block;
     position: relative;
