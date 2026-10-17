@@ -131,6 +131,10 @@ $popup_transition: 0.5s;
   border-radius: var(--fs-26);
   box-shadow: 0px 0px 20px var(--blue-light);
 
+  &.hauge {
+    max-width: 1400px;
+  }
+
   &.large {
     max-width: 732px;
   }
