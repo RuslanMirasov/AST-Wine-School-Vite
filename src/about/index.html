@@ -23,8 +23,35 @@
       </ul>
 
       <section class="section">
-        <div class="container">
-          <h2 class="title title--24">Страница <span style="color: #c24191">"О нас"</span> в разработке...</h2>
+        <div class="container gap--40">
+          <h1 class="title title--40 upper">О нас</h1>
+
+          <div class="about-intro">
+            <div class="content-text gap--20">
+              <p class="text fs-18">
+                Школа вина AST — это место, где рождается осознанное понимание вина. Мы объединяем профессионалов и любителей, чтобы сделать вино
+                доступным, увлекательным и понятным каждому.
+              </p>
+              <p class="text fs-18">
+                Наша миссия — не просто научить дегустировать, а привить культуру вина, развить вкус и уверенность. Мы предлагаем авторские курсы,
+                живые дегустации, частные мероприятия и подарочные сертификаты. Занятия ведут сертифицированные эксперты: Антон Воскресенский и
+                Константин Комсомольск-на-амуровский. Наши программы построены на практике — более 16 образцов вина за короткий интенсив.
+              </p>
+              <p class="text fs-18">
+                Сегодня AST — это очные и онлайн-курсы, дегустации, винные ужины, частные и корпоративные мероприятия, подарочные сертификаты и
+                реферальная программа. Мы проводим занятия в Москве на Новом Арбате, 63 и в Санкт-Петербурге на Невском проспекте, 100, а также
+                приезжаем на выездные мероприятия — в офис, загородный дом, лофт или на теплоход. Форматы гибкие: от камерной дегустации для двоих до
+                корпоратива на 150 гостей.
+              </p>
+            </div>
+
+            <div class="about-intro__video" data-popup-open="video-player" data-video-url="https://media.w3.org/2010/05/sintel/trailer.mp4">
+              <img src="/assets/img/about/1.webp" alt="Описание изображения" />
+              <button type="button" class="player-play-button" aria-label="Смотреть видео">
+                <svg width="12" height="13"><use href="/assets/img/sprite.svg#play"></use></svg>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -36,6 +63,7 @@
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
         <load src="/_partials/base/default-popups.html" />
+        <load src="/_partials/popups/video-popup.html" />
       </div>
     </div>
 
