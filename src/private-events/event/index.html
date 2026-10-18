@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="buttons gap--12 ta--l">
-                  <a href="#privat-events-form" class="button"><span>Оформить заказ</span></a>
+                  <a href="#privat-events-form" class="button" data-fix-button-anchor><span>Оформить заказ</span></a>
                   <a href="#privat-events-form" class="button white-border"><span>Презентация</span></a>
                 </div>
               </div>
@@ -322,7 +322,7 @@
       </section>
 
       <!--СОБЕРЕМ СМЕТУ ЗА ОДИН ДЕНЬ-->
-      <section class="section" id="privat-events-form">
+      <section class="section" id="privat-events-form" data-fix-button-anchor>
         <div class="container">
           <div class="content pad--40 privat-events-form">
             <div class="left-side">
@@ -553,6 +553,11 @@
         </div>
       </section>
     </main>
+
+    <!--ПЛАВАЮЩАЯ КНОПКА В МОБИЛКЕ-->
+    <div class="fix-button" data-fix-button>
+      <a href="#privat-events-form" class="button"><span>Оформить заказ</span></a>
+    </div>
 
     <!--FOOTER-->
     <load src="/_partials/footer.html" />

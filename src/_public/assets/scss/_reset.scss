@@ -28,6 +28,7 @@ html {
   font-family: var(--font);
   line-height: 1.3;
   font-weight: 400;
+  scroll-padding-top: 45px;
 }
 
 html,
@@ -201,7 +202,7 @@ button {
   z-index: 1;
   padding: var(--fs-40) 0px;
   margin: 0 auto;
-  scroll-margin: var(--fs-40);
+  //scroll-margin: var(--fs-40);
   overflow: hidden;
   &.pad--32 {
     padding: var(--fs-32) 0px;
@@ -232,6 +233,13 @@ button {
   &.no--dot {
     list-style: none;
     padding-left: 0px;
+    a {
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 
   li {
@@ -458,6 +466,10 @@ button {
       }
     }
   }
+}
+
+.display-contents {
+  display: contents;
 }
 
 .a11y {

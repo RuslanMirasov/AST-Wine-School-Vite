@@ -19,7 +19,7 @@
       <!--breadcrumbs-->
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
-        <li><a href="%ROOT%info/">Сведения об&nbsp;образовательной организации</a></li>
+        <li><a href="%ROOT%sveden/">Сведения об&nbsp;образовательной организации</a></li>
         <li><span>Финансово-хозяйственная деятельность</span></li>
       </ul>
 
@@ -45,7 +45,7 @@
           <aside class="sidebar medium left-side" data-sticky-sidebar>
             <load src="/_partials/components/menus/info-menu.html" />
 
-            <div class="content no--bg">
+            <div class="content found-mistake">
               <div class="content-text gap--8 pad--32">
                 <h2 class="title title--18 bold">Нашли опечатку?</h2>
                 <p class="text fs-14">Выделите ее, нажмите Ctrl+Enter и&nbsp;отправьте нам уведомление. Спасибо за&nbsp;участие!</p>
@@ -68,7 +68,7 @@
               </div>
 
               <div data-accordeon-body>
-                <div class="accordeon-text">
+                <div class="accordeon-text" itemprop="volume">
                   <p class="text">
                     ООО «АСТ СПБ» не&nbsp;является получателем субсидий на&nbsp;выполнение государственного (муниципального) задания, целевых
                     субсидий, а&nbsp;также бюджетных инвестиций. В&nbsp;связи с&nbsp;этим все финансовые показатели в&nbsp;Плане
@@ -76,24 +76,64 @@
                     от&nbsp;оказания платных образовательных услуг.
                   </p>
 
-                  <p class="text">
-                    <span class="text fs-12 grey-text"
-                      >Объем образовательной деятельности, финансовое обеспечение которой осуществляется за&nbsp;счет бюджетных ассигнований
+                  <p id="anchor_finBFVolume">
+                    <span class="text fs-12 grey-text">
+                      Объем образовательной деятельности, финансовое обеспечение которой осуществляется за&nbsp;счет бюджетных ассигнований
                       федерального бюджета, бюджетов субъектов Российской Федерации, местных бюджетов, по&nbsp;договорам об&nbsp;оказании платных
-                      образовательных услуг за&nbsp;счет средств физических (юридических) лиц</span
-                    >
-                    0
+                      образовательных услуг за&nbsp;счет средств физических (юридических) лиц
+                    </span>
+                    <span class="text" itemprop="finBFVolume">0</span>
                   </p>
 
-                  <p class="text">
+                  <p id="anchor_finPost">
                     <span class="text fs-12 grey-text">Поступление финансовых и&nbsp;материальных средств по&nbsp;итогам финансового года</span>
-                    —
+                    <span class="text" itemprop="finPost">—</span>
                   </p>
 
-                  <p class="text">
+                  <p id="anchor_finRas">
                     <span class="text fs-12 grey-text">Расходование финансовых и&nbsp;материальных средств по&nbsp;итогам финансового года</span>
-                    —
+                    <span class="text" itemprop="finRas">—</span>
                   </p>
+
+                  <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <ul class="docs-list">
+                    <li id="anchor_finPlanDocLink">
+                      <a itemprop="finPlanDocLink" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">План финансово-хозяйственной деятельности</b>
+                          <span class="text fs-12 grey-text">PDF</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <p id="anchor_finBRVolume">
+                    <span class="text fs-12 grey-text">
+                      Объем образовательной деятельности за&nbsp;счет бюджетных ассигнований бюджетов субъектов Российской Федерации
+                    </span>
+                    <span class="text" itemprop="finBRVolume">0</span>
+                  </p>
+
+                  <p id="anchor_finBMVolume">
+                    <span class="text fs-12 grey-text">Объем образовательной деятельности за&nbsp;счет бюджетных ассигнований местных бюджетов</span>
+                    <span class="text" itemprop="finBMVolume">0</span>
+                  </p>
+
+                  <p id="anchor_finPVolume">
+                    <span class="text fs-12 grey-text">
+                      Объем образовательной деятельности по&nbsp;договорам об&nbsp;оказании платных образовательных услуг
+                    </span>
+                    <span class="text" itemprop="finPVolume">—</span>
+                  </p>
+
+                  <p id="anchor_finYear">
+                    <span class="text fs-12 grey-text">Финансовый год</span>
+                    <span class="text" itemprop="finYear">—</span>
+                  </p>
+                  -->
                 </div>
               </div>
             </div>
@@ -108,7 +148,7 @@
               </div>
 
               <div data-accordeon-body>
-                <div class="accordeon-text">
+                <div class="accordeon-text" itemprop="volume">
                   <p class="text">
                     ООО «АСТ СПБ» не&nbsp;является получателем субсидий на&nbsp;выполнение государственного (муниципального) задания, целевых
                     субсидий, а&nbsp;также бюджетных инвестиций. В&nbsp;связи с&nbsp;этим все финансовые показатели в&nbsp;Плане
@@ -116,24 +156,64 @@
                     от&nbsp;оказания платных образовательных услуг.
                   </p>
 
-                  <p class="text">
-                    <span class="text fs-12 grey-text"
-                      >Объем образовательной деятельности, финансовое обеспечение которой осуществляется за&nbsp;счет бюджетных ассигнований
+                  <p>
+                    <span class="text fs-12 grey-text">
+                      Объем образовательной деятельности, финансовое обеспечение которой осуществляется за&nbsp;счет бюджетных ассигнований
                       федерального бюджета, бюджетов субъектов Российской Федерации, местных бюджетов, по&nbsp;договорам об&nbsp;оказании платных
-                      образовательных услуг за&nbsp;счет средств физических (юридических) лиц</span
-                    >
-                    0
+                      образовательных услуг за&nbsp;счет средств физических (юридических) лиц
+                    </span>
+                    <span class="text" itemprop="finBFVolume">0</span>
                   </p>
 
-                  <p class="text">
+                  <p>
                     <span class="text fs-12 grey-text">Поступление финансовых и&nbsp;материальных средств по&nbsp;итогам финансового года</span>
-                    —
+                    <span class="text" itemprop="finPost">—</span>
                   </p>
 
-                  <p class="text">
+                  <p>
                     <span class="text fs-12 grey-text">Расходование финансовых и&nbsp;материальных средств по&nbsp;итогам финансового года</span>
-                    —
+                    <span class="text" itemprop="finRas">—</span>
                   </p>
+
+                  <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <ul class="docs-list">
+                    <li>
+                      <a itemprop="finPlanDocLink" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">План финансово-хозяйственной деятельности</b>
+                          <span class="text fs-12 grey-text">PDF</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <p>
+                    <span class="text fs-12 grey-text">
+                      Объем образовательной деятельности за&nbsp;счет бюджетных ассигнований бюджетов субъектов Российской Федерации
+                    </span>
+                    <span class="text" itemprop="finBRVolume">0</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Объем образовательной деятельности за&nbsp;счет бюджетных ассигнований местных бюджетов</span>
+                    <span class="text" itemprop="finBMVolume">0</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">
+                      Объем образовательной деятельности по&nbsp;договорам об&nbsp;оказании платных образовательных услуг
+                    </span>
+                    <span class="text" itemprop="finPVolume">—</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Финансовый год</span>
+                    <span class="text" itemprop="finYear">—</span>
+                  </p>
+                  -->
                 </div>
               </div>
             </div>

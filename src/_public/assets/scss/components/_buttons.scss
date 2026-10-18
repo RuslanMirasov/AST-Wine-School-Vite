@@ -283,6 +283,26 @@
   }
 }
 
+.fix-button {
+  display: block;
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  border-radius: var(--fs-30) var(--fs-30) 0px 0px;
+  background-color: var(--white);
+  padding: 16px 20px;
+  z-index: 10;
+  transition: transform 0.5s var(--cubic);
+  transform: translateY(200%);
+  &.active {
+    transform: translateY(0%);
+  }
+  .button {
+    width: 100%;
+  }
+}
+
 .a11y-theme-dark {
   .button {
     color: var(--black);

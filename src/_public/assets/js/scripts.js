@@ -24,6 +24,7 @@ import { initDatepickers } from './plugins/airDatepicker.js';
 import { initEventFilters } from './modules/event-filters.js';
 import { initEventFilterSelection } from './modules/event-filter-selection.js';
 import { initHistoryLines } from './modules/history-lines.js';
+import { initFixButton } from './modules/fix-button.js';
 
 popup.init();
 window.popup = popup;
@@ -57,4 +58,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initEventFilters();
   initEventFilterSelection();
   initHistoryLines();
+  initFixButton();
 });

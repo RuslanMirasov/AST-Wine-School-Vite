@@ -19,7 +19,7 @@
       <!--breadcrumbs-->
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
-        <li><a href="%ROOT%info/">Сведения об&nbsp;образовательной организации</a></li>
+        <li><a href="%ROOT%sveden/">Сведения об&nbsp;образовательной организации</a></li>
         <li><span>Документы</span></li>
       </ul>
 
@@ -45,7 +45,7 @@
           <aside class="sidebar medium left-side" data-sticky-sidebar>
             <load src="/_partials/components/menus/info-menu.html" />
 
-            <div class="content no--bg">
+            <div class="content found-mistake">
               <div class="content-text gap--8 pad--32">
                 <h2 class="title title--18 bold">Нашли опечатку?</h2>
                 <p class="text fs-14">Выделите ее, нажмите Ctrl+Enter и&nbsp;отправьте нам уведомление. Спасибо за&nbsp;участие!</p>
@@ -70,8 +70,8 @@
               <div data-accordeon-body>
                 <div class="accordeon-text">
                   <ul class="docs-list">
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_ustavDocLink">
+                      <a itemprop="ustavDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Устав</b>
@@ -80,8 +80,8 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_localActStud">
+                      <a itemprop="localActStud" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Правила внутреннего распорядка</b>
@@ -90,8 +90,8 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_localActOrder">
+                      <a itemprop="localActOrder" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Правила внутреннего трудового распорядка</b>
@@ -100,8 +100,8 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_priemDocLink">
+                      <a itemprop="priemDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Правила приема на&nbsp;обучение</b>
@@ -110,8 +110,8 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_modeDocLink">
+                      <a itemprop="modeDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Положение о&nbsp;режиме занятий обучающихся</b>
@@ -120,8 +120,8 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_tekKontrolDocLink">
+                      <a itemprop="tekKontrolDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Положение об&nbsp;аттестации</b>
@@ -130,8 +130,8 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_perevodDocLink">
+                      <a itemprop="perevodDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Порядок и&nbsp;основания перевода и&nbsp;отчисления обучающихся</b>
@@ -140,14 +140,14 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_vozDocLink">
+                      <a itemprop="vozDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
-                          <b class="title title--16 bold"
-                            >Порядок оформления возникновения, приостановления и&nbsp;прекращения отношений между образовательной организацией
-                            и&nbsp;обучающимися и&nbsp;(или)&nbsp;родителями (законными представителями) несовершеннолетних обучающихся</b
-                          >
+                          <b class="title title--16 bold">
+                            Порядок оформления возникновения, приостановления и&nbsp;прекращения отношений между образовательной организацией
+                            и&nbsp;обучающимися и&nbsp;(или)&nbsp;родителями (законными представителями) несовершеннолетних обучающихся
+                          </b>
                           <span class="text fs-12 grey-text">PDF · 4,94 МБ</span>
                         </div>
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
@@ -167,9 +167,9 @@
                       <a href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
-                          <b class="title title--16 bold"
-                            >Положение о&nbsp;Комиссии по&nbsp;урегулированию споров между участниками образовательных отношений</b
-                          >
+                          <b class="title title--16 bold">
+                            Положение о&nbsp;Комиссии по&nbsp;урегулированию споров между участниками образовательных отношений
+                          </b>
                           <span class="text fs-12 grey-text">PDF · 9,06 МБ</span>
                         </div>
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
@@ -185,6 +185,42 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
+                    <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                    <!--
+                    <li id="anchor_reportEduDocLink">
+                      <a itemprop="reportEduDocLink" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">Отчет о&nbsp;результатах самообследования</b>
+                          <span class="text fs-12 grey-text">PDF</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                    <li id="anchor_prescriptionDocLink">
+                      <a itemprop="prescriptionDocLink" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">
+                            Предписания органов, осуществляющих государственный контроль (надзор) в&nbsp;сфере образования, и&nbsp;отчеты об&nbsp;их
+                            исполнении
+                          </b>
+                          <span class="text fs-12 grey-text">PDF</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                    <li id="anchor_localActCollec">
+                      <a itemprop="localActCollec" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">Коллективный договор</b>
+                          <span class="text fs-12 grey-text">PDF</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                    -->
                   </ul>
                 </div>
               </div>
@@ -203,7 +239,7 @@
                 <div class="accordeon-text">
                   <ul class="docs-list">
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="ustavDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Устав</b>
@@ -213,7 +249,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="localActStud" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Правила внутреннего распорядка</b>
@@ -223,7 +259,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="localActOrder" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Правила внутреннего трудового распорядка</b>
@@ -233,7 +269,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="priemDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Правила приема на&nbsp;обучение</b>
@@ -243,7 +279,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="modeDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Положение о&nbsp;режиме занятий обучающихся</b>
@@ -253,7 +289,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="tekKontrolDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Положение об&nbsp;аттестации</b>
@@ -263,7 +299,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="perevodDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Порядок и&nbsp;основания перевода и&nbsp;отчисления обучающихся</b>
@@ -273,13 +309,13 @@
                       </a>
                     </li>
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="vozDocLink" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
-                          <b class="title title--16 bold"
-                            >Порядок оформления возникновения, приостановления и&nbsp;прекращения отношений между образовательной организацией
-                            и&nbsp;обучающимися и&nbsp;(или)&nbsp;родителями (законными представителями) несовершеннолетних обучающихся</b
-                          >
+                          <b class="title title--16 bold">
+                            Порядок оформления возникновения, приостановления и&nbsp;прекращения отношений между образовательной организацией
+                            и&nbsp;обучающимися и&nbsp;(или)&nbsp;родителями (законными представителями) несовершеннолетних обучающихся
+                          </b>
                           <span class="text fs-12 grey-text">PDF · 4,94 МБ</span>
                         </div>
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
@@ -299,9 +335,9 @@
                       <a href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
-                          <b class="title title--16 bold"
-                            >Положение о&nbsp;Комиссии по&nbsp;урегулированию споров между участниками образовательных отношений</b
-                          >
+                          <b class="title title--16 bold">
+                            Положение о&nbsp;Комиссии по&nbsp;урегулированию споров между участниками образовательных отношений
+                          </b>
                           <span class="text fs-12 grey-text">PDF · 9,06 МБ</span>
                         </div>
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
@@ -317,6 +353,42 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
+                    <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                    <!--
+                    <li>
+                      <a itemprop="reportEduDocLink" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">Отчет о&nbsp;результатах самообследования</b>
+                          <span class="text fs-12 grey-text">PDF</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a itemprop="prescriptionDocLink" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">
+                            Предписания органов, осуществляющих государственный контроль (надзор) в&nbsp;сфере образования, и&nbsp;отчеты об&nbsp;их
+                            исполнении
+                          </b>
+                          <span class="text fs-12 grey-text">PDF</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a itemprop="localActCollec" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">Коллективный договор</b>
+                          <span class="text fs-12 grey-text">PDF</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                    -->
                   </ul>
                 </div>
               </div>

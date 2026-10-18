@@ -19,7 +19,7 @@
       <!--breadcrumbs-->
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
-        <li><a href="%ROOT%info/">Сведения об&nbsp;образовательной организации</a></li>
+        <li><a href="%ROOT%sveden/">Сведения об&nbsp;образовательной организации</a></li>
         <li><span>Образовательные стандарты и&nbsp;требования</span></li>
       </ul>
 
@@ -45,7 +45,7 @@
           <aside class="sidebar medium left-side" data-sticky-sidebar>
             <load src="/_partials/components/menus/info-menu.html" />
 
-            <div class="content no--bg">
+            <div class="content found-mistake">
               <div class="content-text gap--8 pad--32">
                 <h2 class="title title--18 bold">Нашли опечатку?</h2>
                 <p class="text fs-14">Выделите ее, нажмите Ctrl+Enter и&nbsp;отправьте нам уведомление. Спасибо за&nbsp;участие!</p>
@@ -69,10 +69,33 @@
 
               <div data-accordeon-body>
                 <div class="accordeon-text">
-                  <p class="text">
+                  <p class="text" itemprop="eduFedDoc">
                     В&nbsp;отношении реализуемых программ не&nbsp;предъявляются требования федеральных государственных образовательных стандартов,
                     федеральных государственных требований и&nbsp;образовательных стандартов.
                   </p>
+
+                  <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <p id="anchor_eduFedDoc">
+                    <span class="text fs-12 grey-text">Федеральные государственные образовательные стандарты</span>
+                    <span class="text" itemprop="eduFedDoc">Не&nbsp;применяются</span>
+                  </p>
+
+                  <p id="anchor_eduStandartDoc">
+                    <span class="text fs-12 grey-text">Образовательные стандарты, утвержденные образовательной организацией самостоятельно</span>
+                    <span class="text" itemprop="eduStandartDoc">Отсутствуют</span>
+                  </p>
+
+                  <p id="anchor_eduFedTreb">
+                    <span class="text fs-12 grey-text">Федеральные государственные требования</span>
+                    <span class="text" itemprop="eduFedTreb">Не&nbsp;применяются</span>
+                  </p>
+
+                  <p id="anchor_eduStandartTreb">
+                    <span class="text fs-12 grey-text">Самостоятельно устанавливаемые требования</span>
+                    <span class="text" itemprop="eduStandartTreb">Отсутствуют</span>
+                  </p>
+                  -->
                 </div>
               </div>
             </div>
@@ -88,10 +111,33 @@
 
               <div data-accordeon-body>
                 <div class="accordeon-text">
-                  <p class="text">
+                  <p class="text" itemprop="eduFedDoc">
                     В&nbsp;отношении реализуемых программ не&nbsp;предъявляются требования федеральных государственных образовательных стандартов,
                     федеральных государственных требований и&nbsp;образовательных стандартов.
                   </p>
+
+                  <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <p>
+                    <span class="text fs-12 grey-text">Федеральные государственные образовательные стандарты</span>
+                    <span class="text" itemprop="eduFedDoc">Не&nbsp;применяются</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Образовательные стандарты, утвержденные образовательной организацией самостоятельно</span>
+                    <span class="text" itemprop="eduStandartDoc">Отсутствуют</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Федеральные государственные требования</span>
+                    <span class="text" itemprop="eduFedTreb">Не&nbsp;применяются</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Самостоятельно устанавливаемые требования</span>
+                    <span class="text" itemprop="eduStandartTreb">Отсутствуют</span>
+                  </p>
+                  -->
                 </div>
               </div>
             </div>

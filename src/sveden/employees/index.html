@@ -19,7 +19,7 @@
       <!--breadcrumbs-->
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
-        <li><a href="%ROOT%info/">Сведения об&nbsp;образовательной организации</a></li>
+        <li><a href="%ROOT%sveden/">Сведения об&nbsp;образовательной организации</a></li>
         <li><span>Педагогический состав</span></li>
       </ul>
 
@@ -45,7 +45,7 @@
           <aside class="sidebar medium left-side" data-sticky-sidebar>
             <load src="/_partials/components/menus/info-menu.html" />
 
-            <div class="content no--bg">
+            <div class="content found-mistake">
               <div class="content-text gap--8 pad--32">
                 <h2 class="title title--18 bold">Нашли опечатку?</h2>
                 <p class="text fs-14">Выделите ее, нажмите Ctrl+Enter и&nbsp;отправьте нам уведомление. Спасибо за&nbsp;участие!</p>
@@ -68,40 +68,63 @@
               </div>
 
               <div data-accordeon-body>
-                <div class="accordeon-text">
-                  <p class="text">
+                <div class="accordeon-text" itemprop="teachingStaff">
+                  <p id="anchor_fio">
                     <span class="text fs-12 grey-text">ФИО</span>
-                    Большакова Наталья Владимировна
+                    <span class="text" itemprop="fio">Большакова Наталья Владимировна</span>
                   </p>
 
-                  <p class="text">
+                  <p id="anchor_post">
                     <span class="text fs-12 grey-text">Должность</span>
-                    руководитель образовательного направления
+                    <span class="text" itemprop="post">руководитель образовательного направления</span>
                   </p>
 
-                  <p class="text">
+                  <p id="anchor_teachingLevel">
                     <span class="text fs-12 grey-text">Уровень образования, ученые степени, звания</span>
-                    Высшее педагогическое
+                    <span class="text" itemprop="teachingLevel">Высшее педагогическое</span>
                   </p>
 
-                  <p class="text">
+                  <p id="anchor_profDevelopment">
                     <span class="text fs-12 grey-text">Дополнительное профессиональное образование</span>
-                    «Сомелье/кавист»
+                    <span class="text" itemprop="profDevelopment">«Сомелье/кавист»</span>
                   </p>
 
-                  <p class="text">
+                  <p id="anchor_genExperience">
                     <span class="text fs-12 grey-text">Общий стаж работы</span>
-                    свыше 20&nbsp;лет
+                    <span class="text" itemprop="genExperience">свыше 20&nbsp;лет</span>
                   </p>
 
-                  <p class="text">
+                  <p id="anchor_specExperience">
                     <span class="text fs-12 grey-text">Стаж по&nbsp;специальности</span>
-                    —
+                    <span class="text" itemprop="specExperience">—</span>
                   </p>
+
+                  <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <p id="anchor_teachingDiscipline">
+                    <span class="text fs-12 grey-text">Преподаваемые учебные предметы, курсы, дисциплины (модули)</span>
+                    <span class="text" itemprop="teachingDiscipline">Отсутствует</span>
+                  </p>
+
+                  <p id="anchor_employeeQualification">
+                    <span class="text fs-12 grey-text">Квалификация</span>
+                    <span class="text" itemprop="employeeQualification">Отсутствует</span>
+                  </p>
+
+                  <p id="anchor_degree">
+                    <span class="text fs-12 grey-text">Ученая степень</span>
+                    <span class="text" itemprop="degree">Отсутствует</span>
+                  </p>
+
+                  <p id="anchor_academStat">
+                    <span class="text fs-12 grey-text">Ученое звание</span>
+                    <span class="text" itemprop="academStat">Отсутствует</span>
+                  </p>
+                  -->
 
                   <h3 class="title title--18 bold">Преподаваемые учебные программы</h3>
 
-                  <ul class="list no--dot">
+                  <ul class="list no--dot" itemprop="teachingOp" id="anchor_teachingOp">
                     <li><p class="text">—&nbsp;Дополнительная профессиональная программа повышения квалификации «Винный атлас»</p></li>
                     <li><p class="text">—&nbsp;Дополнительная профессиональная программа повышения квалификации «Сомелье/кавист»</p></li>
                     <li><p class="text">—&nbsp;Дополнительная профессиональная программа профессиональной переподготовки «Сомелье/кавист»</p></li>
@@ -120,40 +143,63 @@
               </div>
 
               <div data-accordeon-body>
-                <div class="accordeon-text">
-                  <p class="text">
+                <div class="accordeon-text" itemprop="teachingStaff">
+                  <p>
                     <span class="text fs-12 grey-text">ФИО</span>
-                    Большакова Наталья Владимировна
+                    <span class="text" itemprop="fio">Большакова Наталья Владимировна</span>
                   </p>
 
-                  <p class="text">
+                  <p>
                     <span class="text fs-12 grey-text">Должность</span>
-                    руководитель образовательного направления
+                    <span class="text" itemprop="post">руководитель образовательного направления</span>
                   </p>
 
-                  <p class="text">
+                  <p>
                     <span class="text fs-12 grey-text">Уровень образования, ученые степени, звания</span>
-                    Высшее педагогическое
+                    <span class="text" itemprop="teachingLevel">Высшее педагогическое</span>
                   </p>
 
-                  <p class="text">
+                  <p>
                     <span class="text fs-12 grey-text">Дополнительное профессиональное образование</span>
-                    «Сомелье/кавист»
+                    <span class="text" itemprop="profDevelopment">«Сомелье/кавист»</span>
                   </p>
 
-                  <p class="text">
+                  <p>
                     <span class="text fs-12 grey-text">Общий стаж работы</span>
-                    свыше 20&nbsp;лет
+                    <span class="text" itemprop="genExperience">свыше 20&nbsp;лет</span>
                   </p>
 
-                  <p class="text">
+                  <p>
                     <span class="text fs-12 grey-text">Стаж по&nbsp;специальности</span>
-                    —
+                    <span class="text" itemprop="specExperience">—</span>
                   </p>
+
+                  <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <p>
+                    <span class="text fs-12 grey-text">Преподаваемые учебные предметы, курсы, дисциплины (модули)</span>
+                    <span class="text" itemprop="teachingDiscipline">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Квалификация</span>
+                    <span class="text" itemprop="employeeQualification">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Ученая степень</span>
+                    <span class="text" itemprop="degree">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Ученое звание</span>
+                    <span class="text" itemprop="academStat">Отсутствует</span>
+                  </p>
+                  -->
 
                   <h3 class="title title--18 bold">Преподаваемые учебные программы</h3>
 
-                  <ul class="list no--dot">
+                  <ul class="list no--dot" itemprop="teachingOp">
                     <li><p class="text">—&nbsp;Дополнительная профессиональная программа повышения квалификации «Винный атлас»</p></li>
                     <li><p class="text">—&nbsp;Дополнительная профессиональная программа повышения квалификации «Сомелье/кавист»</p></li>
                     <li><p class="text">—&nbsp;Дополнительная профессиональная программа профессиональной переподготовки «Сомелье/кавист»</p></li>

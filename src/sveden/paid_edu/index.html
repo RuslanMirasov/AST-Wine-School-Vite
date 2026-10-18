@@ -19,7 +19,7 @@
       <!--breadcrumbs-->
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
-        <li><a href="%ROOT%info/">Сведения об&nbsp;образовательной организации</a></li>
+        <li><a href="%ROOT%sveden/">Сведения об&nbsp;образовательной организации</a></li>
         <li><span>Платные образовательные услуги</span></li>
       </ul>
 
@@ -45,7 +45,7 @@
           <aside class="sidebar medium left-side" data-sticky-sidebar>
             <load src="/_partials/components/menus/info-menu.html" />
 
-            <div class="content no--bg">
+            <div class="content found-mistake">
               <div class="content-text gap--8 pad--32">
                 <h2 class="title title--18 bold">Нашли опечатку?</h2>
                 <p class="text fs-14">Выделите ее, нажмите Ctrl+Enter и&nbsp;отправьте нам уведомление. Спасибо за&nbsp;участие!</p>
@@ -72,8 +72,8 @@
                   <p class="text">ООО «АСТ СПБ» оказывает услуги на&nbsp;коммерческой основе.</p>
 
                   <ul class="docs-list">
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_paidEdu">
+                      <a itemprop="paidEdu" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Положение об&nbsp;оказании платных образовательных услуг</b>
@@ -82,8 +82,8 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_paidDog">
+                      <a itemprop="paidDog" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Приказ об&nbsp;утверждении форм договоров об&nbsp;оказании платных образовательных услуг</b>
@@ -92,8 +92,8 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
-                    <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                    <li id="anchor_paidSt">
+                      <a itemprop="paidSt" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Приказ об&nbsp;утверждении стоимости образовательных программ</b>
@@ -102,6 +102,22 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
+                    <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                    <!--
+                    <li id="anchor_paidParents">
+                      <a itemprop="paidParents" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">
+                            Документ об&nbsp;установлении размера платы, взимаемой с&nbsp;родителей (законных представителей) за&nbsp;присмотр
+                            и&nbsp;уход за&nbsp;детьми
+                          </b>
+                          <span class="text fs-12 grey-text">PDF</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                    -->
                   </ul>
                 </div>
               </div>
@@ -122,7 +138,7 @@
 
                   <ul class="docs-list">
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="paidEdu" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Положение об&nbsp;оказании платных образовательных услуг</b>
@@ -132,7 +148,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="paidDog" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Приказ об&nbsp;утверждении форм договоров об&nbsp;оказании платных образовательных услуг</b>
@@ -142,7 +158,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="/assets/pdf/document.pdf" target="_blank">
+                      <a itemprop="paidSt" href="/assets/pdf/document.pdf" target="_blank">
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
                         <div class="content-text">
                           <b class="title title--16 bold">Приказ об&nbsp;утверждении стоимости образовательных программ</b>
@@ -151,6 +167,22 @@
                         <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
                       </a>
                     </li>
+                    <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                    <!--
+                    <li>
+                      <a itemprop="paidParents" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">
+                            Документ об&nbsp;установлении размера платы, взимаемой с&nbsp;родителей (законных представителей) за&nbsp;присмотр
+                            и&nbsp;уход за&nbsp;детьми
+                          </b>
+                          <span class="text fs-12 grey-text">PDF</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                    -->
                   </ul>
                 </div>
               </div>

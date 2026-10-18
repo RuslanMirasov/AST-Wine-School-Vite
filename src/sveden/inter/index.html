@@ -19,7 +19,7 @@
       <!--breadcrumbs-->
       <ul class="breadcrumbs">
         <li><a href="%ROOT%">Главная</a></li>
-        <li><a href="%ROOT%info/">Сведения об&nbsp;образовательной организации</a></li>
+        <li><a href="%ROOT%sveden/">Сведения об&nbsp;образовательной организации</a></li>
         <li><span>Международное сотрудничество</span></li>
       </ul>
 
@@ -45,7 +45,7 @@
           <aside class="sidebar medium left-side" data-sticky-sidebar>
             <load src="/_partials/components/menus/info-menu.html" />
 
-            <div class="content no--bg">
+            <div class="content found-mistake">
               <div class="content-text gap--8 pad--32">
                 <h2 class="title title--18 bold">Нашли опечатку?</h2>
                 <p class="text fs-14">Выделите ее, нажмите Ctrl+Enter и&nbsp;отправьте нам уведомление. Спасибо за&nbsp;участие!</p>
@@ -68,14 +68,32 @@
               </div>
 
               <div data-accordeon-body>
-                <div class="accordeon-text">
-                  <p class="text">
-                    <span class="text fs-12 grey-text"
-                      >Информация о&nbsp;заключенных и&nbsp;планируемых к&nbsp;заключению договорах с&nbsp;иностранными
-                      и&nbsp;(или)&nbsp;международными организациями по&nbsp;вопросам образования и&nbsp;науки</span
-                    >
-                    Заключенных и&nbsp;планируемых к&nbsp;заключению договоров нет
+                <div class="accordeon-text" itemprop="internationalDog">
+                  <p>
+                    <span class="text fs-12 grey-text">
+                      Информация о&nbsp;заключенных и&nbsp;планируемых к&nbsp;заключению договорах с&nbsp;иностранными
+                      и&nbsp;(или)&nbsp;международными организациями по&nbsp;вопросам образования и&nbsp;науки
+                    </span>
+                    <span class="text">Заключенных и&nbsp;планируемых к&nbsp;заключению договоров нет</span>
                   </p>
+
+                  <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <p id="anchor_stateName">
+                    <span class="text fs-12 grey-text">Государство</span>
+                    <span class="text" itemprop="stateName">Отсутствует</span>
+                  </p>
+
+                  <p id="anchor_orgName">
+                    <span class="text fs-12 grey-text">Наименование организации</span>
+                    <span class="text" itemprop="orgName">Отсутствует</span>
+                  </p>
+
+                  <p id="anchor_dogReg">
+                    <span class="text fs-12 grey-text">Реквизиты договора (наименование, дата, номер, срок действия)</span>
+                    <span class="text" itemprop="dogReg">Отсутствует</span>
+                  </p>
+                  -->
                 </div>
               </div>
             </div>
@@ -90,14 +108,32 @@
               </div>
 
               <div data-accordeon-body>
-                <div class="accordeon-text">
-                  <p class="text">
-                    <span class="text fs-12 grey-text"
-                      >Информация о&nbsp;заключенных и&nbsp;планируемых к&nbsp;заключению договорах с&nbsp;иностранными
-                      и&nbsp;(или)&nbsp;международными организациями по&nbsp;вопросам образования и&nbsp;науки</span
-                    >
-                    Заключенных и&nbsp;планируемых к&nbsp;заключению договоров нет
+                <div class="accordeon-text" itemprop="internationalDog">
+                  <p>
+                    <span class="text fs-12 grey-text">
+                      Информация о&nbsp;заключенных и&nbsp;планируемых к&nbsp;заключению договорах с&nbsp;иностранными
+                      и&nbsp;(или)&nbsp;международными организациями по&nbsp;вопросам образования и&nbsp;науки
+                    </span>
+                    <span class="text">Заключенных и&nbsp;планируемых к&nbsp;заключению договоров нет</span>
                   </p>
+
+                  <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <p>
+                    <span class="text fs-12 grey-text">Государство</span>
+                    <span class="text" itemprop="stateName">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Наименование организации</span>
+                    <span class="text" itemprop="orgName">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Реквизиты договора (наименование, дата, номер, срок действия)</span>
+                    <span class="text" itemprop="dogReg">Отсутствует</span>
+                  </p>
+                  -->
                 </div>
               </div>
             </div>

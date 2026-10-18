@@ -80,12 +80,25 @@
   flex-wrap: wrap;
   gap: var(--fs-20);
   padding: 0px var(--fs-32) var(--fs-32) var(--fs-32);
-  .text {
+  p {
     width: 100%;
+    .grey-text {
+      padding-bottom: 2px;
+    }
+    scroll-margin: 40px;
+  }
+
+  @media (min-width: 1920px) {
+    .grey-text {
+      font-size: var(--fs-14);
+    }
   }
 
   @media (max-width: 767px) {
     padding: 0px var(--fs-16) var(--fs-16) var(--fs-16);
+    p {
+      scroll-margin: 100px;
+    }
     .text {
       .text.fs-12.grey-text {
         padding-bottom: 4px;

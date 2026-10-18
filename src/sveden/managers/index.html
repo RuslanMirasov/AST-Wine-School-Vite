@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <load src="/_partials/base/metrix.html" />
+    <load src="/_partials/base/meta.html" />
+    <load src="/_partials/base/styles.html" />
+    <meta name="description" content="AST - Руководство" />
+    <title>Руководство</title>
+  </head>
+  <body class="body">
+    <!--START SCRIPTS-->
+    <load src="/_partials/base/start-scripts.html" />
+    <!--HEADER-->
+    <load src="/_partials/preloader.html" />
+    <load src="/_partials/components/header/header.html" />
+
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="%ROOT%">Главная</a></li>
+        <li><a href="%ROOT%sveden/">Сведения об&nbsp;образовательной организации</a></li>
+        <li><span>Руководство</span></li>
+      </ul>
+
+      <section class="section">
+        <div class="container">
+          <div class="content-text gap--24">
+            <h1 class="title title--40 upper">Руководство</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="page page-info">
+        <div class="container gap--40">
+          <!--SIDEBAR-MOBIL BUTTON-->
+          <div class="sidebar-mobil">
+            <button class="sidebar-mobil-button" data-popup-open="sidebar-menu">
+              <span>Руководство</span>
+              <svg width="30" height="24"><use href="/assets/img/sprite.svg#menu"></use></svg>
+            </button>
+          </div>
+
+          <!--SIDEBAR-->
+          <aside class="sidebar medium left-side" data-sticky-sidebar>
+            <load src="/_partials/components/menus/info-menu.html" />
+
+            <div class="content found-mistake">
+              <div class="content-text gap--8 pad--32">
+                <h2 class="title title--18 bold">Нашли опечатку?</h2>
+                <p class="text fs-14">Выделите ее, нажмите Ctrl+Enter и&nbsp;отправьте нам уведомление. Спасибо за&nbsp;участие!</p>
+                <p class="text fs-12 grey-text">
+                  Сервис предназначен только для отправки сообщений об&nbsp;орфографических и&nbsp;пунктуационных ошибках.
+                </p>
+              </div>
+            </div>
+          </aside>
+
+          <!--PAGE CONTENT-->
+          <div class="page-content">
+            <!--СПБ-->
+            <div class="page-accordeon open" data-accordeon>
+              <div class="page-accordeon-head open" data-accordeon-head>
+                <h2 class="title title--24 bold">ООО «АСТ СПБ» · Санкт-Петербург</h2>
+                <button type="button" class="accordeon-arrow" aria-expanded="false" aria-label="Развернуть">
+                  <svg width="15" height="15"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+
+              <div data-accordeon-body>
+                <div class="accordeon-text">
+                  <div class="display-contents" itemprop="rucovodstvo">
+                    <p id="anchor_rucovodstvo">
+                      <span class="text fs-12 grey-text" itemprop="post">Генеральный директор</span>
+                      <span class="text" itemprop="fio">Мардахаев Зарахия Шамаилович</span>
+                    </p>
+
+                    <p id="anchor_telephone">
+                      <span class="text fs-12 grey-text">Контактный телефон</span>
+                      <a itemprop="telephone" href="tel:+78127507057">+7 (812) 750-7057</a>
+                    </p>
+
+                    <p id="anchor_email">
+                      <span class="text fs-12 grey-text">Адрес электронной почты</span>
+                      <a itemprop="email" href="mailto:school.spb@ast-inter.ru">school.spb@ast-inter.ru</a>
+                    </p>
+                  </div>
+
+                  <div class="display-contents" itemprop="rucovodstvoZam">
+                    <p id="anchor_rucovodstvoZam">
+                      <span class="text fs-12 grey-text" itemprop="post">Руководитель учебного центра</span>
+                      <span class="text" itemprop="fio">Виноградова Татьяна Александровна</span>
+                    </p>
+
+                    <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                    <!--
+                    <p>
+                      <span class="text fs-12 grey-text">Контактный телефон</span>
+                      <span class="text" itemprop="telephone">Отсутствует</span>
+                    </p>
+                    -->
+
+                    <p>
+                      <span class="text fs-12 grey-text">Адрес электронной почты</span>
+                      <a itemprop="email" href="mailto:t.vinogradova@ast-inter.ru">t.vinogradova@ast-inter.ru</a>
+                    </p>
+                  </div>
+
+                  <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <div class="display-contents" itemprop="rucovodstvoFil" id="anchor_rucovodstvoFil">
+                    <h3 class="title title--18 bold">Руководители филиалов</h3>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование филиала</span>
+                      <span class="text" itemprop="nameFil">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Фамилия, имя, отчество руководителя</span>
+                      <span class="text" itemprop="fio">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Должность</span>
+                      <span class="text" itemprop="post">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Контактный телефон</span>
+                      <span class="text" itemprop="telephone">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Адрес электронной почты</span>
+                      <span class="text" itemprop="email">Отсутствует</span>
+                    </p>
+                  </div>
+
+                  <div class="display-contents" itemprop="rucovodstvoRep" id="anchor_rucovodstvoRep">
+                    <h3 class="title title--18 bold">Руководители представительств</h3>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование представительства</span>
+                      <span class="text" itemprop="nameRep">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Фамилия, имя, отчество руководителя</span>
+                      <span class="text" itemprop="fio">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Должность</span>
+                      <span class="text" itemprop="post">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Контактный телефон</span>
+                      <span class="text" itemprop="telephone">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Адрес электронной почты</span>
+                      <span class="text" itemprop="email">Отсутствует</span>
+                    </p>
+                  </div>
+                  -->
+                </div>
+              </div>
+            </div>
+
+            <!--МОСКВА-->
+            <div class="page-accordeon" data-accordeon>
+              <div class="page-accordeon-head" data-accordeon-head>
+                <h2 class="title title--24 bold">Второе юридическое лицо · Москва</h2>
+                <button type="button" class="accordeon-arrow" aria-expanded="false" aria-label="Развернуть">
+                  <svg width="15" height="15"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+
+              <div data-accordeon-body>
+                <div class="accordeon-text">
+                  <div class="display-contents" itemprop="rucovodstvo">
+                    <p>
+                      <span class="text fs-12 grey-text" itemprop="post">Генеральный директор</span>
+                      <span class="text" itemprop="fio">Мардахаев Зарахия Шамаилович</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Контактный телефон</span>
+                      <a itemprop="telephone" href="tel:+78127507057">+7 (812) 750-7057</a>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Адрес электронной почты</span>
+                      <a itemprop="email" href="mailto:school.spb@ast-inter.ru">school.spb@ast-inter.ru</a>
+                    </p>
+                  </div>
+
+                  <div class="display-contents" itemprop="rucovodstvoZam">
+                    <p>
+                      <span class="text fs-12 grey-text" itemprop="post">Руководитель учебного центра</span>
+                      <span class="text" itemprop="fio">Виноградова Татьяна Александровна</span>
+                    </p>
+
+                    <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                    <!--
+                    <p>
+                      <span class="text fs-12 grey-text">Контактный телефон</span>
+                      <span class="text" itemprop="telephone">Отсутствует</span>
+                    </p>
+                    -->
+
+                    <p>
+                      <span class="text fs-12 grey-text">Адрес электронной почты</span>
+                      <a itemprop="email" href="mailto:t.vinogradova@ast-inter.ru">t.vinogradova@ast-inter.ru</a>
+                    </p>
+                  </div>
+
+                  <!-- Пункты таблицы методички, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <div class="display-contents" itemprop="rucovodstvoFil">
+                    <h3 class="title title--18 bold">Руководители филиалов</h3>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование филиала</span>
+                      <span class="text" itemprop="nameFil">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Фамилия, имя, отчество руководителя</span>
+                      <span class="text" itemprop="fio">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Должность</span>
+                      <span class="text" itemprop="post">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Контактный телефон</span>
+                      <span class="text" itemprop="telephone">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Адрес электронной почты</span>
+                      <span class="text" itemprop="email">Отсутствует</span>
+                    </p>
+                  </div>
+
+                  <div class="display-contents" itemprop="rucovodstvoRep">
+                    <h3 class="title title--18 bold">Руководители представительств</h3>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование представительства</span>
+                      <span class="text" itemprop="nameRep">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Фамилия, имя, отчество руководителя</span>
+                      <span class="text" itemprop="fio">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Должность</span>
+                      <span class="text" itemprop="post">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Контактный телефон</span>
+                      <span class="text" itemprop="telephone">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Адрес электронной почты</span>
+                      <span class="text" itemprop="email">Отсутствует</span>
+                    </p>
+                  </div>
+                  -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <load src="/_partials/footer.html" />
+
+    <!--POPUPS-->
+    <div class="backdrop" data-backdrop>
+      <div class="popup" data-popup>
+        <load src="/_partials/base/default-popups.html" />
+        <load src="/_partials/popups/sidebar-menu-popup.html" />
+      </div>
+    </div>
+
+    <!--COOKIE CONFIRM POPUP-->
+    <load src="/_partials/popups/cookies-confirm-popup.html" />
+
+    <!--SCRIPTS-->
+    <load src="/_partials/base/scripts.html" />
+  </body>
+</html>

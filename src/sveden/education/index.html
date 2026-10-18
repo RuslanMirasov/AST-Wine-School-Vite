@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <load src="/_partials/base/metrix.html" />
+    <load src="/_partials/base/meta.html" />
+    <load src="/_partials/base/styles.html" />
+    <meta name="description" content="AST - Образование" />
+    <title>Образование</title>
+  </head>
+  <body class="body">
+    <!--START SCRIPTS-->
+    <load src="/_partials/base/start-scripts.html" />
+    <!--HEADER-->
+    <load src="/_partials/preloader.html" />
+    <load src="/_partials/components/header/header.html" />
+
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="%ROOT%">Главная</a></li>
+        <li><a href="%ROOT%sveden/">Сведения об&nbsp;образовательной организации</a></li>
+        <li><span>Образование</span></li>
+      </ul>
+
+      <section class="section">
+        <div class="container">
+          <div class="content-text gap--24">
+            <h1 class="title title--40 upper">Образование</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="page page-info">
+        <div class="container gap--40">
+          <!--SIDEBAR-MOBIL BUTTON-->
+          <div class="sidebar-mobil">
+            <button class="sidebar-mobil-button" data-popup-open="sidebar-menu">
+              <span>Образование</span>
+              <svg width="30" height="24"><use href="/assets/img/sprite.svg#menu"></use></svg>
+            </button>
+          </div>
+
+          <!--SIDEBAR-->
+          <aside class="sidebar medium left-side" data-sticky-sidebar>
+            <load src="/_partials/components/menus/info-menu.html" />
+
+            <div class="content found-mistake">
+              <div class="content-text gap--8 pad--32">
+                <h2 class="title title--18 bold">Нашли опечатку?</h2>
+                <p class="text fs-14">Выделите ее, нажмите Ctrl+Enter и&nbsp;отправьте нам уведомление. Спасибо за&nbsp;участие!</p>
+                <p class="text fs-12 grey-text">
+                  Сервис предназначен только для отправки сообщений об&nbsp;орфографических и&nbsp;пунктуационных ошибках.
+                </p>
+              </div>
+            </div>
+          </aside>
+
+          <!--PAGE CONTENT-->
+          <div class="page-content">
+            <!--СПБ-->
+            <div class="page-accordeon open" data-accordeon>
+              <div class="page-accordeon-head open" data-accordeon-head>
+                <h2 class="title title--24 bold">ООО «АСТ СПБ» · Санкт-Петербург</h2>
+                <button type="button" class="accordeon-arrow" aria-expanded="false" aria-label="Развернуть">
+                  <svg width="15" height="15"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+
+              <div data-accordeon-body>
+                <div class="accordeon-text" itemprop="eduAccred">
+                  <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <p>
+                    <span class="text fs-12 grey-text">Код специальности, направления подготовки</span>
+                    <span class="text" itemprop="eduCode">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Наименование специальности, направления подготовки</span>
+                    <span class="text" itemprop="eduName">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                    <span class="text" itemprop="eduProf">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Учебные предметы, курсы, дисциплины (модули)</span>
+                    <span class="text" itemprop="eduPred">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Практики</span>
+                    <span class="text" itemprop="eduPrac">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Срок действия государственной аккредитации</span>
+                    <span class="text" itemprop="dateEnd">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Использование электронного обучения и&nbsp;дистанционных образовательных технологий</span>
+                    <span class="text" itemprop="eduEl">Отсутствует</span>
+                  </p>
+                  -->
+
+                  <p id="anchor_eduLevel">
+                    <span class="text fs-12 grey-text">Информация о&nbsp;реализуемых уровнях образования</span>
+                    <span class="text" itemprop="eduLevel">Дополнительное профессиональное образование</span>
+                  </p>
+
+                  <p id="anchor_eduForm">
+                    <span class="text fs-12 grey-text">Информация о&nbsp;формах обучения</span>
+                    <span class="text" itemprop="eduForm">
+                      Заочное (с&nbsp;использованием электронного обучения или&nbsp;дистанционных образовательных технологий)
+                    </span>
+                  </p>
+
+                  <p id="anchor_learningTerm">
+                    <span class="text fs-12 grey-text">Информация о&nbsp;нормативных сроках обучения</span>
+                    <span class="text" itemprop="learningTerm">Дополнительное профессиональное образование: от&nbsp;16&nbsp;часов</span>
+                  </p>
+
+                  <p id="anchor_eduChislenEl">
+                    <span class="text fs-12 grey-text">
+                      Информация о&nbsp;численности обучающихся по&nbsp;реализуемым образовательным программам за&nbsp;счет бюджетных ассигнований
+                      федерального бюджета, бюджетов субъектов Российской Федерации, местных бюджетов
+                    </span>
+                    <span class="text" itemprop="eduChislenEl">не&nbsp;имеется</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Информация о&nbsp;языках, на&nbsp;которых осуществляется образование (обучение)</span>
+                    <span class="text">Обучение осуществляется на&nbsp;русском языке</span>
+                  </p>
+
+                  <div class="display-contents" itemprop="eduNir">
+                    <p id="anchor_eduNir">
+                      <span class="text fs-12 grey-text">
+                        Информация о&nbsp;направлениях и&nbsp;результатах научной (научно-исследовательской) деятельности
+                        и&nbsp;научно-исследовательской базе для&nbsp;ее&nbsp;осуществления
+                      </span>
+                      <span class="text" itemprop="perechenNir">—</span>
+                    </p>
+
+                    <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                    <!--
+                    <p>
+                      <span class="text fs-12 grey-text">Код специальности, направления подготовки</span>
+                      <span class="text" itemprop="eduCode">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование специальности, направления подготовки</span>
+                      <span class="text" itemprop="eduName">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                      <span class="text" itemprop="eduProf">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Уровень образования</span>
+                      <span class="text" itemprop="eduLevel">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Название научного направления, научной школы</span>
+                      <span class="text" itemprop="napravNir">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Результаты научной (научно-исследовательской) деятельности</span>
+                      <span class="text" itemprop="resultNir">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Сведения о&nbsp;научно-исследовательской базе</span>
+                      <span class="text" itemprop="baseNir">Отсутствует</span>
+                    </p>
+                    -->
+                  </div>
+
+                  <ul class="docs-list">
+                    <li id="anchor_languageEl">
+                      <a itemprop="languageEl" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">Положение о&nbsp;языке обучения по&nbsp;реализуемым дополнительным программам</b>
+                          <span class="text fs-12 grey-text">PDF · 2,29 МБ</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <h3 class="title title--18 bold">Образовательные программы</h3>
+
+                  <ul class="docs-list">
+                    <li itemprop="eduOp" id="anchor_eduOp">
+                      <a itemprop="opMain" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold" itemprop="eduName">
+                            Дополнительная профессиональная программа повышения квалификации «Винный атлас»
+                          </b>
+                          <span class="text fs-12 grey-text">PDF · 5,92 МБ</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                      <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                      <!--
+                      <p>
+                        <span class="text fs-12 grey-text">Код специальности, направления подготовки</span>
+                        <span class="text" itemprop="eduCode">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Уровень образования</span>
+                        <span class="text" itemprop="eduLevel">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                        <span class="text" itemprop="eduProf">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Реализуемые формы обучения</span>
+                        <span class="text" itemprop="eduForm">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Учебный план</span>
+                        <span class="text" itemprop="educationPlan">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы дисциплин</span>
+                        <span class="text" itemprop="educationRpd">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Календарный учебный график</span>
+                        <span class="text" itemprop="educationShedule">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы практик</span>
+                        <span class="text" itemprop="eduPr">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Методические и&nbsp;иные документы</span>
+                        <span class="text" itemprop="methodology">Отсутствует</span>
+                      </p>
+                      -->
+                    </li>
+                    <li itemprop="eduOp">
+                      <a itemprop="opMain" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold" itemprop="eduName">
+                            Дополнительная профессиональная программа повышения квалификации «Сомелье/кавист»
+                          </b>
+                          <span class="text fs-12 grey-text">PDF · 8,52 МБ</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                      <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                      <!--
+                      <p>
+                        <span class="text fs-12 grey-text">Код специальности, направления подготовки</span>
+                        <span class="text" itemprop="eduCode">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Уровень образования</span>
+                        <span class="text" itemprop="eduLevel">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                        <span class="text" itemprop="eduProf">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Реализуемые формы обучения</span>
+                        <span class="text" itemprop="eduForm">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Учебный план</span>
+                        <span class="text" itemprop="educationPlan">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы дисциплин</span>
+                        <span class="text" itemprop="educationRpd">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Календарный учебный график</span>
+                        <span class="text" itemprop="educationShedule">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы практик</span>
+                        <span class="text" itemprop="eduPr">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Методические и&nbsp;иные документы</span>
+                        <span class="text" itemprop="methodology">Отсутствует</span>
+                      </p>
+                      -->
+                    </li>
+                    <li itemprop="eduOp">
+                      <a itemprop="opMain" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold" itemprop="eduName">
+                            Дополнительная профессиональная программа профессиональной переподготовки «Сомелье/кавист»
+                          </b>
+                          <span class="text fs-12 grey-text">PDF · 9,33 МБ</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                      <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                      <!--
+                      <p>
+                        <span class="text fs-12 grey-text">Код специальности, направления подготовки</span>
+                        <span class="text" itemprop="eduCode">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Уровень образования</span>
+                        <span class="text" itemprop="eduLevel">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                        <span class="text" itemprop="eduProf">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Реализуемые формы обучения</span>
+                        <span class="text" itemprop="eduForm">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Учебный план</span>
+                        <span class="text" itemprop="educationPlan">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы дисциплин</span>
+                        <span class="text" itemprop="educationRpd">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Календарный учебный график</span>
+                        <span class="text" itemprop="educationShedule">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы практик</span>
+                        <span class="text" itemprop="eduPr">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Методические и&nbsp;иные документы</span>
+                        <span class="text" itemprop="methodology">Отсутствует</span>
+                      </p>
+                      -->
+                    </li>
+                  </ul>
+
+                  <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <h3 class="title title--18 bold">Трудоустройство выпускников</h3>
+
+                  <div class="display-contents" itemprop="graduateJob">
+                    <p>
+                      <span class="text fs-12 grey-text">Код</span>
+                      <span class="text" itemprop="eduCode">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование программы</span>
+                      <span class="text" itemprop="eduName">Дополнительная профессиональная программа повышения квалификации «Винный атлас»</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                      <span class="text" itemprop="eduProf">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="v1">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность трудоустроенных выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="t1">Отсутствует</span>
+                    </p>
+                  </div>
+
+                  <div class="display-contents" itemprop="graduateJob">
+                    <p>
+                      <span class="text fs-12 grey-text">Код</span>
+                      <span class="text" itemprop="eduCode">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование программы</span>
+                      <span class="text" itemprop="eduName">Дополнительная профессиональная программа повышения квалификации «Сомелье/кавист»</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                      <span class="text" itemprop="eduProf">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="v1">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность трудоустроенных выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="t1">Отсутствует</span>
+                    </p>
+                  </div>
+
+                  <div class="display-contents" itemprop="graduateJob">
+                    <p>
+                      <span class="text fs-12 grey-text">Код</span>
+                      <span class="text" itemprop="eduCode">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование программы</span>
+                      <span class="text" itemprop="eduName">Дополнительная профессиональная программа профессиональной переподготовки «Сомелье/кавист»</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                      <span class="text" itemprop="eduProf">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="v1">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность трудоустроенных выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="t1">Отсутствует</span>
+                    </p>
+                  </div>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Результаты приема</span>
+                    <span class="text" itemprop="eduPriemEl">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Результаты перевода, восстановления и&nbsp;отчисления</span>
+                    <span class="text" itemprop="eduPerevodEl">Отсутствует</span>
+                  </p>
+
+                  <p itemprop="eduPOAccred">
+                    <span class="text fs-12 grey-text">Профессионально-общественная аккредитация образовательных программ</span>
+                    <span class="text" itemprop="orgName">Отсутствует</span>
+                  </p>
+
+                  <p itemprop="eduOAccred">
+                    <span class="text fs-12 grey-text">Общественная аккредитация образовательной организации</span>
+                    <span class="text" itemprop="orgName">Отсутствует</span>
+                  </p>
+
+                  <p itemprop="eduAdOp">
+                    <span class="text fs-12 grey-text">Адаптированные образовательные программы</span>
+                    <span class="text" itemprop="eduProf">Отсутствует</span>
+                  </p>
+                  -->
+                </div>
+              </div>
+            </div>
+
+            <!--МОСКВА-->
+            <div class="page-accordeon" data-accordeon>
+              <div class="page-accordeon-head" data-accordeon-head>
+                <h2 class="title title--24 bold">Второе юридическое лицо · Москва</h2>
+                <button type="button" class="accordeon-arrow" aria-expanded="false" aria-label="Развернуть">
+                  <svg width="15" height="15"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+
+              <div data-accordeon-body>
+                <div class="accordeon-text" itemprop="eduAccred">
+                  <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <p>
+                    <span class="text fs-12 grey-text">Код специальности, направления подготовки</span>
+                    <span class="text" itemprop="eduCode">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Наименование специальности, направления подготовки</span>
+                    <span class="text" itemprop="eduName">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                    <span class="text" itemprop="eduProf">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Учебные предметы, курсы, дисциплины (модули)</span>
+                    <span class="text" itemprop="eduPred">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Практики</span>
+                    <span class="text" itemprop="eduPrac">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Срок действия государственной аккредитации</span>
+                    <span class="text" itemprop="dateEnd">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Использование электронного обучения и&nbsp;дистанционных образовательных технологий</span>
+                    <span class="text" itemprop="eduEl">Отсутствует</span>
+                  </p>
+                  -->
+
+                  <p>
+                    <span class="text fs-12 grey-text">Информация о&nbsp;реализуемых уровнях образования</span>
+                    <span class="text" itemprop="eduLevel">Дополнительное профессиональное образование</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Информация о&nbsp;формах обучения</span>
+                    <span class="text" itemprop="eduForm">
+                      Заочное (с&nbsp;использованием электронного обучения или&nbsp;дистанционных образовательных технологий)
+                    </span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Информация о&nbsp;нормативных сроках обучения</span>
+                    <span class="text" itemprop="learningTerm">Дополнительное профессиональное образование: от&nbsp;16&nbsp;часов</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">
+                      Информация о&nbsp;численности обучающихся по&nbsp;реализуемым образовательным программам за&nbsp;счет бюджетных ассигнований
+                      федерального бюджета, бюджетов субъектов Российской Федерации, местных бюджетов
+                    </span>
+                    <span class="text" itemprop="eduChislenEl">не&nbsp;имеется</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Информация о&nbsp;языках, на&nbsp;которых осуществляется образование (обучение)</span>
+                    <span class="text">Обучение осуществляется на&nbsp;русском языке</span>
+                  </p>
+
+                  <div class="display-contents" itemprop="eduNir">
+                    <p>
+                      <span class="text fs-12 grey-text">
+                        Информация о&nbsp;направлениях и&nbsp;результатах научной (научно-исследовательской) деятельности
+                        и&nbsp;научно-исследовательской базе для&nbsp;ее&nbsp;осуществления
+                      </span>
+                      <span class="text" itemprop="perechenNir">—</span>
+                    </p>
+
+                    <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                    <!--
+                    <p>
+                      <span class="text fs-12 grey-text">Код специальности, направления подготовки</span>
+                      <span class="text" itemprop="eduCode">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование специальности, направления подготовки</span>
+                      <span class="text" itemprop="eduName">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                      <span class="text" itemprop="eduProf">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Уровень образования</span>
+                      <span class="text" itemprop="eduLevel">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Название научного направления, научной школы</span>
+                      <span class="text" itemprop="napravNir">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Результаты научной (научно-исследовательской) деятельности</span>
+                      <span class="text" itemprop="resultNir">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Сведения о&nbsp;научно-исследовательской базе</span>
+                      <span class="text" itemprop="baseNir">Отсутствует</span>
+                    </p>
+                    -->
+                  </div>
+
+                  <ul class="docs-list">
+                    <li>
+                      <a itemprop="languageEl" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold">Положение о&nbsp;языке обучения по&nbsp;реализуемым дополнительным программам</b>
+                          <span class="text fs-12 grey-text">PDF · 2,29 МБ</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <h3 class="title title--18 bold">Образовательные программы</h3>
+
+                  <ul class="docs-list">
+                    <li itemprop="eduOp">
+                      <a itemprop="opMain" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold" itemprop="eduName">
+                            Дополнительная профессиональная программа повышения квалификации «Винный атлас»
+                          </b>
+                          <span class="text fs-12 grey-text">PDF · 5,92 МБ</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                      <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                      <!--
+                      <p>
+                        <span class="text fs-12 grey-text">Код специальности, направления подготовки</span>
+                        <span class="text" itemprop="eduCode">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Уровень образования</span>
+                        <span class="text" itemprop="eduLevel">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                        <span class="text" itemprop="eduProf">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Реализуемые формы обучения</span>
+                        <span class="text" itemprop="eduForm">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Учебный план</span>
+                        <span class="text" itemprop="educationPlan">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы дисциплин</span>
+                        <span class="text" itemprop="educationRpd">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Календарный учебный график</span>
+                        <span class="text" itemprop="educationShedule">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы практик</span>
+                        <span class="text" itemprop="eduPr">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Методические и&nbsp;иные документы</span>
+                        <span class="text" itemprop="methodology">Отсутствует</span>
+                      </p>
+                      -->
+                    </li>
+                    <li itemprop="eduOp">
+                      <a itemprop="opMain" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold" itemprop="eduName">
+                            Дополнительная профессиональная программа повышения квалификации «Сомелье/кавист»
+                          </b>
+                          <span class="text fs-12 grey-text">PDF · 8,52 МБ</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                      <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                      <!--
+                      <p>
+                        <span class="text fs-12 grey-text">Код специальности, направления подготовки</span>
+                        <span class="text" itemprop="eduCode">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Уровень образования</span>
+                        <span class="text" itemprop="eduLevel">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                        <span class="text" itemprop="eduProf">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Реализуемые формы обучения</span>
+                        <span class="text" itemprop="eduForm">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Учебный план</span>
+                        <span class="text" itemprop="educationPlan">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы дисциплин</span>
+                        <span class="text" itemprop="educationRpd">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Календарный учебный график</span>
+                        <span class="text" itemprop="educationShedule">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы практик</span>
+                        <span class="text" itemprop="eduPr">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Методические и&nbsp;иные документы</span>
+                        <span class="text" itemprop="methodology">Отсутствует</span>
+                      </p>
+                      -->
+                    </li>
+                    <li itemprop="eduOp">
+                      <a itemprop="opMain" href="/assets/pdf/document.pdf" target="_blank">
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#pdf"></use></svg>
+                        <div class="content-text">
+                          <b class="title title--16 bold" itemprop="eduName">
+                            Дополнительная профессиональная программа профессиональной переподготовки «Сомелье/кавист»
+                          </b>
+                          <span class="text fs-12 grey-text">PDF · 9,33 МБ</span>
+                        </div>
+                        <svg width="32" height="32"><use href="/assets/img/sprite.svg#download"></use></svg>
+                      </a>
+                      <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                      <!--
+                      <p>
+                        <span class="text fs-12 grey-text">Код специальности, направления подготовки</span>
+                        <span class="text" itemprop="eduCode">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Уровень образования</span>
+                        <span class="text" itemprop="eduLevel">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                        <span class="text" itemprop="eduProf">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Реализуемые формы обучения</span>
+                        <span class="text" itemprop="eduForm">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Учебный план</span>
+                        <span class="text" itemprop="educationPlan">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы дисциплин</span>
+                        <span class="text" itemprop="educationRpd">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Календарный учебный график</span>
+                        <span class="text" itemprop="educationShedule">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Рабочие программы практик</span>
+                        <span class="text" itemprop="eduPr">Отсутствует</span>
+                      </p>
+
+                      <p>
+                        <span class="text fs-12 grey-text">Методические и&nbsp;иные документы</span>
+                        <span class="text" itemprop="methodology">Отсутствует</span>
+                      </p>
+                      -->
+                    </li>
+                  </ul>
+
+                  <!-- Пункты Таблицы 3.5.1, которых нет в макете и на текущем сайте. Атрибуты расставлены, раскомментировать при наличии данных -->
+                  <!--
+                  <h3 class="title title--18 bold">Трудоустройство выпускников</h3>
+
+                  <div class="display-contents" itemprop="graduateJob">
+                    <p>
+                      <span class="text fs-12 grey-text">Код</span>
+                      <span class="text" itemprop="eduCode">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование программы</span>
+                      <span class="text" itemprop="eduName">Дополнительная профессиональная программа повышения квалификации «Винный атлас»</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                      <span class="text" itemprop="eduProf">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="v1">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность трудоустроенных выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="t1">Отсутствует</span>
+                    </p>
+                  </div>
+
+                  <div class="display-contents" itemprop="graduateJob">
+                    <p>
+                      <span class="text fs-12 grey-text">Код</span>
+                      <span class="text" itemprop="eduCode">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование программы</span>
+                      <span class="text" itemprop="eduName">Дополнительная профессиональная программа повышения квалификации «Сомелье/кавист»</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                      <span class="text" itemprop="eduProf">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="v1">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность трудоустроенных выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="t1">Отсутствует</span>
+                    </p>
+                  </div>
+
+                  <div class="display-contents" itemprop="graduateJob">
+                    <p>
+                      <span class="text fs-12 grey-text">Код</span>
+                      <span class="text" itemprop="eduCode">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Наименование программы</span>
+                      <span class="text" itemprop="eduName">Дополнительная профессиональная программа профессиональной переподготовки «Сомелье/кавист»</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Образовательная программа, направленность, профиль</span>
+                      <span class="text" itemprop="eduProf">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="v1">Отсутствует</span>
+                    </p>
+
+                    <p>
+                      <span class="text fs-12 grey-text">Численность трудоустроенных выпускников прошлого учебного года</span>
+                      <span class="text" itemprop="t1">Отсутствует</span>
+                    </p>
+                  </div>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Результаты приема</span>
+                    <span class="text" itemprop="eduPriemEl">Отсутствует</span>
+                  </p>
+
+                  <p>
+                    <span class="text fs-12 grey-text">Результаты перевода, восстановления и&nbsp;отчисления</span>
+                    <span class="text" itemprop="eduPerevodEl">Отсутствует</span>
+                  </p>
+
+                  <p itemprop="eduPOAccred">
+                    <span class="text fs-12 grey-text">Профессионально-общественная аккредитация образовательных программ</span>
+                    <span class="text" itemprop="orgName">Отсутствует</span>
+                  </p>
+
+                  <p itemprop="eduOAccred">
+                    <span class="text fs-12 grey-text">Общественная аккредитация образовательной организации</span>
+                    <span class="text" itemprop="orgName">Отсутствует</span>
+                  </p>
+
+                  <p itemprop="eduAdOp">
+                    <span class="text fs-12 grey-text">Адаптированные образовательные программы</span>
+                    <span class="text" itemprop="eduProf">Отсутствует</span>
+                  </p>
+                  -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER-->
+    <load src="/_partials/footer.html" />
+
+    <!--POPUPS-->
+    <div class="backdrop" data-backdrop>
+      <div class="popup" data-popup>
+        <load src="/_partials/base/default-popups.html" />
+        <load src="/_partials/popups/sidebar-menu-popup.html" />
+      </div>
+    </div>
+
+    <!--COOKIE CONFIRM POPUP-->
+    <load src="/_partials/popups/cookies-confirm-popup.html" />
+
+    <!--SCRIPTS-->
+    <load src="/_partials/base/scripts.html" />
+  </body>
+</html>

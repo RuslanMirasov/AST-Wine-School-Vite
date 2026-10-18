@@ -9,3 +9,28 @@ export const debounce = (fn, delay) => {
     timer = setTimeout(() => fn(...args), delay);
   };
 };
+
+// Троттлинг: fn выполняется не чаще раза в delay мс — сразу при первом вызове и ещё раз в конце серии,
+// чтобы последнее состояние (например, конечная позиция прокрутки) не потерялось
+export const throttle = (fn, delay) => {
+  let timer = null;
+  let lastArgs = null;
+
+  return (...args) => {
+    if (timer) {
+      lastArgs = args;
+      return;
+    }
+
+    fn(...args);
+    timer = setTimeout(function release() {
+      if (lastArgs) {
+        fn(...lastArgs);
+        lastArgs = null;
+        timer = setTimeout(release, delay);
+      } else {
+        timer = null;
+      }
+    }, delay);
+  };
+};
