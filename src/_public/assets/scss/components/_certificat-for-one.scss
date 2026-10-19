@@ -35,14 +35,20 @@
   }
 
   @media (min-width: 1920px) {
-    min-height: 330px;
-    .content-text {
-      max-width: 330px;
-    }
+    // min-height: 330px;
+    // .content-text {
+    //   max-width: 330px;
+    // }
+    // .logo-background {
+    //   width: 560px;
+    //   height: 560px;
+    //   transform: translate(0%, -2%);
+    // }
+
     .logo-background {
-      width: 560px;
-      height: 560px;
-      transform: translate(0%, -2%);
+      width: 100%;
+      height: auto;
+      transform: translate(1%, -2%);
     }
   }
 
@@ -64,6 +70,22 @@
       width: 368px;
       height: 368px;
       transform: translate(8%, 0%);
+    }
+  }
+}
+
+.section--recomendations {
+  .present-certificat {
+    @media (min-width: 1920px) {
+      min-height: 330px;
+      .content-text {
+        max-width: 330px;
+      }
+      .logo-background {
+        width: 560px;
+        height: 560px;
+        transform: translate(0%, -2%);
+      }
     }
   }
 }

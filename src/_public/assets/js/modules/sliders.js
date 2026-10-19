@@ -111,6 +111,8 @@ const initSlider = sliderWrapper => {
     slidesPerView = '1,1,1,1',
     slidesPerGroup = '1,1,1,1',
     loop = 'false',
+    // data-loop-prevents-sliding="false" — при loop можно листать, не дожидаясь конца анимации
+    loopPreventsSliding = 'true',
     centered = false,
     centeredSlidesBounds = true,
     initialSlide = '0,0,0,0',
@@ -130,6 +132,7 @@ const initSlider = sliderWrapper => {
     effect,
     speed,
     loop: toBool(loop),
+    loopPreventsSliding: toBool(loopPreventsSliding),
     centeredSlides: toBool(centered),
     centeredSlidesBounds: toBool(centeredSlidesBounds),
     direction,
@@ -246,9 +249,22 @@ const linkControlledSliders = () => {
         requestAnimationFrame(() => {
           if (master.destroyed) return;
 
+          // Откат: вернуть эту строку внутрь forEach вместо блока ниже
+          // follower.params.loop ? follower.slideToLoop(master.realIndex) : follower.slideTo(master.realIndex);
           followers.forEach(follower => {
             if (follower.destroyed) return;
-            follower.params.loop ? follower.slideToLoop(master.realIndex) : follower.slideTo(master.realIndex);
+            if (!follower.params.loop) {
+              follower.slideTo(master.realIndex);
+              return;
+            }
+
+            // Соседний слайд по кругу — через slideNext/slidePrev, иначе slideToLoop с последнего на первый едет назад через все слайды
+            const count = follower.slides.length;
+            const diff = (master.realIndex - follower.realIndex + count) % count;
+
+            if (diff === 1) follower.slideNext();
+            else if (diff === count - 1) follower.slidePrev();
+            else if (diff) follower.slideToLoop(master.realIndex);
           });
         });
       });
