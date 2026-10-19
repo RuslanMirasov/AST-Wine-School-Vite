@@ -519,7 +519,15 @@
               </div>
             </div>
 
-            <form data-form action="#" class="form" novalidate>
+            <script>
+              const privatEventOrderSubmit = e => {
+                e.preventDefault();
+                e.target.reset();
+                window.popup.open('privat-event-order-success');
+              };
+            </script>
+
+            <form data-form action="#" class="form" onsubmit="privatEventOrderSubmit(event)" novalidate>
               <label class="label col--3">
                 <span class="label-text">Имя</span>
                 <input
@@ -621,6 +629,7 @@
       <div class="popup" data-popup>
         <load src="/_partials/base/default-popups.html" />
         <load src="/_partials/popups/review-popups.html" />
+        <load src="/_partials/popups/privat-event-popups.html" />
       </div>
     </div>
 
