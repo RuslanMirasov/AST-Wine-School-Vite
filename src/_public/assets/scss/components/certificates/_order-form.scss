@@ -3,6 +3,18 @@
 // }
 
 .certificate-order {
+  .links {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: var(--fs-6) var(--fs-32);
+    margin-top: auto;
+    a {
+      border: none;
+    }
+  }
+
   .label {
     &.hidden {
       visibility: hidden;
@@ -12,9 +24,14 @@
   }
   .form {
     flex-direction: row;
+    align-items: stretch;
+    align-content: '';
     gap: var(--fs-48);
   }
+
   .left-side {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     .label {
       width: 100%;
@@ -121,6 +138,7 @@
   align-content: center;
   gap: var(--fs-24);
   margin-top: var(--fs-40);
+  margin-bottom: var(--fs-24);
 }
 
 .label-for-radio-button {

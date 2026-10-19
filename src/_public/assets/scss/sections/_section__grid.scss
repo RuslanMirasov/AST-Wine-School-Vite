@@ -47,6 +47,8 @@
     &.service-mix__item--images {
       gap: var(--fs-24);
       flex-direction: row;
+      pointer-events: none;
+      z-index: 3;
     }
 
     &.service-mix__item--curses {
@@ -96,6 +98,10 @@
         z-index: 2;
       }
       .button {
+        @media (max-width: 767px) {
+          background-color: #e0d6e6;
+        }
+
         z-index: 2;
       }
     }
