@@ -47,8 +47,13 @@
 
           <!--PAGE CONTENT-->
           <div class="page-content">
-            <div class="profile-content profile-info">
+            <div class="profile-content profile-info" data-tabs>
               <h2 class="title title--32 upper">Настройки выплат</h2>
+
+              <div class="buttons full ta--l gap--12">
+                <button type="button" class="button button--tab active" data-tab-target="individual"><span>Физическое лицо</span></button>
+                <button type="button" class="button button--tab" data-tab-target="legal-entity"><span>Юридическое лицо</span></button>
+              </div>
 
               <form data-form action="#" class="form" novalidate>
                 <fieldset class="col--2">
@@ -69,31 +74,28 @@
                     <span class="label-text">Имя *</span>
                     <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="Константин" />
                   </label>
+                </fieldset>
 
+                <fieldset class="col--2">
                   <label class="label">
                     <span class="label-text">Отчество</span>
                     <input type="text" name="lastname" class="input" data-rule="name-cyrillic" minlength="2" value="Братиславович" />
                   </label>
                 </fieldset>
 
+                <h3 class="title title--24 bold">Банковские реквизиты</h3>
+
                 <fieldset class="col--2">
                   <label class="label">
-                    <span class="label-text">Тип получателя *</span>
-                    <select data-select name="person-type" required>
-                      <option value="физическое лицо">физическое лицо</option>
-                      <option value="юридическое лицо">юридическое лицо</option>
-                    </select>
+                    <span class="label-text">Наименование юридического лица</span>
+                    <input type="text" name="legal-entity-name" class="input" required="" value="" placeholder="Наименование" data-invoice-field="" />
                   </label>
 
                   <label class="label">
                     <span class="label-text">ИНН *</span>
                     <input type="text" name="inn" class="input" required inputmode="numeric" maxlength="12" value="0123456789" />
                   </label>
-                </fieldset>
 
-                <h3 class="title title--24 bold">Банковские реквизиты</h3>
-
-                <fieldset class="col--2">
                   <label class="label">
                     <span class="label-text">Расчетный счет *</span>
                     <input
