@@ -69,7 +69,8 @@ export const customRules = {
     message: 'Пожалуйста, укажите корректный email',
   },
   tel: {
-    test: value => /^\+7 \d{3} \d{3} \d{2} \d{2}$/.test(value.trim()),
+    // Маска видна всегда, поэтому необязательное поле без единой цифры после +7 считается пустым
+    test: (value, input) => /^\+7 \d{3} \d{3} \d{2} \d{2}$/.test(value.trim()) || (!input?.required && !/\d/.test(value.trim().slice(2))),
     message: 'Пожалуйста, укажите корректный номер телефона',
   },
   decimal: {

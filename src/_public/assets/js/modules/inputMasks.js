@@ -17,7 +17,8 @@ export const initSelectFields = () => {
   });
 };
 
-export function initPhoneInputs(mask = '+7 000 000-00-00') {
+// Маска видна всегда (lazy: false): +7 зафиксирован, свободные цифры — подчёркивания, при вводе заменяются цифрами
+export function initPhoneInputs(mask = '+{7} 000 000 00 00') {
   const inputs = document.querySelectorAll('[type="tel"]');
 
   if (!inputs.length) return;
@@ -27,6 +28,8 @@ export function initPhoneInputs(mask = '+7 000 000-00-00') {
 
     IMask(input, {
       mask,
+      lazy: false,
+      placeholderChar: '_',
     });
 
     input.dataset.maskInitialized = 'true';
