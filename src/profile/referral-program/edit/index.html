@@ -47,7 +47,7 @@
 
           <!--PAGE CONTENT-->
           <div class="page-content">
-            <div class="profile-content profile-info" data-tabs>
+            <div class="profile-content profile-info" data-tabs data-unanimated>
               <h2 class="title title--32 upper">Настройки выплат</h2>
 
               <div class="buttons full ta--l gap--12">
@@ -81,19 +81,24 @@
                     <span class="label-text">Отчество</span>
                     <input type="text" name="lastname" class="input" data-rule="name-cyrillic" minlength="2" value="Братиславович" />
                   </label>
+
+                  <label class="label" data-tab="individual">
+                    <span class="label-text">ИНН *</span>
+                    <input type="text" name="inn" class="input" required inputmode="numeric" maxlength="12" value="0123456789" />
+                  </label>
                 </fieldset>
 
                 <h3 class="title title--24 bold">Банковские реквизиты</h3>
 
                 <fieldset class="col--2">
-                  <label class="label">
-                    <span class="label-text">Наименование юридического лица</span>
+                  <label class="label" data-tab="legal-entity">
+                    <span class="label-text">Наименование юридического лица *</span>
                     <input type="text" name="legal-entity-name" class="input" required="" value="" placeholder="Наименование" data-invoice-field="" />
                   </label>
 
-                  <label class="label">
-                    <span class="label-text">ИНН *</span>
-                    <input type="text" name="inn" class="input" required inputmode="numeric" maxlength="12" value="0123456789" />
+                  <label class="label" data-tab="legal-entity">
+                    <span class="label-text">Юридический адрес *</span>
+                    <input type="text" name="adress" class="input" required="" value="" placeholder="Адрес" data-invoice-field="" />
                   </label>
 
                   <label class="label">
@@ -110,6 +115,13 @@
                   </label>
 
                   <label class="label">
+                    <span class="label-text">БИК *</span>
+                    <input type="text" name="bik" class="input" required inputmode="numeric" maxlength="9" value="044525225" />
+                  </label>
+                </fieldset>
+
+                <fieldset class="col--2">
+                  <label class="label">
                     <span class="label-text">Корреспондентский счет *</span>
                     <input
                       type="text"
@@ -121,17 +133,31 @@
                       value="30101810400000000220"
                     />
                   </label>
-                </fieldset>
-
-                <fieldset class="col--2">
-                  <label class="label">
-                    <span class="label-text">БИК *</span>
-                    <input type="text" name="bik" class="input" required inputmode="numeric" maxlength="9" value="044525225" />
-                  </label>
 
                   <label class="label">
                     <span class="label-text">Наименование банка *</span>
                     <input type="text" name="bank-name" class="input" required value="ПАО Сбербанк" />
+                  </label>
+
+                  <label class="label" data-tab="legal-entity">
+                    <span class="label-text">ИНН *</span>
+                    <input type="text" name="inn" class="input" required inputmode="numeric" maxlength="12" value="0123456789" />
+                  </label>
+
+                  <label class="label" data-tab="legal-entity">
+                    <span class="label-text">КПП *</span>
+                    <input
+                      type="number"
+                      name="kpp"
+                      class="input"
+                      required=""
+                      inputmode="numeric"
+                      maxlength="9"
+                      data-rule="kpp"
+                      value=""
+                      placeholder="9 цифр"
+                      data-invoice-field=""
+                    />
                   </label>
                 </fieldset>
 

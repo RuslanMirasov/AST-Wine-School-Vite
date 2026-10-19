@@ -501,6 +501,9 @@
     > .buttons {
       order: 4;
       width: 100%;
+      &.full {
+        order: 0;
+      }
       &.delete-order {
         order: 1;
         width: auto;
@@ -510,6 +513,7 @@
       }
     }
   }
+
   .profile-load-more {
     margin-top: 0px;
     .button {

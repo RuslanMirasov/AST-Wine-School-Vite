@@ -286,8 +286,10 @@
   &:disabled {
     opacity: 1;
     background-color: var(--grey-light);
-    color: var(--grey-medium);
     border: 1px solid var(--grey-medium);
+    span {
+      color: var(--grey-medium);
+    }
   }
 }
 
