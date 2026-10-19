@@ -20,6 +20,7 @@
       .button {
         margin-top: auto;
       }
+
       @media (max-width: 1279px) {
         .title.title--32 {
           font-size: var(--fs-24);
@@ -33,6 +34,29 @@
           @media (max-width: 1023px) {
             font-size: var(--fs-18);
           }
+        }
+      }
+
+      @media (max-width: 1023px) and (min-width: 768px) {
+        padding: var(--fs-40);
+        align-items: flex-start;
+        text-align: left;
+        .title,
+        .text {
+          max-width: 45%;
+        }
+        .certificates-hero-image {
+          position: absolute;
+          max-width: 300px;
+          right: var(--fs-40);
+          top: var(--fs-32);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .button {
+          width: 100%;
+          margin-top: var(--fs-12);
         }
       }
     }
