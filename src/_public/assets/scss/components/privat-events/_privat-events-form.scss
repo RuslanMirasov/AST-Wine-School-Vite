@@ -56,6 +56,9 @@
   }
 
   @media (max-width: 1023px) {
+    --form-columns: 2;
+  }
+  @media (max-width: 500px) {
     --form-columns: 1;
     &.auto {
       flex: 1 1 100%;
