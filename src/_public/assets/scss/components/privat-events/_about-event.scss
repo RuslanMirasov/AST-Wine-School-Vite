@@ -44,6 +44,13 @@
 .pass-to {
   .content {
     min-height: 292px;
+    .logo-background {
+      width: 70%;
+      height: auto;
+      right: 0px;
+      top: 50%;
+      transform: translate(10%, -50%) rotate(-20deg);
+    }
     @media (max-width: 1151px) {
       min-height: 1px;
     }

@@ -78,6 +78,9 @@
       --lh: 1;
       border: none;
       background-color: var(--grey-light);
+      &.white {
+        background-color: var(--white);
+      }
     }
   }
 }
