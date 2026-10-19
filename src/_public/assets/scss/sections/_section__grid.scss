@@ -27,10 +27,12 @@
     .text {
       --lh: 1.5;
       margin-bottom: var(--fs-16);
+      z-index: 3;
     }
 
     .button {
       margin-top: auto;
+      z-index: 3;
     }
 
     &.service-mix__item--degustations {
@@ -80,12 +82,9 @@
       padding: var(--fs-28);
       background-color: var(--grey-promo);
       overflow: hidden;
-      > * {
-        z-index: 2;
-      }
-      .logo-background {
+      > .logo-background {
         color: var(--blue-light);
-        z-index: 0;
+        z-index: 1;
         left: 30%;
         top: 45%;
         width: 80%;
@@ -94,6 +93,10 @@
       .text {
         position: relative;
         max-width: 70%;
+        z-index: 2;
+      }
+      .button {
+        z-index: 2;
       }
     }
   }
@@ -124,61 +127,44 @@
 }
 
 //768
-@media (max-width: 1023px) {
+@media (max-width: 959px) {
   .service-mix {
-    gap: var(--fs-16);
-    padding-top: 0px;
-
+    flex-direction: column;
     .service-mix-col {
-      gap: var(--fs-16);
-      width: calc((100% - var(--fs-16)) / 2);
+      min-width: 100%;
     }
-
-    .service-mix__item {
-      &.service-mix__item--degustations {
-        padding: var(--fs-24);
-        .text {
-          max-width: 100%;
-        }
-      }
-
-      &.service-mix__item--images {
-        gap: var(--fs-16);
-      }
-
-      &.service-mix__item--curses {
-        padding: var(--fs-24);
-
-        .text {
-          max-width: 50%;
-        }
-      }
-
-      &.service-mix__item--events {
-        padding: var(--fs-24);
-        .text {
-          max-width: 100%;
-        }
+    .service-mix__item.service-mix__item--curses {
+      min-height: 300px;
+      .text {
+        max-width: 50%;
       }
     }
-  }
-
-  .service-mix-image {
-    width: calc((100% - var(--fs-16)) / 2);
   }
 }
 
 //375
 @media (max-width: 767px) {
   .service-mix {
+    gap: var(--fs-16);
     flex-direction: column;
     .service-mix-col {
       width: 100%;
+      gap: var(--fs-16);
     }
 
     .service-mix__item {
+      &.service-mix__item--images {
+        gap: var(--fs-16);
+      }
+
       &.service-mix__item--degustations {
         padding: var(--fs-20);
+        .text {
+          max-width: 100%;
+        }
+        .button {
+          width: 100%;
+        }
       }
 
       &.service-mix__item--curses {
@@ -200,6 +186,19 @@
       &.service-mix__item--events {
         min-height: 1px;
         padding: var(--fs-20);
+        > .logo-background {
+          left: auto;
+          right: -50px;
+          top: 45%;
+          width: 70%;
+        }
+        .text {
+          max-width: 100%;
+        }
+        .button {
+          width: 100%;
+          margin-top: var(--fs-14);
+        }
       }
     }
   }
