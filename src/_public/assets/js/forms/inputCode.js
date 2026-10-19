@@ -1,5 +1,4 @@
-import { getRenderer } from './factory.js';
-import { resolveAnchor } from './resolveAnchor.js';
+import { isCaught, validateAndRender } from './fieldValidation.js';
 
 const FORM_SELECTOR = '[data-form]';
 
@@ -11,12 +10,6 @@ const createBox = (index, total) => {
   box.autocomplete = 'one-time-code';
   box.setAttribute('aria-label', `Цифра ${index + 1} из ${total}`);
   return box;
-};
-
-const clearInvalidState = (hidden, form) => {
-  const renderer = getRenderer(form);
-  renderer.markValid(hidden);
-  renderer.clear(resolveAnchor(hidden, form));
 };
 
 const initCodeField = hidden => {
@@ -40,14 +33,15 @@ const initCodeField = hidden => {
       if (firstEmpty) firstEmpty.focus();
 
       hidden.value = boxes.map(field => field.value).join('');
+
+      // Агрегирующее поле меняется программно, без событий: если оно уже попадалось на ошибке — перепроверяем сами
+      if (isCaught(hidden)) validateAndRender(hidden);
     });
 
     box.addEventListener('keydown', e => {
       if (e.key !== 'Backspace' || box.value) return;
       boxes[index - 1]?.focus();
     });
-
-    box.addEventListener('focus', () => clearInvalidState(hidden, form));
   });
 };
 

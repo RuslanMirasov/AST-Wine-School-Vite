@@ -1,5 +1,6 @@
 import { validateField } from './validateField.js';
 import { getRenderer } from './factory.js';
+import { validateAndRender } from './fieldValidation.js';
 
 const WRAPPER_SELECTOR = '[data-file-field]';
 const INPUT_SELECTOR = 'input[type="file"]';
@@ -32,8 +33,11 @@ const clearError = input => {
 const onFileChange = (wrapper, input) => {
   const { valid, message } = validateField(input);
 
-  if (valid || !input.files?.length) {
+  if (valid) {
     clearError(input);
+  } else if (!input.files?.length) {
+    // Файл убрали — обычная проверка поля: у обязательного появится «прикрепите файл»
+    validateAndRender(input);
   } else {
     const renderer = getRendererFor(input);
 
@@ -52,7 +56,6 @@ const initFileField = wrapper => {
   updateView(wrapper, input);
 
   input.addEventListener('change', () => onFileChange(wrapper, input));
-  input.addEventListener('click', () => clearError(input));
 
   wrapper.querySelector(CLEAR_SELECTOR)?.addEventListener('click', event => {
     event.preventDefault();
