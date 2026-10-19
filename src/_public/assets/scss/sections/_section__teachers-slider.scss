@@ -9,7 +9,7 @@
     @media (max-width: 767px) {
       > .title {
         width: 100%;
-        line-height: 1.2;
+        --lh: 1.2;
         // font-size: var(--fs-26);
         max-width: calc(100% - 84px - 24px);
       }

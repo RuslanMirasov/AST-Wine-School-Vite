@@ -31,7 +31,7 @@
   gap: 32px;
   margin-top: 8px;
   font-size: var(--fs-12);
-  line-height: 1.2;
+  --lh: 1.2;
   font-weight: 400;
 
   br {
@@ -95,7 +95,7 @@
   width: auto;
   .footer-menu-title {
     opacity: 1;
-    line-height: 1;
+    --lh: 1;
     margin: 0;
   }
 }
@@ -123,7 +123,7 @@
   width: 100%;
   font-weight: 700;
   font-size: var(--fs-18);
-  line-height: 1.2;
+  --lh: 1.2;
   gap: var(--fs-8);
 
   button {
@@ -152,7 +152,7 @@
   width: 100%;
   flex-direction: column;
   font-weight: 400;
-  line-height: 1.143;
+  --lh: 1.143;
   font-size: var(--fs-14);
 
   span {
@@ -165,7 +165,7 @@
     transition: color 0.3s var(--cubic);
     outline: none;
     font-size: var(--fs-14);
-    line-height: 1.2;
+    --lh: 1.2;
     @media (hover: hover) {
       &:hover {
         color: var(--grey-text);

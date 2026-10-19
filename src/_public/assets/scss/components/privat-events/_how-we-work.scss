@@ -32,7 +32,7 @@
     color: var(--white);
     border-radius: var(--fs-14);
     font-size: var(--fs-14);
-    line-height: 1;
+    --lh: 1;
     display: block;
     padding: var(--fs-6) var(--fs-14);
   }

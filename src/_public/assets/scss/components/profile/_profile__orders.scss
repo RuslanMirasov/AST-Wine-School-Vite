@@ -69,7 +69,8 @@
     color: var(--orange);
     background-color: var(--orange-light);
     font-size: var(--fs-14);
-    line-height: 1;
+    font-weight: 700;
+    --lh: 1;
 
     &:before {
       content: '';
@@ -216,7 +217,7 @@
   strong {
     font-size: var(--fs-24);
     font-weight: 700;
-    line-height: 1;
+    --lh: 1;
     padding: var(--fs-14) var(--fs-24);
     border-radius: var(--fs-16);
     background-color: var(--grey-light);
@@ -372,7 +373,7 @@
   .profle-promocode strong {
     font-size: var(--fs-16);
     font-weight: 700;
-    line-height: 1;
+    --lh: 1;
     padding: var(--fs-12) var(--fs-24);
     border-radius: var(--fs-16);
     background-color: var(--grey-light);

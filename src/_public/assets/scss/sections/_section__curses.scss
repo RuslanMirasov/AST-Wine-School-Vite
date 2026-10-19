@@ -67,7 +67,7 @@
   }
   .price {
     font-size: var(--fs-24);
-    line-height: 1;
+    --lh: 1;
     font-weight: 700;
     color: var(--blue);
     margin-right: auto;

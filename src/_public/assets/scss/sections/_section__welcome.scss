@@ -19,7 +19,7 @@
   .text {
     max-width: 38%;
     z-index: 3;
-    line-height: 1.5;
+    --lh: 1.5;
     margin: var(--fs-20) auto;
   }
 }
@@ -134,7 +134,7 @@
       }
       .text {
         max-width: 100%;
-        line-height: 1.5;
+        --lh: 1.5;
       }
       svg.logo-background {
         width: 40%;

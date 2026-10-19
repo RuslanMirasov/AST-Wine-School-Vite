@@ -3,7 +3,7 @@ html {
   font-size: 16px;
   letter-spacing: normal;
   font-family: var(--font);
-  line-height: 1.5;
+  --lh: 1.5;
   font-weight: 400;
   @media (max-width: 359px) {
     font-size: 14px;

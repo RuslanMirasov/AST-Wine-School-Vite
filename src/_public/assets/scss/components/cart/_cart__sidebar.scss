@@ -16,7 +16,7 @@
 
   .title--24,
   .title--18 {
-    line-height: 1;
+    --lh: 1;
   }
 }
 
@@ -47,7 +47,7 @@
     button {
       display: block;
       margin-left: auto;
-      line-height: 1;
+      --lh: 1;
     }
   }
 

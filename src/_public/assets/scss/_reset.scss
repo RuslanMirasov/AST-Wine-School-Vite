@@ -22,11 +22,15 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  // Высота строки — множитель --lh (наследуется как число), каждый элемент считает её от своего font-size и округляет до целого px.
+  // Первая строка — запасной вариант для браузеров без round()
+  line-height: calc(var(--lh) * 1em);
+  line-height: round(calc(var(--lh) * 1em), 1px);
 }
 
 html {
   font-family: var(--font);
-  line-height: 1.3;
+  --lh: 1.3;
   font-weight: 400;
   scroll-padding-top: 45px;
 }
@@ -105,11 +109,23 @@ button {
   background: none;
   color: inherit;
   font-family: var(--font);
+  font-size: 0;
+
   &:disabled {
     cursor: auto;
     pointer-events: none;
     opacity: 0.3;
   }
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  // font: inherit сбрасывает и line-height — возвращаем общее правило
+  line-height: calc(var(--lh) * 1em);
+  line-height: round(calc(var(--lh) * 1em), 1px);
 }
 
 .main {
@@ -246,7 +262,7 @@ button {
     width: 100%;
     @media (max-width: 767px) {
       .text {
-        line-height: 1.3;
+        --lh: 1.3;
       }
     }
   }
@@ -279,7 +295,7 @@ button {
     > b {
       display: block;
       width: 100%;
-      line-height: 1.1;
+      --lh: 1.1;
     }
 
     &::before {
@@ -384,7 +400,7 @@ button {
   display: inline-block;
   color: var(--magenta);
   font-size: var(--fs-14);
-  line-height: 1.4;
+  --lh: 1.4;
   font-weight: 700;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
   transition: border-bottom 0.3s var(--cubic);
@@ -392,7 +408,7 @@ button {
     font-size: var(--fs-16);
     font-weight: 400;
     padding-top: 2px;
-    line-height: 1.1;
+    --lh: 1.1;
   }
 
   &.regular {
@@ -430,10 +446,10 @@ button {
       padding: var(--fs-20) 0px;
       .content-text {
         b {
-          line-height: 1.1;
+          --lh: 1.1;
         }
         span {
-          line-height: 1.5;
+          --lh: 1.5;
           @media (max-width: 767px) {
             padding-top: 4px;
           }

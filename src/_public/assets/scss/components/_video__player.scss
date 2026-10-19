@@ -153,7 +153,7 @@
 
 .video-player-time {
   font-size: var(--fs-12);
-  line-height: 1;
+  --lh: 1;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }

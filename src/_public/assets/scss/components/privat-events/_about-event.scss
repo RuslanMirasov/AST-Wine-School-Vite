@@ -33,7 +33,7 @@
         top: var(--fs-24);
         font-family: var(--font);
         font-size: var(--fs-44);
-        line-height: 0.95;
+        --lh: 0.95;
         font-weight: 300;
         color: var(--magenta);
       }

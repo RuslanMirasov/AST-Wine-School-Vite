@@ -10,7 +10,7 @@
 
   .input {
     height: 100%;
-    line-height: 1;
+    --lh: 1;
     width: 100%;
     font-size: var(--fs-14);
     padding: 0px var(--fs-40);

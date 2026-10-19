@@ -55,7 +55,7 @@
   gap: var(--fs-16);
   padding: var(--fs-28) var(--fs-36);
   .title {
-    line-height: 1.25;
+    --lh: 1.25;
   }
 }
 
@@ -79,7 +79,7 @@
 .module-description {
   gap: var(--fs-16);
   .text {
-    line-height: 1.5;
+    --lh: 1.5;
   }
 }
 
@@ -124,7 +124,7 @@
     align-items: flex-start;
     .title {
       font-size: var(--fs-20);
-      line-height: 1.1;
+      --lh: 1.1;
       font-weight: 500;
     }
   }

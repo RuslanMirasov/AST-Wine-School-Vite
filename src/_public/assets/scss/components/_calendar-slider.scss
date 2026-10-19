@@ -208,13 +208,13 @@ a.calendar-slider-day__inner {
 
 .calendar-slider-day__number {
   font-size: var(--fs-16);
-  line-height: 1.25;
+  --lh: 1.25;
   font-weight: 700;
 }
 
 .calendar-slider-day__label {
   font-size: var(--fs-12);
-  line-height: 1.2;
+  --lh: 1.2;
 
   @media (max-width: 767px) {
     display: none;
@@ -223,7 +223,7 @@ a.calendar-slider-day__inner {
 
 .calendar-slider-day__name {
   font-size: var(--fs-12);
-  line-height: 1;
+  --lh: 1;
   text-transform: uppercase;
   color: var(--grey-text);
 }
@@ -242,7 +242,7 @@ a.calendar-slider-day__inner {
   &:after {
     content: '**';
     font-size: var(--fs-12);
-    line-height: 1;
+    --lh: 1;
     color: var(--magenta);
   }
 }

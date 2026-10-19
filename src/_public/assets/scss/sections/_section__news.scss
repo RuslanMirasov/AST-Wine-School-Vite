@@ -136,7 +136,7 @@
     -webkit-box-orient: vertical;
     line-clamp: 3;
     overflow: hidden;
-    line-height: 1.3;
+    --lh: 1.3;
 
     &.fs-14 {
       display: flex;
@@ -145,7 +145,7 @@
       align-content: center;
       gap: var(--fs-5); //5px
       color: var(--grey-medium);
-      line-height: 1.2;
+      --lh: 1.2;
       svg {
         display: block;
         width: var(--fs-18); //18px
