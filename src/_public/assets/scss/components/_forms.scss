@@ -50,7 +50,7 @@
   --checkbox-background-focus: var(--blue);
   --checkbox-background-checked: var(--magenta) url('../img/svg/checkbox.svg') no-repeat center center;
   --checkbox-background-checked-focus: var(--blue) url('../img/svg/checkbox.svg') no-repeat center center;
-  --checkbox-background-invalid: none;
+  --checkbox-background-invalid: var(--magenta-opacity);
   --checkbox-text-color: var(--grey-dark);
   .form--grey {
     --checkbox-border: 1.5px solid #b2b2b2;
