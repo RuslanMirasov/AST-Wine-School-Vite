@@ -1,35 +1,42 @@
 const BUTTON_CLASS = 'text fs-12 under magenta';
-const BUTTON_TEXT = 'Читать полностью';
+const EXPAND_TEXT = 'Читать полностью';
+const COLLAPSE_TEXT = 'Свернуть';
+const EXPANDED_CLASS = 'is-expanded';
 
 export const initReadMore = () => {
   const elements = document.querySelectorAll('[data-read-more]');
 
   if (!elements.length) return;
 
-  const observer = new ResizeObserver(entries => {
-    entries.forEach(({ target }) => updateButton(target));
-  });
-
   const buttons = new WeakMap();
 
-  const expand = el => {
-    observer.unobserve(el);
-    buttons.get(el)?.remove();
-    buttons.delete(el);
-    el.classList.add('is-expanded');
+  // Кнопка не пропадает: «Читать полностью» раскрывает текст, «Свернуть» возвращает его к исходному числу строк.
+  // Раскрывается только тот блок, на котором нажали
+  const toggle = el => {
+    const isExpanded = el.classList.toggle(EXPANDED_CLASS);
+    const button = buttons.get(el);
+
+    if (button) {
+      button.textContent = isExpanded ? COLLAPSE_TEXT : EXPAND_TEXT;
+      button.setAttribute('aria-expanded', String(isExpanded));
+    }
   };
 
   const createButton = el => {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = BUTTON_CLASS;
-    button.textContent = BUTTON_TEXT;
+    button.textContent = EXPAND_TEXT;
+    button.setAttribute('aria-expanded', 'false');
     button.dataset.readMoreBtn = '';
-    button.addEventListener('click', () => expand(el));
+    button.addEventListener('click', () => toggle(el));
     return button;
   };
 
   const updateButton = el => {
+    // У раскрытого текста обрезки нет — кнопку «Свернуть» не трогаем
+    if (el.classList.contains(EXPANDED_CLASS)) return;
+
     const isClamped = el.scrollHeight > el.clientHeight + 1;
     const button = buttons.get(el);
 
@@ -42,6 +49,10 @@ export const initReadMore = () => {
       buttons.delete(el);
     }
   };
+
+  const observer = new ResizeObserver(entries => {
+    entries.forEach(({ target }) => updateButton(target));
+  });
 
   elements.forEach(el => {
     const lines = parseInt(el.dataset.readMore, 10);

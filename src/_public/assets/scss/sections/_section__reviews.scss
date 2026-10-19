@@ -1,4 +1,19 @@
+.section--reviews-slider {
+  .swiper-wrapper {
+    align-items: flex-start;
+    .swiper-slide {
+      min-height: 290px;
+    }
+  }
+}
+
 .section--reviews-more {
+  .swiper-wrapper {
+    align-items: flex-start;
+    .swiper-slide {
+      min-height: 254px;
+    }
+  }
   .container {
     justify-content: center;
   }
