@@ -11,11 +11,13 @@
   width: 100%;
   align-items: center;
   justify-content: flex-start;
+  font-family: var(--font);
   gap: var(--fs-12);
   border-radius: var(--fs-16);
   padding: var(--fs-12) var(--fs-16);
   color: var(--blue);
   background-color: rgba(0, 0, 0, 0);
+  font-size: var(--fs-16);
   transition:
     color 0.3s var(--cubic),
     background-color 0.3s var(--cubic);
