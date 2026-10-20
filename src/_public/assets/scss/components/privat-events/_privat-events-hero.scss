@@ -80,10 +80,13 @@
   }
 
   .image-background.white-gradient {
-    --fade-size: 100%;
-    --fade-from: rgba(0, 0, 0, 0.5);
-    --fade-hold: 60%;
+    --fade-size: 80%;
+    --fade-from: rgba(0, 0, 0, 0.2);
+    --fade-hold: 40%;
     --fade-direction: 180deg;
+    @media (max-width: 767px) {
+      --fade-from: rgba(0, 0, 0, 0.5);
+    }
   }
 
   .collage .col--8-15 {
