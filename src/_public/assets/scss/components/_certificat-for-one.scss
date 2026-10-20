@@ -21,7 +21,7 @@
     left: auto;
     top: auto;
     right: auto;
-    transform: translate(4%, -1%);
+    transform: translate(4%, -5%);
   }
 
   .content-text {
@@ -68,9 +68,9 @@
     }
 
     .logo-background {
-      width: 368px;
-      height: 368px;
-      transform: translate(8%, 0%);
+      width: 100%;
+      height: auto;
+      transform: translate(10%, -5%);
     }
   }
 }

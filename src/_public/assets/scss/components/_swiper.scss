@@ -149,3 +149,48 @@
     }
   }
 }
+
+.slider-only-in-tablet,
+.slider-only-in-mobil {
+  .swiper-slide {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .container {
+    align-items: flex-end;
+    > .title {
+      max-width: calc(100% - var(--fs-24) - var(--fs-8) - var(--fs-38) - var(--fs-38));
+    }
+  }
+
+  //section--how-we-work
+  &.section--how-we-work {
+    .swiper-slide {
+      @media (max-width: 1279px) {
+        max-width: 292px;
+      }
+      @media (max-width: 767px) {
+        max-width: 420px;
+      }
+    }
+  }
+}
+
+.slider-only-in-tablet {
+  .arrows {
+    display: none;
+    @media (max-width: 1279px) {
+      display: inline-flex;
+    }
+  }
+}
+
+.slider-only-in-mobil {
+  .arrows {
+    display: none;
+    @media (max-width: 767px) {
+      display: inline-flex;
+    }
+  }
+}

@@ -435,43 +435,61 @@
       </section>
 
       <!--КАК МЫ РАБОТАЕМ-->
-      <section class="section section--how-we-work">
+      <section
+        class="section section--how-we-work slider-only-in-tablet"
+        data-slider
+        data-slides-per-view="4,4,auto,auto"
+        data-space-between="24,24,24,16"
+      >
         <div class="container gap--40">
           <h2 class="title title--32 upper">Как мы работаем</h2>
 
+          <div class="arrows auto ta--r">
+            <load src="/_partials/components/slider-arrows.html" />
+          </div>
+
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="how-we-work__step">
+                  <span class="step">Шаг 1</span>
+                  <div class="content-text gap--4">
+                    <b class="title title--24 bold">Заявка</b>
+                    <p class="text fs-14 grey-text">Повод, город, число гостей и&nbsp;бюджет — в&nbsp;двух строках.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="how-we-work__step">
+                  <span class="step">Шаг 2</span>
+                  <div class="content-text gap--4">
+                    <b class="title title--24 bold">Сценарий</b>
+                    <p class="text fs-14 grey-text">В течение дня присылаем 2-3 варианта формата и&nbsp;смету.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="how-we-work__step">
+                  <span class="step">Шаг 3</span>
+                  <div class="content-text gap--4">
+                    <b class="title title--24 bold">Согласование</b>
+                    <p class="text fs-14 grey-text">Финализируем вина, меню, брендинг и&nbsp;тайминг.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="how-we-work__step">
+                  <span class="step">Шаг 4</span>
+                  <div class="content-text gap--4">
+                    <b class="title title--24 bold">Событие</b>
+                    <p class="text fs-14 grey-text">Приезжаем с&nbsp;командой, посудой и&nbsp;вином. Вы — гость.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="collage how-we-work">
-            <div class="col--4 how-we-work__step">
-              <span class="step">Шаг 1</span>
-              <div class="content-text gap--4">
-                <b class="title title--24 bold">Заявка</b>
-                <p class="text fs-14 grey-text">Повод, город, число гостей и&nbsp;бюджет — в&nbsp;двух строках.</p>
-              </div>
-            </div>
-
-            <div class="col--4 how-we-work__step">
-              <span class="step">Шаг 2</span>
-              <div class="content-text gap--4">
-                <b class="title title--24 bold">Сценарий</b>
-                <p class="text fs-14 grey-text">В течение дня присылаем 2-3 варианта формата и&nbsp;смету.</p>
-              </div>
-            </div>
-
-            <div class="col--4 how-we-work__step">
-              <span class="step">Шаг 3</span>
-              <div class="content-text gap--4">
-                <b class="title title--24 bold">Согласование</b>
-                <p class="text fs-14 grey-text">Финализируем вина, меню, брендинг и&nbsp;тайминг.</p>
-              </div>
-            </div>
-
-            <div class="col--4 how-we-work__step">
-              <span class="step">Шаг 4</span>
-              <div class="content-text gap--4">
-                <b class="title title--24 bold">Событие</b>
-                <p class="text fs-14 grey-text">Приезжаем с&nbsp;командой, посудой и&nbsp;вином. Вы — гость.</p>
-              </div>
-            </div>
-
             <div class="col--4 how-we-work__counts">
               <div class="content-text gap--4">
                 <h3 class="title title--56 magenta">740+</h3>
