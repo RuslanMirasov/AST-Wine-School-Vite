@@ -227,15 +227,15 @@
         </p>
       </label>
 
-      <label class="label label--file" data-file-field>
-        <input type="file" name="logo" data-rule="images-only" data-max-size="10" form="certificate-order" required data-cert-logo />
+      <div class="label label--file" data-file-field>
+        <label>
+          <input type="file" name="logo" data-rule="images-only" data-max-size="10" form="certificate-order" required data-cert-logo />
 
-        <span type="button" class="button white-border">
-          <svg width="17" height="23">
-            <use href="/assets/img/sprite.svg#file"></use>
-          </svg>
-          <span>Прикрепить файл</span>
-        </span>
+          <span type="button" class="button white-border">
+            <svg width="17" height="23"><use href="/assets/img/sprite.svg#file"></use></svg>
+            <span>Прикрепить файл</span>
+          </span>
+        </label>
 
         <span class="text fs-12 grey-text">Максимальный размер файла 10 МБ</span>
 
@@ -252,7 +252,7 @@
             </button>
           </div>
         </div>
-      </label>
+      </div>
 
       <span class="text fs-12 grey-text">Органично встроим ваш логотип.</span>
     </div>

@@ -687,9 +687,17 @@ $select_padding: 0px var(--fs-16);
   align-items: center;
   align-content: center;
   gap: var(--fs-12);
+  .grey-text {
+    align-self: flex-start;
+    margin-top: var(--fs-12);
+    pointer-events: none;
+  }
   .button {
     padding-left: var(--fs-18);
     padding-right: var(--fs-18);
+    svg {
+      color: var(--magenta);
+    }
   }
   // Поле скрыто только визуально: с display: none оно выпадает из обхода клавишей Tab
   // и файл нельзя прикрепить с клавиатуры
