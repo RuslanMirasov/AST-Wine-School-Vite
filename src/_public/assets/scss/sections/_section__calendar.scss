@@ -54,6 +54,10 @@
   text-wrap: nowrap;
   width: 100%;
   text-align: left;
+  color: var(--grey-text);
+  &.checked {
+    color: var(--blue);
+  }
   svg {
     position: absolute;
     right: var(--fs-10);

@@ -10,6 +10,8 @@ const INDICATOR_SELECTOR = '[data-filter-toggle-button]';
 const CHECKBOX_SELECTOR = 'input[type="checkbox"]';
 const LABEL_TEXT_SELECTOR = '.label-text';
 const ACTIVE_CLASS = 'active';
+// Класс кнопки фильтра, в группе которой выбрано хотя бы одно значение
+const CHECKED_CLASS = 'checked';
 // Кнопка сброса с этим атрибутом не только снимает фильтры, но и сразу отправляет форму.
 // Обычная кнопка type="reset" только сбрасывает — рядом с ней есть своя «Применить»
 const RESET_APPLY_SELECTOR = '[data-filter-reset-apply]';
@@ -47,6 +49,7 @@ export const initEventFilterSelection = () => {
       const labels = getSelectedLabels(button.dataset.filterButton);
 
       getTextElement(button).textContent = labels.length ? labels.join(', ') : defaultTexts.get(button);
+      button.classList.toggle(CHECKED_CLASS, labels.length > 0);
       hasSelected = hasSelected || labels.length > 0;
     });
 
