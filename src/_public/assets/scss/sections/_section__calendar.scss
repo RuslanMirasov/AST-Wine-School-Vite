@@ -241,7 +241,7 @@
 }
 
 .filter-toggle-button {
-  display: flex;
+  display: none;
   position: relative;
   width: var(--fs-50);
   height: var(--fs-50);
@@ -251,6 +251,10 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+
+  @media (max-width: 1151px) {
+    display: flex;
+  }
 
   border: 1px solid var(--grey-border);
   background-color: var(--white);
