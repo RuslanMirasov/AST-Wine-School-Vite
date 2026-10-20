@@ -261,20 +261,27 @@
       --lh: 1.2;
       text-align: center;
       font-weight: 700;
+      + svg {
+        transition: color 0.3s var(--cubic);
+      }
     }
     @media (hover: hover) {
       &:hover {
         span {
-          color: var(--blue);
+          color: var(--magenta);
+          + svg {
+            color: var(--magenta);
+          }
         }
-        background-color: var(--grey-button);
       }
     }
     &:focus-visible {
       span {
-        color: var(--blue);
+        color: var(--magenta);
+        + svg {
+          color: var(--magenta);
+        }
       }
-      background-color: var(--grey-button);
     }
     @media (max-width: 767px) {
       padding: var(--fs-14) var(--fs-20);
