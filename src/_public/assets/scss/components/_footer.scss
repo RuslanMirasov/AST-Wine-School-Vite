@@ -48,6 +48,12 @@
     display: inline-flex;
     flex-wrap: nowrap;
     opacity: 0.5;
+    svg {
+      position: relative;
+      transform: translateY(2%);
+      width: var(--fs-15);
+      height: var(--fs-15);
+    }
   }
 
   a {
@@ -93,6 +99,16 @@
   > .footer-menu-title {
     border-bottom: 1px solid var(--grey-text);
     padding-bottom: var(--fs-14);
+  }
+
+  &.last {
+    > .footer-menu-title {
+      border-bottom: 1px solid rgba(0, 0, 0, 0);
+    }
+
+    a {
+      font-size: var(--fs-14);
+    }
   }
 }
 
@@ -159,7 +175,7 @@
   flex-direction: column;
   font-weight: 400;
   --lh: 1.143;
-  font-size: var(--fs-14);
+  font-size: var(--fs-16);
 
   span {
     opacity: 0.5;
@@ -170,7 +186,8 @@
     padding: var(--fs-8) 0px;
     transition: color 0.3s var(--cubic);
     outline: none;
-    font-size: var(--fs-14);
+    font-size: var(--fs-16);
+    font-weight: 400;
     --lh: 1.2;
     @media (hover: hover) {
       &:hover {

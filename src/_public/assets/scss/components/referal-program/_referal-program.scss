@@ -200,12 +200,12 @@
 .section--referal-profits {
   img {
     position: relative;
-    width: 154px;
-    height: 133px;
+    width: 181px;
+    height: auto;
     margin-left: auto;
     margin-top: auto;
     margin-bottom: -24px;
-    transform: translateX(30%);
+    transform: translateX(24px);
   }
 
   @media (max-width: 1151px) {
@@ -227,10 +227,9 @@
       right: 0px;
       bottom: 0px;
       width: 154px;
-      height: 133px;
       margin-top: 0px;
       margin-bottom: -12px;
-      transform: translateX(20%);
+      transform: translateX(12px);
     }
 
     .content {
