@@ -67,6 +67,7 @@
   &.minify {
     .tag,
     .tag .text {
+      font-family: var(--font-center);
       color: var(--blue);
       font-weight: 500;
     }

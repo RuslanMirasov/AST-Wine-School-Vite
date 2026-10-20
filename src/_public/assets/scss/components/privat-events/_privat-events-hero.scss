@@ -18,6 +18,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
   }
+
   .image-background.white-gradient {
     --fade-direction: 110deg;
     --fade-from: rgba(0, 0, 0, 0.2);
@@ -30,6 +31,7 @@
       --fade-direction: 120deg;
     }
   }
+
   .content.grey.pad--32 {
     flex: 0 0 auto;
     &:first-child {
@@ -66,9 +68,6 @@
   &.dark {
     background-color: var(--black);
   }
-  @media (max-width: 767px) {
-    min-height: 220px;
-  }
 }
 
 .section--event-hero {
@@ -90,10 +89,12 @@
   .collage .col--8-15 {
     .buttons {
       margin-top: var(--fs-16);
+      @media (max-width: 767px) {
+        margin-top: auto;
+      }
     }
   }
 
-  // Верхний блок забирает всю свободную высоту, ряд .col--1 под ним остаётся по контенту
   .collage .col--7-15 {
     flex-direction: column;
     flex-wrap: nowrap;
