@@ -34,11 +34,14 @@
   }
 
   .logo-background {
+    width: 75%;
+    min-width: 300px;
+    height: auto;
     right: 0px;
     top: 50%;
     z-index: 0;
     transform: translate(12%, -50%);
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       transform: translate(12%, -60%);
       max-width: 60%;
     }

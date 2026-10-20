@@ -16,7 +16,7 @@
 
   .container {
     justify-content: space-between;
-    gap: var(--fs-24);
+    gap: var(--fs-32) var(--fs-24);
     align-items: flex-start;
   }
 
@@ -91,7 +91,7 @@
   }
 
   > .footer-menu-title {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid var(--grey-text);
     padding-bottom: var(--fs-14);
   }
 }
@@ -482,7 +482,7 @@
     text-align: center;
     flex-direction: column;
     max-width: 310px;
-    margin: 0 auto;
+    margin: var(--fs-16) auto;
     br {
       display: none;
     }
@@ -514,7 +514,7 @@
       padding-bottom: var(--fs-10);
       transition: border-bottom 0.3s var(--cubic);
       &.open {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        border-bottom: 1px solid var(--grey-text);
       }
     }
   }
