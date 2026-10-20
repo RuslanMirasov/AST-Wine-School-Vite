@@ -291,6 +291,16 @@ $popup_transition: 0.5s;
   }
 }
 
+#age-confirm {
+  .buttons {
+    @media (max-width: 449px) {
+      .button {
+        width: 100%;
+      }
+    }
+  }
+}
+
 // ТЕМНАЯ ТЕМА
 .a11y-theme-dark {
   .popup-content {
