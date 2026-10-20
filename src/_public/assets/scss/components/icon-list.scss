@@ -47,8 +47,15 @@
       flex-shrink: 0;
       width: var(--fs-18);
       height: var(--fs-18);
+      &[width='20'] {
+        width: var(--fs-20);
+        height: var(--fs-20);
+      }
       &.magenta {
         color: var(--magenta);
+      }
+      &.blue {
+        color: var(--blue);
       }
     }
   }
