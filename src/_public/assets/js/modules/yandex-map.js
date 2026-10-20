@@ -1,4 +1,5 @@
 import { debounce } from './helpers.js';
+import { popup } from './popup.js';
 
 const API_URL = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
 const MARKERS_URL = new URL('../../json/markers.json', import.meta.url).href;
@@ -107,10 +108,14 @@ const getVisiblePoints = () => {
   return points.filter(point => point.category === currentFilter.group);
 };
 
+// <div data-map data-map-popup="classroom-popup"> — клик по метке открывает этот попап вместо балуна
+const getPointPopup = () => mapElement.dataset.mapPopup;
+
 const createPlacemark = point => {
   const link = point.url ? `<a href="${escapeHtml(point.url)}" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Картах</a>` : '';
+  const popupId = getPointPopup();
 
-  return new window.ymaps.Placemark(
+  const placemark = new window.ymaps.Placemark(
     point.coordinates,
     {
       hintContent: escapeHtml(point.title),
@@ -123,8 +128,13 @@ const createPlacemark = point => {
       iconImageHref: PIN_IMAGE,
       iconImageSize: PIN_SIZE,
       iconImageOffset: PIN_OFFSET,
+      hasBalloon: !popupId,
     }
   );
+
+  if (popupId) placemark.events.add('click', () => popup.open(popupId));
+
+  return placemark;
 };
 
 const renderPoints = () => {
@@ -142,7 +152,7 @@ const renderPoints = () => {
 
   if (placemarks.length === 1) {
     map.setCenter(visiblePoints[0].coordinates, POINT_ZOOM);
-    if (currentFilter.point !== undefined) placemarks[0].balloon.open();
+    if (currentFilter.point !== undefined && !getPointPopup()) placemarks[0].balloon.open();
     return;
   }
 

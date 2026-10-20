@@ -154,6 +154,12 @@ $popup_transition: 0.5s;
   .buttons {
     margin-top: 4px;
   }
+
+  .ta--l {
+    > * {
+      text-align: left;
+    }
+  }
 }
 
 .popup-title {

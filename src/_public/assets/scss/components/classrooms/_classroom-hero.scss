@@ -55,3 +55,24 @@
     min-height: 220px;
   }
 }
+
+.classroom-popup-image {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 220px;
+  border-radius: var(--fs-26);
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.classroom-popup-text {
+  @media (max-width: 767px) {
+    .button {
+      width: 100%;
+    }
+  }
+}
