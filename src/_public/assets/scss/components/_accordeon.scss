@@ -81,6 +81,9 @@
   flex-wrap: wrap;
   gap: var(--fs-20);
   padding: 0px var(--fs-32) var(--fs-32) var(--fs-32);
+  .text a {
+    color: var(--magenta);
+  }
   p {
     width: 100%;
     .grey-text {
