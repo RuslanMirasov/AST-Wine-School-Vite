@@ -405,7 +405,9 @@ ul li.search-toggle-el {
 
 @media (max-width: 1279px) and (min-width: 768px) {
   .navigation {
-    display: none;
+    // Как у .header-dropdown на мобилке: display не переключаем, закрытое меню скрыто через visibility
+    display: flex;
+    visibility: hidden;
     position: fixed;
     align-items: flex-start;
     width: 100vw;
@@ -422,7 +424,8 @@ ul li.search-toggle-el {
     transform: translate(0%, -100%);
     transition:
       opacity 0.5s var(--cubic),
-      transform 0.5s var(--cubic);
+      transform 0.5s var(--cubic),
+      visibility 0s linear 0.5s;
     opacity: 1;
     pointer-events: none;
     padding-top: 46px;
@@ -432,6 +435,8 @@ ul li.search-toggle-el {
     order: 0;
     margin: 0 auto;
     &.open {
+      visibility: visible;
+      transition-delay: 0s;
       pointer-events: all;
       opacity: 1;
       transform: translate(0%, 0%);
@@ -587,6 +592,8 @@ ul li.search-toggle-el {
   // }
 
   .navigation {
+    // Раньше display: flex ставил JS инлайном при открытии меню
+    display: flex;
     background: rgba(255, 255, 255, 1);
     backdrop-filter: none;
     flex-direction: column;

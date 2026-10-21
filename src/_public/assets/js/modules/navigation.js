@@ -32,18 +32,19 @@ export const initNavigationMenu = () => {
     return window.matchMedia(`(max-width: 1279px)`).matches;
   };
 
+  // Выезжающая панель: до 767px — вся .header-dropdown, на планшете она display: contents и выезжает .navigation
+  const getPanel = () => (dropdown && getComputedStyle(dropdown).display !== 'contents' ? dropdown : menu);
+
   const openMobileMenu = async () => {
     burger.classList.add('open');
     burger.setAttribute('aria-expanded', 'true');
     document.body.classList.add('popup-is-opened');
     lockScroll();
 
-    menu.style.display = 'flex';
-    void menu.offsetHeight;
     menu.classList.add('open');
     dropdown?.classList.add('open');
 
-    await waitForTransition(menu, 'transform');
+    await waitForTransition(getPanel(), 'transform');
     if (menu.classList.contains('open')) getFocusable(menu)[0]?.focus();
   };
 
@@ -55,11 +56,8 @@ export const initNavigationMenu = () => {
 
     menu.classList.remove('open');
     dropdown?.classList.remove('open');
-    await waitForTransition(menu, 'transform');
-    if (!menu.classList.contains('open')) {
-      menu.style.display = 'none';
-      burger.focus();
-    }
+    await waitForTransition(getPanel(), 'transform');
+    if (!menu.classList.contains('open')) burger.focus();
   };
 
   const toggleMenu = () => {
@@ -114,7 +112,6 @@ export const initNavigationMenu = () => {
         menu.classList.remove('open');
         dropdown?.classList.remove('open');
       }
-      menu.style.display = '';
     }, 300)
   );
 };
