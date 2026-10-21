@@ -52,6 +52,27 @@
 
 .search-results {
   width: 100%;
+
+  .post-card.horisontal.minify {
+    @media (min-width: 768px) {
+      padding: var(--fs-32);
+      gap: var(--fs-32);
+      .post-card-image {
+        max-width: 220px;
+        width: 220px;
+        height: 160px;
+        min-height: 160px;
+        border-radius: var(--fs-30);
+        &:before {
+          content: none;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
 }
 
 .search-empty {
