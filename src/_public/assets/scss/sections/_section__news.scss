@@ -65,9 +65,9 @@
   .buttons {
     margin-top: var(--fs-24);
 
-    @media (max-width: 767px) {
-      justify-content: flex-start;
-    }
+    // @media (max-width: 767px) {
+    //   justify-content: flex-start;
+    // }
   }
 }
 
