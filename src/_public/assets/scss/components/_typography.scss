@@ -89,6 +89,19 @@
   }
 }
 
+.title-link {
+  color: inherit;
+  transition: color 0.3s var(--cubic);
+  @media (hover: hover) {
+    &:hover {
+      color: var(--magenta);
+    }
+  }
+  &:focus-visible {
+    color: var(--magenta);
+  }
+}
+
 .text {
   display: block;
   color: var(--blue);

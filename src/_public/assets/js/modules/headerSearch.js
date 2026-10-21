@@ -1,81 +1,44 @@
-import { debounce } from './helpers.js';
+// Поиск в шапке: иконка [data-search-toggle] ставит класс search-open на .header и .header-dropdown,
+// крестик .search-close и Escape в форме его снимают. Где и как форма показывается, решает CSS
+const SEARCH_OPEN_CLASS = 'search-open';
 
-const SEARCH_WIDE_MIN_WIDTH = 1600;
-const SEARCH_WIDE_RANGE_MIN_WIDTH = 550;
-const SEARCH_WIDE_RANGE_MAX_WIDTH = 1151;
+export const initHeaderSearch = () => {
+  const header = document.querySelector('.header');
+  const dropdown = document.querySelector('.header-dropdown');
+  const toggles = Array.from(document.querySelectorAll('[data-search-toggle]'));
+  const form = dropdown?.querySelector('form');
 
-const isSearchWide = () => {
-  const width = window.innerWidth;
-  return width >= SEARCH_WIDE_MIN_WIDTH || (width >= SEARCH_WIDE_RANGE_MIN_WIDTH && width <= SEARCH_WIDE_RANGE_MAX_WIDTH);
-};
+  if (!header || !dropdown || !form || !toggles.length) return;
 
-export const initSearchToggle = () => {
-  const wrapper = document.querySelector('[data-search]');
-  const toggles = document.querySelectorAll('[data-search-toggle]');
+  const input = form.querySelector('input');
+  const isOpen = () => header.classList.contains(SEARCH_OPEN_CLASS);
 
-  if (!wrapper || !toggles.length) return;
-
-  const input = wrapper.querySelector('.input');
-  const wrapperFocusables = Array.from(wrapper.querySelectorAll('input, button'));
-
-  const isInsideSearch = el => wrapper.contains(el) || Array.from(toggles).some(toggle => toggle.contains(el));
-
-  const syncState = () => {
-    const isOpen = isSearchWide() || wrapper.classList.contains('active');
-
-    wrapperFocusables.forEach(el => {
-      if (isOpen) el.removeAttribute('tabindex');
-      else el.setAttribute('tabindex', '-1');
-    });
-
-    toggles.forEach(toggle => toggle.setAttribute('aria-expanded', String(isOpen)));
+  const setOpenState = open => {
+    header.classList.toggle(SEARCH_OPEN_CLASS, open);
+    dropdown.classList.toggle(SEARCH_OPEN_CLASS, open);
+    toggles.forEach(toggle => toggle.setAttribute('aria-expanded', String(open)));
   };
 
-  const openSearch = ({ focusInput = false } = {}) => {
-    wrapper.classList.add('active');
-    syncState();
-    if (focusInput) input?.focus();
+  const openSearch = () => {
+    setOpenState(true);
+    input?.focus();
   };
 
   const closeSearch = () => {
-    wrapper.classList.remove('active');
-    syncState();
+    if (!isOpen()) return;
+    setOpenState(false);
+    toggles.find(toggle => toggle.offsetParent !== null)?.focus();
   };
 
   toggles.forEach(toggle => {
-    toggle.addEventListener('click', event => {
-      event.preventDefault();
-
-      if (isSearchWide()) return;
-
-      if (wrapper.classList.contains('active')) {
-        closeSearch();
-      } else {
-        openSearch({ focusInput: true });
-      }
-    });
+    toggle.addEventListener('click', () => (isOpen() ? closeSearch() : openSearch()));
   });
 
-  document.addEventListener('focusin', event => {
-    if (isSearchWide() || !wrapper.classList.contains('active')) return;
-    if (event.target === document.body) return;
-    if (!isInsideSearch(event.target)) closeSearch();
+  form.querySelectorAll('.search-close').forEach(button => {
+    button.addEventListener('click', closeSearch);
   });
 
-  document.addEventListener('click', event => {
-    if (isSearchWide() || !wrapper.classList.contains('active')) return;
-    if (!isInsideSearch(event.target)) closeSearch();
+  form.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeSearch();
   });
-
-  wrapper.addEventListener('keydown', event => {
-    if (event.key !== 'Escape' || isSearchWide()) return;
-    closeSearch();
-    Array.from(toggles)
-      .find(toggle => toggle.offsetParent !== null)
-      ?.focus();
-  });
-
-  window.addEventListener('resize', debounce(syncState, 300));
-
-  syncState();
 };

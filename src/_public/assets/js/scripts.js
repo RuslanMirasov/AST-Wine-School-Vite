@@ -2,8 +2,10 @@ import { popup } from './modules/popup.js';
 import { initForms } from './forms/index.js';
 import { initDecimalInputs, initPhoneInputs, initSelectFields } from './modules/inputMasks.js';
 import { initNavigationMenu, initMegaMenu } from './modules/navigation.js';
+import { initHeaderSearch } from './modules/headerSearch.js';
+// На Битриксе отключить (вместе с вызовом ниже): активный пункт меню отдаёт компонент меню
+import { initActiveLinks } from './modules/activeLinks.js';
 import { initA11yToggle } from './modules/a11yToggle.js';
-import { initSearchToggle } from './modules/headerSearch.js';
 import { hidePreloader } from './modules/preloader.js';
 import { initAgeConfirmation } from './modules/ageConfirmation.js';
 import { initSliders } from './modules/sliders.js';
@@ -36,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroPagination();
   initNavigationMenu();
   initMegaMenu();
-  initSearchToggle();
+  initActiveLinks();
+  initHeaderSearch();
   initForms();
   initPhoneInputs();
   initSelectFields();

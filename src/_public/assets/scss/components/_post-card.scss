@@ -1,3 +1,22 @@
+.post-card:not(.empty, .horisontal) {
+  box-shadow:
+    0 1px 2px rgba(39, 53, 81, 0.01),
+    0 4px 12px rgba(39, 53, 81, 0.02);
+  transition:
+    transform 0.3s var(--cubic),
+    box-shadow 0.3s var(--cubic);
+  transform: translateY(0px);
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow:
+        0 18px 16px -8px rgba(39, 53, 81, 0.08),
+        0 8px 8px -4px rgba(39, 53, 81, 0.05);
+    }
+  }
+}
+
 .post-card {
   display: flex;
   position: relative;
@@ -121,37 +140,6 @@
     top: 0px;
     width: 100%;
     height: 100%;
-    transition: transform 0.5s var(--cubic);
-    transform: scale(1);
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      img,
-      picture,
-      video {
-        transform: scale(1.05);
-      }
-    }
-  }
-
-  &:focus-visible {
-    &:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      left: 0px;
-      top: 0px;
-      background-color: var(--magenta);
-      opacity: 0.4;
-    }
-    img,
-    picture,
-    video {
-      transform: scale(1.05);
-    }
   }
 }
 

@@ -76,16 +76,10 @@
   li {
     display: block;
     position: relative;
-    width: var(--fs24);
-    height: var(--fs24);
-    &.search-toggle-el,
+    width: var(--fs-24);
+    height: var(--fs-24);
     &.burger-el {
       display: none;
-    }
-    @media (max-width: 539px) {
-      &.search-toggle-el {
-        display: block;
-      }
     }
     @media (max-width: 1279px) {
       &.burger-el {

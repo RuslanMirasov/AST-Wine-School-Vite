@@ -21,43 +21,6 @@ const waitForTransition = (element, propertyName) =>
 
 const getFocusable = container => Array.from(container.querySelectorAll(FOCUSABLE_SELECTOR)).filter(el => el.offsetParent !== null);
 
-const normalizePath = path => path.replace(/\/$/, '') || '/';
-
-const getLinkPath = link => {
-  const href = link.getAttribute('href');
-  if (!href || href.startsWith('#') || link.origin !== window.location.origin) return null;
-
-  return normalizePath(link.pathname);
-};
-
-// Главная ('/') подсвечивается только на самой себе: '/' + '/' = '//', с него не начинается ни один путь.
-// Ссылки с [data-exact] подсвечиваются только при точном совпадении пути (корень раздела, напр. /profile).
-const isLinkActive = (link, currentPath) => {
-  const linkPath = getLinkPath(link);
-  if (!linkPath) return false;
-  if (link.hasAttribute('data-exact')) return currentPath === linkPath;
-
-  return currentPath === linkPath || currentPath.startsWith(linkPath + '/');
-};
-
-const setActiveMenuLinks = menuLinks => {
-  const currentPath = normalizePath(window.location.pathname);
-  const links = Array.from(menuLinks).filter(link => link instanceof HTMLAnchorElement);
-
-  links.forEach(link => {
-    link.classList.toggle('active', isLinkActive(link, currentPath));
-  });
-
-  document.querySelectorAll('[data-megamenu-button]').forEach(button => {
-    const megaMenu = button.closest('.have-submenu')?.querySelector('[data-megamenu]');
-    if (!megaMenu) return;
-
-    const megaMenuLinks = Array.from(megaMenu.querySelectorAll('a[href]'));
-    const hasActiveLink = megaMenuLinks.some(link => isLinkActive(link, currentPath));
-    button.classList.toggle('active', hasActiveLink);
-  });
-};
-
 export const initNavigationMenu = () => {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.navigation ');
@@ -150,8 +113,6 @@ export const initNavigationMenu = () => {
       menu.style.display = '';
     }, 300)
   );
-
-  setActiveMenuLinks(document.querySelectorAll('.menu-link, .info-menu a, .profile-menu-link'));
 };
 
 export const initMegaMenu = () => {
