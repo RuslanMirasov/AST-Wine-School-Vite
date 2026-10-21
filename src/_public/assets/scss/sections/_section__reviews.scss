@@ -200,6 +200,21 @@
   }
 }
 
+@media (max-width: 1023px) and (min-width: 768px) {
+  .section--reviews-slider {
+    .container {
+      .arrows {
+        display: none;
+      }
+      > .button {
+        order: 3;
+        margin: 0;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .review {
     padding: var(--fs-20);
