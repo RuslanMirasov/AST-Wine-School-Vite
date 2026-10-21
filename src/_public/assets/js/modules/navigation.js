@@ -24,6 +24,7 @@ const getFocusable = container => Array.from(container.querySelectorAll(FOCUSABL
 export const initNavigationMenu = () => {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.navigation ');
+  const dropdown = document.querySelector('.header-dropdown');
   const menuLinks = document.querySelectorAll('.menu-link');
   const menuLinksA = document.querySelectorAll('a.menu-link');
 
@@ -40,6 +41,7 @@ export const initNavigationMenu = () => {
     menu.style.display = 'flex';
     void menu.offsetHeight;
     menu.classList.add('open');
+    dropdown?.classList.add('open');
 
     await waitForTransition(menu, 'transform');
     if (menu.classList.contains('open')) getFocusable(menu)[0]?.focus();
@@ -52,6 +54,7 @@ export const initNavigationMenu = () => {
     unlockScroll();
 
     menu.classList.remove('open');
+    dropdown?.classList.remove('open');
     await waitForTransition(menu, 'transform');
     if (!menu.classList.contains('open')) {
       menu.style.display = 'none';
@@ -109,6 +112,7 @@ export const initNavigationMenu = () => {
         document.body.classList.remove('popup-is-opened');
         unlockScroll();
         menu.classList.remove('open');
+        dropdown?.classList.remove('open');
       }
       menu.style.display = '';
     }, 300)

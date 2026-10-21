@@ -35,6 +35,7 @@ ul li.search-toggle-el {
     max-width: 400px;
     margin: 0 auto;
     order: 2;
+
     .label {
       height: 100%;
       .search-submit-icon,
@@ -68,6 +69,66 @@ ul li.search-toggle-el {
       flex: 1;
       z-index: 5;
       order: 1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .search-form {
+      display: block;
+      width: 100%;
+      max-width: 450px;
+      padding: 0px 32px;
+      flex: auto;
+      z-index: 5;
+      order: 0;
+      height: 40px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 26px;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+    }
+    // display у панели не переключаем — с display: none transform не анимируется.
+    // Закрытая панель скрыта через visibility, он выключается после окончания анимации (задержка 0.5s)
+    display: block;
+    visibility: hidden;
+    position: fixed;
+    width: 100vw;
+    height: auto;
+    max-height: calc(100svh + 10px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    top: 0px;
+    left: 0px;
+    background: var(--white);
+    backdrop-filter: none;
+    transform: translate(0%, -100%);
+    transition:
+      opacity 0.5s var(--cubic),
+      transform 0.5s var(--cubic),
+      visibility 0s linear 0.5s;
+    opacity: 1;
+    pointer-events: none;
+    padding-top: 46px;
+    z-index: 1;
+    border-radius: 0px 0px 30px 30px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    order: 0;
+    margin: 0 auto;
+    &.open {
+      visibility: visible;
+      transition-delay: 0s;
+      pointer-events: all;
+      opacity: 1;
+      transform: translate(0%, 0%);
+    }
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+      display: none;
     }
   }
 }
@@ -337,6 +398,12 @@ ul li.search-toggle-el {
 }
 
 @media (max-width: 1279px) {
+  .recomendations-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 768px) {
   .navigation {
     display: none;
     position: fixed;
@@ -377,12 +444,6 @@ ul li.search-toggle-el {
     }
   }
 
-  .recomendations-menu {
-    display: none;
-  }
-}
-
-@media (max-width: 1279px) and (min-width: 768px) {
   .menu {
     display: flex;
     flex-wrap: wrap;
@@ -485,6 +546,46 @@ ul li.search-toggle-el {
 }
 
 @media (max-width: 767px) {
+  // .navigation {
+  //   display: none;
+  //   position: fixed;
+  //   align-items: flex-start;
+  //   width: 100vw;
+  //   height: auto;
+  //   max-height: calc(100svh + 10px);
+  //   overflow-x: hidden;
+  //   overflow-y: auto;
+  //   scrollbar-width: none;
+  //   -ms-overflow-style: none;
+  //   top: 0px;
+  //   left: 0px;
+  //   background: rgba(255, 255, 255, 0.8);
+  //   backdrop-filter: blur(10px);
+  //   transform: translate(0%, -100%);
+  //   transition:
+  //     opacity 0.5s var(--cubic),
+  //     transform 0.5s var(--cubic);
+  //   opacity: 1;
+  //   pointer-events: none;
+  //   padding-top: 46px;
+  //   z-index: 1;
+  //   border-radius: 0px 0px 30px 30px;
+  //   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  //   order: 0;
+  //   margin: 0 auto;
+  //   &.open {
+  //     pointer-events: all;
+  //     opacity: 1;
+  //     transform: translate(0%, 0%);
+  //   }
+
+  //   &::-webkit-scrollbar {
+  //     width: 0px;
+  //     height: 0px;
+  //     display: none;
+  //   }
+  // }
+
   .navigation {
     background: rgba(255, 255, 255, 1);
     backdrop-filter: none;
@@ -513,7 +614,7 @@ ul li.search-toggle-el {
       padding: 12px 0px;
       .socials {
         margin: 0;
-        padding-top: 32px;
+        padding-top: 10px;
 
         justify-content: center;
         gap: 16px;
