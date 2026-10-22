@@ -37,6 +37,14 @@
   }
 }
 
+// Аккордеон раскрывается только стрелкой — указатель только на ней (ссылки в шапке получают его сами)
+[data-accordeon-arrow-only] > [data-accordeon-head] {
+  cursor: default;
+  > button {
+    cursor: pointer;
+  }
+}
+
 .page-accordeon {
   display: block;
   position: relative;

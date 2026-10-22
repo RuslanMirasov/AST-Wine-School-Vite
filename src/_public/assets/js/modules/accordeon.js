@@ -118,6 +118,12 @@ export const initAccordeons = () => {
     const accordeon = head.closest('[data-accordeon]');
     if (!accordeon || !canInitAccordeon(accordeon)) return;
 
+    // Ссылка в шапке (например, заголовок модуля) ведёт по своему адресу и аккордеон не переключает
+    if (event.target.closest('a')) return;
+
+    // <… data-accordeon data-accordeon-arrow-only> — раскрывается только кнопкой в шапке, клик по остальной шапке ничего не делает
+    if (accordeon.hasAttribute('data-accordeon-arrow-only') && !event.target.closest('button')) return;
+
     toggleAccordeon(accordeon);
   });
 
