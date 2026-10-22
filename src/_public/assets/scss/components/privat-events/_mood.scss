@@ -143,6 +143,14 @@
   }
 }
 
+.magenta {
+  .mood-button {
+    &.white {
+      border: 1px solid var(--white);
+    }
+  }
+}
+
 @media (max-width: 1023px) {
   .mood {
     .col--5-8,
