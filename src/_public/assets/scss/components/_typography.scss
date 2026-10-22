@@ -129,6 +129,9 @@
   &.fs-18 {
     font-size: var(--fs-18);
     --lh: 1.2;
+    @media (max-width: 1023px) {
+      font-size: var(--fs-16);
+    }
   }
 
   &.fs-20 {
