@@ -687,6 +687,12 @@ $select_padding: 0px var(--fs-16);
   align-items: center;
   align-content: center;
   gap: var(--fs-12);
+  > label {
+    display: contents;
+  }
+  .inputError {
+    order: 1;
+  }
   .grey-text {
     align-self: flex-start;
     margin-top: var(--fs-12);

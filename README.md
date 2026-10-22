@@ -207,7 +207,7 @@ npm run preview   # предпросмотр собранного dist/
 
 ```html
 <label class="label label--file" data-file-field>
-  <input type="file" name="logo-file" data-rule="images-only" data-max-size="10" required />
+  <input type="file" name="logo-file" data-rule="certificat-logo" data-max-size="10" required />
   <span class="button white-border">Прикрепить файл</span>
   <div class="file-info">
     <span data-file-name></span>
@@ -224,8 +224,8 @@ npm run preview   # предпросмотр собранного dist/
 
 Форматы задаются одним из двух способов:
 
-- `data-rule="images-only"` — только картинки (`.png`, `.jpg`, `.jpeg`, `.svg`, `.gif`, `.webp`). Список зашит в `validationRules.js` (`IMAGE_FORMATS`),
-  атрибут `accept` при этом не учитывается;
+- `data-rule="certificat-logo"` — логотип компании в сертификате: `.png`, `.svg`, `.webp`, `.pdf`, текст ошибки — «Загрузите логотип в формате
+  PNG, SVG, WEBP или PDF». Список зашит в `validationRules.js` (`CERTIFICAT_LOGO_FORMATS`), атрибут `accept` при этом не учитывается;
 - без `data-rule` — по стандартному `accept=".pdf,.png,image/*"`.
 
 Это проверка для удобства пользователя. Размер и тип файла обязательно проверяются ещё раз на сервере.

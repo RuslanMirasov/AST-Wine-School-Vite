@@ -1,6 +1,6 @@
 import { popup } from './modules/popup.js';
 import { initForms } from './forms/index.js';
-import { initDecimalInputs, initPhoneInputs, initSelectFields } from './modules/inputMasks.js';
+import { initDecimalInputs, initNumberInputs, initPhoneInputs, initPriceInputs, initSelectFields } from './modules/inputMasks.js';
 import { initNavigationMenu, initMegaMenu } from './modules/navigation.js';
 import { initHeaderSearch } from './modules/headerSearch.js';
 // На Битриксе отключить (вместе с вызовом ниже): активный пункт меню отдаёт компонент меню
@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initPhoneInputs();
   initSelectFields();
   initDecimalInputs();
+  initNumberInputs();
+  initPriceInputs();
   initStickySidebar();
   initStars();
   initAccordeons();

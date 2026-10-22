@@ -2,6 +2,11 @@ const SOURCE_SELECTOR = '[data-cert-preview-source]';
 const TRIGGER_SELECTOR = '[data-cert-preview]';
 const TEMPLATE_OPTION_SELECTOR = '[data-template-number]';
 const TEMPLATE_CURRENT_SELECTOR = '[data-template-current]';
+// Кнопка «Редактировать» на листе: закрывает просмотр и открывает второй шаг заказа (там текст поздравления)
+const EDIT_SELECTOR = '[data-cert-edit]';
+const EDIT_STEP_POPUP = 'cert-order-step-2';
+// Крестик на листе закрывает только просмотр. data-popup-close здесь нельзя — он закрыл бы попап заказа под просмотром
+const CLOSE_SELECTOR = '[data-cert-preview-close]';
 
 // Размеры листа из макета и отступ от краёв окна сверху и снизу
 const PREVIEW_WIDTH = 720;
@@ -30,6 +35,19 @@ const openPreview = (source, templateNumber) => {
   const closeOnEscape = event => {
     if (event.key === 'Escape') instance.close();
   };
+
+  // Вешаем до create: библиотека переносит содержимое копии в свой контейнер, и после этого копия пустая.
+  // Второй шаг существует в нескольких вариантах — нужный по сценарию заказа выбирает toCertStep
+  copy.querySelectorAll(EDIT_SELECTOR).forEach(button => {
+    button.addEventListener('click', () => {
+      instance.close();
+      window.toCertStep?.(EDIT_STEP_POPUP);
+    });
+  });
+
+  copy.querySelectorAll(CLOSE_SELECTOR).forEach(button => {
+    button.addEventListener('click', () => instance.close());
+  });
 
   const instance = basicLightbox.create(copy, {
     onShow: () => document.addEventListener('keydown', closeOnEscape),

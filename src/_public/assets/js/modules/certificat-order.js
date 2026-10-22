@@ -1,6 +1,7 @@
 import { validateForm } from '../forms/validateForm.js';
 import { getRenderer } from '../forms/factory.js';
 import { getNamedSwiper } from './goToSlide.js';
+import { formatPrice, parsePrice } from './inputMasks.js';
 
 const STORAGE_KEY = 'certificate-order';
 const TEMPLATES_SLIDER_KEY = 'certificate-templates';
@@ -10,12 +11,15 @@ const GROUP_SELECTOR = '[data-cert-group]';
 const SCENARIO_SELECTOR = '[data-cert-scenario]';
 const FORMAT_SELECTOR = '[data-cert-format]';
 const PURPOSE_SELECTOR = '[data-cert-purpose]';
+// Ссылка, которая выбирает назначение: <a data-cert-purpose-set="company"> отмечает [data-cert-purpose="company"]
+const PURPOSE_SET_SELECTOR = '[data-cert-purpose-set]';
 const POPUP_SELECTOR = '[role="dialog"]';
 const RECIPIENT_SELECTOR = '[data-cert-recipient]';
 const RECIPIENT_BLOCK_SELECTOR = '[data-cert-recipient-block]';
 const FIELD_SELECTOR = 'input, select, textarea';
 const ORDER_FIELD_SELECTOR = '[data-cert-field]';
 const NOMINAL_SELECTOR = '[data-cert-field="nominal"]';
+const PRICE_FIELD_SELECTOR = '[data-input-price]';
 const NOMINAL_LABEL_SELECTOR = '[data-cert-nominal-label]';
 const NOMINAL_VARIANT_SELECTOR = '[data-cert-nominal-variant]';
 const TEMPLATE_SELECTOR = '[data-cert-field="template"]';
@@ -32,13 +36,15 @@ const SERVER_FIELDS = ['code'];
 
 // Места в разметке, куда выводятся данные заказа. Их может быть сколько угодно и где угодно на странице
 const NOMINAL_OUTPUT_SELECTOR = '[data-nominal-final]';
-const CODE_OUTPUT_SELECTOR = '[data-code-final]';
+// код в превью
+// const CODE_OUTPUT_SELECTOR = '[data-code-final]';
 const MESSAGE_OUTPUT_SELECTOR = '[data-message-final]';
 const TEMPLATE_OUTPUT_SELECTOR = '[data-template-final]';
 const TEMPLATE_THUMB_OUTPUT_SELECTOR = '[data-template-thumb-final]';
+// логотип в превью
 // Логотип в сертификате: <img data-logo-final> — загруженный, [data-logo-default] — стандартный, пока своего нет
-const LOGO_OUTPUT_SELECTOR = '[data-logo-final]';
-const LOGO_DEFAULT_SELECTOR = '[data-logo-default]';
+// const LOGO_OUTPUT_SELECTOR = '[data-logo-final]';
+// const LOGO_DEFAULT_SELECTOR = '[data-logo-default]';
 // Блок, который выглядит по-разному для разных шаблонов: получает номер шаблона в этот же атрибут
 const TEMPLATE_CURRENT_SELECTOR = '[data-template-current]';
 // Плитка выбора шаблона: клик записывает её номер в поле шаблона, выбранная получает класс
@@ -55,8 +61,9 @@ let templateInput = null;
 let templatesSwiper = null;
 let logoToggle = null;
 let logoInput = null;
+// логотип в превью
 // Адрес выбранного логотипа для показа в превью (объектная ссылка на файл) или null
-let logoUrl = null;
+// let logoUrl = null;
 
 // localStorage недоступен в приватном режиме части браузеров и при запрете в настройках — форма должна работать и без него
 const readStorage = () => {
@@ -97,7 +104,8 @@ const collectOrder = () => {
       return;
     }
 
-    data[key] = field.value;
+    // Номинал с маской цены хранится числом: «15 000 ₽» → «15000»
+    data[key] = field.matches(PRICE_FIELD_SELECTOR) ? parsePrice(field.value) : field.value;
   });
 
   return data;
@@ -122,20 +130,22 @@ const setOutputImage = (selector, url) => {
 // Разносит данные заказа по разметке: номинал, код, сообщение и картинки выбранного шаблона
 const fillOrderOutputs = data => {
   setOutputText(NOMINAL_OUTPUT_SELECTOR, (Number(data.nominal) || 0).toLocaleString('ru-RU'));
-  setOutputText(CODE_OUTPUT_SELECTOR, data.code ?? '');
+  // ОТКЛЮЧЕНО: код в превью не меняется — в разметке всегда ХХХХ-ХХХХ-ХХХ. Чтобы вернуть, раскомментировать все блоки с пометкой «код в превью»
+  // setOutputText(CODE_OUTPUT_SELECTOR, data.code ?? '');
   setOutputText(MESSAGE_OUTPUT_SELECTOR, data.message ?? '');
 
-  // Логотип показывается, только пока его поле активно (отмечен чекбокс и выбран сценарий компании)
-  const hasLogo = Boolean(logoUrl) && !logoInput.matches(':disabled');
-
-  document.querySelectorAll(LOGO_OUTPUT_SELECTOR).forEach(image => {
-    if (hasLogo) image.src = logoUrl;
-    else image.removeAttribute('src');
-
-    setVisible(image, hasLogo);
-  });
-
-  document.querySelectorAll(LOGO_DEFAULT_SELECTOR).forEach(element => setVisible(element, !hasLogo));
+  // ОТКЛЮЧЕНО: логотип в превью не меняется — всегда стандартный. Чтобы вернуть, раскомментировать все блоки с пометкой «логотип в превью»
+  // // Логотип показывается, только пока его поле активно (отмечен чекбокс и выбран сценарий компании)
+  // const hasLogo = Boolean(logoUrl) && !logoInput.matches(':disabled');
+  //
+  // document.querySelectorAll(LOGO_OUTPUT_SELECTOR).forEach(image => {
+  //   if (hasLogo) image.src = logoUrl;
+  //   else image.removeAttribute('src');
+  //
+  //   setVisible(image, hasLogo);
+  // });
+  //
+  // document.querySelectorAll(LOGO_DEFAULT_SELECTOR).forEach(element => setVisible(element, !hasLogo));
 
   if (!data.template) return;
 
@@ -181,7 +191,7 @@ const restoreOrder = () => {
       return;
     }
 
-    field.value = data[key];
+    field.value = field.matches(PRICE_FIELD_SELECTOR) ? formatPrice(data[key]) : data[key];
   });
 };
 
@@ -191,7 +201,7 @@ const checkNominalVariant = () => {
 
   const radios = getNominalVariantRadios();
   const isOther = radio => radio.dataset.certNominalVariant === NOMINAL_VARIANT_OTHER;
-  const variant = radios.find(radio => !isOther(radio) && radio.value === nominalInput.value) || radios.find(isOther);
+  const variant = radios.find(radio => !isOther(radio) && radio.value === parsePrice(nominalInput.value)) || radios.find(isOther);
 
   if (variant) variant.checked = true;
 };
@@ -212,7 +222,7 @@ const syncNominal = ({ clearOnOther = false } = {}) => {
     return;
   }
 
-  if (variant) nominalInput.value = variant.value;
+  if (variant) nominalInput.value = formatPrice(variant.value);
 };
 
 // Второй шаг существует в трёх вариантах — <fieldset data-cert-scenario="…"> в разных попапах.
@@ -268,12 +278,13 @@ const syncLogoToggle = () => {
   logoInput.disabled = !logoToggle.checked;
 };
 
-const onLogoChange = () => {
-  const file = logoInput.files?.[0];
-
-  if (logoUrl) URL.revokeObjectURL(logoUrl);
-  logoUrl = file ? URL.createObjectURL(file) : null;
-};
+// логотип в превью
+// const onLogoChange = () => {
+//   const file = logoInput.files?.[0];
+//
+//   if (logoUrl) URL.revokeObjectURL(logoUrl);
+//   logoUrl = file ? URL.createObjectURL(file) : null;
+// };
 
 // Номер шаблона = номер активного слайда (с единицы): слайды стоят в том же порядке, что и шаблоны
 const onTemplateSlideChange = () => {
@@ -356,7 +367,8 @@ export const initCertificateOrder = () => {
       if (event.target.matches(RECIPIENT_SELECTOR)) syncRecipient();
       if (event.target.matches(`${FORMAT_SELECTOR}, ${PURPOSE_SELECTOR}`)) syncScenario();
       if (event.target.matches(LOGO_TOGGLE_SELECTOR)) syncLogoToggle();
-      if (event.target.matches(LOGO_INPUT_SELECTOR)) onLogoChange();
+      // логотип в превью
+      // if (event.target.matches(LOGO_INPUT_SELECTOR)) onLogoChange();
       updateOrder();
     });
 
@@ -364,6 +376,19 @@ export const initCertificateOrder = () => {
       mirrorField(event.target);
       updateOrder();
     });
+  });
+
+  // Переход по ссылке (прокрутку к форме делает сама ссылка) и выбор назначения: событие change запускает
+  // ту же цепочку, что и клик по радиокнопке, — сценарий второго шага и сохранение заказа
+  document.addEventListener('click', event => {
+    const link = event.target.closest(PURPOSE_SET_SELECTOR);
+    if (!link) return;
+
+    const radio = findAllInGroups(PURPOSE_SELECTOR).find(field => field.dataset.certPurpose === link.dataset.certPurposeSet);
+    if (!radio || radio.checked) return;
+
+    radio.checked = true;
+    radio.dispatchEvent(new Event('change', { bubbles: true }));
   });
 
   // Радиокнопки вариантов номинала и чекбокс логотипа — только управляющие элементы, в данные формы они не попадают.

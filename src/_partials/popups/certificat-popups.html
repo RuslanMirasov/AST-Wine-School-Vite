@@ -229,7 +229,7 @@
 
       <div class="label label--file" data-file-field>
         <label>
-          <input type="file" name="logo" data-rule="images-only" data-max-size="10" form="certificate-order" required data-cert-logo />
+          <input type="file" name="logo" data-rule="certificat-logo" data-max-size="10" form="certificate-order" required data-cert-logo />
 
           <span type="button" class="button white-border">
             <svg width="17" height="23"><use href="/assets/img/sprite.svg#file"></use></svg>
@@ -274,12 +274,14 @@
 
   <div class="cert-checkout">
     <b class="text fs-16 full">Сумма сертификата: <span data-nominal-final>0</span> ₽</b>
-    <img
-      src="/assets/img/certificates/template-1-thumb.webp"
-      alt="Выбранный шаблон сертификата"
-      title="Выбранный шаблон сертификата"
-      data-template-thumb-final
-    />
+    <button type="button" data-cert-preview aria-label="Посмотреть сертификат">
+      <img
+        src="/assets/img/certificates/template-1-thumb.webp"
+        alt="Выбранный шаблон сертификата"
+        title="Выбранный шаблон сертификата"
+        data-template-thumb-final
+      />
+    </button>
     <div class="buttons gap--12">
       <button type="button" class="button white-border full" data-popup-open="change-cert-template"><span>Поменять оформление</span></button>
       <button type="button" class="button white-border full" data-cert-preview><span>Посмотреть</span></button>
@@ -337,6 +339,12 @@
 <div hidden data-cert-preview-source>
   <div class="certificat-responsive-preview-wrapper">
     <div class="certificat-responsive-preview" data-template-current="1">
+      <button type="button" class="certificat-responsive-edit" data-cert-edit><span>Редактировать</span></button>
+
+      <button type="button" class="popup-close certificat-responsive-close" data-cert-preview-close aria-label="Закрыть просмотр">
+        <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
+      </button>
+
       <div class="certificat-responsive-preview__logo">
         <svg width="253" height="64" data-logo-default><use href="/assets/img/sprite.svg#logo"></use></svg>
         <img alt="Логотип компании" title="Логотип компании" data-logo-final style="display: none" />
@@ -347,7 +355,7 @@
 
       <div class="certificat-responsive-preview__info">
         <strong class="certificat-responsive-preview__nominal">Номинал: <span data-nominal-final>0</span> ₽</strong>
-        <p class="certificat-responsive-preview__code">Код сертификата: <span data-code-final>ХХХХ-XХХХ-ХХХ</span></p>
+        <p class="certificat-responsive-preview__code">Код сертификата: <span data-code-final>ХХХХ-ХХХХ-ХХХ</span></p>
       </div>
 
       <p class="certificat-responsive-preview__footer">

@@ -15,8 +15,10 @@ export const nativeMessages = {
 
 const CERT_MESSAGE_MAX_LENGTH = 300;
 const BYTES_IN_MEGABYTE = 1024 * 1024;
-// Форматы для data-rule="images-only". Список задан здесь, а не в разметке, чтобы его нельзя было расширить правкой атрибута
-const IMAGE_FORMATS = ['.png', '.jpg', '.jpeg', '.svg', '.gif', '.webp'];
+// Форматы для data-rule="certificat-logo" (логотип компании в сертификате). Список задан здесь, а не в разметке,
+// чтобы его нельзя было расширить правкой атрибута
+const CERTIFICAT_LOGO_FORMATS = ['.png', '.svg', '.webp', '.pdf'];
+const CERTIFICAT_LOGO_FORMAT_MESSAGE = 'Загрузите логотип в формате PNG, SVG, WEBP или PDF';
 
 // accept="…" у поля файла: список расширений (.pdf) и типов (image/png, image/*) через запятую
 const getAcceptList = input =>
@@ -41,7 +43,7 @@ const isFileAccepted = (file, acceptList) => {
 // Ограничения поля файла: размер — data-max-size="10" (в МБ), формат — список acceptList
 // (по умолчанию из атрибута accept). Возвращает текст ошибки или null; свой текст задаётся
 // через data-size-error-text и data-format-error-text
-const getFileError = (input, acceptList = getAcceptList(input)) => {
+const getFileError = (input, acceptList = getAcceptList(input), formatMessage) => {
   const file = input.files?.[0];
   if (!file) return null;
 
@@ -51,16 +53,17 @@ const getFileError = (input, acceptList = getAcceptList(input)) => {
   }
 
   if (!isFileAccepted(file, acceptList)) {
-    return input.dataset.formatErrorText || `Допустимые форматы: ${acceptList.join(', ')}`;
+    return input.dataset.formatErrorText || formatMessage || `Допустимые форматы: ${acceptList.join(', ')}`;
   }
 
   return null;
 };
 
-// Правило для поля файла. Без списка форматы берутся из accept, со списком — только из него
-const createFileRule = acceptList => ({
-  test: (value, input) => !getFileError(input, acceptList),
-  message: (value, input) => getFileError(input, acceptList),
+// Правило для поля файла. Без списка форматы берутся из accept, со списком — только из него.
+// formatMessage — свой текст ошибки формата (по умолчанию «Допустимые форматы: …»)
+const createFileRule = (acceptList, formatMessage) => ({
+  test: (value, input) => !getFileError(input, acceptList, formatMessage),
+  message: (value, input) => getFileError(input, acceptList, formatMessage),
 });
 
 // Раскодирование punycode-метки домена (RFC 3492): xn--p1ai → рф.
@@ -134,6 +137,11 @@ export const customRules = {
     test: (value, input) => /^\+7 \d{3} \d{3} \d{2} \d{2}$/.test(value.trim()) || (!input?.required && !/\d/.test(value.trim().slice(2))),
     message: 'Пожалуйста, укажите корректный номер телефона',
   },
+  price: {
+    // Поле с маской цены (data-input-price): «15 000.50 ₽» — разряды и знак рубля не учитываются
+    test: value => /^\d+(?:\.\d{1,2})?$/.test(value.replace(/[\s₽]/g, '')),
+    message: 'Пожалуйста, укажите сумму, например 15 000 ₽',
+  },
   decimal: {
     test: value => /^\d+(?:[.,]\d{1,2})?$/.test(value.trim()),
     message: 'Введите сумму, например 100.00',
@@ -155,7 +163,7 @@ export const customRules = {
     message: value => `Сократите количество символов сообщения на ${value.length - CERT_MESSAGE_MAX_LENGTH}`,
   },
   file: createFileRule(),
-  'images-only': createFileRule(IMAGE_FORMATS),
+  'certificat-logo': createFileRule(CERTIFICAT_LOGO_FORMATS, CERTIFICAT_LOGO_FORMAT_MESSAGE),
   inn: {
     test: value => /^(?:\d{10}|\d{12})$/.test(value.trim()),
     message: 'Пожалуйста, укажите корректный ИНН: 10 цифр для организации или 12 для ИП',

@@ -76,7 +76,7 @@
                 />
                 <h2 class="title title--32 upper">Сертификаты для <br />бизнеса</h2>
                 <p class="text fs-18 grey-text">Партнерам и&nbsp;сотрудникам — с&nbsp;вашим логотипом и&nbsp;закрывающими документами.</p>
-                <a href="#certificate-order" class="button magenta-light"><span>Подробнее</span></a>
+                <a href="#certificate-order" class="button magenta-light" data-cert-purpose-set="company"><span>Подробнее</span></a>
               </div>
             </div>
           </div>
@@ -99,6 +99,8 @@
       <!--ЗАКАЗ СЕРТИФИКАТА-->
       <section class="section certificate-order">
         <div class="container">
+          <h2 class="title title--32 upper full">Оформить сертификат</h2>
+
           <form
             data-form
             action="%ROOT%cart/"
@@ -173,10 +175,21 @@
 
                 <label class="label hidden" data-cert-nominal-label>
                   <span class="label-text">Введите свою сумму *</span>
-                  <input data-cert-field="nominal" type="number" name="nominal" class="input" value="3000" placeholder="Номинал" required />
+                  <input
+                    data-cert-field="nominal"
+                    data-input-price
+                    data-rule="price"
+                    type="text"
+                    inputmode="decimal"
+                    name="nominal"
+                    class="input"
+                    placeholder="15 000 ₽"
+                    required
+                    data-required-error-text="Пожалуйста введите свою сумму"
+                  />
                 </label>
 
-                <input type="hidden" name="code" value="0000-0000-001" data-cert-field="code" />
+                <input type="hidden" name="code" value="ХХХХ-ХХХХ-ХХХ" data-cert-field="code" />
                 <input type="hidden" name="template" value="1" data-cert-field="template" />
               </fieldset>
 
