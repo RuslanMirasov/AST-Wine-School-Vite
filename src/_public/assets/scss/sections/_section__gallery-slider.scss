@@ -28,8 +28,31 @@
   cursor: pointer;
   pointer-events: all;
   border-radius: var(--fs-50);
+  transform: scale(1);
+  transition: transform 0.5s var(--cubic);
   @media (max-width: 767px) {
     border-radius: var(--fs-30);
+  }
+}
+
+// Лёгкий зум при наведении, как у карточек: слайд обрезает увеличенную картинку по своему скруглению
+.gallery-slider,
+.interface-slider {
+  .swiper-slide {
+    overflow: hidden;
+    border-radius: var(--fs-50);
+    @media (max-width: 767px) {
+      border-radius: var(--fs-30);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        .gallery-image,
+        .interface-image {
+          transform: scale(1.05);
+        }
+      }
+    }
   }
 }
 
@@ -45,11 +68,6 @@
   @media (max-width: 767px) {
     height: 200px;
   }
-}
-
-.gallery-image-original {
-  width: 100%;
-  max-width: 1200px;
 }
 
 @media (max-width: 599px) {
