@@ -10,7 +10,55 @@ const formatTime = seconds => {
   return h > 0 ? `${h}:${pad(m)}:${pad(s)}` : `${pad(m)}:${pad(s)}`;
 };
 
+// Плеер сервисов (Rutube, VK, YouTube и любой другой с embed-ссылкой) — попап #vk-player с <iframe data-embed-player>.
+// Открывает его кнопка <… data-popup-open="vk-player" data-video-url="embed-ссылка">: адрес подставляется в iframe.
+// При закрытии попапа адрес убирается — видео останавливается у любого сервиса, без его собственного API
+const EMBED_POPUP_ID = 'vk-player';
+
+const initEmbedPlayer = () => {
+  const popupContent = document.getElementById(EMBED_POPUP_ID);
+  const iframe = popupContent?.querySelector('[data-embed-player]');
+
+  if (!iframe) return;
+
+  const backdrop = popupContent.closest('[data-backdrop]');
+  // Адрес из последней нажатой кнопки: попап может показаться не сразу (переключение с другого попапа)
+  let pendingUrl = '';
+
+  const isOpen = () => popupContent.style.display === 'flex' && (!backdrop || backdrop.classList.contains('active'));
+
+  const load = () => {
+    if (!pendingUrl || iframe.getAttribute('src') === pendingUrl) return;
+    iframe.src = pendingUrl;
+  };
+
+  // Ссылку с кнопки не стираем: при открытии попап на мгновение виден без активного фона,
+  // и наблюдатель успевает вызвать stop до load
+  const stop = () => {
+    if (iframe.hasAttribute('src')) iframe.removeAttribute('src');
+  };
+
+  document.addEventListener('click', event => {
+    const opener = event.target.closest(`[data-popup-open="${EMBED_POPUP_ID}"]`);
+    const url = opener?.dataset.videoUrl;
+
+    if (!url || url === '#') return;
+
+    pendingUrl = url;
+    if (isOpen()) load();
+  });
+
+  const observer = new MutationObserver(() => {
+    if (isOpen()) load();
+    else stop();
+  });
+  observer.observe(popupContent, { attributes: true, attributeFilter: ['style'] });
+  if (backdrop) observer.observe(backdrop, { attributes: true, attributeFilter: ['class'] });
+};
+
 export const initVideoPlayer = () => {
+  initEmbedPlayer();
+
   const popupContent = document.querySelector('#video-player');
   const player = popupContent?.querySelector('[data-player]');
   const video = player?.querySelector('[data-player-video]');

@@ -64,6 +64,9 @@
 
     .history__info {
       order: 1;
+      [data-read-more-btn] {
+        margin-top: 0px;
+      }
     }
     .history__images {
       order: 2;

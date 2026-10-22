@@ -216,6 +216,8 @@
 
 // Обрезка до N строк с кнопкой «Читать полностью» (readMore.js).
 // Число строк приходит из data-read-more через переменную --read-more-lines.
+// Абзац, на котором заканчивается общий лимит строк карточки с data-read-more-group (readMore.js)
+.read-more-clamp,
 [data-read-more]:not(.is-expanded) {
   display: -webkit-box;
   -webkit-box-orient: vertical;

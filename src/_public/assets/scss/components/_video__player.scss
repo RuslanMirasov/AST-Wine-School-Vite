@@ -6,6 +6,15 @@
     position: relative;
     padding: 0;
   }
+
+  &.vk-player-popup {
+    max-width: 900px;
+    overflow: hidden;
+    border-radius: var(--fs-16);
+    background: none;
+    position: relative;
+    padding: 0;
+  }
 }
 
 .video-player {
@@ -284,4 +293,12 @@
       }
     }
   }
+}
+
+.video-iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  outline: none;
 }
