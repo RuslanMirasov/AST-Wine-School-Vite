@@ -229,7 +229,7 @@ ul li.search-toggle-el {
 
     .submenu {
       .menu-link {
-        font-size: var(--fs-18);
+        font-size: var(--fs-16);
       }
     }
 
@@ -237,7 +237,7 @@ ul li.search-toggle-el {
       left: auto;
       right: 0px;
       transform: translate(0%, 0%);
-      min-width: 580px;
+      min-width: 500px;
       flex-direction: column;
       .submenu {
         width: 100%;
@@ -354,7 +354,7 @@ ul li.search-toggle-el {
       }
       p {
         width: 100%;
-        font-size: var(--fs-18);
+        font-size: var(--fs-14);
         --lh: 1.1;
         padding-top: var(--fs-12);
         color: var(--blue);
