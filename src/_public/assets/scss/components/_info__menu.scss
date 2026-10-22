@@ -74,6 +74,9 @@
   background-color: var(--grey-promo);
   padding: var(--fs-16);
   border-radius: var(--fs-24);
+  @media (min-width: 768px) {
+    padding: var(--fs-24) var(--fs-32);
+  }
   @media (min-width: 1024px) {
     display: none;
   }
@@ -92,6 +95,9 @@
     text-wrap: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    @media (min-width: 768px) {
+      font-size: var(--fs-20);
+    }
   }
 }
 
@@ -101,6 +107,9 @@
     border-radius: 0px;
     a {
       border-radius: var(--fs-12);
+      @media (min-width: 768px) {
+        font-size: var(--fs-18);
+      }
     }
   }
 }
