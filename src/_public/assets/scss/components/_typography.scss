@@ -182,7 +182,8 @@
 .cut-3,
 .cut-4,
 .cut-5,
-.cut-6 {
+.cut-6,
+.cut-7 {
   display: -webkit-box !important;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -207,6 +208,10 @@
 .cut-6 {
   line-clamp: 6;
   -webkit-line-clamp: 6;
+}
+.cut-7 {
+  line-clamp: 7;
+  -webkit-line-clamp: 7;
 }
 
 // Обрезка до N строк с кнопкой «Читать полностью» (readMore.js).
