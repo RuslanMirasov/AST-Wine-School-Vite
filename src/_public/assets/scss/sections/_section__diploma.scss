@@ -3,6 +3,12 @@
   min-height: 276px;
   .logo-background {
     opacity: 0.6;
+    width: 54%;
+    height: auto;
+    top: 50%;
+    right: 0px;
+    transform: translate(3%, -55%);
+    opacity: 1;
   }
   .button {
     min-width: 130px;
@@ -28,15 +34,15 @@
   border-radius: 10px;
 }
 
-@media (hover: hover) {
-  .content {
-    &:hover {
-      .certificat {
-        transform: rotate(4deg) translateY(0%);
-      }
-    }
-  }
-}
+// @media (hover: hover) {
+//   .content {
+//     &:hover {
+//       .certificat {
+//         transform: rotate(4deg) translateY(0%);
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: 1279px) {
   .diploma {
@@ -55,6 +61,15 @@
   .diploma {
     .content-text {
       width: 100%;
+    }
+
+    .logo-background {
+      width: 65%;
+      height: auto;
+      top: 0px;
+      right: 0px;
+      transform: translate(20%, -20%);
+      opacity: 1;
     }
   }
 
