@@ -66,6 +66,12 @@
     .button {
       width: 100%;
     }
+
+    .price-and-btn {
+      .button {
+        width: auto;
+      }
+    }
   }
 
   .more-time-form-fields {

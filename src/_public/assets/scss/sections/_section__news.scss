@@ -21,17 +21,10 @@
 
 .posts-slider {
   .swiper-slide {
-    &.swiper-slide-active + .swiper-slide,
-    &.swiper-slide-active + .swiper-slide + .swiper-slide,
-    &.swiper-slide-active + .swiper-slide + .swiper-slide + .swiper-slide {
+    // Видны все слайды в зоне контейнера — класс ставит Swiper (watchSlidesProgress), в том числе во время перетаскивания
+    &.swiper-slide-visible {
       opacity: 1;
       pointer-events: all;
-    }
-    @media (min-width: 1920px) {
-      &.swiper-slide-active + .swiper-slide + .swiper-slide + .swiper-slide + .swiper-slide {
-        opacity: 1;
-        pointer-events: all;
-      }
     }
   }
 }
@@ -180,13 +173,6 @@
 
 .body.a11y {
   @media (min-width: 768px) {
-    .swiper-slide {
-      &.swiper-slide-active + .swiper-slide + .swiper-slide + .swiper-slide + .swiper-slide {
-        opacity: 0;
-        pointer-events: none;
-      }
-    }
-
     @media (max-width: 1279px) {
       .swiper-slide {
         width: 450px;

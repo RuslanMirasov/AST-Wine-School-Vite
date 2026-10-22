@@ -75,6 +75,7 @@
     padding-left: calc(160px + var(--fs-24));
     flex-wrap: nowrap;
     gap: var(--fs-24);
+
     &:before {
       content: '';
       display: block;

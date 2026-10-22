@@ -133,6 +133,8 @@ const initSlider = sliderWrapper => {
     speed,
     loop: toBool(loop),
     loopPreventsSliding: toBool(loopPreventsSliding),
+    // Класс swiper-slide-visible у слайдов в зоне видимости ставится и снимается прямо во время перетаскивания
+    watchSlidesProgress: true,
     centeredSlides: toBool(centered),
     centeredSlidesBounds: toBool(centeredSlidesBounds),
     direction,
