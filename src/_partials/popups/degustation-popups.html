@@ -38,14 +38,14 @@
         class="input"
         placeholder="email@email.ru"
         required
-        data-required-error-text="Пожалуйста, укажите ваш Email"
+        data-required-error-text="Пожалуйста, укажите вашу электронную почту"
         autocomplete="email"
       />
     </label>
 
     <label class="label">
       <span class="label-text">Телефон <span class="red">*</span></span>
-      <input type="tel" name="phone" class="input" required data-required-error-text="Пожалуйста, укажите ваш Телефон" />
+      <input type="tel" name="phone" class="input" required data-required-error-text="Пожалуйста, укажите ваш номер телефона" />
     </label>
 
     <label class="label auto" aria-live="polite" aria-atomic="true">
@@ -59,7 +59,7 @@
 
     <label class="label">
       <span class="label-text">Город <span class="red">*</span></span>
-      <select data-select name="city" required>
+      <select data-select name="city" required data-required-error-text="Пожалуйста, выберите город">
         <option value="Москва">Москва</option>
         <option value="Санкт-Петербург">Санкт-Петербург</option>
       </select>

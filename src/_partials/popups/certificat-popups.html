@@ -43,6 +43,7 @@
           autocomplete="off"
           form="certificate-order"
           data-cert-field="email-holder"
+          data-required-error-text="Пожалуйста, укажите электронную почту получателя"
         />
       </label>
 
@@ -56,6 +57,7 @@
           required
           form="certificate-order"
           data-cert-field="message"
+          data-required-error-text="Пожалуйста, напишите сообщение от дарителя"
         ></textarea>
         <span class="text fs-12 grey-text">Максимально 300&nbsp;символов.</span>
       </label>
@@ -71,6 +73,7 @@
           autocomplete="email"
           form="certificate-order"
           data-cert-field="email-sender"
+          data-required-error-text="Пожалуйста, укажите электронную почту дарителя"
         />
       </label>
     </div>
@@ -88,6 +91,7 @@
           disabled
           form="certificate-order"
           data-cert-field="message"
+          data-required-error-text="Пожалуйста, напишите подпись для сертификата"
         ></textarea>
         <span class="text fs-12 grey-text">Максимально 300&nbsp;символов.</span>
       </label>
@@ -104,6 +108,7 @@
           autocomplete="email"
           form="certificate-order"
           data-cert-field="email-holder"
+          data-required-error-text="Пожалуйста, укажите электронную почту получателя"
         />
       </label>
     </div>
@@ -135,6 +140,7 @@
           required
           form="certificate-order"
           data-cert-field="message"
+          data-required-error-text="Пожалуйста, напишите сообщение от дарителя"
         ></textarea>
         <span class="text fs-12 grey-text">Максимально 300&nbsp;символов.</span>
       </label>
@@ -182,6 +188,7 @@
           autocomplete="email"
           form="certificate-order"
           data-cert-field="email-holder"
+          data-required-error-text="Пожалуйста, укажите электронную почту получателя"
         />
       </label>
 
@@ -216,6 +223,7 @@
           required
           form="certificate-order"
           data-cert-field="message"
+          data-required-error-text="Пожалуйста, напишите сообщение от дарителя"
         ></textarea>
         <span class="text fs-12 grey-text">Максимально 300&nbsp;символов.</span>
       </label>
@@ -229,7 +237,7 @@
 
       <div class="label label--file" data-file-field>
         <label>
-          <input type="file" name="logo" data-rule="certificat-logo" data-max-size="10" form="certificate-order" required data-cert-logo />
+          <input type="file" name="logo" data-rule="certificat-logo" data-max-size="10" form="certificate-order" required data-cert-logo data-required-error-text="Пожалуйста, прикрепите логотип компании" />
 
           <span type="button" class="button white-border">
             <svg width="17" height="23"><use href="/assets/img/sprite.svg#file"></use></svg>

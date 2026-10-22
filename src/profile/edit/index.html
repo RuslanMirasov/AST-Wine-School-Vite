@@ -61,12 +61,13 @@
                       minlength="2"
                       required
                       value="Черноморепоколенопереходященский"
+                      data-required-error-text="Пожалуйста, укажите вашу фамилию"
                     />
                   </label>
 
                   <label class="label">
                     <span class="label-text">Имя *</span>
-                    <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="Константин" />
+                    <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="Константин" data-required-error-text="Пожалуйста, укажите ваше имя" />
                   </label>
 
                   <label class="label">
@@ -86,6 +87,7 @@
                       value="chekobrat@mail.ru"
                       required
                       autocomplete="email"
+                      data-required-error-text="Пожалуйста, укажите вашу электронную почту"
                     />
                   </label>
 
@@ -98,12 +100,13 @@
                       required
                       value="+7 900 000 00 00"
                       autocomplete="tel"
+                      data-required-error-text="Пожалуйста, укажите ваш номер телефона"
                     />
                   </label>
 
                   <label class="label">
                     <span class="label-text">Дата рождения *</span>
-                    <input type="date" name="birthday" class="input" required placeholder="(выберите дату)" value="2001-04-28" />
+                    <input type="date" name="birthday" class="input" required placeholder="(выберите дату)" value="2001-04-28" data-required-error-text="Пожалуйста, укажите дату рождения" />
                   </label>
 
                   <p class="text fs-12 grey-text">Участие в мероприятиях доступно только с 18 лет</p>

@@ -64,8 +64,10 @@ export function initDecimalInputs() {
 // Поля type="number": Firefox (в отличие от Chrome) даёт напечатать в них буквы — value тогда пустой,
 // а в поле виден текст. Пропускаем только цифры; минус — если min < 0, точку и запятую — если step
 // дробный или any. Букву e (1e5) и плюс, которые пропускает Chrome, тоже не пускаем.
-// Тип поля не меняется: min/max/step, стрелки и браузерная валидация работают как раньше
-const NUMBER_INPUT_SELECTOR = 'input[type="number"]';
+// Тип поля не меняется: min/max/step, стрелки и браузерная валидация работают как раньше.
+// Текстовые поля из одних цифр (ИНН, КПП — type="text", чтобы работал maxlength) получают тот же фильтр
+// атрибутом data-digits: у них нет min и step, поэтому пропускаются только цифры
+const NUMBER_INPUT_SELECTOR = 'input[type="number"], input[data-digits]';
 
 const getNumberDisallowedPattern = input => {
   const step = input.step;
@@ -97,7 +99,14 @@ export function initNumberInputs() {
     event.preventDefault();
     if (!cleaned) return;
 
-    input.value = cleaned;
+    if (input.type === 'number') {
+      input.value = cleaned;
+    } else {
+      // Текстовое поле: вставляем на место выделения и не даём выйти за maxlength
+      const { selectionStart: start, selectionEnd: end, value, maxLength } = input;
+      const room = maxLength > 0 ? maxLength - (value.length - (end - start)) : cleaned.length;
+      input.setRangeText(cleaned.slice(0, Math.max(0, room)), start, end, 'end');
+    }
     input.dispatchEvent(new Event('input', { bubbles: true }));
   };
 

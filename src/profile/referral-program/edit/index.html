@@ -67,12 +67,13 @@
                       minlength="2"
                       required
                       value="Черноморепоколенопереходященский"
+                      data-required-error-text="Пожалуйста, укажите вашу фамилию"
                     />
                   </label>
 
                   <label class="label">
                     <span class="label-text">Имя *</span>
-                    <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="Константин" />
+                    <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="Константин" data-required-error-text="Пожалуйста, укажите ваше имя" />
                   </label>
                 </fieldset>
 
@@ -84,7 +85,7 @@
 
                   <label class="label" data-tab="individual">
                     <span class="label-text">ИНН *</span>
-                    <input type="text" name="inn" class="input" required inputmode="numeric" maxlength="12" value="0123456789" />
+                    <input type="text" name="inn" class="input" required inputmode="numeric" data-digits maxlength="12" value="0123456789" data-rule="inn" data-rule-error-text="Пожалуйста, укажите корректный ИНН: 10 цифр для организации или 12 для ИП" data-required-error-text="Пожалуйста, укажите ИНН" />
                   </label>
                 </fieldset>
 
@@ -93,12 +94,12 @@
                 <fieldset class="col--2">
                   <label class="label" data-tab="legal-entity">
                     <span class="label-text">Наименование юридического лица *</span>
-                    <input type="text" name="legal-entity-name" class="input" required="" value="" placeholder="Наименование" data-invoice-field="" />
+                    <input type="text" name="legal-entity-name" class="input" required="" value="" placeholder="Наименование" data-invoice-field="" data-required-error-text="Пожалуйста, укажите наименование юридического лица" />
                   </label>
 
                   <label class="label" data-tab="legal-entity">
                     <span class="label-text">Юридический адрес *</span>
-                    <input type="text" name="adress" class="input" required="" value="" placeholder="Адрес" data-invoice-field="" />
+                    <input type="text" name="adress" class="input" required="" value="" placeholder="Адрес" data-invoice-field="" data-required-error-text="Пожалуйста, укажите юридический адрес" />
                   </label>
 
                   <label class="label">
@@ -111,12 +112,13 @@
                       inputmode="numeric"
                       maxlength="20"
                       value="40817810099910004320"
+                      data-required-error-text="Пожалуйста, укажите расчётный счёт"
                     />
                   </label>
 
                   <label class="label">
                     <span class="label-text">БИК *</span>
-                    <input type="text" name="bik" class="input" required inputmode="numeric" maxlength="9" value="044525225" />
+                    <input type="text" name="bik" class="input" required inputmode="numeric" maxlength="9" value="044525225" data-required-error-text="Пожалуйста, укажите БИК" />
                   </label>
                 </fieldset>
 
@@ -131,32 +133,35 @@
                       inputmode="numeric"
                       maxlength="20"
                       value="30101810400000000220"
+                      data-required-error-text="Пожалуйста, укажите корреспондентский счёт"
                     />
                   </label>
 
                   <label class="label">
                     <span class="label-text">Наименование банка *</span>
-                    <input type="text" name="bank-name" class="input" required value="ПАО Сбербанк" />
+                    <input type="text" name="bank-name" class="input" required value="ПАО Сбербанк" data-required-error-text="Пожалуйста, укажите наименование банка" />
                   </label>
 
                   <label class="label" data-tab="legal-entity">
                     <span class="label-text">ИНН *</span>
-                    <input type="text" name="inn" class="input" required inputmode="numeric" maxlength="12" value="0123456789" />
+                    <input type="text" name="inn" class="input" required inputmode="numeric" data-digits maxlength="12" value="0123456789" data-rule="inn" data-rule-error-text="Пожалуйста, укажите корректный ИНН: 10 цифр для организации или 12 для ИП" data-required-error-text="Пожалуйста, укажите ИНН" />
                   </label>
 
                   <label class="label" data-tab="legal-entity">
                     <span class="label-text">КПП *</span>
                     <input
-                      type="number"
+                      type="text"
                       name="kpp"
                       class="input"
                       required=""
-                      inputmode="numeric"
+                      inputmode="numeric" data-digits
                       maxlength="9"
                       data-rule="kpp"
                       value=""
                       placeholder="9 цифр"
                       data-invoice-field=""
+                      data-rule-error-text="Пожалуйста, укажите корректный КПП: 9 цифр"
+                      data-required-error-text="Пожалуйста, укажите КПП"
                     />
                   </label>
                 </fieldset>

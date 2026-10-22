@@ -29,7 +29,7 @@
             <h1 class="title title--40 upper">Оформление заказа</h1>
 
             <ul class="cart-steps">
-              <li class="active"><span>Корзина</span></li>
+              <li class="active"><a href="%ROOT%cart/">Корзина</a></li>
               <li class="current"><span>Оформление</span></li>
               <li><span>Оплата</span></li>
               <li><span>Готово</span></li>
@@ -62,12 +62,12 @@
                 <fieldset class="col--2">
                   <label class="label">
                     <span class="label-text">Фамилия *</span>
-                    <input type="text" name="sername" class="input" data-rule="name-cyrillic" minlength="2" required value="" />
+                    <input type="text" name="sername" class="input" data-rule="name-cyrillic" minlength="2" required value="" data-required-error-text="Пожалуйста, укажите вашу фамилию" />
                   </label>
 
                   <label class="label">
                     <span class="label-text">Имя *</span>
-                    <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="" />
+                    <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="" data-required-error-text="Пожалуйста, укажите ваше имя" />
                   </label>
 
                   <label class="label">
@@ -79,17 +79,17 @@
                 <fieldset class="col--2">
                   <label class="label">
                     <span class="label-text">Электронная почта *</span>
-                    <input type="email" placeholder="email@email.ru" name="email" class="input" required autocomplete="email" />
+                    <input type="email" placeholder="email@email.ru" name="email" class="input" required autocomplete="email" data-required-error-text="Пожалуйста, укажите вашу электронную почту" />
                   </label>
 
                   <label class="label">
                     <span class="label-text">Номер телефона *</span>
-                    <input type="tel" name="phone" class="input" required />
+                    <input type="tel" name="phone" class="input" required data-required-error-text="Пожалуйста, укажите ваш номер телефона" />
                   </label>
 
                   <label class="label" data-tab="individual">
                     <span class="label-text">Дата рождения *</span>
-                    <input type="date" name="birthday" class="input" required value="" placeholder="(выберите дату)" />
+                    <input type="date" name="birthday" class="input" required value="" placeholder="(выберите дату)" data-required-error-text="Пожалуйста, укажите дату рождения" />
                   </label>
 
                   <p class="text fs-12 grey-text" data-tab="individual">Участие в мероприятиях доступно только с 18 лет.</p>
@@ -97,46 +97,52 @@
 
                 <fieldset class="col--2" data-tab="legal-entity">
                   <label class="label">
-                    <span class="label-text">Наименование юридического лица</span>
-                    <input type="text" name="legal-entity-name" class="input" required value="" placeholder="Наименование" data-invoice-field />
+                    <span class="label-text">Наименование юридического лица *</span>
+                    <input type="text" name="legal-entity-name" class="input" required value="" placeholder="Наименование" data-invoice-field data-required-error-text="Пожалуйста, укажите наименование юридического лица" />
                   </label>
 
                   <label class="label">
                     <span class="label-text">ИНН *</span>
                     <input
-                      type="number"
+                      type="text"
                       name="inn"
                       class="input"
                       required
                       inputmode="numeric"
+                      data-digits
                       maxlength="12"
                       data-rule="inn"
                       value=""
                       placeholder="10 или 12 цифр"
                       data-invoice-field
+                      data-rule-error-text="Пожалуйста, укажите корректный ИНН: 10 цифр для организации или 12 для ИП"
+                      data-required-error-text="Пожалуйста, укажите ИНН"
                     />
                   </label>
                 </fieldset>
 
                 <fieldset class="col--2" data-tab="legal-entity">
                   <label class="label">
-                    <span class="label-text">Юридический адрес</span>
-                    <input type="text" name="adress" class="input" required value="" placeholder="Адрес" data-invoice-field />
+                    <span class="label-text">Юридический адрес *</span>
+                    <input type="text" name="adress" class="input" required value="" placeholder="Адрес" data-invoice-field data-required-error-text="Пожалуйста, укажите юридический адрес" />
                   </label>
 
                   <label class="label">
-                    <span class="label-text">КПП</span>
+                    <span class="label-text">КПП *</span>
                     <input
-                      type="number"
+                      type="text"
                       name="kpp"
                       class="input"
                       required
                       inputmode="numeric"
+                      data-digits
                       maxlength="9"
                       data-rule="kpp"
                       value=""
                       placeholder="9 цифр"
                       data-invoice-field
+                      data-rule-error-text="Пожалуйста, укажите корректный КПП: 9 цифр"
+                      data-required-error-text="Пожалуйста, укажите КПП"
                     />
                   </label>
                 </fieldset>

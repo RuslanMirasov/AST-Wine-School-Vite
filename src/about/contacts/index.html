@@ -173,14 +173,14 @@
                   class="input"
                   placeholder="Email"
                   required
-                  data-required-error-text="Пожалуйста, укажите ваш Email"
+                  data-required-error-text="Пожалуйста, укажите вашу электронную почту"
                   autocomplete="email"
                 />
               </label>
 
               <label class="label col--2">
                 <span class="label-text">Телефон для связи <span class="red">*</span></span>
-                <input type="tel" name="phone" class="input" required data-required-error-text="Пожалуйста, укажите ваш телефон" />
+                <input type="tel" name="phone" class="input" required data-required-error-text="Пожалуйста, укажите ваш номер телефона" />
               </label>
 
               <label class="label">
@@ -196,7 +196,7 @@
 
               <div class="label label--file" data-file-field>
                 <label>
-                  <input type="file" name="file" data-max-size="10" required />
+                  <input type="file" name="file" data-max-size="10" required data-required-error-text="Пожалуйста, прикрепите файл" />
 
                   <span class="button white-border">
                     <svg width="18" height="18"><use href="/assets/img/sprite.svg#file"></use></svg>
@@ -310,7 +310,7 @@
 
             <form data-form action="#" class="form" novalidate onsubmit="onSubscribeSectionFormSubmit(event)">
               <label class="label">
-                <input type="email" name="email" placeholder="Введите email" class="input subscribe-input" required autocomplete="email" />
+                <input type="email" name="email" placeholder="Введите email" class="input subscribe-input" required autocomplete="email" data-required-error-text="Пожалуйста, укажите вашу электронную почту" />
               </label>
 
               <fieldset>

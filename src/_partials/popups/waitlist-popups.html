@@ -21,12 +21,12 @@
   <form data-form action="#" class="form" novalidate onsubmit="onAddToListSubmit(event)">
     <label class="label">
       <span class="label-text">Фамилия <span class="red">*</span></span>
-      <input type="text" name="surname" class="input" data-rule="name-cyrillic" minlength="2" required />
+      <input type="text" name="surname" class="input" data-rule="name-cyrillic" minlength="2" required data-required-error-text="Пожалуйста, укажите вашу фамилию" />
     </label>
 
     <label class="label">
       <span class="label-text">Имя <span class="red">*</span></span>
-      <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required />
+      <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required data-required-error-text="Пожалуйста, укажите ваше имя" />
     </label>
 
     <label class="label">
@@ -36,12 +36,12 @@
 
     <label class="label">
       <span class="label-text">Телефон <span class="red">*</span></span>
-      <input type="tel" name="phone" class="input" required />
+      <input type="tel" name="phone" class="input" required data-required-error-text="Пожалуйста, укажите ваш номер телефона" />
     </label>
 
     <label class="label">
       <span class="label-text">Email <span class="red">*</span></span>
-      <input type="email" placeholder="email@email.ru" name="email" class="input" required />
+      <input type="email" placeholder="email@email.ru" name="email" class="input" required data-required-error-text="Пожалуйста, укажите вашу электронную почту" />
     </label>
 
     <label class="label auto" aria-live="polite" aria-atomic="true">

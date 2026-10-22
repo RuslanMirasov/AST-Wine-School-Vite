@@ -455,12 +455,12 @@
               <fieldset>
                 <label class="label">
                   <span class="label-text">Фамилия *</span>
-                  <input type="text" name="sername" class="input" data-rule="name-cyrillic" minlength="2" required value="" />
+                  <input type="text" name="sername" class="input" data-rule="name-cyrillic" minlength="2" required value="" data-required-error-text="Пожалуйста, укажите вашу фамилию" />
                 </label>
 
                 <label class="label">
                   <span class="label-text">Имя *</span>
-                  <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="" />
+                  <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="" data-required-error-text="Пожалуйста, укажите ваше имя" />
                 </label>
 
                 <label class="label">
@@ -470,17 +470,17 @@
 
                 <label class="label">
                   <span class="label-text">Электронная почта *</span>
-                  <input type="email" placeholder="email@email.ru" name="email" class="input" required autocomplete="email" />
+                  <input type="email" placeholder="email@email.ru" name="email" class="input" required autocomplete="email" data-required-error-text="Пожалуйста, укажите вашу электронную почту" />
                 </label>
 
                 <label class="label">
                   <span class="label-text">Номер телефона *</span>
-                  <input type="tel" name="phone" class="input" required />
+                  <input type="tel" name="phone" class="input" required data-required-error-text="Пожалуйста, укажите ваш номер телефона" />
                 </label>
 
                 <label class="label" data-tab="for-company">
                   <span class="label-text">Наименование юридического лица *</span>
-                  <input type="text" name="legal-entity-name" class="input" required value="" placeholder="Наименование" />
+                  <input type="text" name="legal-entity-name" class="input" required value="" placeholder="Наименование" data-required-error-text="Пожалуйста, укажите наименование юридического лица" />
                 </label>
               </fieldset>
 
@@ -488,35 +488,39 @@
                 <label class="label" data-tab="for-company">
                   <span class="label-text">ИНН *</span>
                   <input
-                    type="number"
+                    type="text"
                     name="inn"
                     class="input"
                     required
-                    inputmode="numeric"
+                    inputmode="numeric" data-digits
                     maxlength="12"
                     data-rule="inn"
                     value=""
                     placeholder="10 или 12 цифр"
+                    data-rule-error-text="Пожалуйста, укажите корректный ИНН: 10 цифр для организации или 12 для ИП"
+                    data-required-error-text="Пожалуйста, укажите ИНН"
                   />
                 </label>
 
                 <label class="label" data-tab="for-company">
                   <span class="label-text">Юридический адрес *</span>
-                  <input type="text" name="adress" class="input" required value="" placeholder="Адрес" />
+                  <input type="text" name="adress" class="input" required value="" placeholder="Адрес" data-required-error-text="Пожалуйста, укажите юридический адрес" />
                 </label>
 
                 <label class="label" data-tab="for-company">
                   <span class="label-text">КПП *</span>
                   <input
-                    type="number"
+                    type="text"
                     name="kpp"
                     class="input"
                     required
-                    inputmode="numeric"
+                    inputmode="numeric" data-digits
                     maxlength="9"
                     data-rule="kpp"
                     value=""
                     placeholder="9 цифр"
+                    data-rule-error-text="Пожалуйста, укажите корректный КПП: 9 цифр"
+                    data-required-error-text="Пожалуйста, укажите КПП"
                   />
                 </label>
 
