@@ -66,3 +66,35 @@
     }
   }
 }
+
+.menu-accordeon {
+  background-color: var(--grey-promo);
+  padding: var(--fs-16);
+  border-radius: var(--fs-24);
+}
+
+.menu-accordeon-head {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: var(--fs-16);
+  p {
+    font-weight: 500;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.menu-accordeon-body {
+  padding-top: var(--fs-16);
+  .info-menu {
+    border-radius: 0px;
+    a {
+      border-radius: var(--fs-12);
+    }
+  }
+}

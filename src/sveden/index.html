@@ -32,14 +32,6 @@
 
       <section class="page page-info">
         <div class="container gap--40">
-          <!--SIDEBAR-MOBIL BUTTON-->
-          <div class="sidebar-mobil">
-            <button class="sidebar-mobil-button" data-popup-open="sidebar-menu">
-              <span>Основные сведения</span>
-              <svg width="30" height="24"><use href="/assets/img/sprite.svg#menu"></use></svg>
-            </button>
-          </div>
-
           <!--SIDEBAR-->
           <aside class="sidebar medium left-side" data-sticky-sidebar>
             <load src="/_partials/components/menus/info-menu.html" />
@@ -57,12 +49,28 @@
 
           <!--PAGE CONTENT-->
           <div class="page-content">
-            <p class="text">
+            <!-- <p class="text">
               Данный специальный раздел создан для исполнения приказа Федеральной службы по&nbsp;надзору в&nbsp;сфере образования и&nbsp;науки
               (Рособрнадзор) «Об&nbsp;утверждении требований к&nbsp;структуре официального сайта образовательной организации
               в&nbsp;информационно-телекоммуникационной сети «Интернет» и&nbsp;формату представления на&nbsp;нем информации» №&nbsp;831
               от&nbsp;14.08.2020&nbsp;г.
-            </p>
+            </p> -->
+
+            <!--Меню-аккордеон для мобильных устройств-->
+            <div class="menu-accordeon" data-accordeon="">
+              <div class="menu-accordeon-head" data-accordeon-head="">
+                <p class="text">Сведения об образовательной организации</p>
+                <button type="button" class="accordeon-arrow" aria-expanded="true" aria-label="Развернуть">
+                  <svg width="15" height="15"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+
+              <div data-accordeon-body>
+                <div class="menu-accordeon-body">
+                  <load src="/_partials/components/menus/info-menu.html" />
+                </div>
+              </div>
+            </div>
 
             <h2 class="title title--24 bold"><a href="%ROOT%sveden/common/">Подраздел «Основные сведения»</a></h2>
             <div class="content br--30">
@@ -430,7 +438,6 @@
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
         <load src="/_partials/base/default-popups.html" />
-        <load src="/_partials/popups/sidebar-menu-popup.html" />
       </div>
     </div>
 

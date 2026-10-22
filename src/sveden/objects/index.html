@@ -33,14 +33,6 @@
 
       <section class="page page-info">
         <div class="container gap--40">
-          <!--SIDEBAR-MOBIL BUTTON-->
-          <div class="sidebar-mobil">
-            <button class="sidebar-mobil-button" data-popup-open="sidebar-menu">
-              <span>Материально-техническое обеспечение и&nbsp;оснащенность образовательного процесса</span>
-              <svg width="30" height="24"><use href="/assets/img/sprite.svg#menu"></use></svg>
-            </button>
-          </div>
-
           <!--SIDEBAR-->
           <aside class="sidebar medium left-side" data-sticky-sidebar>
             <load src="/_partials/components/menus/info-menu.html" />
@@ -58,6 +50,22 @@
 
           <!--PAGE CONTENT-->
           <div class="page-content">
+            <!--Меню-аккордеон для мобильных устройств-->
+            <div class="menu-accordeon" data-accordeon="">
+              <div class="menu-accordeon-head" data-accordeon-head="">
+                <p class="text">Сведения об образовательной организации</p>
+                <button type="button" class="accordeon-arrow" aria-expanded="true" aria-label="Развернуть">
+                  <svg width="15" height="15"><use href="/assets/img/sprite.svg#arrow"></use></svg>
+                </button>
+              </div>
+
+              <div data-accordeon-body>
+                <div class="menu-accordeon-body">
+                  <load src="/_partials/components/menus/info-menu.html" />
+                </div>
+              </div>
+            </div>
+
             <!--СПБ-->
             <div class="page-accordeon open" data-accordeon>
               <div class="page-accordeon-head open" data-accordeon-head>
@@ -669,7 +677,6 @@
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
         <load src="/_partials/base/default-popups.html" />
-        <load src="/_partials/popups/sidebar-menu-popup.html" />
       </div>
     </div>
 

@@ -33,6 +33,9 @@
     align-items: center;
     align-content: center;
     font-size: var(--fs-14);
+    @media (max-width: 767px) {
+      font-size: var(--fs-12);
+    }
     font-weight: 400;
     color: var(--grey-text);
     &:after {
