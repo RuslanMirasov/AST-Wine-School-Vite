@@ -251,6 +251,9 @@ textarea {
     list-style: none;
     padding-left: 0px;
     a {
+      @media (min-width: 1920px) {
+        font-size: var(--fs-18);
+      }
       @media (hover: hover) {
         &:hover {
           text-decoration: underline;
@@ -393,6 +396,13 @@ textarea {
       position: absolute;
       left: 0px;
       top: 3px;
+    }
+    @media (min-width: 1920px) {
+      padding-left: 24px;
+      svg {
+        width: 18px;
+        height: 18px;
+      }
     }
   }
 }

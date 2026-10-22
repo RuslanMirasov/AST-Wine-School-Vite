@@ -101,8 +101,21 @@
   }
 
   @media (min-width: 1920px) {
-    .grey-text {
-      font-size: var(--fs-14);
+    .text {
+      font-size: var(--fs-18);
+      &.grey-text {
+        font-size: var(--fs-16);
+      }
+    }
+
+    p {
+      font-size: var(--fs-18);
+      &.grey-text {
+        font-size: var(--fs-16);
+      }
+      a {
+        font-size: var(--fs-18);
+      }
     }
   }
 

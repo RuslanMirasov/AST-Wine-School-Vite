@@ -9,6 +9,9 @@
   a {
     display: block;
     font-size: var(--fs-16);
+    @media (min-width: 1920px) {
+      font-size: var(--fs-18);
+    }
     --lh: 1.3;
     padding: var(--fs-12) var(--fs-16);
     background-color: rgba(0, 0, 0, 0);
@@ -71,6 +74,9 @@
   background-color: var(--grey-promo);
   padding: var(--fs-16);
   border-radius: var(--fs-24);
+  @media (min-width: 1024px) {
+    display: none;
+  }
 }
 
 .menu-accordeon-head {
