@@ -227,11 +227,20 @@ ul li.search-toggle-el {
       opacity 0.3s var(--cubic),
       height 0.3s var(--cubic);
 
+    .submenu {
+      .menu-link {
+        font-size: var(--fs-18);
+      }
+    }
+
     &.center {
-      left: 50%;
-      transform: translate(-50%, 0%);
+      left: auto;
+      right: 0px;
+      transform: translate(0%, 0%);
+      min-width: 580px;
       flex-direction: column;
       .submenu {
+        width: 100%;
         li {
           &:last-child {
             border-top: 1px solid var(--grey-medium);
@@ -551,46 +560,6 @@ ul li.search-toggle-el {
 }
 
 @media (max-width: 767px) {
-  // .navigation {
-  //   display: none;
-  //   position: fixed;
-  //   align-items: flex-start;
-  //   width: 100vw;
-  //   height: auto;
-  //   max-height: calc(100svh + 10px);
-  //   overflow-x: hidden;
-  //   overflow-y: auto;
-  //   scrollbar-width: none;
-  //   -ms-overflow-style: none;
-  //   top: 0px;
-  //   left: 0px;
-  //   background: rgba(255, 255, 255, 0.8);
-  //   backdrop-filter: blur(10px);
-  //   transform: translate(0%, -100%);
-  //   transition:
-  //     opacity 0.5s var(--cubic),
-  //     transform 0.5s var(--cubic);
-  //   opacity: 1;
-  //   pointer-events: none;
-  //   padding-top: 46px;
-  //   z-index: 1;
-  //   border-radius: 0px 0px 30px 30px;
-  //   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-  //   order: 0;
-  //   margin: 0 auto;
-  //   &.open {
-  //     pointer-events: all;
-  //     opacity: 1;
-  //     transform: translate(0%, 0%);
-  //   }
-
-  //   &::-webkit-scrollbar {
-  //     width: 0px;
-  //     height: 0px;
-  //     display: none;
-  //   }
-  // }
-
   .navigation {
     // Раньше display: flex ставил JS инлайном при открытии меню
     display: flex;
@@ -651,7 +620,7 @@ ul li.search-toggle-el {
     padding-left: 16px;
     padding-top: 16px;
     li {
-      padding: 6px 0px;
+      padding: 12px 0px;
     }
   }
 
