@@ -250,7 +250,8 @@
   border-radius: var(--fs-50);
   .profile-empty-image {
     display: block;
-    max-height: 140px;
+    width: 160px;
+    height: auto;
   }
   .text {
     max-width: 520px;
