@@ -228,8 +228,6 @@
       }
       > .title {
         max-width: calc(100% - 110px);
-        hyphens: auto;
-        hyphenate-limit-chars: 14 4 4;
       }
       > .buttons {
         flex: none;
