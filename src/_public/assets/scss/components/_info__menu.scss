@@ -76,6 +76,7 @@
   border-radius: var(--fs-24);
   @media (min-width: 768px) {
     padding: var(--fs-24) var(--fs-32);
+    border-radius: var(--fs-30);
   }
   @media (min-width: 1024px) {
     display: none;
@@ -96,7 +97,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     @media (min-width: 768px) {
-      font-size: var(--fs-20);
+      font-size: var(--fs-24);
+      font-weight: 700;
     }
   }
 }

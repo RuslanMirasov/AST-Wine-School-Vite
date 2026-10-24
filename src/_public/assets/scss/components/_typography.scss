@@ -229,6 +229,16 @@
   -webkit-line-clamp: var(--read-more-lines);
 }
 
+//768
+@media (max-width: 1023px) {
+  .title {
+    &.title--40 {
+      font-size: var(--fs-32);
+      line-height: 1.2;
+    }
+  }
+}
+
 //375
 @media (max-width: 767px) {
   .title {
