@@ -329,6 +329,7 @@ fieldset + .inputError {
     align-items: center;
     align-content: center;
     position: relative;
+    //font-family: var(--font-center);
     min-height: var(--checkbox-size);
     padding: 0px;
     padding-left: calc(var(--checkbox-size) + var(--fs-12));
@@ -336,13 +337,13 @@ fieldset + .inputError {
     opacity: 1;
     margin-bottom: 0px;
     cursor: pointer;
-    --lh: 1;
+    --lh: 1.3;
 
     span {
       display: inline;
       font-size: var(--checkbox-font-size);
       font-weight: var(--checkbox-font-weight);
-      --lh: 1;
+      --lh: 1.3;
       a {
         display: inline;
         width: auto;
@@ -431,6 +432,7 @@ fieldset + .inputError {
 .radio {
   + .label-text {
     color: var(--blue);
+    line-height: 1.3;
     span {
       font-size: var(--fs-16);
     }
