@@ -49,6 +49,31 @@
 
   box-shadow: 0px 8px 24px rgba(38, 46, 64, 0.18);
 
+  // Десктоп (своя расстановка, -custom-position-): библиотека выключает у неё анимацию.
+  // Возвращаем ту же, что в мобильном режиме: проявление и сдвиг на --adp-transition-offset к полю.
+  // Переход дублируем в -active-: правило библиотеки с той же специфичностью подключается позже и перебило бы
+  &.-custom-position- {
+    opacity: 0;
+    transform: translateY(var(--adp-transition-offset));
+    pointer-events: none;
+    transition:
+      opacity var(--adp-transition-duration) var(--adp-transition-ease),
+      transform var(--adp-transition-duration) var(--adp-transition-ease);
+
+    &.-open-up- {
+      transform: translateY(calc(var(--adp-transition-offset) * -1));
+    }
+
+    &.-active- {
+      opacity: 1;
+      transform: translateY(0px);
+      pointer-events: auto;
+      transition:
+        opacity var(--adp-transition-duration) var(--adp-transition-ease),
+        transform var(--adp-transition-duration) var(--adp-transition-ease);
+    }
+  }
+
   // Месяц и год по центру, стрелки рядом с ними; без линии под навигацией
   .air-datepicker-nav {
     justify-content: center;

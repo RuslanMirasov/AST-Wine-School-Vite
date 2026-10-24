@@ -35,11 +35,23 @@ export const initReadMore = () => {
     return button;
   };
 
+  // Обрезан ли текст: сравниваем высоту с обрезкой и без неё. scrollHeight для этого не годится —
+  // в него попадают выносные элементы шрифта последней строки, и текст ровно в лимит строк считался обрезанным
+  const checkClamped = el => {
+    const clampedHeight = el.getBoundingClientRect().height;
+
+    el.style.setProperty('--read-more-lines', 'none');
+    const fullHeight = el.getBoundingClientRect().height;
+    el.style.setProperty('--read-more-lines', parseInt(el.dataset.readMore, 10));
+
+    return fullHeight > clampedHeight + 1;
+  };
+
   const updateButton = el => {
     // У раскрытого текста обрезки нет — кнопку «Свернуть» не трогаем
     if (el.classList.contains(EXPANDED_CLASS)) return;
 
-    const isClamped = el.scrollHeight > el.clientHeight + 1;
+    const isClamped = checkClamped(el);
     const button = buttons.get(el);
 
     if (isClamped && !button) {
@@ -56,6 +68,8 @@ export const initReadMore = () => {
     entries.forEach(({ target }) => updateButton(target));
   });
 
+  const observed = [];
+
   elements.forEach(el => {
     const lines = parseInt(el.dataset.readMore, 10);
 
@@ -63,7 +77,12 @@ export const initReadMore = () => {
 
     el.style.setProperty('--read-more-lines', lines);
     observer.observe(el);
+    observed.push(el);
   });
+
+  // Веб-шрифт может догрузиться после первого подсчёта и поменять переносы. Высота обрезанного блока при этом
+  // не меняется (те же N строк), и наблюдатель не срабатывает — кнопка от запасного шрифта осталась бы висеть
+  document.fonts?.ready.then(() => observed.forEach(updateButton));
 };
 
 // Несколько абзацев с общим лимитом строк: <… data-read-more-group="10"> на карточке (например, год в истории школы).

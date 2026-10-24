@@ -15,6 +15,8 @@ const OFFSET = 4;
 const MIN_WIDTH = 320;
 
 let pluginPromise = null;
+// Календарь → обработчик конца анимации скрытия. Чтобы при быстром повторном закрытии не копились обработчики
+const hideHandlers = new WeakMap();
 // Поле → его календарь. По полю находим календарь при фокусе; сам селектор после инициализации не подходит:
 // поле становится type="text"
 const pickers = new Map();
@@ -64,10 +66,38 @@ const createValueField = field => {
   return valueField;
 };
 
+const hasTransition = $element =>
+  getComputedStyle($element)
+    .transitionDuration.split(',')
+    .some(duration => parseFloat(duration) > 0);
+
+// Со своей расстановкой библиотека не анимирует скрытие: убирает календарь из DOM, только когда мы вызовем done.
+// Ждём конца исчезновения (opacity самого календаря, а не переходов в ячейках) и тогда отдаём done
+const createHideCalendar = ($datepicker, done) => () => {
+  $datepicker.removeEventListener('transitionend', hideHandlers.get($datepicker));
+
+  if (!hasTransition($datepicker)) {
+    done();
+    return;
+  }
+
+  const onTransitionEnd = event => {
+    if (event.target !== $datepicker || event.propertyName !== 'opacity') return;
+
+    $datepicker.removeEventListener('transitionend', onTransitionEnd);
+    // Календарь успели открыть снова, пока он исчезал, — он на месте, убирать нельзя
+    if (!$datepicker.classList.contains('-active-')) done();
+  };
+
+  hideHandlers.set($datepicker, onTransitionEnd);
+  $datepicker.addEventListener('transitionend', onTransitionEnd);
+};
+
 // Календарь шириной с поле, под ним; если снизу не помещается, а сверху места больше — над полем.
 // Вызывается библиотекой при каждом открытии и смене вида (дни/месяцы/годы), а нами — при ресайзе и повороте.
-// На сенсорных устройствах не используется: там календарь открывается окном по центру экрана
-const positionCalendar = ({ $datepicker, $target }) => {
+// На сенсорных устройствах не используется: там календарь открывается окном по центру экрана.
+// Возвращает функцию скрытия — её библиотека вызывает при закрытии
+const positionCalendar = ({ $datepicker, $target, done }) => {
   const rect = $target.getBoundingClientRect();
 
   const width = Math.max(rect.width, MIN_WIDTH);
@@ -86,6 +116,10 @@ const positionCalendar = ({ $datepicker, $target }) => {
 
   $datepicker.style.left = `${left + window.scrollX}px`;
   $datepicker.style.top = `${top + window.scrollY}px`;
+  // Направление выезда: под полем — снизу вверх, над полем — сверху вниз (см. _datepicker.scss)
+  $datepicker.classList.toggle('-open-up-', openUp);
+
+  return createHideCalendar($datepicker, done);
 };
 
 // Библиотека вызывает функцию расстановки и в мобильном режиме, где календарь position: fixed, — и он уезжает
