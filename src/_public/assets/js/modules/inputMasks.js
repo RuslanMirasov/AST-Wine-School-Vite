@@ -17,19 +17,23 @@ export const initSelectFields = () => {
   });
 };
 
-// Маска видна всегда (lazy: false): +7 зафиксирован, свободные цифры — подчёркивания, при вводе заменяются цифрами
+// Пустое поле показывает обычный placeholder («+7 ___ ___ __ __», собирается из маски), маска
+// подставляет +7 и пробелы только по мере ввода (lazy: true)
 export function initPhoneInputs(mask = '+{7} 000 000 00 00') {
   const inputs = document.querySelectorAll('[type="tel"]');
 
   if (!inputs.length) return;
 
+  const placeholder = mask.replace(/[{}]/g, '').replace(/0/g, '_');
+
   inputs.forEach(input => {
     if (input.dataset.maskInitialized === 'true') return;
 
+    if (!input.placeholder) input.placeholder = placeholder;
+
     IMask(input, {
       mask,
-      lazy: false,
-      placeholderChar: '_',
+      lazy: true,
     });
 
     input.dataset.maskInitialized = 'true';
