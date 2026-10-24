@@ -95,9 +95,13 @@ ul li.search-toggle-el {
     position: fixed;
     width: 100vw;
     height: auto;
+    // dvh — по текущей высоте экрана: на iPhone панели Safari прячутся, и с svh снизу оставалась полоса страницы
     max-height: calc(100svh + 10px);
+    max-height: calc(100dvh + 10px);
     overflow-x: hidden;
     overflow-y: auto;
+    // Докрутив до края, прокрутка не уходит на страницу — иначе iOS дёргает панели Safari и сбивает прокрутку меню
+    overscroll-behavior: contain;
     scrollbar-width: none;
     -ms-overflow-style: none;
     top: 0px;
@@ -422,9 +426,13 @@ ul li.search-toggle-el {
     align-items: flex-start;
     width: 100vw;
     height: auto;
+    // dvh — по текущей высоте экрана: на iPhone панели Safari прячутся, и с svh снизу оставалась полоса страницы
     max-height: calc(100svh + 10px);
+    max-height: calc(100dvh + 10px);
     overflow-x: hidden;
     overflow-y: auto;
+    // Докрутив до края, прокрутка не уходит на страницу — иначе iOS дёргает панели Safari и сбивает прокрутку меню
+    overscroll-behavior: contain;
     scrollbar-width: none;
     -ms-overflow-style: none;
     top: 0px;
