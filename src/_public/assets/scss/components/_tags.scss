@@ -54,6 +54,10 @@
       }
     }
 
+    &.magenta {
+      color: var(--magenta);
+    }
+
     //1366
     @media (max-width: 1439px) {
       font-weight: 500;
