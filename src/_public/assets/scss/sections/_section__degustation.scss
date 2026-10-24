@@ -1,4 +1,8 @@
 .section--degustation-and-seminars {
+  width: 100%;
+  > .button {
+    margin-top: 24px;
+  }
   .content-list .content-list__item.col-3 {
     @media (max-width: 1023px) {
       flex: 1;

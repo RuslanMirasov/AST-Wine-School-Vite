@@ -50,4 +50,9 @@
       }
     }
   }
+
+  // Первая секция страницы дегустации — галерея без зума
+  .degustation-single-hero & [data-gallery] .image-slide img {
+    transform: none;
+  }
 }
