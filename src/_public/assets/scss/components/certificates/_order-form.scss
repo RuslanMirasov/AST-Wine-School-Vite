@@ -81,17 +81,19 @@
 .swiper--vertical {
   position: relative;
   width: 15.504%;
-  aspect-ratio: 80 / 596;
+  // Сверху и снизу — место под стрелки
   padding: 9.69% 0px;
-  // Safari не считает высоту из aspect-ratio точной для height: 100% у потомка — вертикальный Swiper
-  // растягивал колонку. В гриде высота ячейки точная, а min-height: 0 не даёт содержимому раздуть блок сверх пропорции
-  display: grid;
-  grid-template-rows: minmax(0, 1fr);
-  min-height: 0;
+  // Высота слайдера считается от его ширины (cqw), а не из aspect-ratio колонки:
+  // Safari не считал высоту из aspect-ratio точной, и Swiper растягивал миниатюры
+  container-type: inline-size;
+  // Пропорции миниатюры (template-N-thumb.webp, 360 × 516) и зазор — как в data-space-between слайдера
+  --thumb-ratio: 516 / 360;
+  --thumb-gap: 12px;
 
   .swiper {
     width: 100%;
-    min-height: 0;
+    // Ровно 4 миниатюры и 3 зазора между ними (data-slides-per-view="4")
+    height: calc(400cqw * var(--thumb-ratio) + var(--thumb-gap) * 3);
     overflow: hidden;
   }
 
@@ -107,8 +109,11 @@
       border: 2px solid var(--magenta);
     }
   }
+  // Картинка заполняет слайд целиком: внутри рамки 2px она чуть уже слайда, и по высоте оставался зазор
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 21.053% / 14.414%;
   }
 
