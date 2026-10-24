@@ -83,9 +83,15 @@
   width: 15.504%;
   aspect-ratio: 80 / 596;
   padding: 9.69% 0px;
+  // Safari не считает высоту из aspect-ratio точной для height: 100% у потомка — вертикальный Swiper
+  // растягивал колонку. В гриде высота ячейки точная, а min-height: 0 не даёт содержимому раздуть блок сверх пропорции
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  min-height: 0;
 
   .swiper {
-    height: 100%;
+    width: 100%;
+    min-height: 0;
     overflow: hidden;
   }
 
