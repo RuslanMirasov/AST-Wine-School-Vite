@@ -1,5 +1,3 @@
-// Поиск в шапке: иконка [data-search-toggle] ставит класс search-open на .header и .header-dropdown,
-// крестик .search-close и Escape в форме его снимают. Где и как форма показывается, решает CSS
 const SEARCH_OPEN_CLASS = 'search-open';
 
 export const initHeaderSearch = () => {

@@ -13,7 +13,6 @@ const toSwiperValue = value => {
 
 const isA11yEnabled = () => document.querySelector('.body')?.classList.contains('a11y') ?? false;
 
-// В версии для слабовидящих (ГОСТ §8) каждый слайдер показывает на 1 слайд меньше — auto и 1 не трогаем.
 const adjustForA11y = rawValue => {
   if (!isA11yEnabled()) return rawValue;
 
@@ -50,7 +49,6 @@ const getSliderKey = sliderWrapper => {
   return key || null;
 };
 
-// data-thumbs="ключ" на основном слайдере: слайдер с таким data-slider становится его миниатюрами
 const getThumbsWrapper = sliderWrapper => {
   const key = sliderWrapper.dataset.thumbs?.trim();
   if (!key) return null;
@@ -224,8 +222,6 @@ const updateSlider = sliderWrapper => {
   }
 };
 
-// Слайдеры могли быть пересозданы (брейкпоинт, версия для слабовидящих) — модули, которые
-// подписаны на конкретный экземпляр Swiper, по этому событию привязываются заново
 const notifySlidersUpdated = () => document.dispatchEvent(new CustomEvent('sliders:updated'));
 
 const linkControlledSliders = () => {
@@ -251,8 +247,6 @@ const linkControlledSliders = () => {
         requestAnimationFrame(() => {
           if (master.destroyed) return;
 
-          // Откат: вернуть эту строку внутрь forEach вместо блока ниже
-          // follower.params.loop ? follower.slideToLoop(master.realIndex) : follower.slideTo(master.realIndex);
           followers.forEach(follower => {
             if (follower.destroyed) return;
             if (!follower.params.loop) {
@@ -260,10 +254,8 @@ const linkControlledSliders = () => {
               return;
             }
 
-            // Соседний слайд по кругу — через slideNext/slidePrev, иначе slideToLoop с последнего на первый едет назад через все слайды
             const count = follower.slides.length;
             const diff = (master.realIndex - follower.realIndex + count) % count;
-
             if (diff === 1) follower.slideNext();
             else if (diff === count - 1) follower.slidePrev();
             else if (diff) follower.slideToLoop(master.realIndex);
@@ -286,9 +278,6 @@ export const updateSlidersAutoHeight = () => {
       return;
     }
 
-    // На брейкпоинте, где autoHeight выключен, Swiper сам не сбрасывает инлайн-высоту,
-    // выставленную им же на предыдущем брейкпоинте — без этого высота зависает навсегда,
-    // пока не перезагрузить страницу (новый инстанс создаётся ещё без инлайн-стиля).
     if (instance.wrapperEl.style.height) instance.wrapperEl.style.height = '';
   });
 };
@@ -303,9 +292,6 @@ export const reinitSlidersForA11y = () => {
   notifySlidersUpdated();
 };
 
-// Swiper пересчитывает autoHeight только при смене активного слайда (transitionStart/slideTo),
-// не при ресайзе контейнера — .update() тоже это не покрывает, нужен явный updateAutoHeight()
-// (updateSlidersAutoHeight также сбрасывает высоту, если на новом брейкпоинте autoHeight выключен).
 const handleResize = debounce(() => {
   sliders.forEach(updateSlider);
   linkControlledSliders();
@@ -316,11 +302,6 @@ const handleResize = debounce(() => {
     if (instance && !instance.destroyed) instance.update();
   });
 
-  // offsetHeight-измерение в updateAutoHeight форсирует reflow сразу после update()/
-  // пересоздания слайдеров выше — откладываем на тик, чтобы не форсировать его в том же
-  // синхронном блоке. setTimeout, а не requestAnimationFrame: rAF не выполняется вовсе,
-  // пока вкладка свёрнута/не в фокусе (в т.ч. открытые DevTools), а именно этот сценарий
-  // и есть основной кейс бага — высота не должна зависеть от того, рисует ли вкладка кадры.
   setTimeout(updateSlidersAutoHeight, 0);
 }, 300);
 

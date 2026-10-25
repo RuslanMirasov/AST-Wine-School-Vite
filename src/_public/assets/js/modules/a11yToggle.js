@@ -10,7 +10,6 @@ const DEFAULTS = {
   spacing: 'normal',
 };
 
-// name у радиокнопок в a11y-panel.html
 const RADIO_NAMES = {
   fontSize: 'a11y-font-size',
   theme: 'a11y-theme',
@@ -18,7 +17,6 @@ const RADIO_NAMES = {
   spacing: 'a11y-spacing',
 };
 
-// Дефолтное значение каждой категории — без класса; класс есть только у отклонений от нормы.
 const CLASS_MAP = {
   fontSize: { big: 'a11y-font-big', large: 'a11y-font-large' },
   theme: { light: 'a11y-theme-light', dark: 'a11y-theme-dark' },

@@ -1,7 +1,7 @@
 import { debounce } from './helpers.js';
 
 const accordeons = document.querySelectorAll('[data-accordeon]');
-
+const ACCORDEON_ANIMATION_DURATION = 500;
 const MOBIL_MAX_WIDTH = 767;
 const TABLET_MAX_WIDTH = 1279;
 
@@ -19,8 +19,6 @@ const canInitAccordeon = accordeon => {
 };
 
 const isOpen = accordeon => accordeon.classList.contains('open');
-
-const ACCORDEON_ANIMATION_DURATION = 500;
 
 const waitForHeightTransition = element =>
   new Promise(resolve => {
@@ -129,6 +127,6 @@ export const initAccordeons = () => {
 
   window.addEventListener(
     'resize',
-    debounce(() => accordeons.forEach(updateAccordeon), 300),
+    debounce(() => accordeons.forEach(updateAccordeon), 300)
   );
 };

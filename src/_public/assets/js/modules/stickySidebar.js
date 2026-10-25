@@ -52,6 +52,7 @@ export const initStickySidebar = () => {
     });
 
   let ticking = false;
+
   const onScroll = () => {
     if (ticking) return;
     ticking = true;

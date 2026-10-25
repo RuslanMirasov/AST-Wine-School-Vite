@@ -161,8 +161,6 @@ export const initMegaMenu = () => {
     });
   });
 
-  // click срабатывает и когда кнопку зажали внутри меню, а отпустили снаружи (target — общий предок),
-  // поэтому снаружи должны быть оба конца: и pointerdown, и click. У клавиатурного click pointerdown нет.
   let pointerDownTarget = null;
   document.addEventListener('pointerdown', event => {
     pointerDownTarget = event.target;

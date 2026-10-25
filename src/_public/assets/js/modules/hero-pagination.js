@@ -2,11 +2,8 @@ import { getNamedSwiper, goToSlide } from './goToSlide.js';
 import { debounce } from './helpers.js';
 
 const SLIDER_KEY = 'hero-text-swiper';
-// Сдвиг пальцем/мышью, после которого жест считается перетаскиванием, а не кликом.
 const DRAG_START_THRESHOLD = 5;
-// Сдвиг, после которого при отпускании листаем на шаг; меньше — возвращаемся на место.
 const DRAG_SWIPE_THRESHOLD = 30;
-// Сопротивление при перетаскивании за крайние позиции, как у Swiper.
 const DRAG_EDGE_RESISTANCE = 0.3;
 
 export const initHeroPagination = () => {
@@ -23,8 +20,6 @@ export const initHeroPagination = () => {
   let shift = 0;
   let activeIndex = buttons.findIndex(button => button.classList.contains('active'));
 
-  // Ширина кнопок анимируется (transition: width), поэтому реальные кнопки в момент
-  // переключения имеют промежуточную ширину. Итоговые размеры меряем на скрытых клонах.
   const measure = () => {
     const createClone = isActive => {
       const clone = buttons[0].cloneNode(true);
@@ -57,7 +52,6 @@ export const initHeroPagination = () => {
     return sizes;
   };
 
-  // Все кнопки, кроме активной, неактивные — поэтому и позиция, и шаг считаются по их ширине.
   const getGeometry = () => {
     const { inactiveWidth, activeWidth, gap, containerWidth } = measure();
     const step = inactiveWidth + gap;
@@ -70,12 +64,8 @@ export const initHeroPagination = () => {
     };
   };
 
-  // Насколько лента шире контейнера — дальше этого сдвигать нельзя, иначе справа останется пустое место.
   const getOverflow = ({ contentRight, containerWidth }) => Math.max(0, contentRight - containerWidth);
 
-  // Сдвиг ведём по сетке шагов (shift), а на экран выводим не дальше overflow (visibleShift).
-  // Так последняя позиция прижимается к правому краю, а при движении назад лента
-  // возвращается на сетку и шаги снова ровные.
   let overflow = 0;
   const getVisibleShift = () => Math.min(shift, overflow);
 
@@ -92,7 +82,6 @@ export const initHeroPagination = () => {
     scrollWrapper.style.transform = `translate3d(${-value}px, 0, 0)`;
   };
 
-  // Во время перетаскивания позицию ведёт палец/мышь — сдвиг применится при отпускании.
   const applyShift = () => {
     if (!drag.isDragging) setTranslate(getVisibleShift());
   };
@@ -101,11 +90,6 @@ export const initHeroPagination = () => {
     paginationEl.classList.toggle('is-draggable', overflow > 0);
   };
 
-  // 1) Если активная кнопка вылезает за край data-hero-pagination, сдвигаем ленту
-  //    столько шагов, сколько нужно, чтобы она стала видна целиком.
-  // 2) Иначе, если по направлению переключения за краем осталась хоть одна кнопка
-  //    (целиком или частично) — сдвигаем на один шаг в эту сторону.
-  // Шаг — ширина неактивной кнопки + gap; последний сдвиг вправо — ровно до края (см. getVisibleShift).
   const updateShift = (direction = 0) => {
     if (activeIndex < 0) return;
 
@@ -130,7 +114,6 @@ export const initHeroPagination = () => {
       shift -= step;
     }
 
-    // Сетку не уводим дальше первого шага, который уже покрывает overflow.
     shift = Math.min(Math.max(0, shift), Math.ceil(overflow / step) * step);
     applyShift();
   };
@@ -146,8 +129,6 @@ export const initHeroPagination = () => {
     updateShift(direction);
   };
 
-  // Слайдер пересоздаётся (версия для слабовидящих, смена брейкпоинта) — вешаем обработчик
-  // на каждый новый инстанс один раз.
   const bindSwiper = () => {
     const swiper = getNamedSwiper(SLIDER_KEY);
     if (!swiper || swiper.destroyed || boundSwipers.has(swiper)) return swiper;
@@ -161,12 +142,9 @@ export const initHeroPagination = () => {
 
   bindSwiper();
 
-  // Drag: тянем ленту за пальцем/мышью без transition, при отпускании
-  // переключаем слайдер на один слайд вперёд/назад (или возвращаемся) уже с transition.
   const onPointerDown = event => {
     if (drag.pointerId !== null) return;
 
-    // Новый жест — прошлый «гасить клик» больше не актуален (например, после pointercancel клика не было).
     drag.suppressClick = false;
 
     if (!paginationEl.classList.contains('is-draggable')) return;
@@ -186,14 +164,11 @@ export const initHeroPagination = () => {
     if (!drag.isDragging) {
       if (Math.abs(drag.dx) < DRAG_START_THRESHOLD) return;
 
-      // Захват ставим только когда жест уже стал перетаскиванием — иначе обычный клик
-      // по кнопке ушёл бы на scrollWrapper, а не на саму кнопку.
       drag.isDragging = true;
       drag.suppressClick = true;
       scrollWrapper.setPointerCapture(event.pointerId);
       scrollWrapper.style.transition = 'none';
       paginationEl.classList.add('is-dragging');
-      // Меряем один раз на жест, а не на каждый pointermove — measure() создаёт клоны.
       overflow = getOverflow(getGeometry());
       drag.startShift = getVisibleShift();
     }
@@ -221,14 +196,10 @@ export const initHeroPagination = () => {
     if (scrollWrapper.hasPointerCapture(event.pointerId)) scrollWrapper.releasePointerCapture(event.pointerId);
     scrollWrapper.style.transition = '';
     paginationEl.classList.remove('is-dragging');
-
-    // Возвращаем ленту на текущий сдвиг — если ниже переключится слайд,
-    // setActive → updateShift сам сдвинет её на шаг в нужную сторону.
     applyShift();
 
     if (isCancelled || Math.abs(drag.dx) < DRAG_SWIPE_THRESHOLD) return;
 
-    // Тянем влево — следующий слайд, вправо — предыдущий. Без зацикливания: на краях просто возврат.
     const targetIndex = activeIndex + (drag.dx < 0 ? 1 : -1);
     if (targetIndex < 0 || targetIndex >= buttons.length) return;
     if (!bindSwiper()) return;
@@ -237,20 +208,19 @@ export const initHeroPagination = () => {
   };
 
   scrollWrapper.addEventListener('pointerdown', onPointerDown);
+
   scrollWrapper.addEventListener('pointermove', onPointerMove);
+
   scrollWrapper.addEventListener('pointerup', onPointerUp);
+
   scrollWrapper.addEventListener('pointercancel', onPointerUp);
 
-  // Мышь ушла с ленты, не успев начать перетаскивание (захвата ещё нет, pointerup сюда
-  // уже не придёт) — сбрасываем, иначе следующий pointerdown будет проигнорирован.
   scrollWrapper.addEventListener('pointerleave', event => {
     if (event.pointerId === drag.pointerId && !drag.isDragging) drag.pointerId = null;
   });
 
-  // Браузерный drag картинок и ссылок перебивает pointer-события.
   scrollWrapper.addEventListener('dragstart', event => event.preventDefault());
 
-  // После перетаскивания браузер всё равно шлёт click — гасим его, чтобы не переключить слайд.
   paginationEl.addEventListener(
     'click',
     event => {
@@ -259,7 +229,7 @@ export const initHeroPagination = () => {
       event.preventDefault();
       event.stopPropagation();
     },
-    true,
+    true
   );
 
   paginationEl.addEventListener('click', event => {
@@ -271,12 +241,11 @@ export const initHeroPagination = () => {
     goToSlide(button.dataset.paginationTarget, { key: SLIDER_KEY });
   });
 
-  // На другом брейкпоинте другие ширины кнопок — пересчитываем сдвиг с нуля.
   window.addEventListener(
     'resize',
     debounce(() => {
       shift = 0;
       updateShift();
-    }, 300),
+    }, 300)
   );
 };

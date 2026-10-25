@@ -1,6 +1,3 @@
-// Мобильная панель фильтров в календаре мероприятий (/events/).
-// Открывается и закрывается кнопкой [data-filter-toggle-button]; закрывается также кликом по затемнению,
-// любым элементом с [data-filters-close] и клавишей Escape. Прокрутка страницы при этом не блокируется
 const BACKDROP_SELECTOR = '[data-filters-backdrop]';
 const TOGGLE_SELECTOR = '[data-filter-toggle-button]';
 const CLOSE_SELECTOR = '[data-filters-close]';
@@ -12,7 +9,6 @@ export const initEventFilters = () => {
   if (!backdrop) return;
 
   const toggleButtons = Array.from(document.querySelectorAll(TOGGLE_SELECTOR));
-  // Кнопка, которой открыли панель: после закрытия фокус возвращается на неё
   let opener = null;
 
   const isOpen = () => backdrop.classList.contains(OPEN_CLASS);
@@ -49,8 +45,6 @@ export const initEventFilters = () => {
     const closer = event.target.closest(CLOSE_SELECTOR);
     if (!closer) return;
 
-    // Затемнение само помечено как закрывающее, но клик внутри панели до него всплывает —
-    // закрываем, только если нажали именно на затемнение
     if (closer === backdrop && event.target !== backdrop) return;
 
     close();

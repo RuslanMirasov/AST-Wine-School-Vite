@@ -7,7 +7,6 @@ const FIELD_SELECTOR = 'input, select, textarea';
 export const validateForm = (form, renderer) => {
   if (!form) return true;
 
-  // form.elements, а не querySelectorAll: туда входят и поля вне тега формы, привязанные атрибутом form
   const fields = Array.from(form.elements).filter(field => field.matches(FIELD_SELECTOR));
   const fieldResults = fields.map(field => ({
     field,

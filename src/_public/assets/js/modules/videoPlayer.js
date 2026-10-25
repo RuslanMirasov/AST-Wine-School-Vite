@@ -1,3 +1,5 @@
+const EMBED_POPUP_ID = 'vk-player';
+
 const formatTime = seconds => {
   if (!Number.isFinite(seconds)) return '00:00';
 
@@ -10,11 +12,6 @@ const formatTime = seconds => {
   return h > 0 ? `${h}:${pad(m)}:${pad(s)}` : `${pad(m)}:${pad(s)}`;
 };
 
-// Плеер сервисов (Rutube, VK, YouTube и любой другой с embed-ссылкой) — попап #vk-player с <iframe data-embed-player>.
-// Открывает его кнопка <… data-popup-open="vk-player" data-video-url="embed-ссылка">: адрес подставляется в iframe.
-// При закрытии попапа адрес убирается — видео останавливается у любого сервиса, без его собственного API
-const EMBED_POPUP_ID = 'vk-player';
-
 const initEmbedPlayer = () => {
   const popupContent = document.getElementById(EMBED_POPUP_ID);
   const iframe = popupContent?.querySelector('[data-embed-player]');
@@ -22,7 +19,7 @@ const initEmbedPlayer = () => {
   if (!iframe) return;
 
   const backdrop = popupContent.closest('[data-backdrop]');
-  // Адрес из последней нажатой кнопки: попап может показаться не сразу (переключение с другого попапа)
+
   let pendingUrl = '';
 
   const isOpen = () => popupContent.style.display === 'flex' && (!backdrop || backdrop.classList.contains('active'));
@@ -32,8 +29,6 @@ const initEmbedPlayer = () => {
     iframe.src = pendingUrl;
   };
 
-  // Ссылку с кнопки не стираем: при открытии попап на мгновение виден без активного фона,
-  // и наблюдатель успевает вызвать stop до load
   const stop = () => {
     if (iframe.hasAttribute('src')) iframe.removeAttribute('src');
   };
@@ -137,12 +132,10 @@ export const initVideoPlayer = () => {
     } else if (player.webkitRequestFullscreen) {
       player.webkitRequestFullscreen();
     } else if (video.webkitEnterFullscreen) {
-      // iPhone: полноэкранный режим доступен только для самого video
       video.webkitEnterFullscreen();
     }
   };
 
-  // В полноэкранном режиме прячем контролы при бездействии
   const showControls = () => {
     clearTimeout(idleTimer);
     player.classList.remove('is-idle');
@@ -208,7 +201,6 @@ export const initVideoPlayer = () => {
     showControls();
   });
   player.addEventListener('mousemove', e => {
-    // Браузер шлёт mousemove и без движения, когда под курсором меняется вёрстка
     const pointer = `${e.clientX}:${e.clientY}`;
     if (pointer === lastPointer) return;
     lastPointer = pointer;

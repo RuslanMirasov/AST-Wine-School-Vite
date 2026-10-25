@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <load src="/_partials/base/meta.html" />
+    <load src="/_partials/base/styles.html" />
+    <meta name="description" content="AST - Документация к вёрстке и модулям" />
+    <title>Документация к вёрстке и модулям</title>
+    <style>
+      .icons-table {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+      .icons-table-inner {
+        flex: 1;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        gap: 10px;
+        background-color: var(--white);
+        min-width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+        text-align: center;
+      }
+      .icons-table-inner svg {
+        max-width: 100%;
+      }
+
+      /* Код в тексте */
+      .profile-content p code,
+      .profile-content li code {
+        padding: 1px 6px;
+        border-radius: 6px;
+        background-color: var(--grey-light);
+        font-size: 0.9em;
+        font-family: var(--font);
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      /* Блок с примером кода: по центру, кнопка копирования в правом верхнем углу */
+      .code-block-wrapper {
+        display: block;
+        width: 100%;
+      }
+      .code-block {
+        position: relative;
+        width: 100%;
+        max-width: 880px;
+        margin: 0 auto;
+        border-radius: 16px;
+        background-color: #1f2a3f;
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+        padding-right: 60px;
+        min-height: 64px;
+      }
+      .code-block pre {
+        margin: 0;
+        padding: 24px 64px 24px 24px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+      }
+      .code-block code {
+        display: block;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #e6e9f0;
+        white-space: pre;
+        tab-size: 2;
+      }
+      .code-block .copy-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #e6e9f0;
+        cursor: pointer;
+        transition:
+          background-color 0.3s var(--cubic),
+          color 0.3s var(--cubic);
+      }
+      .code-block .copy-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+      @media (hover: hover) {
+        .code-block .copy-btn:hover {
+          background-color: rgba(255, 255, 255, 0.16);
+          color: var(--white);
+        }
+      }
+      @media (max-width: 767px) {
+        .code-block pre {
+          padding: 16px 56px 16px 16px;
+        }
+        .code-block code {
+          font-size: 12px;
+        }
+      }
+
+      .code-block .hl-punct {
+        color: #c6cbd6;
+      }
+      .code-block .hl-tag {
+        color: #f2a0b8;
+      }
+      .code-block .hl-attr {
+        color: #a6d189;
+        font-style: italic;
+      }
+      .code-block .hl-str {
+        color: #e5c890;
+      }
+      .code-block .hl-selector {
+        color: #ef9f76;
+      }
+      .code-block .hl-php {
+        color: #ca9ee6;
+      }
+      .code-block .hl-comment {
+        color: #8a93ab;
+        font-style: italic;
+      }
+      .code-block .hl-kw {
+        color: #ca9ee6;
+      }
+      .code-block .hl-var {
+        color: #8caaee;
+      }
+      .code-block .hl-num {
+        color: #ef9f76;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <!--HEADER-->
+    <load src="/_partials/preloader.html" />
+
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="%ROOT%">Главная</a></li>
+        <li><span>Документация</span></li>
+      </ul>
+
+      <section class="section pad--32">
+        <div class="container">
+          <h1 class="title title--32 bold">Документация к вёрстке и JavaScript модулям</h1>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="container">
+          <!--SIDEBAR-->
+          <aside class="sidebar small left-side" data-sticky-sidebar>
+            <load src="/_partials/components/menus/documentation-menu.html" />
+          </aside>
+
+          <!--PAGE CONTENT-->
+          <div class="page-content" data-tabs>
+            <div class="profile-content profile-info">
+              <h2 class="title title--32 upper">Быстрый старт</h2>
+
+              <ul class="search-navigation">
+                <li>
+                  <button class="search-navigation__btn active" data-tab-target="repo">Репозиторий и установка</button>
+                </li>
+                <li>
+                  <button class="search-navigation__btn" data-tab-target="env">Envierments</button>
+                </li>
+              </ul>
+
+              <div data-tab="repo">1</div>
+              <div data-tab="env">2</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--SCRIPTS-->
+    <load src="/_partials/base/scripts.html" />
+  </body>
+</html>

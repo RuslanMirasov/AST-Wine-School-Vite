@@ -3,8 +3,6 @@ import { resolveCustomRule } from './resolveRules.js';
 
 const NATIVE_VALIDITY_CHECKS = ['valueMissing', 'tooShort', 'tooLong', 'rangeUnderflow', 'rangeOverflow', 'stepMismatch', 'patternMismatch'];
 
-// Свой текст для конкретной проверки: data-required-error-text, data-minlength-error-text и т.д.
-// Если атрибут задан, он важнее всего остального; если нет — работает прежняя логика и словарь
 const OWN_ERROR_TEXT_KEYS = {
   valueMissing: 'requiredErrorText',
   tooShort: 'minlengthErrorText',

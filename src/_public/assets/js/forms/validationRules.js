@@ -15,12 +15,9 @@ export const nativeMessages = {
 
 const CERT_MESSAGE_MAX_LENGTH = 300;
 const BYTES_IN_MEGABYTE = 1024 * 1024;
-// Форматы для data-rule="certificat-logo" (логотип компании в сертификате). Список задан здесь, а не в разметке,
-// чтобы его нельзя было расширить правкой атрибута
 const CERTIFICAT_LOGO_FORMATS = ['.png', '.svg', '.webp', '.pdf'];
 const CERTIFICAT_LOGO_FORMAT_MESSAGE = 'Загрузите логотип в формате PNG, SVG, WEBP или PDF';
 
-// accept="…" у поля файла: список расширений (.pdf) и типов (image/png, image/*) через запятую
 const getAcceptList = input =>
   input.accept
     .split(',')
@@ -40,9 +37,6 @@ const isFileAccepted = (file, acceptList) => {
   });
 };
 
-// Ограничения поля файла: размер — data-max-size="10" (в МБ), формат — список acceptList
-// (по умолчанию из атрибута accept). Возвращает текст ошибки или null; свой текст задаётся
-// через data-size-error-text и data-format-error-text
 const getFileError = (input, acceptList = getAcceptList(input), formatMessage) => {
   const file = input.files?.[0];
   if (!file) return null;
@@ -59,15 +53,11 @@ const getFileError = (input, acceptList = getAcceptList(input), formatMessage) =
   return null;
 };
 
-// Правило для поля файла. Без списка форматы берутся из accept, со списком — только из него.
-// formatMessage — свой текст ошибки формата (по умолчанию «Допустимые форматы: …»)
 const createFileRule = (acceptList, formatMessage) => ({
   test: (value, input) => !getFileError(input, acceptList, formatMessage),
   message: (value, input) => getFileError(input, acceptList, formatMessage),
 });
 
-// Раскодирование punycode-метки домена (RFC 3492): xn--p1ai → рф.
-// Chrome у полей type="email" сам переводит кириллический домен в punycode, и в value приходит xn--…
 const decodePunycodeLabel = label => {
   if (!/^xn--/i.test(label)) return label;
 
@@ -127,18 +117,14 @@ const decodeEmailDomain = email => {
 
 export const customRules = {
   email: {
-    // Буквы любого алфавита (\p{L}): кириллические домены (.рф, .рус, .москва, .дети, .онлайн, .сайт, .орг, .ком и т. д.)
-    // и кириллица до @. Зона — буквы, от двух. Punycode (xn--…) сначала раскодируется, длина зоны считается по буквам
     test: value => /^[\p{L}\p{N}._%+-]+@(?:[\p{L}\p{N}](?:[\p{L}\p{N}-]*[\p{L}\p{N}])?\.)+\p{L}{2,}$/iu.test(decodeEmailDomain(value.trim())),
     message: 'Пожалуйста, укажите корректный email',
   },
   tel: {
-    // После стирания в поле может остаться «+7», поэтому необязательное поле без единой цифры после +7 считается пустым
     test: (value, input) => /^\+7 \d{3} \d{3} \d{2} \d{2}$/.test(value.trim()) || (!input?.required && !/\d/.test(value.trim().slice(2))),
     message: 'Пожалуйста, укажите корректный номер телефона',
   },
   price: {
-    // Поле с маской цены (data-input-price): «15 000.50 ₽» — разряды и знак рубля не учитываются
     test: value => /^\d+(?:\.\d{1,2})?$/.test(value.replace(/[\s₽]/g, '')),
     message: 'Пожалуйста, укажите сумму, например 15 000 ₽',
   },

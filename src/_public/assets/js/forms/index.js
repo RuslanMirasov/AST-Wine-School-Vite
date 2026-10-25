@@ -9,17 +9,8 @@ import { initCartInvoiceButton } from './cart-invoice-button.js';
 const FORM_SELECTOR = '[data-form]';
 const FIELD_SELECTOR = 'input, select, textarea';
 
-// Поле файла проверяет свой модуль (inputFile.js): при неверном файле он показывает ошибку и очищает поле
 const isOwnField = field => field.matches(FIELD_SELECTOR) && field.type !== 'file' && getOwnerForm(field);
 
-// Когда проверяется поле — одинаково для всех типов:
-// - фокус без ввода — не проверяем, ошибку фокус не снимает;
-// - начали вводить (input) — при уходе с поля (focusout) проверка по полной, в том числе на пустоту,
-//   даже если значение вернули к исходному;
-// - change — у чекбоксов, радио, селектов (в том числе Choices) и календаря приходит сразу при выборе: проверяем;
-// - поле хоть раз попалось на ошибке — дальше проверяется на каждый ввод: красное, пока не введут верно,
-//   и снова красное, если стереть;
-// - submit — проверяются все поля формы
 const onFieldInput = e => {
   const field = e.target;
   if (!isOwnField(field)) return;

@@ -6,7 +6,6 @@ const INDICATOR_SELECTOR = '.indicator';
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const CORNER_RADIUS = 50;
 const ALIGN_TOLERANCE = 1;
-// Линия чтения — доля высоты экрана, напротив которой стоит индикатор
 const READING_LINE = 0.5;
 const RESIZE_DELAY = 150;
 
@@ -27,7 +26,6 @@ const createLine = (from, to) => ({
   length: Math.hypot(to.x - from.x, to.y - from.y),
 });
 
-// Колено из from в to через угол corner: отрезок, дуга радиуса r, отрезок
 const createElbow = (from, corner, to) => {
   const dx1 = Math.sign(corner.x - from.x);
   const dy1 = Math.sign(corner.y - from.y);
@@ -35,7 +33,6 @@ const createElbow = (from, corner, to) => {
   const dy2 = Math.sign(to.y - corner.y);
 
   const r = Math.min(CORNER_RADIUS, Math.abs(corner.x - from.x) + Math.abs(corner.y - from.y), Math.abs(to.x - corner.x) + Math.abs(to.y - corner.y));
-  // Поворот по часовой стрелке на экране (ось Y вниз)
   const clockwise = dx1 * dy2 - dy1 * dx2 > 0;
 
   const arcStart = { x: corner.x - dx1 * r, y: corner.y - dy1 * r };
@@ -59,8 +56,6 @@ const createElbow = (from, corner, to) => {
   ];
 };
 
-// Путь как список отрезков и дуг: по нему строится d для SVG и считается точка на нужной длине.
-// Свой расчёт вместо path.getPointAtLength — он дешёвый и не трогает DOM при прокрутке
 const buildGeometry = points => {
   const segments = [];
 
@@ -133,18 +128,14 @@ const initHistoryLine = container => {
   const indicator = container.querySelector(INDICATOR_SELECTOR);
   const { svg, path, progressPath } = createSvg(container);
 
-  // Всё, что нужно на кадре прокрутки, считается заранее в measure(). На кадре — только scrollY и арифметика
   let segments = [];
   let totalLength = 0;
-  // Прокрутка страницы, на которой индикатор в первой и в последней точке
   let startScroll = 0;
   let endScroll = 1;
   let indicatorHalf = { x: 0, y: 0 };
   let viewportWidth = 0;
   let scrollFrame = null;
 
-  // Тестовый режим: доля прокрутки блока = доля длины пути. Отсчёт — от первой до последней точки,
-  // когда они проходят линию чтения
   const update = () => {
     scrollFrame = null;
     if (!totalLength) return;
@@ -170,11 +161,7 @@ const initHistoryLine = container => {
     const readingLine = window.innerHeight * READING_LINE;
     const containerTop = containerRect.top + window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-
-    // Старт — когда первая точка доходит до линии чтения. Если она уже выше линии при открытии страницы,
-    // старт с самого верха: индикатор всегда начинает с первой точки и догоняет на прокрутке
     startScroll = Math.max(containerTop + points[0].y - readingLine, 0);
-    // Финиш — когда до линии доходит последняя точка, но не дальше конца страницы: иначе путь не дойдёт до конца
     endScroll = Math.max(Math.min(containerTop + points[points.length - 1].y - readingLine, maxScroll), startScroll + 1);
     viewportWidth = window.innerWidth;
     if (indicator) indicatorHalf = { x: indicator.offsetWidth / 2, y: indicator.offsetHeight / 2 };
@@ -184,21 +171,15 @@ const initHistoryLine = container => {
     svg.setAttribute('viewBox', `0 0 ${containerRect.width} ${containerRect.height}`);
     path.setAttribute('d', geometry.d);
     progressPath.setAttribute('d', geometry.d);
-    // Пройденная часть — один штрих длиной во весь путь, сдвинутый на непройденный остаток
     progressPath.style.strokeDasharray = totalLength;
 
     update();
   };
 
   const remeasure = debounce(measure, RESIZE_DELAY);
-
-  // Размер блока меняется при загрузке картинок, а его место на странице — когда грузится контент выше.
-  // Высота окна при этом не участвует: выезжающая на мобилке адресная строка пересчёт не вызывает
   const observer = new ResizeObserver(remeasure);
   observer.observe(container);
   observer.observe(document.body);
-
-  // Ресайз и поворот экрана — только при смене ширины, по той же причине
   window.addEventListener('resize', () => {
     if (window.innerWidth !== viewportWidth) remeasure();
   });

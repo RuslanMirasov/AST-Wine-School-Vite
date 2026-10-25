@@ -1,3 +1,8 @@
+const NUMBER_INPUT_SELECTOR = 'input[type="number"], input[data-digits]';
+const PRICE_INPUT_SELECTOR = '[data-input-price]';
+const PRICE_SUFFIX = ' ₽';
+const PRICE_DECIMALS = 2;
+
 export const initSelectFields = () => {
   const allSelectEl = document.querySelectorAll('[data-select]');
 
@@ -11,14 +16,10 @@ export const initSelectFields = () => {
       itemSelectText: '',
     });
 
-    // Селект лежит внутри <label>: клик по label браузер передаёт родному <select>, и на iOS
-    // вместе со списком Choices открывается системный барабан выбора
     select.closest('label')?.addEventListener('click', event => event.preventDefault());
   });
 };
 
-// Пустое поле показывает обычный placeholder («+7 ___ ___ __ __», собирается из маски), маска
-// подставляет +7 и пробелы только по мере ввода (lazy: true)
 export function initPhoneInputs(mask = '+{7} 000 000 00 00') {
   const inputs = document.querySelectorAll('[type="tel"]');
 
@@ -41,7 +42,6 @@ export function initPhoneInputs(mask = '+{7} 000 000 00 00') {
 }
 
 export function initDecimalInputs() {
-  // Цены с inputmode="decimal" обрабатывает своя маска — initPriceInputs
   const inputs = document.querySelectorAll('[inputmode="decimal"]:not([data-input-price])');
 
   if (!inputs.length) return;
@@ -65,14 +65,6 @@ export function initDecimalInputs() {
   });
 }
 
-// Поля type="number": Firefox (в отличие от Chrome) даёт напечатать в них буквы — value тогда пустой,
-// а в поле виден текст. Пропускаем только цифры; минус — если min < 0, точку и запятую — если step
-// дробный или any. Букву e (1e5) и плюс, которые пропускает Chrome, тоже не пускаем.
-// Тип поля не меняется: min/max/step, стрелки и браузерная валидация работают как раньше.
-// Текстовые поля из одних цифр (ИНН, КПП — type="text", чтобы работал maxlength) получают тот же фильтр
-// атрибутом data-digits: у них нет min и step, поэтому пропускаются только цифры
-const NUMBER_INPUT_SELECTOR = 'input[type="number"], input[data-digits]';
-
 const getNumberDisallowedPattern = input => {
   const step = input.step;
   const allowDecimal = step === 'any' || (step !== '' && !Number.isInteger(Number(step)));
@@ -91,8 +83,6 @@ export function initNumberInputs() {
     if (getNumberDisallowedPattern(input).test(event.data)) event.preventDefault();
   });
 
-  // Вставка и перетаскивание: лишние символы вырезаем. Выделение внутри number-поля браузер не отдаёт,
-  // поэтому очищенное значение заменяет содержимое поля целиком
   const insertCleaned = (event, text) => {
     const input = getNumberInput(event.target);
     if (!input || typeof text !== 'string') return;
@@ -106,7 +96,6 @@ export function initNumberInputs() {
     if (input.type === 'number') {
       input.value = cleaned;
     } else {
-      // Текстовое поле: вставляем на место выделения и не даём выйти за maxlength
       const { selectionStart: start, selectionEnd: end, value, maxLength } = input;
       const room = maxLength > 0 ? maxLength - (value.length - (end - start)) : cleaned.length;
       input.setRangeText(cleaned.slice(0, Math.max(0, room)), start, end, 'end');
@@ -118,20 +107,9 @@ export function initNumberInputs() {
   document.addEventListener('drop', event => insertCleaned(event, event.dataTransfer?.getData('text')));
 }
 
-// Цены — поля [data-input-price] (type="text"): разряды через пробел, копейки через точку (запятая
-// превращается в точку), не больше двух цифр после неё, в конце « ₽». Другие символы не вводятся.
-// В форму уходит чистое число (15000.5) — подменяется при отправке.
-// Для чтения и записи значения из других модулей — parsePrice / formatPrice
-const PRICE_INPUT_SELECTOR = '[data-input-price]';
-const PRICE_SUFFIX = ' ₽';
-const PRICE_DECIMALS = 2;
-
 const isPriceInput = target => target instanceof HTMLInputElement && target.matches(PRICE_INPUT_SELECTOR);
-
-// Значащие символы — цифры и точка: только их сохраняем и по ним считаем позицию курсора
 const isPriceSignificant = char => /[\d.]/.test(char);
 
-// '15 000.50 ₽' → '15000.50', '1,5' → '1.5'
 export const parsePrice = value => {
   const chars = String(value ?? '')
     .replace(/,/g, '.')
@@ -140,12 +118,14 @@ export const parsePrice = value => {
   if (dotIndex === -1) return chars.replace(/^0+(?=\d)/, '');
 
   const integer = chars.slice(0, dotIndex).replace(/^0+(?=\d)/, '') || '0';
-  const fraction = chars.slice(dotIndex + 1).replace(/\./g, '').slice(0, PRICE_DECIMALS);
+  const fraction = chars
+    .slice(dotIndex + 1)
+    .replace(/\./g, '')
+    .slice(0, PRICE_DECIMALS);
 
   return `${integer}.${fraction}`;
 };
 
-// '15000.5' → '15 000.5 ₽', пустое значение остаётся пустым
 export const formatPrice = value => {
   const raw = parsePrice(value);
   if (!raw) return '';
@@ -156,7 +136,6 @@ export const formatPrice = value => {
   return `${grouped}${fraction === undefined ? '' : `.${fraction}`}${PRICE_SUFFIX}`;
 };
 
-// Позиция в отформатированной строке после count значащих символов (не дальше знака рубля)
 const getPricePosition = (value, count) => {
   const limit = value ? value.length - PRICE_SUFFIX.length : 0;
   if (count <= 0) return 0;
@@ -196,7 +175,6 @@ export function initPriceInputs() {
     const { value, selectionStart: start, selectionEnd: end } = input;
     const isCollapsed = start === end;
 
-    // Ввод: только цифры и одна точка (или запятая), не больше двух цифр после точки
     if (event.inputType === 'insertText' && typeof event.data === 'string') {
       const data = event.data.replace(/,/g, '.');
       const rest = value.slice(0, start) + value.slice(end);
@@ -213,7 +191,6 @@ export function initPriceInputs() {
       return;
     }
 
-    // Стирание одним символом: пробел-разделитель и знак рубля пропускаем, удаляем ближайшую цифру или точку
     if (isCollapsed && (event.inputType === 'deleteContentBackward' || event.inputType === 'deleteContentForward')) {
       event.preventDefault();
 
@@ -228,7 +205,6 @@ export function initPriceInputs() {
     }
   });
 
-  // Всё остальное (вставка, удаление выделения, автозаполнение) — переформатируем после изменения
   document.addEventListener('input', event => {
     const input = event.target;
     if (!isPriceInput(input)) return;
@@ -239,12 +215,10 @@ export function initPriceInputs() {
     applyPrice(input, input.value, countPriceSignificant(input.value, input.selectionStart ?? input.value.length));
   });
 
-  // Курсор не заходит за знак рубля
   ['click', 'keyup', 'focus'].forEach(type => {
     document.addEventListener(type, event => isPriceInput(event.target) && clampPriceCaret(event.target), true);
   });
 
-  // В отправку уходит число без пробелов и знака рубля
   document.addEventListener(
     'formdata',
     event => {

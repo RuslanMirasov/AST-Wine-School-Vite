@@ -15,7 +15,6 @@ const resolveFieldTitle = anchor => {
   return field?.placeholder || field?.name || '';
 };
 
-// Все свои тексты поля: data-error-text и точечные data-*-error-text
 const resolveCustomErrorTexts = anchor => {
   const field = isFormControl(anchor) ? anchor : anchor.querySelector('input, select, textarea');
   if (!field) return [];

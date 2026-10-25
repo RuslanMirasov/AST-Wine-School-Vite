@@ -2,32 +2,22 @@ const SOURCE_SELECTOR = '[data-cert-preview-source]';
 const TRIGGER_SELECTOR = '[data-cert-preview]';
 const TEMPLATE_OPTION_SELECTOR = '[data-template-number]';
 const TEMPLATE_CURRENT_SELECTOR = '[data-template-current]';
-// Кнопка «Редактировать» на листе: закрывает просмотр и открывает второй шаг заказа (там текст поздравления)
 const EDIT_SELECTOR = '[data-cert-edit]';
 const EDIT_STEP_POPUP = 'cert-order-step-2';
-// Крестик на листе закрывает только просмотр. data-popup-close здесь нельзя — он закрыл бы попап заказа под просмотром
 const CLOSE_SELECTOR = '[data-cert-preview-close]';
-
-// Размеры листа из макета и отступ от краёв окна сверху и снизу
 const PREVIEW_WIDTH = 720;
 const PREVIEW_HEIGHT = 1032;
 const PREVIEW_GAP = 24;
 
-// Просмотр открывается лайтбоксом поверх попапов: свой слой, попап под ним не закрывается
 const openPreview = (source, templateNumber) => {
-  // В лайтбокс уходит копия: переданный элемент библиотека разбирает и при закрытии удаляет.
-  // Данные в копии актуальны — исходный блок заполняет скрипт заказа
   const copy = source.cloneNode(true);
 
-  // Кнопка внутри плитки выбора показывает шаблон этой плитки, а не выбранный
   if (templateNumber) {
     copy.querySelectorAll(TEMPLATE_CURRENT_SELECTOR).forEach(element => {
       element.dataset.templateCurrent = templateNumber;
     });
   }
 
-  // Временно: без явной ширины блок с container-type внутри лайтбокса схлопывается в ноль.
-  // Третье значение — ширина, при которой лист помещается по высоте окна с отступами по 24px
   Array.from(copy.children).forEach(child => {
     child.style.width = `min(${PREVIEW_WIDTH}px, 90vw, calc((100dvh - ${PREVIEW_GAP * 2}px) * ${PREVIEW_WIDTH} / ${PREVIEW_HEIGHT}))`;
   });
@@ -36,8 +26,6 @@ const openPreview = (source, templateNumber) => {
     if (event.key === 'Escape') instance.close();
   };
 
-  // Вешаем до create: библиотека переносит содержимое копии в свой контейнер, и после этого копия пустая.
-  // Второй шаг существует в нескольких вариантах — нужный по сценарию заказа выбирает toCertStep
   copy.querySelectorAll(EDIT_SELECTOR).forEach(button => {
     button.addEventListener('click', () => {
       instance.close();

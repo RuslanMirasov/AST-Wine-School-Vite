@@ -11,7 +11,6 @@ const renderStar = (review, spriteUrl) => {
   const rating = Math.min(5, Math.max(0, parseFloat(review.dataset.rating) || 0));
   const percent = Math.round((rating / 5) * 100);
 
-  // beforeend, не innerHTML — сохраняет текстовую альтернативу рейтинга, уже вписанную в разметку
   review.insertAdjacentHTML('beforeend', starsMarkup(spriteUrl));
   review.querySelector('.stars-front').style.width = `${percent}%`;
   review.dataset.starsRendered = 'true';

@@ -6,7 +6,6 @@ const MARKERS_URL = new URL('../../json/markers.json', import.meta.url).href;
 const PIN_IMAGE = new URL('../../img/pin.webp', import.meta.url).href;
 const PIN_SIZE = [36, 50];
 const PIN_OFFSET = [-18, -50];
-
 const ALL_GROUP = 'all';
 const DEFAULT_CENTER = [37.617635, 55.755814];
 const DEFAULT_ZOOM = 10;
@@ -108,7 +107,6 @@ const getVisiblePoints = () => {
   return points.filter(point => point.category === currentFilter.group);
 };
 
-// <div data-map data-map-popup="classroom-popup"> — клик по метке открывает этот попап вместо балуна
 const getPointPopup = () => mapElement.dataset.mapPopup;
 
 const createPlacemark = point => {
@@ -197,10 +195,6 @@ export const openMap = async () => {
   }
 };
 
-// Карта при создании ставит своему внутреннему блоку ширину контейнера в пикселях. После ресайза, поворота
-// экрана или переключения эмуляции в DevTools этот блок остаётся старой ширины и распирает родителя
-// (в попапе контактов — шире экрана). Поэтому карту пересоздаём под новую ширину.
-// Меняется только высота окна (на мобилке прячется адресная строка) — пересоздавать незачем
 const onResize = () => {
   if (window.innerWidth === lastViewportWidth) return;
   lastViewportWidth = window.innerWidth;
@@ -245,7 +239,6 @@ export const initYandexMap = () => {
 
   if (!mapElement) return;
 
-  // <div data-map data-map-default="moscow"> — стартовая группа меток; без атрибута показываются все
   if (mapElement.dataset.mapDefault) currentFilter = { group: mapElement.dataset.mapDefault };
   setActiveButton();
 
@@ -268,7 +261,6 @@ export const initYandexMap = () => {
     }
   });
 
-  // resize срабатывает и при повороте экрана, и при переключении эмуляции в DevTools
   lastViewportWidth = window.innerWidth;
   window.addEventListener('resize', debounce(onResize, RESIZE_DELAY));
 

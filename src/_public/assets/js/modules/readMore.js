@@ -12,8 +12,6 @@ export const initReadMore = () => {
 
   const buttons = new WeakMap();
 
-  // Кнопка не пропадает: «Читать полностью» раскрывает текст, «Свернуть» возвращает его к исходному числу строк.
-  // Раскрывается только тот блок, на котором нажали
   const toggle = el => {
     const isExpanded = el.classList.toggle(EXPANDED_CLASS);
     const button = buttons.get(el);
@@ -35,8 +33,6 @@ export const initReadMore = () => {
     return button;
   };
 
-  // Обрезан ли текст: сравниваем высоту с обрезкой и без неё. scrollHeight для этого не годится —
-  // в него попадают выносные элементы шрифта последней строки, и текст ровно в лимит строк считался обрезанным
   const checkClamped = el => {
     const clampedHeight = el.getBoundingClientRect().height;
 
@@ -48,7 +44,6 @@ export const initReadMore = () => {
   };
 
   const updateButton = el => {
-    // У раскрытого текста обрезки нет — кнопку «Свернуть» не трогаем
     if (el.classList.contains(EXPANDED_CLASS)) return;
 
     const isClamped = checkClamped(el);
@@ -80,15 +75,9 @@ export const initReadMore = () => {
     observed.push(el);
   });
 
-  // Веб-шрифт может догрузиться после первого подсчёта и поменять переносы. Высота обрезанного блока при этом
-  // не меняется (те же N строк), и наблюдатель не срабатывает — кнопка от запасного шрифта осталась бы висеть
   document.fonts?.ready.then(() => observed.forEach(updateButton));
 };
 
-// Несколько абзацев с общим лимитом строк: <… data-read-more-group="10"> на карточке (например, год в истории школы).
-// Заголовок не считается — считаются только абзацы <p> карточки. Абзац, на котором лимит превышается, обрезается
-// с многоточием (класс read-more-clamp + --read-more-lines), сразу после него — кнопка, абзацы ниже скрыты.
-// Кнопка и поведение те же, что у data-read-more: «Читать полностью» / «Свернуть», раскрывается только своя карточка
 const GROUP_SELECTOR = '[data-read-more-group]';
 const CLAMP_CLASS = 'read-more-clamp';
 
@@ -107,7 +96,6 @@ const resetParagraphs = paragraphs => {
   });
 };
 
-// Какой абзац обрезать и до скольких строк. null — всё помещается в лимит
 const findCut = (paragraphs, limit) => {
   const lines = paragraphs.map(countLines);
   let used = 0;
@@ -116,8 +104,6 @@ const findCut = (paragraphs, limit) => {
     if (used + lines[index] > limit) {
       const rest = limit - used;
       if (rest > 0) return { index, lines: rest };
-
-      // Лимит закончился ровно на предыдущем абзаце: многоточие ставим в нём, отдав одну строку
       if (index > 0 && lines[index - 1] > 1) return { index: index - 1, lines: lines[index - 1] - 1 };
       return { index, lines: 1 };
     }
@@ -145,13 +131,11 @@ const initReadMoreGroups = () => {
     const paragraphs = getParagraphs(group);
     if (!limit || limit < 1 || !paragraphs.length) return;
 
-    // Раскрытая карточка показывает всё, кнопка «Свернуть» остаётся на месте
     if (group.classList.contains(EXPANDED_CLASS)) {
       resetParagraphs(paragraphs);
       return;
     }
 
-    // Строки считаются по полному тексту: сначала всё показываем и снимаем обрезку
     resetParagraphs(paragraphs);
     const cut = findCut(paragraphs, limit);
     let button = buttons.get(group);
@@ -177,7 +161,6 @@ const initReadMoreGroups = () => {
       button.addEventListener('click', () => {
         const isExpanded = group.classList.toggle(EXPANDED_CLASS);
         setButtonState(button, isExpanded);
-        // Раскрыли — кнопка уходит под последний абзац, свернули — возвращается под обрезанный
         if (isExpanded) getParagraphs(group).at(-1).after(button);
         update(group);
       });
@@ -188,7 +171,6 @@ const initReadMoreGroups = () => {
     target.after(button);
   };
 
-  // Пересчёт только при смене ширины: высоту карточки меняем мы сами, иначе наблюдатель зациклится
   const observer = new ResizeObserver(entries => {
     entries.forEach(({ target, contentRect }) => {
       if (widths.get(target) === contentRect.width) return;
@@ -198,7 +180,5 @@ const initReadMoreGroups = () => {
   });
 
   groups.forEach(group => observer.observe(group));
-
-  // Веб-шрифт может догрузиться после первого подсчёта и поменять переносы
   document.fonts?.ready.then(() => groups.forEach(update));
 };
