@@ -540,6 +540,11 @@
   }
 
   .footer-menu-list {
+    li {
+      &:last-child {
+        padding-bottom: var(--fs-10);
+      }
+    }
     a {
       font-size: var(--fs-16);
     }
