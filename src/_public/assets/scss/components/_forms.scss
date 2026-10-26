@@ -230,9 +230,9 @@ input[type='number'] {
   }
 
   // Шаблон номера остаётся виден при фокусе, пока не начат ввод
-  // &[type='tel']:focus::placeholder {
-  //   opacity: var(--input-placeholder-opacity);
-  // }
+  &[type='tel']:focus::placeholder {
+    opacity: var(--input-placeholder-opacity);
+  }
 
   &.input--textarea {
     height: 128px;
