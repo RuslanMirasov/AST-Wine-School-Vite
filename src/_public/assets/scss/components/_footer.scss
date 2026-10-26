@@ -34,9 +34,12 @@
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  gap: 32px;
+  gap: var(--fs-16) var(--fs-50);
   margin-top: 8px;
-  font-size: var(--fs-12);
+  font-size: var(--fs-16);
+  @media (max-width: 1279px) {
+    font-size: var(--fs-12);
+  }
   --lh: 1.2;
   font-weight: 400;
 
@@ -47,12 +50,12 @@
   p {
     display: inline-flex;
     flex-wrap: nowrap;
+    align-items: center;
     opacity: 0.5;
     svg {
       position: relative;
-      transform: translateY(2%);
-      width: var(--fs-15);
-      height: var(--fs-15);
+      width: var(--fs-12);
+      height: var(--fs-12);
     }
   }
 
@@ -99,6 +102,9 @@
   > .footer-menu-title {
     border-bottom: 1px solid var(--grey-text);
     padding-bottom: var(--fs-14);
+    &.no-border {
+      border-bottom: 1px solid rgba(0, 0, 0, 0);
+    }
   }
 
   &.last {
@@ -148,7 +154,7 @@
   margin-bottom: var(--fs-16);
   width: 100%;
   font-weight: 700;
-  font-size: var(--fs-18);
+  font-size: var(--fs-20);
   --lh: 1.2;
   gap: var(--fs-8);
 
@@ -440,12 +446,6 @@
     position: relative;
   }
 
-  .copy {
-    gap: 32px;
-    margin-top: 8px;
-    font-size: var(--fs-12);
-  }
-
   .footer-logo {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -477,7 +477,6 @@
 //768
 @media (max-width: 1151px) {
   .copy {
-    gap: 24px 50px;
     font-size: var(--fs-12);
   }
 }
