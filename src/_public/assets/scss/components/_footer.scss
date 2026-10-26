@@ -130,9 +130,13 @@
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  gap: var(--fs-30) var(--fs-24);
+  gap: var(--fs-32) var(--fs-24);
   .footer-menu-list {
     margin: var(--fs-16) 0px;
+    min-width: 134px;
+    @media (max-width: 1151px) {
+      min-width: 140px;
+    }
   }
 }
 
@@ -566,7 +570,7 @@
 }
 
 //320
-@media (max-width: 374px) {
+@media (max-width: 359px) {
   .footer-address {
     flex-direction: column;
     justify-content: flex-start;
