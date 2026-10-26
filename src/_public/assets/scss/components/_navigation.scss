@@ -17,6 +17,24 @@ ul li.search-toggle-el {
   }
 }
 
+// Кнопка с лупой плавно возвращается после закрытия поиска (см. headerSearchIn ниже)
+.header:not(.search-open) ul li.search-toggle-el {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 768px) and (max-width: 1919px) {
+    animation: headerSearchIn 0.3s var(--cubic);
+  }
+}
+
+@keyframes headerSearchIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .header-dropdown {
   display: flex;
   height: 100%;
@@ -51,7 +69,8 @@ ul li.search-toggle-el {
   @media (max-width: 1919px) {
     .search-form {
       display: none;
-      max-width: 100%;
+      max-width: 89%;
+      margin-right: 0px;
     }
     &.search-open {
       .search-form {
@@ -60,6 +79,27 @@ ul li.search-toggle-el {
       .navigation {
         display: none;
       }
+    }
+  }
+
+  // Плавное появление при переключении поиска (кнопка с лупой, 768–1919px). Элементы прячутся через display,
+  // а @keyframes запускается в момент, когда элемент снова показан: открыли поиск — выезжает поле,
+  // закрыли — возвращается меню. Анимация без fill-mode: после неё transform у меню не остаётся
+  @media (prefers-reduced-motion: no-preference) and (min-width: 768px) and (max-width: 1919px) {
+    &.search-open .search-form {
+      animation: headerSearchIn 0.3s var(--cubic);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) and (min-width: 1280px) and (max-width: 1919px) {
+    &:not(.search-open) .navigation {
+      animation: headerSearchIn 0.3s var(--cubic);
+    }
+  }
+
+  @media (max-width: 1366px) {
+    .search-form {
+      max-width: 92%;
     }
   }
 
