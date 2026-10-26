@@ -1,3 +1,12 @@
+.section--image-slider {
+  .container {
+    align-items: flex-end;
+    > .title {
+      max-width: calc(100% - var(--fs-24) - var(--fs-8) - var(--fs-8) - var(--fs-38) - var(--fs-38));
+    }
+  }
+}
+
 .gallery-slider,
 .interface-slider {
   .swiper-slide {

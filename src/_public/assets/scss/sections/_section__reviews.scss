@@ -198,6 +198,20 @@
       }
     }
   }
+
+  .section--reviews-more {
+    &.long-title {
+      .title.title--32.upper {
+        width: 100%;
+        max-width: 100%;
+      }
+      .container {
+        > .buttons {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1023px) and (min-width: 768px) {

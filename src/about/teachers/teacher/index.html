@@ -81,9 +81,9 @@
       <!--СЕРТИФИКАТЫ И ДИПЛОМЫ ПРЕПОДАВАТЕЛЯ-->
       <section class="section section--image-slider" data-slider data-slides-per-view="auto,auto,auto,auto" data-space-between="16,16,16,16">
         <div class="container">
-          <h2 class="title title--32 upper">Сертификаты и дипломы преподавателя</h2>
+          <h2 class="title title--32 upper">Сертификаты и&nbsp;дипломы преподавателя</h2>
 
-          <div class="arrows auto ta--r">
+          <div class="arrows auto ta--r delete-in-mobil">
             <load src="/_partials/components/slider-arrows.html" />
           </div>
 
@@ -163,11 +163,13 @@
               </div>
             </div>
           </div>
+
+          <div class="show-in-mobil swiper-mobil-pagination" data-pagination></div>
         </div>
       </section>
 
       <!--МЕРОПРИЯТИЯ ПРЕПОДАВАТЕЛЯ-->
-      <section class="section">
+      <section class="section section--teacher-events">
         <div class="container">
           <h2 class="title title--32 upper">Мероприятия преподавателя</h2>
 
@@ -267,7 +269,7 @@
             <!--3-->
             <div class="col--3">
               <article class="post-card">
-                <picture class="image-background">
+                <picture class="image-background white-gradient to-top">
                   <source media="(max-width: 767px)" srcset="/assets/img/promo/23.webp" />
                   <img src="/assets/img/promo/23.webp" alt="Заявка на обучение у преподавателя" title="Заявка на обучение у преподавателя" />
                 </picture>
@@ -292,107 +294,119 @@
       </section>
 
       <!--ПОЛЕЗНЫЕ МАТЕРИАЛЫ-->
-      <section class="section">
+      <section class="section slider-only-in-tablet" data-slider data-slides-per-view="4,4,auto,auto" data-space-between="24,24,24,16">
         <div class="container">
-          <h2 class="title title--32 upper">Полезные материалы от преподавателя</h2>
+          <h2 class="title title--32 upper">Полезные материалы от&nbsp;преподавателя</h2>
 
-          <ul class="collage teachers-materials">
-            <li class="col--4">
-              <article class="content grey pad--24 gap--24">
-                <a href="%ROOT%about/materials/material/" class="post-card-image">
-                  <img
-                    src="/assets/img/posts/9-thumb.webp"
-                    alt="Как читать винную этикетку: подробный гид для новичков"
-                    title="Как читать винную этикетку: подробный гид для новичков"
-                  />
-                </a>
+          <div class="arrows auto ta--r delete-in-mobil">
+            <load src="/_partials/components/slider-arrows.html" />
+          </div>
 
-                <div class="content-text gap--8">
-                  <h3 class="title title--24 bold cut-3">
-                    <a href="%ROOT%about/materials/material/" class="title-link">Как читать винную этикетку: подробный гид для новичков</a>
-                  </h3>
-                  <p class="text grey-medium fs-12">12 марта 2026 г.</p>
-                  <p class="text grey-text cut-3">
-                    Разбираем каждый элемент этикетки: сорт, регион, год урожая, выдержку и скрытые маркетинговые уловки производителей.
-                  </p>
-                </div>
+          <div class="swiper teachers-materials">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="content grey pad--24 gap--24">
+                  <a href="%ROOT%about/materials/material/" class="post-card-image">
+                    <img
+                      src="/assets/img/posts/9-thumb.webp"
+                      alt="Как читать винную этикетку: подробный гид для новичков"
+                      title="Как читать винную этикетку: подробный гид для новичков"
+                    />
+                  </a>
 
-                <div class="buttons ta--r mt--auto">
-                  <a href="#" class="button magenta-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </li>
+                  <div class="content-text gap--8">
+                    <h3 class="title title--24 bold cut-3">
+                      <a href="%ROOT%about/materials/material/" class="title-link">Как читать винную этикетку: подробный гид для новичков</a>
+                    </h3>
+                    <p class="text grey-medium fs-12">12 марта 2026 г.</p>
+                    <p class="text grey-text cut-3">
+                      Разбираем каждый элемент этикетки: сорт, регион, год урожая, выдержку и скрытые маркетинговые уловки производителей.
+                    </p>
+                  </div>
 
-            <li class="col--4">
-              <article class="content grey pad--24 gap--24">
-                <a href="%ROOT%about/materials/material/" class="post-card-image">
-                  <img
-                    src="/assets/img/posts/10-thumb.webp"
-                    alt="Пять главных сортов красного винограда, которые нужно попробовать каждому"
-                    title="Пять главных сортов красного винограда, которые нужно попробовать каждому"
-                  />
-                </a>
+                  <div class="buttons ta--r mt--auto">
+                    <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                  </div>
+                </article>
+              </div>
 
-                <div class="content-text gap--8">
-                  <h3 class="title title--24 bold cut-3">
-                    <a href="%ROOT%about/materials/material/" class="title-link"
-                      >Пять главных сортов красного винограда, которые нужно попробовать каждому</a
-                    >
-                  </h3>
-                  <p class="text grey-medium fs-12">22 апреля 2026 г.</p>
-                  <p class="text grey-text cut-3">
-                    Каберне Совиньон, Пино Нуар, Мерло, Сира и Санджовезе — гид по характерам, ароматам и лучшим регионам.
-                  </p>
-                </div>
+              <div class="swiper-slide">
+                <article class="content grey pad--24 gap--24">
+                  <a href="%ROOT%about/materials/material/" class="post-card-image">
+                    <img
+                      src="/assets/img/posts/10-thumb.webp"
+                      alt="Пять главных сортов красного винограда, которые нужно попробовать каждому"
+                      title="Пять главных сортов красного винограда, которые нужно попробовать каждому"
+                    />
+                  </a>
 
-                <div class="buttons ta--r mt--auto">
-                  <a href="#" class="button magenta-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </li>
+                  <div class="content-text gap--8">
+                    <h3 class="title title--24 bold cut-3">
+                      <a href="%ROOT%about/materials/material/" class="title-link"
+                        >Пять главных сортов красного винограда, которые нужно попробовать каждому</a
+                      >
+                    </h3>
+                    <p class="text grey-medium fs-12">22 апреля 2026 г.</p>
+                    <p class="text grey-text cut-3">
+                      Каберне Совиньон, Пино Нуар, Мерло, Сира и Санджовезе — гид по характерам, ароматам и лучшим регионам.
+                    </p>
+                  </div>
 
-            <li class="col--4">
-              <article class="content grey pad--24 gap--24">
-                <a href="%ROOT%about/materials/material/" class="post-card-image">
-                  <img
-                    src="/assets/img/posts/11-thumb.webp"
-                    alt="Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам"
-                    title="Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам"
-                  />
-                </a>
+                  <div class="buttons ta--r mt--auto">
+                    <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                  </div>
+                </article>
+              </div>
 
-                <div class="content-text gap--8">
-                  <h3 class="title title--24 bold cut-3">
-                    <a href="%ROOT%about/materials/material/" class="title-link">Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам</a>
-                  </h3>
-                  <p class="text grey-medium fs-12">15 мая 2026 г.</p>
-                  <p class="text grey-text cut-3">
-                    Почему один Шардоне маслянистый, а другой — свежий и хрустящий? Разбираем три столпа белого виноделия.
-                  </p>
-                </div>
+              <div class="swiper-slide">
+                <article class="content grey pad--24 gap--24">
+                  <a href="%ROOT%about/materials/material/" class="post-card-image">
+                    <img
+                      src="/assets/img/posts/11-thumb.webp"
+                      alt="Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам"
+                      title="Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам"
+                    />
+                  </a>
 
-                <div class="buttons ta--r mt--auto">
-                  <a href="#" class="button magenta-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </li>
+                  <div class="content-text gap--8">
+                    <h3 class="title title--24 bold cut-3">
+                      <a href="%ROOT%about/materials/material/" class="title-link">Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам</a>
+                    </h3>
+                    <p class="text grey-medium fs-12">15 мая 2026 г.</p>
+                    <p class="text grey-text cut-3">
+                      Почему один Шардоне маслянистый, а другой — свежий и хрустящий? Разбираем три столпа белого виноделия.
+                    </p>
+                  </div>
 
-            <li class="col--4">
-              <article class="content grey pad--24 gap--24">
-                <picture class="image-background">
-                  <source media="(max-width: 767px)" srcset="/assets/img/posts/12-thumb.webp" />
-                  <img
-                    src="/assets/img/posts/12-thumb.webp"
-                    alt="Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам"
-                    title="Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам"
-                  />
-                </picture>
-                <div class="buttons mt--auto">
-                  <a href="#" class="button"><span>Смотреть все</span></a>
-                </div>
-              </article>
-            </li>
-          </ul>
+                  <div class="buttons ta--r mt--auto">
+                    <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide delete-in-mobil">
+                <article class="content grey pad--24 gap--24">
+                  <picture class="image-background">
+                    <source media="(max-width: 767px)" srcset="/assets/img/posts/12-thumb.webp" />
+                    <img
+                      src="/assets/img/posts/12-thumb.webp"
+                      alt="Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам"
+                      title="Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам"
+                    />
+                  </picture>
+                  <div class="buttons mt--auto">
+                    <a href="#" class="button"><span>Смотреть все</span></a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="show-in-mobil swiper-mobil-pagination" data-pagination></div>
+
+          <div class="buttons show-in-mobil">
+            <a href="#" class="button full"><span>Смотреть все</span></a>
+          </div>
         </div>
       </section>
 

@@ -194,3 +194,34 @@
     }
   }
 }
+
+.swiper-mobil-pagination {
+  display: flex;
+  width: 100% !important;
+  min-width: 100%;
+  flex-shrink: 0;
+  justify-content: center !important;
+  gap: 6px;
+  left: 0px !important;
+  top: 0px !important;
+  transform: translate(0px, 0px) !important;
+
+  .swiper-pagination-bullet {
+    transform: translate(0px, 0px) !important;
+    left: 0px !important;
+    top: 0px;
+    margin: 0 !important;
+    width: 24px;
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    z-index: 1;
+    padding: 0;
+    background-color: var(--blue);
+    cursor: pointer;
+    transition:
+      background-color 0.5s var(--cubic),
+      opacity 0.5s var(--cubic) !important;
+    border: none;
+  }
+}

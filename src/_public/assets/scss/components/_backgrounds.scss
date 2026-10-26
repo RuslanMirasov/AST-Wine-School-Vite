@@ -79,6 +79,11 @@
   }
 }
 
+.image-background.white-gradient.to-top {
+  --fade-direction: 180deg;
+  --fade-size: 60%;
+}
+
 @media (min-width: 768px) {
   .content:has(> .image-background.dark-gradient) {
     background-color: var(--black);
