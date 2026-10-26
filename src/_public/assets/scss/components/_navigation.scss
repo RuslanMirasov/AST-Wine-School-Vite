@@ -17,7 +17,6 @@ ul li.search-toggle-el {
   }
 }
 
-// Кнопка с лупой плавно возвращается после закрытия поиска (см. headerSearchIn ниже)
 .header:not(.search-open) ul li.search-toggle-el {
   @media (prefers-reduced-motion: no-preference) and (min-width: 768px) and (max-width: 1919px) {
     animation: headerSearchIn 0.3s var(--cubic);
@@ -69,7 +68,7 @@ ul li.search-toggle-el {
   @media (max-width: 1919px) {
     .search-form {
       display: none;
-      max-width: 89%;
+      max-width: 94%;
       margin-right: 0px;
     }
     &.search-open {
@@ -82,9 +81,6 @@ ul li.search-toggle-el {
     }
   }
 
-  // Плавное появление при переключении поиска (кнопка с лупой, 768–1919px). Элементы прячутся через display,
-  // а @keyframes запускается в момент, когда элемент снова показан: открыли поиск — выезжает поле,
-  // закрыли — возвращается меню. Анимация без fill-mode: после неё transform у меню не остаётся
   @media (prefers-reduced-motion: no-preference) and (min-width: 768px) and (max-width: 1919px) {
     &.search-open .search-form {
       animation: headerSearchIn 0.3s var(--cubic);
@@ -99,7 +95,7 @@ ul li.search-toggle-el {
 
   @media (max-width: 1366px) {
     .search-form {
-      max-width: 92%;
+      max-width: 98%;
     }
   }
 
@@ -128,19 +124,18 @@ ul li.search-toggle-el {
       margin-bottom: 10px;
       flex-shrink: 0;
     }
-    // display у панели не переключаем — с display: none transform не анимируется.
-    // Закрытая панель скрыта через visibility, он выключается после окончания анимации (задержка 0.5s)
+
     display: block;
     visibility: hidden;
     position: fixed;
     width: 100vw;
     height: auto;
-    // dvh — по текущей высоте экрана: на iPhone панели Safari прячутся, и с svh снизу оставалась полоса страницы
+
     max-height: calc(100svh + 10px);
     max-height: calc(100dvh + 10px);
     overflow-x: hidden;
     overflow-y: auto;
-    // Докрутив до края, прокрутка не уходит на страницу — иначе iOS дёргает панели Safari и сбивает прокрутку меню
+
     overscroll-behavior: contain;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -205,7 +200,7 @@ ul li.search-toggle-el {
     justify-content: flex-start;
     align-items: center;
     align-content: center;
-    gap: var(--fs-20);
+    gap: var(--fs-24);
 
     > li {
       display: flex;
@@ -215,7 +210,7 @@ ul li.search-toggle-el {
       justify-content: center;
       align-items: center;
       align-content: center;
-      gap: var(--fs-6);
+      gap: var(--fs-8);
     }
 
     li {
@@ -224,7 +219,7 @@ ul li.search-toggle-el {
         display: flex;
         outline: none;
         align-items: center;
-        font-size: var(--fs-14);
+        font-size: var(--fs-16);
         font-weight: 400;
         --lh: 1.3;
         background-color: rgba(0, 0, 0, 0);
