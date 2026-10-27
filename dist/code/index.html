@@ -437,6 +437,20 @@
 
               <h3 class="title title--24 full">Правила интеграции</h3>
 
+              <div class="docs-note">
+                <p class="text"><b>Обязательно уберите запрет индексации.</b> На тестовом стенде все страницы закрыты от поисковиков мета-тегом <code>&lt;meta name="robots" content="noindex, nofollow" /&gt;</code>. В исходниках он стоит в <code>src/_partials/base/meta.html</code>, в <code>dist</code> уже внутри <code>&lt;head&gt;</code> каждой страницы. В шаблон Bitrix этот тег переносить нельзя: с ним сайт выпадет из поиска Яндекса и Google.</p>
+              </div>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;!--Запрет индексации тестового стенда. Убрать при переносе на боевой сайт--&gt;
+              &lt;meta name="robots" content="noindex, nofollow" /&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="../assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
               <ul class="list">
                 <li>
                   <p class="text"><b>Заменить API-ключ Яндекс Карт</b> с личного ключа разработчика вёрстки на ключ заказчика. Где он стоит, описано в <a href="../code/maps/" class="magenta under">Яндекс картах</a>.</p>
