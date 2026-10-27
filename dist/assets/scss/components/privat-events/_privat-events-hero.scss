@@ -1,0 +1,162 @@
+.section--privat-events-hero {
+  .content {
+    display: inline-flex;
+    width: 100%;
+    flex: auto;
+    height: auto;
+    gap: var(--fs-4);
+  }
+  .col--2-3 {
+    .content-text {
+      width: 80%;
+      max-width: 420px;
+      margin-right: auto;
+      margin-left: 0px;
+    }
+  }
+  .col--3 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .image-background.white-gradient {
+    --fade-direction: 110deg;
+    --fade-from: rgba(0, 0, 0, 0.2);
+    --fade-hold: 50%;
+    --fade-size: 90%;
+    @media (min-width: 1024px) {
+      --fade-size: 70%;
+      --fade-from: rgba(0, 0, 0, 0.15);
+      --fade-hold: 40%;
+      --fade-direction: 120deg;
+    }
+  }
+
+  .content.grey.pad--32 {
+    flex: 0 0 auto;
+    &:first-child {
+      flex: 1 1 auto;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .col--3,
+    .col--2-3 {
+      min-width: 100%;
+      width: 100%;
+    }
+    .col--3 {
+      flex-direction: row;
+      .content {
+        width: calc((100% - var(--fs-24)) / 2);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .col--3 {
+      flex-direction: column;
+      .content {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.privat-events-hero-image {
+  min-height: 460px;
+  &.dark {
+    background-color: var(--black);
+  }
+}
+
+.section--event-hero {
+  .content {
+    display: inline-flex;
+    width: 100%;
+    flex: auto;
+    height: auto;
+    gap: var(--fs-4);
+  }
+
+  .image-background.white-gradient {
+    --fade-size: 80%;
+    --fade-from: rgba(0, 0, 0, 0.2);
+    --fade-hold: 40%;
+    --fade-direction: 180deg;
+    @media (max-width: 767px) {
+      --fade-from: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .collage .col--8-15 {
+    .buttons {
+      margin-top: var(--fs-16);
+      @media (max-width: 767px) {
+        margin-top: auto;
+      }
+    }
+  }
+
+  .collage .col--7-15 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    > .content {
+      flex: 1 1 auto;
+    }
+    > .col--1 {
+      flex: 0 0 auto;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .col--2 {
+      min-width: 100%;
+      width: 100%;
+    }
+
+    .collage {
+      .col--7-15,
+      .col--1 {
+        gap: var(--fs-16);
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .col--2 {
+      min-width: calc((100% - var(--fs-24)) / 2);
+      width: calc((100% - var(--fs-24)) / 2);
+    }
+
+    .collage {
+      .col--8-15,
+      .col--7-15,
+      .col--1 {
+        width: 100%;
+        gap: var(--fs-24);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .col--2 {
+      min-width: 100%;
+      width: 100%;
+    }
+
+    .collage {
+      .col--8-15,
+      .col--7-15,
+      .col--1 {
+        gap: var(--fs-16);
+      }
+
+      .buttons {
+        .button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

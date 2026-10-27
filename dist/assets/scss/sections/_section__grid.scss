@@ -1,0 +1,215 @@
+.service-mix {
+  display: flex;
+  width: 100%;
+  gap: var(--fs-24);
+  padding-top: var(--fs-24);
+
+  .service-mix-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fs-24);
+    width: calc((100% - var(--fs-24)) / 2);
+  }
+
+  .service-mix__item {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--fs-8);
+    break-inside: avoid;
+    position: relative;
+    border-radius: var(--fs-50);
+    @media (max-width: 767px) {
+      border-radius: var(--fs-30);
+    }
+
+    .text {
+      --lh: 1.5;
+      margin-bottom: var(--fs-16);
+      z-index: 3;
+    }
+
+    .button {
+      margin-top: auto;
+      z-index: 3;
+    }
+
+    &.service-mix__item--degustations {
+      flex: 1;
+      padding: var(--fs-28);
+      background-color: var(--white);
+      .text {
+        max-width: 70%;
+      }
+    }
+
+    &.service-mix__item--images {
+      gap: var(--fs-24);
+      flex-direction: row;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    &.service-mix__item--curses {
+      flex: 1;
+      padding: var(--fs-28);
+      background-color: var(--blue);
+      > * {
+        color: var(--white);
+      }
+      a {
+        &:hover,
+        &:focus-visible {
+          border-bottom: 1px solid var(--white);
+        }
+      }
+      .text {
+        max-width: 40%;
+      }
+      .phone-image {
+        position: absolute;
+        pointer-events: none;
+        right: 0px;
+        bottom: 0px;
+        width: auto;
+        height: 108%;
+        border-radius: 0px 0px var(--fs-30) 0px;
+      }
+    }
+
+    &.service-mix__item--events {
+      min-height: 240px;
+      flex-direction: column;
+      padding: var(--fs-28);
+      background-color: var(--grey-promo);
+      overflow: hidden;
+      > .logo-background {
+        color: var(--blue-light);
+        z-index: 1;
+        left: 30%;
+        top: 45%;
+        width: 80%;
+        opacity: 0.5;
+      }
+      .text {
+        position: relative;
+        max-width: 70%;
+        z-index: 2;
+      }
+      .button {
+        @media (max-width: 767px) {
+          background-color: #e0d6e6;
+        }
+
+        z-index: 2;
+      }
+    }
+  }
+}
+
+.service-mix-image {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: calc((100% - var(--fs-24)) / 2);
+  min-height: 100%;
+  img {
+    display: block;
+    width: 100%;
+    border-radius: var(--fs-50);
+    @media (max-width: 767px) {
+      border-radius: var(--fs-30);
+    }
+    pointer-events: none;
+    &.absolute {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+//768
+@media (max-width: 959px) {
+  .service-mix {
+    flex-direction: column;
+    .service-mix-col {
+      min-width: 100%;
+    }
+    .service-mix__item.service-mix__item--curses {
+      min-height: 300px;
+      .text {
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+//375
+@media (max-width: 767px) {
+  .service-mix {
+    gap: var(--fs-16);
+    flex-direction: column;
+    .service-mix-col {
+      width: 100%;
+      gap: var(--fs-16);
+    }
+
+    .service-mix__item {
+      &.service-mix__item--images {
+        gap: var(--fs-16);
+      }
+
+      &.service-mix__item--degustations {
+        padding: var(--fs-20);
+        .text {
+          max-width: 100%;
+        }
+        .button {
+          width: 100%;
+        }
+      }
+
+      &.service-mix__item--curses {
+        padding: var(--fs-20);
+        min-height: 214px;
+        .button {
+          margin-top: auto;
+        }
+        .text {
+          max-width: 50%;
+          font-size: var(--fs-14);
+          z-index: 2;
+        }
+        .phone-image {
+          height: 106%;
+        }
+      }
+
+      &.service-mix__item--events {
+        min-height: 1px;
+        padding: var(--fs-20);
+        > .logo-background {
+          left: auto;
+          right: -50px;
+          top: 45%;
+          width: 70%;
+        }
+        .text {
+          max-width: 100%;
+        }
+        .button {
+          width: 100%;
+          margin-top: var(--fs-14);
+        }
+      }
+    }
+  }
+
+  .service-mix-image {
+    width: calc((100% - var(--fs-16)) / 2);
+  }
+}

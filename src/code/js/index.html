@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <load src="/_partials/base/meta.html" />
+    <load src="/_partials/base/styles.html" />
+    <meta name="description" content="AST - JS модули и плагины" />
+    <title>JS модули и плагины</title>
+    <!--Стили страниц документации /code/-->
+    <style>
+      .icons-table {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+      .icons-table-inner {
+        flex: 1;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        gap: 10px;
+        background-color: var(--white);
+        min-width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+        text-align: center;
+      }
+      .icons-table-inner svg {
+        max-width: 100%;
+      }
+
+      /* Код в тексте */
+      .profile-content p code,
+      .profile-content li code {
+        padding: 1px 6px;
+        border-radius: 6px;
+        background-color: var(--grey-light);
+        font-size: 0.9em;
+        font-family: var(--font);
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      /* Блок с примером кода: по центру, кнопка копирования в правом верхнем углу */
+      .code-block-wrapper {
+        display: block;
+        width: 100%;
+      }
+      .code-block {
+        position: relative;
+        width: 100%;
+        max-width: 880px;
+        margin: 0 auto;
+        border-radius: 16px;
+        background-color: #1f2a3f;
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+        padding-right: 60px;
+        min-height: 64px;
+      }
+      .code-block pre {
+        margin: 0;
+        padding: 24px 64px 24px 24px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+      }
+      .code-block code {
+        display: block;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #e6e9f0;
+        white-space: pre;
+        tab-size: 2;
+      }
+      .code-block .copy-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #e6e9f0;
+        cursor: pointer;
+        transition:
+          background-color 0.3s var(--cubic),
+          color 0.3s var(--cubic);
+      }
+      .code-block .copy-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+      @media (hover: hover) {
+        .code-block .copy-btn:hover {
+          background-color: rgba(255, 255, 255, 0.16);
+          color: var(--white);
+        }
+      }
+      @media (max-width: 767px) {
+        .code-block pre {
+          padding: 16px 56px 16px 16px;
+        }
+        .code-block code {
+          font-size: 12px;
+        }
+      }
+
+      .code-block .hl-punct {
+        color: #c6cbd6;
+      }
+      .code-block .hl-tag {
+        color: #f2a0b8;
+      }
+      .code-block .hl-attr {
+        color: #a6d189;
+        font-style: italic;
+      }
+      .code-block .hl-str {
+        color: #e5c890;
+      }
+      .code-block .hl-selector {
+        color: #ef9f76;
+      }
+      .code-block .hl-php {
+        color: #ca9ee6;
+      }
+      .code-block .hl-comment {
+        color: #8a93ab;
+        font-style: italic;
+      }
+      .code-block .hl-kw {
+        color: #ca9ee6;
+      }
+      .code-block .hl-var {
+        color: #8caaee;
+      }
+      .code-block .hl-num {
+        color: #ef9f76;
+      }
+      /* Подзаголовки и таблицы документации */
+      .profile-content h3 code,
+      .profile-content td code {
+        padding: 1px 6px;
+        border-radius: 6px;
+        background-color: var(--grey-light);
+        font-size: 0.9em;
+        font-family: var(--font);
+        color: var(--blue);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .docs-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 16px;
+        background-color: var(--white);
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+      }
+      .docs-table {
+        width: 100%;
+        min-width: 560px;
+        border-collapse: collapse;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .docs-table th,
+      .docs-table td {
+        padding: 12px 16px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid var(--grey-light);
+      }
+      .docs-table tr:last-child td {
+        border-bottom: none;
+      }
+      .docs-table th {
+        font-weight: 700;
+        background-color: var(--grey-light);
+      }
+      .profile-content .list {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-content ol.list {
+        list-style: decimal;
+      }
+      .docs-tab {
+        display: flex;
+        flex-direction: column;
+        gap: var(--fs-24);
+        width: 100%;
+      }
+      .docs-note {
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 16px;
+        border-left: 4px solid var(--magenta);
+        background-color: var(--grey-light);
+      }
+    </style>
+  </head>
+  <body class="body">
+    <!--HEADER-->
+    <load src="/_partials/preloader.html" />
+
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="%ROOT%">Главная</a></li>
+        <li><a href="%ROOT%code/">Документация</a></li>
+        <li><span>JS модули и плагины</span></li>
+      </ul>
+
+      <section class="section pad--32">
+        <div class="container">
+          <h1 class="title title--40">Документация к вёрстке и JavaScript модулям</h1>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="container">
+          <!--SIDEBAR-->
+          <aside class="sidebar small left-side" data-sticky-sidebar>
+            <menu class="profile-menu">
+              <li>
+                <a href="%ROOT%code/" class="profile-menu-link" data-exact>
+                  <span>Быстрый старт</span>
+                </a>
+                <a href="%ROOT%code/icons/" class="profile-menu-link" data-exact>
+                  <span>Карта иконок сайта</span>
+                </a>
+                <a href="%ROOT%code/js/" class="profile-menu-link" data-exact>
+                  <span>JS модули и плагины</span>
+                </a>
+                <a href="%ROOT%code/forms/" class="profile-menu-link" data-exact>
+                  <span>Формы и JS валидация</span>
+                </a>
+                <a href="%ROOT%code/maps/" class="profile-menu-link" data-exact>
+                  <span>Яндекс карты</span>
+                </a>
+                <a href="%ROOT%code/popups/" class="profile-menu-link" data-exact>
+                  <span>Popup - всплывашки</span>
+                </a>
+                <a href="%ROOT%code/sliders/" class="profile-menu-link" data-exact>
+                  <span>Слайдеры</span>
+                </a>
+                <a href="%ROOT%code/tabs/" class="profile-menu-link" data-exact>
+                  <span>Табы</span>
+                </a>
+                <a href="%ROOT%code/accordeons/" class="profile-menu-link" data-exact>
+                  <span>Аккордеоны</span>
+                </a>
+              </li>
+            </menu>
+          </aside>
+
+          <!--PAGE CONTENT-->
+          <div class="page-content">
+            <div class="profile-content profile-info">
+              <h2 class="title title--32 upper full">JS модули и плагины</h2>
+
+              <p class="text">Вся логика подключается одним файлом <code>assets/js/scripts.js</code>, он сам импортирует остальные модули. Как подключить его в шаблон, описано в <a href="%ROOT%code/" class="magenta under">Быстром старте</a>. Каждый модуль проверяет, есть ли на странице его элементы, и если нет, ничего не делает. Поэтому все модули можно оставлять подключёнными на всех страницах.</p>
+
+              <h2 class="title title--32 upper full">Библиотеки</h2>
+
+              <div class="docs-table-wrapper">
+                <table class="docs-table">
+                  <thead><tr><th>Библиотека</th><th>Как подключается</th><th>Для чего</th></tr></thead>
+                <tbody>
+                  <tr><td>iMask</td><td>тегом до <code>scripts.js</code>, на всех страницах</td><td>маски телефона и чисел</td></tr>
+                  <tr><td>Choices.js</td><td>тегом до <code>scripts.js</code>, на всех страницах</td><td>выпадающие списки <code>data-select</code></td></tr>
+                  <tr><td>Swiper</td><td>тегом до <code>scripts.js</code>, на всех страницах</td><td>слайдеры</td></tr>
+                  <tr><td>SimpleLightbox</td><td>сам, с CDN, при первом клике по картинке галереи</td><td>галерея картинок</td></tr>
+                  <tr><td>Air Datepicker</td><td>сам, с CDN, только на страницах с полями <code>type="date"</code></td><td>календарь</td></tr>
+                  <tr><td>API Яндекс Карт</td><td>сам, только на страницах с блоком <code>data-map</code></td><td>карта</td></tr>
+                  <tr><td>basicLightbox</td><td>тегом до <code>scripts.js</code>, только на <code>gift-certificates</code></td><td>просмотр макета сертификата</td></tr>
+                </tbody>
+                </table>
+              </div>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;!-- только на странице подарочных сертификатов --&gt;
+              &lt;link rel="stylesheet" href="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/css/lightbox.min.css" /&gt;
+              &lt;script src="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/js/plugins/lightbox.min.js"&gt;&lt;/script&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <h2 class="title title--32 upper full">Модули</h2>
+
+              <div class="docs-table-wrapper">
+                <table class="docs-table">
+                  <thead><tr><th>Модуль</th><th>Элементы</th><th>Что делает</th></tr></thead>
+                <tbody>
+                  <tr><td><code>popup.js</code></td><td><code>data-backdrop</code>, <code>data-popup-open</code></td><td>попапы, подробнее в <a href="%ROOT%code/popups/" class="magenta under">Попапах</a></td></tr>
+                  <tr><td><code>sliders.js</code>, <code>goToSlide.js</code></td><td><code>data-slider</code></td><td>слайдеры, подробнее в <a href="%ROOT%code/sliders/" class="magenta under">Слайдерах</a></td></tr>
+                  <tr><td><code>tabs.js</code></td><td><code>data-tabs</code></td><td>табы, подробнее в <a href="%ROOT%code/tabs/" class="magenta under">Табах</a></td></tr>
+                  <tr><td><code>accordeon.js</code></td><td><code>data-accordeon</code></td><td>аккордеоны, подробнее в <a href="%ROOT%code/accordeons/" class="magenta under">Аккордеонах</a></td></tr>
+                  <tr><td><code>yandex-map.js</code></td><td><code>data-map</code></td><td>карта, подробнее в <a href="%ROOT%code/maps/" class="magenta under">Яндекс картах</a></td></tr>
+                  <tr><td><code>forms/</code></td><td><code>data-form</code></td><td>валидация форм, подробнее в <a href="%ROOT%code/forms/" class="magenta under">Формах</a></td></tr>
+                  <tr><td><code>inputMasks.js</code></td><td><code>type="tel"</code>, <code>data-select</code>, <code>data-input-price</code></td><td>маски полей и выпадающие списки, подробнее в <a href="%ROOT%code/forms/" class="magenta under">Формах</a></td></tr>
+                  <tr><td><code>image-gallery.js</code></td><td><code>data-gallery</code>, <code>data-source</code></td><td>галерея картинок на весь экран</td></tr>
+                  <tr><td><code>airDatepicker.js</code></td><td><code>input type="date"</code></td><td>календарь для полей даты</td></tr>
+                  <tr><td><code>readMore.js</code></td><td><code>data-read-more</code>, <code>data-read-more-group</code></td><td>обрезка текста с кнопкой «Читать полностью»</td></tr>
+                  <tr><td><code>copy.js</code></td><td><code>data-copy-to-buffer</code>, <code>data-copy</code></td><td>копирование текста в буфер обмена</td></tr>
+                  <tr><td><code>stars.js</code></td><td><code>data-rating</code></td><td>звёзды рейтинга</td></tr>
+                  <tr><td><code>videoPlayer.js</code></td><td><code>#video-player</code>, <code>#vk-player</code></td><td>видеоплеер в попапе</td></tr>
+                  <tr><td><code>navigation.js</code></td><td><code>data-megamenu-button</code>, <code>data-megamenu</code></td><td>мобильное меню и выпадающие меню шапки</td></tr>
+                  <tr><td><code>headerSearch.js</code></td><td><code>data-search-toggle</code></td><td>раскрытие поиска в шапке</td></tr>
+                  <tr><td><code>activeLinks.js</code></td><td>ссылки меню</td><td>подсветка текущего пункта меню. <b>На Bitrix удалить</b>, активный пункт отдаёт компонент меню</td></tr>
+                  <tr><td><code>stickySidebar.js</code></td><td><code>data-sticky-sidebar</code></td><td>боковая колонка прилипает при прокрутке</td></tr>
+                  <tr><td><code>a11yToggle.js</code></td><td><code>data-a11y-toggle</code>, <code>data-a11y-panel</code></td><td>версия для слабовидящих, настройки хранятся в <code>localStorage</code></td></tr>
+                  <tr><td><code>fix-button.js</code></td><td><code>data-fix-button</code></td><td>на телефоне кнопка закрепляется внизу экрана, когда основная кнопка ушла с экрана</td></tr>
+                  <tr><td><code>event-filters.js</code>, <code>event-filter-selection.js</code></td><td><code>data-filters-backdrop</code>, <code>data-filter-button</code></td><td>панель фильтров мероприятий</td></tr>
+                  <tr><td><code>certificat-order.js</code>, <code>certificat-preview.js</code></td><td><code>data-cert-order</code></td><td>заказ подарочного сертификата по шагам</td></tr>
+                  <tr><td><code>hero-pagination.js</code></td><td><code>data-hero-pagination</code></td><td>пагинация главного баннера</td></tr>
+                  <tr><td><code>history-lines.js</code></td><td><code>.history</code></td><td>линия на странице истории школы</td></tr>
+                  <tr><td><code>ageConfirmation.js</code>, <code>cookie-confirm.js</code></td><td><code>data-age-confirm</code>, <code>data-cookie-popup</code></td><td>подтверждение возраста и плашка cookies</td></tr>
+                  <tr><td><code>preloader.js</code></td><td></td><td>скрывает прелоадер после загрузки</td></tr>
+                </tbody>
+                </table>
+              </div>
+
+              <h2 class="title title--32 upper full">Галерея картинок</h2>
+
+              <p class="text">Клик по картинке открывает её на весь экран. Можно листать стрелками, свайпом и клавиатурой, увеличивать двумя пальцами. Блок с <code>data-gallery</code> объединяет картинки в одну галерею. Картинке нужен <code>data-source</code> с адресом большой версии. Картинки без <code>data-source</code> в галерею не попадают.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;div class="swiper" data-gallery&gt;
+                &lt;div class="swiper-wrapper"&gt;
+                  &lt;div class="swiper-slide"&gt;
+                    &lt;img src="&lt;?=$photo['SMALL']?&gt;" data-source="&lt;?=$photo['BIG']?&gt;" alt="&lt;?=$photo['ALT']?&gt;" /&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <ul class="list">
+                <li>
+                  <p class="text">Листание идёт в пределах своего блока <code>data-gallery</code>.</p>
+                </li>
+                <li>
+                  <p class="text">Обработчик клика один на весь документ, поэтому картинки, добавленные AJAX-ом или кнопкой «Показать ещё», работают без повторной инициализации.</p>
+                </li>
+              </ul>
+
+              <h2 class="title title--32 upper full">Календарь</h2>
+
+              <p class="text">Обычное поле <code>type="date"</code> само превращается в календарь, атрибуты добавлять не нужно. <code>required</code> работает как обычно.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;label class="label"&gt;
+                &lt;span class="label-text"&gt;Дата рождения&lt;/span&gt;
+                &lt;input type="date" name="birthday" class="input" value="1990-05-21" required /&gt;
+              &lt;/label&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="docs-note">
+                <p class="text">Посетитель видит дату как <code>21.05.1990</code>, а на сервер под тем же <code>name</code> уходит <code>1990-05-21</code>. Модуль переносит <code>name</code> на скрытое поле, а у видимого поля <code>name</code> убирает. Значение по умолчанию задаётся в <code>value</code> в формате <code>ГГГГ-ММ-ДД</code>.</p>
+              </div>
+
+              <h2 class="title title--32 upper full">«Читать полностью»</h2>
+
+              <h3 class="title title--24 full">Один блок текста</h3>
+
+              <p class="text"><code>data-read-more="N"</code> обрезает текст до N строк. Кнопка «Читать полностью» появляется, только если текст действительно не помещается.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;p class="text" data-read-more="6"&gt;&lt;?=$review['TEXT']?&gt;&lt;/p&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="title title--24 full">Несколько абзацев</h3>
+
+              <p class="text"><code>data-read-more-group="N"</code> на обёртке: лимит в N строк считается на все абзацы <code>&lt;p&gt;</code> внутри вместе. Абзацы ниже лимита скрываются до раскрытия.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;div class="content" data-read-more-group="10"&gt;
+                &lt;?=$arResult['DETAIL_TEXT']?&gt;
+              &lt;/div&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <p class="text">Абзацы должны быть прямыми потомками обёртки.</p>
+
+              <h2 class="title title--32 upper full">Копирование в буфер</h2>
+
+              <p class="text">Кнопка <code>data-copy-to-buffer</code> копирует текст ближайшего блока <code>data-copy</code> и показывает уведомление «Скопировано в буфер обмена».</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;div class="promo-code"&gt;
+                &lt;span data-copy&gt;&lt;?=$arResult['PROMO_CODE']?&gt;&lt;/span&gt;
+                &lt;button type="button" data-copy-to-buffer aria-label="Скопировать промокод"&gt;
+                  &lt;svg width="24" height="24"&gt;&lt;use href="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/img/sprite.svg#copy"&gt;&lt;/use&gt;&lt;/svg&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <h2 class="title title--32 upper full">Звёзды рейтинга</h2>
+
+              <p class="text"><code>data-rating</code> с оценкой от 0 до 5, можно дробной. Звёзды дорисовываются сами, в том числе в разметке, добавленной AJAX-ом. Текст внутри блока скрыт визуально и нужен для экранных дикторов.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;div class="stars" data-rating="4.5"&gt;Рейтинг 4.5 из 5&lt;/div&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <h2 class="title title--32 upper full">Заказ сертификата</h2>
+
+              <p class="text">Данные формы заказа сертификата сохраняются в <code>localStorage</code> под ключом <code>certificate-order</code>, чтобы посетитель не потерял их при перезагрузке. После успешной оплаты их нужно очистить, например на странице «Спасибо за заказ»:</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy data-lang="js">localStorage.removeItem('certificate-order');</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <p class="text">Шаги заказа переключает функция <code>toCertStep(popupId, group)</code>: она проверяет поля группы <code>data-cert-group</code> и открывает попап следующего шага.</p>
+
+              <h2 class="title title--32 upper full">Как добавить свой модуль</h2>
+
+              <ol class="list">
+                <li>
+                  <p class="text">Создать файл в <code>assets/js/modules/</code> с функцией инициализации. Если нужных элементов на странице нет, сразу выходить.</p>
+                </li>
+                <li>
+                  <p class="text">Импортировать её в <code>scripts.js</code> и вызвать внутри обработчика <code>DOMContentLoaded</code>.</p>
+                </li>
+              </ol>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy data-lang="js">// modules/my-module.js
+              export const initMyModule = () =&gt; {
+                const blocks = document.querySelectorAll('[data-my-module]');
+                if (!blocks.length) return;
+
+                // ...
+              };</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <p class="text">Пути к файлам внутри модуля считать от самого модуля, а не от корня сайта. Тогда они не сломаются, где бы ни лежал шаблон:</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy data-lang="js">const spriteUrl = new URL('../../img/sprite.svg', import.meta.url).href;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--SCRIPTS-->
+    <load src="/_partials/base/scripts.html" />
+
+    <!--Подсветка примеров кода. Текст внутри <code> не меняется, только оборачивается в <span>, поэтому копируется как есть-->
+    <script>
+      // Угловые скобки в скрипте записаны как \x3C и \x3E: иначе редактор и браузер принимают
+      // начало HTML-комментария или PHP-вставки в тексте скрипта за разметку
+      (() => {
+        const escape = text => text.replace(/&/g, '&amp;').replace(/\x3C/g, '&lt;').replace(/\x3E/g, '&gt;');
+        const wrap = (cls, text) => `\x3Cspan class="hl-${cls}"\x3E${escape(text)}\x3C/span\x3E`;
+
+        // PHP-вставки внутри значения атрибута (например, SITE_TEMPLATE_PATH)
+        const highlightValue = (value, cls) =>
+          value
+            .split(/(\x3C\?[\s\S]*?\?\x3E)/)
+            .map(part => (part.startsWith('\x3C?') ? wrap('php', part) : part && wrap(cls, part)))
+            .join('');
+
+        const highlightAttrs = attrs =>
+          attrs.replace(/(\s+)([^\s=]+)(?:(\s*=\s*)("[^"]*"|'[^']*'|[^\s"']+))?/g, (match, space, name, eq, value) => {
+            let html = space + wrap('attr', name);
+            if (!eq) return html;
+            // Классы и id — отдельным цветом, остальные значения — как строки
+            const cls = name === 'class' || name === 'id' ? 'selector' : 'str';
+            return html + wrap('punct', eq) + highlightValue(value, cls);
+          });
+
+        const highlightHtml = code =>
+          code
+            .split(
+              /(\x3C!--[\s\S]*?--\x3E|\x3C\?[\s\S]*?\?\x3E|\x3C\/?[a-zA-Z][\w-]*(?:\s+[^\s=\x3E\/]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s\x3E]+))?)*\s*\/?\x3E)/
+            )
+            .map(part => {
+              if (!part) return '';
+              if (part.startsWith('\x3C!--')) return wrap('comment', part);
+              if (part.startsWith('\x3C?')) return wrap('php', part);
+
+              const tag = part.match(/^(\x3C\/?)([a-zA-Z][\w-]*)([\s\S]*?)(\s*\/?\x3E)$/);
+              if (!tag) return escape(part);
+
+              const [, open, name, attrs, close] = tag;
+              return wrap('punct', open) + wrap('tag', name) + highlightAttrs(attrs) + wrap('punct', close);
+            })
+            .join('');
+
+        const JS_KEYWORDS =
+          /^(?:const|let|var|function|return|if|else|for|of|in|new|import|export|from|async|await|class|this|true|false|null|undefined)$/;
+
+        const highlightJs = code => {
+          let isDeclaration = false;
+
+          return code
+            .split(/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|`[^`]*`|"[^"\n]*"|'[^'\n]*'|\b\d+(?:\.\d+)?\b|[A-Za-z_$][\w$]*)/)
+            .map(part => {
+              if (!part) return '';
+              if (part.startsWith('//') || part.startsWith('/*')) return wrap('comment', part);
+              if (/^["'`]/.test(part)) return wrap('str', part);
+              if (/^\d/.test(part)) return wrap('num', part);
+
+              if (/^[A-Za-z_$]/.test(part)) {
+                if (JS_KEYWORDS.test(part)) {
+                  isDeclaration = /^(?:const|let|var|function|class)$/.test(part);
+                  return wrap('kw', part);
+                }
+                // Имя сразу после const / let / var / function / class — переменная
+                const cls = isDeclaration ? 'var' : null;
+                isDeclaration = false;
+                return cls ? wrap(cls, part) : escape(part);
+              }
+
+              if (part.trim()) isDeclaration = false;
+              return escape(part);
+            })
+            .join('');
+        };
+
+        document.querySelectorAll('.code-block code').forEach(code => {
+          const text = code.textContent;
+          code.innerHTML = code.dataset.lang === 'js' ? highlightJs(text) : highlightHtml(text);
+        });
+      })();
+    </script>
+  </body>
+</html>

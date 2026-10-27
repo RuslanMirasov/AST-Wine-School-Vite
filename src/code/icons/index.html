@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="ru">
   <head>
-    <load src="/_partials/base/metrix.html" />
     <load src="/_partials/base/meta.html" />
     <load src="/_partials/base/styles.html" />
     <meta name="description" content="AST - Личный кабинет" />
     <title>Карта иконок</title>
+    <!--Стили страниц документации /code/-->
     <style>
       .icons-table {
         display: flex;
@@ -151,6 +151,66 @@
       .code-block .hl-num {
         color: #ef9f76;
       }
+      /* Подзаголовки и таблицы документации */
+      .profile-content h3 code,
+      .profile-content td code {
+        padding: 1px 6px;
+        border-radius: 6px;
+        background-color: var(--grey-light);
+        font-size: 0.9em;
+        font-family: var(--font);
+        color: var(--blue);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .docs-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 16px;
+        background-color: var(--white);
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+      }
+      .docs-table {
+        width: 100%;
+        min-width: 560px;
+        border-collapse: collapse;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .docs-table th,
+      .docs-table td {
+        padding: 12px 16px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid var(--grey-light);
+      }
+      .docs-table tr:last-child td {
+        border-bottom: none;
+      }
+      .docs-table th {
+        font-weight: 700;
+        background-color: var(--grey-light);
+      }
+      .profile-content .list {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-content ol.list {
+        list-style: decimal;
+      }
+      .docs-tab {
+        display: flex;
+        flex-direction: column;
+        gap: var(--fs-24);
+        width: 100%;
+      }
+      .docs-note {
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 16px;
+        border-left: 4px solid var(--magenta);
+        background-color: var(--grey-light);
+      }
     </style>
   </head>
   <body class="body">
@@ -176,7 +236,37 @@
         <div class="container">
           <!--SIDEBAR-->
           <aside class="sidebar small left-side" data-sticky-sidebar>
-            <load src="/_partials/components/menus/documentation-menu.html" />
+            <menu class="profile-menu">
+              <li>
+                <a href="%ROOT%code/" class="profile-menu-link" data-exact>
+                  <span>Быстрый старт</span>
+                </a>
+                <a href="%ROOT%code/icons/" class="profile-menu-link" data-exact>
+                  <span>Карта иконок сайта</span>
+                </a>
+                <a href="%ROOT%code/js/" class="profile-menu-link" data-exact>
+                  <span>JS модули и плагины</span>
+                </a>
+                <a href="%ROOT%code/forms/" class="profile-menu-link" data-exact>
+                  <span>Формы и JS валидация</span>
+                </a>
+                <a href="%ROOT%code/maps/" class="profile-menu-link" data-exact>
+                  <span>Яндекс карты</span>
+                </a>
+                <a href="%ROOT%code/popups/" class="profile-menu-link" data-exact>
+                  <span>Popup - всплывашки</span>
+                </a>
+                <a href="%ROOT%code/sliders/" class="profile-menu-link" data-exact>
+                  <span>Слайдеры</span>
+                </a>
+                <a href="%ROOT%code/tabs/" class="profile-menu-link" data-exact>
+                  <span>Табы</span>
+                </a>
+                <a href="%ROOT%code/accordeons/" class="profile-menu-link" data-exact>
+                  <span>Аккордеоны</span>
+                </a>
+              </li>
+            </menu>
           </aside>
 
           <!--PAGE CONTENT-->

@@ -1,0 +1,147 @@
+.tags {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  @media (max-width: 767px) {
+    gap: 8px;
+  }
+  flex-shrink: 0;
+
+  &.auto {
+    display: inline-flex;
+    width: auto;
+  }
+
+  .text {
+    display: inline-block;
+    width: auto;
+  }
+
+  li {
+    display: inline-flex;
+    width: auto;
+  }
+
+  .tag {
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--blue);
+    border: 1px solid var(--grey-button);
+    background-color: var(--white);
+    border-radius: 100px;
+    --lh: 1;
+    font-weight: 500;
+    z-index: 2;
+    font-size: var(--fs-14);
+    padding: var(--fs-8) var(--fs-16);
+
+    svg {
+      display: block;
+      width: var(--fs-18);
+      height: var(--fs-18);
+      color: var(--magenta);
+      flex-shrink: 0;
+    }
+
+    &.green {
+      svg {
+        color: var(--green);
+      }
+    }
+
+    &.magenta {
+      color: var(--magenta);
+    }
+
+    //1366
+    @media (max-width: 1439px) {
+      font-weight: 500;
+    }
+
+    &.white {
+      background-color: var(--white);
+    }
+  }
+
+  &.minify {
+    .tag,
+    .tag .text {
+      font-family: var(--font-center);
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .tag {
+      padding: var(--fs-6) var(--fs-12);
+      min-height: auto;
+      font-size: var(--fs-14);
+      --lh: 1;
+      border: none;
+      background-color: var(--grey-light);
+      &.white {
+        background-color: var(--white);
+      }
+    }
+  }
+}
+
+.dark,
+.blue,
+.grey,
+.magenta {
+  .tags .tag {
+    background-color: var(--white);
+  }
+}
+
+.body.a11y {
+  @media (max-width: 767px) {
+    &.a11y-font-big {
+      .tags {
+        .tag {
+          font-size: var(--fs-14);
+          svg {
+            width: var(--fs-14);
+            height: var(--fs-14);
+          }
+        }
+      }
+    }
+
+    &.a11y-font-large {
+      .tags {
+        .tag {
+          font-size: var(--fs-15);
+          svg {
+            width: var(--fs-15);
+            height: var(--fs-15);
+          }
+        }
+      }
+    }
+  }
+}
+
+// ТЕМНАЯ ТЕМА
+.a11y-theme-dark {
+  .tags {
+    .tag {
+      color: var(--black);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background-color: var(--grey-light);
+
+      svg {
+        color: var(--black);
+      }
+
+      &.white {
+        background-color: var(--blue);
+      }
+    }
+  }
+}

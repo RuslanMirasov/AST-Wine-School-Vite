@@ -5,6 +5,7 @@
     <load src="/_partials/base/styles.html" />
     <meta name="description" content="AST - Документация к вёрстке и модулям" />
     <title>Документация к вёрстке и модулям</title>
+    <!--Стили страниц документации /code/-->
     <style>
       .icons-table {
         display: flex;
@@ -150,6 +151,66 @@
       .code-block .hl-num {
         color: #ef9f76;
       }
+      /* Подзаголовки и таблицы документации */
+      .profile-content h3 code,
+      .profile-content td code {
+        padding: 1px 6px;
+        border-radius: 6px;
+        background-color: var(--grey-light);
+        font-size: 0.9em;
+        font-family: var(--font);
+        color: var(--blue);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .docs-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 16px;
+        background-color: var(--white);
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+      }
+      .docs-table {
+        width: 100%;
+        min-width: 560px;
+        border-collapse: collapse;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .docs-table th,
+      .docs-table td {
+        padding: 12px 16px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid var(--grey-light);
+      }
+      .docs-table tr:last-child td {
+        border-bottom: none;
+      }
+      .docs-table th {
+        font-weight: 700;
+        background-color: var(--grey-light);
+      }
+      .profile-content .list {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-content ol.list {
+        list-style: decimal;
+      }
+      .docs-tab {
+        display: flex;
+        flex-direction: column;
+        gap: var(--fs-24);
+        width: 100%;
+      }
+      .docs-note {
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 16px;
+        border-left: 4px solid var(--magenta);
+        background-color: var(--grey-light);
+      }
     </style>
   </head>
   <body class="body">
@@ -166,7 +227,7 @@
 
       <section class="section pad--32">
         <div class="container">
-          <h1 class="title title--32 bold">Документация к вёрстке и JavaScript модулям</h1>
+          <h1 class="title title--40">Документация к вёрстке и JavaScript модулям</h1>
         </div>
       </section>
 
@@ -174,25 +235,287 @@
         <div class="container">
           <!--SIDEBAR-->
           <aside class="sidebar small left-side" data-sticky-sidebar>
-            <load src="/_partials/components/menus/documentation-menu.html" />
+            <menu class="profile-menu">
+              <li>
+                <a href="%ROOT%code/" class="profile-menu-link" data-exact>
+                  <span>Быстрый старт</span>
+                </a>
+                <a href="%ROOT%code/icons/" class="profile-menu-link" data-exact>
+                  <span>Карта иконок сайта</span>
+                </a>
+                <a href="%ROOT%code/js/" class="profile-menu-link" data-exact>
+                  <span>JS модули и плагины</span>
+                </a>
+                <a href="%ROOT%code/forms/" class="profile-menu-link" data-exact>
+                  <span>Формы и JS валидация</span>
+                </a>
+                <a href="%ROOT%code/maps/" class="profile-menu-link" data-exact>
+                  <span>Яндекс карты</span>
+                </a>
+                <a href="%ROOT%code/popups/" class="profile-menu-link" data-exact>
+                  <span>Popup - всплывашки</span>
+                </a>
+                <a href="%ROOT%code/sliders/" class="profile-menu-link" data-exact>
+                  <span>Слайдеры</span>
+                </a>
+                <a href="%ROOT%code/tabs/" class="profile-menu-link" data-exact>
+                  <span>Табы</span>
+                </a>
+                <a href="%ROOT%code/accordeons/" class="profile-menu-link" data-exact>
+                  <span>Аккордеоны</span>
+                </a>
+              </li>
+            </menu>
           </aside>
 
           <!--PAGE CONTENT-->
-          <div class="page-content" data-tabs>
-            <div class="profile-content profile-info">
-              <h2 class="title title--32 upper">Быстрый старт</h2>
+          <div class="page-content">
+            <div class="profile-content profile-info" data-tabs="start">
+              <h2 class="title title--32 upper full">Быстрый старт</h2>
+
+              <p class="text">Статическая вёрстка на Vite без фреймворков. HTML собирается из переиспользуемых кусков, стили из SCSS, логика на обычном JS. Модули в <code>dist</code> лежат отдельными файлами, как в исходниках, без склейки в один бандл. Их можно переносить в шаблон Bitrix как есть.</p>
 
               <ul class="search-navigation">
                 <li>
-                  <button class="search-navigation__btn active" data-tab-target="repo">Репозиторий и установка</button>
+                  <button class="search-navigation__btn active" data-tab-target="repo">Установка и сборка</button>
                 </li>
                 <li>
-                  <button class="search-navigation__btn" data-tab-target="env">Envierments</button>
+                  <button class="search-navigation__btn" data-tab-target="bitrix">Перенос в Bitrix</button>
+                </li>
+                <li>
+                  <button class="search-navigation__btn" data-tab-target="global">Функции из разметки</button>
                 </li>
               </ul>
 
-              <div data-tab="repo">1</div>
-              <div data-tab="env">2</div>
+              <div class="docs-tab" data-tab="repo">
+
+              <h3 class="title title--24 full">Репозиторий</h3>
+
+              <p class="text">Исходники проекта: <a href="https://github.com/RuslanMirasov/AST-Wine-School-Vite" class="magenta under">github.com/RuslanMirasov/AST-Wine-School-Vite</a></p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>git clone https://github.com/RuslanMirasov/AST-Wine-School-Vite.git</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="title title--24 full">Установка и запуск</h3>
+
+              <p class="text">Нужен Node.js 20 или новее.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>cd AST-Wine-School-Vite
+              npm install
+              npm run dev       # разработка, localhost:5173
+              npm run build     # сборка в dist/
+              npm run preview   # предпросмотр собранного dist/</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="title title--24 full">Структура проекта</h3>
+
+              <div class="docs-table-wrapper">
+                <table class="docs-table">
+                  <thead><tr><th>Папка</th><th>Что в ней</th></tr></thead>
+                <tbody>
+                  <tr><td><code>src/</code></td><td>страницы сайта: каждая папка с <code>index.html</code> это отдельная страница</td></tr>
+                  <tr><td><code>src/_partials/</code></td><td>общие куски разметки: шапка, подвал, попапы, секции. В сборку отдельными страницами не попадают</td></tr>
+                  <tr><td><code>src/_public/assets/</code></td><td>статика: <code>css</code>, <code>fonts</code>, <code>img</code>, <code>js</code>, <code>json</code>, <code>pdf</code>, <code>scss</code></td></tr>
+                  <tr><td><code>dist/</code></td><td>готовая сборка: все страницы с подставленными кусками и папка <code>assets</code></td></tr>
+                </tbody>
+                </table>
+              </div>
+
+              <h3 class="title title--24 full">Что делает сборщик</h3>
+
+              <p class="text">Проект собирается Vite, но <code>dist</code> это <b>чистая вёрстка</b>, а не бандл фронтенд-приложения. Сборщик делает только три вещи:</p>
+
+              <ol class="list">
+                <li>
+                  <p class="text">Подставляет общие куски разметки (<code>&lt;load src="..." /&gt;</code>) в каждую страницу и заменяет метку <code>&#37;ROOT&#37;</code> в ссылках на относительный путь к корню (<code>./</code>, <code>../</code>, <code>../../</code>).</p>
+                </li>
+                <li>
+                  <p class="text">Компилирует SCSS из <code>src/_public/assets/scss/</code> в один файл стилей, в двух вариантах: <code>assets/css/styles.css</code> (читаемый) и <code>assets/css/styles.min.css</code> (сжатый, подключён на страницах).</p>
+                </li>
+                <li>
+                  <p class="text">Копирует всё из <code>src/_public/</code> в <code>dist</code> <b>как есть</b>.</p>
+                </li>
+              </ol>
+
+              <p class="text">JS не компилируется, не склеивается и не сжимается: файлы в <code>dist/assets/js</code> побайтно совпадают с исходниками и лежат с той же структурой папок. То же с картинками, шрифтами, JSON и PDF. Править JS можно прямо в шаблоне Bitrix, пересобирать ничего не нужно.</p>
+
+              <div class="docs-note">
+                <p class="text">Стили правятся только в SCSS с последующей сборкой <code>npm run build</code>. Если править <code>styles.min.css</code> вручную, правки потеряются при следующей сборке.</p>
+              </div>
+
+              <h3 class="title title--24 full">Откуда брать разметку</h3>
+
+              <p class="text">Для переноса подходят оба варианта, выбирайте удобный:</p>
+
+              <div class="docs-table-wrapper">
+                <table class="docs-table">
+                  <thead><tr><th>Вариант</th><th>Что там</th><th>Когда удобнее</th></tr></thead>
+                <tbody>
+                  <tr><td>Исходники <code>src/</code></td><td>разметка разбита на куски: шапка, подвал, попапы, секции лежат отдельно в <code>src/_partials/</code> и подключаются тегом <code>&lt;load&gt;</code></td><td>при нарезке шаблона: куски почти один в один ложатся на <code>header.php</code>, <code>footer.php</code>, включаемые области и шаблоны компонентов</td></tr>
+                  <tr><td>Сборка <code>dist/</code></td><td>каждый <code>index.html</code> целиком, со всеми подставленными кусками</td><td>чтобы взять готовую страницу целиком или посмотреть итоговый HTML в одном файле</td></tr>
+                </tbody>
+                </table>
+              </div>
+
+              <p class="text">В исходниках ссылки содержат метку <code>&#37;ROOT&#37;</code>, а куски подключаются тегом <code>&lt;load&gt;</code>. В <code>dist</code> ни того, ни другого уже нет.</p>
+
+              </div>
+
+              <div class="docs-tab" data-tab="bitrix">
+
+              <h3 class="title title--24 full">Что переносить в шаблон</h3>
+
+              <p class="text">Папку <code>dist/assets</code> целиком, с сохранением структуры: модули находят друг друга, спрайт, метки карты и картинки по относительным путям от своего расположения.</p>
+
+              <h3 class="title title--24 full">Подключение стилей</h3>
+
+              <p class="text">В <code>header.php</code> шаблона. Стили библиотек идут раньше основных.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;link rel="stylesheet" href="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/css/choices.min.css" /&gt;
+              &lt;link rel="stylesheet" href="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/css/swiper-bundle.min.css" /&gt;
+              &lt;link rel="stylesheet" href="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/css/styles.min.css?v=1.0.7" /&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="title title--24 full">Подключение скриптов</h3>
+
+              <p class="text">В <code>footer.php</code> шаблона. Сначала библиотеки обычными скриптами, затем <code>scripts.js</code>. Он сам импортирует все модули из <code>js/modules</code> и <code>js/forms</code>, отдельно их подключать не нужно.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;script src="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/js/plugins/iMask.js"&gt;&lt;/script&gt;
+              &lt;script src="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/js/plugins/choices.min.js"&gt;&lt;/script&gt;
+              &lt;script src="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/js/plugins/swiper-bundle.min.js"&gt;&lt;/script&gt;
+              &lt;script src="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/js/scripts.js?v=1.0.7" type="module" defer&gt;&lt;/script&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="docs-note">
+                <p class="text"><code>scripts.js</code> это ES-модуль, атрибут <code>type="module"</code> обязателен. Без него браузер не выполнит <code>import</code>, и на странице не заработает ничего.</p>
+              </div>
+
+              <h3 class="title title--24 full">Правила интеграции</h3>
+
+              <div class="docs-note">
+                <p class="text"><b>Обязательно уберите запрет индексации.</b> На тестовом стенде все страницы закрыты от поисковиков мета-тегом <code>&lt;meta name="robots" content="noindex, nofollow" /&gt;</code>. В исходниках он стоит в <code>src/_partials/base/meta.html</code>, в <code>dist</code> уже внутри <code>&lt;head&gt;</code> каждой страницы. В шаблон Bitrix этот тег переносить нельзя: с ним сайт выпадет из поиска Яндекса и Google.</p>
+              </div>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;!--Запрет индексации тестового стенда. Убрать при переносе на боевой сайт--&gt;
+              &lt;meta name="robots" content="noindex, nofollow" /&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <ul class="list">
+                <li>
+                  <p class="text"><b>Заменить API-ключ Яндекс Карт</b> с личного ключа разработчика вёрстки на ключ заказчика. Где он стоит, описано в <a href="%ROOT%code/maps/" class="magenta under">Яндекс картах</a>.</p>
+                </li>
+                <li>
+                  <p class="text"><b>Не подключать скрипты через <code>Asset::getInstance()-&gt;addJs()</code>.</b> Он выводит <code>&lt;script&gt;</code> без <code>type="module"</code>, а при включённом объединении JS склеивает файлы и переносит их в <code>/bitrix/cache/</code>. Ломаются импорты между модулями и пути, которые модули считают от своего расположения. Подключать только тегом, как в примере выше.</p>
+                </li>
+                <li>
+                  <p class="text"><b>Версия <code>?v=</code> стоит только на <code>scripts.js</code> и стилях.</b> Вложенные модули запрашиваются без версии. После обновления JS нужно поднять версию, а при правке отдельного модуля сбросить кеш браузера.</p>
+                </li>
+                <li>
+                  <p class="text"><b>Модули инициализируются один раз</b>, по событию <code>DOMContentLoaded</code>. Разметку, вставленную позже (AJAX-режим компонентов, «Показать ещё», композитный кеш), большинство модулей не увидит. Исключения, которые подхватывают новые элементы сами: кнопки открытия попапов <code>data-popup-open</code>, галерея картинок, звёзды рейтинга, поля цены и чисел.</p>
+                </li>
+                <li>
+                  <p class="text"><b>Активный пункт меню.</b> В вёрстке его ставит модуль <code>activeLinks.js</code> по адресу страницы. На Bitrix активный пункт отдаёт компонент меню, поэтому импорт и вызов <code>initActiveLinks()</code> в <code>scripts.js</code> нужно удалить.</p>
+                </li>
+                <li>
+                  <p class="text"><b>Классы и data-атрибуты из вёрстки сохранять как есть.</b> Модули находят элементы по <code>data-*</code> атрибутам, стили по классам.</p>
+                </li>
+              </ul>
+
+              <h3 class="title title--24 full">Разделы документации</h3>
+
+              <ul class="list">
+                <li>
+                  <p class="text"><a href="%ROOT%code/icons/" class="magenta under">Карта иконок сайта</a>: SVG-спрайт и все id иконок.</p>
+                </li>
+                <li>
+                  <p class="text"><a href="%ROOT%code/js/" class="magenta under">JS модули и плагины</a>: что делает каждый модуль, галерея, календарь, маски полей, «Читать полностью».</p>
+                </li>
+                <li>
+                  <p class="text"><a href="%ROOT%code/forms/" class="magenta under">Формы и JS валидация</a>: разметка форм, правила проверки, тексты ошибок, серверные ошибки.</p>
+                </li>
+                <li>
+                  <p class="text"><a href="%ROOT%code/maps/" class="magenta under">Яндекс карты</a>: блок карты, файл меток, фильтр по городам.</p>
+                </li>
+                <li>
+                  <p class="text"><a href="%ROOT%code/popups/" class="magenta under">Попапы</a>: контейнер, открытие и закрытие, открытие после ответа сервера.</p>
+                </li>
+                <li>
+                  <p class="text"><a href="%ROOT%code/sliders/" class="magenta under">Слайдеры</a>: атрибуты Swiper, миниатюры, связанные слайдеры, переход к слайду.</p>
+                </li>
+                <li>
+                  <p class="text"><a href="%ROOT%code/tabs/" class="magenta under">Табы</a>: группы табов, поля форм в скрытых табах.</p>
+                </li>
+                <li>
+                  <p class="text"><a href="%ROOT%code/accordeons/" class="magenta under">Аккордеоны</a>: группы, режим только на мобильных.</p>
+                </li>
+              </ul>
+
+              </div>
+
+              <div class="docs-tab" data-tab="global">
+
+              <h3 class="title title--24 full">Функции, доступные из разметки</h3>
+
+              <p class="text">Часть модулей выставляет функции в <code>window</code>. Их можно вызвать из <code>onclick</code>, из inline-скрипта шаблона или из ответа сервера.</p>
+
+              <div class="docs-table-wrapper">
+                <table class="docs-table">
+                  <thead><tr><th>Функция</th><th>Что делает</th><th>Подробнее</th></tr></thead>
+                <tbody>
+                  <tr><td><code>popup.open(id)</code>, <code>popup.close()</code></td><td>открыть и закрыть попап</td><td><a href="%ROOT%code/popups/" class="magenta under">Попапы</a></td></tr>
+                  <tr><td><code>openTab(group, tab)</code></td><td>переключить таб в группе</td><td><a href="%ROOT%code/tabs/" class="magenta under">Табы</a></td></tr>
+                  <tr><td><code>goToSlide(n, { key })</code></td><td>перейти к слайду именованного слайдера</td><td><a href="%ROOT%code/sliders/" class="magenta under">Слайдеры</a></td></tr>
+                  <tr><td><code>showMapGroup(group)</code></td><td>открыть карту и показать точки категории</td><td><a href="%ROOT%code/maps/" class="magenta under">Яндекс карты</a></td></tr>
+                  <tr><td><code>showMapPoint(id)</code></td><td>открыть карту и показать одну точку</td><td><a href="%ROOT%code/maps/" class="magenta under">Яндекс карты</a></td></tr>
+                  <tr><td><code>toCertStep(popupId, group)</code></td><td>шаг заказа сертификата: проверить поля группы и открыть попап</td><td><a href="%ROOT%code/js/" class="magenta under">JS модули</a></td></tr>
+                </tbody>
+                </table>
+              </div>
+
+              <p class="text">Модули грузятся с <code>defer</code>, поэтому inline-скрипт в теле страницы выполняется раньше них. Вызывать функции нужно после загрузки:</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy data-lang="js">document.addEventListener('DOMContentLoaded', () =&gt; {
+                popup.open('subscribe-success');
+              });</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              </div>
             </div>
           </div>
         </div>
@@ -201,5 +524,85 @@
 
     <!--SCRIPTS-->
     <load src="/_partials/base/scripts.html" />
+
+    <!--Подсветка примеров кода. Текст внутри <code> не меняется, только оборачивается в <span>, поэтому копируется как есть-->
+    <script>
+      // Угловые скобки в скрипте записаны как \x3C и \x3E: иначе редактор и браузер принимают
+      // начало HTML-комментария или PHP-вставки в тексте скрипта за разметку
+      (() => {
+        const escape = text => text.replace(/&/g, '&amp;').replace(/\x3C/g, '&lt;').replace(/\x3E/g, '&gt;');
+        const wrap = (cls, text) => `\x3Cspan class="hl-${cls}"\x3E${escape(text)}\x3C/span\x3E`;
+
+        // PHP-вставки внутри значения атрибута (например, SITE_TEMPLATE_PATH)
+        const highlightValue = (value, cls) =>
+          value
+            .split(/(\x3C\?[\s\S]*?\?\x3E)/)
+            .map(part => (part.startsWith('\x3C?') ? wrap('php', part) : part && wrap(cls, part)))
+            .join('');
+
+        const highlightAttrs = attrs =>
+          attrs.replace(/(\s+)([^\s=]+)(?:(\s*=\s*)("[^"]*"|'[^']*'|[^\s"']+))?/g, (match, space, name, eq, value) => {
+            let html = space + wrap('attr', name);
+            if (!eq) return html;
+            // Классы и id — отдельным цветом, остальные значения — как строки
+            const cls = name === 'class' || name === 'id' ? 'selector' : 'str';
+            return html + wrap('punct', eq) + highlightValue(value, cls);
+          });
+
+        const highlightHtml = code =>
+          code
+            .split(
+              /(\x3C!--[\s\S]*?--\x3E|\x3C\?[\s\S]*?\?\x3E|\x3C\/?[a-zA-Z][\w-]*(?:\s+[^\s=\x3E\/]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s\x3E]+))?)*\s*\/?\x3E)/
+            )
+            .map(part => {
+              if (!part) return '';
+              if (part.startsWith('\x3C!--')) return wrap('comment', part);
+              if (part.startsWith('\x3C?')) return wrap('php', part);
+
+              const tag = part.match(/^(\x3C\/?)([a-zA-Z][\w-]*)([\s\S]*?)(\s*\/?\x3E)$/);
+              if (!tag) return escape(part);
+
+              const [, open, name, attrs, close] = tag;
+              return wrap('punct', open) + wrap('tag', name) + highlightAttrs(attrs) + wrap('punct', close);
+            })
+            .join('');
+
+        const JS_KEYWORDS =
+          /^(?:const|let|var|function|return|if|else|for|of|in|new|import|export|from|async|await|class|this|true|false|null|undefined)$/;
+
+        const highlightJs = code => {
+          let isDeclaration = false;
+
+          return code
+            .split(/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|`[^`]*`|"[^"\n]*"|'[^'\n]*'|\b\d+(?:\.\d+)?\b|[A-Za-z_$][\w$]*)/)
+            .map(part => {
+              if (!part) return '';
+              if (part.startsWith('//') || part.startsWith('/*')) return wrap('comment', part);
+              if (/^["'`]/.test(part)) return wrap('str', part);
+              if (/^\d/.test(part)) return wrap('num', part);
+
+              if (/^[A-Za-z_$]/.test(part)) {
+                if (JS_KEYWORDS.test(part)) {
+                  isDeclaration = /^(?:const|let|var|function|class)$/.test(part);
+                  return wrap('kw', part);
+                }
+                // Имя сразу после const / let / var / function / class — переменная
+                const cls = isDeclaration ? 'var' : null;
+                isDeclaration = false;
+                return cls ? wrap(cls, part) : escape(part);
+              }
+
+              if (part.trim()) isDeclaration = false;
+              return escape(part);
+            })
+            .join('');
+        };
+
+        document.querySelectorAll('.code-block code').forEach(code => {
+          const text = code.textContent;
+          code.innerHTML = code.dataset.lang === 'js' ? highlightJs(text) : highlightHtml(text);
+        });
+      })();
+    </script>
   </body>
 </html>
