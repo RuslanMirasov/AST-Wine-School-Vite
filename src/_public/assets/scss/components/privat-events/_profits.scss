@@ -10,6 +10,7 @@
   }
 
   .section--curses {
+    gap: var(--fs-24);
     .content-list__item.col-3-3 {
       .image-background.white-gradient {
         @media (min-width: 768px) {
@@ -64,6 +65,31 @@
     }
   }
 
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .content-list.section--curses {
+      .button {
+        width: 100%;
+      }
+      .content-list__item {
+        flex: auto;
+        max-width: calc((100% - var(--fs-24)) / 2);
+        &.col-3-3 {
+          min-width: calc((100% - var(--fs-24)) / 2);
+          .text,
+          .title {
+            z-index: 1;
+          }
+          .image-background.white-gradient {
+            --fade-direction: 180deg;
+            --fade-size: 100%;
+            --fade-from: rgba(0, 0, 0, 0.2);
+            --fade-hold: 60%;
+          }
+        }
+      }
+    }
+  }
+
   @media (max-width: 1023px) {
     .collage {
       .col--4 {
@@ -71,6 +97,7 @@
       }
     }
   }
+
   @media (max-width: 767px) {
     .collage {
       .col--4 {
