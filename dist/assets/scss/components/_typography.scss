@@ -1,0 +1,475 @@
+.title {
+  display: inline-block;
+  font-weight: 400;
+  --lh: 1.2;
+  color: var(--blue);
+
+  &.title--confirm {
+    position: relative;
+    padding: var(--fs-8) var(--fs-16) var(--fs-8) var(--fs-40);
+    background-color: var(--grey-light);
+    border-radius: var(--fs-10);
+    font-weight: 700;
+    svg {
+      color: var(--magenta);
+      width: var(--fs-40);
+      height: 100%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+  }
+
+  &.magenta {
+    color: var(--magenta);
+  }
+  &.white {
+    color: var(--white);
+  }
+
+  &.bold {
+    font-weight: 700;
+  }
+  &.regular {
+    font-weight: 400;
+  }
+  &.light {
+    font-weight: 300;
+  }
+
+  &.title--64 {
+    font-size: var(--fs-64);
+  }
+  &.title--60 {
+    font-size: var(--fs-60);
+  }
+  &.title--56 {
+    font-size: var(--fs-56);
+    --lh: 1;
+    letter-spacing: -0.01em;
+  }
+  &.title--44 {
+    font-size: var(--fs-44);
+    letter-spacing: -0.01em;
+  }
+  &.title--40 {
+    font-size: var(--fs-40);
+    letter-spacing: -0.01em;
+  }
+  &.title--34 {
+    font-size: var(--fs-34);
+  }
+  &.title--32 {
+    font-size: var(--fs-32);
+    letter-spacing: -0.005em;
+    --lh: 1.18;
+  }
+  &.title--30 {
+    font-size: var(--fs-30);
+  }
+  &.title--24 {
+    font-size: var(--fs-24);
+    --lh: 1.2;
+  }
+  &.title--18 {
+    font-size: var(--fs-18);
+  }
+  &.title--16 {
+    font-size: var(--fs-16);
+  }
+  &.title--14 {
+    font-size: var(--fs-14);
+  }
+
+  &.full {
+    width: 100%;
+  }
+  &.upper {
+    text-transform: uppercase;
+  }
+}
+
+.title-link {
+  color: inherit;
+  transition: color 0.3s var(--cubic);
+  @media (hover: hover) {
+    &:hover {
+      color: var(--magenta);
+    }
+  }
+  &:focus-visible {
+    color: var(--magenta);
+  }
+}
+
+.text {
+  display: block;
+  color: var(--blue);
+  font-size: var(--fs-16);
+  --lh: 1.3;
+  &.upper {
+    text-transform: uppercase;
+  }
+  &.bold {
+    font-weight: 700;
+  }
+  &.ta--l {
+    text-align: left;
+  }
+
+  &.fs-12 {
+    font-size: var(--fs-12);
+  }
+
+  &.fs-14 {
+    font-size: var(--fs-14);
+    --lh: 1.28;
+  }
+
+  &.fs-18 {
+    font-size: var(--fs-18);
+    --lh: 1.2;
+    @media (max-width: 1023px) {
+      font-size: var(--fs-16);
+    }
+  }
+
+  &.fs-20 {
+    font-size: var(--fs-20);
+    --lh: 1.5;
+    @media (max-width: 767px) {
+      font-size: var(--fs-18);
+    }
+  }
+
+  &.fs-24 {
+    font-size: var(--fs-24);
+    --lh: 1.2;
+  }
+
+  &.fs-32 {
+    font-size: var(--fs-32);
+    --lh: 1.2;
+  }
+
+  &.white {
+    color: var(--white);
+  }
+  &.grey {
+    color: var(--grey);
+  }
+  &.grey-dark {
+    color: var(--grey-dark);
+  }
+  &.grey-text {
+    color: var(--grey-text);
+  }
+  &.grey-medium {
+    color: var(--grey-medium);
+  }
+  &.blue-text {
+    color: var(--blue-text);
+  }
+  &.magenta {
+    color: var(--magenta);
+  }
+  &.full {
+    width: 100%;
+  }
+  &.under {
+    border-bottom: 1px solid var(--magenta);
+  }
+}
+
+.cut-2,
+.cut-3,
+.cut-4,
+.cut-5,
+.cut-6,
+.cut-7 {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cut-2 {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
+.cut-3 {
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+}
+.cut-4 {
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+}
+.cut-5 {
+  line-clamp: 5;
+  -webkit-line-clamp: 5;
+}
+.cut-6 {
+  line-clamp: 6;
+  -webkit-line-clamp: 6;
+}
+.cut-7 {
+  line-clamp: 7;
+  -webkit-line-clamp: 7;
+}
+
+// Обрезка до N строк с кнопкой «Читать полностью» (readMore.js).
+// Число строк приходит из data-read-more через переменную --read-more-lines.
+// Абзац, на котором заканчивается общий лимит строк карточки с data-read-more-group (readMore.js)
+.read-more-clamp,
+[data-read-more]:not(.is-expanded) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: var(--read-more-lines);
+  -webkit-line-clamp: var(--read-more-lines);
+}
+
+//768
+@media (max-width: 1023px) {
+  .title {
+    &.title--40 {
+      font-size: var(--fs-32);
+      line-height: 1.2;
+    }
+  }
+}
+
+//375
+@media (max-width: 767px) {
+  .title {
+    &.title--24 {
+      font-size: var(--fs-20);
+    }
+    &.title--32 {
+      font-size: var(--fs-28);
+      --lh: 1.2;
+      &.bold {
+        font-size: var(--fs-24);
+      }
+    }
+    &.title--40,
+    &.title--44 {
+      font-size: var(--fs-28);
+      line-height: var(--fs-32);
+    }
+    &.title--64 {
+      font-size: var(--fs-32);
+    }
+    &.title--56 {
+      font-size: var(--fs-38);
+    }
+  }
+
+  .text {
+    &.fs-18 {
+      font-size: var(--fs-16);
+    }
+  }
+}
+
+.a11y {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    &.a11y-font-big {
+      .title {
+        &.title--24 {
+          font-size: var(--fs-26);
+        }
+        &.title--18 {
+          font-size: var(--fs-20);
+        }
+        &.title--16 {
+          font-size: var(--fs-18);
+        }
+        &.title--14 {
+          font-size: var(--fs-15);
+        }
+      }
+
+      .text {
+        font-size: 18px;
+        --lh: 1.2;
+        &.fs-12 {
+          font-size: 14px;
+        }
+
+        &.fs-14 {
+          font-size: 16px;
+        }
+
+        &.fs-16 {
+          font-size: 18px;
+        }
+
+        &.fs-18 {
+          font-size: 20px;
+        }
+      }
+    }
+    &.a11y-font-large {
+      .title {
+        &.title--24 {
+          font-size: var(--fs-28);
+        }
+        &.title--18 {
+          font-size: var(--fs-22);
+        }
+        &.title--16 {
+          font-size: var(--fs-20);
+        }
+        &.title--14 {
+          font-size: var(--fs-16);
+        }
+      }
+
+      .text {
+        font-size: 20px;
+        --lh: 1.2;
+        &.fs-12 {
+          font-size: 16px;
+        }
+
+        &.fs-14 {
+          font-size: 18px;
+        }
+
+        &.fs-16 {
+          font-size: 20px;
+        }
+
+        &.fs-18 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &.a11y-font-large {
+      .title {
+        &.title--24 {
+          font-size: var(--fs-26);
+        }
+        &.title--18 {
+          font-size: var(--fs-20);
+        }
+        &.title--16 {
+          font-size: var(--fs-18);
+        }
+        &.title--14 {
+          font-size: var(--fs-16);
+        }
+      }
+
+      .text {
+        font-size: 32px;
+        --lh: 1.2;
+        &.fs-12 {
+          font-size: 24px;
+        }
+
+        &.fs-14 {
+          font-size: 28px;
+        }
+
+        &.fs-16 {
+          font-size: 32px;
+        }
+
+        &.fs-18 {
+          font-size: 34px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &.a11y-font-big {
+      .title {
+        &.title--24 {
+          font-size: var(--fs-22);
+        }
+        &.title--18 {
+          font-size: var(--fs-18);
+        }
+        &.title--16 {
+          font-size: var(--fs-16);
+        }
+        &.title--14 {
+          font-size: var(--fs-14);
+        }
+      }
+
+      .text {
+        font-size: 18px;
+        --lh: 1.3;
+        &.fs-12 {
+          font-size: 14px;
+        }
+
+        &.fs-14 {
+          font-size: 15px;
+        }
+
+        &.fs-16 {
+          font-size: 18px;
+        }
+
+        &.fs-18 {
+          font-size: 18px;
+          --lh: 1.5;
+        }
+      }
+    }
+
+    &.a11y-font-large {
+      .title {
+        &.title--24 {
+          font-size: var(--fs-24);
+        }
+        &.title--18 {
+          font-size: var(--fs-18);
+          --lh: 1.5;
+        }
+        &.title--16 {
+          font-size: var(--fs-16);
+        }
+        &.title--14 {
+          font-size: var(--fs-14);
+        }
+      }
+
+      .text {
+        font-size: 20px;
+        --lh: 1.25;
+        &.fs-12 {
+          font-size: 16px;
+        }
+
+        &.fs-14 {
+          font-size: 16px;
+        }
+
+        &.fs-16 {
+          font-size: 20px;
+        }
+
+        &.fs-18 {
+          font-size: 20px;
+          --lh: 1.5;
+        }
+      }
+    }
+  }
+}
+
+// .a11y-theme-dark {
+//   .title,
+//   .text {
+//     color: var(--white);
+//   }
+// }

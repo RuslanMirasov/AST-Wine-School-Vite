@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="theme-color" content="#1e2d68" />
+<!--Запрет индексации тестового стенда. Убрать при переносе на боевой сайт-->
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/choices.min.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/swiper-bundle.min.css" />
+<link id="app-styles" rel="stylesheet" type="text/css" href="../../assets/css/styles.min.css?v=1.0.7" />
+
+    <meta name="description" content="AST - Табы" />
+    <title>Табы</title>
+    <!--Стили страниц документации /code/-->
+    <style>
+      .icons-table {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+      .icons-table-inner {
+        flex: 1;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        gap: 10px;
+        background-color: var(--white);
+        min-width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+        text-align: center;
+      }
+      .icons-table-inner svg {
+        max-width: 100%;
+      }
+
+      /* Код в тексте */
+      .profile-content p code,
+      .profile-content li code {
+        padding: 1px 6px;
+        border-radius: 6px;
+        background-color: var(--grey-light);
+        font-size: 0.9em;
+        font-family: var(--font);
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      /* Блок с примером кода: по центру, кнопка копирования в правом верхнем углу */
+      .code-block-wrapper {
+        display: block;
+        width: 100%;
+      }
+      .code-block {
+        position: relative;
+        width: 100%;
+        max-width: 880px;
+        margin: 0 auto;
+        border-radius: 16px;
+        background-color: #1f2a3f;
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+        padding-right: 60px;
+        min-height: 64px;
+      }
+      .code-block pre {
+        margin: 0;
+        padding: 24px 64px 24px 24px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+      }
+      .code-block code {
+        display: block;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #e6e9f0;
+        white-space: pre;
+        tab-size: 2;
+      }
+      .code-block .copy-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #e6e9f0;
+        cursor: pointer;
+        transition:
+          background-color 0.3s var(--cubic),
+          color 0.3s var(--cubic);
+      }
+      .code-block .copy-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+      @media (hover: hover) {
+        .code-block .copy-btn:hover {
+          background-color: rgba(255, 255, 255, 0.16);
+          color: var(--white);
+        }
+      }
+      @media (max-width: 767px) {
+        .code-block pre {
+          padding: 16px 56px 16px 16px;
+        }
+        .code-block code {
+          font-size: 12px;
+        }
+      }
+
+      .code-block .hl-punct {
+        color: #c6cbd6;
+      }
+      .code-block .hl-tag {
+        color: #f2a0b8;
+      }
+      .code-block .hl-attr {
+        color: #a6d189;
+        font-style: italic;
+      }
+      .code-block .hl-str {
+        color: #e5c890;
+      }
+      .code-block .hl-selector {
+        color: #ef9f76;
+      }
+      .code-block .hl-php {
+        color: #ca9ee6;
+      }
+      .code-block .hl-comment {
+        color: #8a93ab;
+        font-style: italic;
+      }
+      .code-block .hl-kw {
+        color: #ca9ee6;
+      }
+      .code-block .hl-var {
+        color: #8caaee;
+      }
+      .code-block .hl-num {
+        color: #ef9f76;
+      }
+      /* Подзаголовки и таблицы документации */
+      .profile-content h3 code,
+      .profile-content td code {
+        padding: 1px 6px;
+        border-radius: 6px;
+        background-color: var(--grey-light);
+        font-size: 0.9em;
+        font-family: var(--font);
+        color: var(--blue);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .docs-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 16px;
+        background-color: var(--white);
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+      }
+      .docs-table {
+        width: 100%;
+        min-width: 560px;
+        border-collapse: collapse;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .docs-table th,
+      .docs-table td {
+        padding: 12px 16px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid var(--grey-light);
+      }
+      .docs-table tr:last-child td {
+        border-bottom: none;
+      }
+      .docs-table th {
+        font-weight: 700;
+        background-color: var(--grey-light);
+      }
+      .profile-content .list {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-content ol.list {
+        list-style: decimal;
+      }
+      .docs-tab {
+        display: flex;
+        flex-direction: column;
+        gap: var(--fs-24);
+        width: 100%;
+      }
+      .docs-note {
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 16px;
+        border-left: 4px solid var(--magenta);
+        background-color: var(--grey-light);
+      }
+    </style>
+  </head>
+  <body class="body">
+    <!--HEADER-->
+    <!--PRELOADER-->
+<div class="preloader" data-preloader>
+  <div class="preloader-center">
+    <div class="preloader-logo">
+      <svg width="50" height="50">
+        <use href="../../assets/img/sprite.svg#preloader"></use>
+      </svg>
+    </div>
+    <p>AST<br /><span>Школа&nbsp;вина</span></p>
+  </div>
+</div>
+
+
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="../../">Главная</a></li>
+        <li><a href="../../code/">Документация</a></li>
+        <li><span>Табы</span></li>
+      </ul>
+
+      <section class="section pad--32">
+        <div class="container">
+          <h1 class="title title--40">Документация к вёрстке и JavaScript модулям</h1>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="container">
+          <!--SIDEBAR-->
+          <aside class="sidebar small left-side" data-sticky-sidebar>
+            <menu class="profile-menu">
+              <li>
+                <a href="../../code/" class="profile-menu-link" data-exact>
+                  <span>Быстрый старт</span>
+                </a>
+                <a href="../../code/icons/" class="profile-menu-link" data-exact>
+                  <span>Карта иконок сайта</span>
+                </a>
+                <a href="../../code/js/" class="profile-menu-link" data-exact>
+                  <span>JS модули и плагины</span>
+                </a>
+                <a href="../../code/forms/" class="profile-menu-link" data-exact>
+                  <span>Формы и JS валидация</span>
+                </a>
+                <a href="../../code/maps/" class="profile-menu-link" data-exact>
+                  <span>Яндекс карты</span>
+                </a>
+                <a href="../../code/popups/" class="profile-menu-link" data-exact>
+                  <span>Popup - всплывашки</span>
+                </a>
+                <a href="../../code/sliders/" class="profile-menu-link" data-exact>
+                  <span>Слайдеры</span>
+                </a>
+                <a href="../../code/tabs/" class="profile-menu-link" data-exact>
+                  <span>Табы</span>
+                </a>
+                <a href="../../code/accordeons/" class="profile-menu-link" data-exact>
+                  <span>Аккордеоны</span>
+                </a>
+              </li>
+            </menu>
+          </aside>
+
+          <!--PAGE CONTENT-->
+          <div class="page-content">
+            <div class="profile-content profile-info">
+              <h2 class="title title--32 upper full">Табы</h2>
+
+              <p class="text">Группа табов это блок с <code>data-tabs</code>. Внутри кнопки с <code>data-tab-target</code> и панели с <code>data-tab</code>. Кнопка открывает панель с тем же именем. Активные кнопка и панель получают класс <code>active</code>.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;div data-tabs="orders"&gt;
+                &lt;ul class="search-navigation"&gt;
+                  &lt;li&gt;&lt;button type="button" class="search-navigation__btn active" data-tab-target="current"&gt;Текущие&lt;/button&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;button type="button" class="search-navigation__btn" data-tab-target="archive"&gt;Архив&lt;/button&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+
+                &lt;div data-tab="current"&gt;Текущие заказы&lt;/div&gt;
+                &lt;div data-tab="archive"&gt;Архив заказов&lt;/div&gt;
+              &lt;/div&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <h3 class="title title--24 full">Какой таб открыт при загрузке</h3>
+
+              <p class="text">Открыта панель активной кнопки, то есть кнопки с классом <code>active</code>. Если активной кнопки нет, открыта панель с классом <code>active</code>, а если нет и её, то первая панель. Чтобы при загрузке открыть другой таб, достаточно поставить <code>active</code> на нужную кнопку на сервере.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;button type="button" class="search-navigation__btn&lt;?=$arResult['TAB'] === 'archive' ? ' active' : ''?&gt;" data-tab-target="archive"&gt;Архив&lt;/button&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <h2 class="title title--32 upper full">Атрибуты</h2>
+
+              <div class="docs-table-wrapper">
+                <table class="docs-table">
+                  <thead><tr><th>Атрибут</th><th>Где</th><th>Что делает</th></tr></thead>
+                <tbody>
+                  <tr><td><code>data-tabs="имя"</code></td><td>на обёртке группы</td><td>группа табов. Имя нужно, чтобы переключать таб из кода</td></tr>
+                  <tr><td><code>data-tab-target="имя"</code></td><td>на кнопке</td><td>открывает панель с таким же <code>data-tab</code></td></tr>
+                  <tr><td><code>data-tab="имя"</code></td><td>на панели</td><td>содержимое таба. Несколько панелей с одинаковым именем открываются вместе</td></tr>
+                  <tr><td><code>data-unanimated</code></td><td>на обёртке группы</td><td>переключение без плавного появления</td></tr>
+                </tbody>
+                </table>
+              </div>
+
+              <h3 class="title title--24 full">Вложенные группы</h3>
+
+              <p class="text">Группы можно вкладывать друг в друга: каждая кнопка управляет только панелями своей ближайшей группы.</p>
+
+              <h2 class="title title--32 upper full">Табы в формах</h2>
+
+              <p class="text">Табы используются не только для переключения контента, но и для переключения набора полей в одной форме. Главное правило: <b>поля из скрытых табов в форму не попадают</b>.</p>
+
+              <ul class="list">
+                <li>
+                  <p class="text">Поля внутри скрытой панели получают <code>disabled</code>.</p>
+                </li>
+                <li>
+                  <p class="text">Отключённые поля не проверяются валидацией: пустое обязательное поле в скрытом табе не помешает отправке.</p>
+                </li>
+                <li>
+                  <p class="text">Отключённые поля не уходят на сервер: в <code>$_POST</code> придут только общие поля и поля открытого таба.</p>
+                </li>
+                <li>
+                  <p class="text">При переключении таба поля открытой панели снова включаются, а поля закрытой отключаются.</p>
+                </li>
+                <li>
+                  <p class="text">Поля, у которых <code>disabled</code> стоит в разметке изначально, модуль не трогает и не включает.</p>
+                </li>
+              </ul>
+
+              <h3 class="title title--24 full">Где используется</h3>
+
+              <div class="docs-table-wrapper">
+                <table class="docs-table">
+                  <thead><tr><th>Где</th><th>Что переключается</th></tr></thead>
+                <tbody>
+                  <tr><td>Оформление заказа, <code>cart/checkout/</code></td><td>физическое и юридическое лицо. Общие поля (ФИО, почта, телефон) отправляются всегда. Дата рождения только у физлица. Наименование, ИНН, КПП и адрес только у юрлица</td></tr>
+                  <tr><td>Подарочный сертификат, <code>gift-certificates/</code></td><td>электронный, печатный и корпоративный сертификат, получатель «другу» или «себе». Здесь работает свой модуль <code>certificat-order.js</code>, но по тому же принципу: поля неактивного варианта получают <code>disabled</code> и не отправляются</td></tr>
+                </tbody>
+                </table>
+              </div>
+
+              <h3 class="title title--24 full">Пример: физическое и юридическое лицо</h3>
+
+              <p class="text">Группа <code>data-tabs</code> охватывает и кнопки, и форму. Панели <code>data-tab</code> могут быть любым элементом внутри формы: <code>&lt;label&gt;</code>, <code>&lt;fieldset&gt;</code>, подсказкой. Всё, что вне панелей, отправляется всегда.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;section data-tabs="entity" data-unanimated&gt;
+                &lt;div class="buttons"&gt;
+                  &lt;button type="button" class="button button--tab active" data-tab-target="individual"&gt;&lt;span&gt;Физическое лицо&lt;/span&gt;&lt;/button&gt;
+                  &lt;button type="button" class="button button--tab" data-tab-target="legal-entity"&gt;&lt;span&gt;Юридическое лицо&lt;/span&gt;&lt;/button&gt;
+                &lt;/div&gt;
+
+                &lt;form data-form novalidate action="" method="post"&gt;
+                  &lt;!-- тип покупателя: в каждой панели своё скрытое поле, на сервер придёт только одно --&gt;
+                  &lt;input type="hidden" name="person_type" value="individual" data-tab="individual" /&gt;
+                  &lt;input type="hidden" name="person_type" value="legal" data-tab="legal-entity" /&gt;
+
+                  &lt;!-- общие поля, отправляются всегда --&gt;
+                  &lt;label class="label"&gt;
+                    &lt;span class="label-text"&gt;Электронная почта *&lt;/span&gt;
+                    &lt;input type="email" name="email" class="input" required /&gt;
+                  &lt;/label&gt;
+
+                  &lt;!-- только физическое лицо --&gt;
+                  &lt;label class="label" data-tab="individual"&gt;
+                    &lt;span class="label-text"&gt;Дата рождения *&lt;/span&gt;
+                    &lt;input type="date" name="birthday" class="input" required /&gt;
+                  &lt;/label&gt;
+
+                  &lt;!-- только юридическое лицо --&gt;
+                  &lt;fieldset class="col--2" data-tab="legal-entity"&gt;
+                    &lt;label class="label"&gt;
+                      &lt;span class="label-text"&gt;ИНН *&lt;/span&gt;
+                      &lt;input type="text" name="inn" class="input" data-rule="inn" data-digits maxlength="12" required /&gt;
+                    &lt;/label&gt;
+                    &lt;label class="label"&gt;
+                      &lt;span class="label-text"&gt;КПП *&lt;/span&gt;
+                      &lt;input type="text" name="kpp" class="input" data-rule="kpp" data-digits maxlength="9" required /&gt;
+                    &lt;/label&gt;
+                  &lt;/fieldset&gt;
+
+                  &lt;button type="submit" class="button"&gt;&lt;span&gt;Оформить заказ&lt;/span&gt;&lt;/button&gt;
+                &lt;/form&gt;
+              &lt;/section&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <p class="text">На сервере тип покупателя удобно определять по скрытому полю <code>person_type</code>: так не нужно гадать по набору пришедших полей.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy data-lang="js">&lt;?php
+              $isLegal = $request-&gt;getPost('person_type') === 'legal';
+
+              if ($isLegal) {
+                $inn = $request-&gt;getPost('inn');
+                $kpp = $request-&gt;getPost('kpp');
+              } else {
+                $birthday = $request-&gt;getPost('birthday'); // формат ГГГГ-ММ-ДД
+              }</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="docs-note">
+                <p class="text">Если поле должно отправляться при любом выбранном табе, его нужно вынести за пределы панелей <code>data-tab</code>. Чтобы при повторном показе формы после ошибки открылся нужный таб, поставьте класс <code>active</code> на его кнопку на сервере, как описано выше.</p>
+              </div>
+
+              <h2 class="title title--32 upper full">Переключение из кода</h2>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy data-lang="js">openTab('orders', 'archive');</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <p class="text">Первый аргумент имя группы из <code>data-tabs</code>, второй имя таба. Функция доступна глобально.</p>
+
+              <div class="docs-note">
+                <p class="text">Табы ищутся один раз при загрузке страницы. Кнопки группы, вставленной AJAX-ом, работать не будут, но <code>openTab</code> для такой группы сработает.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--SCRIPTS-->
+    <script src="../../assets/js/plugins/iMask.js"></script>
+<script src="../../assets/js/plugins/choices.min.js"></script>
+<script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
+<script src="../../assets/js/scripts.js?v=1.0.7" type="module" defer></script>
+
+
+    <!--Подсветка примеров кода. Текст внутри <code> не меняется, только оборачивается в <span>, поэтому копируется как есть-->
+    <script>
+      // Угловые скобки в скрипте записаны как \x3C и \x3E: иначе редактор и браузер принимают
+      // начало HTML-комментария или PHP-вставки в тексте скрипта за разметку
+      (() => {
+        const escape = text => text.replace(/&/g, '&amp;').replace(/\x3C/g, '&lt;').replace(/\x3E/g, '&gt;');
+        const wrap = (cls, text) => `\x3Cspan class="hl-${cls}"\x3E${escape(text)}\x3C/span\x3E`;
+
+        // PHP-вставки внутри значения атрибута (например, SITE_TEMPLATE_PATH)
+        const highlightValue = (value, cls) =>
+          value
+            .split(/(\x3C\?[\s\S]*?\?\x3E)/)
+            .map(part => (part.startsWith('\x3C?') ? wrap('php', part) : part && wrap(cls, part)))
+            .join('');
+
+        const highlightAttrs = attrs =>
+          attrs.replace(/(\s+)([^\s=]+)(?:(\s*=\s*)("[^"]*"|'[^']*'|[^\s"']+))?/g, (match, space, name, eq, value) => {
+            let html = space + wrap('attr', name);
+            if (!eq) return html;
+            // Классы и id — отдельным цветом, остальные значения — как строки
+            const cls = name === 'class' || name === 'id' ? 'selector' : 'str';
+            return html + wrap('punct', eq) + highlightValue(value, cls);
+          });
+
+        const highlightHtml = code =>
+          code
+            .split(
+              /(\x3C!--[\s\S]*?--\x3E|\x3C\?[\s\S]*?\?\x3E|\x3C\/?[a-zA-Z][\w-]*(?:\s+[^\s=\x3E\/]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s\x3E]+))?)*\s*\/?\x3E)/
+            )
+            .map(part => {
+              if (!part) return '';
+              if (part.startsWith('\x3C!--')) return wrap('comment', part);
+              if (part.startsWith('\x3C?')) return wrap('php', part);
+
+              const tag = part.match(/^(\x3C\/?)([a-zA-Z][\w-]*)([\s\S]*?)(\s*\/?\x3E)$/);
+              if (!tag) return escape(part);
+
+              const [, open, name, attrs, close] = tag;
+              return wrap('punct', open) + wrap('tag', name) + highlightAttrs(attrs) + wrap('punct', close);
+            })
+            .join('');
+
+        const JS_KEYWORDS =
+          /^(?:const|let|var|function|return|if|else|for|of|in|new|import|export|from|async|await|class|this|true|false|null|undefined)$/;
+
+        const highlightJs = code => {
+          let isDeclaration = false;
+
+          return code
+            .split(/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|`[^`]*`|"[^"\n]*"|'[^'\n]*'|\b\d+(?:\.\d+)?\b|[A-Za-z_$][\w$]*)/)
+            .map(part => {
+              if (!part) return '';
+              if (part.startsWith('//') || part.startsWith('/*')) return wrap('comment', part);
+              if (/^["'`]/.test(part)) return wrap('str', part);
+              if (/^\d/.test(part)) return wrap('num', part);
+
+              if (/^[A-Za-z_$]/.test(part)) {
+                if (JS_KEYWORDS.test(part)) {
+                  isDeclaration = /^(?:const|let|var|function|class)$/.test(part);
+                  return wrap('kw', part);
+                }
+                // Имя сразу после const / let / var / function / class — переменная
+                const cls = isDeclaration ? 'var' : null;
+                isDeclaration = false;
+                return cls ? wrap(cls, part) : escape(part);
+              }
+
+              if (part.trim()) isDeclaration = false;
+              return escape(part);
+            })
+            .join('');
+        };
+
+        document.querySelectorAll('.code-block code').forEach(code => {
+          const text = code.textContent;
+          code.innerHTML = code.dataset.lang === 'js' ? highlightJs(text) : highlightHtml(text);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+// Галерея картинок на SimpleLightbox (js/modules/image-gallery.js). Стили библиотеки подгружаются вместе с ней
+// и идут после наших, поэтому селекторы здесь специфичнее: обёртка с классом .gallery-lightbox (опция className),
+// затемнение — через body
+
+// Раскладка: счётчик — в левом верхнем углу, крестик — в правом, стрелки — по центру высоты у левого и правого края.
+// Все на одинаковом отступе от краёв и одного размера — симметрично. Эти же переменные читает JS: по ним картинка
+// ужимается так, чтобы никогда не заходить под стрелки и под верхнюю строку (отступ + кнопка + зазор с каждой стороны)
+:root {
+  --gallery-lightbox-edge: 16px;
+  --gallery-lightbox-button: 32px;
+  // Стрелки: отступ от края и зазор до картинки. На мобилке стрелки впритык к краям, картинке — больше места
+  --gallery-lightbox-arrow-edge: 0px;
+  --gallery-lightbox-arrow-gap: 0px;
+
+  @media (min-width: 768px) {
+    --gallery-lightbox-edge: 24px;
+    --gallery-lightbox-button: 40px;
+    --gallery-lightbox-arrow-edge: var(--gallery-lightbox-edge);
+    --gallery-lightbox-arrow-gap: 8px;
+  }
+
+  @media (min-width: 1280px) {
+    --gallery-lightbox-edge: 32px;
+  }
+}
+
+// Картинки галерей открываются увеличенными — курсор-лупа. Глобально для любого блока data-gallery:
+// сама картинка с data-source и её обёртка (у картинок может стоять pointer-events: none — тогда клик ловит обёртка)
+[data-gallery] [data-source],
+[data-gallery] :has(> [data-source]) {
+  cursor: zoom-in;
+}
+
+// Затемнение — как у просмотра сертификата (.basicLightbox)
+body .sl-overlay {
+  background: rgba(39, 53, 81, 0.9);
+}
+
+.sl-wrapper.gallery-lightbox {
+  // Без эффектов при наведении — в том числе стандартного полупрозрачного у библиотеки (.sl-wrapper button:hover)
+  button:hover {
+    opacity: 1;
+  }
+
+  .sl-close,
+  .sl-navigation button,
+  .sl-counter {
+    color: var(--white);
+  }
+
+  // Кнопки — квадрат размера --gallery-lightbox-button, иконка по центру отступом: центрирование не зависит
+  // от display, который библиотека может поставить кнопке сама
+  .sl-close,
+  .sl-navigation button {
+    box-sizing: border-box;
+    width: var(--gallery-lightbox-button);
+    height: var(--gallery-lightbox-button);
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    &:focus-visible {
+      color: var(--magenta);
+    }
+  }
+
+  // Крестик — иконка из попапов, в правом верхнем углу
+  .sl-close {
+    top: var(--gallery-lightbox-edge);
+    right: var(--gallery-lightbox-edge);
+    padding: 4px;
+  }
+
+  // Стрелки — иконки из слайдеров (одна иконка, повёрнутая в нужную сторону, как в .arrow), по центру высоты
+  .sl-navigation button {
+    margin-top: calc(var(--gallery-lightbox-button) / -2);
+    padding: 0;
+
+    &.sl-prev {
+      left: var(--gallery-lightbox-arrow-edge);
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+    &.sl-next {
+      right: var(--gallery-lightbox-arrow-edge);
+      svg {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  // Счётчик «3/8» — в левом верхнем углу, по центру высоты крестика
+  .sl-counter {
+    top: var(--gallery-lightbox-edge);
+    left: var(--gallery-lightbox-edge);
+    height: var(--gallery-lightbox-button);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: var(--gallery-lightbox-button);
+  }
+}

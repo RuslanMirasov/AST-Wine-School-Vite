@@ -1,0 +1,133 @@
+[data-accordeon] {
+  @media (hover: hover) {
+    &:hover {
+      .accordeon-arrow {
+        background-color: var(--magenta);
+        color: var(--white);
+      }
+    }
+  }
+  &:focus-visible {
+    .accordeon-arrow {
+      background-color: var(--magenta);
+      color: var(--white);
+    }
+  }
+}
+
+[data-accordeon-body] {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.5s var(--cubic);
+}
+
+[data-accordeon-head] {
+  cursor: pointer;
+  > svg,
+  > button {
+    transform: rotate(0deg);
+    transition: 0.5s var(--cubic);
+  }
+  &.open {
+    > svg,
+    > button {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// Аккордеон раскрывается только стрелкой — указатель только на ней (ссылки в шапке получают его сами)
+[data-accordeon-arrow-only] > [data-accordeon-head] {
+  cursor: default;
+  > button {
+    cursor: pointer;
+  }
+}
+
+.page-accordeon {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: var(--fs-30);
+  background-color: var(--white);
+  &.open {
+    z-index: 2;
+  }
+}
+
+.page-accordeon-head {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  position: relative;
+  gap: var(--fs-16);
+  padding: var(--fs-24) var(--fs-32);
+  .title {
+    --lh: 1.25;
+  }
+
+  @media (max-width: 767px) {
+    padding: var(--fs-20) var(--fs-16);
+    .title {
+      font-size: var(--fs-20);
+      //font-weight: 400;
+      --lh: 1.1;
+    }
+  }
+}
+
+.accordeon-text {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: var(--fs-20);
+  padding: 0px var(--fs-32) var(--fs-32) var(--fs-32);
+  .text a {
+    color: var(--magenta);
+  }
+  p {
+    width: 100%;
+    .grey-text {
+      padding-bottom: 2px;
+    }
+    scroll-margin: 40px;
+  }
+
+  @media (min-width: 1920px) {
+    .text {
+      font-size: var(--fs-18);
+      &.grey-text {
+        font-size: var(--fs-16);
+      }
+    }
+
+    p {
+      font-size: var(--fs-18);
+      &.grey-text {
+        font-size: var(--fs-16);
+      }
+      a {
+        font-size: var(--fs-18);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 0px var(--fs-16) var(--fs-16) var(--fs-16);
+    p {
+      scroll-margin: 100px;
+    }
+    .text {
+      .text.fs-12.grey-text {
+        padding-bottom: 4px;
+      }
+    }
+  }
+}

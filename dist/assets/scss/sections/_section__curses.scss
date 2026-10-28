@@ -1,0 +1,286 @@
+.section--curses {
+  .content {
+    min-height: 360px;
+
+    .price-and-btn {
+      @media (max-width: 767px) {
+        margin-top: var(--fs-5);
+      }
+    }
+  }
+
+  .content-text {
+    max-width: 14.375rem; //230px
+    margin-top: auto;
+  }
+
+  .text,
+  .title {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .content-list__item {
+    &.col-3-3 {
+      .content-text {
+        max-width: 18.75rem; //300px
+      }
+
+      @media (max-width: 1023px) {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .logo-background {
+    @media (min-width: 1920px) {
+      width: 396px;
+      height: 396px;
+      transform: translate(14%, -20%);
+    }
+    @media (max-width: 1023px) {
+      width: 428px;
+      height: 428px;
+      transform: translate(14%, -14%);
+    }
+  }
+}
+
+.price-and-btn {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 12px;
+  z-index: 2;
+  &.ta--c {
+    justify-content: center;
+    .button {
+      margin: 0;
+    }
+  }
+  .price {
+    font-size: var(--fs-24);
+    --lh: 1;
+    font-weight: 700;
+    color: var(--blue);
+    margin-right: auto;
+  }
+  .button {
+    margin-left: auto;
+  }
+  .content-text {
+    display: inline-flex;
+    width: auto;
+    margin-right: auto;
+  }
+  @media (max-width: 767px) {
+    justify-content: flex-end;
+    .button {
+      margin-left: 0px;
+    }
+  }
+}
+
+.dark {
+  .price-and-btn {
+    .price {
+      color: var(--white);
+    }
+  }
+}
+
+.curse-card {
+  .image-background {
+    --fade-size: 70%;
+  }
+
+  .tags {
+    margin-bottom: var(--fs-16);
+  }
+
+  .content-text {
+    margin-top: auto;
+    max-width: var(--fs-400);
+    .title,
+    .text {
+      max-width: var(--fs-300);
+      @media (max-width: 767px) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &.dark {
+      background-color: var(--blue);
+      .title,
+      .text,
+      .icon-list span,
+      .price {
+        color: var(--white);
+      }
+
+      .button.blue {
+        border: 1px solid var(--grey);
+      }
+    }
+
+    .content-text {
+      margin-top: 200px;
+    }
+
+    .image-background {
+      height: 300px;
+      --fade-direction: 0deg;
+      --fade-size: 30%;
+    }
+
+    .buttons {
+      margin-top: auto;
+    }
+  }
+}
+
+//768
+@media (max-width: 1023px) {
+  .section--curses {
+    .container {
+      > .button {
+        margin-left: auto;
+      }
+    }
+
+    .content-text {
+      max-width: 300px;
+    }
+
+    .col-3 {
+      .content-text {
+        max-width: 300px;
+      }
+    }
+  }
+}
+
+//375
+@media (max-width: 767px) {
+  .section--curses {
+    .title--40 {
+      margin-bottom: 0px;
+    }
+    .container {
+      > .button {
+        margin-left: auto;
+      }
+    }
+
+    .content {
+      min-height: 320px;
+
+      .content-text {
+        max-width: 100%;
+      }
+
+      .image-background {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        --fade-direction: 0deg;
+        --fade-size: 50%;
+
+        img {
+          display: block;
+          width: auto;
+          max-width: 150%;
+          min-width: 100%;
+          height: 100%;
+          left: auto;
+          right: 0px;
+        }
+      }
+
+      .logo-background {
+        width: 320px;
+        right: 0%;
+        top: 0%;
+        transform: translate(50%, -20%);
+      }
+    }
+
+    .content-list__item.col-3-3 {
+      .content {
+        padding-top: 200px;
+      }
+      .tags {
+        position: absolute;
+        top: 20px;
+        width: calc(100% - 40px);
+      }
+      .image-background {
+        height: 220px;
+        img {
+          width: auto;
+          min-width: 100%;
+          max-width: 130%;
+          right: 0px;
+        }
+      }
+    }
+  }
+}
+
+.body.a11y {
+  @media (min-width: 768px) {
+    .section--curses {
+      .content {
+        min-height: 0px;
+      }
+
+      .content-text {
+        max-width: 500px;
+        margin-bottom: var(--fs-16);
+      }
+
+      .col-3 {
+        .content-text {
+          max-width: 500px;
+        }
+      }
+
+      .logo-background {
+        width: 65%;
+        height: auto;
+      }
+
+      .image-background:not(.image-only *) {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin-bottom: var(--fs-24);
+        border-radius: var(--fs-30);
+        overflow: hidden;
+        img,
+        video {
+          position: relative;
+          right: auto;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  // &.a11y-theme-dark {
+  //   .price-and-btn .price {
+  //     color: var(--white);
+  //   }
+  // }
+}

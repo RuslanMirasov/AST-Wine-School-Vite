@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="theme-color" content="#1e2d68" />
+<!--Запрет индексации тестового стенда. Убрать при переносе на боевой сайт-->
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/choices.min.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/css/swiper-bundle.min.css" />
+<link id="app-styles" rel="stylesheet" type="text/css" href="../../assets/css/styles.min.css?v=1.0.7" />
+
+    <meta name="description" content="AST - Аккордеоны" />
+    <title>Аккордеоны</title>
+    <!--Стили страниц документации /code/-->
+    <style>
+      .icons-table {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+      .icons-table-inner {
+        flex: 1;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        gap: 10px;
+        background-color: var(--white);
+        min-width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+        text-align: center;
+      }
+      .icons-table-inner svg {
+        max-width: 100%;
+      }
+
+      /* Код в тексте */
+      .profile-content p code,
+      .profile-content li code {
+        padding: 1px 6px;
+        border-radius: 6px;
+        background-color: var(--grey-light);
+        font-size: 0.9em;
+        font-family: var(--font);
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      /* Блок с примером кода: по центру, кнопка копирования в правом верхнем углу */
+      .code-block-wrapper {
+        display: block;
+        width: 100%;
+      }
+      .code-block {
+        position: relative;
+        width: 100%;
+        max-width: 880px;
+        margin: 0 auto;
+        border-radius: 16px;
+        background-color: #1f2a3f;
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+        padding-right: 60px;
+        min-height: 64px;
+      }
+      .code-block pre {
+        margin: 0;
+        padding: 24px 64px 24px 24px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+      }
+      .code-block code {
+        display: block;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #e6e9f0;
+        white-space: pre;
+        tab-size: 2;
+      }
+      .code-block .copy-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #e6e9f0;
+        cursor: pointer;
+        transition:
+          background-color 0.3s var(--cubic),
+          color 0.3s var(--cubic);
+      }
+      .code-block .copy-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+      @media (hover: hover) {
+        .code-block .copy-btn:hover {
+          background-color: rgba(255, 255, 255, 0.16);
+          color: var(--white);
+        }
+      }
+      @media (max-width: 767px) {
+        .code-block pre {
+          padding: 16px 56px 16px 16px;
+        }
+        .code-block code {
+          font-size: 12px;
+        }
+      }
+
+      .code-block .hl-punct {
+        color: #c6cbd6;
+      }
+      .code-block .hl-tag {
+        color: #f2a0b8;
+      }
+      .code-block .hl-attr {
+        color: #a6d189;
+        font-style: italic;
+      }
+      .code-block .hl-str {
+        color: #e5c890;
+      }
+      .code-block .hl-selector {
+        color: #ef9f76;
+      }
+      .code-block .hl-php {
+        color: #ca9ee6;
+      }
+      .code-block .hl-comment {
+        color: #8a93ab;
+        font-style: italic;
+      }
+      .code-block .hl-kw {
+        color: #ca9ee6;
+      }
+      .code-block .hl-var {
+        color: #8caaee;
+      }
+      .code-block .hl-num {
+        color: #ef9f76;
+      }
+      /* Подзаголовки и таблицы документации */
+      .profile-content h3 code,
+      .profile-content td code {
+        padding: 1px 6px;
+        border-radius: 6px;
+        background-color: var(--grey-light);
+        font-size: 0.9em;
+        font-family: var(--font);
+        color: var(--blue);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .docs-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 16px;
+        background-color: var(--white);
+        box-shadow: 0px 10px 20px rgba(39, 53, 81, 0.1);
+      }
+      .docs-table {
+        width: 100%;
+        min-width: 560px;
+        border-collapse: collapse;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .docs-table th,
+      .docs-table td {
+        padding: 12px 16px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid var(--grey-light);
+      }
+      .docs-table tr:last-child td {
+        border-bottom: none;
+      }
+      .docs-table th {
+        font-weight: 700;
+        background-color: var(--grey-light);
+      }
+      .profile-content .list {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-content ol.list {
+        list-style: decimal;
+      }
+      .docs-tab {
+        display: flex;
+        flex-direction: column;
+        gap: var(--fs-24);
+        width: 100%;
+      }
+      .docs-note {
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 16px;
+        border-left: 4px solid var(--magenta);
+        background-color: var(--grey-light);
+      }
+    </style>
+  </head>
+  <body class="body">
+    <!--HEADER-->
+    <!--PRELOADER-->
+<div class="preloader" data-preloader>
+  <div class="preloader-center">
+    <div class="preloader-logo">
+      <svg width="50" height="50">
+        <use href="../../assets/img/sprite.svg#preloader"></use>
+      </svg>
+    </div>
+    <p>AST<br /><span>Школа&nbsp;вина</span></p>
+  </div>
+</div>
+
+
+    <!--MAIN-->
+    <main class="main" id="main" tabindex="-1">
+      <!--breadcrumbs-->
+      <ul class="breadcrumbs">
+        <li><a href="../../">Главная</a></li>
+        <li><a href="../../code/">Документация</a></li>
+        <li><span>Аккордеоны</span></li>
+      </ul>
+
+      <section class="section pad--32">
+        <div class="container">
+          <h1 class="title title--40">Документация к вёрстке и JavaScript модулям</h1>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="container">
+          <!--SIDEBAR-->
+          <aside class="sidebar small left-side" data-sticky-sidebar>
+            <menu class="profile-menu">
+              <li>
+                <a href="../../code/" class="profile-menu-link" data-exact>
+                  <span>Быстрый старт</span>
+                </a>
+                <a href="../../code/icons/" class="profile-menu-link" data-exact>
+                  <span>Карта иконок сайта</span>
+                </a>
+                <a href="../../code/js/" class="profile-menu-link" data-exact>
+                  <span>JS модули и плагины</span>
+                </a>
+                <a href="../../code/forms/" class="profile-menu-link" data-exact>
+                  <span>Формы и JS валидация</span>
+                </a>
+                <a href="../../code/maps/" class="profile-menu-link" data-exact>
+                  <span>Яндекс карты</span>
+                </a>
+                <a href="../../code/popups/" class="profile-menu-link" data-exact>
+                  <span>Popup - всплывашки</span>
+                </a>
+                <a href="../../code/sliders/" class="profile-menu-link" data-exact>
+                  <span>Слайдеры</span>
+                </a>
+                <a href="../../code/tabs/" class="profile-menu-link" data-exact>
+                  <span>Табы</span>
+                </a>
+                <a href="../../code/accordeons/" class="profile-menu-link" data-exact>
+                  <span>Аккордеоны</span>
+                </a>
+              </li>
+            </menu>
+          </aside>
+
+          <!--PAGE CONTENT-->
+          <div class="page-content">
+            <div class="profile-content profile-info">
+              <h2 class="title title--32 upper full">Аккордеоны</h2>
+
+              <p class="text">Аккордеон это блок с <code>data-accordeon</code>. Внутри шапка <code>data-accordeon-head</code> и раскрывающаяся часть <code>data-accordeon-body</code>. Клик по шапке раскрывает и сворачивает тело с плавной анимацией высоты.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;div class="faq-accordeon" data-accordeon data-accordeon-group="faq"&gt;
+                &lt;div class="faq-head" data-accordeon-head&gt;
+                  &lt;p class="title title--18"&gt;Нужны ли предварительные знания?&lt;/p&gt;
+                  &lt;button type="button" aria-expanded="false" aria-label="Развернуть"&gt;&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div data-accordeon-body&gt;
+                  &lt;div class="faq-body"&gt;
+                    &lt;p class="text"&gt;Нет, курс начинается с нуля.&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="docs-note">
+                <p class="text">Отступы и фон ставьте на внутренний блок (<code>.faq-body</code>), а не на сам <code>data-accordeon-body</code>: у него JS меняет высоту, и отступы на нём ломают анимацию.</p>
+              </div>
+
+              <h3 class="title title--24 full">Открыт при загрузке</h3>
+
+              <p class="text">Класс <code>open</code> на <code>data-accordeon</code> раскрывает аккордеон сразу. Так можно открыть, например, первый вопрос или текущий модуль курса.</p>
+
+              <div class="code-block-wrapper">
+                <div class="code-block">
+                  <pre><code data-copy>&lt;div class="faq-accordeon open" data-accordeon&gt;...&lt;/div&gt;</code></pre>
+                  <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
+                    <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <h2 class="title title--32 upper full">Атрибуты</h2>
+
+              <div class="docs-table-wrapper">
+                <table class="docs-table">
+                  <thead><tr><th>Атрибут</th><th>Что делает</th></tr></thead>
+                <tbody>
+                  <tr><td><code>data-accordeon-group="имя"</code></td><td>в группе одновременно открыт только один аккордеон: при открытии одного остальные сворачиваются</td></tr>
+                  <tr><td><code>data-init="mobil"</code></td><td>аккордеон работает только до 767px. На больших экранах тело всегда раскрыто. Так сделаны колонки меню в подвале</td></tr>
+                  <tr><td><code>data-init="tablet"</code></td><td>то же, но до 1279px</td></tr>
+                  <tr><td><code>data-accordeon-arrow-only</code></td><td>раскрывается только кнопкой в шапке, клик по остальной шапке ничего не делает</td></tr>
+                </tbody>
+                </table>
+              </div>
+
+              <h2 class="title title--32 upper full">Поведение</h2>
+
+              <ul class="list">
+                <li>
+                  <p class="text">Ссылка внутри шапки ведёт по своему адресу и аккордеон не переключает. Так у модуля курса название может быть ссылкой на страницу модуля.</p>
+                </li>
+                <li>
+                  <p class="text">Кнопке в шапке модуль сам ставит <code>aria-expanded</code> по состоянию аккордеона.</p>
+                </li>
+                <li>
+                  <p class="text">Аккордеоны можно вкладывать друг в друга.</p>
+                </li>
+                <li>
+                  <p class="text">Классы <code>open</code> у аккордеона и у шапки ставит модуль, по ним стили поворачивают стрелку.</p>
+                </li>
+              </ul>
+
+              <div class="docs-note">
+                <p class="text">Аккордеоны ищутся один раз при загрузке страницы. Аккордеоны из разметки, вставленной AJAX-ом, корректно работать не будут.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--SCRIPTS-->
+    <script src="../../assets/js/plugins/iMask.js"></script>
+<script src="../../assets/js/plugins/choices.min.js"></script>
+<script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
+<script src="../../assets/js/scripts.js?v=1.0.7" type="module" defer></script>
+
+
+    <!--Подсветка примеров кода. Текст внутри <code> не меняется, только оборачивается в <span>, поэтому копируется как есть-->
+    <script>
+      // Угловые скобки в скрипте записаны как \x3C и \x3E: иначе редактор и браузер принимают
+      // начало HTML-комментария или PHP-вставки в тексте скрипта за разметку
+      (() => {
+        const escape = text => text.replace(/&/g, '&amp;').replace(/\x3C/g, '&lt;').replace(/\x3E/g, '&gt;');
+        const wrap = (cls, text) => `\x3Cspan class="hl-${cls}"\x3E${escape(text)}\x3C/span\x3E`;
+
+        // PHP-вставки внутри значения атрибута (например, SITE_TEMPLATE_PATH)
+        const highlightValue = (value, cls) =>
+          value
+            .split(/(\x3C\?[\s\S]*?\?\x3E)/)
+            .map(part => (part.startsWith('\x3C?') ? wrap('php', part) : part && wrap(cls, part)))
+            .join('');
+
+        const highlightAttrs = attrs =>
+          attrs.replace(/(\s+)([^\s=]+)(?:(\s*=\s*)("[^"]*"|'[^']*'|[^\s"']+))?/g, (match, space, name, eq, value) => {
+            let html = space + wrap('attr', name);
+            if (!eq) return html;
+            // Классы и id — отдельным цветом, остальные значения — как строки
+            const cls = name === 'class' || name === 'id' ? 'selector' : 'str';
+            return html + wrap('punct', eq) + highlightValue(value, cls);
+          });
+
+        const highlightHtml = code =>
+          code
+            .split(
+              /(\x3C!--[\s\S]*?--\x3E|\x3C\?[\s\S]*?\?\x3E|\x3C\/?[a-zA-Z][\w-]*(?:\s+[^\s=\x3E\/]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s\x3E]+))?)*\s*\/?\x3E)/
+            )
+            .map(part => {
+              if (!part) return '';
+              if (part.startsWith('\x3C!--')) return wrap('comment', part);
+              if (part.startsWith('\x3C?')) return wrap('php', part);
+
+              const tag = part.match(/^(\x3C\/?)([a-zA-Z][\w-]*)([\s\S]*?)(\s*\/?\x3E)$/);
+              if (!tag) return escape(part);
+
+              const [, open, name, attrs, close] = tag;
+              return wrap('punct', open) + wrap('tag', name) + highlightAttrs(attrs) + wrap('punct', close);
+            })
+            .join('');
+
+        const JS_KEYWORDS =
+          /^(?:const|let|var|function|return|if|else|for|of|in|new|import|export|from|async|await|class|this|true|false|null|undefined)$/;
+
+        const highlightJs = code => {
+          let isDeclaration = false;
+
+          return code
+            .split(/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|`[^`]*`|"[^"\n]*"|'[^'\n]*'|\b\d+(?:\.\d+)?\b|[A-Za-z_$][\w$]*)/)
+            .map(part => {
+              if (!part) return '';
+              if (part.startsWith('//') || part.startsWith('/*')) return wrap('comment', part);
+              if (/^["'`]/.test(part)) return wrap('str', part);
+              if (/^\d/.test(part)) return wrap('num', part);
+
+              if (/^[A-Za-z_$]/.test(part)) {
+                if (JS_KEYWORDS.test(part)) {
+                  isDeclaration = /^(?:const|let|var|function|class)$/.test(part);
+                  return wrap('kw', part);
+                }
+                // Имя сразу после const / let / var / function / class — переменная
+                const cls = isDeclaration ? 'var' : null;
+                isDeclaration = false;
+                return cls ? wrap(cls, part) : escape(part);
+              }
+
+              if (part.trim()) isDeclaration = false;
+              return escape(part);
+            })
+            .join('');
+        };
+
+        document.querySelectorAll('.code-block code').forEach(code => {
+          const text = code.textContent;
+          code.innerHTML = code.dataset.lang === 'js' ? highlightJs(text) : highlightHtml(text);
+        });
+      })();
+    </script>
+  </body>
+</html>
