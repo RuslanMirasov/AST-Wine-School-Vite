@@ -1,0 +1,221 @@
+.section--curse-hero {
+  overflow: visible;
+  z-index: 5;
+}
+
+.curse-hero {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--fs-24);
+  background-color: var(--white);
+  color: var(--blue);
+  padding: var(--fs-32);
+  border-radius: var(--fs-50);
+  @media (max-width: 1279px) {
+    background-color: var(--blue);
+  }
+  @media (max-width: 767px) {
+    padding: var(--fs-24) var(--fs-20) var(--fs-20) var(--fs-20);
+    border-radius: var(--fs-30);
+  }
+  &.dark {
+    background-color: var(--blue);
+    color: var(--white);
+    // От 1280px картинка закрывает блок целиком, затемнение идёт в чёрный, а не в синий фон
+    @media (min-width: 1280px) {
+      background-color: #000;
+      .image-background {
+        --fade-from: rgba(0, 0, 0, 0.5);
+      }
+    }
+    .content-text {
+      * {
+        color: var(--white);
+      }
+      b,
+      strong,
+      a {
+        border-bottom: 1px solid var(--white);
+      }
+    }
+  }
+
+  .content-text {
+    flex: 1;
+    width: 50%;
+    max-width: 638px;
+    @media (max-width: 1279px) {
+      flex: auto;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 260px;
+      color: var(--white);
+      .title,
+      .text {
+        color: var(--white);
+      }
+      b,
+      strong,
+      a {
+        border-bottom: 1px solid var(--white);
+      }
+    }
+    @media (max-width: 1023px) {
+      width: 100%;
+    }
+    @media (max-width: 767px) {
+      margin-top: 180px;
+    }
+
+    z-index: 2;
+
+    b,
+    strong,
+    a {
+      font-weight: 700;
+      border-bottom: 1px solid var(--blue);
+    }
+  }
+
+  .image-background {
+    overflow: hidden;
+    top: 0px;
+    border-radius: var(--fs-50);
+    --fade-direction: 90deg;
+    --fade-size: 70%;
+    -webkit-mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
+    mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
+
+    @media (max-width: 1279px) {
+      height: 460px;
+      border-radius: 0px;
+      border-radius: var(--fs-50) var(--fs-50) 0px 0px;
+      background-color: var(--blue);
+      --fade-direction: 0deg;
+      --fade-size: 40%;
+    }
+    @media (max-width: 767px) {
+      border-radius: var(--fs-32) var(--fs-32) 0px 0px;
+    }
+  }
+}
+
+.curse-hero-fields {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--fs-24);
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--fs-14);
+  }
+
+  .curse-hero-fields__left,
+  .curse-hero-fields__right {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: var(--fs-50);
+    background-color: var(--white);
+    padding: var(--fs-28) var(--fs-32);
+    @media (max-width: 767px) {
+      padding: var(--fs-20) var(--fs-20);
+      border-radius: var(--fs-24);
+      .buttons {
+        .button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .curse-hero-fields__left {
+    flex: 1;
+    gap: var(--fs-56);
+    @media (max-width: 1279px) {
+      gap: var(--fs-16);
+      flex-wrap: wrap;
+    }
+    @media (max-width: 1023px) {
+      flex-direction: column;
+    }
+  }
+
+  .curse-hero-fields__right {
+    width: 100%;
+    gap: var(--fs-16);
+    max-width: 380px;
+    flex-direction: column;
+    @media (max-width: 1023px) {
+      max-width: 280px;
+    }
+    @media (max-width: 767px) {
+      gap: var(--fs-16);
+      max-width: 100%;
+      .buttons {
+        gap: var(--fs-24);
+      }
+    }
+    .buttons {
+      margin-top: auto;
+      .button {
+        padding-left: var(--fs-26);
+        padding-right: var(--fs-26);
+      }
+    }
+  }
+
+  .fieldset {
+    width: 100%;
+    max-width: 280px;
+    @media (max-width: 1279px) {
+      width: 100%;
+      min-width: 100%;
+    }
+    &:last-child {
+      width: 100%;
+      max-width: 100%;
+      min-width: auto;
+    }
+    .title--16 {
+      margin-bottom: var(--fs-12);
+    }
+    .choices {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .curse-hero {
+    width: calc(100% + 32px + 32px);
+    min-width: calc(100% + 32px + 32px);
+    left: -32px;
+    @media (max-width: 767px) {
+      width: calc(100% + 16px + 16px);
+      min-width: calc(100% + 16px + 16px);
+      left: -16px;
+    }
+    background-color: var(--blue);
+    overflow: hidden;
+
+    .image-background {
+      position: absolute;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 0px;
+      --fade-size: 50%;
+    }
+  }
+}

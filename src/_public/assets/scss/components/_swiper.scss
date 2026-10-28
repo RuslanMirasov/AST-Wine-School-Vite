@@ -197,7 +197,7 @@
 
 .swiper-mobil-pagination {
   display: flex;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: none !important;
   }
   width: 100% !important;

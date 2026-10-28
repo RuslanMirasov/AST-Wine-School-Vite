@@ -1,0 +1,454 @@
+// .choices__list--dropdown .choices__placeholder {
+//   display: none;
+// }
+
+.teachers-search {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: var(--fs-12);
+
+  .label {
+    max-width: 280px;
+    &:first-child {
+      max-width: 400px;
+    }
+    @media (max-width: 899px) {
+      max-width: 270px;
+
+      &:first-child {
+        max-width: 100%;
+        flex: 1;
+      }
+    }
+    @media (max-width: 767px) {
+      max-width: 100%;
+
+      &:first-child {
+        flex: auto;
+      }
+    }
+  }
+
+  .button {
+    margin-top: var(--fs-5);
+    @media (max-width: 767px) {
+      margin-top: 0px;
+      width: 100%;
+    }
+  }
+}
+
+.letters-range-scroll {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+
+  @media (max-width: 1151px) {
+    min-width: calc(100% + 64px);
+    margin-left: -32px;
+    padding: 0px 32px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .letter {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+
+    &:focus-visible + .search-navigation__btn {
+      outline: 2px solid var(--magenta);
+      outline-offset: 2px;
+    }
+    &:checked {
+      + .search-navigation__btn {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+    }
+  }
+
+  .letters-range {
+    display: inline-flex;
+    width: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: var(--fs-6);
+  }
+
+  label {
+    display: block;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .search-navigation__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--fs-32);
+    height: var(--fs-32);
+    padding: 0px;
+    --lh: 1;
+  }
+}
+
+.teachers-search,
+.teachers-list {
+  margin-top: var(--fs-16);
+  .post-card {
+    min-height: 400px;
+  }
+}
+
+.section--teacher-events {
+  .teachers-list {
+    margin-top: 0px;
+  }
+}
+
+//1920
+@media (min-width: 1920px) {
+  .collage.teachers-list {
+    .col--2-3 {
+      width: calc(75% - (var(--fs-24) / 2));
+    }
+
+    .col--3 {
+      width: calc((100% - var(--fs-24) - var(--fs-24) - var(--fs-24)) / 4);
+    }
+  }
+}
+
+//1024
+@media (max-width: 1151px) {
+  .collage.teachers-list {
+    .col--2-3 {
+      width: 100%;
+    }
+
+    .col--3 {
+      width: calc((100% - var(--fs-24)) / 2);
+    }
+
+    .col--1 {
+      .col--3 {
+        width: 100%;
+        .content {
+          width: calc((100% - var(--fs-24)) / 2);
+        }
+      }
+    }
+  }
+}
+
+//360
+@media (max-width: 767px) {
+  .collage.teachers-list {
+    .col--3 {
+      width: 100%;
+    }
+
+    .col--1 {
+      .col--3 {
+        width: 100%;
+        .content {
+          width: 100%;
+        }
+      }
+    }
+    .buttons {
+      .button {
+        margin-top: var(--fs-16);
+        width: 100%;
+      }
+    }
+  }
+}
+
+.swiper.teachers-materials {
+  .content {
+    min-height: 400px;
+  }
+
+  .post-card-image {
+    max-width: 100%;
+    min-height: 200px;
+    border-radius: var(--fs-30);
+    &:before {
+      padding-top: 72.99%;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .col--4 {
+      width: calc((100% - var(--fs-24) - var(--fs-24)) / 3);
+    }
+
+    .swiper-slide {
+      width: 316px;
+    }
+  }
+  @media (max-width: 1023px) {
+    .col--4 {
+      width: calc((100% - var(--fs-24)) / 2);
+    }
+  }
+  @media (max-width: 767px) {
+    .col--4 {
+      width: 100%;
+    }
+    .content {
+      min-height: 200px;
+      .buttons .button {
+        width: 100%;
+      }
+    }
+    .swiper-slide {
+      width: 420px;
+      max-width: 100%;
+    }
+    .post-card-image {
+      min-height: 150px;
+      border-radius: var(--fs-30);
+    }
+  }
+}
+
+.content.teachers-bunner {
+  overflow: visible;
+  @media (max-width: 767px) {
+    overflow: hidden;
+    padding-bottom: 260px;
+    .buttons {
+      .button {
+        width: 100%;
+      }
+    }
+  }
+  .buttons {
+    z-index: 2;
+  }
+  .content-text {
+    max-width: 680px;
+    z-index: 2;
+    @media (max-width: 1279px) {
+      .text {
+        max-width: 480px;
+      }
+    }
+    @media (max-width: 1023px) {
+      .title {
+        max-width: 350px;
+      }
+      .text {
+        max-width: 280px;
+      }
+    }
+  }
+  > .logo-background {
+    width: 690px;
+    height: 100%;
+    overflow: hidden;
+    color: var(--magenta);
+    opacity: 0.33;
+    transform: translate(0%, -38%);
+    svg {
+      width: 690px;
+      height: 690px;
+    }
+  }
+
+  .teachers-bunner-image {
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: calc(100% + var(--fs-40));
+    @media (max-width: 1023px) {
+      height: 100%;
+    }
+    right: 0px;
+    bottom: 0px;
+    img {
+      position: relative;
+      z-index: 1;
+      width: auto;
+      height: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      @media (max-width: 1023px) {
+        top: 10%;
+        height: 90%;
+      }
+    }
+
+    .flower {
+      display: block;
+      position: absolute;
+      overflow: hidden;
+      z-index: 0;
+      width: 100%;
+      height: calc(100% - var(--fs-40));
+      @media (max-width: 1023px) {
+        height: 100%;
+      }
+
+      border-radius: var(--fs-50);
+      left: 0px;
+      bottom: 0px;
+
+      svg {
+        width: 110%;
+        height: auto;
+        color: var(--magenta);
+        position: relative;
+        transform: translateY(-35%);
+        opacity: 0.33;
+      }
+      @media (max-width: 767px) {
+        height: auto;
+        bottom: auto;
+        top: 0px;
+        svg {
+          transform: translateY(5%);
+        }
+      }
+    }
+    @media (max-width: 1023px) {
+      width: 60%;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      height: 280px;
+    }
+  }
+}
+
+.section--teacher-hero .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 638px;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    'text   photo'
+    'bottom photo';
+  row-gap: var(--fs-16);
+  @media (max-width: 1439px) {
+    grid-template-columns: minmax(0, 1fr) 520px;
+  }
+  @media (max-width: 1151px) {
+    grid-template-columns: minmax(0, 1fr) 400px;
+  }
+  // В столбик: фото, текст на всю ширину, под ним стаж с кнопкой
+  @media (max-width: 1023px) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-template-areas:
+      'photo'
+      'text'
+      'bottom';
+  }
+}
+
+.teacher-descrition {
+  display: contents;
+
+  .title {
+    --lh: 1.1;
+  }
+
+  > .content {
+    grid-area: text;
+    align-self: stretch;
+    height: auto;
+  }
+}
+
+.teacher-descrition__bottom {
+  display: flex;
+  position: relative;
+  width: 100%;
+  grid-area: bottom;
+  align-self: start;
+  align-items: flex-end;
+  gap: var(--fs-16);
+
+  .content {
+    flex: 1;
+    height: auto;
+
+    &:not(:last-child) {
+      flex: 0 0 calc(50% - var(--fs-8));
+    }
+  }
+
+  .button {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  // Стаж и кнопка на всю ширину, один под другим
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    .content:not(:last-child) {
+      flex: none;
+    }
+
+    .button {
+      width: 100%;
+      margin-left: 0px;
+    }
+  }
+}
+
+.teacher-thumbnail {
+  width: 100%;
+  grid-area: photo;
+  align-self: start;
+  justify-self: start;
+  max-width: 638px;
+  border-radius: var(--fs-50);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 95.924764%;
+  }
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  @media (max-width: 1439px) {
+    max-width: 520px;
+  }
+  @media (max-width: 1151px) {
+    max-width: 400px;
+  }
+  @media (max-width: 1023px) {
+    max-width: 440px;
+  }
+  @media (max-width: 767px) {
+    border-radius: var(--fs-30);
+  }
+}
