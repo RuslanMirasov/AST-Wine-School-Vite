@@ -454,26 +454,23 @@ ul li.search-toggle-el {
 
 @media (max-width: 1279px) and (min-width: 768px) {
   .navigation {
-    // Как у .header-dropdown на мобилке: display не переключаем, закрытое меню скрыто через visibility
     display: flex;
     visibility: hidden;
     position: fixed;
     align-items: flex-start;
     width: 100vw;
     height: auto;
-    // dvh — по текущей высоте экрана: на iPhone панели Safari прячутся, и с svh снизу оставалась полоса страницы
     max-height: calc(100svh + 10px);
     max-height: calc(100dvh + 10px);
     overflow-x: hidden;
     overflow-y: auto;
-    // Докрутив до края, прокрутка не уходит на страницу — иначе iOS дёргает панели Safari и сбивает прокрутку меню
     overscroll-behavior: contain;
     scrollbar-width: none;
     -ms-overflow-style: none;
     top: 0px;
     left: 0px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
+    background: var(--white);
+    //backdrop-filter: blur(10px);
     transform: translate(0%, -100%);
     transition:
       opacity 0.5s var(--cubic),
