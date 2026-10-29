@@ -4376,23 +4376,21 @@ fieldset + .inputError {
 }
 
 .post-card:not(.empty, .horisontal),
-.section--how-we-pay .content {
+.post-slide {
+  box-shadow: 0 1px 2px rgba(39, 53, 81, 0.01), 0 4px 12px rgba(39, 53, 81, 0.02), 0 0 0 0 rgba(39, 53, 81, 0), 0 0 0 0 rgba(39, 53, 81, 0);
+}
+
+.cards-hover :is(.post-card:not(.empty, .horisontal), .post-slide),
+.cards-hover > * > .content {
   box-shadow: 0 1px 2px rgba(39, 53, 81, 0.01), 0 4px 12px rgba(39, 53, 81, 0.02), 0 0 0 0 rgba(39, 53, 81, 0), 0 0 0 0 rgba(39, 53, 81, 0);
   transition: transform 0.3s var(--cubic), box-shadow 0.3s var(--cubic);
   transform: translateY(0px);
 }
 @media (hover: hover) {
-  .post-card:not(.empty, .horisontal):hover,
-  .section--how-we-pay .content:hover {
+  .cards-hover :is(.post-card:not(.empty, .horisontal), .post-slide):hover,
+  .cards-hover > * > .content:hover {
     transform: translateY(-4px);
     box-shadow: 0 1px 2px rgba(39, 53, 81, 0.03), 0 4px 8px -2px rgba(39, 53, 81, 0.04), 0 12px 24px -6px rgba(39, 53, 81, 0.08), 0 26px 38px -12px rgba(39, 53, 81, 0.14);
-  }
-}
-
-@media (hover: hover) {
-  .cards-static .post-card:not(.empty, .horisontal):hover {
-    transform: translateY(0px);
-    box-shadow: 0 1px 2px rgba(39, 53, 81, 0.01), 0 4px 12px rgba(39, 53, 81, 0.02), 0 0 0 0 rgba(39, 53, 81, 0), 0 0 0 0 rgba(39, 53, 81, 0);
   }
 }
 
@@ -12251,15 +12249,6 @@ a.calendar-slider-day__inner:focus-visible {
   padding: var(--fs-24);
   border-radius: var(--fs-50);
   min-height: 388px;
-  box-shadow: 0 1px 2px rgba(39, 53, 81, 0.01), 0 4px 12px rgba(39, 53, 81, 0.02), 0 0 0 0 rgba(39, 53, 81, 0), 0 0 0 0 rgba(39, 53, 81, 0);
-  transition: transform 0.3s var(--cubic), box-shadow 0.3s var(--cubic);
-  transform: translateY(0px);
-}
-@media (hover: hover) {
-  .post-slide:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 1px 2px rgba(39, 53, 81, 0.03), 0 4px 8px -2px rgba(39, 53, 81, 0.04), 0 12px 24px -6px rgba(39, 53, 81, 0.08), 0 26px 38px -12px rgba(39, 53, 81, 0.14);
-  }
 }
 @media (max-width: 767px) {
   .post-slide {
