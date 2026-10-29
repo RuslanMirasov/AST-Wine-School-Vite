@@ -1406,8 +1406,7 @@ textarea {
     -ms-overflow-style: none;
     top: 0px;
     left: 0px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
+    background: var(--white);
     transform: translate(0%, -100%);
     transition: opacity 0.5s var(--cubic), transform 0.5s var(--cubic), visibility 0s linear 0.5s;
     opacity: 1;
