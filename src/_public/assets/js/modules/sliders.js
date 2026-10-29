@@ -11,6 +11,12 @@ const toSwiperValue = value => {
   return normalizedValue === 'auto' ? 'auto' : Number(normalizedValue);
 };
 
+// Значение атрибута для ширины экрана: одно значение — на все ширины, четыре через запятую — по брейкпоинтам (1920, 1280, 768, 0)
+const getBreakpointValue = (rawValue, index) => {
+  const values = String(rawValue).split(',');
+  return (values.length === 1 ? values[0] : values[index]).trim();
+};
+
 const isA11yEnabled = () => document.querySelector('.body')?.classList.contains('a11y') ?? false;
 
 const adjustForA11y = rawValue => {
@@ -125,7 +131,6 @@ const initSlider = sliderWrapper => {
   const pagination = getOwnElement(sliderWrapper, '[data-pagination]');
 
   const options = {
-    allowTouchMove: toBool(allowTouchMove),
     slideToClickedSlide: toBool(slideToClickedSlide),
     effect,
     speed,
@@ -143,6 +148,7 @@ const initSlider = sliderWrapper => {
         spaceBetween: Number(spaceBetween.split(',')[3]),
         initialSlide: Number(initialSlide.split(',')[3]),
         autoHeight: toBool(autoHeight.split(',')[3]),
+        allowTouchMove: toBool(getBreakpointValue(allowTouchMove, 3)),
       },
       768: {
         slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[2])),
@@ -150,6 +156,7 @@ const initSlider = sliderWrapper => {
         spaceBetween: Number(spaceBetween.split(',')[2]),
         initialSlide: Number(initialSlide.split(',')[2]),
         autoHeight: toBool(autoHeight.split(',')[2]),
+        allowTouchMove: toBool(getBreakpointValue(allowTouchMove, 2)),
       },
       1280: {
         slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[1])),
@@ -157,6 +164,7 @@ const initSlider = sliderWrapper => {
         spaceBetween: Number(spaceBetween.split(',')[1]),
         initialSlide: Number(initialSlide.split(',')[1]),
         autoHeight: toBool(autoHeight.split(',')[1]),
+        allowTouchMove: toBool(getBreakpointValue(allowTouchMove, 1)),
       },
       1920: {
         slidesPerView: toSwiperValue(adjustForA11y(slidesPerView.split(',')[0])),
@@ -164,6 +172,7 @@ const initSlider = sliderWrapper => {
         spaceBetween: Number(spaceBetween.split(',')[0]),
         initialSlide: Number(initialSlide.split(',')[0]),
         autoHeight: toBool(autoHeight.split(',')[0]),
+        allowTouchMove: toBool(getBreakpointValue(allowTouchMove, 0)),
       },
     },
   };

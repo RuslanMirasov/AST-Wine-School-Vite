@@ -317,7 +317,7 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy>&lt;script src="https://api-maps.yandex.ru/2.1/?apikey=ВАШ_API_КЛЮЧ&amp;lang=ru_RU" type="text/javascript"&gt;&lt;/script&gt;
-              &lt;script src="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/js/scripts.js?v=1.0.7" type="module" defer&gt;&lt;/script&gt;</code></pre>
+&lt;script src="&lt;?=SITE_TEMPLATE_PATH?&gt;/assets/js/scripts.js?v=1.0.7" type="module" defer&gt;&lt;/script&gt;</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
                   </button>
@@ -337,18 +337,18 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy>&lt;div class="yandex-map-wrapper"&gt;
-                &lt;ul class="search-navigation"&gt;
-                  &lt;li&gt;&lt;button class="search-navigation__btn active" data-map-group="all"&gt;Все&lt;/button&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;button class="search-navigation__btn" data-map-group="moscow"&gt;Москва&lt;/button&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;button class="search-navigation__btn" data-map-group="spb"&gt;Санкт-Петербург&lt;/button&gt;&lt;/li&gt;
-                &lt;/ul&gt;
+  &lt;ul class="search-navigation"&gt;
+    &lt;li&gt;&lt;button class="search-navigation__btn active" data-map-group="all"&gt;Все&lt;/button&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;button class="search-navigation__btn" data-map-group="moscow"&gt;Москва&lt;/button&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;button class="search-navigation__btn" data-map-group="spb"&gt;Санкт-Петербург&lt;/button&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 
-                &lt;button type="button" class="button white-border" data-map-toggle data-toggle-text="Показать карту"&gt;
-                  &lt;span&gt;Свернуть карту&lt;/span&gt;
-                &lt;/button&gt;
+  &lt;button type="button" class="button white-border" data-map-toggle data-toggle-text="Показать карту"&gt;
+    &lt;span&gt;Свернуть карту&lt;/span&gt;
+  &lt;/button&gt;
 
-                &lt;div class="yandex-map active" data-map data-map-src="/ajax/map-points.php"&gt;&lt;/div&gt;
-              &lt;/div&gt;</code></pre>
+  &lt;div class="yandex-map active" data-map data-map-src="/ajax/map-points.php"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
                   </button>
@@ -392,17 +392,17 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy data-lang="js">{
-                "points": [
-                  {
-                    "id": "office-moscow",
-                    "category": "moscow",
-                    "title": "Офис в Москве",
-                    "description": "Россия, г. Москва, ул. Каховка, д. 23",
-                    "url": "https://yandex.ru/maps/-/...",
-                    "coordinates": [37.574561, 55.654462]
-                  }
-                ]
-              }</code></pre>
+  "points": [
+    {
+      "id": "office-moscow",
+      "category": "moscow",
+      "title": "Офис в Москве",
+      "description": "Россия, г. Москва, ул. Каховка, д. 23",
+      "url": "https://yandex.ru/maps/-/...",
+      "coordinates": [37.574561, 55.654462]
+    }
+  ]
+}</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
                   </button>
@@ -429,28 +429,28 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy data-lang="js">&lt;?php
-              // /ajax/map-points.php
-              require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php';
-              \Bitrix\Main\Loader::includeModule('iblock');
+// /ajax/map-points.php
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php';
+\Bitrix\Main\Loader::includeModule('iblock');
 
-              $points = [];
-              $res = CIBlockElement::GetList([], ['IBLOCK_ID' =&gt; OFFICES_IBLOCK_ID, 'ACTIVE' =&gt; 'Y'], false, false,
-                ['ID', 'CODE', 'NAME', 'PROPERTY_CITY', 'PROPERTY_ADDRESS', 'PROPERTY_MAP_URL', 'PROPERTY_COORDS']);
+$points = [];
+$res = CIBlockElement::GetList([], ['IBLOCK_ID' =&gt; OFFICES_IBLOCK_ID, 'ACTIVE' =&gt; 'Y'], false, false,
+  ['ID', 'CODE', 'NAME', 'PROPERTY_CITY', 'PROPERTY_ADDRESS', 'PROPERTY_MAP_URL', 'PROPERTY_COORDS']);
 
-              while ($item = $res-&gt;Fetch()) {
-                [$lat, $lng] = array_map('floatval', explode(',', $item['PROPERTY_COORDS_VALUE']));
-                $points[] = [
-                  'id' =&gt; $item['CODE'],
-                  'category' =&gt; $item['PROPERTY_CITY_VALUE'],
-                  'title' =&gt; $item['NAME'],
-                  'description' =&gt; $item['PROPERTY_ADDRESS_VALUE'],
-                  'url' =&gt; $item['PROPERTY_MAP_URL_VALUE'],
-                  'coordinates' =&gt; [$lng, $lat],
-                ];
-              }
+while ($item = $res-&gt;Fetch()) {
+  [$lat, $lng] = array_map('floatval', explode(',', $item['PROPERTY_COORDS_VALUE']));
+  $points[] = [
+    'id' =&gt; $item['CODE'],
+    'category' =&gt; $item['PROPERTY_CITY_VALUE'],
+    'title' =&gt; $item['NAME'],
+    'description' =&gt; $item['PROPERTY_ADDRESS_VALUE'],
+    'url' =&gt; $item['PROPERTY_MAP_URL_VALUE'],
+    'coordinates' =&gt; [$lng, $lat],
+  ];
+}
 
-              header('Content-Type: application/json');
-              echo json_encode(['points' =&gt; $points], JSON_UNESCAPED_UNICODE);</code></pre>
+header('Content-Type: application/json');
+echo json_encode(['points' =&gt; $points], JSON_UNESCAPED_UNICODE);</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
                   </button>
@@ -464,7 +464,7 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy data-lang="js">showMapGroup('spb');          // раскрыть карту и показать метки категории
-              showMapPoint('office-spb');   // раскрыть карту и показать одну метку</code></pre>
+showMapPoint('office-spb');   // раскрыть карту и показать одну метку</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="../../assets/img/sprite.svg#copy"></use></svg>
                   </button>

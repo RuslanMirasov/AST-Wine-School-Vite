@@ -283,28 +283,28 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy>&lt;section class="section" data-slider data-slides-per-view="4,3,2,1" data-space-between="24,24,16,16"&gt;
-                &lt;div class="container"&gt;
-                  &lt;h2 class="title title--32 upper"&gt;Отзывы&lt;/h2&gt;
+  &lt;div class="container"&gt;
+    &lt;h2 class="title title--32 upper"&gt;Отзывы&lt;/h2&gt;
 
-                  &lt;div class="arrows"&gt;
-                    &lt;button class="arrow" data-arrow-prev aria-label="Предыдущий слайд"&gt;
-                      &lt;svg&gt;&lt;use href="/assets/img/sprite.svg#arrow-accordeon"&gt;&lt;/use&gt;&lt;/svg&gt;
-                    &lt;/button&gt;
-                    &lt;button class="arrow" data-arrow-next aria-label="Следующий слайд"&gt;
-                      &lt;svg&gt;&lt;use href="/assets/img/sprite.svg#arrow-accordeon"&gt;&lt;/use&gt;&lt;/svg&gt;
-                    &lt;/button&gt;
-                  &lt;/div&gt;
+    &lt;div class="arrows"&gt;
+      &lt;button class="arrow" data-arrow-prev aria-label="Предыдущий слайд"&gt;
+        &lt;svg&gt;&lt;use href="/assets/img/sprite.svg#arrow-accordeon"&gt;&lt;/use&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;button class="arrow" data-arrow-next aria-label="Следующий слайд"&gt;
+        &lt;svg&gt;&lt;use href="/assets/img/sprite.svg#arrow-accordeon"&gt;&lt;/use&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
 
-                  &lt;div class="swiper"&gt;
-                    &lt;div class="swiper-wrapper"&gt;
-                      &lt;div class="swiper-slide"&gt;...&lt;/div&gt;
-                      &lt;div class="swiper-slide"&gt;...&lt;/div&gt;
-                    &lt;/div&gt;
-                  &lt;/div&gt;
+    &lt;div class="swiper"&gt;
+      &lt;div class="swiper-wrapper"&gt;
+        &lt;div class="swiper-slide"&gt;...&lt;/div&gt;
+        &lt;div class="swiper-slide"&gt;...&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
 
-                  &lt;div class="swiper-pagination" data-pagination&gt;&lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/section&gt;</code></pre>
+    &lt;div class="swiper-pagination" data-pagination&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
                   </button>
@@ -351,7 +351,7 @@
                   <tr><td><code>data-effect</code></td><td><code>slide</code></td><td>эффект смены: <code>slide</code>, <code>fade</code> и другие эффекты Swiper</td></tr>
                   <tr><td><code>data-direction</code></td><td><code>horizontal</code></td><td><code>vertical</code> для вертикального слайдера</td></tr>
                   <tr><td><code>data-centered</code></td><td><code>false</code></td><td>активный слайд по центру</td></tr>
-                  <tr><td><code>data-allow-touch-move</code></td><td><code>true</code></td><td>листание свайпом и мышью</td></tr>
+                  <tr><td><code>data-allow-touch-move</code></td><td><code>true</code></td><td>листание свайпом и мышью. Одно значение на все ширины или четыре по ширинам: <code>false,false,false,true</code> — свайп только на телефоне</td></tr>
                   <tr><td><code>data-slide-to-clicked-slide</code></td><td><code>false</code></td><td>клик по слайду делает его активным</td></tr>
                   <tr><td><code>data-pagination-type</code></td><td><code>bullets</code></td><td>вид пагинации: <code>bullets</code>, <code>fraction</code> (2 / 8), <code>progressbar</code></td></tr>
                   <tr><td><code>data-brakepoints</code></td><td><code>1,1,1</code></td><td>где слайдер включён. Три значения: от 1280px, 768–1279px, до 767px. <code>0</code> выключает слайдер, и блок остаётся обычной вёрсткой</td></tr>
@@ -362,9 +362,9 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy>&lt;!-- слайдер только на планшетах и телефонах, на десктопе обычная сетка --&gt;
-              &lt;div class="collage" data-slider data-brakepoints="0,1,1" data-slides-per-view="4,4,auto,auto" data-space-between="24,24,24,16"&gt;
-                ...
-              &lt;/div&gt;</code></pre>
+&lt;div class="collage" data-slider data-brakepoints="0,1,1" data-slides-per-view="4,4,auto,auto" data-space-between="24,24,24,16"&gt;
+  ...
+&lt;/div&gt;</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
                   </button>
@@ -384,12 +384,12 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy>&lt;div data-slider="certificate-templates" data-thumbs="certificate-thumbs" data-loop="true"&gt;
-                &lt;div class="swiper"&gt;...&lt;/div&gt;
-              &lt;/div&gt;
+  &lt;div class="swiper"&gt;...&lt;/div&gt;
+&lt;/div&gt;
 
-              &lt;div data-slider="certificate-thumbs" data-slides-per-view="4,4,4,4" data-space-between="12,12,12,12"&gt;
-                &lt;div class="swiper"&gt;...&lt;/div&gt;
-              &lt;/div&gt;</code></pre>
+&lt;div data-slider="certificate-thumbs" data-slides-per-view="4,4,4,4" data-space-between="12,12,12,12"&gt;
+  &lt;div class="swiper"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
                   </button>
@@ -398,12 +398,12 @@
 
               <h3 class="title title--24 full">Один слайдер управляет другими</h3>
 
-              <p class="text"><code>data-controls</code> со списком имён через запятую: при смене слайда в ведущем слайдере ведомые переходят на тот же номер. Так в главном баннере текст переключает картинки.</p>
+              <p class="text"><code>data-controls</code> со списком имён через запятую: при смене слайда в ведущем слайдере ведомые переходят на тот же номер. Связь работает в одну сторону. Чтобы слайдеры переключали друг друга, <code>data-controls</code> ставится на оба. Так сделано в главном баннере: на телефоне свайп по картинке переключает текст, а свайп по тексту переключает картинку.</p>
 
               <div class="code-block-wrapper">
                 <div class="code-block">
-                  <pre><code data-copy>&lt;div data-slider="hero-text-swiper" data-controls="hero-images-swiper" data-effect="fade"&gt;...&lt;/div&gt;
-              &lt;div data-slider="hero-images-swiper"&gt;...&lt;/div&gt;</code></pre>
+                  <pre><code data-copy>&lt;div data-slider="hero-text-swiper" data-controls="hero-images-swiper" data-effect="fade" data-allow-touch-move="false,false,false,true"&gt;...&lt;/div&gt;
+&lt;div data-slider="hero-images-swiper" data-controls="hero-text-swiper" data-allow-touch-move="false,false,false,true"&gt;...&lt;/div&gt;</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
                   </button>
@@ -417,16 +417,16 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy>&lt;div data-slider="steps"&gt;
-                &lt;div class="swiper"&gt;
-                  &lt;div class="swiper-wrapper"&gt;
-                    &lt;div class="swiper-slide" data-step="info"&gt;...&lt;/div&gt;
-                    &lt;div class="swiper-slide" data-step="payment"&gt;...&lt;/div&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
+  &lt;div class="swiper"&gt;
+    &lt;div class="swiper-wrapper"&gt;
+      &lt;div class="swiper-slide" data-step="info"&gt;...&lt;/div&gt;
+      &lt;div class="swiper-slide" data-step="payment"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
-              &lt;button type="button" onclick="goToSlide(2, { key: 'steps' })"&gt;Ко второму шагу&lt;/button&gt;
-              &lt;button type="button" onclick="goToSlide('payment', { key: 'steps' })"&gt;К оплате&lt;/button&gt;</code></pre>
+&lt;button type="button" onclick="goToSlide(2, { key: 'steps' })"&gt;Ко второму шагу&lt;/button&gt;
+&lt;button type="button" onclick="goToSlide('payment', { key: 'steps' })"&gt;К оплате&lt;/button&gt;</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
                   </button>

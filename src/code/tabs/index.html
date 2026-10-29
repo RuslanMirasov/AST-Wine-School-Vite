@@ -279,14 +279,14 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy>&lt;div data-tabs="orders"&gt;
-                &lt;ul class="search-navigation"&gt;
-                  &lt;li&gt;&lt;button type="button" class="search-navigation__btn active" data-tab-target="current"&gt;Текущие&lt;/button&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;button type="button" class="search-navigation__btn" data-tab-target="archive"&gt;Архив&lt;/button&gt;&lt;/li&gt;
-                &lt;/ul&gt;
+  &lt;ul class="search-navigation"&gt;
+    &lt;li&gt;&lt;button type="button" class="search-navigation__btn active" data-tab-target="current"&gt;Текущие&lt;/button&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;button type="button" class="search-navigation__btn" data-tab-target="archive"&gt;Архив&lt;/button&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 
-                &lt;div data-tab="current"&gt;Текущие заказы&lt;/div&gt;
-                &lt;div data-tab="archive"&gt;Архив заказов&lt;/div&gt;
-              &lt;/div&gt;</code></pre>
+  &lt;div data-tab="current"&gt;Текущие заказы&lt;/div&gt;
+  &lt;div data-tab="archive"&gt;Архив заказов&lt;/div&gt;
+&lt;/div&gt;</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
                   </button>
@@ -365,43 +365,43 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy>&lt;section data-tabs="entity" data-unanimated&gt;
-                &lt;div class="buttons"&gt;
-                  &lt;button type="button" class="button button--tab active" data-tab-target="individual"&gt;&lt;span&gt;Физическое лицо&lt;/span&gt;&lt;/button&gt;
-                  &lt;button type="button" class="button button--tab" data-tab-target="legal-entity"&gt;&lt;span&gt;Юридическое лицо&lt;/span&gt;&lt;/button&gt;
-                &lt;/div&gt;
+  &lt;div class="buttons"&gt;
+    &lt;button type="button" class="button button--tab active" data-tab-target="individual"&gt;&lt;span&gt;Физическое лицо&lt;/span&gt;&lt;/button&gt;
+    &lt;button type="button" class="button button--tab" data-tab-target="legal-entity"&gt;&lt;span&gt;Юридическое лицо&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
-                &lt;form data-form novalidate action="" method="post"&gt;
-                  &lt;!-- тип покупателя: в каждой панели своё скрытое поле, на сервер придёт только одно --&gt;
-                  &lt;input type="hidden" name="person_type" value="individual" data-tab="individual" /&gt;
-                  &lt;input type="hidden" name="person_type" value="legal" data-tab="legal-entity" /&gt;
+  &lt;form data-form novalidate action="" method="post"&gt;
+    &lt;!-- тип покупателя: в каждой панели своё скрытое поле, на сервер придёт только одно --&gt;
+    &lt;input type="hidden" name="person_type" value="individual" data-tab="individual" /&gt;
+    &lt;input type="hidden" name="person_type" value="legal" data-tab="legal-entity" /&gt;
 
-                  &lt;!-- общие поля, отправляются всегда --&gt;
-                  &lt;label class="label"&gt;
-                    &lt;span class="label-text"&gt;Электронная почта *&lt;/span&gt;
-                    &lt;input type="email" name="email" class="input" required /&gt;
-                  &lt;/label&gt;
+    &lt;!-- общие поля, отправляются всегда --&gt;
+    &lt;label class="label"&gt;
+      &lt;span class="label-text"&gt;Электронная почта *&lt;/span&gt;
+      &lt;input type="email" name="email" class="input" required /&gt;
+    &lt;/label&gt;
 
-                  &lt;!-- только физическое лицо --&gt;
-                  &lt;label class="label" data-tab="individual"&gt;
-                    &lt;span class="label-text"&gt;Дата рождения *&lt;/span&gt;
-                    &lt;input type="date" name="birthday" class="input" required /&gt;
-                  &lt;/label&gt;
+    &lt;!-- только физическое лицо --&gt;
+    &lt;label class="label" data-tab="individual"&gt;
+      &lt;span class="label-text"&gt;Дата рождения *&lt;/span&gt;
+      &lt;input type="date" name="birthday" class="input" required /&gt;
+    &lt;/label&gt;
 
-                  &lt;!-- только юридическое лицо --&gt;
-                  &lt;fieldset class="col--2" data-tab="legal-entity"&gt;
-                    &lt;label class="label"&gt;
-                      &lt;span class="label-text"&gt;ИНН *&lt;/span&gt;
-                      &lt;input type="text" name="inn" class="input" data-rule="inn" data-digits maxlength="12" required /&gt;
-                    &lt;/label&gt;
-                    &lt;label class="label"&gt;
-                      &lt;span class="label-text"&gt;КПП *&lt;/span&gt;
-                      &lt;input type="text" name="kpp" class="input" data-rule="kpp" data-digits maxlength="9" required /&gt;
-                    &lt;/label&gt;
-                  &lt;/fieldset&gt;
+    &lt;!-- только юридическое лицо --&gt;
+    &lt;fieldset class="col--2" data-tab="legal-entity"&gt;
+      &lt;label class="label"&gt;
+        &lt;span class="label-text"&gt;ИНН *&lt;/span&gt;
+        &lt;input type="text" name="inn" class="input" data-rule="inn" data-digits maxlength="12" required /&gt;
+      &lt;/label&gt;
+      &lt;label class="label"&gt;
+        &lt;span class="label-text"&gt;КПП *&lt;/span&gt;
+        &lt;input type="text" name="kpp" class="input" data-rule="kpp" data-digits maxlength="9" required /&gt;
+      &lt;/label&gt;
+    &lt;/fieldset&gt;
 
-                  &lt;button type="submit" class="button"&gt;&lt;span&gt;Оформить заказ&lt;/span&gt;&lt;/button&gt;
-                &lt;/form&gt;
-              &lt;/section&gt;</code></pre>
+    &lt;button type="submit" class="button"&gt;&lt;span&gt;Оформить заказ&lt;/span&gt;&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/section&gt;</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
                   </button>
@@ -413,14 +413,14 @@
               <div class="code-block-wrapper">
                 <div class="code-block">
                   <pre><code data-copy data-lang="js">&lt;?php
-              $isLegal = $request-&gt;getPost('person_type') === 'legal';
+$isLegal = $request-&gt;getPost('person_type') === 'legal';
 
-              if ($isLegal) {
-                $inn = $request-&gt;getPost('inn');
-                $kpp = $request-&gt;getPost('kpp');
-              } else {
-                $birthday = $request-&gt;getPost('birthday'); // формат ГГГГ-ММ-ДД
-              }</code></pre>
+if ($isLegal) {
+  $inn = $request-&gt;getPost('inn');
+  $kpp = $request-&gt;getPost('kpp');
+} else {
+  $birthday = $request-&gt;getPost('birthday'); // формат ГГГГ-ММ-ДД
+}</code></pre>
                   <button type="button" class="copy-btn" data-copy-to-buffer aria-label="Скопировать код">
                     <svg width="24" height="24"><use href="/assets/img/sprite.svg#copy"></use></svg>
                   </button>
