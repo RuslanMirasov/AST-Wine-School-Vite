@@ -133,8 +133,9 @@
 }
 
 .copy-message {
-  display: block;
-  padding: var(--fs-14) var(--fs-32);
+  display: flex;
+  align-items: center;
+  padding: var(--fs-14) var(--fs-32) var(--fs-14) var(--fs-16);
   background: linear-gradient(var(--green-light), var(--green-light)), var(--white);
   border-radius: var(--fs-30);
   color: var(--green);
@@ -142,6 +143,13 @@
   border: 1px solid var(--green);
   font-weight: 700;
   animation: copy-message-in 0.4s ease both;
+
+  svg {
+    flex-shrink: 0;
+    width: var(--fs-40);
+    height: var(--fs-40);
+    margin-block: calc(-1 * var(--fs-10));
+  }
 
   // Уходит вниз, как и прилетела; z-index — чтобы проезжала под более новыми плашками, а не поверх.
   &.hide {

@@ -36,7 +36,7 @@ export const initCopyToBuffer = () => {
 
   if (!copyButtons.length) return;
 
-  const messageMarkup = `<div class="copy-message" role="status">✓ Cкопировано в буфер обмена</div>`;
+  const messageMarkup = `<div class="copy-message" role="status"><svg aria-hidden="true"><use href="/assets/img/sprite.svg#confirm"></use></svg>Скопировано в буфер обмена</div>`;
   let messagesList = null;
 
   const hideMessage = message => {

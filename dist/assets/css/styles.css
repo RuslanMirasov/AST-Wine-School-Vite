@@ -5440,8 +5440,9 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 }
 
 .copy-message {
-  display: block;
-  padding: var(--fs-14) var(--fs-32);
+  display: flex;
+  align-items: center;
+  padding: var(--fs-14) var(--fs-32) var(--fs-14) var(--fs-16);
   background: linear-gradient(var(--green-light), var(--green-light)), var(--white);
   border-radius: var(--fs-30);
   color: var(--green);
@@ -5449,6 +5450,12 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   border: 1px solid var(--green);
   font-weight: 700;
   animation: copy-message-in 0.4s ease both;
+}
+.copy-message svg {
+  flex-shrink: 0;
+  width: var(--fs-40);
+  height: var(--fs-40);
+  margin-block: calc(-1 * var(--fs-10));
 }
 .copy-message.hide {
   position: relative;
@@ -14215,6 +14222,7 @@ a.calendar-slider-day__inner:focus-visible {
     height: 0px;
   }
   .footer-menu-title {
+    font-size: var(--fs-18);
     margin: 0;
     justify-content: flex-start;
   }
@@ -14230,12 +14238,7 @@ a.calendar-slider-day__inner:focus-visible {
   }
 }
 @media (max-width: 359px) {
-  .footer-address {
-    flex-direction: column;
-    justify-content: flex-start;
-  }
   .footer-menu-col {
-    width: 100%;
     margin-bottom: var(--fs-16);
   }
 }
