@@ -217,9 +217,6 @@
   -webkit-line-clamp: 7;
 }
 
-// Обрезка до N строк с кнопкой «Читать полностью» (readMore.js).
-// Число строк приходит из data-read-more через переменную --read-more-lines.
-// Абзац, на котором заканчивается общий лимит строк карточки с data-read-more-group (readMore.js)
 .read-more-clamp,
 [data-read-more]:not(.is-expanded) {
   display: -webkit-box;
@@ -267,6 +264,20 @@
 
   .text {
     &.fs-18 {
+      font-size: var(--fs-16);
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .text {
+    font-size: var(--fs-18);
+
+    &.fs-12 {
+      font-size: var(--fs-14);
+    }
+
+    &.fs-14 {
       font-size: var(--fs-16);
     }
   }

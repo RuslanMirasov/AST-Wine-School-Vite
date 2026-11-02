@@ -575,6 +575,13 @@
   }
 }
 
+// Москва и Петербург делят строку поровну с учётом gap, без пустого места справа. Ниже 360px колонки встают одна под другой
+@media (max-width: 768px) and (min-width: 360px) {
+  .footer-address .footer-menu-col {
+    flex: 1 1 0;
+  }
+}
+
 //320
 @media (max-width: 359px) {
   // .footer-address {

@@ -3,6 +3,9 @@
     align-items: flex-start;
     .swiper-slide {
       min-height: 290px;
+      @media (min-width: 1920px) {
+        min-height: 310px;
+      }
     }
   }
 }
@@ -12,6 +15,9 @@
     align-items: flex-start;
     .swiper-slide {
       min-height: 254px;
+      @media (min-width: 1920px) {
+        min-height: 276px;
+      }
     }
   }
   .container {
