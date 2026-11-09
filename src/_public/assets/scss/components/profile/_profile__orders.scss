@@ -69,6 +69,9 @@
     color: var(--orange);
     background-color: var(--orange-light);
     font-size: var(--fs-14);
+    @media (min-width: 1920px) {
+      font-size: var(--fs-16);
+    }
     font-weight: 700;
     --lh: 1;
 
@@ -533,6 +536,9 @@
   .page-content .search-navigation .search-navigation__btn {
     font-size: var(--fs-14);
     padding: var(--fs-8) var(--fs-14);
+    @media (min-width: 1920px) {
+      font-size: var(--fs-16);
+    }
   }
 
   .promocode-info {

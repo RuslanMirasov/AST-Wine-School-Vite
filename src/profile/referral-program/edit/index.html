@@ -79,8 +79,8 @@
 
                 <fieldset class="col--2">
                   <label class="label">
-                    <span class="label-text">Отчество</span>
-                    <input type="text" name="lastname" class="input" data-rule="name-cyrillic" minlength="2" value="Братиславович" />
+                    <span class="label-text">Отчество *</span>
+                    <input type="text" name="lastname" class="input" data-rule="name-cyrillic" minlength="2" required value="Братиславович" data-required-error-text="Пожалуйста, укажите ваше отчество" />
                   </label>
 
                   <label class="label" data-tab="individual">
@@ -118,7 +118,7 @@
 
                   <label class="label">
                     <span class="label-text">БИК *</span>
-                    <input type="text" name="bik" class="input" required inputmode="numeric" maxlength="9" value="044525225" data-required-error-text="Пожалуйста, укажите БИК" />
+                    <input type="text" name="bik" class="input" required inputmode="numeric" data-digits maxlength="9" value="044525225" placeholder="9 цифр" data-required-error-text="Пожалуйста, укажите БИК" />
                   </label>
                 </fieldset>
 

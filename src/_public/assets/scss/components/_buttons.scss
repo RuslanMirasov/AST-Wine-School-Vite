@@ -305,11 +305,6 @@
   @media (max-width: 767px) {
     margin-top: -8px;
   }
-  @media (min-width: 1920px) {
-    &.text.fs-12 {
-      font-size: var(--fs-16);
-    }
-  }
 }
 
 .button.load-more {

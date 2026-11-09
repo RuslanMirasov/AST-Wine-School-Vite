@@ -132,11 +132,6 @@
     --lh: 1;
     color: var(--grey);
     margin-top: 2px;
-    @media (min-width: 1920px) {
-      &.text {
-        font-size: var(--fs-16);
-      }
-    }
   }
   .text {
     color: var(--blue-text);

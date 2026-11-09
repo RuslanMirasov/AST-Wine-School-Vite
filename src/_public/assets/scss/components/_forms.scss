@@ -564,7 +564,10 @@ $select_padding: 0px var(--fs-16);
     box-shadow: 0px 8px 24px rgba(38, 46, 64, 0.18);
     padding: var(--fs-8);
     .choices__item--selectable {
-      font-style: 14px;
+      font-size: var(--fs-14);
+      @media (min-width: 1920px) {
+        font-size: var(--fs-16);
+      }
       font-weight: 400;
       --lh: 1;
       font-family: var(--font);
@@ -813,5 +816,11 @@ $select_padding: 0px var(--fs-16);
         }
       }
     }
+  }
+}
+
+@media (min-width: 1920px) {
+  .page {
+    --checkbox-font-size: var(--fs-16);
   }
 }
