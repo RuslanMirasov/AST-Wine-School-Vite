@@ -21,7 +21,7 @@ const LIGHTBOX_OPTIONS = {
 };
 
 const CONTROLS_GAP = 8;
-const MAX_WIDTH_RATIO = 0.8;
+const MAX_WIDTH_RATIO = 1;
 const MAX_HEIGHT_RATIO = 0.9;
 const MIN_RATIO = 0.3;
 
