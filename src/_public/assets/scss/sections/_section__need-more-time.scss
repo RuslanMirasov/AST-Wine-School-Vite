@@ -9,6 +9,14 @@
 .more-time-form {
   display: block;
   flex: 1;
+
+  .price-and-btn {
+    justify-content: flex-end;
+    .price,
+    .button {
+      margin: 0;
+    }
+  }
 }
 
 .more-time-form-fields {
