@@ -8,15 +8,11 @@
 :root {
   --gallery-lightbox-edge: 16px;
   --gallery-lightbox-button: 32px;
-  // Стрелки: отступ от края и зазор до картинки. На мобилке стрелки впритык к краям, картинке — больше места
-  --gallery-lightbox-arrow-edge: 8px;
-  --gallery-lightbox-arrow-gap: 8px;
+  --gallery-lightbox-arrow-edge: calc(var(--gallery-lightbox-edge) - var(--gallery-lightbox-button) * 14 / 38);
 
   @media (min-width: 768px) {
     --gallery-lightbox-edge: 24px;
     --gallery-lightbox-button: 40px;
-    --gallery-lightbox-arrow-edge: var(--gallery-lightbox-edge);
-    --gallery-lightbox-arrow-gap: var(--gallery-lightbox-arrow-edge);
   }
 
   @media (min-width: 1280px) {

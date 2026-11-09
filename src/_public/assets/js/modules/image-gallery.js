@@ -21,6 +21,7 @@ const LIGHTBOX_OPTIONS = {
 };
 
 const CONTROLS_GAP = 8;
+const ARROW_GLYPH_RATIO = 8 / 38;
 const MAX_WIDTH_RATIO = 1;
 const MAX_HEIGHT_RATIO = 0.9;
 const MIN_RATIO = 0.3;
@@ -33,8 +34,9 @@ const getSizeRatios = () => {
   };
 
   const button = read('--gallery-lightbox-button', 32);
-  const reserveX = (read('--gallery-lightbox-arrow-edge', 16) + button + read('--gallery-lightbox-arrow-gap', CONTROLS_GAP)) * 2;
-  const reserveY = (read('--gallery-lightbox-edge', 16) + button + CONTROLS_GAP) * 2;
+  const edge = read('--gallery-lightbox-edge', 16);
+  const reserveX = (edge * 2 + button * ARROW_GLYPH_RATIO) * 2;
+  const reserveY = (edge + button + CONTROLS_GAP) * 2;
   const ratio = (size, reserve, max) => Math.min(max, Math.max(MIN_RATIO, (size - reserve) / size));
 
   return {
