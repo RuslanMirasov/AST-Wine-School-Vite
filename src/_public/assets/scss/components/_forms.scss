@@ -28,6 +28,9 @@
 
   //LABEL
   --label-font-size: var(--fs-14);
+  @media (min-width: 1920px) {
+    --label-font-size: var(--fs-16);
+  }
   --label-font-weight: 400;
   --label-opacity: 1;
   --label-color: var(--grey-text);
