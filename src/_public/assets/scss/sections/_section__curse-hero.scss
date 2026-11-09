@@ -12,24 +12,33 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: var(--fs-24);
-  background-color: var(--white);
   color: var(--blue);
   padding: var(--fs-32);
   border-radius: var(--fs-50);
+  // Если скруглён и фон формы, и картинка поверх, в углах сквозь сглаженный край
+  // проступает фон формы (тёмная кайма). overflow: hidden не спасает, да и на форму
+  // его не повесить — обрежутся выпадающие списки.
+  // От 1280px фон рисует .image-background, а форма прозрачная
+  @media (min-width: 1280px) {
+    background-color: transparent;
+  }
+  // До 1279px синий фон начинается ниже верхних скруглений (радиус + 2px запаса),
+  // под углами картинки фона формы нет
   @media (max-width: 1279px) {
-    background-color: var(--blue);
+    --hero-bg-gap: calc(var(--fs-50) + 2px);
+    background: linear-gradient(to bottom, transparent var(--hero-bg-gap), var(--blue) var(--hero-bg-gap));
   }
   @media (max-width: 767px) {
     padding: var(--fs-24) var(--fs-20) var(--fs-20) var(--fs-20);
     border-radius: var(--fs-30);
+    --hero-bg-gap: calc(var(--fs-32) + 2px);
   }
   &.dark {
-    background-color: var(--blue);
     color: var(--white);
     // От 1280px картинка закрывает блок целиком, затемнение идёт в чёрный, а не в синий фон
     @media (min-width: 1280px) {
-      background-color: #000;
       .image-background {
+        background-color: #000;
         --fade-from: rgba(0, 0, 0, 0.5);
       }
     }
@@ -91,11 +100,21 @@
     -webkit-mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
     mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
 
+    // Фон под картинкой + маска на самой картинке, чтобы фон не становился прозрачным
+    @media (min-width: 1280px) {
+      background-color: var(--white);
+      -webkit-mask-image: none;
+      mask-image: none;
+      img {
+        width: 100%;
+        -webkit-mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
+        mask-image: linear-gradient(var(--fade-direction), var(--fade-from, transparent), #000 var(--fade-size));
+      }
+    }
+
     @media (max-width: 1279px) {
       height: 460px;
-      border-radius: 0px;
       border-radius: var(--fs-50) var(--fs-50) 0px 0px;
-      background-color: var(--blue);
       --fade-direction: 0deg;
       --fade-size: 40%;
     }
@@ -209,7 +228,6 @@
       min-width: calc(100% + 16px + 16px);
       left: -16px;
     }
-    background-color: var(--blue);
     overflow: hidden;
 
     .image-background {
