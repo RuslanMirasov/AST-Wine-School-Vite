@@ -111,6 +111,7 @@
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-end;
   gap: var(--fs-24);
 
   @media (max-width: 767px) {
@@ -124,6 +125,7 @@
     display: flex;
     position: relative;
     width: 100%;
+    min-height: 184px;
     justify-content: flex-start;
     align-items: flex-start;
     border-radius: var(--fs-50);
