@@ -30,7 +30,7 @@
       <!--SECTION CURSE HERO-->
       <section class="section section--curse-hero">
         <div class="container">
-          <form data-form novalidate class="curse-hero dark">
+          <form data-form novalidate id="course-order-form" class="curse-hero dark">
             <div class="image-background">
               <img src="/assets/img/promo/3-single.webp" alt="Описание картинки курса" title="Описание картинки курса" />
             </div>
@@ -81,7 +81,7 @@
                 </fieldset>
               </div>
 
-              <div class="curse-hero-fields__right">
+              <div class="curse-hero-fields__right" data-fix-button-anchor>
                 <p class="text fs-14 grey-text">Стоимость курса</p>
                 <h3 class="title title--32 bold">4 500 ₽</h3>
                 <div class="buttons gap--12 ta--l">
@@ -327,6 +327,10 @@
 
       <load src="/_partials/sections/section-alreadysee-slider.html" />
     </main>
+
+    <div class="fix-button" data-fix-button>
+      <button type="button" class="button white-border"><span>Корзина</span></button>
+    </div>
 
     <!--FOOTER-->
     <load src="/_partials/footer.html" />
