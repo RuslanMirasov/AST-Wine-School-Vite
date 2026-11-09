@@ -1,0 +1,167 @@
+//ВЕРСИИ ДЛЯ СЛАБОВИДЯЩИХ
+html {
+  font-size: 16px;
+  letter-spacing: normal;
+  font-family: var(--font);
+  --lh: 1.5;
+  font-weight: 400;
+  @media (max-width: 359px) {
+    font-size: 14px;
+  }
+
+  &:has(.a11y) {
+    // A | A+ | A++
+    @media (min-width: 1024px) {
+      font-size: 18px;
+      // A+
+      &:has(.a11y-font-big) {
+        font-size: 20px;
+      }
+      // A++
+      &:has(.a11y-font-large) {
+        font-size: 22px; // 24px
+      }
+    }
+
+    // ОТСТУП +
+    &:has(.a11y-spacing-wide) * {
+      letter-spacing: 0.04em;
+    }
+
+    // ОТСТУП ++
+    &:has(.a11y-spacing-wider) * {
+      letter-spacing: 0.08em;
+    }
+
+    // КАРТИНКИ МОНОХРОМ
+    &:has(.a11y-images-grayscale) {
+      img,
+      video,
+      [style*='background-image'],
+      .main svg,
+      picture {
+        filter: grayscale(100%);
+      }
+    }
+
+    // КАРТИНКИ УДАЛЕНЫ
+    &:has(.a11y-images-hidden) {
+      .hero-images-slider,
+      .tag svg,
+      .logo-background,
+      .image-background,
+      .image-only,
+      .present,
+      .post-slide-image,
+      .review-person-image,
+      .stars-front,
+      .stars-back,
+      .footer-logo,
+      .custom-pagination-image {
+        display: none !important;
+      }
+    }
+
+    // БЕЛАЯ ТЕМА
+    &:has(.a11y-theme-light) {
+      --blue: #000000;
+      .body {
+        background: #ffffff;
+        color: var(--black);
+      }
+      .popup {
+        --blue: #273551;
+      }
+    }
+
+    // ЧЁРНАЯ ТЕМА
+    &:has(.a11y-theme-dark) {
+      --black: #ffffff;
+      --white: #3d3e3f;
+      --blue: #ffffff;
+      --grey-light: #2d2e30;
+      --blue-light: #ffffff;
+      --blue-light-hover: #c24191;
+      --magenta: #c24191;
+      --magenta-hover: #aa397f;
+      --magenta-light: #c24191;
+      --magenta-light-hover: #aa397f;
+      --magenta-opacity: rgba(228, 57, 162, 1);
+      --grey-border: rgba(255, 255, 255, 0.3);
+      --grey-medium: rgba(255, 255, 255, 0.3);
+      --grey-text: rgba(255, 255, 255, 0.8);
+      --grey-dark: rgba(255, 255, 255, 0.8);
+      --grey: rgba(255, 255, 255, 0.3);
+      --grey-menu-border: rgba(255, 255, 255, 0.3);
+      --blue-text: rgba(255, 255, 255, 0.8);
+
+      --grey-stars: #d6d8dd;
+      --grey-button: #e2e5ea;
+      --grey-promo: #e3e7ef;
+      --gold: #f59e0b;
+
+      --invalid: #e0483c;
+      --green: #8fc78f;
+    }
+
+    .popup,
+    .header {
+      font-size: 16px;
+      * {
+        letter-spacing: normal !important;
+      }
+
+      //typography
+      --fs-4: 4px;
+      --fs-5: 5px;
+      --fs-6: 6px;
+      --fs-8: 8px;
+      --fs-9: 9px;
+      --fs-10: 10px;
+      --fs-12: 12px;
+      --fs-13: 13px;
+      --fs-14: 14px;
+      --fs-15: 15px;
+      --fs-16: 16px;
+      --fs-17: 17px;
+      --fs-18: 18px;
+      --fs-20: 20px;
+      --fs-22: 22px;
+      --fs-24: 24px;
+      --fs-25: 25px;
+      --fs-26: 26px;
+      --fs-28: 28px;
+      --fs-30: 30px;
+      --fs-32: 32px;
+      --fs-33: 33px;
+      --fs-34: 34px;
+      --fs-35: 35px;
+      --fs-36: 36px;
+      --fs-38: 38px;
+      --fs-40: 40px;
+      --fs-44: 44px;
+      --fs-48: 48px;
+      --fs-50: 50px;
+      --fs-54: 54px;
+      --fs-56: 56px;
+      --fs-60: 60px;
+      --fs-64: 64px;
+      --fs-72: 72px;
+      --fs-74: 74px;
+      --fs-168: 168px;
+      --fs-512: 512px;
+      --fs-555: 555px;
+      --fs-800: 800px;
+      --fs-400: 400px;
+      --fs-320: 320px;
+      --fs-300: 300px;
+      --fs-200: 200px;
+      --fs-150: 150px;
+    }
+
+    .a11y-panel {
+      transform: translateY(0%);
+      pointer-events: auto;
+    }
+  }
+}

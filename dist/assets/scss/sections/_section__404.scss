@@ -1,0 +1,33 @@
+.page-not-found {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: var(--fs-555);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: var(--fs-40);
+  margin: 0 auto;
+  text-align: center;
+
+  &.full {
+    max-width: 100%;
+  }
+  @media (max-width: 767px) {
+    gap: var(--fs-16);
+  }
+
+  .title {
+    --lh: 1.25;
+  }
+  .text {
+    width: 100%;
+  }
+}
+
+.search-404 {
+  display: block;
+  width: 100%;
+  max-width: 524px;
+}
