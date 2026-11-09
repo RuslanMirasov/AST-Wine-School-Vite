@@ -227,7 +227,7 @@ textarea {
   &.visible {
     overflow: visible;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 1279px) {
     padding: var(--fs-24) 0px;
     &.pad--32 {
       padding: var(--fs-24) 0px;
