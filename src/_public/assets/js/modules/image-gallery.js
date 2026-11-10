@@ -34,8 +34,9 @@ const getSizeRatios = () => {
   };
 
   const button = read('--gallery-lightbox-button', 32);
+  const arrow = read('--gallery-lightbox-arrow', button);
   const edge = read('--gallery-lightbox-edge', 16);
-  const reserveX = (edge * 2 + button * ARROW_GLYPH_RATIO) * 2;
+  const reserveX = (edge * 2 + arrow * ARROW_GLYPH_RATIO) * 2;
   const reserveY = (edge + button + CONTROLS_GAP) * 2;
   const ratio = (size, reserve, max) => Math.min(max, Math.max(MIN_RATIO, (size - reserve) / size));
 

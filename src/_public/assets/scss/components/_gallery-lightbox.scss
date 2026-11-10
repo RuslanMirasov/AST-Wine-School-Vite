@@ -8,7 +8,8 @@
 :root {
   --gallery-lightbox-edge: 16px;
   --gallery-lightbox-button: 32px;
-  --gallery-lightbox-arrow-edge: calc(var(--gallery-lightbox-edge) - var(--gallery-lightbox-button) * 14 / 38);
+  --gallery-lightbox-arrow: var(--gallery-lightbox-button);
+  --gallery-lightbox-arrow-edge: calc(var(--gallery-lightbox-edge) - var(--gallery-lightbox-arrow) * 14 / 38);
 
   @media (min-width: 768px) {
     --gallery-lightbox-edge: 24px;
@@ -17,6 +18,7 @@
 
   @media (min-width: 1280px) {
     --gallery-lightbox-edge: 32px;
+    --gallery-lightbox-arrow: 96px;
   }
 }
 
@@ -76,7 +78,9 @@ body .sl-overlay {
 
   // Стрелки — иконки из слайдеров (одна иконка, повёрнутая в нужную сторону, как в .arrow), по центру высоты
   .sl-navigation button {
-    margin-top: calc(var(--gallery-lightbox-button) / -2);
+    width: var(--gallery-lightbox-arrow);
+    height: var(--gallery-lightbox-arrow);
+    margin-top: calc(var(--gallery-lightbox-arrow) / -2);
     padding: 0;
 
     &.sl-prev {
