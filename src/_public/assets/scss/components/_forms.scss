@@ -48,6 +48,9 @@
   --checkbox-border-invalid: 1px solid var(--invalid);
   --checkbox-radius: var(--fs-6);
   --checkbox-font-size: var(--fs-14);
+  @media (min-width: 1920px) {
+    --checkbox-font-size: var(--fs-16);
+  }
   --checkbox-font-weight: 400;
   --checkbox-background: var(--magenta-opacity);
   --checkbox-background-focus: var(--blue);
@@ -61,6 +64,9 @@
     --checkbox-background: var(--white);
     --checkbox-background-checked: var(--magenta) url('../img/svg/checkbox.svg') no-repeat center center;
     --checkbox-font-size: var(--fs-14);
+    @media (min-width: 1920px) {
+      --checkbox-font-size: var(--fs-16);
+    }
     --checkbox-text-color: #273551;
   }
 
@@ -820,7 +826,7 @@ $select_padding: 0px var(--fs-16);
 }
 
 @media (min-width: 1920px) {
-  .page {
-    --checkbox-font-size: var(--fs-16);
+  .choices select.choices__input {
+    font-size: var(--fs-16);
   }
 }

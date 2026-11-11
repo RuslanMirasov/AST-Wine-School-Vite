@@ -89,6 +89,9 @@
   .checkbox {
     + .label-text {
       font-size: var(--fs-14);
+      @media (min-width: 1920px) {
+        font-size: var(--fs-16);
+      }
       color: var(--blue);
       background-color: var(--grey-light);
       padding: var(--fs-10) var(--fs-10) var(--fs-10) var(--fs-40);
