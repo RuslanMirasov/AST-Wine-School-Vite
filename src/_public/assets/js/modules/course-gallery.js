@@ -18,6 +18,7 @@ export const initCourseGallery = () => {
     infinigall: true,
     fitView: true,
     maxWidth: '960px',
+    overlayColor: 'rgba(39, 53, 81, 0.9)',
     titleattr: 'aria-label',
     focusItem: false,
     onPreOpen(item) {
