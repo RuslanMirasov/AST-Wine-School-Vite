@@ -38,6 +38,9 @@
       max-width: 440px;
       .label-text {
         font-size: var(--fs-14);
+        @media (min-width: 1920px) {
+          font-size: var(--fs-16);
+        }
         font-weight: 700;
         color: var(--blue);
       }

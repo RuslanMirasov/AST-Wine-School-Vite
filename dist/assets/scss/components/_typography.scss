@@ -79,6 +79,9 @@
   }
   &.title--14 {
     font-size: var(--fs-14);
+    @media (min-width: 1920px) {
+      font-size: var(--fs-16);
+    }
   }
 
   &.full {

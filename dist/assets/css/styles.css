@@ -762,6 +762,13 @@ textarea {
   display: inline-block;
   color: var(--magenta);
   font-size: var(--fs-14);
+}
+@media (min-width: 1920px) {
+  .magenta-link {
+    font-size: var(--fs-16);
+  }
+}
+.magenta-link {
   --lh: 1.4;
   font-weight: 700;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
@@ -2046,6 +2053,11 @@ textarea {
 .title.title--14 {
   font-size: var(--fs-14);
 }
+@media (min-width: 1920px) {
+  .title.title--14 {
+    font-size: var(--fs-16);
+  }
+}
 .title.full {
   width: 100%;
 }
@@ -3002,6 +3014,13 @@ textarea {
   padding: var(--fs-6) var(--fs-12);
   min-height: auto;
   font-size: var(--fs-14);
+}
+@media (min-width: 1920px) {
+  .tags.minify .tag {
+    font-size: var(--fs-16);
+  }
+}
+.tags.minify .tag {
   --lh: 1;
   border: none;
   background-color: var(--grey-light);
@@ -3437,6 +3456,13 @@ textarea {
   --checkbox-border-invalid: 1px solid var(--invalid);
   --checkbox-radius: var(--fs-6);
   --checkbox-font-size: var(--fs-14);
+}
+@media (min-width: 1920px) {
+  :root {
+    --checkbox-font-size: var(--fs-16);
+  }
+}
+:root {
   --checkbox-font-weight: 400;
   --checkbox-background: var(--magenta-opacity);
   --checkbox-background-focus: var(--blue);
@@ -3451,6 +3477,13 @@ textarea {
   --checkbox-background: var(--white);
   --checkbox-background-checked: var(--magenta) url('../img/svg/checkbox.svg') no-repeat center center;
   --checkbox-font-size: var(--fs-14);
+}
+@media (min-width: 1920px) {
+  :root .form--grey {
+    --checkbox-font-size: var(--fs-16);
+  }
+}
+:root .form--grey {
   --checkbox-text-color: #273551;
 }
 :root {
@@ -4117,8 +4150,8 @@ fieldset + .inputError {
 }
 
 @media (min-width: 1920px) {
-  .page {
-    --checkbox-font-size: var(--fs-16);
+  .choices select.choices__input {
+    font-size: var(--fs-16);
   }
 }
 .breadcrumbs {
@@ -4827,6 +4860,13 @@ fieldset + .inputError {
   border-radius: var(--fs-12);
   font-weight: 700;
   font-size: var(--fs-14);
+}
+@media (min-width: 1920px) {
+  .page-pagination-link {
+    font-size: var(--fs-16);
+  }
+}
+.page-pagination-link {
   --lh: 1;
   pointer-events: auto;
   width: var(--fs-40);
@@ -6953,6 +6993,13 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   color: var(--white);
   border-radius: var(--fs-14);
   font-size: var(--fs-14);
+}
+@media (min-width: 1920px) {
+  .how-we-work__step .step {
+    font-size: var(--fs-16);
+  }
+}
+.how-we-work__step .step {
   --lh: 1;
   display: block;
   padding: var(--fs-6) var(--fs-14);
@@ -7598,6 +7645,13 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 }
 .certificate-order .left-side .label .label-text {
   font-size: var(--fs-14);
+}
+@media (min-width: 1920px) {
+  .certificate-order .left-side .label .label-text {
+    font-size: var(--fs-16);
+  }
+}
+.certificate-order .left-side .label .label-text {
   font-weight: 700;
   color: var(--blue);
 }
@@ -12091,6 +12145,13 @@ a.calendar-slider-day__inner:focus-visible {
 }
 .filter-checkboxes .checkbox + .label-text {
   font-size: var(--fs-14);
+}
+@media (min-width: 1920px) {
+  .filter-checkboxes .checkbox + .label-text {
+    font-size: var(--fs-16);
+  }
+}
+.filter-checkboxes .checkbox + .label-text {
   color: var(--blue);
   background-color: var(--grey-light);
   padding: var(--fs-10) var(--fs-10) var(--fs-10) var(--fs-40);
