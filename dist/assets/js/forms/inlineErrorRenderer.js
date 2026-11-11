@@ -10,16 +10,16 @@ const getDescribedFields = anchor => (isFormControl(anchor) ? [anchor] : Array.f
 
 const findExistingErrorElement = anchor => {
   if (isFormControl(anchor)) {
-    const label = anchor.closest('label');
-    if (!label) return null;
+    const wrapper = anchor.closest('label, .label');
+    if (!wrapper) return null;
 
-    // Если в label несколько полей (например агрегирующее hidden-поле кода + боксы
+    // Если в контейнере несколько полей (например агрегирующее hidden-поле кода + боксы
     // под него) — единственный .inputError внутри мог принадлежать соседнему полю,
     // однозначно определить владельца нельзя. Пропускаем переиспользование, чтобы
     // clear() на "чужом" поле не хватал и не схлопывал чужую ошибку (гонка анимаций).
-    if (label.querySelectorAll('input, select, textarea').length > 1) return null;
+    if (wrapper.querySelectorAll('input, select, textarea').length > 1) return null;
 
-    return label.querySelector(`:scope > .${ERROR_CLASS}`) ?? null;
+    return wrapper.querySelector(`:scope > .${ERROR_CLASS}`) ?? null;
   }
   const sibling = anchor.nextElementSibling;
   return sibling?.classList.contains(ERROR_CLASS) ? sibling : null;
@@ -42,9 +42,9 @@ const createErrorElement = anchor => {
   errorEl.setAttribute('role', 'alert');
 
   if (isFormControl(anchor)) {
-    const label = anchor.closest('label');
-    if (!label) return null;
-    label.appendChild(errorEl);
+    const wrapper = anchor.closest('label, .label');
+    if (!wrapper) return null;
+    wrapper.appendChild(errorEl);
   } else {
     anchor.insertAdjacentElement('afterend', errorEl);
   }

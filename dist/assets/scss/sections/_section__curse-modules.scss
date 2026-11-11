@@ -116,7 +116,7 @@
   .module-card-form:has(> .label) {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--fs-32);
+    column-gap: var(--fs-50);
     > * {
       grid-column: 1;
     }

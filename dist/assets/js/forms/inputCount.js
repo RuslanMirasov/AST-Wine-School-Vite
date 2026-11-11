@@ -20,7 +20,7 @@ const onStepClick = e => {
   const button = e.target.closest(STEP_SELECTOR);
   if (!button) return;
 
-  const input = button.closest('label')?.querySelector('input[type="number"]');
+  const input = button.closest('.label--count')?.querySelector('input[type="number"]');
   if (!input) return;
 
   const { min, max, step } = getBounds(input);

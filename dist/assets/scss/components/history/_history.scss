@@ -33,15 +33,18 @@
 }
 
 .history {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
   position: relative;
   margin: 0 auto;
   margin-top: var(--fs-24);
   width: calc(100% - var(--fs-44) - var(--fs-44));
   @media (max-width: 767px) {
     width: 100%;
+  }
+
+  .history__items {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
   }
 
   li {

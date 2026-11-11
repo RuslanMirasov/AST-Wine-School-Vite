@@ -172,8 +172,8 @@
 
     <div class="header-dropdown">
   <!--header search form-->
-  <form action="../search/" class="search-form" method="GET" data-form novalidate>
-    <label class="label">
+  <form id="header-search" action="../search/" class="search-form" method="GET" data-form novalidate>
+    <div class="label">
       <button type="submit" class="search-submit-icon" aria-label="Отправка формы поиска">
         <svg width="24" height="24"><use href="../assets/img/sprite.svg#search"></use></svg>
       </button>
@@ -181,7 +181,7 @@
       <button type="reset" class="search-close" aria-label="Очистить форму поиска">
         <svg width="16" height="16"><use href="../assets/img/sprite.svg#reset"></use></svg>
       </button>
-    </label>
+    </div>
   </form>
 
   <!--header navigation menu-->
@@ -482,7 +482,7 @@
           </div>
 
           <div class="post-text">
-            <h3>Мы любим вино и знаем о нем все</h3>
+            <h2 class="about-subtitle">Мы любим вино и знаем о нем все</h2>
             <p>Приходите — и вы убедитесь: мир вина ближе, чем кажется. Учитесь, пробуйте, открывайте новое вместе с нами.</p>
           </div>
 
@@ -496,7 +496,7 @@
               title="Наши преподаватели — действующие эксперты и сертифицированные сомелье."
               class="left"
             />
-            <h3>Наши преподаватели — действующие эксперты и сертифицированные сомелье.</h3>
+            <h2 class="about-subtitle">Наши преподаватели — действующие эксперты и сертифицированные сомелье.</h2>
             <p>
               Мы гордимся тем, что наши выпускники не боятся винных карт, уверенно выбирают бутылку в магазине и умеют подобрать вино к любому блюду.
               Многие приходят к нам за первым знакомством с вином, а остаются — за профессией. Для этого у нас есть интерактивная шкала уровней
@@ -795,7 +795,7 @@
   </div>
 
   <div class="content-text gap--12">
-    <h3 class="title title--32 bold"><a href="../gift-certificates/" class="title-link">Сертификат в&nbsp;подарок за&nbsp;1&nbsp;минуту</a></h3>
+    <h2 class="title title--32 bold"><a href="../gift-certificates/" class="title-link">Сертификат в&nbsp;подарок за&nbsp;1&nbsp;минуту</a></h2>
     <p class="text fs-18">Хотите подарить другу курс, но не&nbsp;можете выбрать подходящий? <br />Подарите ему сертификат!</p>
   </div>
 
@@ -936,7 +936,7 @@
     <h2 class="title title--32 upper">Другие отзывы</h2>
 
     <div class="buttons auto ta--r">
-      <a href="#" class="button" data-popup-open="add-review"><span>Оставить отзыв</span></a>
+      <button type="button" class="button" data-popup-open="add-review"><span>Оставить отзыв</span></button>
     </div>
 
     <div class="arrows auto">
@@ -1185,7 +1185,7 @@
 
 <!--LOGIN CODE POPUP-->
 <div class="popup-content" id="login-code" role="dialog" aria-modal="true" aria-labelledby="login-code-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="login-code-title">
     Вход
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../assets/img/sprite.svg#close"></use></svg>
@@ -1208,7 +1208,7 @@
   </script>
 
   <form data-form action="#" class="form" novalidate onsubmit="onLoginCodeSubmit(event)">
-    <label class="label label-code">
+    <div class="label label-code" role="group" aria-label="Проверочный код">
       <input
         type="number"
         name="code"
@@ -1220,7 +1220,7 @@
         aria-hidden="true"
         data-required-error-text="Неверный код"
       />
-    </label>
+    </div>
 
     <button type="button" class="link" data-popup-open="login">Назад</button>
 
@@ -1232,7 +1232,7 @@
 
 <!--LOGIN SUCCESS POPUP-->
 <div class="popup-content" id="login-success" role="dialog" aria-modal="true" aria-labelledby="login-success-title">
-  <p class="text full ta--l">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
+  <p class="text full ta--l" id="login-success-title">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
 
   <div class="buttons ta--l">
     <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
@@ -1241,7 +1241,7 @@
 
 <!--SUBSCRIBE POPUP-->
 <div class="popup-content" id="subscribe" role="dialog" aria-modal="true" aria-labelledby="subscribe-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="subscribe-title">
     <span>Подписка на рассылку</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../assets/img/sprite.svg#close"></use></svg>
@@ -1266,9 +1266,9 @@
     <fieldset>
       <label class="label">
         <input name="confirmation" type="checkbox" class="checkbox" required data-error-text="Согласие на обработку данных обязательно" />
-        <p class="label-text">
+        <span class="label-text">
           <span>Согласен с&nbsp;<a href="../" target="_blank">Условиями обработки персональных данных</a></span>
-        </p>
+        </span>
       </label>
     </fieldset>
 
@@ -1280,7 +1280,7 @@
 
 <!--SUBSCRIBE SUCCESS POPUP-->
 <div class="popup-content" id="subscribe-success" role="dialog" aria-modal="true" aria-labelledby="subscribe-success-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="subscribe-success-title">
     <span>Подписка оформлена</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../assets/img/sprite.svg#close"></use></svg>
@@ -1402,6 +1402,52 @@
     allow="clipboard-write; autoplay; encrypted-media; fullscreen; picture-in-picture"
     allowfullscreen
   ></iframe>
+</div>
+
+        <!--ADD REVIEW POPUP-->
+<div class="popup-content big" role="dialog" aria-modal="true" aria-labelledby="review-title" id="add-review">
+  <h2 class="popup-title" id="review-title">
+    <span>Отзыв</span>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="../assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <h2 class="popup-title fs-18">Быстрый старт: о вине за 3 встречи</h2>
+
+  <script>
+    function onReviewSubmit(e) {
+      e.preventDefault();
+      window.popup.open('add-review-success');
+    }
+  </script>
+
+  <form data-form action="#" class="form" novalidate onsubmit="onReviewSubmit(event)">
+    <label class="label">
+      <span class="label-text">Ваш отзыв *</span>
+      <textarea name="review" class="input input--textarea" placeholder="Расскажите, что вам запомнилось на курсе" required data-required-error-text="Пожалуйста, напишите ваш отзыв"></textarea>
+    </label>
+    <p class="popup-subtitle">Оставляя отзыв, вы соглашаетесь с <a href="#" class="link">условиями использования сайта</a>.</p>
+    <button type="submit" class="button"><span>Оставить отзыв</span></button>
+  </form>
+</div>
+
+<!--REVIEW SUCCESS POPUP-->
+<div class="popup-content" id="add-review-success" role="dialog" aria-modal="true" aria-labelledby="review-success-title">
+  <h2 class="popup-title" id="review-success-title">
+    <span>Отзыв</span>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="../assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <h2 class="popup-title fs-18">Быстрый старт: о вине за 3 встречи</h2>
+
+  <p class="text full ta--l">Спасибо! Ваш отзыв отправлен. Он&nbsp;появится после прохождения проверки.</p>
+
+  <div class="buttons ta--l">
+    <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
+  </div>
 </div>
 
       </div>
