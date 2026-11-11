@@ -195,6 +195,12 @@
   }
 }
 
+@media (max-width: 767px) {
+  .swiper:has(~ .swiper-mobil-pagination) {
+    margin-bottom: calc(var(--fs-12) * -1);
+  }
+}
+
 .swiper-mobil-pagination {
   display: flex;
   @media (min-width: 1024px) {
