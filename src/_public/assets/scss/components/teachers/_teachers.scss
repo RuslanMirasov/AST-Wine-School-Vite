@@ -351,8 +351,16 @@
   @media (max-width: 1151px) {
     grid-template-columns: minmax(0, 1fr) 400px;
   }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'text photo'
+      'text bottom';
+    column-gap: var(--fs-16);
+  }
   // В столбик: фото, текст на всю ширину, под ним стаж с кнопкой
-  @media (max-width: 1023px) {
+  @media (max-width: 767px) {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: none;
     grid-template-areas:
@@ -399,8 +407,15 @@
     margin-left: auto;
   }
 
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .content.pad--40 {
+      padding: var(--fs-20);
+      border-radius: var(--fs-30);
+    }
+  }
+
   // Стаж и кнопка на всю ширину, один под другим
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     flex-direction: column;
     align-items: stretch;
 
@@ -445,7 +460,10 @@
   @media (max-width: 1151px) {
     max-width: 400px;
   }
-  @media (max-width: 1023px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    max-width: 100%;
+  }
+  @media (max-width: 767px) {
     max-width: 440px;
   }
   @media (max-width: 767px) {
