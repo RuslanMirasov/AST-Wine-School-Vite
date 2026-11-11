@@ -2,23 +2,12 @@
 // и идут после наших, поэтому селекторы здесь специфичнее: обёртка с классом .gallery-lightbox (опция className),
 // затемнение — через body
 
-// Раскладка: счётчик — в левом верхнем углу, крестик — в правом, стрелки — по центру высоты у левого и правого края.
-// Все на одинаковом отступе от краёв и одного размера — симметрично. Эти же переменные читает JS: по ним картинка
-// ужимается так, чтобы никогда не заходить под стрелки и под верхнюю строку (отступ + кнопка + зазор с каждой стороны)
 :root {
-  --gallery-lightbox-edge: 16px;
+  --gallery-lightbox-gap: 8px;
   --gallery-lightbox-button: 32px;
-  --gallery-lightbox-arrow: var(--gallery-lightbox-button);
-  --gallery-lightbox-arrow-edge: calc(var(--gallery-lightbox-edge) - var(--gallery-lightbox-arrow) * 14 / 38);
 
   @media (min-width: 768px) {
-    --gallery-lightbox-edge: 24px;
     --gallery-lightbox-button: 40px;
-  }
-
-  @media (min-width: 1280px) {
-    --gallery-lightbox-edge: 32px;
-    --gallery-lightbox-arrow: 96px;
   }
 }
 
@@ -35,6 +24,35 @@ body .sl-overlay {
 }
 
 .sl-wrapper.gallery-lightbox {
+  inset: 0;
+  width: auto;
+  height: auto;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: 1fr minmax(calc(var(--gallery-lightbox-button) * 2 + var(--gallery-lightbox-gap)), max-content) 1fr;
+
+  .sl-image {
+    grid-area: 2 / 2;
+    place-self: center;
+    position: relative;
+    // Размеры задаёт SimpleLightbox, а положение — сетка галереи.
+    inset: auto !important;
+
+    // Сохраняем размер ячейки, пока библиотека скрывает снимок при листании.
+    &[style*='display: none'] {
+      display: block !important;
+      visibility: hidden;
+    }
+  }
+
+  .sl-navigation {
+    grid-area: 2 / 2;
+    position: relative;
+    width: auto;
+    z-index: 10060;
+    pointer-events: none;
+  }
+
   // Без эффектов при наведении — в том числе стандартного полупрозрачного у библиотеки (.sl-wrapper button:hover)
   button:hover {
     opacity: 1;
@@ -69,38 +87,44 @@ body .sl-overlay {
     }
   }
 
-  // Крестик — иконка из попапов, в правом верхнем углу
+  .sl-close,
+  .sl-counter {
+    grid-area: 1 / 2;
+    align-self: end;
+    position: relative;
+    inset: auto;
+    margin-bottom: var(--gallery-lightbox-gap);
+  }
+
   .sl-close {
-    top: var(--gallery-lightbox-edge);
-    right: var(--gallery-lightbox-edge);
+    justify-self: end;
     padding: 4px;
   }
 
-  // Стрелки — иконки из слайдеров (одна иконка, повёрнутая в нужную сторону, как в .arrow), по центру высоты
   .sl-navigation button {
-    width: var(--gallery-lightbox-arrow);
-    height: var(--gallery-lightbox-arrow);
-    margin-top: calc(var(--gallery-lightbox-arrow) / -2);
+    position: absolute;
+    margin-top: calc(var(--gallery-lightbox-button) / -2);
     padding: 0;
+    pointer-events: auto;
 
     &.sl-prev {
-      left: var(--gallery-lightbox-arrow-edge);
+      left: auto;
+      right: calc(100% + var(--gallery-lightbox-gap));
       svg {
         transform: rotate(90deg);
       }
     }
     &.sl-next {
-      right: var(--gallery-lightbox-arrow-edge);
+      left: calc(100% + var(--gallery-lightbox-gap));
+      right: auto;
       svg {
         transform: rotate(-90deg);
       }
     }
   }
 
-  // Счётчик «3/8» — в левом верхнем углу, по центру высоты крестика
   .sl-counter {
-    top: var(--gallery-lightbox-edge);
-    left: var(--gallery-lightbox-edge);
+    justify-self: start;
     height: var(--gallery-lightbox-button);
     font-family: var(--font);
     font-size: 16px;
