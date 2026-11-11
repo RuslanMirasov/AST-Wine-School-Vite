@@ -7,7 +7,7 @@ const LABEL_TEXT_SELECTOR = '.label-text, legend';
 const isFormControl = anchor => anchor.matches('input, select, textarea');
 
 const resolveFieldTitle = anchor => {
-  const scope = isFormControl(anchor) ? anchor.closest('label') : anchor;
+  const scope = isFormControl(anchor) ? anchor.closest('label, .label') : anchor;
   const labelText = scope?.querySelector(LABEL_TEXT_SELECTOR);
   if (labelText) return labelText.textContent.trim();
 

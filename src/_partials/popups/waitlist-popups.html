@@ -44,14 +44,14 @@
       <input type="email" placeholder="email@email.ru" name="email" class="input" required data-required-error-text="Пожалуйста, укажите вашу электронную почту" />
     </label>
 
-    <label class="label auto" aria-live="polite" aria-atomic="true">
-      <span class="label-text">Количество посетителей</span>
+    <div class="label auto" aria-live="polite" aria-atomic="true">
+      <label class="label-text" for="waitlist-count">Количество посетителей</label>
       <div class="label--count" aria-live="polite" aria-atomic="true">
         <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
-        <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество товара" />
+        <input type="number" id="waitlist-count" name="count" class="input input--count" min="1" max="999" value="1" />
         <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
       </div>
-    </label>
+    </div>
 
     <div class="buttons ta--l">
       <button type="submit" class="button"><span>Отправить заявку</span></button>

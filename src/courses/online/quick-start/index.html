@@ -51,7 +51,7 @@
               <div class="curse-hero-fields__left">
                 <fieldset class="fieldset">
                   <label class="label">
-                    <p class="label-text">Выберите поток</p>
+                    <span class="label-text">Выберите поток</span>
                     <select data-select name="start-date" required data-required-error-text="Пожалуйста, выберите поток">
                       <option value="13 июля 2026 (1 поток)">13 июля 2026 (1 поток)&lt;b&gt;понедельник, 18:00&lt;/b&gt;</option>
                       <option value="16 июля 2026 (2 поток)">16 июля 2026 (2 поток)&lt;b&gt;четверг, 18:00&lt;/b&gt;</option>
@@ -84,15 +84,15 @@
 
               <div class="curse-hero-fields__right">
                 <p class="text fs-14 grey-text">Стоимость курса</p>
-                <h3 class="title title--32 bold">4 500 ₽</h3>
+                <p class="title title--32 bold">4 500 ₽</p>
                 <div class="buttons gap--12 ta--l">
-                  <label class="label auto" aria-live="polite" aria-atomic="true">
+                  <div class="label auto" aria-live="polite" aria-atomic="true">
                     <div class="label--count" aria-live="polite" aria-atomic="true">
                       <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
                       <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество товара" />
                       <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
                     </div>
-                  </label>
+                  </div>
                   <button type="button" class="button white-border" data-fix-button-anchor><span>Корзина</span></button>
                 </div>
               </div>
@@ -106,7 +106,7 @@
         <div class="container">
           <div class="content pad--32 curse-description">
             <div class="content-text gap--24">
-              <h3 class="title title--24 bold">Хотите перестать теряться в&nbsp;винной карте и&nbsp;уверенно выбирать бутылку к&nbsp;ужину?</h3>
+              <h2 class="title title--24 bold">Хотите перестать теряться в&nbsp;винной карте и&nbsp;уверенно выбирать бутылку к&nbsp;ужину?</h2>
 
               <div class="content-text gap--16">
                 <p class="text">
@@ -122,7 +122,7 @@
                 </p>
               </div>
 
-              <h3 class="title title--16 bold">Курс создан для тех, кто:</h3>
+              <h2 class="title title--16 bold">Курс создан для тех, кто:</h2>
 
               <ul class="list">
                 <li><p class="text">впервые слышит «терруар» и&nbsp;боится спросить</p></li>
@@ -303,7 +303,7 @@
               <!-- <button type="submit" class="button"><span>В корзину</span></button> -->
               <div class="price-and-btn">
                 <span class="price">5 000 ₽</span>
-                <botton href="./courses/offline/quick-start/" class="button"><span>В корзину</span></botton>
+                <button type="button" class="button"><span>В корзину</span></button>
               </div>
             </form>
           </div>

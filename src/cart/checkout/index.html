@@ -28,12 +28,12 @@
           <div class="content-text gap--40">
             <h1 class="title title--40 upper">Оформление заказа</h1>
 
-            <ul class="cart-steps">
+            <ol class="cart-steps">
               <li class="active"><a href="%ROOT%cart/">Корзина</a></li>
               <li class="current"><span>Оформление</span></li>
               <li><span>Оплата</span></li>
               <li><span>Готово</span></li>
-            </ul>
+            </ol>
           </div>
         </div>
       </section>
@@ -174,5 +174,12 @@
 
     <!--SCRIPTS-->
     <load src="/_partials/base/scripts.html" />
+    <script>
+      document.querySelector('#cart-checkout-form').addEventListener('submit', event => {
+        const form = event.currentTarget;
+        const legalEntityTab = form.closest('[data-tabs]').querySelector('[data-tab-target="legal-entity"].active');
+        form.action = legalEntityTab ? '%ROOT%cart/success2/' : '%ROOT%cart/success/';
+      });
+    </script>
   </body>
 </html>

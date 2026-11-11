@@ -147,7 +147,7 @@
   &.active {
     width: 624px;
 
-    h3 {
+    .custom-pagination-title {
       -webkit-line-clamp: 2;
       line-clamp: 2;
     }
@@ -198,7 +198,7 @@
   text-align: left;
   font-family: var(--font);
 
-  h3 {
+  .custom-pagination-title {
     display: -webkit-box;
     position: relative;
     -webkit-line-clamp: 3;

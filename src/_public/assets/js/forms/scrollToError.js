@@ -1,4 +1,4 @@
-const getScrollTarget = anchor => anchor.closest('label') || anchor;
+const getScrollTarget = anchor => anchor.closest('label, .label') || anchor;
 const isRendered = element => element.getClientRects().length > 0;
 
 const getTopOffset = () => {

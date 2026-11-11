@@ -25,12 +25,12 @@
 
       <section class="section">
         <div class="container gap--40">
-          <ul class="cart-steps">
+          <ol class="cart-steps">
             <li class="active"><a href="%ROOT%cart/">Корзина</a></li>
             <li class="active"><a href="%ROOT%cart/checkout/">Оформление</a></li>
             <li class="active"><span>Оплата</span></li>
             <li class="current"><span>Готово</span></li>
-          </ul>
+          </ol>
 
           <div class="content cart-success pad--40 gap--16">
             <svg width="56" height="56"><use href="/assets/img/sprite.svg#success"></use></svg>
@@ -48,30 +48,30 @@
               <div class="content grey pad--40 gap--16">
                 <h2 class="title title--24 bold">Что вы купили</h2>
 
-                <table class="order-table" cellspacing="0" cellpadding="0">
+                <table class="order-table">
                   <tr>
-                    <td>
+                    <th scope="row">
                       <b class="text">Быстрый старт: о вине за 3 встречи</b>
                       <span class="text fs-14 grey-text">Очный курс · Встреча №2 · 14&nbsp;июля&nbsp;2026, 18:00</span>
-                    </td>
+                    </th>
                     <td>
                       <b class="text fs-18">1&nbsp;000&nbsp;₽</b>
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <th scope="row">
                       <b class="text">Подарочный сертификат</b>
                       <span class="text fs-14 grey-text">Номинал: 10&nbsp;000&nbsp;₽ · отправлен на почту</span>
-                    </td>
+                    </th>
                     <td>
                       <b class="text fs-18">1&nbsp;000&nbsp;₽</b>
                     </td>
                   </tr>
                 </table>
 
-                <table class="order-table" cellspacing="0" cellpadding="0">
+                <table class="order-table">
                   <tr class="bordered">
-                    <td><b class="text fs-18">Итого оплачено</b></td>
+                    <th scope="row"><b class="text fs-18">Итого оплачено</b></th>
                     <td><b class="text fs-18 magenta">11&nbsp;000 ₽</b></td>
                   </tr>
                 </table>
@@ -103,7 +103,7 @@
             </li>
           </ul>
 
-          <load src="/_partials/components/certificat-for-one.html" />
+          <load src="/_partials/components/certificat-for-one.html" heading="h2" />
         </div>
       </section>
     </main>

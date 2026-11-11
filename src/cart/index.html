@@ -4,8 +4,8 @@
     <load src="/_partials/base/metrix.html" />
     <load src="/_partials/base/meta.html" />
     <load src="/_partials/base/styles.html" />
-    <meta name="description" content="AST - Личный кабинет" />
-    <title>Личный кабинет</title>
+    <meta name="description" content="AST - Корзина" />
+    <title>Корзина</title>
   </head>
   <body class="body">
     <!--START SCRIPTS-->
@@ -25,14 +25,14 @@
       <section class="section">
         <div class="container">
           <div class="content-text gap--40">
-            <h1 hidden>Личный кабинет</h1>
+            <h1 class="visually-hidden">Корзина</h1>
 
-            <ul class="cart-steps">
+            <ol class="cart-steps">
               <li class="current"><span>Корзина</span></li>
               <li><span>Оформление</span></li>
               <li><span>Оплата</span></li>
               <li><span>Готово</span></li>
-            </ul>
+            </ol>
           </div>
         </div>
       </section>
@@ -55,7 +55,7 @@
               </div>
 
               <div class="order-text gap--8">
-                <h3 class="title title--24 bold">Быстрый старт: о вине за 3 встречи</h3>
+                <h2 class="title title--24 bold">Быстрый старт: о вине за 3 встречи</h2>
                 <p class="text fs-14 grey-text">Очный курс</p>
                 <b class="text fs-16">Встреча №2</b>
 
@@ -74,13 +74,13 @@
               <form action="#" class="order-settings">
                 <b class="text fs-24">1&nbsp;000&nbsp;₽</b>
                 <p class="text grey-medium line-through">1&nbsp;500&nbsp;₽</p>
-                <label class="label auto" aria-live="polite" aria-atomic="true">
+                <div class="label auto" aria-live="polite" aria-atomic="true">
                   <div class="label--count" aria-live="polite" aria-atomic="true">
                     <button type="button" class="minus" data-input-minus="" aria-label="Уменьшить количество">-</button>
                     <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество товара" />
                     <button type="button" class="plus" data-input-plus="" aria-label="Увеличить количество">+</button>
                   </div>
-                </label>
+                </div>
                 <button type="button" class="text fs-14 magenta">Удалить</button>
               </form>
             </div>
@@ -92,20 +92,20 @@
               </div>
 
               <div class="order-text gap--8">
-                <h3 class="title title--24 bold">Подарочный сертификат</h3>
+                <h2 class="title title--24 bold">Подарочный сертификат</h2>
                 <p class="text fs-14 grey-text">Подарочный сертификат</p>
                 <b class="text fs-16">Номинал: 10&nbsp;000&nbsp;₽</b>
               </div>
 
               <form action="#" class="order-settings">
                 <b class="text fs-24">10&nbsp;000&nbsp;₽</b>
-                <label class="label auto" aria-live="polite" aria-atomic="true">
+                <div class="label auto" aria-live="polite" aria-atomic="true">
                   <div class="label--count" aria-live="polite" aria-atomic="true">
                     <button type="button" class="minus" data-input-minus="" aria-label="Уменьшить количество">-</button>
                     <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество товара" />
                     <button type="button" class="plus" data-input-plus="" aria-label="Увеличить количество">+</button>
                   </div>
-                </label>
+                </div>
                 <button type="button" class="text fs-14 magenta">Удалить</button>
               </form>
             </div>

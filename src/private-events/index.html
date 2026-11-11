@@ -51,7 +51,7 @@
 
             <div class="col--3">
               <div class="content grey pad--32">
-                <h2 class="title title--40">1-150</h2>
+                <p class="title title--40">1-150</p>
                 <p class="text fs-16 grey-text">гостей в одном событии</p>
               </div>
               <div class="content grey pad--32">
@@ -349,32 +349,32 @@
           <div class="collage">
             <div class="col--4">
               <div class="content pad--28 gap--12">
-                <h3 class="title title--44 magenta light">01</h3>
-                <b class="text fs-18">Гибкость формата</b>
+                <p class="title title--44 magenta light">01</p>
+                <h3 class="text fs-18 bold">Гибкость формата</h3>
                 <p class="text fs-14 grey-text">От&nbsp;1&nbsp;до&nbsp;150 гостей — от&nbsp;персонального ужина до&nbsp;большого корпоратива.</p>
               </div>
             </div>
 
             <div class="col--4">
               <div class="content pad--28 gap--12">
-                <h3 class="title title--44 magenta light">02</h3>
-                <b class="text fs-18">Выездные мероприятия</b>
+                <p class="title title--44 magenta light">02</p>
+                <h3 class="text fs-18 bold">Выездные мероприятия</h3>
                 <p class="text fs-14 grey-text">Приедем на&nbsp;вашу площадку: офис, загородный дом, лофт, веранда, теплоход.</p>
               </div>
             </div>
 
             <div class="col--4">
               <div class="content pad--28 gap--12">
-                <h3 class="title title--44 magenta light">03</h3>
-                <b class="text fs-18">Интеграция в&nbsp;программу</b>
+                <p class="title title--44 magenta light">03</p>
+                <h3 class="text fs-18 bold">Интеграция в&nbsp;программу</h3>
                 <p class="text fs-14 grey-text">От&nbsp;30&nbsp;минут внутри вашего сценария до&nbsp;полного вечера под&nbsp;ключ.</p>
               </div>
             </div>
 
             <div class="col--4">
               <div class="content pad--28 gap--12">
-                <h3 class="title title--44 magenta light">04</h3>
-                <b class="text fs-18">Формат под&nbsp;ваш бренд</b>
+                <p class="title title--44 magenta light">04</p>
+                <h3 class="text fs-18 bold">Формат под&nbsp;ваш бренд</h3>
                 <p class="text fs-14 grey-text">Согласуем сценарий, меню и&nbsp;вина под&nbsp;концепцию, бренд или&nbsp;повод.</p>
               </div>
             </div>
@@ -519,14 +519,14 @@
                 />
               </label>
 
-              <label class="label auto" aria-live="polite" aria-atomic="true">
-                <span class="label-text">Гостей</span>
+              <div class="label auto" aria-live="polite" aria-atomic="true">
+                <label class="label-text" for="private-event-guest-count">Гостей</label>
                 <div class="label--count" aria-live="polite" aria-atomic="true">
                   <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
-                  <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество гостей" />
+                  <input type="number" id="private-event-guest-count" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество гостей" />
                   <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
                 </div>
-              </label>
+              </div>
 
               <label class="label">
                 <span class="label-text">Формат *</span>

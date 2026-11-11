@@ -36,7 +36,11 @@
   border-collapse: collapse;
   border-spacing: 0;
 
-  td {
+  th {
+    font-weight: inherit;
+  }
+
+  :is(th, td) {
     vertical-align: top;
     padding: var(--fs-8) 0px;
     text-align: left;
@@ -53,18 +57,18 @@
 
   tr {
     &:first-child {
-      td {
+      :is(th, td) {
         padding-top: 0px;
       }
     }
     &:last-child {
-      td {
+      :is(th, td) {
         padding-bottom: 0px;
       }
     }
 
     &.bordered {
-      td {
+      :is(th, td) {
         padding-top: var(--fs-16);
         padding-bottom: var(--fs-16);
         border-top: 1px solid var(--grey-medium);
