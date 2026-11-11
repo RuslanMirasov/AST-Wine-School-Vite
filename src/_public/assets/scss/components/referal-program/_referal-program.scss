@@ -69,6 +69,9 @@
 
   @media (max-width: 767px) {
     .collage {
+      .col--5-8 {
+        display: none;
+      }
       .col--4-6,
       .col--2-6 {
         min-width: 100%;
