@@ -232,7 +232,7 @@
   overflow: visible;
   @media (max-width: 767px) {
     overflow: hidden;
-    padding-bottom: 260px;
+    padding-bottom: calc(260px + var(--fs-24));
     .buttons {
       .button {
         width: 100%;
@@ -323,7 +323,7 @@
         bottom: auto;
         top: 0px;
         svg {
-          transform: translateY(5%);
+          transform: translateY(20px);
         }
       }
     }
