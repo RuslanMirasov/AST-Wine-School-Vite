@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Mabry Pro Center";
   src: url("../fonts/mabrypro-regular.woff2") format("woff2"), url("../fonts/mabrypro-regular.woff") format("woff");
@@ -5482,6 +5481,18 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 .order-text .buttons {
   margin-top: auto;
 }
+.order-text .buttons > .price-and-btn {
+  width: auto;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+.order-text .buttons > .price-and-btn .price,
+.order-text .buttons > .price-and-btn .button {
+  margin: 0;
+}
+.order-text .buttons > .price-and-btn .button {
+  width: auto;
+}
 
 .status-list {
   display: inline-flex;
@@ -8393,9 +8404,8 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   color: var(--blue);
 }
 .cart-steps li.active:before {
-  content: "✓";
-  background-color: var(--green);
-  color: var(--white);
+  content: "";
+  background: var(--green) url("../img/svg/cart-step-check.svg") no-repeat center/var(--fs-16);
 }
 
 .customer-data [data-tab] {
@@ -8463,7 +8473,13 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
     flex-direction: column;
   }
   .cart-steps li:after {
-    content: none;
+    position: absolute;
+    top: var(--fs-16);
+    left: calc(100% + 4px);
+    width: var(--fs-24);
+    margin: 0;
+    transform: translateX(-50%);
+    background-color: var(--blue-menu-active);
   }
   .cart-steps li:before {
     margin: 0 auto;
@@ -13010,6 +13026,9 @@ a.calendar-slider-day__inner:focus-visible {
 
 .section-teachers-sliader .swiper-mobil-pagination {
   order: 2;
+}
+.section-teachers-sliader .container > .title + .arrows {
+  margin-left: auto;
 }
 .section-teachers-sliader .container > .button {
   margin-left: auto;

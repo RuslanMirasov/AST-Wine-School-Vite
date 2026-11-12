@@ -255,7 +255,13 @@
       flex: 1;
       flex-direction: column;
       &:after {
-        content: none;
+        position: absolute;
+        top: var(--fs-16);
+        left: calc(100% + 4px);
+        width: var(--fs-24);
+        margin: 0;
+        transform: translateX(-50%);
+        background-color: var(--blue-menu-active);
       }
       &:before {
         margin: 0 auto;

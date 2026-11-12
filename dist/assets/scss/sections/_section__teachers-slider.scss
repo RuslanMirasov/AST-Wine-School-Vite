@@ -3,6 +3,9 @@
     order: 2;
   }
   .container {
+    > .title + .arrows {
+      margin-left: auto;
+    }
     > .button {
       margin-left: auto;
       @media (max-width: 767px) {
