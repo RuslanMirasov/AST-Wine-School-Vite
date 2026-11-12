@@ -2149,6 +2149,9 @@ textarea {
 .text.grey-medium {
   color: var(--grey-medium);
 }
+.text.red {
+  color: var(--invalid);
+}
 .text.blue-text {
   color: var(--blue-text);
 }
@@ -8259,6 +8262,102 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   margin-top: auto;
   font-size: 1.2em;
   --lh: 1;
+}
+
+.section--cert-balance .collage > .col--2:first-child {
+  padding-right: 30px;
+}
+@media (min-width: 1920px) {
+  .section--cert-balance .collage > .col--2:first-child {
+    padding-right: 80px;
+  }
+}
+@media (max-width: 1151px) {
+  .section--cert-balance .collage > .col--2:first-child {
+    padding-right: 0px;
+  }
+}
+@media (max-width: 1023px) {
+  .section--cert-balance .collage > .col--2 {
+    width: 100%;
+  }
+}
+
+.cert-balance-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: var(--fs-32);
+  padding: var(--fs-32);
+}
+@media (max-width: 1279px) {
+  .cert-balance-form {
+    gap: var(--fs-24);
+    padding: var(--fs-28);
+  }
+}
+@media (max-width: 767px) {
+  .cert-balance-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--fs-16);
+    padding: var(--fs-20);
+  }
+}
+
+.cert-balance-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-24);
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 360px;
+}
+.cert-balance-fields > .label,
+.cert-balance-fields > .buttons {
+  margin: 0;
+}
+.cert-balance-fields .button {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .cert-balance-fields {
+    display: contents;
+  }
+  .cert-balance-fields > .label {
+    order: 1;
+  }
+  .cert-balance-fields > .buttons {
+    order: 3;
+  }
+}
+
+.cert-balance-result {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--input-height);
+  margin-top: calc(var(--label-font-size) + var(--label-margin-bottom));
+}
+.cert-balance-result > * {
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .cert-balance-result {
+    order: 2;
+    align-items: flex-start;
+    min-height: 0;
+    margin-top: 0;
+  }
+}
+
+.cert-balance-success {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-2);
 }
 
 .order-details {
