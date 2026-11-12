@@ -266,7 +266,6 @@ html:has(.a11y) .a11y-panel {
   pointer-events: auto;
 }
 
-/* Вращение по кругу */
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -1939,6 +1938,16 @@ textarea {
   }
 }
 
+.arrow.swiper-button-lock,
+.swiper-mobil-pagination.swiper-pagination-lock {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .swiper:has(~ .swiper-mobil-pagination) {
+    margin-bottom: calc(var(--fs-12) * -1);
+  }
+}
 .swiper-mobil-pagination {
   display: flex;
 }
@@ -2245,6 +2254,9 @@ textarea {
   .text.fs-14 {
     font-size: var(--fs-16);
   }
+  .label--file > .text.fs-12 {
+    font-size: var(--fs-12);
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .a11y.a11y-font-big .title.title--24 {
@@ -2536,6 +2548,26 @@ textarea {
   min-height: 100%;
 }
 
+.post-card-collection[data-slider] .swiper-slide > .post-card {
+  width: 100%;
+}
+.post-card-collection[data-slider] .swiper-slide.swiper-slide-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (max-width: 1279px) {
+  .post-card-collection[data-slider] .swiper-slide {
+    width: calc(100vw - 32px);
+    max-width: 354px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+@media (max-width: 767px) {
+  .post-card-collection[data-slider] .arrows {
+    display: none;
+  }
+}
 .post-card-collection .container > .title--40 + .button {
   margin-left: auto;
 }
@@ -6244,6 +6276,23 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   .degustations-hero.collage > .col--2.degustations-hero-image {
     height: 50vw;
   }
+  .degustations-hero.collage:has(.why-ast-desc) > .degustations-hero-image {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .degustations-hero.collage:has(> .degustations-hero-image > .content.dark) > .col--2 {
+    width: calc((100% - var(--fs-24)) / 2);
+  }
+  .degustations-hero.collage:has(> .degustations-hero-image > .content.dark) > .col--2.degustations-hero-image {
+    height: auto;
+  }
+  .degustations-hero.collage:has(> .degustations-hero-image > .content.dark) .content {
+    border-radius: var(--fs-30);
+  }
+  .degustations-hero.collage:has(> .degustations-hero-image > .content.dark) .content.pad--38 {
+    padding: var(--fs-20);
+  }
 }
 @media (max-width: 767px) {
   .degustations-hero.collage .col--2 {
@@ -6307,7 +6356,8 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   .card-banner .image-background {
     height: 300px;
     --fade-direction: 0deg;
-    --fade-size: 30%;
+    --fade-hold: 30%;
+    --fade-size: 70%;
   }
   .card-banner .buttons {
     margin-top: auto;
@@ -6353,6 +6403,17 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   }
   .section--degistation-list .collage .col--1 .col--3 .content,
   .section--classrooms .collage .col--1 .col--3 .content {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1151px) {
+  .section--degistation-list .collage .col--1 > .col--2-3 {
+    width: calc(66.666666% - var(--fs-24) / 2);
+  }
+  .section--degistation-list .collage .col--1 > .col--3 {
+    width: calc(33.333333% - var(--fs-24) / 2);
+  }
+  .section--degistation-list .collage .col--1 > .col--3 .content {
     width: 100%;
   }
 }
@@ -6491,6 +6552,12 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   }
 }
 
+.order-degustation-form {
+  scroll-margin: 50px;
+}
+.order-degustation-form .price-and-btn {
+  align-items: flex-end;
+}
 .order-degustation-form > .label {
   max-width: var(--fs-300);
 }
@@ -6549,6 +6616,13 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   }
   .yandex-map-wrapper .search-navigation li {
     flex: none;
+  }
+  .yandex-map-wrapper .search-navigation li:first-child {
+    width: 100%;
+  }
+  .yandex-map-wrapper .search-navigation .search-navigation__btn {
+    padding-left: var(--fs-12);
+    padding-right: var(--fs-12);
   }
   .yandex-map-wrapper > .button {
     order: 2;
@@ -6677,6 +6751,18 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   flex: 1 1 auto;
 }
 @media (max-width: 1023px) {
+  .section--privat-events-hero .col--2-3 .privat-events-hero-image {
+    min-height: 346px;
+  }
+  .section--privat-events-hero .col--2-3 .privat-events-hero-image .content-text {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section--privat-events-hero .col--2-3 .privat-events-hero-image .content-text > .button {
+    margin-top: auto;
+  }
   .section--privat-events-hero .col--3,
   .section--privat-events-hero .col--2-3 {
     min-width: 100%;
@@ -6690,6 +6776,9 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   }
 }
 @media (max-width: 767px) {
+  .section--privat-events-hero .col--2-3 .privat-events-hero-image {
+    min-height: 366px;
+  }
   .section--privat-events-hero .col--3 {
     flex-direction: column;
   }
@@ -8390,11 +8479,21 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   margin-top: auto;
 }
 @media (max-width: 1023px) {
-  .section--referal-program-hero .collage .col--2 {
-    min-width: 100%;
-  }
   .section--referal-program-hero .content {
     min-height: 300px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section--referal-program-hero .collage > .col--2:first-child {
+    width: calc(66.666666% - var(--fs-24) / 2);
+  }
+  .section--referal-program-hero .collage > .col--2:last-child {
+    width: calc(33.333333% - var(--fs-24) / 2);
+  }
+}
+@media (max-width: 767px) {
+  .section--referal-program-hero .collage .col--2 {
+    min-width: 100%;
   }
 }
 @media (max-width: 767px) {
@@ -8428,11 +8527,21 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 .section--pass-to .button {
   margin-top: auto;
 }
-@media (max-width: 1151px) {
-  .section--pass-to .collage .col--3-8,
-  .section--pass-to .collage .col--5-8 {
-    min-width: 100%;
+@media (min-width: 768px) and (max-width: 1151px) {
+  .section--pass-to .collage .col--3-8 {
+    width: calc(66.666666% - var(--fs-24) / 2);
   }
+  .section--pass-to .collage .col--5-8 {
+    width: calc(33.333333% - var(--fs-24) / 2);
+  }
+  .section--pass-to .collage .col--5-8 > .col--4-6 {
+    display: none;
+  }
+  .section--pass-to .collage .col--5-8 > .col--2-6 {
+    width: 100%;
+  }
+}
+@media (max-width: 1151px) {
   .section--pass-to .collage .col--3-8 .content,
   .section--pass-to .collage .col--5-8 .content {
     min-height: 280px;
@@ -8443,6 +8552,12 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   }
 }
 @media (max-width: 767px) {
+  .section--pass-to .collage .col--3-8 {
+    min-width: 100%;
+  }
+  .section--pass-to .collage .col--5-8 {
+    display: none;
+  }
   .section--pass-to .collage .col--4-6,
   .section--pass-to .collage .col--2-6 {
     min-width: 100%;
@@ -8735,6 +8850,24 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 .section--teacher-events .teachers-list {
   margin-top: 0px;
 }
+@media (min-width: 768px) and (max-width: 1151px) {
+  .section--teacher-events .teachers-list > .col--3:has(> .post-card > .image-background) {
+    width: 100%;
+  }
+  .section--teacher-events .teachers-list > .col--3:has(> .post-card > .image-background) .post-card {
+    min-height: 260px;
+  }
+  .section--teacher-events .teachers-list > .col--3:has(> .post-card > .image-background) .image-background.white-gradient.to-top {
+    --fade-direction: 90deg;
+    --fade-size: 65%;
+  }
+  .section--teacher-events .teachers-list > .col--3:has(> .post-card > .image-background) .content-text {
+    max-width: 50%;
+  }
+  .section--teacher-events .teachers-list > .col--3:has(> .post-card > .image-background) .buttons {
+    justify-content: flex-start;
+  }
+}
 
 @media (min-width: 1920px) {
   .collage.teachers-list .col--2-3 {
@@ -8823,7 +8956,7 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 @media (max-width: 767px) {
   .content.teachers-bunner {
     overflow: hidden;
-    padding-bottom: 260px;
+    padding-bottom: 275px;
   }
   .content.teachers-bunner .buttons .button {
     width: 100%;
@@ -8831,6 +8964,13 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 }
 .content.teachers-bunner .buttons {
   z-index: 2;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .content.teachers-bunner .buttons {
+    display: grid;
+    grid-template-columns: max-content;
+    justify-content: start;
+  }
 }
 .content.teachers-bunner .content-text {
   max-width: 680px;
@@ -8884,10 +9024,22 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   max-width: 100%;
   margin: 0 auto;
 }
+@media (max-width: 1279px) {
+  .content.teachers-bunner .teachers-bunner-image img {
+    top: 5%;
+    height: 95%;
+  }
+}
 @media (max-width: 1023px) {
   .content.teachers-bunner .teachers-bunner-image img {
     top: 10%;
     height: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .content.teachers-bunner .teachers-bunner-image img {
+    top: 28%;
+    height: 72%;
   }
 }
 .content.teachers-bunner .teachers-bunner-image .flower {
@@ -8955,7 +9107,15 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
     grid-template-columns: minmax(0, 1fr) 400px;
   }
 }
-@media (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section--teacher-hero .container {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "text photo" "text bottom";
+    column-gap: var(--fs-16);
+  }
+}
+@media (max-width: 767px) {
   .section--teacher-hero .container {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: none;
@@ -8995,7 +9155,13 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   flex-shrink: 0;
   margin-left: auto;
 }
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .teacher-descrition__bottom .content.pad--40 {
+    padding: var(--fs-20);
+    border-radius: var(--fs-30);
+  }
+}
+@media (max-width: 1023px) {
   .teacher-descrition__bottom {
     flex-direction: column;
     align-items: stretch;
@@ -9043,7 +9209,12 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
     max-width: 400px;
   }
 }
-@media (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .teacher-thumbnail {
+    max-width: 100%;
+  }
+}
+@media (max-width: 767px) {
   .teacher-thumbnail {
     max-width: 440px;
   }
@@ -10467,13 +10638,6 @@ a.calendar-slider-day__inner:focus-visible {
   }
 }
 @media (max-width: 499px) {
-  .section--collage .collage > .col--2 {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: none;
-  }
-  .section--collage .collage-image:before {
-    padding-top: 70.125786%;
-  }
   .section--collage .content-text {
     padding-bottom: var(--fs-16);
   }
@@ -10519,15 +10683,6 @@ a.calendar-slider-day__inner:focus-visible {
 @media (max-width: 767px) {
   .collage-image {
     border-radius: var(--fs-30);
-  }
-}
-@media (max-width: 499px) {
-  .collage-image:before {
-    content: none !important;
-  }
-  .collage-image img {
-    position: relative;
-    height: auto;
   }
 }
 

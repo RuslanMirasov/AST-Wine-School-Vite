@@ -118,7 +118,7 @@ const decodeEmailDomain = email => {
 export const customRules = {
   email: {
     test: value => /^[\p{L}\p{N}._%+-]+@(?:[\p{L}\p{N}](?:[\p{L}\p{N}-]*[\p{L}\p{N}])?\.)+\p{L}{2,}$/iu.test(decodeEmailDomain(value.trim())),
-    message: 'Пожалуйста, укажите корректный email',
+    message: 'Пожалуйста, введите корректный email',
   },
   tel: {
     test: (value, input) => /^\+7 \d{3} \d{3} \d{2} \d{2}$/.test(value.trim()) || (!input?.required && !/\d/.test(value.trim().slice(2))),

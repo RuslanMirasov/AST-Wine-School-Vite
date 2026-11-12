@@ -284,6 +284,10 @@
       font-size: var(--fs-16);
     }
   }
+
+  .label--file > .text.fs-12 {
+    font-size: var(--fs-12);
+  }
 }
 
 .a11y {
@@ -480,10 +484,3 @@
     }
   }
 }
-
-// .a11y-theme-dark {
-//   .title,
-//   .text {
-//     color: var(--white);
-//   }
-// }

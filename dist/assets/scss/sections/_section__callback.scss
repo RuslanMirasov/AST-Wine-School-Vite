@@ -1,6 +1,6 @@
 .section-callback {
   .content {
-    max-width: 50rem; //800px
+    max-width: 50rem;
     border-radius: var(--fs-30);
     padding: var(--fs-30);
     margin: 0 auto;
@@ -53,7 +53,7 @@
     padding-bottom: var(--fs-40);
 
     .input.input--textarea {
-      height: 100px; //74px
+      height: 100px;
     }
   }
 
@@ -78,15 +78,3 @@
     }
   }
 }
-
-// .body.a11y {
-//   &.a11y-theme-light {
-//     .section-callback {
-//       .content {
-//         box-shadow: none;
-//         background-color: var(--grey-light);
-//         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-//       }
-//     }
-//   }
-// }

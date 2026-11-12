@@ -480,7 +480,7 @@
           <div class="collage">
             <div class="col--2">
               <div class="content pad--32">
-                <form action="#" class="form order-degustation-form">
+                <form action="#" class="form order-degustation-form" id="degustation-order-form">
                   <label class="label">
                     <p class="label-text">Выберите время</p>
                     <select data-select name="start-time" required data-required-error-text="Пожалуйста, выберите время">
@@ -517,7 +517,7 @@
                       <span class="title title--32 bold">134&nbsp;500&nbsp;₽</span>
                     </div>
 
-                    <a href="../../courses/offline/quick-start/" class="button"><span>В корзину</span></a>
+                    <a href="../../courses/offline/quick-start/" class="button" data-fix-button-anchor><span>В корзину</span></a>
                   </div>
                 </form>
               </div>
@@ -673,8 +673,7 @@
                   на&nbsp;эту дегустацию — и&nbsp;он окажется в&nbsp;центре таких же&nbsp;ярких впечатлений.
                 </p>
                 <div class="buttons ta--l gap--12">
-                  <button type="button" class="button" data-popup-open="degustation-order"><span>Записаться</span></button>
-                  <button type="button" class="button white-border"><span>Подарить другу</span></button>
+                  <a href="#degustation-order-form" class="button"><span>Записаться</span></a>
                 </div>
               </div>
 
@@ -964,6 +963,10 @@
         </div>
       </section>
     </main>
+
+    <div class="fix-button" data-fix-button>
+      <a href="../../courses/offline/quick-start/" class="button"><span>В корзину</span></a>
+    </div>
 
     <!--FOOTER-->
     <!--FOOTER-->

@@ -1,6 +1,3 @@
-// Галерея картинок на SimpleLightbox (js/modules/image-gallery.js). Стили библиотеки подгружаются вместе с ней
-// и идут после наших, поэтому селекторы здесь специфичнее: обёртка с классом .gallery-lightbox (опция className),
-// затемнение — через body
 
 :root {
   --gallery-lightbox-gap: 8px;
@@ -11,14 +8,11 @@
   }
 }
 
-// Картинки галерей открываются увеличенными — курсор-лупа. Глобально для любого блока data-gallery:
-// сама картинка с data-source и её обёртка (у картинок может стоять pointer-events: none — тогда клик ловит обёртка)
 [data-gallery] [data-source],
 [data-gallery] :has(> [data-source]) {
   cursor: zoom-in;
 }
 
-// Затемнение — как у просмотра сертификата (.basicLightbox)
 body .sl-overlay {
   background: rgba(39, 53, 81, 0.9);
 }
@@ -35,10 +29,8 @@ body .sl-overlay {
     grid-area: 2 / 2;
     place-self: center;
     position: relative;
-    // Размеры задаёт SimpleLightbox, а положение — сетка галереи.
     inset: auto !important;
 
-    // Сохраняем размер ячейки, пока библиотека скрывает снимок при листании.
     &[style*='display: none'] {
       display: block !important;
       visibility: hidden;
@@ -53,7 +45,6 @@ body .sl-overlay {
     pointer-events: none;
   }
 
-  // Без эффектов при наведении — в том числе стандартного полупрозрачного у библиотеки (.sl-wrapper button:hover)
   button:hover {
     opacity: 1;
   }
@@ -64,8 +55,6 @@ body .sl-overlay {
     color: var(--white);
   }
 
-  // Кнопки — квадрат размера --gallery-lightbox-button, иконка по центру отступом: центрирование не зависит
-  // от display, который библиотека может поставить кнопке сама
   .sl-close,
   .sl-navigation button {
     box-sizing: border-box;

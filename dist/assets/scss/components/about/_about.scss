@@ -89,7 +89,6 @@
   img {
     border-radius: var(--fs-30);
 
-    // Текст обтекает картинку и, когда она закончилась, уходит на всю ширину
     &.left {
       float: left;
       margin: 0px var(--fs-24) var(--fs-16) 0px;

@@ -21,7 +21,6 @@
 
 .posts-slider {
   .swiper-slide {
-    // Видны все слайды в зоне контейнера — класс ставит Swiper (watchSlidesProgress), в том числе во время перетаскивания
     &.swiper-slide-visible {
       opacity: 1;
       pointer-events: all;
@@ -60,9 +59,6 @@
   .buttons {
     margin-top: var(--fs-24);
 
-    // @media (max-width: 767px) {
-    //   justify-content: flex-start;
-    // }
   }
 }
 
@@ -75,10 +71,9 @@
   background-color: var(--grey-light);
   border-radius: var(--fs-30);
   @media (max-width: 767px) {
-    //border-radius: var(--fs-16);
     border-radius: var(--fs-20);
   }
-  margin-bottom: var(--fs-10); //10px
+  margin-bottom: var(--fs-10);
   flex-shrink: 0;
   &:before {
     content: '';
@@ -107,7 +102,7 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  gap: var(--fs-6); //6px
+  gap: var(--fs-6);
   margin-bottom: auto;
 
   .text {
@@ -123,13 +118,13 @@
       justify-content: center;
       align-items: center;
       align-content: center;
-      gap: var(--fs-5); //5px
+      gap: var(--fs-5);
       color: var(--grey-medium);
       --lh: 1.2;
       svg {
         display: block;
-        width: var(--fs-18); //18px
-        height: var(--fs-18); //18px
+        width: var(--fs-18);
+        height: var(--fs-18);
       }
     }
   }
@@ -164,7 +159,6 @@
       }
     }
 
-    // A++
     &.a11y-font-large {
       .post-slide-image {
         margin-bottom: var(--fs-14);
@@ -174,8 +168,8 @@
         .text {
           &.fs-14 {
             svg {
-              width: var(--fs-24); //18px
-              height: var(--fs-24); //18px
+              width: var(--fs-24);
+              height: var(--fs-24);
             }
           }
         }
