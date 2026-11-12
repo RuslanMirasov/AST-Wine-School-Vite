@@ -1,6 +1,3 @@
-// .choices__list--dropdown .choices__placeholder {
-//   display: none;
-// }
 
 .teachers-search {
   display: flex;
@@ -395,7 +392,6 @@
       'text bottom';
     column-gap: var(--fs-16);
   }
-  // В столбик: фото, текст на всю ширину, под ним стаж с кнопкой
   @media (max-width: 767px) {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: none;
@@ -450,7 +446,6 @@
     }
   }
 
-  // Стаж и кнопка на всю ширину, один под другим
   @media (max-width: 1023px) {
     flex-direction: column;
     align-items: stretch;

@@ -37,7 +37,6 @@
   }
 }
 
-// Аккордеон раскрывается только стрелкой — указатель только на ней (ссылки в шапке получают его сами)
 [data-accordeon-arrow-only] > [data-accordeon-head] {
   cursor: default;
   > button {
@@ -77,7 +76,6 @@
     padding: var(--fs-20) var(--fs-16);
     .title {
       font-size: var(--fs-20);
-      //font-weight: 400;
       --lh: 1.1;
     }
   }

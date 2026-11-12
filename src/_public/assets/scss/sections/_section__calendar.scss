@@ -142,7 +142,6 @@
   left: 0px;
   top: 0px;
   width: 100%;
-  // dvh — по текущей высоте экрана: на iPhone панели Safari прячутся, и с svh снизу оставалась полоса страницы
   height: 100svh;
   height: 100dvh;
   overflow: hidden;

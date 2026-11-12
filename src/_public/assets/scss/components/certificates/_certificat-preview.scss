@@ -7,10 +7,8 @@
 }
 
 .certificat-responsive-edit {
-  // Кнопка в стиле .button, но в em от базы листа (1em = 10px при ширине 720px) — масштабируется вместе с превью
   display: inline-flex;
   position: absolute;
-  // Справа от кнопки — крестик: его ширина 2.4em + зазор 1.6em
   right: 6em;
   top: 2em;
   z-index: 2;
@@ -46,7 +44,6 @@
   }
 }
 
-// Крестик закрытия просмотра: вид .popup-close, размеры в em от базы листа, по центру высоты кнопки «Редактировать»
 .certificat-responsive-close.popup-close {
   position: absolute;
   right: 2em;
@@ -57,8 +54,6 @@
   color: inherit;
 }
 
-// На мобилке кнопка и крестик в 1.5 раза крупнее: font-size увеличивает базу, от которой в em посчитаны
-// и их размеры, и отступы от края — взаимное положение (крестик справа, по центру кнопки) сохраняется
 @media (max-width: 767px) {
   .certificat-responsive-edit,
   .certificat-responsive-close.popup-close {
@@ -72,7 +67,6 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  // Все размеры листа — в em от этой базы: 1em = 10px при ширине обёртки 720px и сжимается вместе с ней
   font-size: calc(100cqw / 72);
   border-radius: 3em;
   overflow: hidden;
