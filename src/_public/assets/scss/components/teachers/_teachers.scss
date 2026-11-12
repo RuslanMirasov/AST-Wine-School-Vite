@@ -118,6 +118,29 @@
   .teachers-list {
     margin-top: 0px;
   }
+
+  @media (min-width: 768px) and (max-width: 1151px) {
+    .teachers-list > .col--3:has(> .post-card > .image-background) {
+      width: 100%;
+
+      .post-card {
+        min-height: 260px;
+      }
+
+      .image-background.white-gradient.to-top {
+        --fade-direction: 90deg;
+        --fade-size: 65%;
+      }
+
+      .content-text {
+        max-width: 50%;
+      }
+
+      .buttons {
+        justify-content: flex-start;
+      }
+    }
+  }
 }
 
 //1920
@@ -241,6 +264,11 @@
   }
   .buttons {
     z-index: 2;
+    @media (min-width: 768px) and (max-width: 1023px) {
+      display: grid;
+      grid-template-columns: max-content;
+      justify-content: start;
+    }
   }
   .content-text {
     max-width: 680px;
@@ -289,9 +317,17 @@
       height: 100%;
       max-width: 100%;
       margin: 0 auto;
+      @media (max-width: 1279px) {
+        top: 5%;
+        height: 95%;
+      }
       @media (max-width: 1023px) {
         top: 10%;
         height: 90%;
+      }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        top: 28%;
+        height: 72%;
       }
     }
 
