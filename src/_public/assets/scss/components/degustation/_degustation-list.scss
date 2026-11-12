@@ -124,3 +124,17 @@
     }
   }
 }
+
+@media (min-width: 768px) and (max-width: 1151px) {
+  .section--degistation-list .collage .col--1 {
+    > .col--2-3 {
+      width: calc(66.666666% - (var(--fs-24) / 2));
+    }
+    > .col--3 {
+      width: calc(33.333333% - (var(--fs-24) / 2));
+      .content {
+        width: 100%;
+      }
+    }
+  }
+}
