@@ -50,6 +50,21 @@
   .buttons {
     margin-top: auto;
   }
+
+  .buttons > .price-and-btn {
+    width: auto;
+    margin-left: auto;
+    justify-content: flex-end;
+
+    .price,
+    .button {
+      margin: 0;
+    }
+
+    .button {
+      width: auto;
+    }
+  }
 }
 
 .status-list {
