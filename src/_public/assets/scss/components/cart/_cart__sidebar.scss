@@ -170,9 +170,8 @@
     &.active {
       color: var(--blue);
       &:before {
-        content: '✓';
-        background-color: var(--green);
-        color: var(--white);
+        content: '';
+        background: var(--green) url('../img/svg/cart-step-check.svg') no-repeat center / var(--fs-16);
       }
     }
   }
