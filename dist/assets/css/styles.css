@@ -2567,8 +2567,18 @@ textarea {
     display: none;
   }
 }
+.post-card-collection .container > .button.show-in-tablet {
+  margin-left: auto;
+  margin-right: auto;
+}
 .post-card-collection .container > .title--40 + .button {
   margin-left: auto;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .post-card-collection .container > .title--40 + .button {
+    order: 2;
+    margin-right: auto;
+  }
 }
 .post-card-collection .page-not-found {
   order: 3;
@@ -10629,6 +10639,16 @@ a.calendar-slider-day__inner:focus-visible {
   }
 }
 
+@media (min-width: 1024px) {
+  .section--collage [data-show-more-btn] {
+    display: none;
+  }
+}
+@media (max-width: 1023px) {
+  .section--collage[data-show-more]:not(.is-expanded) [data-show-more-item], .section--collage[data-show-more].is-expanded [data-show-more-btn] {
+    display: none;
+  }
+}
 .section--collage .collage > .col--2 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
