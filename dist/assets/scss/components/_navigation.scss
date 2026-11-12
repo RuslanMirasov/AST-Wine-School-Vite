@@ -683,6 +683,29 @@ ul li.search-toggle-el {
   }
 }
 
+@media (min-width: 1920px) {
+  .menu li .menu-link,
+  .mega-menu .submenu .menu-link {
+    font-size: var(--fs-18);
+  }
+
+  .recomendations-menu {
+    .title,
+    .recomendation p {
+      font-size: var(--fs-16);
+    }
+  }
+
+  .header-dropdown .search-form .input {
+    font-size: var(--fs-16);
+  }
+
+  .mega-menu .socials a {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .a11y-theme-dark {
   .nav-arrow {
     background: var(--black);

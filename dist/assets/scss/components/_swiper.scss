@@ -176,6 +176,7 @@
 }
 
 .arrow.swiper-button-lock,
+.arrows:has(> .arrow):not(:has(> .arrow:not(.swiper-button-lock))),
 .swiper-mobil-pagination.swiper-pagination-lock {
   display: none !important;
 }

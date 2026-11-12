@@ -1616,6 +1616,23 @@ textarea {
     display: none;
   }
 }
+@media (min-width: 1920px) {
+  .menu li .menu-link,
+  .mega-menu .submenu .menu-link {
+    font-size: var(--fs-18);
+  }
+  .recomendations-menu .title,
+  .recomendations-menu .recomendation p {
+    font-size: var(--fs-16);
+  }
+  .header-dropdown .search-form .input {
+    font-size: var(--fs-16);
+  }
+  .mega-menu .socials a {
+    width: 32px;
+    height: 32px;
+  }
+}
 .a11y-theme-dark .nav-arrow {
   background: var(--black);
   color: var(--white);
@@ -1938,6 +1955,7 @@ textarea {
 }
 
 .arrow.swiper-button-lock,
+.arrows:has(> .arrow):not(:has(> .arrow:not(.swiper-button-lock))),
 .swiper-mobil-pagination.swiper-pagination-lock {
   display: none !important;
 }
@@ -10176,29 +10194,6 @@ a.calendar-slider-day__inner:focus-visible {
   }
 }
 
-.section--news-list .container > .button {
-  margin-left: auto;
-}
-@media (max-width: 767px) {
-  .section--news-list .container > .button {
-    order: 2;
-    width: 100%;
-  }
-}
-@media (max-width: 1023px) {
-  .section--news-list .collage .col--3 {
-    width: calc((100% - var(--fs-24)) / 2);
-  }
-}
-@media (max-width: 767px) {
-  .section--news-list .collage .col--3 {
-    min-width: 100%;
-  }
-  .section--news-list .collage .col--3 .button {
-    width: 100%;
-  }
-}
-
 @media (max-width: 767px) {
   .section--history .container > .text.fs-20 {
     font-size: var(--fs-16);
@@ -13172,7 +13167,6 @@ a.calendar-slider-day__inner:focus-visible {
   .section-teachers-sliader .container > .title {
     width: 100%;
     --lh: 1.2;
-    max-width: calc(100% - 84px - 24px);
   }
   .section-teachers-sliader .container .arrows {
     display: none;
