@@ -133,174 +133,276 @@
         </div>
       </section>
 
-      <!--ПРЕПОДАВАТЕЛИ-->
-      <section class="section section--news-list cards-hover">
-        <div class="container">
-          <h2 class="title title--32 upper">Преподаватели</h2>
-          <a href="%ROOT%about/teachers/" class="button magenta-light"><span>Смотреть все</span></a>
-
-          <ul class="collage">
-            <li class="col--3">
-              <article class="post-card gap--16 pad--24">
-                <a href="%ROOT%about/teachers/teacher/" class="post-card-image">
-                  <img src="/assets/img/teachers/10.webp" alt="Антон Субботин" title="Антон Субботин" />
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold"><a href="%ROOT%about/teachers/teacher/" class="title-link">Антон Субботин</a></h3>
-                  <b class="text fs-14 magenta cut-2">Руководитель образовательного центра AST, Кавалер Ордена Вина Испании</b>
-                  <p class="text fs-14 grey-text cut-3">
-                    Эксперт с&nbsp;уникальным статусом «Кавалеры Ордена Вина Испании» и&nbsp;сертифицированный преподаватель по&nbsp;международным
-                    программам.
-                  </p>
-                </div>
-
-                <div class="buttons ta--r">
-                  <a href="%ROOT%about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </li>
-
-            <li class="col--3">
-              <article class="post-card gap--16 pad--24">
-                <a href="%ROOT%about/teachers/teacher/" class="post-card-image">
-                  <img src="/assets/img/teachers/15.webp" alt="Влад Лесничий" title="Влад Лесничий" />
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold"><a href="%ROOT%about/teachers/teacher/" class="title-link">Влад Лесничий</a></h3>
-                  <b class="text fs-14 magenta cut-2">Эксперт по&nbsp;международным винам и&nbsp;дегустациям</b>
-                  <p class="text fs-14 grey-text cut-3">
-                    Признанный специалист, чьи занятия помогают студентам «раскрыть» свой вкус и&nbsp;научиться понимать вино на&nbsp;глубоком уровне.
-                  </p>
-                </div>
-
-                <div class="buttons ta--r">
-                  <a href="%ROOT%about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </li>
-
-            <li class="col--3">
-              <article class="post-card gap--16 pad--24">
-                <a href="%ROOT%about/teachers/teacher/" class="post-card-image">
-                  <img src="/assets/img/teachers/17.webp" alt="Константин Комсомольск-на-амуровский" title="Константин Комсомольск-на-амуровский" />
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold">
-                    <a href="%ROOT%about/teachers/teacher/" class="title-link">Константин Комсомольск-на-амуровский</a>
-                  </h3>
-                  <b class="text fs-14 magenta cut-2">Ведущий лектор профессиональных программ</b>
-                  <p class="text fs-14 grey-text cut-3">
-                    Один из&nbsp;ключевых преподавателей AST, специализирующийся на&nbsp;подготовке профессионалов индустрии.
-                  </p>
-                </div>
-
-                <div class="buttons ta--r">
-                  <a href="%ROOT%about/teachers/teacher/" class="button magenta-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <load src="/_partials/sections/section-teachers-slider.html" />
 
       <!--ДЕГУСТАЦИОННЫЕ ЗАЛЫ-->
-      <section class="section section--news-list cards-hover">
+      <section class="section section-teachers-sliader cards-hover" data-slider data-slides-per-view="4,3,auto,auto" data-space-between="28,28,16,16">
         <div class="container">
           <h2 class="title title--32 upper">Дегустационные залы</h2>
+
           <a href="%ROOT%about/classrooms/" class="button magenta-light"><span>Смотреть все</span></a>
 
-          <ul class="collage">
-            <li class="col--3">
-              <article class="post-card gap--16 pad--24">
+          <div class="arrows inline">
+            <load src="/_partials/components/slider-arrows.html" />
+          </div>
+
+          <div class="swiper">
+            <div class="swiper-wrapper">
+            <!--1-->
+            <div class="swiper-slide">
+              <article class="post-card gap--16">
+                <a href="%ROOT%about/classrooms/classroom/" class="post-card-image">
+                  <img src="/assets/img/promo/17.webp" alt="Зал «Гранд Крю Eurocave CC Extra Lux»" title="Зал «Гранд Крю Eurocave CC Extra Lux»" />
+                </a>
+
+                <div class="content-text">
+                  <h3 class="title title--18 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">Зал «Гранд Крю Eurocave CC Extra Lux»</a></h3>
+                  <ul class="icon-list grey gap--4">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span class="text fs-14 grey-text">г. Санкт-Петербург, ул. Дорога на Турухтанные острова, д. 184</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span class="text fs-14 grey-text">Вместимость: 200 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text grey-text cut-3">Флагманский зал с&nbsp;двойной высотой потолка и&nbsp;антикварной винной коллекцией. Оснащен системой климат-контроля Eurocave и&nbsp;акустическими панелями.</p>
+                </div>
+
+                <div class="buttons ta--r">
+                  <a href="%ROOT%about/classrooms/classroom/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--2-->
+            <div class="swiper-slide">
+              <article class="post-card gap--16">
                 <a href="%ROOT%about/classrooms/classroom/" class="post-card-image">
                   <img src="/assets/img/promo/16.webp" alt="Зал «Терруар»" title="Зал «Терруар»" />
                 </a>
 
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">Зал «Терруар»</a></h3>
-                  <ul class="icon-list grey">
+                <div class="content-text">
+                  <h3 class="title title--18 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">Зал «Терруар»</a></h3>
+                  <ul class="icon-list grey gap--4">
                     <li>
                       <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
-                      <span>г. Москва, ул. Новый Арбат, д. 63</span>
+                      <span class="text fs-14 grey-text">г. Москва, ул. Новый Арбат, д. 63</span>
                     </li>
                     <li>
                       <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
-                      <span>Вместимость: 85 чел.</span>
+                      <span class="text fs-14 grey-text">Вместимость: 85 чел.</span>
                     </li>
                   </ul>
-                  <p class="text fs-14 grey-text cut-3">
-                    Камерное пространство на&nbsp;85&nbsp;мест с&nbsp;профессиональной системой контроля температуры и&nbsp;влажности Cantherm.
-                  </p>
+                  <p class="text grey-text cut-3">Камерное пространство на&nbsp;85&nbsp;мест с&nbsp;профессиональной системой контроля температуры и&nbsp;влажности Cantherm.</p>
                 </div>
 
-                <div class="price-and-btn">
+                <div class="buttons ta--r">
                   <a href="%ROOT%about/classrooms/classroom/" class="button magenta-light"><span>Подробнее</span></a>
                 </div>
               </article>
-            </li>
+            </div>
 
-            <li class="col--3">
-              <article class="post-card gap--16 pad--24">
+            <!--3-->
+            <div class="swiper-slide">
+              <article class="post-card gap--16">
                 <a href="%ROOT%about/classrooms/classroom/" class="post-card-image">
                   <img src="/assets/img/promo/15.webp" alt="VIP-зал «Резерв»" title="VIP-зал «Резерв»" />
                 </a>
 
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">VIP-зал «Резерв»</a></h3>
-                  <ul class="icon-list grey">
+                <div class="content-text">
+                  <h3 class="title title--18 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">VIP-зал «Резерв»</a></h3>
+                  <ul class="icon-list grey gap--4">
                     <li>
                       <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
-                      <span>пос. Абрау-Дюрсо, ул. Промышленная, д. 19</span>
+                      <span class="text fs-14 grey-text">пос. Абрау-Дюрсо, ул. Промышленная, д. 19</span>
                     </li>
                     <li>
                       <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
-                      <span>Вместимость: 20 чел.</span>
+                      <span class="text fs-14 grey-text">Вместимость: 20 чел.</span>
                     </li>
                   </ul>
-                  <p class="text fs-14 grey-text cut-3">
-                    Закрытый VIP-зал на&nbsp;20&nbsp;персон для&nbsp;вертикальных дегустаций и&nbsp;закрытых презентаций. Декантеры Riedel
-                    и&nbsp;система Coravin.
-                  </p>
+                  <p class="text grey-text cut-3">Закрытый VIP-зал на&nbsp;20&nbsp;персон для&nbsp;вертикальных дегустаций и&nbsp;закрытых презентаций. Декантеры Riedel и&nbsp;система Coravin.</p>
                 </div>
 
-                <div class="price-and-btn">
+                <div class="buttons ta--r">
                   <a href="%ROOT%about/classrooms/classroom/" class="button magenta-light"><span>Подробнее</span></a>
                 </div>
               </article>
-            </li>
+            </div>
 
-            <li class="col--3">
-              <article class="post-card gap--16 pad--24">
+            <!--4-->
+            <div class="swiper-slide">
+              <article class="post-card gap--16">
                 <a href="%ROOT%about/classrooms/classroom/" class="post-card-image">
                   <img src="/assets/img/promo/14.webp" alt="Зал «Купаж»" title="Зал «Купаж»" />
                 </a>
 
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">Зал «Купаж»</a></h3>
-                  <ul class="icon-list grey">
+                <div class="content-text">
+                  <h3 class="title title--18 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">Зал «Купаж»</a></h3>
+                  <ul class="icon-list grey gap--4">
                     <li>
                       <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
-                      <span>г. Санкт-Петербург, ул. Строителей, д. 184</span>
+                      <span class="text fs-14 grey-text">г. Санкт-Петербург, ул. Строителей, д. 184</span>
                     </li>
                     <li>
                       <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
-                      <span>Вместимость: 130 чел.</span>
+                      <span class="text fs-14 grey-text">Вместимость: 130 чел.</span>
                     </li>
                   </ul>
-                  <p class="text fs-14 grey-text cut-3">
-                    Просторный зал с&nbsp;панорамным остеклением и&nbsp;регулируемым освещением Lutron с&nbsp;нейтральным спектром.
-                  </p>
+                  <p class="text grey-text cut-3">Просторный зал с&nbsp;панорамным остеклением и&nbsp;регулируемым освещением Lutron с&nbsp;нейтральным спектром.</p>
                 </div>
 
-                <div class="price-and-btn">
+                <div class="buttons ta--r">
                   <a href="%ROOT%about/classrooms/classroom/" class="button magenta-light"><span>Подробнее</span></a>
                 </div>
               </article>
-            </li>
-          </ul>
+            </div>
+
+            <!--5-->
+            <div class="swiper-slide">
+              <article class="post-card gap--16">
+                <a href="%ROOT%about/classrooms/classroom/" class="post-card-image">
+                  <img src="/assets/img/promo/13.webp" alt="Зал «Баррик»" title="Зал «Баррик»" />
+                </a>
+
+                <div class="content-text">
+                  <h3 class="title title--18 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">Зал «Баррик»</a></h3>
+                  <ul class="icon-list grey gap--4">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span class="text fs-14 grey-text">г. Краснодар, ул. Красная, д. 45</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span class="text fs-14 grey-text">Вместимость: 50 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text grey-text cut-3">Уютный зал в&nbsp;стиле бочковой комнаты, облицованный дубовыми панелями из&nbsp;бургундских бочек.</p>
+                </div>
+
+                <div class="buttons ta--r">
+                  <a href="%ROOT%about/classrooms/classroom/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--6-->
+            <div class="swiper-slide">
+              <article class="post-card gap--16">
+                <a href="%ROOT%about/classrooms/classroom/" class="post-card-image">
+                  <img src="/assets/img/promo/12.webp" alt="Зал «Декантер»" title="Зал «Декантер»" />
+                </a>
+
+                <div class="content-text">
+                  <h3 class="title title--18 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">Зал «Декантер»</a></h3>
+                  <ul class="icon-list grey gap--4">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span class="text fs-14 grey-text">г. Сочи, ул. Приморская, д. 78</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span class="text fs-14 grey-text">Вместимость: 40 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text grey-text cut-3">Элегантный зал на&nbsp;берегу моря с&nbsp;панорамными окнами и&nbsp;профессиональной станцией декантации.</p>
+                </div>
+
+                <div class="buttons ta--r">
+                  <a href="%ROOT%about/classrooms/classroom/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--7-->
+            <div class="swiper-slide">
+              <article class="post-card gap--16">
+                <a href="%ROOT%about/classrooms/classroom/" class="post-card-image">
+                  <img src="/assets/img/promo/11.webp" alt="Зал «Миллезим»" title="Зал «Миллезим»" />
+                </a>
+
+                <div class="content-text">
+                  <h3 class="title title--18 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">Зал «Миллезим»</a></h3>
+                  <ul class="icon-list grey gap--4">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span class="text fs-14 grey-text">г. Казань, ул. Баумана, д. 31</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span class="text fs-14 grey-text">Вместимость: 60 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text grey-text cut-3">Зал-архив с&nbsp;подборкой миллезимных вин из&nbsp;частных коллекций и&nbsp;температурными витринами EuroCave.</p>
+                </div>
+
+                <div class="buttons ta--r">
+                  <a href="%ROOT%about/classrooms/classroom/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--8-->
+            <div class="swiper-slide">
+              <article class="post-card gap--16">
+                <a href="%ROOT%about/classrooms/classroom/" class="post-card-image">
+                  <img src="/assets/img/promo/9.webp" alt="Зал «Нуар»" title="Зал «Нуар»" />
+                </a>
+
+                <div class="content-text">
+                  <h3 class="title title--18 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">Зал «Нуар»</a></h3>
+                  <ul class="icon-list grey gap--4">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span class="text fs-14 grey-text">г. Екатеринбург, ул. Ленина, д. 52</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span class="text fs-14 grey-text">Вместимость: 30 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text grey-text cut-3">Камерный зал для&nbsp;дегустаций в&nbsp;полной темноте — формат, обостряющий обоняние и&nbsp;вкусовое восприятие.</p>
+                </div>
+
+                <div class="buttons ta--r">
+                  <a href="%ROOT%about/classrooms/classroom/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+
+            <!--9-->
+            <div class="swiper-slide">
+              <article class="post-card gap--16">
+                <a href="%ROOT%about/classrooms/classroom/" class="post-card-image">
+                  <img src="/assets/img/promo/8.webp" alt="Зал «Солера»" title="Зал «Солера»" />
+                </a>
+
+                <div class="content-text">
+                  <h3 class="title title--18 bold"><a href="%ROOT%about/classrooms/classroom/" class="title-link">Зал «Солера»</a></h3>
+                  <ul class="icon-list grey gap--4">
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#place"></use></svg>
+                      <span class="text fs-14 grey-text">г. Ростов-на-Дону, пр. Буденновский, д. 88</span>
+                    </li>
+                    <li>
+                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#peuple"></use></svg>
+                      <span class="text fs-14 grey-text">Вместимость: 75 чел.</span>
+                    </li>
+                  </ul>
+                  <p class="text grey-text cut-3">Зал в&nbsp;андалусском стиле, посвященный крепленым винам и&nbsp;системе солера.</p>
+                </div>
+
+                <div class="buttons ta--r">
+                  <a href="%ROOT%about/classrooms/classroom/" class="button magenta-light"><span>Подробнее</span></a>
+                </div>
+              </article>
+            </div>
+            </div>
+          </div>
+
+          <div class="swiper-mobil-pagination" data-pagination></div>
         </div>
       </section>
 

@@ -175,8 +175,8 @@
 
     <div class="header-dropdown">
   <!--header search form-->
-  <form action="../../../search/" class="search-form" method="GET" data-form novalidate>
-    <label class="label">
+  <form id="header-search" action="../../../search/" class="search-form" method="GET" data-form novalidate>
+    <div class="label">
       <button type="submit" class="search-submit-icon" aria-label="Отправка формы поиска">
         <svg width="24" height="24"><use href="../../../assets/img/sprite.svg#search"></use></svg>
       </button>
@@ -184,7 +184,7 @@
       <button type="reset" class="search-close" aria-label="Очистить форму поиска">
         <svg width="16" height="16"><use href="../../../assets/img/sprite.svg#reset"></use></svg>
       </button>
-    </label>
+    </div>
   </form>
 
   <!--header navigation menu-->
@@ -494,7 +494,7 @@
       <section class="section">
         <div class="container">
           <div class="content grey pad--40 gap--16">
-            <h1 class="title title--32 upper">Философия преподавания Константина</h1>
+            <h2 class="title title--32 upper">Философия преподавания Константина</h2>
             <p class="text">
               Константин убежден: вино — это не просто напиток, а отражение места, климата и характера человека. В каждом занятии он стремится
               передать эту связь, делая акцент на сенсорном опыте и живом диалоге. Его авторские программы построены так, чтобы каждый ученик мог
@@ -862,7 +862,7 @@
           <h2 class="title title--32 upper">Отзывы</h2>
 
           <div class="buttons auto ta--r">
-            <a href="#" class="button" data-popup-open="add-review"><span>Оставить отзыв</span></a>
+            <button type="button" class="button" data-popup-open="add-review"><span>Оставить отзыв</span></button>
           </div>
 
           <div class="arrows auto">
@@ -1110,7 +1110,7 @@
 
 <!--LOGIN CODE POPUP-->
 <div class="popup-content" id="login-code" role="dialog" aria-modal="true" aria-labelledby="login-code-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="login-code-title">
     Вход
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../../assets/img/sprite.svg#close"></use></svg>
@@ -1133,7 +1133,7 @@
   </script>
 
   <form data-form action="#" class="form" novalidate onsubmit="onLoginCodeSubmit(event)">
-    <label class="label label-code">
+    <div class="label label-code" role="group" aria-label="Проверочный код">
       <input
         type="number"
         name="code"
@@ -1145,7 +1145,7 @@
         aria-hidden="true"
         data-required-error-text="Неверный код"
       />
-    </label>
+    </div>
 
     <button type="button" class="link" data-popup-open="login">Назад</button>
 
@@ -1157,7 +1157,7 @@
 
 <!--LOGIN SUCCESS POPUP-->
 <div class="popup-content" id="login-success" role="dialog" aria-modal="true" aria-labelledby="login-success-title">
-  <p class="text full ta--l">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
+  <p class="text full ta--l" id="login-success-title">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
 
   <div class="buttons ta--l">
     <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
@@ -1166,7 +1166,7 @@
 
 <!--SUBSCRIBE POPUP-->
 <div class="popup-content" id="subscribe" role="dialog" aria-modal="true" aria-labelledby="subscribe-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="subscribe-title">
     <span>Подписка на рассылку</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../../assets/img/sprite.svg#close"></use></svg>
@@ -1191,9 +1191,9 @@
     <fieldset>
       <label class="label">
         <input name="confirmation" type="checkbox" class="checkbox" required data-error-text="Согласие на обработку данных обязательно" />
-        <p class="label-text">
+        <span class="label-text">
           <span>Согласен с&nbsp;<a href="../../../" target="_blank">Условиями обработки персональных данных</a></span>
-        </p>
+        </span>
       </label>
     </fieldset>
 
@@ -1205,7 +1205,7 @@
 
 <!--SUBSCRIBE SUCCESS POPUP-->
 <div class="popup-content" id="subscribe-success" role="dialog" aria-modal="true" aria-labelledby="subscribe-success-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="subscribe-success-title">
     <span>Подписка оформлена</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../../assets/img/sprite.svg#close"></use></svg>
@@ -1302,14 +1302,14 @@
       <input type="tel" name="phone" class="input" />
     </label>
 
-    <label class="label auto" aria-live="polite" aria-atomic="true">
-      <span class="label-text">Ориентировочное количество участников</span>
+    <div class="label auto" aria-live="polite" aria-atomic="true">
+      <label class="label-text" for="teacher-order-count">Ориентировочное количество участников</label>
       <div class="label--count" aria-live="polite" aria-atomic="true">
         <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
-        <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество участников" />
+        <input type="number" id="teacher-order-count" name="count" class="input input--count" min="1" max="999" value="1" />
         <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
       </div>
-    </label>
+    </div>
 
     <label class="label">
       <span class="label-text">Желаемый формат <span class="red">*</span></span>
@@ -1370,6 +1370,52 @@
   </h2>
 
   <p class="text full ta--l">Спасибо! Ваш запрос получен. Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время.</p>
+
+  <div class="buttons ta--l">
+    <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
+  </div>
+</div>
+
+        <!--ADD REVIEW POPUP-->
+<div class="popup-content big" role="dialog" aria-modal="true" aria-labelledby="review-title" id="add-review">
+  <h2 class="popup-title" id="review-title">
+    <span>Отзыв</span>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="../../../assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <h2 class="popup-title fs-18">Быстрый старт: о вине за 3 встречи</h2>
+
+  <script>
+    function onReviewSubmit(e) {
+      e.preventDefault();
+      window.popup.open('add-review-success');
+    }
+  </script>
+
+  <form data-form action="#" class="form" novalidate onsubmit="onReviewSubmit(event)">
+    <label class="label">
+      <span class="label-text">Ваш отзыв *</span>
+      <textarea name="review" class="input input--textarea" placeholder="Расскажите, что вам запомнилось на курсе" required data-required-error-text="Пожалуйста, напишите ваш отзыв"></textarea>
+    </label>
+    <p class="popup-subtitle">Оставляя отзыв, вы соглашаетесь с <a href="#" class="link">условиями использования сайта</a>.</p>
+    <button type="submit" class="button"><span>Оставить отзыв</span></button>
+  </form>
+</div>
+
+<!--REVIEW SUCCESS POPUP-->
+<div class="popup-content" id="add-review-success" role="dialog" aria-modal="true" aria-labelledby="review-success-title">
+  <h2 class="popup-title" id="review-success-title">
+    <span>Отзыв</span>
+    <button class="popup-close" data-popup-close aria-label="Закрыть">
+      <svg width="18" height="18"><use href="../../../assets/img/sprite.svg#close"></use></svg>
+    </button>
+  </h2>
+
+  <h2 class="popup-title fs-18">Быстрый старт: о вине за 3 встречи</h2>
+
+  <p class="text full ta--l">Спасибо! Ваш отзыв отправлен. Он&nbsp;появится после прохождения проверки.</p>
 
   <div class="buttons ta--l">
     <button type="button" class="button" data-popup-close><span>Закрыть</span></button>

@@ -256,7 +256,6 @@ ul li.search-toggle-el {
     top: 100%;
     border-top: 1px solid var(--grey-medium);
     background-color: rgba(255, 255, 255, 1);
-    //backdrop-filter: blur(10px);
     border-radius: 0px 0px 30px 30px;
     box-shadow: 0px 4px 10px rgba(39, 53, 81, 0.102);
     width: auto;
@@ -470,7 +469,6 @@ ul li.search-toggle-el {
     top: 0px;
     left: 0px;
     background: var(--white);
-    //backdrop-filter: blur(10px);
     transform: translate(0%, -100%);
     transition:
       opacity 0.5s var(--cubic),
@@ -602,7 +600,6 @@ ul li.search-toggle-el {
 
 @media (max-width: 767px) {
   .navigation {
-    // Раньше display: flex ставил JS инлайном при открытии меню
     display: flex;
     background: rgba(255, 255, 255, 1);
     backdrop-filter: none;
@@ -686,7 +683,6 @@ ul li.search-toggle-el {
   }
 }
 
-//ТЁМНАЯ ТЕМА
 .a11y-theme-dark {
   .nav-arrow {
     background: var(--black);

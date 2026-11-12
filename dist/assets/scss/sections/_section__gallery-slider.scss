@@ -44,7 +44,6 @@
   }
 }
 
-// Лёгкий зум при наведении, как у карточек: слайд обрезает увеличенную картинку по своему скруглению
 .gallery-slider,
 .interface-slider {
   .swiper-slide {
@@ -89,6 +88,32 @@
   @media (max-width: 767px) {
     height: 200px;
   }
+}
+
+.interface-preview {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  width: 100%;
+
+  &:focus-visible {
+    outline: 3px solid var(--magenta);
+    outline-offset: -4px;
+  }
+
+  &[data-vbtype='video']:hover .player-play-button {
+    background-color: var(--white);
+  }
+}
+
+.video-iframe.course-video-embed {
+  display: block;
+  width: min(100%, calc((100svh - 60px) * 16 / 9));
+  margin-inline: auto;
+}
+
+.vbox-content video[controls] {
+  pointer-events: auto;
 }
 
 @media (max-width: 599px) {

@@ -172,8 +172,8 @@
 
     <div class="header-dropdown">
   <!--header search form-->
-  <form action="../../search/" class="search-form" method="GET" data-form novalidate>
-    <label class="label">
+  <form id="header-search" action="../../search/" class="search-form" method="GET" data-form novalidate>
+    <div class="label">
       <button type="submit" class="search-submit-icon" aria-label="Отправка формы поиска">
         <svg width="24" height="24"><use href="../../assets/img/sprite.svg#search"></use></svg>
       </button>
@@ -181,7 +181,7 @@
       <button type="reset" class="search-close" aria-label="Очистить форму поиска">
         <svg width="16" height="16"><use href="../../assets/img/sprite.svg#reset"></use></svg>
       </button>
-    </label>
+    </div>
   </form>
 
   <!--header navigation menu-->
@@ -603,32 +603,32 @@
           <div class="collage">
             <div class="col--4">
               <div class="content pad--28 gap--12">
-                <h3 class="title title--44 magenta light">01</h3>
-                <b class="text fs-18">Гибкость формата</b>
+                <p class="title title--44 magenta light">01</p>
+                <h3 class="text fs-18 bold">Гибкость формата</h3>
                 <p class="text fs-14 grey-text">От&nbsp;1&nbsp;до&nbsp;150 гостей — от&nbsp;персонального ужина до&nbsp;большого корпоратива.</p>
               </div>
             </div>
 
             <div class="col--4">
               <div class="content pad--28 gap--12">
-                <h3 class="title title--44 magenta light">02</h3>
-                <b class="text fs-18">Выездные мероприятия</b>
+                <p class="title title--44 magenta light">02</p>
+                <h3 class="text fs-18 bold">Выездные мероприятия</h3>
                 <p class="text fs-14 grey-text">Приедем на&nbsp;вашу площадку: офис, загородный дом, лофт, веранда, теплоход.</p>
               </div>
             </div>
 
             <div class="col--4">
               <div class="content pad--28 gap--12">
-                <h3 class="title title--44 magenta light">03</h3>
-                <b class="text fs-18">Интеграция в&nbsp;программу</b>
+                <p class="title title--44 magenta light">03</p>
+                <h3 class="text fs-18 bold">Интеграция в&nbsp;программу</h3>
                 <p class="text fs-14 grey-text">От&nbsp;30&nbsp;минут внутри вашего сценария до&nbsp;полного вечера под&nbsp;ключ.</p>
               </div>
             </div>
 
             <div class="col--4">
               <div class="content pad--28 gap--12">
-                <h3 class="title title--44 magenta light">04</h3>
-                <b class="text fs-18">Формат под&nbsp;ваш бренд</b>
+                <p class="title title--44 magenta light">04</p>
+                <h3 class="text fs-18 bold">Формат под&nbsp;ваш бренд</h3>
                 <p class="text fs-14 grey-text">Согласуем сценарий, меню и&nbsp;вина под&nbsp;концепцию, бренд или&nbsp;повод.</p>
               </div>
             </div>
@@ -748,25 +748,25 @@
     <div class="collage how-we-work">
       <div class="col--4 how-we-work__counts">
         <div class="content-text gap--4">
-          <h3 class="title title--56 magenta">740+</h3>
+          <p class="title title--56 magenta">740+</p>
           <p class="text grey-text">частных событий</p>
         </div>
       </div>
       <div class="col--4 how-we-work__counts">
         <div class="content-text gap--4">
-          <h3 class="title title--56 magenta">150</h3>
+          <p class="title title--56 magenta">150</p>
           <p class="text grey-text">гостей максимум</p>
         </div>
       </div>
       <div class="col--4 how-we-work__counts">
         <div class="content-text gap--4">
-          <h3 class="title title--56 magenta">4,9</h3>
+          <p class="title title--56 magenta">4,9</p>
           <p class="text grey-text">рейтинг на Яндекс Картах</p>
         </div>
       </div>
       <div class="col--4 how-we-work__counts">
         <div class="content-text gap--4">
-          <h3 class="title title--56 magenta">24 <span>часа</span></h3>
+          <p class="title title--56 magenta">24 <span>часа</span></p>
           <p class="text grey-text">на смету и&nbsp;сценарий</p>
         </div>
       </div>
@@ -857,14 +857,14 @@
                 />
               </label>
 
-              <label class="label auto" aria-live="polite" aria-atomic="true">
-                <span class="label-text">Гостей</span>
+              <div class="label auto" aria-live="polite" aria-atomic="true">
+                <label class="label-text" for="private-event-guest-count">Гостей</label>
                 <div class="label--count" aria-live="polite" aria-atomic="true">
                   <button type="button" class="minus" data-input-minus aria-label="Уменьшить количество">-</button>
-                  <input type="number" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество гостей" />
+                  <input type="number" id="private-event-guest-count" name="count" class="input input--count" min="1" max="999" value="1" aria-label="Количество гостей" />
                   <button type="button" class="plus" data-input-plus aria-label="Увеличить количество">+</button>
                 </div>
-              </label>
+              </div>
 
               <label class="label">
                 <span class="label-text">Формат *</span>
@@ -1039,7 +1039,7 @@
     <li>
       <div class="faq-accordeon" data-accordeon data-accordeon-group="faq">
         <div class="faq-head" data-accordeon-head>
-          <p class="title title--18">Нужны ли предварительные знания?</p>
+          <h3 class="title title--18">Нужны ли предварительные знания?</h3>
           <button type="button" aria-expanded="false" aria-label="Развернуть"></button>
         </div>
         <div data-accordeon-body>
@@ -1056,14 +1056,14 @@
     <li>
       <div class="faq-accordeon" data-accordeon data-accordeon-group="faq">
         <div class="faq-head" data-accordeon-head>
-          <p class="title title--18">Можно ли пропустить занятие?</p>
+          <h3 class="title title--18">Можно ли пропустить занятие?</h3>
           <button type="button" aria-expanded="false" aria-label="Развернуть"></button>
         </div>
         <div data-accordeon-body>
           <div class="faq-body">
-            <h3 class="title title--18">Заголовок раздела</h3>
-            <h3 class="title title--16">Подзаголовок среднего размера</h3>
-            <h3 class="title title--14">Самый мелкий подзаголовок</h3>
+            <h4 class="title title--18">Заголовок раздела</h4>
+            <h5 class="title title--16">Подзаголовок среднего размера</h5>
+            <h6 class="title title--14">Самый мелкий подзаголовок</h6>
             <p class="text">
               Абзац основным текстом. Здесь коротко отвечаем на вопрос и при необходимости даём <a href="#" class="link">ссылку на подробности</a>. Текст
               занимает несколько строк, чтобы было видно межстрочный интервал, переносы и ширину колонки.
@@ -1090,14 +1090,14 @@
     <li>
       <div class="faq-accordeon" data-accordeon data-accordeon-group="faq">
         <div class="faq-head" data-accordeon-head>
-          <p class="title title--18">Есть ли скидки для групп?</p>
+          <h3 class="title title--18">Есть ли скидки для групп?</h3>
           <button type="button" aria-expanded="false" aria-label="Развернуть"></button>
         </div>
         <div data-accordeon-body>
           <div class="faq-body">
-            <h3 class="title title--18">Заголовок раздела</h3>
-            <h3 class="title title--16">Подзаголовок среднего размера</h3>
-            <h3 class="title title--14">Самый мелкий подзаголовок</h3>
+            <h4 class="title title--18">Заголовок раздела</h4>
+            <h5 class="title title--16">Подзаголовок среднего размера</h5>
+            <h6 class="title title--14">Самый мелкий подзаголовок</h6>
             <p class="text">
               Абзац основным текстом. Здесь коротко отвечаем на вопрос и при необходимости даём <a href="#" class="link">ссылку на подробности</a>. Текст
               занимает несколько строк, чтобы было видно межстрочный интервал, переносы и ширину колонки.
@@ -1124,14 +1124,14 @@
     <li>
       <div class="faq-accordeon" data-accordeon data-accordeon-group="faq">
         <div class="faq-head" data-accordeon-head>
-          <p class="title title--18">Сколько вин пробуем на каждом занятии? Можно ли не допивать?</p>
+          <h3 class="title title--18">Сколько вин пробуем на каждом занятии? Можно ли не допивать?</h3>
           <button type="button" aria-expanded="false" aria-label="Развернуть"></button>
         </div>
         <div data-accordeon-body>
           <div class="faq-body">
-            <h3 class="title title--18">Заголовок раздела</h3>
-            <h3 class="title title--16">Подзаголовок среднего размера</h3>
-            <h3 class="title title--14">Самый мелкий подзаголовок</h3>
+            <h4 class="title title--18">Заголовок раздела</h4>
+            <h5 class="title title--16">Подзаголовок среднего размера</h5>
+            <h6 class="title title--14">Самый мелкий подзаголовок</h6>
             <p class="text">
               Абзац основным текстом. Здесь коротко отвечаем на вопрос и при необходимости даём <a href="#" class="link">ссылку на подробности</a>. Текст
               занимает несколько строк, чтобы было видно межстрочный интервал, переносы и ширину колонки.
@@ -1158,14 +1158,14 @@
     <li>
       <div class="faq-accordeon" data-accordeon data-accordeon-group="faq">
         <div class="faq-head" data-accordeon-head>
-          <p class="title title--18">Это онлайн или офлайн?</p>
+          <h3 class="title title--18">Это онлайн или офлайн?</h3>
           <button type="button" aria-expanded="false" aria-label="Развернуть"></button>
         </div>
         <div data-accordeon-body>
           <div class="faq-body">
-            <h3 class="title title--18">Заголовок раздела</h3>
-            <h3 class="title title--16">Подзаголовок среднего размера</h3>
-            <h3 class="title title--14">Самый мелкий подзаголовок</h3>
+            <h4 class="title title--18">Заголовок раздела</h4>
+            <h5 class="title title--16">Подзаголовок среднего размера</h5>
+            <h6 class="title title--14">Самый мелкий подзаголовок</h6>
             <p class="text">
               Абзац основным текстом. Здесь коротко отвечаем на вопрос и при необходимости даём <a href="#" class="link">ссылку на подробности</a>. Текст
               занимает несколько строк, чтобы было видно межстрочный интервал, переносы и ширину колонки.
@@ -1192,14 +1192,14 @@
     <li>
       <div class="faq-accordeon" data-accordeon data-accordeon-group="faq">
         <div class="faq-head" data-accordeon-head>
-          <p class="title title--18">Можно ли прийти с несовершеннолетними или беременным?</p>
+          <h3 class="title title--18">Можно ли прийти с несовершеннолетними или беременным?</h3>
           <button type="button" aria-expanded="false" aria-label="Развернуть"></button>
         </div>
         <div data-accordeon-body>
           <div class="faq-body">
-            <h3 class="title title--18">Заголовок раздела</h3>
-            <h3 class="title title--16">Подзаголовок среднего размера</h3>
-            <h3 class="title title--14">Самый мелкий подзаголовок</h3>
+            <h4 class="title title--18">Заголовок раздела</h4>
+            <h5 class="title title--16">Подзаголовок среднего размера</h5>
+            <h6 class="title title--14">Самый мелкий подзаголовок</h6>
             <p class="text">
               Абзац основным текстом. Здесь коротко отвечаем на вопрос и при необходимости даём <a href="#" class="link">ссылку на подробности</a>. Текст
               занимает несколько строк, чтобы было видно межстрочный интервал, переносы и ширину колонки.
@@ -1226,14 +1226,14 @@
     <li>
       <div class="faq-accordeon" data-accordeon data-accordeon-group="faq">
         <div class="faq-head" data-accordeon-head>
-          <p class="title title--18">Выдаётся ли документ? Что именно я получу?</p>
+          <h3 class="title title--18">Выдаётся ли документ? Что именно я получу?</h3>
           <button type="button" aria-expanded="false" aria-label="Развернуть"></button>
         </div>
         <div data-accordeon-body>
           <div class="faq-body">
-            <h3 class="title title--18">Заголовок раздела</h3>
-            <h3 class="title title--16">Подзаголовок среднего размера</h3>
-            <h3 class="title title--14">Самый мелкий подзаголовок</h3>
+            <h4 class="title title--18">Заголовок раздела</h4>
+            <h5 class="title title--16">Подзаголовок среднего размера</h5>
+            <h6 class="title title--14">Самый мелкий подзаголовок</h6>
             <p class="text">
               Абзац основным текстом. Здесь коротко отвечаем на вопрос и при необходимости даём <a href="#" class="link">ссылку на подробности</a>. Текст
               занимает несколько строк, чтобы было видно межстрочный интервал, переносы и ширину колонки.
@@ -1435,7 +1435,7 @@
 
 <!--LOGIN CODE POPUP-->
 <div class="popup-content" id="login-code" role="dialog" aria-modal="true" aria-labelledby="login-code-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="login-code-title">
     Вход
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>
@@ -1458,7 +1458,7 @@
   </script>
 
   <form data-form action="#" class="form" novalidate onsubmit="onLoginCodeSubmit(event)">
-    <label class="label label-code">
+    <div class="label label-code" role="group" aria-label="Проверочный код">
       <input
         type="number"
         name="code"
@@ -1470,7 +1470,7 @@
         aria-hidden="true"
         data-required-error-text="Неверный код"
       />
-    </label>
+    </div>
 
     <button type="button" class="link" data-popup-open="login">Назад</button>
 
@@ -1482,7 +1482,7 @@
 
 <!--LOGIN SUCCESS POPUP-->
 <div class="popup-content" id="login-success" role="dialog" aria-modal="true" aria-labelledby="login-success-title">
-  <p class="text full ta--l">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
+  <p class="text full ta--l" id="login-success-title">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
 
   <div class="buttons ta--l">
     <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
@@ -1491,7 +1491,7 @@
 
 <!--SUBSCRIBE POPUP-->
 <div class="popup-content" id="subscribe" role="dialog" aria-modal="true" aria-labelledby="subscribe-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="subscribe-title">
     <span>Подписка на рассылку</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>
@@ -1516,9 +1516,9 @@
     <fieldset>
       <label class="label">
         <input name="confirmation" type="checkbox" class="checkbox" required data-error-text="Согласие на обработку данных обязательно" />
-        <p class="label-text">
+        <span class="label-text">
           <span>Согласен с&nbsp;<a href="../../" target="_blank">Условиями обработки персональных данных</a></span>
-        </p>
+        </span>
       </label>
     </fieldset>
 
@@ -1530,7 +1530,7 @@
 
 <!--SUBSCRIBE SUCCESS POPUP-->
 <div class="popup-content" id="subscribe-success" role="dialog" aria-modal="true" aria-labelledby="subscribe-success-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="subscribe-success-title">
     <span>Подписка оформлена</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>

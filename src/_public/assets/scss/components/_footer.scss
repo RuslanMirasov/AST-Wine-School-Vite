@@ -261,7 +261,6 @@
   }
 }
 
-//ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ
 .a11y {
   .footer-menu-title {
     opacity: 1;
@@ -373,13 +372,6 @@
       }
     }
   }
-
-  // &.a11y-theme-light {
-  //   .footer {
-  //     background: var(--grey-light);
-  //     color: Var(--blue);
-  //   }
-  // }
 
   &.a11y-theme-dark {
     .footer {
@@ -577,7 +569,6 @@
   }
 }
 
-// Москва и Петербург делят строку поровну с учётом gap, без пустого места справа. Ниже 360px колонки встают одна под другой
 @media (max-width: 768px) and (min-width: 360px) {
   .footer-address .footer-menu-col {
     flex: 1 1 0;
@@ -586,10 +577,6 @@
 
 //320
 @media (max-width: 359px) {
-  // .footer-address {
-  //   flex-direction: column;
-  //   justify-content: flex-start;
-  // }
   .footer-menu-col {
     margin-bottom: var(--fs-16);
   }

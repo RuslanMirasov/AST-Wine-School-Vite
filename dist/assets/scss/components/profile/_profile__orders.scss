@@ -154,7 +154,6 @@
     margin-block: calc(-1 * var(--fs-10));
   }
 
-  // Уходит вниз, как и прилетела; z-index — чтобы проезжала под более новыми плашками, а не поверх.
   &.hide {
     position: relative;
     z-index: -1;
@@ -188,7 +187,6 @@
   display: flex;
   position: relative;
   width: 100%;
-  //max-width: 600px;
   flex-wrap: wrap;
   gap: var(--fs-8);
   li {

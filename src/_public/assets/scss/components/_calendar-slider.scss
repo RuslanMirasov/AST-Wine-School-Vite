@@ -37,7 +37,6 @@
     border-radius: var(--fs-40);
   }
 
-  // На телефоне месяцы на всю ширину, «Показать календарь» уходит под ленту дней
   @media (max-width: 767px) {
     padding: var(--fs-20) var(--fs-16);
     border-radius: var(--fs-30);
@@ -46,7 +45,6 @@
       width: 100%;
       flex-wrap: nowrap;
 
-      // Стрелки по краям, месяцы — плотной группой по центру
       li {
         flex: none;
       }
@@ -73,8 +71,6 @@
   }
 }
 
-// Текст кнопки «Показать календарь»: класс open ставит аккордеон, когда сетка месяца раскрыта
-// Селекторы через саму кнопку: у .button span свой display: block, и одиночный класс его не перебивает
 .calendar-slider__toggle {
   .calendar-slider__toggle-hide {
     display: none;
@@ -91,7 +87,6 @@
   }
 }
 
-// Лента дней. Слайд — один день; ширину задаёт сам день, Swiper ставит столько, сколько поместится
 .calendar-slider-wrapper {
   display: flex;
   position: relative;
@@ -159,7 +154,6 @@
     width: 73px;
   }
 
-  // На телефоне в ленте ровно пять дней (data-slides-per-view), и день занимает всю ширину своего слайда
   @media (max-width: 767px) {
     width: 100%;
     gap: var(--fs-8);
@@ -192,7 +186,6 @@
   }
 }
 
-// Ссылка только у дней с мероприятиями
 a.calendar-slider-day__inner {
   @media (hover: hover) {
     &:hover {
@@ -228,8 +221,6 @@ a.calendar-slider-day__inner {
   color: var(--grey-text);
 }
 
-// --- состояния дня ---
-
 .calendar-slider-day.is-weekend .calendar-slider-day__name {
   color: var(--invalid);
 }
@@ -238,7 +229,6 @@ a.calendar-slider-day__inner {
   border-color: var(--magenta-opacity);
   background-color: var(--magenta-light);
 
-  // Звёздочки: одна — одно мероприятие, две — несколько
   &:after {
     content: '**';
     font-size: var(--fs-12);

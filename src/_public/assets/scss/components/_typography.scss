@@ -79,6 +79,9 @@
   }
   &.title--14 {
     font-size: var(--fs-14);
+    @media (min-width: 1920px) {
+      font-size: var(--fs-16);
+    }
   }
 
   &.full {
@@ -281,6 +284,10 @@
       font-size: var(--fs-16);
     }
   }
+
+  .label--file > .text.fs-12 {
+    font-size: var(--fs-12);
+  }
 }
 
 .a11y {
@@ -477,10 +484,3 @@
     }
   }
 }
-
-// .a11y-theme-dark {
-//   .title,
-//   .text {
-//     color: var(--white);
-//   }
-// }

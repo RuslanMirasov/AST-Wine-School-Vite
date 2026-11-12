@@ -30,6 +30,28 @@
 }
 
 .post-card-collection {
+  &[data-slider] {
+    .swiper-slide {
+      > .post-card {
+        width: 100%;
+      }
+      &.swiper-slide-visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      @media (max-width: 1279px) {
+        width: calc(100vw - 32px);
+        max-width: 354px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+    @media (max-width: 767px) {
+      .arrows {
+        display: none;
+      }
+    }
+  }
   .container > .title--40 + .button {
     margin-left: auto;
   }

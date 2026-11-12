@@ -172,8 +172,8 @@
 
     <div class="header-dropdown">
   <!--header search form-->
-  <form action="../../search/" class="search-form" method="GET" data-form novalidate>
-    <label class="label">
+  <form id="header-search" action="../../search/" class="search-form" method="GET" data-form novalidate>
+    <div class="label">
       <button type="submit" class="search-submit-icon" aria-label="Отправка формы поиска">
         <svg width="24" height="24"><use href="../../assets/img/sprite.svg#search"></use></svg>
       </button>
@@ -181,7 +181,7 @@
       <button type="reset" class="search-close" aria-label="Очистить форму поиска">
         <svg width="16" height="16"><use href="../../assets/img/sprite.svg#reset"></use></svg>
       </button>
-    </label>
+    </div>
   </form>
 
   <!--header navigation menu-->
@@ -455,12 +455,12 @@
           <div class="content-text gap--40">
             <h1 class="title title--40 upper">Оформление заказа</h1>
 
-            <ul class="cart-steps">
+            <ol class="cart-steps">
               <li class="active"><a href="../../cart/">Корзина</a></li>
               <li class="current"><span>Оформление</span></li>
               <li><span>Оплата</span></li>
               <li><span>Готово</span></li>
-            </ul>
+            </ol>
           </div>
         </div>
       </section>
@@ -470,23 +470,23 @@
           <!--SIDEBAR-->
           <aside class="sidebar gap--8 right-side" data-sticky-sidebar>
             <div class="order-details gap--12">
-  <h3 class="title title--18 bold">Ваш заказ</h3>
+  <h2 class="title title--18 bold">Ваш заказ</h2>
 
-  <table class="order-table" cellspacing="0" cellpadding="0">
+  <table class="order-table">
     <tr>
-      <td>
+      <th scope="row">
         <span class="text fs-14 bold">Быстрый старт: о вине за 3 встречи</span>
         <span class="text fs-12 grey-text">Очный курс · Встреча №2 · 14 июля</span>
-      </td>
+      </th>
       <td>
         <span class="text fs-14 bold">1&nbsp;000&nbsp;₽</span>
       </td>
     </tr>
     <tr>
-      <td>
+      <th scope="row">
         <span class="text fs-14 bold">Подарочный сертификат</span>
         <span class="text fs-12 grey-text">Номинал: 10&nbsp;000&nbsp;₽</span>
-      </td>
+      </th>
       <td>
         <span class="text fs-14 bold">10&nbsp;000&nbsp;₽</span>
       </td>
@@ -495,28 +495,28 @@
 </div>
 
             <div class="order-details">
-  <h3 class="title title--24 bold">Детали заказа</h3>
+  <h2 class="title title--24 bold">Детали заказа</h2>
 
-  <table class="order-table" cellspacing="0" cellpadding="0">
+  <table class="order-table">
     <tr>
-      <td><span class="text">2 товара</span></td>
+      <th scope="row"><span class="text">2 товара</span></th>
       <td><span class="text bold">11 500 ₽</span></td>
     </tr>
     <tr>
-      <td>
+      <th scope="row">
         <span class="text">Скидка за сертификат</span>
         <span class="text fs-12 grey-text">36ZC-XQT7-839</span>
-      </td>
+      </th>
       <td>
         <span class="text bold">−250 ₽</span>
         <button type="button" class="text fs-12 magenta">Отменить</button>
       </td>
     </tr>
     <tr>
-      <td>
+      <th scope="row">
         <span class="text">Скидка за промокод</span>
         <span class="text fs-12 grey-text">PROMO001</span>
-      </td>
+      </th>
       <td>
         <span class="text bold">−250 ₽</span>
         <button type="button" class="text fs-12 magenta">Отменить</button>
@@ -824,7 +824,7 @@
 
 <!--LOGIN CODE POPUP-->
 <div class="popup-content" id="login-code" role="dialog" aria-modal="true" aria-labelledby="login-code-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="login-code-title">
     Вход
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>
@@ -847,7 +847,7 @@
   </script>
 
   <form data-form action="#" class="form" novalidate onsubmit="onLoginCodeSubmit(event)">
-    <label class="label label-code">
+    <div class="label label-code" role="group" aria-label="Проверочный код">
       <input
         type="number"
         name="code"
@@ -859,7 +859,7 @@
         aria-hidden="true"
         data-required-error-text="Неверный код"
       />
-    </label>
+    </div>
 
     <button type="button" class="link" data-popup-open="login">Назад</button>
 
@@ -871,7 +871,7 @@
 
 <!--LOGIN SUCCESS POPUP-->
 <div class="popup-content" id="login-success" role="dialog" aria-modal="true" aria-labelledby="login-success-title">
-  <p class="text full ta--l">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
+  <p class="text full ta--l" id="login-success-title">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
 
   <div class="buttons ta--l">
     <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
@@ -880,7 +880,7 @@
 
 <!--SUBSCRIBE POPUP-->
 <div class="popup-content" id="subscribe" role="dialog" aria-modal="true" aria-labelledby="subscribe-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="subscribe-title">
     <span>Подписка на рассылку</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>
@@ -905,9 +905,9 @@
     <fieldset>
       <label class="label">
         <input name="confirmation" type="checkbox" class="checkbox" required data-error-text="Согласие на обработку данных обязательно" />
-        <p class="label-text">
+        <span class="label-text">
           <span>Согласен с&nbsp;<a href="../../" target="_blank">Условиями обработки персональных данных</a></span>
-        </p>
+        </span>
       </label>
     </fieldset>
 
@@ -919,7 +919,7 @@
 
 <!--SUBSCRIBE SUCCESS POPUP-->
 <div class="popup-content" id="subscribe-success" role="dialog" aria-modal="true" aria-labelledby="subscribe-success-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="subscribe-success-title">
     <span>Подписка оформлена</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>
@@ -987,5 +987,12 @@
 <script src="../../assets/js/plugins/swiper-bundle.min.js"></script>
 <script src="../../assets/js/scripts.js?v=1.0.9" type="module" defer></script>
 
+    <script>
+      document.querySelector('#cart-checkout-form').addEventListener('submit', event => {
+        const form = event.currentTarget;
+        const legalEntityTab = form.closest('[data-tabs]').querySelector('[data-tab-target="legal-entity"].active');
+        form.action = legalEntityTab ? '../../cart/success2/' : '../../cart/success/';
+      });
+    </script>
   </body>
 </html>

@@ -145,6 +145,10 @@
 }
 
 .order-degustation-form {
+  scroll-margin: 50px;
+  .price-and-btn {
+    align-items: flex-end;
+  }
   > .label {
     max-width: var(--fs-300);
   }

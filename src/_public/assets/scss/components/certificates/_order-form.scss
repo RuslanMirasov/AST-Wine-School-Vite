@@ -1,6 +1,3 @@
-// #certificate-order {
-//   scroll-margin: var(--fs-50);
-// }
 
 .certificate-order {
   .links {
@@ -38,6 +35,9 @@
       max-width: 440px;
       .label-text {
         font-size: var(--fs-14);
+        @media (min-width: 1920px) {
+          font-size: var(--fs-16);
+        }
         font-weight: 700;
         color: var(--blue);
       }
@@ -64,8 +64,8 @@
 
 .swiper--horisontal {
   display: block;
-  width: 80.62%; // 416 / 516
-  border-radius: 3.846% / 2.685%; // 16px от 416 × 596
+  width: 80.62%;
+  border-radius: 3.846% / 2.685%;
   overflow: hidden;
   background: var(--grey-light);
   .swiper-slide {
@@ -81,18 +81,13 @@
 .swiper--vertical {
   position: relative;
   width: 15.504%;
-  // Сверху и снизу — место под стрелки
   padding: 9.69% 0px;
-  // Высота слайдера считается от его ширины (cqw), а не из aspect-ratio колонки:
-  // Safari не считал высоту из aspect-ratio точной, и Swiper растягивал миниатюры
   container-type: inline-size;
-  // Пропорции миниатюры (template-N-thumb.webp, 360 × 516) и зазор — как в data-space-between слайдера
   --thumb-ratio: 516 / 360;
   --thumb-gap: 12px;
 
   .swiper {
     width: 100%;
-    // Ровно 4 миниатюры и 3 зазора между ними (data-slides-per-view="4")
     height: calc(400cqw * var(--thumb-ratio) + var(--thumb-gap) * 3);
     overflow: hidden;
   }
@@ -109,7 +104,6 @@
       border: 2px solid var(--magenta);
     }
   }
-  // Картинка заполняет слайд целиком: внутри рамки 2px она чуть уже слайда, и по высоте оставался зазор
   img {
     width: 100%;
     height: 100%;
@@ -402,7 +396,6 @@
   }
 }
 
-//for popups
 @media (max-width: 499px) {
   .cert-checkout {
     flex-direction: column;

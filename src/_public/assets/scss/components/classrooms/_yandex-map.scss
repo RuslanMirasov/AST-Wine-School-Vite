@@ -56,6 +56,13 @@
     .search-navigation {
       li {
         flex: none;
+        &:first-child {
+          width: 100%;
+        }
+      }
+      .search-navigation__btn {
+        padding-left: var(--fs-12);
+        padding-right: var(--fs-12);
       }
     }
 

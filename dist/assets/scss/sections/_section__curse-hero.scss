@@ -29,7 +29,6 @@
   }
   &.dark {
     color: var(--white);
-    // От 1280px картинка закрывает блок целиком, затемнение идёт в чёрный, а не в синий фон
     @media (min-width: 1280px) {
       .image-background {
         background-color: #000;
@@ -215,11 +214,11 @@
   .curse-hero {
     width: calc(100% + 32px + 32px);
     min-width: calc(100% + 32px + 32px);
-    left: -32px;
+    margin-left: -32px;
     @media (max-width: 767px) {
       width: calc(100% + 16px + 16px);
       min-width: calc(100% + 16px + 16px);
-      left: -16px;
+      margin-left: -16px;
     }
     overflow: hidden;
 

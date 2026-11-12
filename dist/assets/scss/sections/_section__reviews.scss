@@ -111,11 +111,11 @@
 .rating-sum {
   display: inline-flex;
   position: relative;
-  height: var(--fs-32); //32px
+  height: var(--fs-32);
   justify-content: flex-start;
   align-items: flex-end;
   align-content: flex-end;
-  gap: var(--fs-12); //12px
+  gap: var(--fs-12);
   strong {
     display: block;
     line-height: var(--fs-34);
@@ -146,7 +146,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   background-color: var(--white);
-  padding: var(--fs-24); //24px
+  padding: var(--fs-24);
   border-radius: var(--fs-30);
   gap: var(--fs-16);
   box-shadow: 0px 8px 24px rgba(15, 23, 42, 0.031);
@@ -162,7 +162,7 @@
   align-items: center;
   align-content: center;
   width: 100%;
-  gap: var(--fs-12); //12px
+  gap: var(--fs-12);
 }
 
 .review-person-image {
@@ -170,10 +170,10 @@
   position: relative;
   background-color: var(--grey-light);
   overflow: hidden;
-  width: var(--fs-44); // 44px
-  height: var(--fs-44); // 44px
+  width: var(--fs-44);
+  height: var(--fs-44);
   flex-shrink: 0;
-  border-radius: var(--fs-44); // 44px
+  border-radius: var(--fs-44);
   img {
     width: 100%;
     height: 100%;
@@ -349,7 +349,6 @@
       }
     }
 
-    // A++
     &.a11y-font-large {
       .review {
         .stars {
@@ -358,9 +357,9 @@
       }
 
       .review-person-image {
-        width: var(--fs-60); // 50px
-        height: var(--fs-60); // 50px
-        border-radius: var(--fs-60); // 50px
+        width: var(--fs-60);
+        height: var(--fs-60);
+        border-radius: var(--fs-60);
       }
     }
   }

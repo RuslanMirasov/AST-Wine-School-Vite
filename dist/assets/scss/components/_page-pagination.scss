@@ -35,6 +35,9 @@
   border-radius: var(--fs-12);
   font-weight: 700;
   font-size: var(--fs-14);
+  @media (min-width: 1920px) {
+    font-size: var(--fs-16);
+  }
   --lh: 1;
   pointer-events: auto;
   width: var(--fs-40);

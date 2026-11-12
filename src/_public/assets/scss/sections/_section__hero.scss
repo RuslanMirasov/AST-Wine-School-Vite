@@ -104,8 +104,6 @@
   transition: transform 0.5s ease;
   will-change: transform;
 
-  // Drag пагинации (hero-pagination.js): горизонтальный жест забираем себе,
-  // вертикальный скролл страницы пальцем оставляем браузеру.
   .is-draggable & {
     cursor: grab;
     touch-action: pan-y;
@@ -258,11 +256,10 @@
   }
 
   .hero-text-slider {
-    max-width: 370px; //512px
+    max-width: 370px;
   }
 }
 
-// MOBIL
 @media (max-width: 1023px) {
   .hero {
     padding: 0;
@@ -553,18 +550,4 @@
     }
   }
 
-  // &.a11y-theme-dark {
-  //   .section-hero {
-  //     .title,
-  //     .text {
-  //       color: var(--white);
-  //     }
-  //     .dark {
-  //       .title,
-  //       .text {
-  //         color: var(--white);
-  //       }
-  //     }
-  //   }
-  // }
 }

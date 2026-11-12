@@ -22,8 +22,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  // Высота строки — множитель --lh (наследуется как число), каждый элемент считает её от своего font-size и округляет до целого px.
-  // Первая строка — запасной вариант для браузеров без round()
   line-height: calc(var(--lh) * 1em);
   line-height: round(calc(var(--lh) * 1em), 1px);
 }
@@ -124,7 +122,6 @@ input,
 select,
 textarea {
   font: inherit;
-  // font: inherit сбрасывает и line-height — возвращаем общее правило
   line-height: calc(var(--lh) * 1em);
   line-height: round(calc(var(--lh) * 1em), 1px);
 }
@@ -219,7 +216,6 @@ textarea {
   z-index: 1;
   padding: var(--fs-40) 0px;
   margin: 0 auto;
-  //scroll-margin: var(--fs-40);
   overflow: hidden;
   &.pad--32 {
     padding: var(--fs-32) 0px;
@@ -352,6 +348,15 @@ textarea {
   }
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .skip-link {
   position: fixed;
   left: 50%;
@@ -411,6 +416,9 @@ textarea {
   display: inline-block;
   color: var(--magenta);
   font-size: var(--fs-14);
+  @media (min-width: 1920px) {
+    font-size: var(--fs-16);
+  }
   --lh: 1.4;
   font-weight: 700;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
@@ -500,7 +508,6 @@ textarea {
 }
 
 .a11y {
-  // A++
   .main {
     padding-top: 85px;
   }

@@ -437,10 +437,10 @@
 
           <ul class="search-navigation">
             <li>
-              <button class="search-navigation__btn active" data-tab-target="for-privat">Для физических лиц</button>
+              <button class="search-navigation__btn active" data-tab-target="for-privat">Физическое лио</button>
             </li>
             <li>
-              <button class="search-navigation__btn" data-tab-target="for-company">Для юридических лиц</button>
+              <button class="search-navigation__btn" data-tab-target="for-company">Юридическое лицо</button>
             </li>
           </ul>
 
@@ -455,22 +455,57 @@
               <fieldset>
                 <label class="label">
                   <span class="label-text">Фамилия *</span>
-                  <input type="text" name="sername" class="input" data-rule="name-cyrillic" minlength="2" required value="" data-required-error-text="Пожалуйста, укажите вашу фамилию" />
+                  <input
+                    type="text"
+                    name="sername"
+                    class="input"
+                    data-rule="name-cyrillic"
+                    minlength="2"
+                    required
+                    value=""
+                    data-required-error-text="Пожалуйста, укажите вашу фамилию"
+                  />
                 </label>
 
                 <label class="label">
                   <span class="label-text">Имя *</span>
-                  <input type="text" name="name" class="input" data-rule="name-cyrillic" minlength="2" required value="" data-required-error-text="Пожалуйста, укажите ваше имя" />
+                  <input
+                    type="text"
+                    name="name"
+                    class="input"
+                    data-rule="name-cyrillic"
+                    minlength="2"
+                    required
+                    value=""
+                    data-required-error-text="Пожалуйста, укажите ваше имя"
+                  />
                 </label>
 
                 <label class="label">
                   <span class="label-text">Отчество *</span>
-                  <input type="text" name="lastname" class="input" data-rule="name-cyrillic" minlength="2" required value="" data-required-error-text="Пожалуйста, укажите ваше отчество" />
+                  <input
+                    type="text"
+                    name="lastname"
+                    class="input"
+                    data-rule="name-cyrillic"
+                    minlength="2"
+                    required
+                    value=""
+                    data-required-error-text="Пожалуйста, укажите ваше отчество"
+                  />
                 </label>
 
                 <label class="label">
                   <span class="label-text">Электронная почта *</span>
-                  <input type="email" placeholder="email@email.ru" name="email" class="input" required autocomplete="email" data-required-error-text="Пожалуйста, укажите вашу электронную почту" />
+                  <input
+                    type="email"
+                    placeholder="email@email.ru"
+                    name="email"
+                    class="input"
+                    required
+                    autocomplete="email"
+                    data-required-error-text="Пожалуйста, укажите вашу электронную почту"
+                  />
                 </label>
 
                 <label class="label">
@@ -480,7 +515,15 @@
 
                 <label class="label" data-tab="for-company">
                   <span class="label-text">Наименование юридического лица *</span>
-                  <input type="text" name="legal-entity-name" class="input" required value="" placeholder="Наименование" data-required-error-text="Пожалуйста, укажите наименование юридического лица" />
+                  <input
+                    type="text"
+                    name="legal-entity-name"
+                    class="input"
+                    required
+                    value=""
+                    placeholder="Наименование"
+                    data-required-error-text="Пожалуйста, укажите наименование юридического лица"
+                  />
                 </label>
               </fieldset>
 
@@ -492,7 +535,8 @@
                     name="inn"
                     class="input"
                     required
-                    inputmode="numeric" data-digits
+                    inputmode="numeric"
+                    data-digits
                     maxlength="12"
                     data-rule="inn"
                     value=""
@@ -504,7 +548,15 @@
 
                 <label class="label" data-tab="for-company">
                   <span class="label-text">Юридический адрес *</span>
-                  <input type="text" name="adress" class="input" required value="" placeholder="Адрес" data-required-error-text="Пожалуйста, укажите юридический адрес" />
+                  <input
+                    type="text"
+                    name="adress"
+                    class="input"
+                    required
+                    value=""
+                    placeholder="Адрес"
+                    data-required-error-text="Пожалуйста, укажите юридический адрес"
+                  />
                 </label>
 
                 <label class="label" data-tab="for-company">
@@ -514,7 +566,8 @@
                     name="kpp"
                     class="input"
                     required
-                    inputmode="numeric" data-digits
+                    inputmode="numeric"
+                    data-digits
                     maxlength="9"
                     data-rule="kpp"
                     value=""

@@ -79,7 +79,6 @@
     height: var(--fs-38);
   }
 
-  // Иконка в спрайте смотрит вниз
   &--prev svg {
     transform: rotate(90deg);
   }
@@ -166,7 +165,6 @@
   align-items: baseline;
   gap: var(--fs-8);
 
-  // На планшете «Сегодня» уходит под число
   @media (max-width: 1099px) {
     flex-direction: column;
     align-items: flex-start;
@@ -189,13 +187,11 @@
   }
 }
 
-// Названия мероприятий. Третье делит строку со счётчиком «+N», если он есть
 .calendar-day__events {
   display: flex;
   flex-wrap: wrap;
   gap: var(--fs-4);
   width: 100%;
-  // Список прижат к нижнему краю ячейки, число остаётся наверху
   margin-top: auto;
 
   li {
@@ -227,8 +223,6 @@
   }
 }
 
-// --- состояния дня ---
-
 .calendar-day.is-past .calendar-day__inner {
   color: var(--grey-medium);
 }
@@ -237,7 +231,6 @@
   border-color: var(--magenta-opacity);
   background-color: var(--magenta-light);
 
-  // Звёздочки вместо названий: одна — одно мероприятие, две — несколько
   @media (min-width: 768px) and (max-width: 1099px) {
     &:after {
       content: '**';

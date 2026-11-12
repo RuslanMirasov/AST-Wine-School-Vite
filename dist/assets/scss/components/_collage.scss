@@ -101,7 +101,6 @@
     width: calc((100% - (var(--fs-24) * 6)) / 7);
   }
 
-  // 7/15 + 8/15 — пара «616 + 700» при контейнере 1340px
   .col--7-15 {
     width: calc(46.666666% - (var(--fs-24) / 2));
   }
@@ -225,13 +224,6 @@
   }
 
   @media (max-width: 499px) {
-    .collage > .col--2 {
-      grid-template-columns: minmax(0, 1fr);
-      grid-template-rows: none;
-    }
-    .collage-image:before {
-      padding-top: 70.125786%;
-    }
     .content-text {
       padding-bottom: var(--fs-16);
       .button {
@@ -291,16 +283,5 @@
 
   @media (max-width: 767px) {
     border-radius: var(--fs-30);
-  }
-
-  @media (max-width: 499px) {
-    &:before {
-      content: none !important;
-    }
-
-    img {
-      position: relative;
-      height: auto;
-    }
   }
 }

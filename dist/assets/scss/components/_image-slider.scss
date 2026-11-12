@@ -37,7 +37,6 @@
     }
   }
 
-  // Слайдер с галереей (data-gallery): лёгкий зум картинки при наведении, как у галерей на курсах
   [data-gallery] .image-slide {
     overflow: hidden;
     img {
@@ -51,7 +50,6 @@
     }
   }
 
-  // Первая секция страницы дегустации и описание курса/модуля — галерея без зума
   .degustation-single-hero & [data-gallery] .image-slide img,
   .curse-description & [data-gallery] .image-slide img {
     transform: none;

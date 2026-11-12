@@ -14,6 +14,7 @@ import { initStars } from './modules/stars.js';
 import { initAccordeons } from './modules/accordeon.js';
 import { initCookieConfirmation } from './modules/cookie-confirm.js';
 import { initGalleries } from './modules/image-gallery.js';
+import { initCourseGallery } from './modules/course-gallery.js';
 import { initTabs } from './modules/tabs.js';
 import { initStickySidebar } from './modules/stickySidebar.js';
 import { initCopyToBuffer } from './modules/copy.js';
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAgeConfirmation();
   initCookieConfirmation();
   initGalleries();
+  initCourseGallery();
   initTabs();
   initCopyToBuffer();
   initReadMore();

@@ -145,7 +145,6 @@
   }
 }
 
-// Линия через точки .line-stop — рисует modules/history-lines.js
 .history__line {
   position: absolute;
   left: 0px;
@@ -159,20 +158,17 @@
     stroke-width: 1px;
   }
 
-  // Пройденная часть — поверх основной линии, толще и ярче. Длину задаёт скрипт через stroke-dashoffset
   .history__line-progress {
     stroke: var(--magenta);
     stroke-width: 2px;
   }
 }
 
-// Позицию на линии задаёт скрипт через transform, от левого верхнего угла .history
 .indicator {
   display: block;
   position: absolute;
   left: 0px;
   top: 0px;
-  // Двигается при прокрутке — отдельный слой, без перерисовки страницы
   will-change: transform;
   width: 20px;
   height: 20px;

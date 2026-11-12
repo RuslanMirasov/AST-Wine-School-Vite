@@ -172,8 +172,8 @@
 
     <div class="header-dropdown">
   <!--header search form-->
-  <form action="../../search/" class="search-form" method="GET" data-form novalidate>
-    <label class="label">
+  <form id="header-search" action="../../search/" class="search-form" method="GET" data-form novalidate>
+    <div class="label">
       <button type="submit" class="search-submit-icon" aria-label="Отправка формы поиска">
         <svg width="24" height="24"><use href="../../assets/img/sprite.svg#search"></use></svg>
       </button>
@@ -181,7 +181,7 @@
       <button type="reset" class="search-close" aria-label="Очистить форму поиска">
         <svg width="16" height="16"><use href="../../assets/img/sprite.svg#reset"></use></svg>
       </button>
-    </label>
+    </div>
   </form>
 
   <!--header navigation menu-->
@@ -452,7 +452,8 @@
 
       <section class="section pad--32">
         <div class="container">
-          <h1 class="title title--40 upper">Личный кабинет</h1>
+          <h1 class="visually-hidden">Реферальная программа</h1>
+          <p class="title title--40 upper">Личный кабинет</p>
         </div>
       </section>
 
@@ -461,7 +462,7 @@
           <!--SIDEBAR-->
           <aside class="sidebar small left-side" data-sticky-sidebar>
             <div class="profile-name">
-  <h2 class="title title--24 bold">Константин</h2>
+  <p class="title title--24 bold">Константин</p>
   <p class="text fs-14 magenta">
     Баланс по реферальной программе <b>25&nbsp;730&nbsp;₽</b>
     <button type="button" class="help" data-popup-open="profile-balance">
@@ -555,11 +556,11 @@
               </h2>
 
               <div class="content br--30 pad--32 grey-light col--2">
-                <h3 class="title title--40 magenta">156</h3>
+                <p class="title title--40 magenta">156</p>
                 <p class="text grey-text">Заказы</p>
               </div>
               <div class="content br--30 pad--32 grey-light col--2">
-                <h3 class="title title--40 magenta">220&nbsp;000&nbsp;₽</h3>
+                <p class="title title--40 magenta">220&nbsp;000&nbsp;₽</p>
                 <p class="text grey-text">Начислено за все время</p>
               </div>
             </div>
@@ -837,7 +838,7 @@
 
 <!--LOGIN CODE POPUP-->
 <div class="popup-content" id="login-code" role="dialog" aria-modal="true" aria-labelledby="login-code-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="login-code-title">
     Вход
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>
@@ -860,7 +861,7 @@
   </script>
 
   <form data-form action="#" class="form" novalidate onsubmit="onLoginCodeSubmit(event)">
-    <label class="label label-code">
+    <div class="label label-code" role="group" aria-label="Проверочный код">
       <input
         type="number"
         name="code"
@@ -872,7 +873,7 @@
         aria-hidden="true"
         data-required-error-text="Неверный код"
       />
-    </label>
+    </div>
 
     <button type="button" class="link" data-popup-open="login">Назад</button>
 
@@ -884,7 +885,7 @@
 
 <!--LOGIN SUCCESS POPUP-->
 <div class="popup-content" id="login-success" role="dialog" aria-modal="true" aria-labelledby="login-success-title">
-  <p class="text full ta--l">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
+  <p class="text full ta--l" id="login-success-title">С возвращением, <span>Константин</span>! <br />Рады приветствовать вас в&nbsp;Школе вина&nbsp;AST!</p>
 
   <div class="buttons ta--l">
     <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
@@ -893,7 +894,7 @@
 
 <!--SUBSCRIBE POPUP-->
 <div class="popup-content" id="subscribe" role="dialog" aria-modal="true" aria-labelledby="subscribe-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="subscribe-title">
     <span>Подписка на рассылку</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>
@@ -918,9 +919,9 @@
     <fieldset>
       <label class="label">
         <input name="confirmation" type="checkbox" class="checkbox" required data-error-text="Согласие на обработку данных обязательно" />
-        <p class="label-text">
+        <span class="label-text">
           <span>Согласен с&nbsp;<a href="../../" target="_blank">Условиями обработки персональных данных</a></span>
-        </p>
+        </span>
       </label>
     </fieldset>
 
@@ -932,7 +933,7 @@
 
 <!--SUBSCRIBE SUCCESS POPUP-->
 <div class="popup-content" id="subscribe-success" role="dialog" aria-modal="true" aria-labelledby="subscribe-success-title">
-  <h2 class="popup-title" id="login-title">
+  <h2 class="popup-title" id="subscribe-success-title">
     <span>Подписка оформлена</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>

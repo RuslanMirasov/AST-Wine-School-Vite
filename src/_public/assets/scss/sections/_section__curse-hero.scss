@@ -29,7 +29,6 @@
   }
   &.dark {
     color: var(--white);
-    // От 1280px картинка закрывает блок целиком, затемнение идёт в чёрный, а не в синий фон
     @media (min-width: 1280px) {
       .image-background {
         background-color: #000;
