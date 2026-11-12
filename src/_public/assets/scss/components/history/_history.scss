@@ -1,27 +1,3 @@
-.section--news-list {
-  .container {
-    > .button {
-      margin-left: auto;
-      @media (max-width: 767px) {
-        order: 2;
-        width: 100%;
-      }
-    }
-  }
-
-  .collage .col--3 {
-    @media (max-width: 1023px) {
-      width: calc((100% - var(--fs-24)) / 2);
-    }
-    @media (max-width: 767px) {
-      min-width: 100%;
-      .button {
-        width: 100%;
-      }
-    }
-  }
-}
-
 .section--history {
   .container {
     > .text.fs-20 {
