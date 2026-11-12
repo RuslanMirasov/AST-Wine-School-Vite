@@ -52,8 +52,16 @@
       }
     }
   }
+  .container > .button.show-in-tablet {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .container > .title--40 + .button {
     margin-left: auto;
+    @media (min-width: 768px) and (max-width: 1279px) {
+      order: 2;
+      margin-right: auto;
+    }
   }
   .page-not-found {
     order: 3;
