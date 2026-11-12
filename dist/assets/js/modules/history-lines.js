@@ -3,6 +3,9 @@ import { debounce } from './helpers.js';
 const CONTAINER_SELECTOR = '.history';
 const STOP_SELECTOR = '.line-stop';
 const INDICATOR_SELECTOR = '.indicator';
+const DOT_SOURCE_SELECTOR = 'li > .content';
+const DOT_CLASS = 'history__dot';
+const DOT_ACTIVE_CLASS = 'is-active';
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const CORNER_RADIUS = 50;
 const ALIGN_TOLERANCE = 1;
@@ -17,6 +20,41 @@ const getStopCenter = (stop, containerRect) => {
     y: rect.top + rect.height / 2 - containerRect.top,
     isSide: !stop.classList[1]?.startsWith('bottom'),
   };
+};
+
+const getDotAnchor = (content, containerRect) => {
+  const anchor = content.querySelector(':scope > .title') || content.firstElementChild || content;
+  const rect = anchor.getBoundingClientRect();
+  const contentRect = content.getBoundingClientRect();
+  const lineHeight = parseFloat(getComputedStyle(anchor).lineHeight);
+  const firstLine = lineHeight ? Math.min(lineHeight, rect.height) : rect.height;
+
+  return {
+    x: contentRect.left + contentRect.width / 2 - containerRect.left,
+    y: rect.top + firstLine / 2 - containerRect.top,
+  };
+};
+
+const findOnPath = (segments, x, y) => {
+  let best = null;
+  let offset = 0;
+
+  segments.forEach(segment => {
+    const isVertical = segment.type === 'line' && Math.abs(segment.from.x - segment.to.x) < ALIGN_TOLERANCE;
+    const top = Math.min(segment.from.y, segment.to.y) - ALIGN_TOLERANCE;
+    const bottom = Math.max(segment.from.y, segment.to.y) + ALIGN_TOLERANCE;
+
+    if (isVertical && y >= top && y <= bottom) {
+      const distance = Math.abs(segment.from.x - x);
+      if (!best || distance < best.distance) {
+        best = { x: segment.from.x, length: offset + Math.abs(y - segment.from.y), distance };
+      }
+    }
+
+    offset += segment.length;
+  });
+
+  return best;
 };
 
 const createLine = (from, to) => ({
@@ -121,12 +159,43 @@ const createSvg = container => {
   return { svg, path, progressPath };
 };
 
+const createStops = container => {
+  const items = Array.from(container.querySelectorAll(':scope > ol > li, :scope > ul > li'));
+
+  items.forEach((item, index) => {
+    if (item.querySelector(`:scope > ${STOP_SELECTOR}`)) return;
+
+    const side = index % 2 ? 'right' : 'left';
+    const other = index % 2 ? 'left' : 'right';
+    const names = index === items.length - 1 ? [`${side}-top`] : [`${side}-top`, `${side}-bottom`, `bottom-${side}`, `bottom-${other}`];
+
+    item.prepend(
+      ...names.map(name => {
+        const stop = document.createElement('div');
+        stop.className = `line-stop ${name}`;
+        stop.setAttribute('aria-hidden', 'true');
+        return stop;
+      })
+    );
+  });
+};
+
 const initHistoryLine = container => {
+  createStops(container);
   const stops = Array.from(container.querySelectorAll(STOP_SELECTOR));
   if (stops.length < 2) return;
 
   const indicator = container.querySelector(INDICATOR_SELECTOR);
   const { svg, path, progressPath } = createSvg(container);
+  const contents = Array.from(container.querySelectorAll(DOT_SOURCE_SELECTOR));
+  const dots = contents.map(() => {
+    const dot = document.createElement('span');
+    dot.className = DOT_CLASS;
+    dot.setAttribute('aria-hidden', 'true');
+    container.append(dot);
+    return dot;
+  });
+  let dotLengths = [];
 
   let segments = [];
   let totalLength = 0;
@@ -145,6 +214,11 @@ const initHistoryLine = container => {
 
     progressPath.style.strokeDashoffset = totalLength - length;
 
+    dots.forEach((dot, index) => {
+      const dotLength = dotLengths[index];
+      dot.classList.toggle(DOT_ACTIVE_CLASS, dotLength !== null && dotLength !== undefined && length >= dotLength - ALIGN_TOLERANCE);
+    });
+
     if (indicator) {
       const point = getPointAtLength(segments, length);
       indicator.style.transform = `translate(${point.x - indicatorHalf.x}px, ${point.y - indicatorHalf.y}px)`;
@@ -154,10 +228,33 @@ const initHistoryLine = container => {
   const measure = () => {
     const containerRect = container.getBoundingClientRect();
     const points = stops.map(stop => getStopCenter(stop, containerRect));
+    const anchors = contents.map(content => getDotAnchor(content, containerRect));
+    if (anchors.length) {
+      const firstPoint = points[0];
+      const lastPoint = points[points.length - 1];
+      const highestAnchor = Math.min(...anchors.map(anchor => anchor.y));
+      const lowestAnchor = Math.max(...anchors.map(anchor => anchor.y));
+
+      if (firstPoint.isSide && highestAnchor < points[1].y) firstPoint.y = highestAnchor;
+      if (lastPoint.isSide && lowestAnchor > points[points.length - 2].y) lastPoint.y = lowestAnchor;
+    }
+
     const geometry = buildGeometry(points);
 
     segments = geometry.segments;
     totalLength = geometry.totalLength;
+
+    dotLengths = anchors.map((anchor, index) => {
+      const dot = dots[index];
+      const position = findOnPath(segments, anchor.x, anchor.y);
+
+      dot.hidden = !position;
+      if (!position) return null;
+
+      dot.style.left = `${position.x}px`;
+      dot.style.top = `${anchor.y}px`;
+      return position.length;
+    });
     const readingLine = window.innerHeight * READING_LINE;
     const containerTop = containerRect.top + window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
