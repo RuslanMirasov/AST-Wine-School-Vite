@@ -28,6 +28,7 @@ import { initEventFilters } from './modules/event-filters.js';
 import { initEventFilterSelection } from './modules/event-filter-selection.js';
 import { initHistoryLines } from './modules/history-lines.js';
 import { initFixButton } from './modules/fix-button.js';
+import { initShowMore } from './modules/show-more.js';
 
 popup.init();
 window.popup = popup;
@@ -66,4 +67,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initEventFilterSelection();
   initHistoryLines();
   initFixButton();
+  initShowMore();
 });
