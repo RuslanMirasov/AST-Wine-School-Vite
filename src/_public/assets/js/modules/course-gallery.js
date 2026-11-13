@@ -24,13 +24,19 @@ export const initCourseGallery = () => {
     maxWidth: '960px',
     overlayColor: 'rgba(39, 53, 81, 0.9)',
     customClass: 'course-gallery-overlay',
-    toolsBackground: 'var(--blue)',
+    toolsBackground: 'var(--footer-background)',
     titleattr: 'aria-label',
     focusItem: false,
     onPreOpen(item) {
       opener = item;
     },
     onPostOpen() {
+      // При раннем Escape анимация открытия всё равно успевает перенести фокус в галерею.
+      if (document.body.classList.contains('a11y') && !document.body.classList.contains('vbox-open')) {
+        opener.focus({ preventScroll: true });
+        return;
+      }
+
       const overlay = document.querySelector('.vbox-overlay');
       overlay.setAttribute('role', 'dialog');
       overlay.setAttribute('aria-modal', 'true');

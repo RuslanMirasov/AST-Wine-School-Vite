@@ -413,3 +413,20 @@
     background-color: var(--white);
   }
 }
+
+.body.a11y.a11y-theme-dark .content.dark {
+  background-color: var(--white);
+
+  :is(.title, .text, .price, .icon-list span) {
+    color: var(--blue);
+  }
+
+  .text:is(.grey-medium, .grey-text) {
+    color: var(--grey-text);
+  }
+
+  .tags .tag {
+    color: var(--blue);
+    background-color: var(--grey-light);
+  }
+}

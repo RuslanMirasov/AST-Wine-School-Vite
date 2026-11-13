@@ -1,6 +1,6 @@
 .footer {
   display: block;
-  background: var(--blue);
+  background: var(--footer-background);
   color: var(--white);
   padding-top: 94px;
   margin-top: 40px;
@@ -375,7 +375,6 @@
 
   &.a11y-theme-dark {
     .footer {
-      background: var(--grey-light);
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       hr {
         background-color: rgba(255, 255, 255, 0.3);

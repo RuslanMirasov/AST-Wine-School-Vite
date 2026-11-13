@@ -166,6 +166,24 @@
   gap: var(--fs-8);
 }
 
+.body.a11y.a11y-images-hidden :where(.section-event-calendar ~ .section--classrooms, .online-courses #catalog) .post-card-image {
+  min-height: 0;
+
+  &::before,
+  img {
+    display: none;
+  }
+
+  .tags {
+    position: static;
+    padding: 0;
+  }
+}
+
+.body.a11y .post-card :is(.title, .text) {
+  overflow-wrap: anywhere;
+}
+
 .post-card-content {
   display: flex;
   flex: 1;

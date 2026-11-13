@@ -114,3 +114,14 @@
     }
   }
 }
+
+.body.a11y {
+  .menu-accordeon-head p {
+    white-space: normal;
+    text-wrap: wrap;
+  }
+
+  .info-menu a:focus-visible {
+    outline-offset: -3px;
+  }
+}

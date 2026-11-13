@@ -9,6 +9,9 @@ export const initEventFilters = () => {
   if (!backdrop) return;
 
   const toggleButtons = Array.from(document.querySelectorAll(TOGGLE_SELECTOR));
+  const closeButton = backdrop.querySelector('button.popup-close');
+  const applyButton = backdrop.querySelector('button[type="submit"]');
+  const isA11yEnabled = () => document.body.classList.contains('a11y');
   let opener = null;
 
   const isOpen = () => backdrop.classList.contains(OPEN_CLASS);
@@ -21,6 +24,7 @@ export const initEventFilters = () => {
   const open = button => {
     opener = button;
     setOpen(true);
+    if (isA11yEnabled()) closeButton?.focus();
   };
 
   const close = () => {
@@ -51,6 +55,19 @@ export const initEventFilters = () => {
   });
 
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') close();
+    if (event.key === 'Escape') {
+      close();
+      return;
+    }
+
+    if (event.key !== 'Tab' || !isOpen() || !isA11yEnabled() || !closeButton || !applyButton) return;
+
+    if (event.shiftKey && document.activeElement === closeButton) {
+      event.preventDefault();
+      applyButton.focus();
+    } else if (!event.shiftKey && document.activeElement === applyButton) {
+      event.preventDefault();
+      closeButton.focus();
+    }
   });
 };

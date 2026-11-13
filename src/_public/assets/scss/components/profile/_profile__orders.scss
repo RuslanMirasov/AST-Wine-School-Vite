@@ -134,6 +134,20 @@
   color: var(--magenta);
 }
 
+.body.a11y {
+  .status-list .status {
+    --orange: #774014;
+    --green: #24603b;
+    --invalid: #a12525;
+  }
+
+  &.a11y-theme-dark .status-list .status {
+    --orange: #ffc493;
+    --green: #a9deae;
+    --invalid: #ffadad;
+  }
+}
+
 .copy-messages {
   --copy-message-gap: var(--fs-8);
   position: fixed;

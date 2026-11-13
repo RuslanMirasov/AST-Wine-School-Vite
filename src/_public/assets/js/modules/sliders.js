@@ -184,6 +184,13 @@ const initSlider = sliderWrapper => {
     };
   }
 
+  if (sliderWrapper.dataset.slider === 'certificate-templates') {
+    options.a11y = {
+      prevSlideMessage: 'Предыдущий шаблон сертификата',
+      nextSlideMessage: 'Следующий шаблон сертификата',
+    };
+  }
+
   if (autoplay && !isA11yEnabled()) {
     options.autoplay = {
       delay: autoplay,

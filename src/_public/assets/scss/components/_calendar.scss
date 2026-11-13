@@ -278,3 +278,43 @@ a.calendar-day__inner {
     color: var(--magenta);
   }
 }
+
+.body.a11y {
+  .events-calendar__month-link {
+    opacity: 1;
+  }
+
+  .calendar-day.is-past .calendar-day__inner {
+    color: var(--grey-text);
+  }
+
+  .calendar-day.has-events .calendar-day__inner {
+    border-color: var(--a11y-accent-text);
+
+    &::after {
+      color: var(--a11y-accent-text);
+    }
+  }
+
+  .calendar-day__events .calendar-day__more {
+    color: #fff;
+  }
+
+  .calendar-day.is-today .calendar-day__inner {
+    background-color: #9c316f;
+    color: #fff;
+
+    &::after {
+      color: #fff;
+    }
+
+    .calendar-day__events li {
+      background-color: var(--white);
+      color: var(--blue);
+    }
+  }
+
+  &.a11y-theme-dark .calendar-day.has-events:not(.is-today) .calendar-day__inner {
+    background-color: #503547;
+  }
+}

@@ -237,6 +237,56 @@
 }
 
 .body.a11y {
+  .section--degustation-and-seminars .content.light {
+    .title {
+      color: var(--blue);
+    }
+
+    .image-background {
+      position: relative;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      border-radius: var(--fs-24);
+      overflow: hidden;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .section--curses {
+      .content {
+        min-height: 0;
+
+        .image-background {
+          position: relative;
+          height: auto;
+          aspect-ratio: 16 / 10;
+          border-radius: var(--fs-24);
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            mask-image: none;
+          }
+        }
+      }
+
+      .content-list__item.col-3-3 {
+        .content {
+          padding-top: var(--fs-24);
+        }
+
+        .tags {
+          position: static;
+          width: 100%;
+        }
+      }
+    }
+  }
+
   @media (min-width: 768px) {
     .section--curses {
       .content {

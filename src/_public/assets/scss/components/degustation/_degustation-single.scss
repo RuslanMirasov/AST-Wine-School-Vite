@@ -144,6 +144,45 @@
   }
 }
 
+.body.a11y .degustation-single-hero {
+  min-height: 0;
+
+  > .image-background {
+    position: relative;
+    width: calc(100% - var(--fs-32));
+    max-width: 1340px;
+    height: clamp(150px, 28vw, 350px);
+    margin-inline: auto;
+    border-radius: var(--fs-30);
+    overflow: hidden;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .container > .content-text :is(.title, .text) {
+    max-width: 100%;
+    color: var(--blue);
+  }
+
+  .breadcrumbs.dark {
+    background-color: var(--white);
+
+    li {
+      color: var(--grey-text);
+    }
+
+    a {
+      color: var(--a11y-accent-text);
+    }
+  }
+
+  .order-degustation-form .icon-list .magenta a {
+    color: var(--a11y-accent-text);
+  }
+}
+
 .order-degustation-form {
   scroll-margin: 50px;
   .price-and-btn {
