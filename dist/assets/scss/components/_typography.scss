@@ -170,6 +170,9 @@
   &.grey-medium {
     color: var(--grey-medium);
   }
+  &.red {
+    color: var(--invalid);
+  }
   &.blue-text {
     color: var(--blue-text);
   }

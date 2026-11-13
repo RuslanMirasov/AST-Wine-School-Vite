@@ -271,6 +271,9 @@ textarea {
       width: auto;
     }
   }
+  &.gap--28 {
+    gap: var(--fs-28);
+  }
 }
 
 .ol {

@@ -23,7 +23,7 @@
         <li><span>Онлайн-курсы</span></li>
       </ul>
 
-      <section class="section section--privat-events-hero">
+      <section class="section section--privat-events-hero section--online-hero">
         <div class="container gap--40">
           <h1 class="title title--40 upper">Онлайн-курсы</h1>
 
@@ -31,16 +31,16 @@
             <div class="col--2-3">
               <div class="content pad--40 privat-events-hero-image">
                 <picture class="image-background white-gradient">
-                  <source media="(max-width: 767px)" srcset="/assets/img/privat-events/hero.webp" />
-                  <img src="/assets/img/privat-events/hero.webp" alt="Ваш путь в мир вина начинается здесь" title="Ваш путь в мир вина начинается здесь" />
+                  <source media="(max-width: 767px)" srcset="/assets/img/promo/1-full.webp" />
+                  <img src="/assets/img/promo/1.webp" alt="Ваш путь в мир вина начинается здесь" title="Ваш путь в мир вина начинается здесь" />
                 </picture>
 
-                <div class="content-text gap--24">
+                <div class="content-text gap--20">
                   <b class="text fs-14 upper magenta">Онлайн-обучение</b>
-                  <h2 class="title title--40">Ваш путь в&nbsp;мир вина начинается здесь</h2>
-                  <p class="text">
-                    От&nbsp;фундаментальных знаний до&nbsp;экспертных дипломов. Учитесь у&nbsp;лучших сомелье страны в&nbsp;удобное время&nbsp;— с&nbsp;телефона,
-                    планшета или&nbsp;компьютера.
+                  <h2 class="title title--44 light">Ваш путь в&nbsp;мир вина начинается&nbsp;здесь</h2>
+                  <p class="text fs-18 grey-text">
+                    От&nbsp;фундаментальных знаний до&nbsp;экспертных дипломов. Учитесь у&nbsp;лучших сомелье страны в&nbsp;удобное время&nbsp;—
+                    с&nbsp;телефона, планшета или&nbsp;компьютера.
                   </p>
 
                   <a href="#catalog" class="button"><span>Каталог курсов</span></a>
@@ -50,16 +50,22 @@
 
             <div class="col--3">
               <div class="content dark pad--32 gap--16">
-                <svg width="40" height="40" class="magenta" aria-hidden="true"><use href="/assets/img/sprite.svg#clock"></use></svg>
-                <div class="content-text gap--8 va--b">
-                  <h3 class="title title--24 bold">Гибкость и&nbsp;комфорт</h3>
+                <div class="circle-icon">
+                  <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#alarm-clock"></use></svg>
+                </div>
+
+                <div class="content-text gap--8 va--b pad--40">
+                  <h3 class="title title--24">Гибкость и&nbsp;комфорт</h3>
                   <p class="text fs-14">Доступ к&nbsp;лекциям 24/7 с&nbsp;любого устройства</p>
                 </div>
               </div>
 
-              <div class="content pad--32 va--b ta--c light" data-popup-open="video-player" data-video-url="https://assets.mixkit.co/videos/22734/22734-720.mp4">
+              <div
+                class="content pad--32 va--b ta--c light"
+                data-popup-open="video-player"
+                data-video-url="https://assets.mixkit.co/videos/22734/22734-720.mp4"
+              >
                 <picture class="image-background gradient">
-                  <source media="(max-width: 767px)" srcset="/assets/img/promo/6.webp" />
                   <img src="/assets/img/promo/6.webp" alt="Смотреть демо" title="Смотреть демо" />
                 </picture>
                 <button type="button" class="player-play-button" aria-label="Смотреть демо">
@@ -74,7 +80,7 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--online-profits">
         <div class="container gap--40">
           <div class="content-text gap--8">
             <b class="text fs-14 upper grey-text">Формат обучения</b>
@@ -83,68 +89,85 @@
 
           <ul class="content-list">
             <li class="content-list__item col-3">
-              <article class="content pad--28 gap--12">
-                <svg width="40" height="40" class="magenta" aria-hidden="true"><use href="/assets/img/sprite.svg#clock"></use></svg>
-                <h3 class="title title--24 bold">Гибкий график</h3>
-                <p class="text fs-14 grey-text">
-                  Учитесь в&nbsp;удобном темпе: уроки открываются сразу после покупки и&nbsp;доступны с&nbsp;любого устройства.
-                </p>
+              <article class="content gap--24 pad--32">
+                <div class="circle-icon">
+                  <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#alarm-clock"></use></svg>
+                </div>
+                <div class="content-text gap--8">
+                  <h3 class="title title--24 bold">Гибкий график</h3>
+                  <p class="text grey-text">
+                    Учитесь в&nbsp;удобном темпе: уроки открываются сразу после покупки и&nbsp;доступны с&nbsp;любого устройства.
+                  </p>
+                </div>
               </article>
             </li>
             <li class="content-list__item col-3">
-              <article class="content pad--28 gap--12">
-                <svg width="40" height="40" class="magenta" aria-hidden="true"><use href="/assets/img/sprite.svg#play-online"></use></svg>
-                <h3 class="title title--24 bold">Доступ к&nbsp;записям</h3>
-                <p class="text fs-14 grey-text">
-                  Все онлайн-встречи и&nbsp;лекции записываются&nbsp;— пересматривайте материал в&nbsp;течение всего периода обучения.
-                </p>
+              <article class="content gap--24 pad--32">
+                <div class="circle-icon">
+                  <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#circle-play"></use></svg>
+                </div>
+                <div class="content-text gap--8">
+                  <h3 class="title title--24 bold">Доступ к&nbsp;записям</h3>
+                  <p class="text grey-text">
+                    Все онлайн-встречи и&nbsp;лекции записываются&nbsp;— пересматривайте материал в&nbsp;течение всего периода обучения.
+                  </p>
+                </div>
               </article>
             </li>
             <li class="content-list__item col-3">
-              <article class="content pad--28 gap--12">
-                <svg width="40" height="40" class="magenta" aria-hidden="true"><use href="/assets/img/sprite.svg#calendar"></use></svg>
-                <h3 class="title title--24 bold">Сертификат школы</h3>
-                <p class="text fs-14 grey-text">
-                  После успешного завершения курса вы&nbsp;получаете официальный сертификат Школы вина AST.
-                </p>
+              <article class="content gap--24 pad--32">
+                <div class="circle-icon">
+                  <svg width="32" height="32" aria-hidden="true"><use href="/assets/img/sprite.svg#text-file"></use></svg>
+                </div>
+                <div class="content-text gap--8">
+                  <h3 class="title title--24 bold">Сертификат школы</h3>
+                  <p class="text grey-text">После успешного завершения курса вы&nbsp;получаете официальный сертификат Школы вина AST.</p>
+                </div>
               </article>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="section section--classrooms cards-hover" id="catalog" data-tabs>
+      <section class="section section--classrooms section--online-catalog cards-hover" id="catalog">
         <div class="container gap--24">
           <div class="content-text gap--8">
             <b class="text fs-14 upper grey-text">Каталог курсов</b>
             <h2 class="title title--32 upper">Выберите свою программу</h2>
           </div>
 
-          <form data-form action="#" class="form teachers-search" novalidate>
-            <label class="label label--icon">
-              <svg width="20" height="20"><use href="/assets/img/sprite.svg#search"></use></svg>
-              <input type="text" name="course-search" class="input" placeholder="Поиск по названию" />
-            </label>
-          </form>
+          <form action="#" method="GET" class="online-catalog-filter" id="online-catalog-filter" novalidate>
+            <div class="online-catalog-search">
+              <label class="label label--icon">
+                <svg width="20" height="20"><use href="/assets/img/sprite.svg#search"></use></svg>
+                <input type="text" name="course-search" class="input" placeholder="Поиск по названию" />
+              </label>
+            </div>
 
-          <ul class="search-navigation">
-            <li>
-              <button type="button" class="search-navigation__btn active" data-tab-target="all">Все курсы</button>
-            </li>
-            <li>
-              <button type="button" class="search-navigation__btn" data-tab-target="regions">Регионы</button>
-            </li>
-            <li>
-              <button type="button" class="search-navigation__btn" data-tab-target="spirits">Крепкий алкоголь</button>
-            </li>
-            <li>
-              <button type="button" class="search-navigation__btn" data-tab-target="career">Карьера и&nbsp;навыки</button>
-            </li>
-            <li>
-              <p class="text grey-text">Уровень:</p>
-            </li>
-            <li>
-              <fieldset class="radio-buttons freez">
+            <fieldset class="search-navigation">
+              <legend class="visually-hidden">Категория</legend>
+              <label class="search-navigation__item">
+                <input type="radio" name="course-category" value="all" class="visually-hidden" checked />
+                <span class="search-navigation__btn">Все курсы</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="course-category" value="regions" class="visually-hidden" />
+                <span class="search-navigation__btn">Регионы</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="course-category" value="spirits" class="visually-hidden" />
+                <span class="search-navigation__btn">Крепкий алкоголь</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="course-category" value="career" class="visually-hidden" />
+                <span class="search-navigation__btn">Карьера и&nbsp;навыки</span>
+              </label>
+            </fieldset>
+
+            <div class="online-catalog-levels">
+              <p class="text fs-14 grey-text">Уровень:</p>
+              <fieldset class="radio-buttons">
+                <legend class="visually-hidden">Уровень</legend>
                 <label class="label">
                   <input name="course-level" type="radio" class="radio-button" value="Начинающим" checked />
                   <p class="label-text">Начинающим</p>
@@ -158,12 +181,12 @@
                   <p class="label-text">Профессионалам</p>
                 </label>
               </fieldset>
-            </li>
-          </ul>
+            </div>
+          </form>
 
           <p class="text fs-14 grey-text full">Найдено программ: 22</p>
 
-          <div class="collage active" data-tab="all">
+          <div class="collage">
             <div class="col--3">
               <article class="post-card gap--16">
                 <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
@@ -178,7 +201,10 @@
 
                 <div class="post-card-text">
                   <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">История виноделия</a></h3>
-                  <p class="text cut-3">В&nbsp;этой серии видеоуроков мы&nbsp;поведаем, как появилось виноделие и&nbsp;как оно менялось с&nbsp;ходом технического прогресса.</p>
+                  <p class="text cut-3">
+                    В&nbsp;этой серии видеоуроков мы&nbsp;поведаем, как появилось виноделие и&nbsp;как оно менялось с&nbsp;ходом технического
+                    прогресса.
+                  </p>
                 </div>
 
                 <ul class="icon-list">
@@ -202,7 +228,11 @@
             <div class="col--3">
               <article class="post-card gap--16">
                 <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
-                  <img src="/assets/img/promo/7.webp" alt="Секреты итальянских вин: от Неббиоло до Примитиво" title="Секреты итальянских вин: от Неббиоло до Примитиво" />
+                  <img
+                    src="/assets/img/promo/7.webp"
+                    alt="Секреты итальянских вин: от Неббиоло до Примитиво"
+                    title="Секреты итальянских вин: от Неббиоло до Примитиво"
+                  />
                   <ul class="tags">
                     <li class="tag">
                       <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
@@ -212,7 +242,9 @@
                 </a>
 
                 <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Секреты итальянских вин: от&nbsp;Неббиоло до&nbsp;Примитиво</a></h3>
+                  <h3 class="title title--24 bold cut-3">
+                    <a href="%ROOT%courses/online/wine-history/" class="title-link">Секреты итальянских вин: от&nbsp;Неббиоло до&nbsp;Примитиво</a>
+                  </h3>
                   <p class="text cut-3">Путешествие по&nbsp;винным регионам Италии: чем отличается Бароло от&nbsp;Брунелло.</p>
                 </div>
 
@@ -237,7 +269,11 @@
             <div class="col--3">
               <article class="post-card gap--16">
                 <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
-                  <img src="/assets/img/promo/8.webp" alt="Виноград и климат: как погода влияет на вкус" title="Виноград и климат: как погода влияет на вкус" />
+                  <img
+                    src="/assets/img/promo/8.webp"
+                    alt="Виноград и климат: как погода влияет на вкус"
+                    title="Виноград и климат: как погода влияет на вкус"
+                  />
                   <ul class="tags">
                     <li class="tag">
                       <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
@@ -247,7 +283,9 @@
                 </a>
 
                 <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Виноград и&nbsp;климат: как погода влияет на&nbsp;вкус</a></h3>
+                  <h3 class="title title--24 bold cut-3">
+                    <a href="%ROOT%courses/online/wine-history/" class="title-link">Виноград и&nbsp;климат: как погода влияет на&nbsp;вкус</a>
+                  </h3>
                   <p class="text cut-3">От&nbsp;теории терруара до&nbsp;практических примеров из&nbsp;разных винтажей.</p>
                 </div>
 
@@ -282,7 +320,9 @@
                 </a>
 
                 <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Вина Бордо: левый и&nbsp;правый берег</a></h3>
+                  <h3 class="title title--24 bold cut-3">
+                    <a href="%ROOT%courses/online/wine-history/" class="title-link">Вина Бордо: левый и&nbsp;правый берег</a>
+                  </h3>
                   <p class="text cut-3">Разбираем классификации, сорта и&nbsp;стили главного винного региона Франции.</p>
                 </div>
 
@@ -317,7 +357,9 @@
                 </a>
 
                 <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Шампанское и&nbsp;игристые вина</a></h3>
+                  <h3 class="title title--24 bold cut-3">
+                    <a href="%ROOT%courses/online/wine-history/" class="title-link">Шампанское и&nbsp;игристые вина</a>
+                  </h3>
                   <p class="text cut-3">Методы производства, уровни сладости и&nbsp;как выбрать игристое к&nbsp;празднику.</p>
                 </div>
 
@@ -352,7 +394,9 @@
                 </a>
 
                 <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Как читать винную этикетку</a></h3>
+                  <h3 class="title title--24 bold cut-3">
+                    <a href="%ROOT%courses/online/wine-history/" class="title-link">Как читать винную этикетку</a>
+                  </h3>
                   <p class="text cut-3">Регион, сорт, классификация и&nbsp;год урожая&nbsp;— учимся понимать бутылку с&nbsp;первого взгляда.</p>
                 </div>
 
@@ -375,297 +419,30 @@
             </div>
           </div>
 
-          <div class="collage" data-tab="regions">
-            <div class="col--3">
-              <article class="post-card gap--16">
-                <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
-                  <img src="/assets/img/promo/7.webp" alt="Секреты итальянских вин: от Неббиоло до Примитиво" title="Секреты итальянских вин: от Неббиоло до Примитиво" />
-                  <ul class="tags">
-                    <li class="tag">
-                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
-                      Онлайн
-                    </li>
-                  </ul>
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Секреты итальянских вин: от&nbsp;Неббиоло до&nbsp;Примитиво</a></h3>
-                  <p class="text cut-3">Путешествие по&nbsp;винным регионам Италии: чем отличается Бароло от&nbsp;Брунелло.</p>
-                </div>
-
-                <ul class="icon-list">
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
-                    <span>Видеоуроки в&nbsp;записи</span>
-                  </li>
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
-                    <span>Доступ открывается после покупки</span>
-                  </li>
-                </ul>
-
-                <div class="price-and-btn">
-                  <span class="price">4 500 ₽</span>
-                  <a href="%ROOT%courses/online/wine-history/" class="button blue-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </div>
-
-            <div class="col--3">
-              <article class="post-card gap--16">
-                <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
-                  <img src="/assets/img/promo/9.webp" alt="Вина Бордо: левый и правый берег" title="Вина Бордо: левый и правый берег" />
-                  <ul class="tags">
-                    <li class="tag">
-                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
-                      Онлайн
-                    </li>
-                  </ul>
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Вина Бордо: левый и&nbsp;правый берег</a></h3>
-                  <p class="text cut-3">Разбираем классификации, сорта и&nbsp;стили главного винного региона Франции.</p>
-                </div>
-
-                <ul class="icon-list">
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
-                    <span>Видеоуроки в&nbsp;записи</span>
-                  </li>
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
-                    <span>Доступ открывается после покупки</span>
-                  </li>
-                </ul>
-
-                <div class="price-and-btn">
-                  <span class="price">6 000 ₽</span>
-                  <a href="%ROOT%courses/online/wine-history/" class="button blue-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </div>
-
-            <div class="col--3">
-              <article class="post-card gap--16">
-                <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
-                  <img src="/assets/img/promo/10.webp" alt="Шампанское и игристые вина" title="Шампанское и игристые вина" />
-                  <ul class="tags">
-                    <li class="tag">
-                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
-                      Онлайн
-                    </li>
-                  </ul>
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Шампанское и&nbsp;игристые вина</a></h3>
-                  <p class="text cut-3">Методы производства, уровни сладости и&nbsp;как выбрать игристое к&nbsp;празднику.</p>
-                </div>
-
-                <ul class="icon-list">
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
-                    <span>Видеоуроки в&nbsp;записи</span>
-                  </li>
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
-                    <span>Доступ открывается после покупки</span>
-                  </li>
-                </ul>
-
-                <div class="price-and-btn">
-                  <span class="price">4 000 ₽</span>
-                  <a href="%ROOT%courses/online/wine-history/" class="button blue-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </div>
+          <div class="buttons">
+            <button type="button" class="button load-more blue-light"><span>Показать ещё</span></button>
           </div>
 
-          <div class="collage" data-tab="spirits">
-            <div class="col--3">
-              <article class="post-card gap--16">
-                <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
-                  <img src="/assets/img/promo/6.webp" alt="История виноделия" title="История виноделия" />
-                  <ul class="tags">
-                    <li class="tag">
-                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
-                      Онлайн
-                    </li>
-                  </ul>
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">История виноделия</a></h3>
-                  <p class="text cut-3">В&nbsp;этой серии видеоуроков мы&nbsp;поведаем, как появилось виноделие и&nbsp;как оно менялось с&nbsp;ходом технического прогресса.</p>
-                </div>
-
-                <ul class="icon-list">
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
-                    <span>Видеоуроки в&nbsp;записи</span>
-                  </li>
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
-                    <span>Доступ открывается после покупки</span>
-                  </li>
-                </ul>
-
-                <div class="price-and-btn">
-                  <span class="price">5 000 ₽</span>
-                  <a href="%ROOT%courses/online/wine-history/" class="button blue-light"><span>Подробнее</span></a>
-                </div>
-              </article>
+          <!--если ничего не найдено-->
+          <div class="page-not-found full">
+            <img src="/assets/img/not-found.webp" alt="" width="280" class="page-not-found-image" />
+            <div class="content-text gap--16">
+              <p class="title title--32 bold ta-c full">По&nbsp;вашему запросу ничего не&nbsp;найдено</p>
+              <p class="text fs-18">Попробуйте изменить параметры поиска или сбросить фильтры.</p>
             </div>
-
-            <div class="col--3">
-              <article class="post-card gap--16">
-                <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
-                  <img src="/assets/img/promo/8.webp" alt="Виноград и климат: как погода влияет на вкус" title="Виноград и климат: как погода влияет на вкус" />
-                  <ul class="tags">
-                    <li class="tag">
-                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
-                      Онлайн
-                    </li>
-                  </ul>
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Виноград и&nbsp;климат: как погода влияет на&nbsp;вкус</a></h3>
-                  <p class="text cut-3">От&nbsp;теории терруара до&nbsp;практических примеров из&nbsp;разных винтажей.</p>
-                </div>
-
-                <ul class="icon-list">
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
-                    <span>Видеоуроки в&nbsp;записи</span>
-                  </li>
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
-                    <span>Доступ открывается после покупки</span>
-                  </li>
-                </ul>
-
-                <div class="price-and-btn">
-                  <span class="price">3 500 ₽</span>
-                  <a href="%ROOT%courses/online/wine-history/" class="button blue-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div class="collage" data-tab="career">
-            <div class="col--3">
-              <article class="post-card gap--16">
-                <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
-                  <img src="/assets/img/promo/11.webp" alt="Как читать винную этикетку" title="Как читать винную этикетку" />
-                  <ul class="tags">
-                    <li class="tag">
-                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
-                      Онлайн
-                    </li>
-                  </ul>
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Как читать винную этикетку</a></h3>
-                  <p class="text cut-3">Регион, сорт, классификация и&nbsp;год урожая&nbsp;— учимся понимать бутылку с&nbsp;первого взгляда.</p>
-                </div>
-
-                <ul class="icon-list">
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
-                    <span>Видеоуроки в&nbsp;записи</span>
-                  </li>
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
-                    <span>Доступ открывается после покупки</span>
-                  </li>
-                </ul>
-
-                <div class="price-and-btn">
-                  <span class="price">2 500 ₽</span>
-                  <a href="%ROOT%courses/online/wine-history/" class="button blue-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </div>
-
-            <div class="col--3">
-              <article class="post-card gap--16">
-                <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
-                  <img src="/assets/img/promo/6.webp" alt="История виноделия" title="История виноделия" />
-                  <ul class="tags">
-                    <li class="tag">
-                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
-                      Онлайн
-                    </li>
-                  </ul>
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">История виноделия</a></h3>
-                  <p class="text cut-3">В&nbsp;этой серии видеоуроков мы&nbsp;поведаем, как появилось виноделие и&nbsp;как оно менялось с&nbsp;ходом технического прогресса.</p>
-                </div>
-
-                <ul class="icon-list">
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
-                    <span>Видеоуроки в&nbsp;записи</span>
-                  </li>
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
-                    <span>Доступ открывается после покупки</span>
-                  </li>
-                </ul>
-
-                <div class="price-and-btn">
-                  <span class="price">5 000 ₽</span>
-                  <a href="%ROOT%courses/online/wine-history/" class="button blue-light"><span>Подробнее</span></a>
-                </div>
-              </article>
-            </div>
-
-            <div class="col--3">
-              <article class="post-card gap--16">
-                <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
-                  <img src="/assets/img/promo/9.webp" alt="Вина Бордо: левый и правый берег" title="Вина Бордо: левый и правый берег" />
-                  <ul class="tags">
-                    <li class="tag">
-                      <svg width="18" height="18"><use href="/assets/img/sprite.svg#video"></use></svg>
-                      Онлайн
-                    </li>
-                  </ul>
-                </a>
-
-                <div class="post-card-text">
-                  <h3 class="title title--24 bold cut-3"><a href="%ROOT%courses/online/wine-history/" class="title-link">Вина Бордо: левый и&nbsp;правый берег</a></h3>
-                  <p class="text cut-3">Разбираем классификации, сорта и&nbsp;стили главного винного региона Франции.</p>
-                </div>
-
-                <ul class="icon-list">
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#play-online"></use></svg>
-                    <span>Видеоуроки в&nbsp;записи</span>
-                  </li>
-                  <li>
-                    <svg width="18" height="18" class="magenta"><use href="/assets/img/sprite.svg#place"></use></svg>
-                    <span>Доступ открывается после покупки</span>
-                  </li>
-                </ul>
-
-                <div class="price-and-btn">
-                  <span class="price">6 000 ₽</span>
-                  <a href="%ROOT%courses/online/wine-history/" class="button blue-light"><span>Подробнее</span></a>
-                </div>
-              </article>
+            <div class="buttons ta--c">
+              <button type="reset" form="online-catalog-filter" class="button magenta-light"><span>Сбросить все фильтры</span></button>
             </div>
           </div>
         </div>
       </section>
 
-      <load src="/_partials/sections/section-teachers-slider.html" all-teachers-link="" />
+      <load
+        src="/_partials/sections/section-teachers-slider.html"
+        all-teachers-link="<a href='%ROOT%about/teachers/' class='button magenta-light'><span>Все преподаватели</span></a>"
+      />
 
-      <section class="section">
+      <section class="section section--online-audience">
         <div class="container">
           <div class="content pad--40">
             <div class="collage degustations-hero">
@@ -673,23 +450,30 @@
                 <div class="content-text gap--24">
                   <h2 class="title title--32 upper">Кому подходят онлайн-курсы вина?</h2>
 
-                  <ul class="list">
+                  <ul class="list gap--28">
                     <li>
-                      <div class="content-text gap--4">
+                      <div class="content-text gap--6">
                         <b class="text fs-18">Любителям</b>
-                        <p class="text fs-14 grey-text">Тем, кто хочет уверенно выбирать вино в&nbsp;магазине и&nbsp;ресторане, разбираться в&nbsp;стилях и&nbsp;регионах без&nbsp;снобизма.</p>
+                        <p class="text grey-text">
+                          Тем, кто хочет уверенно выбирать вино в&nbsp;магазине и&nbsp;ресторане, разбираться в&nbsp;стилях и&nbsp;регионах
+                          без&nbsp;снобизма.
+                        </p>
                       </div>
                     </li>
                     <li>
-                      <div class="content-text gap--4">
+                      <div class="content-text gap--6">
                         <b class="text fs-18">Начинающим сомелье</b>
-                        <p class="text fs-14 grey-text">Идеальный старт в&nbsp;профессии: получите базу, необходимую для&nbsp;работы в&nbsp;HoReCa или&nbsp;винной рознице.</p>
+                        <p class="text grey-text">
+                          Идеальный старт в&nbsp;профессии: получите базу, необходимую для&nbsp;работы в&nbsp;HoReCa или&nbsp;винной рознице.
+                        </p>
                       </div>
                     </li>
                     <li>
-                      <div class="content-text gap--4">
+                      <div class="content-text gap--6">
                         <b class="text fs-18">Жителям регионов и&nbsp;других стран</b>
-                        <p class="text fs-14 grey-text">Качественное образование доступно в&nbsp;любой точке страны&nbsp;— без&nbsp;затрат на&nbsp;перелёты.</p>
+                        <p class="text grey-text">
+                          Качественное образование доступно в&nbsp;любой точке страны&nbsp;— без&nbsp;затрат на&nbsp;перелёты.
+                        </p>
                       </div>
                     </li>
                   </ul>
@@ -703,12 +487,13 @@
                     разработанный методистами и&nbsp;ведущими сомелье России.
                   </p>
                   <p class="text">
-                    Наши онлайн-курсы охватывают все ключевые аспекты: от&nbsp;физиологии вкуса и&nbsp;технологии производства до&nbsp;подробного изучения
-                    винодельческих регионов Старого и&nbsp;Нового Света. Мы&nbsp;также уделяем внимание крепкому алкоголю и&nbsp;правилам гастрономии.
+                    Наши онлайн-курсы охватывают все ключевые аспекты: от&nbsp;физиологии вкуса и&nbsp;технологии производства до&nbsp;подробного
+                    изучения винодельческих регионов Старого и&nbsp;Нового Света. Мы&nbsp;также уделяем внимание крепкому алкоголю и&nbsp;правилам
+                    гастрономии.
                   </p>
                   <p class="text">
-                    Выбирая онлайн-формат, вы&nbsp;получаете ту&nbsp;же глубину знаний, что и&nbsp;в&nbsp;наших кампусах в&nbsp;Москве и&nbsp;Санкт-Петербурге,
-                    но&nbsp;с&nbsp;гибкостью, которую даёт современное цифровое пространство.
+                    Выбирая онлайн-формат, вы&nbsp;получаете ту&nbsp;же глубину знаний, что и&nbsp;в&nbsp;наших кампусах в&nbsp;Москве
+                    и&nbsp;Санкт-Петербурге, но&nbsp;с&nbsp;гибкостью, которую даёт современное цифровое пространство.
                   </p>
 
                   <div class="buttons mt--8 ta--l">
@@ -727,16 +512,19 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--online-offline">
         <div class="container">
           <div class="collage degustations-hero">
             <div class="col--2">
-              <div class="content-text gap--16">
-                <b class="text fs-14 upper grey-text">Не хватает живого общения?</b>
-                <h2 class="title title--32 upper">Попробуйте очные форматы в&nbsp;кампусах Москвы и&nbsp;Санкт-Петербурга</h2>
-                <p class="text">
-                  Если для&nbsp;вас важна энергия аудитории, работа с&nbsp;преподавателем вживую и&nbsp;совместная дегустация с&nbsp;коллегами&nbsp;— приглашаем
-                  вас в&nbsp;наши исторические кампусы.
+              <div class="content-text gap--20">
+                <div class="content-text gap--8">
+                  <b class="text fs-14 upper grey-text">Не хватает живого общения?</b>
+                  <h2 class="title title--32 upper">Попробуйте очные форматы в&nbsp;кампусах Москвы и&nbsp;Санкт-Петербурга</h2>
+                </div>
+
+                <p class="text grey-text">
+                  Если для&nbsp;вас важна энергия аудитории, работа с&nbsp;преподавателем вживую и&nbsp;совместная дегустация с&nbsp;коллегами&nbsp;—
+                  приглашаем вас в&nbsp;наши исторические кампусы.
                 </p>
 
                 <div class="buttons mt--8 gap--12 ta--l">
@@ -748,18 +536,24 @@
 
             <div class="col--2">
               <div class="col--2">
-                <div class="content pad--28 gap--12">
-                  <svg width="40" height="40" class="magenta" aria-hidden="true"><use href="/assets/img/sprite.svg#place"></use></svg>
+                <div class="content gap--16 pad--32">
+                  <div class="circle-icon mini">
+                    <svg width="24" height="24" aria-hidden="true"><use href="/assets/img/sprite.svg#networking"></use></svg>
+                  </div>
+
                   <h3 class="title title--24 bold">Нетворкинг</h3>
-                  <p class="text fs-14 grey-text">Знакомство с&nbsp;будущими коллегами и&nbsp;единомышленниками в&nbsp;неформальной обстановке.</p>
+                  <p class="text grey-text">Знакомство с&nbsp;будущими коллегами и&nbsp;единомышленниками в&nbsp;неформальной обстановке.</p>
                 </div>
               </div>
 
               <div class="col--2">
-                <div class="content pad--28 gap--12">
-                  <svg width="40" height="40" class="magenta" aria-hidden="true"><use href="/assets/img/sprite.svg#star"></use></svg>
+                <div class="content gap--16 pad--32">
+                  <div class="circle-icon mini">
+                    <svg width="24" height="24" aria-hidden="true"><use href="/assets/img/sprite.svg#mini-star"></use></svg>
+                  </div>
+
                   <h3 class="title title--24 bold">Живой диалог</h3>
-                  <p class="text fs-14 grey-text">Возможность задать вопрос эксперту лично и&nbsp;получить мгновенный отклик.</p>
+                  <p class="text grey-text">Возможность задать вопрос эксперту лично и&nbsp;получить мгновенный отклик.</p>
                 </div>
               </div>
             </div>
@@ -767,20 +561,13 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--how-to-start">
         <div class="container">
-          <div class="content dark pad--40 gap--24 ta--c">
-            <svg width="694" height="694" class="logo-background" aria-hidden="true">
-              <use href="/assets/img/sprite.svg#preloader"></use>
-            </svg>
-
-            <div class="content-text gap--8 ta--c">
-              <h2 class="title title--32 upper">Не знаете, с&nbsp;чего начать?</h2>
-              <p class="text grey-medium">
-                Оставьте заявку на&nbsp;бесплатную консультацию&nbsp;— кураторы помогут подобрать программу под&nbsp;ваш уровень и&nbsp;цели.
-              </p>
-            </div>
-
+          <div class="content dark gap--16 ta--c">
+            <h2 class="title title--32 upper">Не знаете, с&nbsp;чего начать?</h2>
+            <p class="text fs-18">
+              Оставьте заявку на&nbsp;бесплатную консультацию&nbsp;— кураторы помогут подобрать программу под&nbsp;ваш уровень и&nbsp;цели.
+            </p>
             <div class="buttons">
               <a href="#" class="button"><span>Получить консультацию</span></a>
             </div>

@@ -44,6 +44,7 @@
 @use 'components/certificates/certificates-hero';
 @use 'components/certificates/order-form';
 @use 'components/certificates/certificat-preview';
+@use 'components/certificates/cert-balance';
 @use 'components/cart/cart__sidebar';
 @use 'components/referal-program/referal-program';
 @use 'components/teachers/teachers';
@@ -60,6 +61,10 @@
 @use 'sections/section__welcome';
 @use 'sections/section__curses';
 @use 'sections/section__curse-hero';
+@use 'sections/section__online-hero';
+@use 'sections/section__online-catalog';
+@use 'sections/section__online-audience';
+@use 'sections/section__online-offline';
 @use 'sections/section__curse-modules';
 @use 'sections/section__calendar';
 @use 'sections/section__news';

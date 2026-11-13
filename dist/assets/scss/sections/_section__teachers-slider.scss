@@ -6,6 +6,13 @@
     > .title + .arrows {
       margin-left: auto;
     }
+    @media (min-width: 768px) and (max-width: 1279px) {
+      align-items: flex-end;
+      > .title {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+    }
     > .button {
       margin-left: auto;
       @media (max-width: 767px) {
@@ -18,7 +25,6 @@
       > .title {
         width: 100%;
         --lh: 1.2;
-        max-width: calc(100% - 84px - 24px);
       }
       .arrows {
         display: none;
