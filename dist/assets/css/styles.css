@@ -10940,6 +10940,13 @@ a.calendar-slider-day__inner:focus-visible {
   width: 100%;
   position: relative;
   font-size: var(--fs-16);
+}
+@media (min-width: 1920px) {
+  .post-text {
+    font-size: var(--fs-18);
+  }
+}
+.post-text {
   --lh: 1.3;
   color: var(--blue);
   font-family: var(--font);
