@@ -65,6 +65,10 @@
 
 //1920
 @media (min-width: 1920px) {
+  .section--degistation-list .search-navigation__btn {
+    font-size: var(--fs-16);
+  }
+
   .section--degistation-list,
   .section--classrooms {
     .collage {
