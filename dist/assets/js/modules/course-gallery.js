@@ -11,6 +11,10 @@ export const initCourseGallery = () => {
     true
   );
 
+  const slideObserver = new ResizeObserver(([{ target }]) => {
+    target.closest('.course-gallery-overlay').style.setProperty('--course-gallery-slide-width', `${target.offsetWidth}px`);
+  });
+
   let opener;
   new window.VenoBox({
     selector: '.interface-slider .interface-preview',
@@ -19,12 +23,20 @@ export const initCourseGallery = () => {
     fitView: true,
     maxWidth: '960px',
     overlayColor: 'rgba(39, 53, 81, 0.9)',
+    customClass: 'course-gallery-overlay',
+    toolsBackground: 'var(--footer-background)',
     titleattr: 'aria-label',
     focusItem: false,
     onPreOpen(item) {
       opener = item;
     },
     onPostOpen() {
+      // При раннем Escape анимация открытия всё равно успевает перенести фокус в галерею.
+      if (document.body.classList.contains('a11y') && !document.body.classList.contains('vbox-open')) {
+        opener.focus({ preventScroll: true });
+        return;
+      }
+
       const overlay = document.querySelector('.vbox-overlay');
       overlay.setAttribute('role', 'dialog');
       overlay.setAttribute('aria-modal', 'true');
@@ -34,11 +46,17 @@ export const initCourseGallery = () => {
       overlay.querySelector('.vbox-next').setAttribute('aria-label', 'Следующий слайд');
     },
     onPreClose() {
+      slideObserver.disconnect();
       opener.focus({ preventScroll: true });
     },
     onContentLoaded() {
-      const video = document.querySelector('.vbox-overlay .vbox-content video');
-      if (video) video.playsInline = true;
+      const media = document.querySelector('.course-gallery-overlay .vbox-content:last-child :is(img, video, iframe)');
+      if (!media) return;
+
+      if (media instanceof HTMLVideoElement) media.playsInline = true;
+
+      slideObserver.disconnect();
+      slideObserver.observe(media);
     },
   });
 };

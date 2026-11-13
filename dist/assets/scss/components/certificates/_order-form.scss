@@ -231,6 +231,41 @@
   }
 }
 
+.body.a11y {
+  .label-for-radio-button {
+    position: relative;
+
+    .radio-button {
+      color: var(--a11y-accent-text);
+    }
+
+    input[type='radio'] {
+      display: block;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+
+      &:checked + .radio-button {
+        background-color: var(--magenta);
+        color: #fff;
+      }
+
+      &:focus-visible + .radio-button {
+        outline: 2px solid var(--blue);
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  .certificate-template-arrows {
+    display: flex;
+    justify-content: center;
+    gap: var(--fs-12);
+    padding: var(--fs-8);
+  }
+}
+
 .cert-checkout {
   display: flex;
   position: relative;

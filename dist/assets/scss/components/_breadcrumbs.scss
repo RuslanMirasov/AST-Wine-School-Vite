@@ -106,3 +106,7 @@
     }
   }
 }
+
+.body.a11y .breadcrumbs:not(.dark) a {
+  color: var(--a11y-accent-text);
+}

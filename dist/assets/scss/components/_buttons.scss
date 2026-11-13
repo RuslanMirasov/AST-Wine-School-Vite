@@ -332,31 +332,50 @@
   }
 }
 
-.a11y-theme-dark {
+.body.a11y {
   .button {
-    color: var(--black);
+    color: #fff;
 
-    &.blue {
-      color: var(--white);
-      @media (hover: hover) {
-        &:hover {
-          color: var(--black);
-        }
+    &:is(.white, .white-border, .button--tab, .magenta-light) > span {
+      color: var(--a11y-accent-text);
+    }
+
+    &.button--tab.active > span {
+      color: #fff;
+    }
+
+    &:disabled > span {
+      color: var(--grey-text);
+    }
+  }
+
+  &.a11y-theme-dark .button:not(:disabled) {
+    &:is(.blue, .blue-light) {
+      color: #242424;
+
+      > span {
+        color: inherit;
       }
-      &:focus-visible {
-        color: var(--black);
+
+      &:is(:hover, :focus-visible) {
+        background-color: var(--magenta-hover);
+        color: #fff;
       }
     }
 
-    &.blue-light {
-      color: var(--white);
-      @media (hover: hover) {
-        &:hover {
-          color: var(--black);
-        }
+    &:is(.white, .white-border, .button--tab:not(.active), .blue-border) {
+      border-color: var(--a11y-accent-text);
+
+      &:is(:hover, :focus-visible) {
+        background-color: #503547;
       }
-      &:focus-visible {
-        color: var(--black);
+    }
+
+    &.magenta-light {
+      background-color: #503547;
+
+      &:is(:hover, :focus-visible) {
+        background-color: #5c3e52;
       }
     }
   }

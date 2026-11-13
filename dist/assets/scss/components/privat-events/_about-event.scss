@@ -26,6 +26,13 @@
 
     > .content {
       padding-left: calc(var(--fs-24) * 4);
+
+      @media (min-width: 768px) {
+        > p {
+          min-height: 2lh;
+        }
+      }
+
       &:before {
         content: counter(event-step, decimal-leading-zero);
         position: absolute;
@@ -88,6 +95,10 @@
   }
 
   .content.grey {
+    @media (min-width: 640px) and (max-width: 1023px) {
+      min-height: 0;
+    }
+
     .logo-background {
       svg {
         color: var(--grey-promo);
@@ -178,7 +189,9 @@
     flex: auto;
     gap: var(--fs-16);
     li {
-      width: 100%;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
 
       > .content {
         padding-left: calc(var(--fs-18) * 4);

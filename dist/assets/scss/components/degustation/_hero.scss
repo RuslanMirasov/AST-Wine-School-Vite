@@ -51,3 +51,18 @@
 .why-ast-desc {
   max-width: 500px;
 }
+
+.body.a11y .degustations-hero-image:has(> .content > .content-text) {
+  height: auto;
+}
+
+.body.a11y.a11y-images-hidden {
+  .degustations-hero .group-icons,
+  .degustations-hero-image:has(> .content > .image-background:only-child) {
+    display: none;
+  }
+
+  .collage:has(> .degustations-hero-image > .content > .image-background:only-child) > :not(.degustations-hero-image) {
+    width: 100%;
+  }
+}

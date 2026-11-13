@@ -176,6 +176,11 @@
 
 //360
 @media (max-width: 767px) {
+  .teachers-list > li[hidden],
+  .teachers-list + [data-show-more-btn][hidden] {
+    display: none;
+  }
+
   .collage.teachers-list {
     .col--3 {
       width: 100%;

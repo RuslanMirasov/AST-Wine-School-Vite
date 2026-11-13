@@ -116,6 +116,32 @@
   pointer-events: auto;
 }
 
+.course-gallery-overlay {
+  --course-gallery-arrow-size: 44px;
+  --course-gallery-arrow-gap: 8px;
+  --course-gallery-arrow-inset: max(
+    4px,
+    (100% - var(--course-gallery-slide-width, 100%)) / 2 - var(--course-gallery-arrow-size) - var(--course-gallery-arrow-gap)
+  );
+
+  .vbox-content {
+    padding-inline: max(4%, var(--course-gallery-arrow-size) + var(--course-gallery-arrow-gap) + 4px);
+  }
+
+  .vbox-prev,
+  .vbox-next {
+    width: var(--course-gallery-arrow-size);
+  }
+
+  .vbox-prev {
+    left: var(--course-gallery-arrow-inset);
+  }
+
+  .vbox-next {
+    right: var(--course-gallery-arrow-inset);
+  }
+}
+
 @media (max-width: 599px) {
   .section--image-slider,
   .section-materials-slider {

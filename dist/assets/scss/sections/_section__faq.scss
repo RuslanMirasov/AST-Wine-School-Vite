@@ -111,3 +111,12 @@
     padding: var(--fs-14) var(--fs-30) var(--fs-14) 0px;
   }
 }
+
+.body.a11y.a11y-theme-dark .faq {
+  background-color: var(--white);
+
+  .faq-head button:focus-visible::before,
+  .faq-head button:focus-visible::after {
+    background-color: #fff;
+  }
+}

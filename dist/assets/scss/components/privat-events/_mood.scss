@@ -74,6 +74,25 @@
   }
 }
 
+.section--mood a.mood-card:focus-visible {
+  outline: 3px solid var(--magenta);
+  outline-offset: 3px;
+}
+
+.body.a11y.a11y-theme-dark .mood-card:is(.dark, .blue, .magenta) {
+  background-color: var(--white);
+
+  .content-text > :is(.title, .text),
+  .info-table ul li .text {
+    color: var(--blue);
+  }
+
+  .info-table ul li .text.grey-text {
+    opacity: 1;
+    color: var(--grey-text);
+  }
+}
+
 .info-table {
   display: flex;
   width: 100%;

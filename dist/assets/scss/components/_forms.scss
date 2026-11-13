@@ -686,6 +686,50 @@ $select_padding: 0px var(--fs-16);
   }
 }
 
+.body.a11y {
+  .label-text :is(a.red, a.magenta) {
+    color: var(--a11y-accent-text) !important;
+  }
+
+  .checkbox:focus-visible + .label-text::before {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+
+  .radio-buttons .radio-button:checked + .label-text {
+    color: #fff;
+  }
+
+  :where(.curse-hero-fields, .module-card-form, .order-degustation-form) .choices {
+    height: auto;
+
+    &[data-type*='select-one']::after {
+      background: currentColor;
+      mask: url('../img/svg/select.svg') center no-repeat;
+    }
+
+    .choices__inner {
+      height: auto;
+
+      .choices__list.choices__list--single {
+        height: auto;
+        min-height: var(--fs-50);
+        padding: var(--fs-8) var(--fs-50) var(--fs-8) var(--fs-16);
+        overflow-wrap: anywhere;
+      }
+    }
+
+    .choices__list.choices__list--dropdown {
+      background-color: var(--white);
+
+      .choices__item--selectable:is(:hover, .is-highlighted) {
+        background-color: var(--grey-light);
+        color: var(--blue);
+      }
+    }
+  }
+}
+
 .label.label--file {
   display: flex;
   position: relative;

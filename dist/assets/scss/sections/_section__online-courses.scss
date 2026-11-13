@@ -1,0 +1,62 @@
+.body.a11y .online-courses {
+  .section--privat-events-hero {
+    .col--2-3 .privat-events-hero-image {
+      min-height: 0;
+
+      .content-text {
+        width: 100%;
+        max-width: none;
+        margin-top: 0;
+      }
+    }
+
+    .content:has(> .image-background) {
+      gap: var(--fs-20);
+
+      > .image-background {
+        position: relative;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        max-height: 280px;
+        border-radius: var(--fs-24);
+        overflow: hidden;
+        mask-image: none;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    .content.light .text {
+      color: var(--blue);
+    }
+
+    .player-play-button {
+      position: relative;
+      inset: auto;
+      align-self: center;
+      transform: none;
+      color: var(--a11y-accent-text);
+      background-color: var(--grey-light);
+    }
+  }
+
+  #catalog .post-card-text .title {
+    display: block;
+    overflow: visible;
+  }
+
+  @media (max-width: 767px) {
+    .online-catalog-levels .radio-buttons {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.body.a11y.a11y-theme-dark .online-courses {
+  #catalog input:not(:checked) + .search-navigation__btn {
+    background-color: var(--white);
+    color: var(--blue);
+  }
+}

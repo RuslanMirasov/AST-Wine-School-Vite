@@ -231,3 +231,75 @@
     }
   }
 }
+
+.body.a11y {
+  .curse-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: none;
+
+    > .content-text {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+
+      :is(.title, .text, a) {
+        color: var(--blue);
+      }
+
+      a {
+        border-color: currentColor;
+      }
+    }
+
+    > .image-background {
+      position: relative;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--fs-30);
+
+      &,
+      img {
+        mask-image: none;
+      }
+    }
+
+    .curse-hero-fields__right .title--32 {
+      text-wrap: balance;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &:not(.a11y-images-hidden) .curse-hero {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas:
+        'tags image'
+        'heading image'
+        'fields fields';
+
+      > .tags {
+        grid-area: tags;
+      }
+
+      > .content-text {
+        grid-area: heading;
+      }
+
+      > .image-background {
+        grid-area: image;
+      }
+
+      > .curse-hero-fields {
+        grid-area: fields;
+      }
+    }
+  }
+}

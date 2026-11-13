@@ -114,3 +114,43 @@
     }
   }
 }
+
+.body.a11y :where(
+  .privat-events-hero-image,
+  .mood-card,
+  .curse-card,
+  .card-banner,
+  .post-card,
+  .degustations-hero-image > .content
+):has(> .image-background):has(> .content-text) {
+  min-height: 0;
+
+  > .image-background {
+    position: relative;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 300px;
+    border-radius: var(--fs-24);
+    overflow: hidden;
+    mask-image: none;
+    margin-bottom: var(--fs-16);
+
+    &::before {
+      display: none;
+    }
+
+    img {
+      mask-image: none;
+      opacity: 1;
+    }
+  }
+
+  > .content-text {
+    margin-top: 0;
+  }
+
+  &.privat-events-hero-image > .content-text {
+    width: 100%;
+    max-width: none;
+  }
+}

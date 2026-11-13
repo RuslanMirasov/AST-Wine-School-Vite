@@ -317,6 +317,11 @@
 }
 
 .body.a11y {
+  .all-reviews-rating,
+  .review {
+    --blue-text: var(--grey-text);
+  }
+
   @media (min-width: 768px) {
     .review {
       .stars {
