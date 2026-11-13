@@ -298,6 +298,9 @@ input[type='number'] {
   color: var(--invalid);
   font-family: var(--font);
   font-size: var(--fs-12);
+  @media (min-width: 1920px) {
+    font-size: var(--fs-16);
+  }
   --lh: 1.333;
   font-weight: 300;
   z-index: 2;
@@ -311,6 +314,9 @@ input[type='number'] {
 .popup {
   .inputError {
     font-size: 12px;
+    @media (min-width: 1920px) {
+      font-size: 16px;
+    }
   }
 }
 
@@ -348,6 +354,9 @@ fieldset + .inputError {
     span {
       display: inline;
       font-size: var(--checkbox-font-size);
+      @media (min-width: 1920px) {
+        font-size: var(--fs-18);
+      }
       font-weight: var(--checkbox-font-weight);
       --lh: 1.3;
       a {
