@@ -74,6 +74,11 @@
   }
 }
 
+.section--mood a.mood-card:focus-visible {
+  outline: 3px solid var(--magenta);
+  outline-offset: 3px;
+}
+
 .info-table {
   display: flex;
   width: 100%;
