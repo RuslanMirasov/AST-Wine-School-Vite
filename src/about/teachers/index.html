@@ -24,7 +24,7 @@
       </ul>
 
       <!--HERO-->
-      <section class="section">
+      <section class="section" data-show-more>
         <div class="container gap--24">
           <div class="content pad--40 gap--12">
             <h1 class="title title--40 upper">Узнайте, кто ведет наши программы</h1>
@@ -182,7 +182,7 @@
           </form>
 
           <!--СПИСОК УЧИТИЛЕЙ-->
-          <ul class="collage teachers-list cards-hover">
+          <ul class="collage teachers-list cards-hover" id="teachers-list">
             <!--1-->
             <li class="col--3">
               <article class="post-card gap--16 pad--24">
@@ -386,8 +386,10 @@
             </li>
           </ul>
 
-          <div class="buttons">
-            <button class="button load-more blue-light"><span>Показать еще</span></button>
+          <div class="buttons" data-show-more-btn>
+            <button type="button" class="button load-more blue-light" aria-controls="teachers-list" data-show-more-step="5">
+              <span>Показать ещё</span>
+            </button>
           </div>
         </div>
       </section>
