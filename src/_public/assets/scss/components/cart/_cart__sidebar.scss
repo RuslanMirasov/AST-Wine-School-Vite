@@ -176,6 +176,10 @@
   }
 }
 
+.cart-success > svg > image {
+  filter: brightness(0) invert(1);
+}
+
 .customer-data {
   [data-tab] {
     width: 100%;
