@@ -37,10 +37,9 @@
         content: counter(event-step, decimal-leading-zero);
         position: absolute;
         left: var(--fs-24);
-        top: var(--fs-24);
         font-family: var(--font);
-        font-size: var(--fs-44);
-        --lh: 0.95;
+        font-size: var(--fs-54);
+        --lh: 0.82;
         font-weight: 300;
         color: var(--magenta);
       }
@@ -194,12 +193,12 @@
       }
 
       > .content {
-        padding-left: calc(var(--fs-18) * 4);
+        padding-left: calc(var(--fs-20) * 4);
+        padding-right: var(--fs-20);
+
         &:before {
-          left: var(--fs-20);
-          top: var(--fs-24);
-          font-family: var(--font);
-          font-size: var(--fs-28);
+          left: var(--fs-12);
+          font-size: var(--fs-50);
         }
       }
     }
