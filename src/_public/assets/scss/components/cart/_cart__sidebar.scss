@@ -163,8 +163,8 @@
     &.current {
       color: var(--blue);
       &:before {
-        background-color: var(--blue-menu-active);
-        color: var(--blue);
+        background-color: var(--magenta);
+        color: #fff;
       }
     }
     &.active {
