@@ -89,4 +89,10 @@
     padding: var(--fs-20);
     border-radius: var(--fs-30);
   }
+
+  .section--search-result & {
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
+  }
 }

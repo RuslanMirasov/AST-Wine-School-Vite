@@ -156,6 +156,9 @@
   .curse-hero-fields__left {
     flex: 1;
     gap: var(--fs-56);
+    @media (min-width: 1024px) {
+      min-height: 208px;
+    }
     @media (max-width: 1279px) {
       gap: var(--fs-16);
       flex-wrap: wrap;

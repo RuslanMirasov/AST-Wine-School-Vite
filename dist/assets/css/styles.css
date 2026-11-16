@@ -5646,6 +5646,16 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   overflow-wrap: anywhere;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile-content.profile-statistics {
+    column-gap: var(--fs-12);
+  }
+  .profile-content.profile-statistics > .content.col--2 {
+    width: calc((100% - var(--fs-12)) / 2);
+    align-self: stretch;
+    padding-inline: var(--fs-16);
+  }
+}
 .orders-list {
   display: flex;
   position: relative;
@@ -6613,6 +6623,9 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 }
 
 @media (min-width: 1920px) {
+  .section--degistation-list .search-navigation__btn {
+    font-size: var(--fs-16);
+  }
   .section--degistation-list .collage .col--2-3,
   .section--classrooms .collage .col--2-3 {
     width: calc(75% - var(--fs-24) / 2);
@@ -8925,6 +8938,75 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
     text-wrap: nowrap;
   }
 }
+@media (min-width: 768px) and (max-width: 1151px) {
+  .body:not(.a11y) .cart-page > .container {
+    flex-wrap: nowrap;
+    gap: var(--fs-16);
+  }
+  .body:not(.a11y) .cart-page .sidebar.gap--8.right-side {
+    max-width: clamp(280px, 32vw, 360px);
+    gap: var(--fs-8);
+  }
+  .body:not(.a11y) .cart-page .page-content {
+    min-width: 0;
+  }
+  .body:not(.a11y) .cart-page .profile-content.pad--32 {
+    flex-wrap: nowrap;
+    gap: var(--fs-12);
+    padding: var(--fs-20) var(--fs-16);
+  }
+  .body:not(.a11y) .cart-page .order-image.fix-height {
+    width: 11vw;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    margin-right: 0;
+    aspect-ratio: 1;
+  }
+  .body:not(.a11y) .cart-page .order-image.fix-height img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-position: top;
+  }
+  .body:not(.a11y) .cart-page .order-text {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    order: 0;
+    overflow-wrap: anywhere;
+  }
+  .body:not(.a11y) .cart-page .order-text .title--24 {
+    font-size: clamp(var(--fs-20), 2.4vw, var(--fs-24));
+  }
+  .body:not(.a11y) .cart-page .order-settings {
+    width: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1151px) and (max-width: 1023px) {
+  .body:not(.a11y) .cart-page .order-settings .label--count {
+    width: 120px;
+  }
+  .body:not(.a11y) .cart-page .order-settings .label--count :is(.minus, .plus) {
+    width: var(--fs-36);
+  }
+}
+@media (min-width: 768px) and (max-width: 1151px) {
+  .body:not(.a11y) .cart-page .order-promocode-form {
+    flex-direction: row;
+    gap: var(--fs-8);
+  }
+  .body:not(.a11y) .cart-page .order-promocode-form .label {
+    min-width: 0;
+  }
+  .body:not(.a11y) .cart-page .order-promocode-form .input {
+    padding-inline: var(--fs-12);
+  }
+  .body:not(.a11y) .cart-page .order-promocode-form .button {
+    width: auto;
+    padding-inline: var(--fs-12);
+  }
+}
 @media (max-width: 1023px) {
   .order-details {
     padding: var(--fs-20);
@@ -8941,6 +9023,28 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   }
   .customer-data .form {
     gap: var(--fs-18);
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .checkout > .container {
+    flex-wrap: nowrap;
+  }
+  .checkout .page-content {
+    min-width: 0;
+  }
+  .checkout .sidebar.gap--8.right-side {
+    max-width: 280px;
+    gap: var(--fs-8);
+  }
+  .checkout .customer-data > .buttons .button {
+    padding-inline: var(--fs-12);
+  }
+  .checkout .customer-data .form {
+    column-gap: var(--fs-24);
+  }
+  .checkout .customer-data .form fieldset.col--2 {
+    min-width: 0;
+    width: calc((100% - var(--fs-24)) / 2);
   }
 }
 @media (max-width: 767px) {
@@ -12528,6 +12632,11 @@ a.calendar-slider-day__inner:focus-visible {
   flex: 1;
   gap: var(--fs-56);
 }
+@media (min-width: 1024px) {
+  .curse-hero-fields .curse-hero-fields__left {
+    min-height: 208px;
+  }
+}
 @media (max-width: 1279px) {
   .curse-hero-fields .curse-hero-fields__left {
     gap: var(--fs-16);
@@ -14579,6 +14688,11 @@ a.calendar-slider-day__inner:focus-visible {
     padding: var(--fs-20);
     border-radius: var(--fs-30);
   }
+}
+.section--search-result .search-empty {
+  border-radius: 0;
+  background-color: transparent;
+  padding: 0;
 }
 
 .service-mix {
