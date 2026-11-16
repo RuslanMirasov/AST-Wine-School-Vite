@@ -163,15 +163,14 @@
     &.current {
       color: var(--blue);
       &:before {
-        background-color: var(--magenta);
-        color: var(--white);
+        background-color: var(--blue-menu-active);
+        color: var(--blue);
       }
     }
     &.active {
-      color: var(--blue);
       &:before {
         content: '';
-        background: var(--green) url('../img/svg/cart-step-check.svg') no-repeat center / var(--fs-16);
+        background: var(--grey-promo) url('../img/svg/cart-step-check.svg') no-repeat center / var(--fs-12);
       }
     }
   }
@@ -188,10 +187,6 @@
 }
 
 .body.a11y {
-  .cart-steps li.current::before {
-    color: #fff;
-  }
-
   @media (min-width: 768px) and (max-width: 1151px) {
     .cart-steps {
       flex-wrap: wrap;
