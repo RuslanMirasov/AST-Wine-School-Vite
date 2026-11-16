@@ -247,6 +247,90 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 1151px) {
+  .body:not(.a11y) .cart-page {
+    > .container {
+      flex-wrap: nowrap;
+      gap: var(--fs-16);
+    }
+
+    .sidebar.gap--8.right-side {
+      max-width: clamp(280px, 32vw, 360px);
+      gap: var(--fs-8);
+    }
+
+    .page-content {
+      min-width: 0;
+    }
+
+    .profile-content.pad--32 {
+      flex-wrap: nowrap;
+      gap: var(--fs-12);
+      padding: var(--fs-20) var(--fs-16);
+    }
+
+    .order-image.fix-height {
+      width: 11vw;
+      height: auto;
+      min-height: 0;
+      max-height: none;
+      margin-right: 0;
+      aspect-ratio: 1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-position: top;
+      }
+    }
+
+    .order-text {
+      flex: 1;
+      min-width: 0;
+      width: auto;
+      order: 0;
+      overflow-wrap: anywhere;
+
+      .title--24 {
+        font-size: clamp(var(--fs-20), 2.4vw, var(--fs-24));
+      }
+    }
+
+    .order-settings {
+      width: auto;
+
+      @media (max-width: 1023px) {
+        .label--count {
+          width: 120px;
+
+          :is(.minus, .plus) {
+            width: var(--fs-36);
+          }
+        }
+      }
+    }
+
+    .order-promocode-form {
+      flex-direction: row;
+      gap: var(--fs-8);
+
+      .label {
+        min-width: 0;
+      }
+
+      .input {
+        padding-inline: var(--fs-12);
+      }
+
+      .button {
+        width: auto;
+        padding-inline: var(--fs-12);
+      }
+    }
+  }
+}
+
 //768
 @media (max-width: 1023px) {
   .order-details {
@@ -268,6 +352,38 @@
   .customer-data {
     .form {
       gap: var(--fs-18);
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .checkout {
+    > .container {
+      flex-wrap: nowrap;
+    }
+
+    .page-content {
+      min-width: 0;
+    }
+
+    .sidebar.gap--8.right-side {
+      max-width: 280px;
+      gap: var(--fs-8);
+    }
+
+    .customer-data {
+      > .buttons .button {
+        padding-inline: var(--fs-12);
+      }
+
+      .form {
+        column-gap: var(--fs-24);
+
+        fieldset.col--2 {
+          min-width: 0;
+          width: calc((100% - var(--fs-24)) / 2);
+        }
+      }
     }
   }
 }

@@ -128,3 +128,15 @@
     overflow-wrap: anywhere;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile-content.profile-statistics {
+    column-gap: var(--fs-12);
+
+    > .content.col--2 {
+      width: calc((100% - var(--fs-12)) / 2);
+      align-self: stretch;
+      padding-inline: var(--fs-16);
+    }
+  }
+}
