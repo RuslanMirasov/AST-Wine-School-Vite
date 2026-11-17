@@ -176,10 +176,6 @@
   }
 }
 
-.cart-success > svg > image {
-  filter: brightness(0) invert(1);
-}
-
 .customer-data {
   [data-tab] {
     width: 100%;
@@ -187,6 +183,12 @@
 
   .form {
     gap: var(--fs-50) var(--fs-24);
+  }
+}
+
+@media (min-width: 1920px) {
+  .cart-page .order-text > .icon-list .text {
+    font-size: var(--fs-16);
   }
 }
 
@@ -336,14 +338,6 @@
     padding: var(--fs-20);
   }
 
-  .collection.cart-success-whatnext {
-    flex-direction: column;
-    li.col--63,
-    li.col--37 {
-      max-width: 100%;
-    }
-  }
-
   .cart-steps li:after {
     width: var(--fs-30);
   }
@@ -356,6 +350,27 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  .body:not(.a11y) .cart-success > .title {
+    text-wrap: nowrap;
+  }
+
+  .collection.cart-success-whatnext {
+    align-items: flex-start;
+    gap: var(--fs-20);
+
+    > li {
+      max-width: calc((100% - var(--fs-20)) / 2);
+
+      > .content {
+        padding-inline: var(--fs-36);
+      }
+    }
+  }
+
+  .cart-page .order-image {
+    display: none;
+  }
+
   .checkout {
     > .container {
       flex-wrap: nowrap;
@@ -382,6 +397,35 @@
           min-width: 0;
           width: calc((100% - var(--fs-24)) / 2);
         }
+
+        @supports (grid-template-rows: subgrid) {
+          &:has(> [data-tab='legal-entity'].active) {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            row-gap: 0;
+
+            > fieldset.col--2 {
+              width: 100%;
+            }
+
+            > fieldset[data-tab='legal-entity'] {
+              display: contents;
+
+              > .label {
+                // Общие для обеих колонок строки подписи, поля и ошибки.
+                display: grid;
+                grid-row: 2 / span 3;
+                grid-template-rows: subgrid;
+                margin-top: var(--fs-18);
+
+                & + .label {
+                  grid-row-start: 5;
+                  margin-top: var(--form-gap);
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -389,6 +433,13 @@
 
 //360
 @media (max-width: 767px) {
+  .collection.cart-success-whatnext {
+    flex-direction: column;
+
+    > li {
+      max-width: 100%;
+    }
+  }
 
   .cart-steps {
     width: 100%;
