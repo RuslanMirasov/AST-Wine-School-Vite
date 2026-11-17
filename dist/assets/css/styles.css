@@ -14570,6 +14570,7 @@ a.calendar-slider-day__inner:focus-visible {
 }
 
 .callback-form {
+  --checkbox-font-size: var(--fs-18);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
