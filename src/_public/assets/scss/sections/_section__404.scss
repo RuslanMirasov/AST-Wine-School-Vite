@@ -31,3 +31,11 @@
   width: 100%;
   max-width: 524px;
 }
+
+@media (max-width: 767px) {
+  .main--404 .section--curses .content .logo-background {
+    width: 308px;
+    height: 308px;
+    transform: translate(10%, -5%);
+  }
+}
