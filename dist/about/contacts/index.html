@@ -464,11 +464,28 @@
             <!--МОСКВА-->
             <div class="col--2">
               <article class="post-card gap--16 pad--24">
-                <div class="post-card-image" data-popup-open="contacts">
-                  <img src="../../assets/img/contacts/moscow.webp" alt="Антон Субботин" title="Антон Субботин" />
-                </div>
+                <button
+                  type="button"
+                  class="post-card-image"
+                  aria-label="Подробнее о школе в Москве"
+                  data-popup-open="contacts-popup"
+                  data-map-group="moscow"
+                  onclick="window.openTab('contacts', 'moscow')"
+                >
+                  <img src="../../assets/img/contacts/moscow.webp" alt="" />
+                </button>
 
-                <h2 class="title title--24 bold">Москва</h2>
+                <h2 class="title title--24 bold">
+                  <button
+                    type="button"
+                    class="title-link"
+                    data-popup-open="contacts-popup"
+                    data-map-group="moscow"
+                    onclick="window.openTab('contacts', 'moscow')"
+                  >
+                    Москва
+                  </button>
+                </h2>
 
                 <ul class="icon-list">
                   <li>
@@ -498,11 +515,28 @@
             <!--СПБ-->
             <div class="col--2">
               <article class="post-card gap--16 pad--24">
-                <div class="post-card-image">
-                  <img src="../../assets/img/contacts/spb.webp" alt="Санкт-Петербург" title="Санкт-Петербург" />
-                </div>
+                <button
+                  type="button"
+                  class="post-card-image"
+                  aria-label="Подробнее о школе в Санкт-Петербурге"
+                  data-popup-open="contacts-popup"
+                  data-map-group="spb"
+                  onclick="window.openTab('contacts', 'spb')"
+                >
+                  <img src="../../assets/img/contacts/spb.webp" alt="" />
+                </button>
 
-                <h2 class="title title--24 bold">Санкт-Петербург</h2>
+                <h2 class="title title--24 bold">
+                  <button
+                    type="button"
+                    class="title-link"
+                    data-popup-open="contacts-popup"
+                    data-map-group="spb"
+                    onclick="window.openTab('contacts', 'spb')"
+                  >
+                    Санкт-Петербург
+                  </button>
+                </h2>
                 <ul class="icon-list">
                   <li>
                     <svg width="20" height="20"><use href="../../assets/img/sprite.svg#phone"></use></svg>
@@ -1246,7 +1280,7 @@
 
   <!--Готовы помочь вам по вопросам-->
   <div class="contacts-team">
-    <h3 class="title title--32 upper">Готовы помочь вам по вопросам</h3>
+    <h3 class="title upper">Готовы помочь вам по вопросам</h3>
     <div data-tab="moscow">
       <ul class="collage">
         <li class="col--4">

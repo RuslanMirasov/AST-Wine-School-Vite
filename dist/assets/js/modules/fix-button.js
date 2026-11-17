@@ -41,14 +41,23 @@ export const initFixButton = () => {
   if (!fixButton || !anchors.length) return;
 
   const mobileQuery = window.matchMedia(MOBILE_QUERY);
+  const showAfterAnchor = fixButton.dataset.fixButton === 'after-anchor';
 
   const update = () => {
     const topLimit = getHeaderBottom();
     const bottomLimit = window.innerHeight - (fixButton.classList.contains(ACTIVE_CLASS) ? fixButton.offsetHeight : 0);
-    const anchorVisible = anchors.some(anchor => isFullyVisible(anchor, topLimit, bottomLimit));
-    const shouldShow = mobileQuery.matches && !anchorVisible && !stops.some(isOnScreen);
+    const showForAnchors = showAfterAnchor
+      ? anchors.some(anchor => {
+          const rect = anchor.getBoundingClientRect();
+          return rect.height > 0 && rect.bottom <= topLimit;
+        })
+      : !anchors.some(anchor => isFullyVisible(anchor, topLimit, bottomLimit));
+    const shouldShow = mobileQuery.matches && showForAnchors && !stops.some(isOnScreen);
 
-    if (fixButton.classList.contains(ACTIVE_CLASS) !== shouldShow) fixButton.classList.toggle(ACTIVE_CLASS, shouldShow);
+    if (fixButton.classList.contains(ACTIVE_CLASS) !== shouldShow) {
+      fixButton.classList.toggle(ACTIVE_CLASS, shouldShow);
+      if (showAfterAnchor) fixButton.inert = !shouldShow;
+    }
   };
 
   const onScroll = throttle(update, THROTTLE_DELAY);
