@@ -15164,6 +15164,25 @@ a.calendar-slider-day__inner:focus-visible {
     right: var(--fs-32);
   }
 }
+@media (width: 768px) {
+  .diploma {
+    padding-block: var(--fs-40) var(--fs-20);
+    border-radius: var(--fs-64);
+  }
+  .diploma .logo-background {
+    width: 60%;
+    aspect-ratio: 334/340;
+    top: 0;
+    transform: translate(17%, -18%);
+    background: url("../img/diplomas/diploma-logo.svg") center/contain no-repeat;
+  }
+  .diploma .logo-background use {
+    display: none;
+  }
+  .diploma .certificat {
+    right: var(--fs-40);
+  }
+}
 @media (max-width: 767px) {
   .diploma .content-text {
     width: 100%;
@@ -15242,6 +15261,13 @@ a.calendar-slider-day__inner:focus-visible {
   max-width: 524px;
 }
 
+@media (max-width: 767px) {
+  .main--404 .section--curses .content .logo-background {
+    width: 308px;
+    height: 308px;
+    transform: translate(10%, -5%);
+  }
+}
 .section--degustation-and-seminars {
   width: 100%;
 }

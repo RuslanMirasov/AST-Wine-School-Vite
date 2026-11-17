@@ -47,6 +47,29 @@
   }
 }
 
+@media (width: 768px) {
+  .diploma {
+    padding-block: var(--fs-40) var(--fs-20);
+    border-radius: var(--fs-64);
+
+    .logo-background {
+      width: 60%;
+      aspect-ratio: 334 / 340;
+      top: 0;
+      transform: translate(17%, -18%);
+      background: url('../img/diplomas/diploma-logo.svg') center / contain no-repeat;
+
+      use {
+        display: none;
+      }
+    }
+
+    .certificat {
+      right: var(--fs-40);
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .diploma {
     .content-text {
