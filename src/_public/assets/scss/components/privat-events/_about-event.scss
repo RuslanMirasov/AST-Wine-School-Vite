@@ -199,6 +199,13 @@
         &:before {
           left: var(--fs-12);
           font-size: var(--fs-50);
+
+          @media (min-width: 768px) {
+            top: 50%;
+            left: var(--fs-20);
+            font-size: var(--fs-44);
+            transform: translateY(-50%);
+          }
         }
       }
     }

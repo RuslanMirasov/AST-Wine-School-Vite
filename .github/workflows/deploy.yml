@@ -33,6 +33,18 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Prepare custom 404 page
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync, writeFileSync } from 'node:fs';
+
+          const base = `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`;
+          const html = readFileSync('dist/404/index.html', 'utf8');
+          // GitHub Pages отдаёт этот файл по исходному URL любой глубины.
+          const page = html.replace(/(\b(?:href|src|srcset|action)=")(?:\.\.\/|\/(?=assets\/))/g, `$1${base}`);
+          writeFileSync('dist/404.html', page, 'utf8');
+          NODE
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
