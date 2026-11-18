@@ -47,6 +47,17 @@
   }
 }
 
+@media (width: 360px), (width: 768px) {
+  .diploma .logo-background {
+    aspect-ratio: 334 / 340;
+    background: url('../img/diplomas/diploma-logo.svg') center / contain no-repeat;
+
+    use {
+      display: none;
+    }
+  }
+}
+
 @media (width: 768px) {
   .diploma {
     padding-block: var(--fs-40) var(--fs-20);
@@ -54,14 +65,8 @@
 
     .logo-background {
       width: 60%;
-      aspect-ratio: 334 / 340;
       top: 0;
       transform: translate(17%, -18%);
-      background: url('../img/diplomas/diploma-logo.svg') center / contain no-repeat;
-
-      use {
-        display: none;
-      }
     }
 
     .certificat {
@@ -120,5 +125,23 @@
     margin: 0 auto;
     margin-top: var(--fs-32);
     transform: rotate(4deg) translateY(0%);
+  }
+}
+
+@media (width: 360px) {
+  .diploma {
+    padding-block: var(--fs-28) 0;
+    border-radius: var(--fs-40);
+
+    .logo-background {
+      width: 84%;
+      top: auto;
+      bottom: 0;
+      transform: translate(22%, 4%);
+    }
+
+    .certificat {
+      margin-block: var(--fs-24) calc(-1 * var(--fs-24));
+    }
   }
 }
