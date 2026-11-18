@@ -12,6 +12,16 @@
     margin-left: auto;
   }
 
+  &:has(> .calendar-slider__toggle[aria-expanded='true']) {
+    padding-bottom: 0;
+    background-color: transparent;
+
+    > .search-navigation,
+    > .calendar-slider-wrapper {
+      display: none;
+    }
+  }
+
   .search-navigation {
     display: inline-flex;
     width: auto;
@@ -72,11 +82,13 @@
 }
 
 .calendar-slider__toggle {
+  color: var(--magenta);
+
   .calendar-slider__toggle-hide {
     display: none;
   }
 
-  &.open {
+  &[aria-expanded='true'] {
     .calendar-slider__toggle-show {
       display: none;
     }

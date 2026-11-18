@@ -1,0 +1,56 @@
+<ul class="filters">
+  <!--Тип мероприятия-->
+  <li>
+    <button type="button" class="filter-btn" data-filter-button="event-type" aria-expanded="false" aria-controls="event-type-options">
+      <span data-filter-text>Тип мероприятия</span>
+      <svg aria-hidden="true" class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+    </button>
+    <div class="calendar-filter-dropdown" id="event-type-options" role="group" aria-label="Тип мероприятия" hidden>
+      <load src="/_partials/components/calendar/filter-inputs-event-type.html" />
+    </div>
+  </li>
+
+  <!--Формат-->
+  <li>
+    <button type="button" class="filter-btn" data-filter-button="event-format" aria-expanded="false" aria-controls="event-format-options">
+      <span data-filter-text>Формат</span>
+      <svg aria-hidden="true" class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+    </button>
+    <div class="calendar-filter-dropdown" id="event-format-options" role="group" aria-label="Формат" hidden>
+      <load src="/_partials/components/calendar/filter-inputs-event-format.html" />
+    </div>
+  </li>
+
+  <!--Уровень-->
+  <li>
+    <button type="button" class="filter-btn" data-filter-button="event-level" aria-expanded="false" aria-controls="event-level-options">
+      <span data-filter-text>Уровень</span>
+      <svg aria-hidden="true" class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+    </button>
+    <div class="calendar-filter-dropdown" id="event-level-options" role="group" aria-label="Уровень" hidden>
+      <load src="/_partials/components/calendar/filter-inputs-event-level.html" />
+    </div>
+  </li>
+
+  <!--Город-->
+  <li>
+    <button type="button" class="filter-btn" data-filter-button="event-city" aria-expanded="false" aria-controls="event-city-options">
+      <span data-filter-text>Город</span>
+      <svg aria-hidden="true" class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+    </button>
+    <div class="calendar-filter-dropdown" id="event-city-options" role="group" aria-label="Город" hidden>
+      <load src="/_partials/components/calendar/filter-inputs-event-city.html" />
+    </div>
+  </li>
+
+  <!--Зал-->
+  <li>
+    <button type="button" class="filter-btn" data-filter-button="event-place" aria-expanded="false" aria-controls="event-place-options">
+      <span data-filter-text>Зал</span>
+      <svg aria-hidden="true" class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
+    </button>
+    <div class="calendar-filter-dropdown" id="event-place-options" role="group" aria-label="Зал" hidden>
+      <load src="/_partials/components/calendar/filter-inputs-event-place.html" />
+    </div>
+  </li>
+</ul>

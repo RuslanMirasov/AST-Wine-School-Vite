@@ -22,15 +22,14 @@
       </ul>
 
       <!--HERO (ФОРМА ПОИСКА КАЛЕНДАРЬ И ФИЛЬТРЫ)-->
-      <section class="section section-event-calendar">
-        <!--Аккордеон: кнопка «Показать календарь» в ленте дней раскрывает сетку месяца под фильтрами-->
-        <div class="container gap--40" data-accordeon>
+      <section class="section section-event-calendar visible">
+        <div class="container gap--40">
           <h1 class="title title--40 upper">Календарь мероприятий</h1>
 
           <form action="%ROOT%search/" class="search-form-with-filter" method="GET" data-form novalidate>
             <load src="/_partials/components/header/search-form.html" />
 
-            <button type="button" class="filter-toggle-button" data-filter-toggle-button>
+            <button type="button" class="filter-toggle-button" data-filter-toggle-button aria-label="Фильтры" aria-expanded="false" aria-controls="event-mobile-filters">
               <svg width="20" height="20"><use href="/assets/img/sprite.svg#filter"></use></svg>
             </button>
           </form>
@@ -39,65 +38,32 @@
 
           <!--ФИЛЬТР-->
           <form action="%ROOT%events/event/" class="calendar-filters" id="event-filter-form">
-            <ul class="filters">
-              <!--Тип мероприятия-->
-              <li>
-                <button type="button" class="filter-btn" data-popup-open="event-type" data-filter-button="event-type">
-                  <span data-filter-text>Тип мероприятия</span>
-                  <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
-                </button>
-              </li>
+            <load src="/_partials/components/calendar/filter-dropdowns.html" />
 
-              <!--Формат-->
-              <li>
-                <button type="button" class="filter-btn" data-popup-open="event-format" data-filter-button="event-format">
-                  <span data-filter-text>Формат</span>
-                  <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
-                </button>
-              </li>
-
-              <!--Уровень-->
-              <li>
-                <button type="button" class="filter-btn" data-popup-open="event-level" data-filter-button="event-level">
-                  <span data-filter-text>Уровень</span>
-                  <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
-                </button>
-              </li>
-
-              <!--Город-->
-              <li>
-                <button type="button" class="filter-btn" data-popup-open="event-city" data-filter-button="event-city">
-                  <span data-filter-text>Город</span>
-                  <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
-                </button>
-              </li>
-
-              <!--Зал-->
-              <li>
-                <button type="button" class="filter-btn" data-popup-open="event-place" data-filter-button="event-place">
-                  <span data-filter-text>Зал</span>
-                  <svg class="search-input-icon"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
-                </button>
-              </li>
-            </ul>
-
-            <button type="reset" class="magenta-link regular reset-filters" data-filter-reset-apply>Сбросить фильтр</button>
+            <button type="reset" class="magenta-link regular reset-filters">Сбросить фильтр</button>
           </form>
 
-          <div data-accordeon-body style="display: none">
+          <div id="event-month-calendar" hidden>
             <load src="/_partials/components/calendar/event-calendar.html" />
           </div>
         </div>
       </section>
 
       <!--МЕРОПРИЯТИЯ 27 ИЮНЯ-->
-      <section class="section section--classrooms cards-hover">
+      <section class="section section--classrooms cards-hover" data-filter-results>
         <div class="container">
           <h2 class="title title--32 upper">Мероприятия 27&nbsp;июня</h2>
 
           <div class="collage">
             <!--1-->
-            <div class="col--3">
+            <div
+              class="col--3"
+              data-event-type="courses"
+              data-event-format="offline"
+              data-event-level="beginners"
+              data-event-city="moscow"
+              data-event-place="Зал «Терруар»"
+            >
               <article class="post-card gap--16">
                 <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
                   <img
@@ -141,7 +107,7 @@
             </div>
 
             <!--2-->
-            <div class="col--3">
+            <div class="col--3" data-event-type="courses" data-event-format="online">
               <article class="post-card gap--16">
                 <a href="%ROOT%courses/online/wine-history/" class="post-card-image">
                   <img src="/assets/img/promo/6.webp" alt="История виноделия" title="История виноделия" />
@@ -177,7 +143,7 @@
             </div>
 
             <!--3-->
-            <div class="col--3">
+            <div class="col--3" data-event-type="degustations" data-event-format="offline" data-event-city="spb">
               <article class="post-card gap--16">
                 <a href="%ROOT%tastings/tasting/" class="post-card-image">
                   <img src="/assets/img/promo/17.webp" alt="Вина Бордо: классика и современность" title="Вина Бордо: классика и современность" />
@@ -217,7 +183,14 @@
             </div>
 
             <!--4-->
-            <div class="col--3">
+            <div
+              class="col--3"
+              data-event-type="courses"
+              data-event-format="offline"
+              data-event-level="beginners"
+              data-event-city="moscow"
+              data-event-place="Зал «Терруар»"
+            >
               <article class="post-card gap--16">
                 <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
                   <img
@@ -261,7 +234,14 @@
             </div>
 
             <!--5-->
-            <div class="col--3">
+            <div
+              class="col--3"
+              data-event-type="courses"
+              data-event-format="offline"
+              data-event-level="beginners"
+              data-event-city="moscow"
+              data-event-place="Зал «Терруар»"
+            >
               <article class="post-card gap--16">
                 <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
                   <img
@@ -305,7 +285,14 @@
             </div>
 
             <!--6-->
-            <div class="col--3">
+            <div
+              class="col--3"
+              data-event-type="courses"
+              data-event-format="offline"
+              data-event-level="beginners"
+              data-event-city="moscow"
+              data-event-place="Зал «Терруар»"
+            >
               <article class="post-card gap--16">
                 <a href="%ROOT%courses/offline/quick-start/" class="post-card-image">
                   <img src="/assets/img/promo/8.webp" alt="Быстрый старт: база о вине за 3 встречи" title="Быстрый старт: база о вине за 3 встречи" />
@@ -352,7 +339,7 @@
       </section>
 
       <!--(ЕСЛИ НИЧЕГО НЕ НАЙДЕНО)-->
-      <section class="section">
+      <section class="section" data-filter-empty hidden>
         <div class="container">
           <h2 class="title title--32 upper">Мероприятия 27&nbsp;июня</h2>
           <div class="page-not-found full">
@@ -506,7 +493,6 @@
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup>
         <load src="/_partials/base/default-popups.html" />
-        <load src="/_partials/popups/filter-popups.html" />
       </div>
     </div>
 
@@ -514,10 +500,10 @@
     <load src="/_partials/popups/cookies-confirm-popup.html" />
 
     <!--ФИЛЬТРЫ ДЛЯ МОБИЛЬНОЙ ВЕРСИИ-->
-    <div class="filter-backdrop" data-filters-backdrop data-filters-close>
-      <div class="filter-mobil-menu">
+    <div class="filter-backdrop" id="event-mobile-filters" data-filters-backdrop data-filters-close inert>
+      <div class="filter-mobil-menu" role="dialog" aria-modal="true" aria-labelledby="event-mobile-filters-title">
         <h2 class="popup-title">
-          <span>Фильтры</span>
+          <span id="event-mobile-filters-title">Фильтры</span>
           <button class="popup-close" data-filters-close aria-label="Закрыть">
             <svg width="18" height="18"><use href="/assets/img/sprite.svg#close"></use></svg>
           </button>
@@ -611,8 +597,7 @@
         </ul>
 
         <div class="buttons gap--12">
-          <button type="reset" class="button magenta-light" form="event-filter-form" data-filter-reset-apply><span>Сбросить</span></button>
-          <button type="submit" class="button" form="event-filter-form" data-filters-close><span>Применить</span></button>
+          <button type="reset" class="button magenta-light" form="event-filter-form"><span>Сбросить</span></button>
         </div>
       </div>
     </div>

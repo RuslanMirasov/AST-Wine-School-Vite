@@ -1,73 +1,67 @@
-const BACKDROP_SELECTOR = '[data-filters-backdrop]';
-const TOGGLE_SELECTOR = '[data-filter-toggle-button]';
-const CLOSE_SELECTOR = '[data-filters-close]';
-const OPEN_CLASS = 'active';
-
 export const initEventFilters = () => {
-  const backdrop = document.querySelector(BACKDROP_SELECTOR);
-
+  const backdrop = document.querySelector('[data-filters-backdrop]');
   if (!backdrop) return;
 
-  const toggleButtons = Array.from(document.querySelectorAll(TOGGLE_SELECTOR));
-  const closeButton = backdrop.querySelector('button.popup-close');
-  const applyButton = backdrop.querySelector('button[type="submit"]');
-  const isA11yEnabled = () => document.body.classList.contains('a11y');
-  let opener = null;
+  const toggle = document.querySelector('[data-filter-toggle-button]');
+  const closeButton = backdrop.querySelector('button[data-filters-close]');
+  const resetButton = backdrop.querySelector('button[type="reset"]');
+  const mobileViewport = window.matchMedia('(max-width: 1151px)');
+  let openButton = null;
 
-  const isOpen = () => backdrop.classList.contains(OPEN_CLASS);
-
-  const setOpen = open => {
-    backdrop.classList.toggle(OPEN_CLASS, open);
-    toggleButtons.forEach(button => button.setAttribute('aria-expanded', String(open)));
+  const setMobileOpen = open => {
+    backdrop.classList.toggle('active', open);
+    backdrop.inert = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) closeButton.focus();
+    else if (mobileViewport.matches) toggle.focus();
   };
 
-  const open = button => {
-    opener = button;
-    setOpen(true);
-    if (isA11yEnabled()) closeButton?.focus();
-  };
-
-  const close = () => {
-    if (!isOpen()) return;
-
-    setOpen(false);
-    opener?.focus();
-    opener = null;
-  };
-
-  setOpen(isOpen());
-
-  document.addEventListener('click', event => {
-    const toggleButton = event.target.closest(TOGGLE_SELECTOR);
-
-    if (toggleButton) {
-      if (isOpen()) close();
-      else open(toggleButton);
-      return;
+  const setDropdown = button => {
+    if (openButton) {
+      openButton.setAttribute('aria-expanded', 'false');
+      document.getElementById(openButton.getAttribute('aria-controls')).hidden = true;
     }
 
-    const closer = event.target.closest(CLOSE_SELECTOR);
-    if (!closer) return;
+    openButton = button;
+    if (button) {
+      button.setAttribute('aria-expanded', 'true');
+      document.getElementById(button.getAttribute('aria-controls')).hidden = false;
+    }
+  };
 
-    if (closer === backdrop && event.target !== backdrop) return;
+  document.addEventListener('click', event => {
+    const button = event.target.closest('[data-filter-button]');
+    if (button) setDropdown(button === openButton ? null : button);
+    else if (openButton && !openButton.parentElement.contains(event.target)) setDropdown(null);
 
-    close();
+    if (toggle.contains(event.target)) setMobileOpen(backdrop.inert);
+    else if (event.target === backdrop || closeButton.contains(event.target)) setMobileOpen(false);
   });
 
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
-      close();
+      if (openButton) {
+        const button = openButton;
+        setDropdown(null);
+        button.focus();
+      } else if (!backdrop.inert) {
+        setMobileOpen(false);
+      }
       return;
     }
 
-    if (event.key !== 'Tab' || !isOpen() || !isA11yEnabled() || !closeButton || !applyButton) return;
-
+    if (event.key !== 'Tab' || backdrop.inert) return;
     if (event.shiftKey && document.activeElement === closeButton) {
       event.preventDefault();
-      applyButton.focus();
-    } else if (!event.shiftKey && document.activeElement === applyButton) {
+      resetButton.focus();
+    } else if (!event.shiftKey && document.activeElement === resetButton) {
       event.preventDefault();
       closeButton.focus();
     }
+  });
+
+  mobileViewport.addEventListener('change', () => {
+    setDropdown(null);
+    if (!backdrop.inert) setMobileOpen(false);
   });
 };

@@ -27,7 +27,8 @@
   gap: var(--fs-12);
   min-width: 0;
 
-  li {
+  > li {
+    position: relative;
     flex: 1 1 0;
     min-width: 0;
     &:first-child {
@@ -37,6 +38,41 @@
       }
     }
   }
+}
+
+.section-event-calendar:has(.filter-btn[aria-expanded='true']) {
+  z-index: 2;
+}
+
+.calendar-filter-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 1;
+  width: max(100%, 320px);
+  max-width: 400px;
+  padding: var(--fs-16);
+  border: 1px solid var(--grey-border);
+  border-radius: var(--fs-16);
+  background-color: var(--white);
+  box-shadow: 0 12px 28px rgba(39, 53, 81, 0.16);
+
+  .filters > li:nth-last-child(-n + 2) & {
+    right: 0;
+    left: auto;
+  }
+
+  .filter-checkboxes {
+    max-height: min(45vh, 360px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+[data-filter-results][hidden],
+[data-filter-results] [data-event-type][hidden],
+[data-filter-empty][hidden] {
+  display: none;
 }
 
 .filter-btn {
@@ -55,8 +91,18 @@
   width: 100%;
   text-align: left;
   color: var(--grey-text);
-  &.checked {
+  &.checked,
+  &[aria-expanded='true'] {
     color: var(--blue);
+  }
+
+  &[aria-expanded='true'] svg {
+    transform: rotate(180deg);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--magenta);
+    outline-offset: 2px;
   }
   svg {
     position: absolute;
@@ -151,6 +197,10 @@
 
   pointer-events: none;
   opacity: 0;
+
+  @media (min-width: 1152px) {
+    display: none;
+  }
 
   &.active {
     pointer-events: auto;

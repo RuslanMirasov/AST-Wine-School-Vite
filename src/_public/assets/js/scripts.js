@@ -25,6 +25,7 @@ import { initCertificateOrder } from './modules/certificat-order.js';
 import { initCertificatePreview } from './modules/certificat-preview.js';
 import { initCertificateBalance } from './modules/certificat-balance.js';
 import { initDatepickers } from './plugins/airDatepicker.js';
+import { initEventCalendarToggle } from './modules/event-calendar-toggle.js';
 import { initEventFilters } from './modules/event-filters.js';
 import { initEventFilterSelection } from './modules/event-filter-selection.js';
 import { initHistoryLines } from './modules/history-lines.js';
@@ -65,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCertificatePreview();
   initCertificateBalance();
   initDatepickers();
+  initEventCalendarToggle();
   initEventFilters();
   initEventFilterSelection();
   initHistoryLines();
