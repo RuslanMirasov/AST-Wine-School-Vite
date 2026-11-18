@@ -14,6 +14,7 @@ export const initSelectFields = () => {
       shouldSort: false,
       allowHTML: true,
       itemSelectText: '',
+      labelId: select.getAttribute('aria-labelledby') ?? '',
     });
 
     select.closest('label')?.addEventListener('click', event => event.preventDefault());

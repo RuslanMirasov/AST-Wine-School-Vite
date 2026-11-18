@@ -51,13 +51,14 @@
                 data-required-error-text="Пожалуйста, введите имя или фамилию преподавателя"
               />
             </label>
-            <label class="label">
-              <select data-select name="city">
+            <div class="label">
+              <label class="visually-hidden" id="teacher-city-label" for="teacher-city">Город</label>
+              <select id="teacher-city" data-select name="city" aria-labelledby="teacher-city-label">
                 <option value="">Город</option>
                 <option value="Москва">Москва</option>
                 <option value="Санкт-Петербург">Санкт-Петербург</option>
               </select>
-            </label>
+            </div>
             <button type="submit" class="button"><span>Найти</span></button>
           </form>
 
@@ -802,11 +803,11 @@
               <!--1-->
               <div class="swiper-slide">
                 <article class="review">
-                  <p class="text" data-read-more="6">
+                  <blockquote class="text" data-read-more="6">
                     «Я всегда боялась, что вино — это слишком сложно и&nbsp;снобистски. Оказалось, нет. За три вечера я&nbsp;научилась читать этикетку
                     и&nbsp;даже однажды в ресторане поправила официанта, который принёс не&nbsp;то&nbsp;вино! Огромное спасибо Анжелике — очень
                     понятно и&nbsp;вкусно.»
-                  </p>
+                  </blockquote>
                   <p class="text fs-14 bold grey-text">— Екатерина, 56 лет</p>
                 </article>
               </div>
@@ -814,10 +815,10 @@
               <!--2-->
               <div class="swiper-slide">
                 <article class="review">
-                  <p class="text" data-read-more="6">
+                  <blockquote class="text" data-read-more="6">
                     «Быстрый старт» — идеальное название. Действительно быстро, структурированно и&nbsp;без воды. После курса купил три бутылки
                     в&nbsp;магазине — и все три оказались удачными. До&nbsp;этого брал “кота в&nbsp;мешке”. Спасибо школе!»
-                  </p>
+                  </blockquote>
                   <p class="text fs-14 bold grey-text">— Алексей, 48 лет</p>
                 </article>
               </div>
@@ -825,9 +826,9 @@
               <!--3-->
               <div class="swiper-slide">
                 <article class="review">
-                  <p class="text" data-read-more="6">
+                  <blockquote class="text" data-read-more="6">
                     «Курс — огонь. Думал, что уже что-то знаю, но после модуля про терруары понял, что раньше просто угадывал. Советую всем друзьям.»
-                  </p>
+                  </blockquote>
                   <p class="text fs-14 bold grey-text">— Дмитрий, 32 года</p>
                 </article>
               </div>
@@ -835,11 +836,11 @@
               <!--4-->
               <div class="swiper-slide">
                 <article class="review">
-                  <p class="text" data-read-more="6">
+                  <blockquote class="text" data-read-more="6">
                     «Я всегда боялась, что вино — это слишком сложно и&nbsp;снобистски. Оказалось, нет. За три вечера я&nbsp;научилась читать этикетку
                     и&nbsp;даже однажды в ресторане поправила официанта, который принёс не&nbsp;то&nbsp;вино! Огромное спасибо Анжелике — очень
                     понятно и&nbsp;вкусно.»
-                  </p>
+                  </blockquote>
                   <p class="text fs-14 bold grey-text">— Екатерина, 56 лет</p>
                 </article>
               </div>
@@ -847,13 +848,13 @@
               <!--5-->
               <div class="swiper-slide">
                 <article class="review">
-                  <p class="text" data-read-more="6">
+                  <blockquote class="text" data-read-more="6">
                     Давно хотела разобраться в вине, но не знала, с чего начать. Курс оказался именно тем, что нужно: понятные объяснения, живые
                     примеры и дегустации на каждом занятии. Преподаватели отвечают на любые вопросы и не перегружают терминами. Теперь спокойно
                     выбираю вино в магазине и ресторане. Давно хотела разобраться в вине, но не знала, с чего начать. Курс оказался именно тем, что
                     нужно: понятные объяснения, живые примеры и дегустации на каждом занятии. Преподаватели отвечают на любые вопросы и не перегружают
                     терминами. Теперь спокойно выбираю вино в магазине и ресторане.
-                  </p>
+                  </blockquote>
                   <p class="text fs-14 bold grey-text">— Ольга, 40 лет</p>
                 </article>
               </div>

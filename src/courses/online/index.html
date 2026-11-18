@@ -62,21 +62,22 @@
                 </div>
               </div>
 
-              <div
+              <button type="button"
                 class="content pad--32 va--b ta--c light"
+                aria-label="Смотреть демо"
                 data-popup-open="video-player"
                 data-video-url="https://assets.mixkit.co/videos/22734/22734-720.mp4"
               >
                 <picture class="image-background gradient">
                   <img src="/assets/img/promo/6.webp" alt="Смотреть демо" title="Смотреть демо" />
                 </picture>
-                <button type="button" class="player-play-button" aria-label="Смотреть демо">
+                <span class="player-play-button" aria-hidden="true">
                   <svg width="12" height="13"><use href="/assets/img/sprite.svg#play"></use></svg>
-                </button>
-                <div class="content-text ta--c">
-                  <p class="text">Смотреть демо</p>
-                </div>
-              </div>
+                </span>
+                <span class="content-text ta--c">
+                  <span class="text">Смотреть демо</span>
+                </span>
+              </button>
             </div>
           </div>
         </div>

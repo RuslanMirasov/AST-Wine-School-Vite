@@ -13,16 +13,16 @@
   </form>
 
   <!--header navigation menu-->
-  <nav class="navigation" id="site-navigation" data-navigation>
+  <nav class="navigation" id="site-navigation" aria-label="Основная навигация" data-navigation>
     <ul class="menu">
       <li class="have-submenu">
         <a href="%ROOT%courses/" class="menu-link">Курсы</a>
 
-        <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="nav-arrow" data-megamenu-button aria-label="Раздел «Курсы»" aria-expanded="false" aria-controls="nav-courses">
           <svg width="10" height="6"><use href="/assets/img/sprite.svg#arrow"></use></svg>
         </button>
 
-        <div class="mega-menu" data-megamenu>
+        <div class="mega-menu" id="nav-courses" data-megamenu>
           <ul class="submenu">
             <li>
               <a href="%ROOT%courses/beginners/" class="menu-link"><span>Для начинающих</span></a>
@@ -116,11 +116,11 @@
       <li class="have-submenu">
         <a href="%ROOT%about/" class="menu-link">О нас</a>
 
-        <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="nav-arrow" data-megamenu-button aria-label="Раздел «О нас»" aria-expanded="false" aria-controls="nav-about">
           <svg width="10" height="6"><use href="/assets/img/sprite.svg#arrow"></use></svg>
         </button>
 
-        <div class="mega-menu center" data-megamenu>
+        <div class="mega-menu center" id="nav-about" data-megamenu>
           <ul class="submenu">
             <li>
               <a href="%ROOT%about/history/" class="menu-link"><span>История школы</span></a>

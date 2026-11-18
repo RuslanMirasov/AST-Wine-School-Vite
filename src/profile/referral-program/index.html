@@ -53,7 +53,7 @@
             <div class="profile-content profile-info">
               <h2 class="title title--32 upper">
                 <span>Реферальный промокод</span>
-                <button type="button" class="help" data-popup-open="referal-promo">
+                <button type="button" class="help" data-popup-open="referal-promo" aria-label="О реферальном промокоде">
                   <svg width="20" height="20"><use href="/assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
@@ -68,7 +68,7 @@
             <div class="profile-content profile-info profile-statistics">
               <h2 class="title title--32 upper">
                 <span>Статистика</span>
-                <button type="button" class="help" data-popup-open="profile-statistic">
+                <button type="button" class="help" data-popup-open="profile-statistic" aria-label="О статистике">
                   <svg width="20" height="20"><use href="/assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
@@ -87,7 +87,7 @@
             <div class="profile-content profile-info">
               <h2 class="title title--32 upper">
                 Настройки выплат
-                <button type="button" class="help" data-popup-open="pay-settings">
+                <button type="button" class="help" data-popup-open="pay-settings" aria-label="О настройках выплат">
                   <svg width="20" height="20"><use href="/assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
@@ -144,7 +144,7 @@
             <div class="profile-content profile-info">
               <h2 class="title title--32 upper">
                 <span>Документооборот</span>
-                <button type="button" class="help" data-popup-open="profile-docs">
+                <button type="button" class="help" data-popup-open="profile-docs" aria-label="О документообороте">
                   <svg width="20" height="20"><use href="/assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
@@ -158,21 +158,21 @@
               </div>
 
               <h3 class="title title--24 bold">
-                <span>Отчетный период</span>
-                <button type="button" class="help" data-popup-open="profile-period">
+                <span id="profile-period-label">Отчетный период</span>
+                <button type="button" class="help" data-popup-open="profile-period" aria-label="Об отчётном периоде">
                   <svg width="20" height="20"><use href="/assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h3>
 
               <form action="#" method="GET" class="form period-form">
-                <label class="label">
-                  <select data-select name="period" required data-required-error-text="Пожалуйста, выберите период">
+                <div class="label">
+                  <select data-select name="period" aria-labelledby="profile-period-label" required data-required-error-text="Пожалуйста, выберите период">
                     <option value="июнь 2026">июнь 2026</option>
                     <option value="июль 2026">июль 2026</option>
                     <option value="август 2026">август 2026</option>
                     <option value="сентябрь 2026">сентябрь 2026</option>
                   </select>
-                </label>
+                </div>
 
                 <button type="submit" class="button"><span>Выгрузить акт</span></button>
               </form>
