@@ -199,12 +199,19 @@
         &:before {
           left: var(--fs-12);
           font-size: var(--fs-50);
+        }
 
-          @media (min-width: 768px) {
-            top: 50%;
-            left: var(--fs-20);
+        @media (min-width: 768px) {
+          display: grid;
+          grid-template-columns: max-content minmax(0, 1fr);
+          column-gap: var(--fs-24);
+          padding-left: var(--fs-20);
+
+          &:before {
+            position: static;
+            grid-row: span 2;
+            align-self: center;
             font-size: var(--fs-44);
-            transform: translateY(-50%);
           }
         }
       }
