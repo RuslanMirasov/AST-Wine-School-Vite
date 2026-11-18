@@ -23,6 +23,7 @@ import { initVideoPlayer } from './modules/videoPlayer.js';
 import { initYandexMap } from './modules/yandex-map.js';
 import { initCertificateOrder } from './modules/certificat-order.js';
 import { initCertificatePreview } from './modules/certificat-preview.js';
+import { initCertificateBalance } from './modules/certificat-balance.js';
 import { initDatepickers } from './plugins/airDatepicker.js';
 import { initEventFilters } from './modules/event-filters.js';
 import { initEventFilterSelection } from './modules/event-filter-selection.js';
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initYandexMap();
   initCertificateOrder();
   initCertificatePreview();
+  initCertificateBalance();
   initDatepickers();
   initEventFilters();
   initEventFilterSelection();

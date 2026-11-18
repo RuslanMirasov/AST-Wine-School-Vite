@@ -18,10 +18,8 @@ const FIELD_SELECTOR = 'input, select, textarea';
 const ORDER_FIELD_SELECTOR = '[data-cert-field]';
 const NOMINAL_SELECTOR = '[data-cert-field="nominal"]';
 const PRICE_FIELD_SELECTOR = '[data-input-price]';
-const NOMINAL_LABEL_SELECTOR = '[data-cert-nominal-label]';
-const NOMINAL_VARIANT_SELECTOR = '[data-cert-nominal-variant]';
+const NOMINAL_AMOUNT_SELECTOR = '[data-cert-nominal-amount]';
 const TEMPLATE_SELECTOR = '[data-cert-field="template"]';
-const NOMINAL_VARIANT_OTHER = 'other';
 const LOGO_TOGGLE_SELECTOR = '[data-cert-logo-toggle]';
 const LOGO_INPUT_SELECTOR = '[data-cert-logo]';
 const LOGO_WRAPPER_SELECTOR = '[data-file-field]';
@@ -37,8 +35,6 @@ const TEMPLATE_IMAGES_URL = new URL('../../img/certificates/', import.meta.url).
 
 let form = null;
 let groups = [];
-let nominalInput = null;
-let nominalLabel = null;
 let templateInput = null;
 let templatesSwiper = null;
 let logoToggle = null;
@@ -65,8 +61,6 @@ const findInGroups = selector => groups.map(group => group.querySelector(selecto
 const findAllInGroups = selector => groups.flatMap(group => Array.from(group.querySelectorAll(selector)));
 const getFieldKey = field => field.dataset.certField;
 const getOrderFields = () => findAllInGroups(ORDER_FIELD_SELECTOR);
-const getNominalVariantRadios = () => findAllInGroups(NOMINAL_VARIANT_SELECTOR);
-const getCheckedNominalVariant = () => getNominalVariantRadios().find(radio => radio.checked);
 
 const collectOrder = () => {
   const data = {};
@@ -149,35 +143,6 @@ const restoreOrder = () => {
 
     field.value = field.matches(PRICE_FIELD_SELECTOR) ? formatPrice(data[key]) : data[key];
   });
-};
-
-const checkNominalVariant = () => {
-  if (!nominalInput) return;
-
-  const radios = getNominalVariantRadios();
-  const isOther = radio => radio.dataset.certNominalVariant === NOMINAL_VARIANT_OTHER;
-  const variant = radios.find(radio => !isOther(radio) && radio.value === parsePrice(nominalInput.value)) || radios.find(isOther);
-
-  if (variant) variant.checked = true;
-};
-
-const syncNominal = ({ clearOnOther = false } = {}) => {
-  if (!nominalInput) return;
-
-  const variant = getCheckedNominalVariant();
-  const isOther = variant?.dataset.certNominalVariant === NOMINAL_VARIANT_OTHER;
-
-  nominalLabel?.classList.toggle('hidden', !isOther);
-
-  if (isOther) {
-    if (clearOnOther) {
-      nominalInput.value = '';
-      nominalInput.focus();
-    }
-    return;
-  }
-
-  if (variant) nominalInput.value = formatPrice(variant.value);
 };
 
 const getScenario = () => {
@@ -276,21 +241,26 @@ export const initCertificateOrder = () => {
   if (!form) return;
 
   groups = Array.from(document.querySelectorAll(GROUP_SELECTOR));
-  nominalInput = findInGroups(NOMINAL_SELECTOR);
-  nominalLabel = findInGroups(NOMINAL_LABEL_SELECTOR);
+  const nominalInput = form.querySelector(NOMINAL_SELECTOR);
   templateInput = findInGroups(TEMPLATE_SELECTOR);
   logoToggle = findInGroups(LOGO_TOGGLE_SELECTOR);
   logoInput = findInGroups(LOGO_INPUT_SELECTOR);
 
   restoreOrder();
-  checkNominalVariant();
-  syncNominal();
   syncScenario();
   syncRecipient();
   syncLogoToggle();
   bindTemplatesSlider();
   updateOrder();
   document.addEventListener('sliders:updated', bindTemplatesSlider);
+
+  form.addEventListener('click', event => {
+    const button = event.target.closest(NOMINAL_AMOUNT_SELECTOR);
+    if (!button || !nominalInput) return;
+
+    nominalInput.value = formatPrice(button.dataset.certNominalAmount);
+    nominalInput.dispatchEvent(new Event('change', { bubbles: true }));
+  });
 
   document.addEventListener('click', event => {
     const option = event.target.closest(TEMPLATE_OPTION_SELECTOR);
@@ -301,7 +271,6 @@ export const initCertificateOrder = () => {
 
   groups.forEach(group => {
     group.addEventListener('change', event => {
-      if (event.target.matches(NOMINAL_VARIANT_SELECTOR)) syncNominal({ clearOnOther: true });
       if (event.target.matches(RECIPIENT_SELECTOR)) syncRecipient();
       if (event.target.matches(`${FORMAT_SELECTOR}, ${PURPOSE_SELECTOR}`)) syncScenario();
       if (event.target.matches(LOGO_TOGGLE_SELECTOR)) syncLogoToggle();
@@ -326,9 +295,7 @@ export const initCertificateOrder = () => {
   });
 
   form.addEventListener('formdata', event => {
-    const helperNames = new Set([...getNominalVariantRadios(), logoToggle].map(field => field?.name).filter(Boolean));
-
-    helperNames.forEach(name => event.formData.delete(name));
+    if (logoToggle?.name) event.formData.delete(logoToggle.name);
   });
 };
 

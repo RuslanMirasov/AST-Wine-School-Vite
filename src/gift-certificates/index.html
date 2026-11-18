@@ -150,54 +150,35 @@
                 </div>
 
                 <!--НОМИНАЛ-->
-                <div class="buttons gap--12 ta--l">
-                  <b class="text fs-14 full">Номинал *</b>
-                  <label class="label-for-radio-button">
-                    <input type="radio" name="nominal-variant" data-cert-nominal-variant value="3000" checked />
-                    <p class="radio-button"><span>3 000 ₽</span></p>
+                <div class="content-text gap--8">
+                  <label class="label">
+                    <span class="label-text">Номинал *</span>
+                    <input
+                      data-cert-field="nominal"
+                      data-input-price
+                      data-rule="price"
+                      type="text"
+                      inputmode="decimal"
+                      name="nominal"
+                      class="input"
+                      value="3000"
+                      placeholder="15 000 ₽"
+                      required
+                      data-required-error-text="Пожалуйста, укажите сумму"
+                    />
                   </label>
-
-                  <label class="label-for-radio-button">
-                    <input type="radio" name="nominal-variant" data-cert-nominal-variant value="5000" />
-                    <p class="radio-button"><span>5 000 ₽</span></p>
-                  </label>
-
-                  <label class="label-for-radio-button">
-                    <input type="radio" name="nominal-variant" data-cert-nominal-variant value="10000" />
-                    <p class="radio-button"><span>10 000 ₽</span></p>
-                  </label>
-
-                  <label class="label-for-radio-button">
-                    <input type="radio" name="nominal-variant" data-cert-nominal-variant="other" value="other" />
-                    <p class="radio-button"><span>Ввести свою сумму</span></p>
-                  </label>
+                  <div class="buttons gap--12 ta--l">
+                    <button type="button" class="button button--tab" data-cert-nominal-amount="3000"><span>3&nbsp;000&nbsp;₽</span></button>
+                    <button type="button" class="button button--tab" data-cert-nominal-amount="5000"><span>5&nbsp;000&nbsp;₽</span></button>
+                    <button type="button" class="button button--tab" data-cert-nominal-amount="10000"><span>10&nbsp;000&nbsp;₽</span></button>
+                  </div>
                 </div>
-
-                <label class="label hidden" data-cert-nominal-label>
-                  <span class="label-text">Введите свою сумму *</span>
-                  <input
-                    data-cert-field="nominal"
-                    data-input-price
-                    data-rule="price"
-                    type="text"
-                    inputmode="decimal"
-                    name="nominal"
-                    class="input"
-                    placeholder="15 000 ₽"
-                    required
-                    data-required-error-text="Пожалуйста, укажите свою сумму"
-                  />
-                </label>
 
                 <input type="hidden" name="code" value="ХХХХ-ХХХХ-ХХХ" data-cert-field="code" />
                 <input type="hidden" name="template" value="1" data-cert-field="template" />
               </fieldset>
 
-              <ul class="links">
-                <li><a href="#" class="link">Условия использования</a></li>
-                <li><a href="#" class="link">Регламент использования</a></li>
-                <li><a href="#" class="link">Сертификат для бизнеса</a></li>
-              </ul>
+              <load src="/_partials/components/certificate-order-links.html" />
             </div>
 
             <!--SLIDERS-->
@@ -273,6 +254,7 @@
                   <svg width="18" height="18"><use href="/assets/img/sprite.svg#arrow-right"></use></svg>
                 </button>
               </div>
+              <load src="/_partials/components/certificate-order-links.html" />
             </div>
           </form>
         </div>
@@ -305,13 +287,16 @@
                   </div>
                 </div>
 
-                <div class="cert-balance-result" aria-live="polite">
+                <div class="cert-balance-result" aria-live="polite"></div>
+                <template data-demo-certificate-code="1234-5678-901">
                   <div class="cert-balance-success">
                     <p class="text fs-12 grey-text">Ваш остаток:</p>
                     <strong class="text fs-24 bold">10&nbsp;000&nbsp;000&nbsp;₽</strong>
                   </div>
-                  <!-- <p class="text fs-14 red">Сертификат не&nbsp;найден</p> -->
-                </div>
+                </template>
+                <template data-certificate-not-found>
+                  <p class="text fs-14 red">Сертификат не&nbsp;найден</p>
+                </template>
               </form>
             </div>
             <div class="col--2">
