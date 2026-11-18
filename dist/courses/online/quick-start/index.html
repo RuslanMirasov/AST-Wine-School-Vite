@@ -471,7 +471,7 @@
             </ul>
 
             <div class="content-text gap--12">
-              <h1 class="title title--40 upper">Быстрый старт: онлайн-курс для начинающих</h1>
+              <h1 class="title title--40 upper" data-review-subject-source>Быстрый старт: онлайн-курс для начинающих</h1>
             </div>
 
             <div class="curse-hero-fields">
@@ -2107,19 +2107,11 @@
     </button>
   </h2>
 
-  <h2 class="popup-title fs-18">Быстрый старт: о вине за 3 встречи</h2>
-
-  <script>
-    function onReviewSubmit(e) {
-      e.preventDefault();
-      window.popup.open('add-review-success');
-    }
-  </script>
+  <p class="popup-title fs-18" data-review-subject hidden></p>
 
   <form data-form action="#" class="form" novalidate onsubmit="onReviewSubmit(event)">
     <label class="label">
-      <span class="label-text">Ваш отзыв *</span>
-      <textarea name="review" class="input input--textarea" placeholder="Расскажите, что вам запомнилось на курсе" required data-required-error-text="Пожалуйста, напишите ваш отзыв"></textarea>
+      <textarea name="review" class="input input--textarea" aria-label="Текст отзыва" placeholder="Расскажите, что вам запомнилось" required data-required-error-text="Пожалуйста, напишите ваш отзыв"></textarea>
     </label>
     <p class="popup-subtitle">Оставляя отзыв, вы соглашаетесь с <a href="#" class="link">условиями использования сайта</a>.</p>
     <button type="submit" class="button"><span>Оставить отзыв</span></button>
@@ -2135,7 +2127,7 @@
     </button>
   </h2>
 
-  <h2 class="popup-title fs-18">Быстрый старт: о вине за 3 встречи</h2>
+  <p class="popup-title fs-18" data-review-subject hidden></p>
 
   <p class="text full ta--l">Спасибо! Ваш отзыв отправлен. Он&nbsp;появится после прохождения проверки.</p>
 
@@ -2143,6 +2135,21 @@
     <button type="button" class="button" data-popup-close><span>Закрыть</span></button>
   </div>
 </div>
+
+<script>
+  const reviewSubject = document.querySelector('[data-review-subject-source]')?.textContent.trim();
+  if (reviewSubject) {
+    document.querySelectorAll('[data-review-subject]').forEach(element => {
+      element.textContent = reviewSubject;
+      element.hidden = false;
+    });
+  }
+
+  function onReviewSubmit(e) {
+    e.preventDefault();
+    window.popup.open('add-review-success');
+  }
+</script>
 
         <!--ADD REVIEW POPUP-->
 <div class="popup-content big" role="dialog" aria-modal="true" aria-labelledby="add-to-wait-list-title" id="add-to-wait-list">

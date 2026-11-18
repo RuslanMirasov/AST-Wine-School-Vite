@@ -9,15 +9,15 @@
     margin-top: auto;
     a {
       border: none;
+
+      &:focus-visible {
+        text-decoration: underline;
+      }
     }
   }
 
-  .label {
-    &.hidden {
-      visibility: hidden;
-      pointer-events: none;
-      position: absolute;
-    }
+  .button[data-cert-nominal-amount] {
+    padding-inline: var(--fs-12);
   }
   .form {
     flex-direction: row;
@@ -56,6 +56,9 @@
     align-items: flex-start;
     align-content: flex-start;
     flex-shrink: 1;
+    .links {
+      display: none;
+    }
     @media (min-width: 1440px) {
       margin-right: 56px;
     }
@@ -363,8 +366,18 @@
 
 //768
 @media (max-width: 1023px) {
-  .certificate-order .right-side {
-    width: 100%;
+  .certificate-order {
+    .left-side .links {
+      display: none;
+    }
+
+    .right-side {
+      width: 100%;
+
+      .links {
+        display: flex;
+      }
+    }
   }
 }
 
@@ -372,6 +385,7 @@
 @media (max-width: 767px) {
   .first-step-inputs {
     margin-top: var(--fs-24);
+    margin-bottom: 0;
     .label-for-radio-button {
       width: 100%;
       max-width: 230px;

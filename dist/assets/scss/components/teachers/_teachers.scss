@@ -113,6 +113,52 @@
 .section--teacher-events {
   .teachers-list {
     margin-top: 0px;
+
+    &:has(> .col--3:only-child > .post-card > .image-background) {
+      > .col--3 {
+        width: 100%;
+      }
+
+      .post-card {
+        min-height: 0;
+        flex-flow: row wrap;
+        align-items: center;
+      }
+
+      .image-background.white-gradient.to-top {
+        --fade-hold: 55%;
+        --fade-size: 100%;
+
+        @media (min-width: 768px) {
+          --fade-direction: 90deg;
+        }
+      }
+
+      .content-text {
+        flex: 1 1 16rem;
+        max-width: none;
+      }
+
+      .buttons {
+        width: auto;
+        max-width: 100%;
+        margin: 0 0 0 auto;
+
+        .button {
+          width: auto;
+          margin-top: 0;
+        }
+      }
+
+      .text,
+      .button span {
+        font-size: max(16px, var(--fs-16));
+      }
+
+      + .buttons {
+        display: none;
+      }
+    }
   }
 
   @media (min-width: 768px) and (max-width: 1151px) {

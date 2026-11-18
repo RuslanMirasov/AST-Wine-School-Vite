@@ -169,6 +169,12 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section--curses.section--curses-offline .content-list__item {
+    min-width: 0;
+  }
+}
+
 //375
 @media (max-width: 767px) {
   .section--curses {

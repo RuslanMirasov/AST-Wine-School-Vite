@@ -173,6 +173,9 @@ $popup_transition: 0.5s;
   font-weight: 700;
   font-size: var(--fs-24);
   color: var(--blue);
+  &[hidden] {
+    display: none;
+  }
   &.regular {
     font-family: var(--font);
     font-weight: 400;

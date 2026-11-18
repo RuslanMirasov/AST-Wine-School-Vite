@@ -63,6 +63,49 @@
   }
 }
 
+@media (min-width: 768px) {
+  :where(.classrooms-banner) .title.title--24 {
+    font-size: var(--fs-32);
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+    --lh: 1.18;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-banner.classrooms-banner {
+    gap: var(--fs-8);
+
+    .content-text {
+      margin-top: 180px;
+      gap: var(--fs-8);
+    }
+
+    .title {
+      margin-bottom: var(--fs-8);
+    }
+
+    .image-background {
+      height: 220px;
+      --fade-hold: 0%;
+      --fade-size: 50%;
+
+      img {
+        max-width: 130%;
+      }
+    }
+
+    .buttons {
+      margin-top: calc(var(--fs-5) + var(--fs-12));
+
+      .button {
+        width: 100%;
+      }
+    }
+  }
+}
+
 //1920
 @media (min-width: 1920px) {
   .section--degistation-list .search-navigation__btn {
@@ -71,7 +114,7 @@
 
   .section--degistation-list,
   .section--classrooms {
-    .collage {
+    .collage:not(:where(.classrooms-list)) {
       .col--2-3 {
         width: calc(75% - (var(--fs-24) / 2));
       }
