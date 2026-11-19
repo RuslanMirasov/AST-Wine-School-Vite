@@ -26,25 +26,18 @@
     }
   }
 
-  .search-navigation,
-  .online-catalog-levels {
-    @media (min-width: 1152px) {
-      padding: var(--fs-24) 0px;
-    }
-  }
-
   .online-catalog-filter {
     display: contents;
   }
 
   .search-navigation {
     display: inline-flex;
-    width: auto;
+    width: 100%;
     min-width: 0px;
     margin: 0px;
     border: none;
-    @media (max-width: 1151px) {
-      padding: 0px;
+    @media (min-width: 1152px) {
+      padding-top: var(--fs-24);
     }
   }
 
@@ -94,7 +87,6 @@
   @media (max-width: 767px) {
     .container > .content-text,
     .online-catalog-search,
-    .search-navigation,
     .online-catalog-levels {
       width: 100%;
       max-width: 100%;
