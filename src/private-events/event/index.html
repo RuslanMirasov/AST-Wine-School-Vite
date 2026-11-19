@@ -402,12 +402,11 @@
       <section class="section section--others-formats">
         <div class="container">
           <h2 class="title title--32 upper">Другие форматы</h2>
-          <a href="%ROOT%private-events/" class="button magenta-light"><span>Смотреть все</span></a>
 
           <div class="collage">
             <!--1-->
             <div class="col--3">
-              <div class="content mood-card pad--32 dark">
+              <a class="content mood-card pad--32 dark" href="%ROOT%private-events/event/" aria-labelledby="other-format-1">
                 <picture class="image-background white-gradient">
                   <source media="(max-width: 767px)" srcset="/assets/img/privat-events/mood-4.webp" />
                   <img src="/assets/img/privat-events/mood-4.webp" alt="Винная мафия" title="Винная мафия" />
@@ -418,7 +417,7 @@
                     <li class="tag">Детектив — нетворкинг</li>
                   </ul>
 
-                  <h3 class="title title--24 bold">Винная мафия</h3>
+                  <h3 class="title title--24 bold" id="other-format-1">Винная мафия</h3>
                   <p class="text">Винная мафия — это&nbsp;настоящий НЕвинный криминал!</p>
                 </div>
 
@@ -438,22 +437,22 @@
                     </li>
                   </ul>
 
-                  <a href="%ROOT%private-events/event/" class="mood-button white" aria-label="Ссылка">
-                    <svg width="38" height="38"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
-                  </a>
+                  <span class="mood-button white" aria-hidden="true">
+                    <load src="/_partials/components/mood-action.html" />
+                  </span>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!--2-->
             <div class="col--3">
-              <div class="content mood-card pad--32 magenta">
+              <a class="content mood-card pad--32 magenta" href="%ROOT%private-events/event/" aria-labelledby="other-format-2">
                 <div class="content-text gap--12">
                   <ul class="tags minify">
                     <li class="tag">Гастрономия</li>
                   </ul>
 
-                  <h3 class="title title--24 bold">Винный ужин</h3>
+                  <h3 class="title title--24 bold" id="other-format-2">Винный ужин</h3>
                   <p class="text">Особый вид частного события, где&nbsp;мы сосредоточены на&nbsp;эногастрономии.</p>
                 </div>
 
@@ -473,16 +472,16 @@
                     </li>
                   </ul>
 
-                  <a href="%ROOT%private-events/event/" class="mood-button white" aria-label="Ссылка">
-                    <svg width="38" height="38"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
-                  </a>
+                  <span class="mood-button white" aria-hidden="true">
+                    <load src="/_partials/components/mood-action.html" />
+                  </span>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!--3-->
             <div class="col--3">
-              <div class="content mood-card pad--32">
+              <a class="content mood-card pad--32" href="%ROOT%private-events/event/" aria-labelledby="other-format-3">
                 <svg width="320" height="320" class="logo-background" aria-hidden="true">
                   <use href="/assets/img/sprite.svg#preloader"></use>
                 </svg>
@@ -492,7 +491,7 @@
                     <li class="tag">Крепкое</li>
                   </ul>
 
-                  <h3 class="title title--24 bold">Hardcore: крепкий алкоголь</h3>
+                  <h3 class="title title--24 bold" id="other-format-3">Hardcore: крепкий алкоголь</h3>
                   <p class="text">Коньяк, арманьяк, виски, ром, текила — и&nbsp;это еще не&nbsp;все!</p>
                 </div>
 
@@ -512,13 +511,15 @@
                     </li>
                   </ul>
 
-                  <a href="%ROOT%private-events/event/" class="mood-button" aria-label="Ссылка">
-                    <svg width="38" height="38"><use href="/assets/img/sprite.svg#arrow-accordeon"></use></svg>
-                  </a>
+                  <span class="mood-button" aria-hidden="true">
+                    <load src="/_partials/components/mood-action.html" />
+                  </span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
+
+          <a href="%ROOT%private-events/" class="button magenta-light"><span>Смотреть все</span></a>
         </div>
       </section>
 
