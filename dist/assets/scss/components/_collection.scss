@@ -30,6 +30,9 @@
 }
 
 .post-card-collection {
+  .container {
+    align-items: flex-end;
+  }
   &[data-slider] {
     .swiper-slide {
       > .post-card {
@@ -80,6 +83,11 @@
       .col--3 {
         width: 100%;
       }
+    }
+  }
+  @media (min-width: 768px) {
+    .title.title--32.upper {
+      max-width: calc(100% - var(--fs-24) - var(--fs-38) - var(--fs-38) - var(--fs-8));
     }
   }
   @media (max-width: 767px) {

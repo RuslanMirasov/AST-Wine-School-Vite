@@ -502,7 +502,7 @@ $select_border_radius: var(--fs-16);
 $select_border: 1px solid var(--grey-border);
 $select_font_size: var(--fs-16);
 $select_dropdown_font_size: var(--fs-12);
-$select_font_family: var(--font);
+$select_font_family: var(--font-center);
 $select_font_weight: 400;
 $select_text_align: left;
 $select_padding: 0px var(--fs-16);
@@ -555,7 +555,7 @@ $select_padding: 0px var(--fs-16);
         font-size: var(--fs-16);
         font-weight: 400;
         --lh: 1.3;
-        font-family: var(--font);
+        font-family: var(--font-center);
       }
       .choices__placeholder {
         color: var(--input-placeholder-color);
@@ -576,7 +576,7 @@ $select_padding: 0px var(--fs-16);
       }
       font-weight: 400;
       --lh: 1;
-      font-family: var(--font);
+      font-family: var(--font-center);
       padding: 8px 12px;
       border-radius: 10px;
       background-color: rgba(0, 0, 0, 0);
@@ -585,7 +585,7 @@ $select_padding: 0px var(--fs-16);
         width: 100%;
         font-size: 12px;
         font-weight: 400;
-        font-family: var(--font);
+        font-family: var(--font-center);
         color: var(--grey-text);
         margin-top: 4px;
       }

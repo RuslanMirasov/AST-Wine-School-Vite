@@ -34,7 +34,7 @@
 .search-navigation__btn {
   cursor: pointer;
   font-size: var(--fs-14);
-  font-family: var(--font);
+  font-family: var(--font-center);
   font-weight: 500;
   padding: var(--fs-6) var(--fs-16);
   background-color: var(--grey-promo);
@@ -43,6 +43,11 @@
   transition:
     background-color 0.3s var(--cubic),
     color 0.3s var(--cubic);
+
+  &.big {
+    padding: var(--fs-9) var(--fs-16);
+    font-weight: 500;
+  }
 
   &.active {
     background-color: var(--blue);

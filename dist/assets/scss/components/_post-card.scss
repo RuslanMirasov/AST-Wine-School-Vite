@@ -75,11 +75,14 @@
   &.horisontal {
     flex-direction: row;
     align-items: flex-start;
-    padding: var(--fs-40);
+    padding: var(--fs-24);
 
     .post-card-image {
       max-width: 400px;
       border-radius: var(--fs-22);
+    }
+    .post-card-content {
+      align-self: stretch;
     }
   }
 

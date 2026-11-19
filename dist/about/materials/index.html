@@ -452,9 +452,416 @@
         </ol>
       </nav>
 
+      <section class="section section--post">
+        <div class="container gap--40">
+          <h1 class="title title--40 upper">Полезные материалы</h1>
+
+          <form action="../../search/" class="search-form-with-filter" method="GET" data-form novalidate>
+            <div class="label">
+  <button type="submit" class="search-submit-icon" aria-label="Отправка формы поиска">
+    <svg width="24" height="24"><use href="../../assets/img/sprite.svg#search"></use></svg>
+  </button>
+  <input type="text" name="s" class="input" required placeholder="Поиск" aria-label="Поиск" data-error-text="Введите запрос" />
+</div>
+
+          </form>
+
+          <ul class="search-navigation">
+            <li>
+              <a href="../../about/materials/" class="search-navigation__btn big active">Полезные материалы</a>
+            </li>
+            <li>
+              <a href="../../about/videos/" class="search-navigation__btn big">Видеобиблиотека</a>
+            </li>
+            <li>
+              <a href="../../about/posts/" class="search-navigation__btn big">Новости</a>
+            </li>
+          </ul>
+
+          <!--ФИЛЬТР КАТЕГОРИЙ-->
+          <form action="#" method="GET" class="category-filter" novalidate>
+            <fieldset class="search-navigation">
+              <legend class="visually-hidden">Категория</legend>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="Все" class="visually-hidden" checked />
+                <span class="search-navigation__btn">Все</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="для новичков" class="visually-hidden" />
+                <span class="search-navigation__btn">для новичков</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="для продвинутых" class="visually-hidden" />
+                <span class="search-navigation__btn">для продвинутых</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="для профессионалов" class="visually-hidden" />
+                <span class="search-navigation__btn">для профессионалов</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="вино" class="visually-hidden" />
+                <span class="search-navigation__btn">вино</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="лето" class="visually-hidden" />
+                <span class="search-navigation__btn">лето</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="этикетка" class="visually-hidden" />
+                <span class="search-navigation__btn">этикетка</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="дегустации" class="visually-hidden" />
+                <span class="search-navigation__btn">дегустации</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="частные мероприятия" class="visually-hidden" />
+                <span class="search-navigation__btn">частные мероприятия</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="подарок" class="visually-hidden" />
+                <span class="search-navigation__btn">подарок</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="сомелье" class="visually-hidden" />
+                <span class="search-navigation__btn">сомелье</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="шардоне" class="visually-hidden" />
+                <span class="search-navigation__btn">шардоне</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="мерло" class="visually-hidden" />
+                <span class="search-navigation__btn">мерло</span>
+              </label>
+              <label class="search-navigation__item">
+                <input type="radio" name="category" value="санджовезе" class="visually-hidden" />
+                <span class="search-navigation__btn">санджовезе</span>
+              </label>
+            </fieldset>
+          </form>
+
+          <!--КАРТОЧКИ-->
+          <ul class="collection">
+            <li>
+              <article class="post-card horisontal">
+                <a href="../../about/materials/material/" class="post-card-image">
+                  <img
+                    src="../../assets/img/posts/post-5.webp"
+                    alt="Как читать винную этикетку: подробный гид для новичков"
+                    title="Как читать винную этикетку: подробный гид для новичков"
+                  />
+                </a>
+
+                <div class="post-card-content">
+                  <div class="content-text">
+                    <p class="text fs-12 grey-medium">12 марта 2026 г.</p>
+                    <h2 class="title title--24 bold cut-3">
+                      <a href="../../about/materials/material/" class="title-link"> Как читать винную этикетку: подробный гид для&nbsp;новичков </a>
+                    </h2>
+                    <p class="text fs-16 grey-text cut-4">
+                      Разбираем каждый элемент этикетки: сорт, регион, год урожая, выдержку и скрытые маркетинговые уловки производителей.
+                    </p>
+                    <ul class="tags minify">
+                      <li class="tag">для новичков</li>
+                      <li class="tag">вино</li>
+                      <li class="tag">этикетка</li>
+                    </ul>
+                  </div>
+
+                  <div class="buttons ta--r">
+                    <a href="../../about/materials/material/" class="button magenta-light"><span>Подробнее</span></a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="post-card horisontal">
+                <a href="../../about/materials/material/" class="post-card-image">
+                  <img
+                    src="../../assets/img/posts/post-6.webp"
+                    alt="Пять главных сортов красного винограда, которые нужно попробовать каждому"
+                    title="Пять главных сортов красного винограда, которые нужно попробовать каждому"
+                  />
+                </a>
+
+                <div class="post-card-content">
+                  <div class="content-text">
+                    <p class="text fs-12 grey-medium">22 апреля 2026 г.</p>
+                    <h2 class="title title--24 bold cut-3">
+                      <a href="../../about/materials/material/" class="title-link">
+                        Пять главных сортов красного винограда, которые нужно попробовать каждому
+                      </a>
+                    </h2>
+                    <p class="text fs-16 grey-text cut-4">
+                      Каберне Совиньон, Пино Нуар, Мерло, Сира и Санджовезе — гид по характерам, ароматам и лучшим регионам.
+                    </p>
+                    <ul class="tags minify">
+                      <li class="tag">для новичков</li>
+                      <li class="tag">вино</li>
+                      <li class="tag">этикетка</li>
+                    </ul>
+                  </div>
+
+                  <div class="buttons ta--r">
+                    <a href="../../about/materials/material/" class="button magenta-light"><span>Подробнее</span></a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="post-card horisontal">
+                <a href="../../about/materials/material/" class="post-card-image">
+                  <img
+                    src="../../assets/img/posts/post-7.webp"
+                    alt="Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам"
+                    title="Шардоне, Рислинг и Совиньон Блан: гид по главным белым сортам"
+                  />
+                </a>
+
+                <div class="post-card-content">
+                  <div class="content-text">
+                    <p class="text fs-12 grey-medium">15 мая 2026 г.</p>
+                    <h2 class="title title--24 bold cut-3">
+                      <a href="../../about/materials/material/" class="title-link">
+                        Шардоне, Рислинг и&nbsp;Совиньон Блан: гид по&nbsp;главным белым сортам
+                      </a>
+                    </h2>
+                    <p class="text fs-16 grey-text cut-4">
+                      Почему один Шардоне маслянистый, а другой — свежий и хрустящий? Разбираем три столпа белого виноделия.
+                    </p>
+                    <ul class="tags minify">
+                      <li class="tag">для новичков</li>
+                      <li class="tag">вино</li>
+                    </ul>
+                  </div>
+
+                  <div class="buttons ta--r">
+                    <a href="../../about/materials/material/" class="button magenta-light"><span>Подробнее</span></a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="post-card horisontal">
+                <a href="../../about/materials/material/" class="post-card-image">
+                  <img
+                    src="../../assets/img/posts/post-8.webp"
+                    alt="Как организовать частную винную дегустацию дома: чек-лист от сомелье"
+                    title="Как организовать частную винную дегустацию дома: чек-лист от сомелье"
+                  />
+                </a>
+
+                <div class="post-card-content">
+                  <div class="content-text">
+                    <p class="text fs-12 grey-medium">8 июня 2026 г.</p>
+                    <h2 class="title title--24 bold cut-3">
+                      <a href="../../about/materials/material/" class="title-link">
+                        Как организовать частную винную дегустацию дома: чек-лист от&nbsp;сомелье
+                      </a>
+                    </h2>
+                    <p class="text fs-16 grey-text cut-4">
+                      6 шагов: от выбора темы и вин до расстановки бокалов и закусок. Проведите незабываемый вечер для друзей.
+                    </p>
+                    <ul class="tags minify">
+                      <li class="tag">для новичков</li>
+                      <li class="tag">вино</li>
+                    </ul>
+                  </div>
+
+                  <div class="buttons ta--r">
+                    <a href="../../about/materials/material/" class="button magenta-light"><span>Подробнее</span></a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="post-card horisontal">
+                <a href="../../about/materials/material/" class="post-card-image">
+                  <img
+                    src="../../assets/img/posts/post-9.webp"
+                    alt="Как читать винную этикетку: подробный гид для новичков"
+                    title="Как читать винную этикетку: подробный гид для новичков"
+                  />
+                </a>
+
+                <div class="post-card-content">
+                  <div class="content-text">
+                    <p class="text fs-12 grey-medium">12 марта 2026 г.</p>
+                    <h2 class="title title--24 bold cut-3">
+                      <a href="../../about/materials/material/" class="title-link"> Как читать винную этикетку: подробный гид для&nbsp;новичков </a>
+                    </h2>
+                    <p class="text fs-16 grey-text cut-4">
+                      Разбираем каждый элемент этикетки: сорт, регион, год урожая, выдержку и скрытые маркетинговые уловки производителей.
+                    </p>
+                    <ul class="tags minify">
+                      <li class="tag">для новичков</li>
+                      <li class="tag">вино</li>
+                      <li class="tag">этикетка</li>
+                    </ul>
+                  </div>
+
+                  <div class="buttons ta--r">
+                    <a href="../../about/materials/material/" class="button magenta-light"><span>Подробнее</span></a>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="post-card horisontal">
+                <a href="../../about/materials/material/" class="post-card-image">
+                  <img
+                    src="../../assets/img/posts/post-10.webp"
+                    alt="Пять главных сортов красного винограда, которые нужно попробовать каждому"
+                    title="Пять главных сортов красного винограда, которые нужно попробовать каждому"
+                  />
+                </a>
+
+                <div class="post-card-content">
+                  <div class="content-text">
+                    <p class="text fs-12 grey-medium">22 апреля 2026 г.</p>
+                    <h2 class="title title--24 bold cut-3">
+                      <a href="../../about/materials/material/" class="title-link">
+                        Пять главных сортов красного винограда, которые нужно попробовать каждому
+                      </a>
+                    </h2>
+                    <p class="text fs-16 grey-text cut-4">
+                      Каберне Совиньон, Пино Нуар, Мерло, Сира и Санджовезе — гид по характерам, ароматам и лучшим регионам.
+                    </p>
+                    <ul class="tags minify">
+                      <li class="tag">для новичков</li>
+                      <li class="tag">вино</li>
+                      <li class="tag">этикетка</li>
+                    </ul>
+                  </div>
+
+                  <div class="buttons ta--r">
+                    <a href="../../about/materials/material/" class="button magenta-light"><span>Подробнее</span></a>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <div class="page-pagination-wrapper">
+            <nav class="page-pagination" aria-label="Меню навигации по странице">
+  <ul class="page-pagination-list">
+    <li>
+      <span class="page-pagination-link disabled" aria-label="На первую страницу" title="На первую страницу">&laquo;</span>
+    </li>
+    <li>
+      <span class="page-pagination-link disabled" aria-label="На предыдущую страницу" title="На предыдущую страницу">&lsaquo;</span>
+    </li>
+    <li>
+      <span class="page-pagination-link active" aria-current="page" aria-label="Страница 1, текущая страница"> 1 </span>
+    </li>
+
+    <li>
+      <a href="?page=2" class="page-pagination-link">2</a>
+    </li>
+
+    <li>
+      <span class="page-pagination-link" aria-hidden="true">&hellip;</span>
+    </li>
+
+    <li>
+      <a href="?page=68" class="page-pagination-link">68</a>
+    </li>
+    <li>
+      <a href="?page=69" class="page-pagination-link">69</a>
+    </li>
+
+    <li>
+      <a href="?page=2" class="page-pagination-link" aria-label="На следующую страницу" title="На следующую страницу">&rsaquo;</a>
+    </li>
+
+    <li>
+      <a href="?page=69" class="page-pagination-link" aria-label="На последнюю страницу" title="На последнюю страницу">&raquo;</a>
+    </li>
+  </ul>
+</nav>
+
+          </div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="container">
-          <h1 class="title title--24">Страница <span style="color: #c24191">"Полезные материалы"</span> в разработке...</h1>
+          <div class="service-mix">
+  <div class="service-mix-col">
+    <div class="service-mix__item service-mix__item--degustations">
+      <h3 class="title title--24 bold">Дегустации</h3>
+      <p class="text">
+        За один вечер попробуете 8-10 вин под&nbsp;комментарии сомелье, сравните регионы и&nbsp;сорта бок о&nbsp;бок и&nbsp;наконец поймёте, какой
+        вкус ваш. Уйдёте со&nbsp;списком вин, которые стоит купить.
+      </p>
+      <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+    </div>
+
+    <div class="service-mix__item service-mix__item--images">
+      <div class="service-mix-image">
+        <img src="../../assets/img/combine-services/1.webp" alt="Наши курсы" title="Наши курсы" />
+      </div>
+      <div class="service-mix-image">
+        <img src="../../assets/img/combine-services/2-bg.webp" alt="Наши курсы" title="Наши курсы" />
+        <img src="../../assets/img/combine-services/2.webp" alt="Наши курсы" title="Наши курсы" class="absolute" />
+      </div>
+    </div>
+  </div>
+
+  <div class="service-mix-col">
+    <div class="service-mix__item service-mix__item--curses">
+      <img src="../../assets/img/combine-services/3.webp" alt="Наши курсы" title="Наши курсы" class="phone-image" />
+      <h3 class="title title--24 bold">Наши курсы</h3>
+      <p class="text">Научитесь читать этикетку, отличать сорта и&nbsp;объяснять, почему вам нравится именно это вино.</p>
+      <a href="#" class="button blue-border"><span>Подробнее</span></a>
+    </div>
+
+    <div class="service-mix__item service-mix__item--events">
+      <svg width="406" height="406" class="logo-background large" aria-hidden="true">
+        <use href="../../assets/img/sprite.svg#preloader"></use>
+      </svg>
+      <h3 class="title title--24 bold">Мероприятия</h3>
+      <p class="text">
+        Винные ужины, форумы и&nbsp;авторские вечера — там, где вино становится поводом для&nbsp;разговора. Проведёте вечер среди тех, кому это
+        так&nbsp;же интересно, и&nbsp;унесёте пару открытий.
+      </p>
+      <a href="#" class="button magenta-light"><span>Подробнее</span></a>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <article class="content gap--20 present-certificat">
+  <div class="present-wrapper">
+    <svg width="694" height="694" class="logo-background" aria-hidden="true">
+      <use href="../../assets/img/sprite.svg#preloader"></use>
+    </svg>
+    <div class="present">
+      <img src="../../assets/img/present-top.webp" alt="" class="present-top" />
+      <img src="../../assets/img/present-bottom.webp" alt="" class="present-bottom" />
+    </div>
+  </div>
+
+  <div class="content-text gap--12">
+    <h2 class="title title--32 bold"><a href="../../gift-certificates/" class="title-link">Сертификат в&nbsp;подарок за&nbsp;1&nbsp;минуту</a></h2>
+    <p class="text fs-18">Хотите подарить другу курс, но не&nbsp;можете выбрать подходящий? <br />Подарите ему сертификат!</p>
+  </div>
+
+  <div class="buttons ta--l">
+    <a href="../../gift-certificates/" class="button magenta"><span>Подарить</span></a>
+  </div>
+</article>
+
         </div>
       </section>
     </main>

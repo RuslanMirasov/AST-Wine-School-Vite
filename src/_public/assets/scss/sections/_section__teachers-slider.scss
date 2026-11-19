@@ -38,6 +38,52 @@
     }
   }
 
+  .other-materials-filter {
+    width: 100%;
+
+    .search-navigation {
+      min-width: 0px;
+      margin: 0px;
+      padding: 0px;
+      border: none;
+    }
+
+    .search-navigation__item {
+      display: flex;
+      position: relative;
+      cursor: pointer;
+
+      .search-navigation__btn {
+        display: block;
+        text-align: center;
+      }
+
+      input:checked + .search-navigation__btn {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+
+      input:focus-visible + .search-navigation__btn {
+        outline: 1px solid var(--magenta);
+        outline-offset: 2px;
+      }
+
+      @media (hover: hover) {
+        &:hover input:not(:checked) + .search-navigation__btn {
+          color: var(--blue);
+        }
+      }
+
+      @media (max-width: 767px) {
+        flex: 1;
+        .search-navigation__btn {
+          width: 100%;
+          text-wrap: nowrap;
+        }
+      }
+    }
+  }
+
   .post-card {
     min-height: 466px;
     @media (max-width: 767px) {

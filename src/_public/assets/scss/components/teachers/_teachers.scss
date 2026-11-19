@@ -110,6 +110,12 @@
   }
 }
 
+.videos-list {
+  .post-card {
+    min-height: 388px;
+  }
+}
+
 .section--teacher-events {
   .teachers-list {
     margin-top: 0px;
@@ -162,6 +168,7 @@
   }
 
   @media (min-width: 768px) and (max-width: 1151px) {
+    .videos-list > .col--3:has(> .post-card > .image-background),
     .teachers-list > .col--3:has(> .post-card > .image-background) {
       width: 100%;
 
@@ -187,7 +194,8 @@
 
 //1920
 @media (min-width: 1920px) {
-  .collage.teachers-list {
+  .collage.teachers-list,
+  .collage.videos-list {
     .col--2-3 {
       width: calc(75% - (var(--fs-24) / 2));
     }
@@ -200,7 +208,8 @@
 
 //1024
 @media (max-width: 1151px) {
-  .collage.teachers-list {
+  .collage.teachers-list,
+  .collage.videos-list {
     .col--2-3 {
       width: 100%;
     }
@@ -223,11 +232,14 @@
 //360
 @media (max-width: 767px) {
   .teachers-list > li[hidden],
+  .videos-list > li[hidden],
+  .videos-list + [data-show-more-btn][hidden],
   .teachers-list + [data-show-more-btn][hidden] {
     display: none;
   }
 
-  .collage.teachers-list {
+  .collage.teachers-list,
+  .collage.videos-list {
     .col--3 {
       width: 100%;
     }
