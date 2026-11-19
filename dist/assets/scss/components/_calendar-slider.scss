@@ -12,14 +12,8 @@
     margin-left: auto;
   }
 
-  &:has(> .calendar-slider__toggle[aria-expanded='true']) {
-    padding-bottom: 0;
-    background-color: transparent;
-
-    > .search-navigation,
-    > .calendar-slider-wrapper {
-      display: none;
-    }
+  &[hidden] {
+    display: none;
   }
 
   .search-navigation {
