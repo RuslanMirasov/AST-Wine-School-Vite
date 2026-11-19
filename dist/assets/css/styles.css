@@ -7692,7 +7692,13 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
   width: 100%;
 }
 .event-steps li > .content {
-  padding-left: calc(var(--fs-24) * 4);
+  display: grid;
+  grid-template-columns: var(--fs-48) minmax(0, 1fr);
+  column-gap: var(--fs-24);
+}
+.event-steps li > .content > b,
+.event-steps li > .content > p {
+  grid-column: 2;
 }
 @media (min-width: 768px) {
   .event-steps li > .content > p {
@@ -7702,12 +7708,30 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 .event-steps li > .content:before {
   content: counter(event-step, decimal-leading-zero);
   position: absolute;
-  left: var(--fs-24);
+  grid-area: 2/1;
+  top: 2px;
+  left: 0;
+  transform: translateY(-50%);
   font-family: var(--font);
-  font-size: var(--fs-54);
+  font-size: var(--fs-32);
   --lh: 0.82;
   font-weight: 300;
   color: var(--magenta);
+}
+@media (min-width: 768px) {
+  .event-steps li > .content:before {
+    font-size: var(--fs-36);
+  }
+}
+@media (min-width: 1024px) {
+  .event-steps li > .content:before {
+    font-size: var(--fs-38);
+  }
+}
+@media (min-width: 1920px) {
+  .event-steps li > .content:before {
+    font-size: var(--fs-40);
+  }
 }
 
 .pass-to .content {
@@ -7856,12 +7880,14 @@ a.page-pagination-link.active, a.page-pagination-link:focus-visible {
 }
 @media (max-width: 1023px) {
   .event-steps li > .content {
-    padding-left: calc(var(--fs-20) * 4);
+    grid-template-columns: var(--fs-44) minmax(0, 1fr);
+    padding-left: var(--fs-12);
     padding-right: var(--fs-20);
   }
-  .event-steps li > .content:before {
-    left: var(--fs-12);
-    font-size: var(--fs-50);
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+  .event-steps li > .content {
+    padding-left: var(--fs-20);
   }
 }
 .section--certificates-hero .arrow {
@@ -10589,6 +10615,19 @@ a.calendar-slider-day__inner:focus-visible {
 }
 .contacts .post-card-image:before {
   padding-top: 42.62295%;
+}
+.contacts .icon-list a {
+  transition: color 0.3s var(--cubic);
+}
+@media (hover: hover) {
+  .contacts .icon-list a:hover {
+    color: var(--a11y-accent-text, var(--magenta));
+  }
+}
+.contacts .icon-list a:focus-visible {
+  color: var(--a11y-accent-text, var(--magenta));
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 @media (max-width: 767px) {
   .contacts .col--2 {

@@ -80,15 +80,15 @@
 
       <fieldset class="a11y-panel-group">
         <label class="a11y-option">
-          <input type="radio" name="a11y-font-size" value="normal" checked />
+          <input type="radio" name="a11y-font-size" value="normal" aria-label="A — обычный шрифт" checked />
           <span>A</span>
         </label>
         <label class="a11y-option">
-          <input type="radio" name="a11y-font-size" value="big" />
+          <input type="radio" name="a11y-font-size" value="big" aria-label="A — увеличенный шрифт" />
           <span class="bigger">A</span>
         </label>
         <label class="a11y-option">
-          <input type="radio" name="a11y-font-size" value="large" />
+          <input type="radio" name="a11y-font-size" value="large" aria-label="A — самый крупный шрифт" />
           <span class="more-bigger">A</span>
         </label>
       </fieldset>
@@ -98,20 +98,20 @@
       <p>Интервал:</p>
 
       <fieldset class="a11y-panel-group">
-        <label class="a11y-option" aria-label="Обычный интервал">
-          <input type="radio" name="a11y-spacing" value="normal" checked />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-spacing" value="normal" aria-label="Обычный интервал" checked />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../assets/img/sprite.svg#interval-1"></use></svg>
           </span>
         </label>
-        <label class="a11y-option" aria-label="Увеличенный интервал">
-          <input type="radio" name="a11y-spacing" value="wide" />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-spacing" value="wide" aria-label="Увеличенный интервал" />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../assets/img/sprite.svg#interval-2"></use></svg>
           </span>
         </label>
-        <label class="a11y-option" aria-label="Широкий интервал">
-          <input type="radio" name="a11y-spacing" value="wider" />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-spacing" value="wider" aria-label="Широкий интервал" />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../assets/img/sprite.svg#interval-3"></use></svg>
           </span>
@@ -124,13 +124,13 @@
 
       <fieldset class="a11y-panel-group">
         <label class="a11y-option">
-          <input type="radio" name="a11y-theme" value="color" checked />
+          <input type="radio" name="a11y-theme" value="color" aria-label="Цветная тема" checked />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../assets/img/sprite.svg#theme-light"></use></svg>
           </span>
         </label>
         <label class="a11y-option">
-          <input type="radio" name="a11y-theme" value="dark" />
+          <input type="radio" name="a11y-theme" value="dark" aria-label="Тёмная тема" />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../assets/img/sprite.svg#theme-dark"></use></svg>
           </span>
@@ -150,8 +150,8 @@
           <input type="radio" name="a11y-images" value="grayscale" />
           <span>ЧБ</span>
         </label>
-        <label class="a11y-option" aria-label="Скрыть изображения">
-          <input type="radio" name="a11y-images" value="hidden" />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-images" value="hidden" aria-label="Скрыть изображения" />
           <span>
             <svg width="15" height="15" aria-hidden="true"><use href="../../assets/img/sprite.svg#close"></use></svg>
           </span>
@@ -185,16 +185,16 @@
   </form>
 
   <!--header navigation menu-->
-  <nav class="navigation" id="site-navigation" data-navigation>
+  <nav class="navigation" id="site-navigation" aria-label="Основная навигация" data-navigation>
     <ul class="menu">
       <li class="have-submenu">
         <a href="../../courses/" class="menu-link">Курсы</a>
 
-        <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="nav-arrow" data-megamenu-button aria-label="Раздел «Курсы»" aria-expanded="false" aria-controls="nav-courses">
           <svg width="10" height="6"><use href="../../assets/img/sprite.svg#arrow"></use></svg>
         </button>
 
-        <div class="mega-menu" data-megamenu>
+        <div class="mega-menu" id="nav-courses" data-megamenu>
           <ul class="submenu">
             <li>
               <a href="../../courses/beginners/" class="menu-link"><span>Для начинающих</span></a>
@@ -288,11 +288,11 @@
       <li class="have-submenu">
         <a href="../../about/" class="menu-link">О нас</a>
 
-        <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="nav-arrow" data-megamenu-button aria-label="Раздел «О нас»" aria-expanded="false" aria-controls="nav-about">
           <svg width="10" height="6"><use href="../../assets/img/sprite.svg#arrow"></use></svg>
         </button>
 
-        <div class="mega-menu center" data-megamenu>
+        <div class="mega-menu center" id="nav-about" data-megamenu>
           <ul class="submenu">
             <li>
               <a href="../../about/history/" class="menu-link"><span>История школы</span></a>
@@ -429,7 +429,7 @@
   </li>
 
   <li class="burger-el">
-    <button class="header-button burger" aria-label="меню бургер" aria-expanded="false" aria-haspopup="true" aria-controls="site-navigation">
+    <button type="button" class="header-button burger" aria-label="Основная навигация" aria-expanded="false" aria-controls="site-navigation">
       <span></span>
       <span></span>
       <span></span>
@@ -444,11 +444,13 @@
     <!--MAIN-->
     <main class="main" id="main" tabindex="-1">
       <!--breadcrumbs-->
-      <ul class="breadcrumbs">
-        <li><a href="../../">Главная</a></li>
-        <li><a href="../../profile/">Личный кабинет</a></li>
-        <li><span>Реферальная программа</span></li>
-      </ul>
+      <nav aria-label="Хлебные крошки">
+        <ol class="breadcrumbs">
+          <li><a href="../../">Главная</a></li>
+          <li><a href="../../profile/">Личный кабинет</a></li>
+          <li><span>Реферальная программа</span></li>
+        </ol>
+      </nav>
 
       <section class="section pad--32">
         <div class="container">
@@ -465,7 +467,7 @@
   <p class="title title--24 bold">Константин</p>
   <p class="text fs-14 magenta">
     Баланс по реферальной программе <b>25&nbsp;730&nbsp;₽</b>
-    <button type="button" class="help" data-popup-open="profile-balance">
+    <button type="button" class="help" data-popup-open="profile-balance" aria-label="О балансе по реферальной программе">
       <svg width="20" height="20"><use href="../../assets/img/sprite.svg#help"></use></svg>
     </button>
   </p>
@@ -535,7 +537,7 @@
             <div class="profile-content profile-info">
               <h2 class="title title--32 upper">
                 <span>Реферальный промокод</span>
-                <button type="button" class="help" data-popup-open="referal-promo">
+                <button type="button" class="help" data-popup-open="referal-promo" aria-label="О реферальном промокоде">
                   <svg width="20" height="20"><use href="../../assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
@@ -550,7 +552,7 @@
             <div class="profile-content profile-info profile-statistics">
               <h2 class="title title--32 upper">
                 <span>Статистика</span>
-                <button type="button" class="help" data-popup-open="profile-statistic">
+                <button type="button" class="help" data-popup-open="profile-statistic" aria-label="О статистике">
                   <svg width="20" height="20"><use href="../../assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
@@ -569,7 +571,7 @@
             <div class="profile-content profile-info">
               <h2 class="title title--32 upper">
                 Настройки выплат
-                <button type="button" class="help" data-popup-open="pay-settings">
+                <button type="button" class="help" data-popup-open="pay-settings" aria-label="О настройках выплат">
                   <svg width="20" height="20"><use href="../../assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
@@ -626,7 +628,7 @@
             <div class="profile-content profile-info">
               <h2 class="title title--32 upper">
                 <span>Документооборот</span>
-                <button type="button" class="help" data-popup-open="profile-docs">
+                <button type="button" class="help" data-popup-open="profile-docs" aria-label="О документообороте">
                   <svg width="20" height="20"><use href="../../assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h2>
@@ -640,21 +642,21 @@
               </div>
 
               <h3 class="title title--24 bold">
-                <span>Отчетный период</span>
-                <button type="button" class="help" data-popup-open="profile-period">
+                <span id="profile-period-label">Отчетный период</span>
+                <button type="button" class="help" data-popup-open="profile-period" aria-label="Об отчётном периоде">
                   <svg width="20" height="20"><use href="../../assets/img/sprite.svg#help"></use></svg>
                 </button>
               </h3>
 
               <form action="#" method="GET" class="form period-form">
-                <label class="label">
-                  <select data-select name="period" required data-required-error-text="Пожалуйста, выберите период">
+                <div class="label">
+                  <select data-select name="period" aria-labelledby="profile-period-label" required data-required-error-text="Пожалуйста, выберите период">
                     <option value="июнь 2026">июнь 2026</option>
                     <option value="июль 2026">июль 2026</option>
                     <option value="август 2026">август 2026</option>
                     <option value="сентябрь 2026">сентябрь 2026</option>
                   </select>
-                </label>
+                </div>
 
                 <button type="submit" class="button"><span>Выгрузить акт</span></button>
               </form>

@@ -80,15 +80,15 @@
 
       <fieldset class="a11y-panel-group">
         <label class="a11y-option">
-          <input type="radio" name="a11y-font-size" value="normal" checked />
+          <input type="radio" name="a11y-font-size" value="normal" aria-label="A — обычный шрифт" checked />
           <span>A</span>
         </label>
         <label class="a11y-option">
-          <input type="radio" name="a11y-font-size" value="big" />
+          <input type="radio" name="a11y-font-size" value="big" aria-label="A — увеличенный шрифт" />
           <span class="bigger">A</span>
         </label>
         <label class="a11y-option">
-          <input type="radio" name="a11y-font-size" value="large" />
+          <input type="radio" name="a11y-font-size" value="large" aria-label="A — самый крупный шрифт" />
           <span class="more-bigger">A</span>
         </label>
       </fieldset>
@@ -98,20 +98,20 @@
       <p>Интервал:</p>
 
       <fieldset class="a11y-panel-group">
-        <label class="a11y-option" aria-label="Обычный интервал">
-          <input type="radio" name="a11y-spacing" value="normal" checked />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-spacing" value="normal" aria-label="Обычный интервал" checked />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../../assets/img/sprite.svg#interval-1"></use></svg>
           </span>
         </label>
-        <label class="a11y-option" aria-label="Увеличенный интервал">
-          <input type="radio" name="a11y-spacing" value="wide" />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-spacing" value="wide" aria-label="Увеличенный интервал" />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../../assets/img/sprite.svg#interval-2"></use></svg>
           </span>
         </label>
-        <label class="a11y-option" aria-label="Широкий интервал">
-          <input type="radio" name="a11y-spacing" value="wider" />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-spacing" value="wider" aria-label="Широкий интервал" />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../../assets/img/sprite.svg#interval-3"></use></svg>
           </span>
@@ -124,13 +124,13 @@
 
       <fieldset class="a11y-panel-group">
         <label class="a11y-option">
-          <input type="radio" name="a11y-theme" value="color" checked />
+          <input type="radio" name="a11y-theme" value="color" aria-label="Цветная тема" checked />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../../assets/img/sprite.svg#theme-light"></use></svg>
           </span>
         </label>
         <label class="a11y-option">
-          <input type="radio" name="a11y-theme" value="dark" />
+          <input type="radio" name="a11y-theme" value="dark" aria-label="Тёмная тема" />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../../assets/img/sprite.svg#theme-dark"></use></svg>
           </span>
@@ -150,8 +150,8 @@
           <input type="radio" name="a11y-images" value="grayscale" />
           <span>ЧБ</span>
         </label>
-        <label class="a11y-option" aria-label="Скрыть изображения">
-          <input type="radio" name="a11y-images" value="hidden" />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-images" value="hidden" aria-label="Скрыть изображения" />
           <span>
             <svg width="15" height="15" aria-hidden="true"><use href="../../../assets/img/sprite.svg#close"></use></svg>
           </span>
@@ -185,16 +185,16 @@
   </form>
 
   <!--header navigation menu-->
-  <nav class="navigation" id="site-navigation" data-navigation>
+  <nav class="navigation" id="site-navigation" aria-label="Основная навигация" data-navigation>
     <ul class="menu">
       <li class="have-submenu">
         <a href="../../../courses/" class="menu-link">Курсы</a>
 
-        <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="nav-arrow" data-megamenu-button aria-label="Раздел «Курсы»" aria-expanded="false" aria-controls="nav-courses">
           <svg width="10" height="6"><use href="../../../assets/img/sprite.svg#arrow"></use></svg>
         </button>
 
-        <div class="mega-menu" data-megamenu>
+        <div class="mega-menu" id="nav-courses" data-megamenu>
           <ul class="submenu">
             <li>
               <a href="../../../courses/beginners/" class="menu-link"><span>Для начинающих</span></a>
@@ -288,11 +288,11 @@
       <li class="have-submenu">
         <a href="../../../about/" class="menu-link">О нас</a>
 
-        <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="nav-arrow" data-megamenu-button aria-label="Раздел «О нас»" aria-expanded="false" aria-controls="nav-about">
           <svg width="10" height="6"><use href="../../../assets/img/sprite.svg#arrow"></use></svg>
         </button>
 
-        <div class="mega-menu center" data-megamenu>
+        <div class="mega-menu center" id="nav-about" data-megamenu>
           <ul class="submenu">
             <li>
               <a href="../../../about/history/" class="menu-link"><span>История школы</span></a>
@@ -429,7 +429,7 @@
   </li>
 
   <li class="burger-el">
-    <button class="header-button burger" aria-label="меню бургер" aria-expanded="false" aria-haspopup="true" aria-controls="site-navigation">
+    <button type="button" class="header-button burger" aria-label="Основная навигация" aria-expanded="false" aria-controls="site-navigation">
       <span></span>
       <span></span>
       <span></span>
@@ -444,16 +444,18 @@
     <!--MAIN-->
     <main class="main" id="main" tabindex="-1">
       <!--breadcrumbs-->
-      <ul class="breadcrumbs">
-        <li><a href="../../../">Главная</a></li>
-        <li><a href="../../../courses/">Курсы</a></li>
-        <li><a href="../../../courses/online/">Онлайн курсы</a></li>
-        <li><span>История виноделия</span></li>
-      </ul>
+      <nav aria-label="Хлебные крошки">
+        <ol class="breadcrumbs">
+          <li><a href="../../../">Главная</a></li>
+          <li><a href="../../../courses/">Курсы</a></li>
+          <li><a href="../../../courses/online/">Онлайн курсы</a></li>
+          <li><span>История виноделия</span></li>
+        </ol>
+      </nav>
 
       <section class="section">
         <div class="container">
-          <h2 class="title title--24">Страница <span style="color: var(--a11y-accent-text, #c24191)">"История виноделия"</span> в разработке...</h2>
+          <h1 class="title title--24">Страница <span style="color: var(--a11y-accent-text, #c24191)">"История виноделия"</span> в разработке...</h1>
         </div>
       </section>
     </main>

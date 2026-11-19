@@ -25,7 +25,14 @@
     }
 
     > .content {
-      padding-left: calc(var(--fs-24) * 4);
+      display: grid;
+      grid-template-columns: var(--fs-48) minmax(0, 1fr);
+      column-gap: var(--fs-24);
+
+      > b,
+      > p {
+        grid-column: 2;
+      }
 
       @media (min-width: 768px) {
         > p {
@@ -36,12 +43,28 @@
       &:before {
         content: counter(event-step, decimal-leading-zero);
         position: absolute;
-        left: var(--fs-24);
+        // Номер привязан к началу описания, чтобы вторая строка его не смещала.
+        grid-area: 2 / 1;
+        top: 2px;
+        left: 0;
+        transform: translateY(-50%);
         font-family: var(--font);
-        font-size: var(--fs-54);
+        font-size: var(--fs-32);
         --lh: 0.82;
         font-weight: 300;
         color: var(--magenta);
+
+        @media (min-width: 768px) {
+          font-size: var(--fs-36);
+        }
+
+        @media (min-width: 1024px) {
+          font-size: var(--fs-38);
+        }
+
+        @media (min-width: 1920px) {
+          font-size: var(--fs-40);
+        }
       }
     }
   }
@@ -193,12 +216,12 @@
       }
 
       > .content {
-        padding-left: calc(var(--fs-20) * 4);
+        grid-template-columns: var(--fs-44) minmax(0, 1fr);
+        padding-left: var(--fs-12);
         padding-right: var(--fs-20);
 
-        &:before {
-          left: var(--fs-12);
-          font-size: var(--fs-50);
+        @media (min-width: 768px) {
+          padding-left: var(--fs-20);
         }
       }
     }

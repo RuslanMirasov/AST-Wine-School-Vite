@@ -84,15 +84,15 @@
 
       <fieldset class="a11y-panel-group">
         <label class="a11y-option">
-          <input type="radio" name="a11y-font-size" value="normal" checked />
+          <input type="radio" name="a11y-font-size" value="normal" aria-label="A — обычный шрифт" checked />
           <span>A</span>
         </label>
         <label class="a11y-option">
-          <input type="radio" name="a11y-font-size" value="big" />
+          <input type="radio" name="a11y-font-size" value="big" aria-label="A — увеличенный шрифт" />
           <span class="bigger">A</span>
         </label>
         <label class="a11y-option">
-          <input type="radio" name="a11y-font-size" value="large" />
+          <input type="radio" name="a11y-font-size" value="large" aria-label="A — самый крупный шрифт" />
           <span class="more-bigger">A</span>
         </label>
       </fieldset>
@@ -102,20 +102,20 @@
       <p>Интервал:</p>
 
       <fieldset class="a11y-panel-group">
-        <label class="a11y-option" aria-label="Обычный интервал">
-          <input type="radio" name="a11y-spacing" value="normal" checked />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-spacing" value="normal" aria-label="Обычный интервал" checked />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../../assets/img/sprite.svg#interval-1"></use></svg>
           </span>
         </label>
-        <label class="a11y-option" aria-label="Увеличенный интервал">
-          <input type="radio" name="a11y-spacing" value="wide" />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-spacing" value="wide" aria-label="Увеличенный интервал" />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../../assets/img/sprite.svg#interval-2"></use></svg>
           </span>
         </label>
-        <label class="a11y-option" aria-label="Широкий интервал">
-          <input type="radio" name="a11y-spacing" value="wider" />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-spacing" value="wider" aria-label="Широкий интервал" />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../../assets/img/sprite.svg#interval-3"></use></svg>
           </span>
@@ -128,13 +128,13 @@
 
       <fieldset class="a11y-panel-group">
         <label class="a11y-option">
-          <input type="radio" name="a11y-theme" value="color" checked />
+          <input type="radio" name="a11y-theme" value="color" aria-label="Цветная тема" checked />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../../assets/img/sprite.svg#theme-light"></use></svg>
           </span>
         </label>
         <label class="a11y-option">
-          <input type="radio" name="a11y-theme" value="dark" />
+          <input type="radio" name="a11y-theme" value="dark" aria-label="Тёмная тема" />
           <span>
             <svg width="32" height="32" aria-hidden="true"><use href="../../../assets/img/sprite.svg#theme-dark"></use></svg>
           </span>
@@ -154,8 +154,8 @@
           <input type="radio" name="a11y-images" value="grayscale" />
           <span>ЧБ</span>
         </label>
-        <label class="a11y-option" aria-label="Скрыть изображения">
-          <input type="radio" name="a11y-images" value="hidden" />
+        <label class="a11y-option">
+          <input type="radio" name="a11y-images" value="hidden" aria-label="Скрыть изображения" />
           <span>
             <svg width="15" height="15" aria-hidden="true"><use href="../../../assets/img/sprite.svg#close"></use></svg>
           </span>
@@ -189,16 +189,16 @@
   </form>
 
   <!--header navigation menu-->
-  <nav class="navigation" id="site-navigation" data-navigation>
+  <nav class="navigation" id="site-navigation" aria-label="Основная навигация" data-navigation>
     <ul class="menu">
       <li class="have-submenu">
         <a href="../../../courses/" class="menu-link">Курсы</a>
 
-        <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="nav-arrow" data-megamenu-button aria-label="Раздел «Курсы»" aria-expanded="false" aria-controls="nav-courses">
           <svg width="10" height="6"><use href="../../../assets/img/sprite.svg#arrow"></use></svg>
         </button>
 
-        <div class="mega-menu" data-megamenu>
+        <div class="mega-menu" id="nav-courses" data-megamenu>
           <ul class="submenu">
             <li>
               <a href="../../../courses/beginners/" class="menu-link"><span>Для начинающих</span></a>
@@ -292,11 +292,11 @@
       <li class="have-submenu">
         <a href="../../../about/" class="menu-link">О нас</a>
 
-        <button type="button" class="nav-arrow" data-megamenu-button aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="nav-arrow" data-megamenu-button aria-label="Раздел «О нас»" aria-expanded="false" aria-controls="nav-about">
           <svg width="10" height="6"><use href="../../../assets/img/sprite.svg#arrow"></use></svg>
         </button>
 
-        <div class="mega-menu center" data-megamenu>
+        <div class="mega-menu center" id="nav-about" data-megamenu>
           <ul class="submenu">
             <li>
               <a href="../../../about/history/" class="menu-link"><span>История школы</span></a>
@@ -433,7 +433,7 @@
   </li>
 
   <li class="burger-el">
-    <button class="header-button burger" aria-label="меню бургер" aria-expanded="false" aria-haspopup="true" aria-controls="site-navigation">
+    <button type="button" class="header-button burger" aria-label="Основная навигация" aria-expanded="false" aria-controls="site-navigation">
       <span></span>
       <span></span>
       <span></span>
@@ -448,12 +448,14 @@
     <!--MAIN-->
     <main class="main" id="main" tabindex="-1">
       <!--breadcrumbs-->
-      <ul class="breadcrumbs">
-        <li><a href="../../../">Главная</a></li>
-        <li><a href="../../../courses/">Курсы</a></li>
-        <li><a href="../../../courses/offline/">Очные курсы</a></li>
-        <li><span>Быстрый старт: о вине за 3 встречи</span></li>
-      </ul>
+      <nav aria-label="Хлебные крошки">
+        <ol class="breadcrumbs">
+          <li><a href="../../../">Главная</a></li>
+          <li><a href="../../../courses/">Курсы</a></li>
+          <li><a href="../../../courses/offline/">Очные курсы</a></li>
+          <li><span>Быстрый старт: о вине за 3 встречи</span></li>
+        </ol>
+      </nav>
 
       <!--SECTION CURSE HERO-->
       <section class="section section--curse-hero">
@@ -1207,11 +1209,11 @@
 
             <div class="stars" data-rating="5">Рейтинг 5 из 5</div>
 
-            <p class="text" data-read-more="5">
+            <blockquote class="text" data-read-more="5">
               За&nbsp;три&nbsp;встречи я&nbsp;полностью избавилась от&nbsp;страха перед&nbsp;винной картой! Прекрасная подача материала, невероятная
               атмосфера и&nbsp;максимально дружелюбные сомелье. Теперь уверенно выбираю идеальное сопровождение к&nbsp;ужину. Прекрасная подача
               материала, невероятная атмосфера и&nbsp;максимально дружелюбные сомелье. Теперь уверенно выбираю идеальное сопровождение к&nbsp;ужину.
-            </p>
+            </blockquote>
           </article>
         </div>
 
@@ -1228,10 +1230,10 @@
               </div>
             </div>
             <div class="stars" data-rating="2.5">Рейтинг 2.5 из 5</div>
-            <p class="text" data-read-more="5">
+            <blockquote class="text" data-read-more="5">
               «Быстрый старт» — лучшее вложение времени. Всё&nbsp;чётко, без&nbsp;лишнего пафоса и&nbsp;снобизма. Наконец‑то систематизировал свои
               базовые представления о&nbsp;сортах и&nbsp;регионах.
-            </p>
+            </blockquote>
           </article>
         </div>
 
@@ -1248,10 +1250,10 @@
               </div>
             </div>
             <div class="stars" data-rating="4.5">Рейтинг 4.5 из 5</div>
-            <p class="text" data-read-more="5">
+            <blockquote class="text" data-read-more="5">
               Изумительное место, где&nbsp;гастрономия встречается с&nbsp;искусством. Каждая дегустация&nbsp;— это&nbsp;целое путешествие. Обязательно
               приду на&nbsp;расширенные курсы по&nbsp;Франции!
-            </p>
+            </blockquote>
           </article>
         </div>
 
@@ -1268,13 +1270,13 @@
               </div>
             </div>
             <div class="stars" data-rating="2.5">Рейтинг 2.5 из 5</div>
-            <p class="text" data-read-more="5">
+            <blockquote class="text" data-read-more="5">
               Давно хотела разобраться в вине, но не знала, с чего начать. Курс оказался именно тем, что нужно: понятные объяснения, живые примеры и
               дегустации на каждом занятии. Преподаватели отвечают на любые вопросы и не перегружают терминами. Теперь спокойно выбираю вино в
               магазине и ресторане. Давно хотела разобраться в вине, но не знала, с чего начать. Курс оказался именно тем, что нужно: понятные
               объяснения, живые примеры и дегустации на каждом занятии. Преподаватели отвечают на любые вопросы и не перегружают терминами. Теперь
               спокойно выбираю вино в магазине и ресторане.
-            </p>
+            </blockquote>
           </article>
         </div>
       </div>
@@ -1312,11 +1314,11 @@
         <!--1-->
         <div class="swiper-slide">
           <article class="review">
-            <p class="text" data-read-more="6">
+            <blockquote class="text" data-read-more="6">
               «Я всегда боялась, что вино — это слишком сложно и&nbsp;снобистски. Оказалось, нет. За три вечера я&nbsp;научилась читать этикетку
               и&nbsp;даже однажды в ресторане поправила официанта, который принёс не&nbsp;то&nbsp;вино! Огромное спасибо Анжелике — очень понятно
               и&nbsp;вкусно.»
-            </p>
+            </blockquote>
             <p class="text fs-14 bold grey-text">— Екатерина, 56 лет</p>
           </article>
         </div>
@@ -1324,10 +1326,10 @@
         <!--2-->
         <div class="swiper-slide">
           <article class="review">
-            <p class="text" data-read-more="6">
+            <blockquote class="text" data-read-more="6">
               «Быстрый старт» — идеальное название. Действительно быстро, структурированно и&nbsp;без воды. После курса купил три бутылки
               в&nbsp;магазине — и все три оказались удачными. До&nbsp;этого брал “кота в&nbsp;мешке”. Спасибо школе!»
-            </p>
+            </blockquote>
             <p class="text fs-14 bold grey-text">— Алексей, 48 лет</p>
           </article>
         </div>
@@ -1335,9 +1337,9 @@
         <!--3-->
         <div class="swiper-slide">
           <article class="review">
-            <p class="text" data-read-more="6">
+            <blockquote class="text" data-read-more="6">
               «Курс — огонь. Думал, что уже что-то знаю, но после модуля про терруары понял, что раньше просто угадывал. Советую всем друзьям.»
-            </p>
+            </blockquote>
             <p class="text fs-14 bold grey-text">— Дмитрий, 32 года</p>
           </article>
         </div>
@@ -1345,11 +1347,11 @@
         <!--4-->
         <div class="swiper-slide">
           <article class="review">
-            <p class="text" data-read-more="6">
+            <blockquote class="text" data-read-more="6">
               «Я всегда боялась, что вино — это слишком сложно и&nbsp;снобистски. Оказалось, нет. За три вечера я&nbsp;научилась читать этикетку
               и&nbsp;даже однажды в ресторане поправила официанта, который принёс не&nbsp;то&nbsp;вино! Огромное спасибо Анжелике — очень понятно
               и&nbsp;вкусно.»
-            </p>
+            </blockquote>
             <p class="text fs-14 bold grey-text">— Екатерина, 56 лет</p>
           </article>
         </div>
@@ -1357,13 +1359,13 @@
         <!--5-->
         <div class="swiper-slide">
           <article class="review">
-            <p class="text" data-read-more="6">
+            <blockquote class="text" data-read-more="6">
               Давно хотела разобраться в вине, но не знала, с чего начать. Курс оказался именно тем, что нужно: понятные объяснения, живые примеры и
               дегустации на каждом занятии. Преподаватели отвечают на любые вопросы и не перегружают терминами. Теперь спокойно выбираю вино в
               магазине и ресторане. Давно хотела разобраться в вине, но не знала, с чего начать. Курс оказался именно тем, что нужно: понятные
               объяснения, живые примеры и дегустации на каждом занятии. Преподаватели отвечают на любые вопросы и не перегружают терминами. Теперь
               спокойно выбираю вино в магазине и ресторане.
-            </p>
+            </blockquote>
             <p class="text fs-14 bold grey-text">— Ольга, 40 лет</p>
           </article>
         </div>
