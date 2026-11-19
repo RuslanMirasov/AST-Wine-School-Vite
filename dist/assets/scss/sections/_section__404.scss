@@ -16,6 +16,10 @@
   }
   @media (max-width: 767px) {
     gap: var(--fs-16);
+
+    .page-not-found-image {
+      width: 150px;
+    }
   }
 
   .title {

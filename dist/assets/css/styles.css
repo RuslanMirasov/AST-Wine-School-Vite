@@ -15621,6 +15621,9 @@ a.calendar-slider-day__inner:focus-visible {
   .page-not-found {
     gap: var(--fs-16);
   }
+  .page-not-found .page-not-found-image {
+    width: 150px;
+  }
 }
 .page-not-found .title {
   --lh: 1.25;
