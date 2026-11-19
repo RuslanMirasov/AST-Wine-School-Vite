@@ -13330,25 +13330,19 @@ a.calendar-slider-day__inner:focus-visible {
 .section--online-catalog .online-catalog-search .label {
   width: 100%;
 }
-@media (min-width: 1152px) {
-  .section--online-catalog .search-navigation,
-  .section--online-catalog .online-catalog-levels {
-    padding: var(--fs-24) 0px;
-  }
-}
 .section--online-catalog .online-catalog-filter {
   display: contents;
 }
 .section--online-catalog .search-navigation {
   display: inline-flex;
-  width: auto;
+  width: 100%;
   min-width: 0px;
   margin: 0px;
   border: none;
 }
-@media (max-width: 1151px) {
+@media (min-width: 1152px) {
   .section--online-catalog .search-navigation {
-    padding: 0px;
+    padding-top: var(--fs-24);
   }
 }
 .section--online-catalog .search-navigation__item {
@@ -13392,7 +13386,6 @@ a.calendar-slider-day__inner:focus-visible {
 @media (max-width: 767px) {
   .section--online-catalog .container > .content-text,
   .section--online-catalog .online-catalog-search,
-  .section--online-catalog .search-navigation,
   .section--online-catalog .online-catalog-levels {
     width: 100%;
     max-width: 100%;
