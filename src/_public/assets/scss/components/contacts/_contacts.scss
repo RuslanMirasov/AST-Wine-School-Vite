@@ -14,19 +14,19 @@
     }
   }
 
-  .icon-list a {
+  .icon-list li {
     transition: color 0.3s var(--cubic);
+  }
 
-    @media (hover: hover) {
-      &:hover {
-        color: var(--a11y-accent-text, var(--magenta));
-      }
-    }
+  .icon-list a:focus-visible {
+    color: var(--a11y-accent-text, var(--magenta));
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
 
-    &:focus-visible {
+  @media (hover: hover) {
+    .post-card:hover .icon-list li {
       color: var(--a11y-accent-text, var(--magenta));
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
     }
   }
 
@@ -38,6 +38,10 @@
       width: 100%;
     }
   }
+}
+
+.popup-content.contacts-popup {
+  max-width: 1200px;
 }
 
 .contacts-callback-form {
