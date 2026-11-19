@@ -177,6 +177,29 @@ a.mood-card:focus-visible .mood-button {
 }
 
 @media (max-width: 1023px) {
+  .mood-card {
+    min-height: 1px;
+    .tags {
+      margin-bottom: var(--fs-50);
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section--mood .mood {
+    flex-direction: column;
+
+    > div {
+      width: 84%;
+    }
+
+    > div:nth-child(odd) {
+      align-self: flex-end;
+    }
+  }
+}
+
+@media (max-width: 767px) {
   .mood {
     .col--5-8,
     .col--3-8,
@@ -186,15 +209,7 @@ a.mood-card:focus-visible .mood-button {
       width: 100%;
     }
   }
-  .mood-card {
-    min-height: 1px;
-    .tags {
-      margin-bottom: var(--fs-50);
-    }
-  }
-}
 
-@media (max-width: 767px) {
   .mood-card {
     .logo-background {
       top: 0%;

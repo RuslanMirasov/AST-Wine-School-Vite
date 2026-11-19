@@ -7409,13 +7409,6 @@ a.mood-card:focus-visible .mood-button {
 }
 
 @media (max-width: 1023px) {
-  .mood .col--5-8,
-  .mood .col--3-8,
-  .mood .col--2,
-  .mood .col--2-5 {
-    min-width: 100%;
-    width: 100%;
-  }
   .mood-card {
     min-height: 1px;
   }
@@ -7423,7 +7416,25 @@ a.mood-card:focus-visible .mood-button {
     margin-bottom: var(--fs-50);
   }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section--mood .mood {
+    flex-direction: column;
+  }
+  .section--mood .mood > div {
+    width: 84%;
+  }
+  .section--mood .mood > div:nth-child(odd) {
+    align-self: flex-end;
+  }
+}
 @media (max-width: 767px) {
+  .mood .col--5-8,
+  .mood .col--3-8,
+  .mood .col--2,
+  .mood .col--2-5 {
+    min-width: 100%;
+    width: 100%;
+  }
   .mood-card .logo-background {
     top: 0%;
     width: 280px;
