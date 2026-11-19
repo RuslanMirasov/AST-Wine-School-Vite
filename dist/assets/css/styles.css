@@ -11368,6 +11368,11 @@ a.calendar-slider-day__inner:focus-visible {
   transform: translate(44px, -40px);
 }
 
+@media (min-width: 1440px) {
+  .main--about > .section > .container {
+    max-width: 1100px;
+  }
+}
 .about-intro {
   display: flex;
   position: relative;
@@ -11400,6 +11405,11 @@ a.calendar-slider-day__inner:focus-visible {
   overflow: hidden;
   width: 100%;
   max-width: 615px;
+}
+@media (min-width: 1440px) {
+  .about-intro .about-intro__video {
+    max-width: 400px;
+  }
 }
 @media (max-width: 1279px) {
   .about-intro .about-intro__video {
