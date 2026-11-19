@@ -1,3 +1,46 @@
+.section--how-we-work {
+  .swiper-mobil-pagination {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .container {
+      row-gap: var(--fs-16);
+
+      > .title {
+        max-width: 62%;
+      }
+    }
+
+    .arrows {
+      display: none;
+    }
+
+    .swiper {
+      overflow: hidden;
+
+      .swiper-slide {
+        max-width: none;
+      }
+    }
+
+    .swiper-mobil-pagination {
+      display: flex;
+
+      .swiper-pagination-bullet {
+        height: 24px;
+        background: linear-gradient(var(--blue), var(--blue)) center / 100% 4px no-repeat;
+
+        &:focus-visible {
+          opacity: 1;
+          outline: 2px solid var(--magenta);
+          outline-offset: 1px;
+        }
+      }
+    }
+  }
+}
+
 .how-we-work.collage {
   .col--4 {
     justify-content: flex-start;
