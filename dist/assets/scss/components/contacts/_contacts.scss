@@ -25,7 +25,7 @@
   }
 
   @media (hover: hover) {
-    .post-card:hover .icon-list li {
+    .icon-list li:has(> a:hover) {
       color: var(--a11y-accent-text, var(--magenta));
     }
   }

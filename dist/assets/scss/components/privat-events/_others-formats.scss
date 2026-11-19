@@ -3,15 +3,31 @@
     > .button {
       margin-left: auto;
     }
+
+    @media (min-width: 1024px) {
+      > .collage {
+        order: 1;
+      }
+    }
   }
 }
 
 @media (max-width: 1023px) {
-  .section--others-formats {
-    .collage {
-      .col--3 {
-        width: calc((100% - var(--fs-24)) / 2);
-      }
+  .section--others-formats .container > .button {
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section--others-formats .collage {
+    flex-direction: column;
+
+    > .col--3 {
+      width: 84%;
+    }
+
+    > .col--3:nth-child(odd) {
+      align-self: flex-end;
     }
   }
 }
@@ -20,7 +36,6 @@
   .section--others-formats {
     .container {
       > .button {
-        order: 2;
         width: 100%;
       }
     }
