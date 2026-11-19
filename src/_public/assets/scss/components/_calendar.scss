@@ -1,3 +1,7 @@
+#event-month-calendar {
+  width: 100%;
+}
+
 .events-calendar {
   display: flex;
   flex-direction: column;
@@ -16,6 +20,36 @@
     gap: var(--fs-12);
     padding: var(--fs-20) var(--fs-12);
     border-radius: var(--fs-30);
+  }
+
+  @media (min-width: 1280px) {
+    &:has(> .calendar-slider__toggle) {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(max-content, 1fr);
+
+      > .calendar-slider__toggle {
+        grid-area: 1 / 3;
+        align-self: center;
+        justify-self: end;
+      }
+
+      > .events-calendar__nav {
+        grid-area: 1 / 2;
+      }
+
+      > :is(.events-calendar__weekdays, .events-calendar__days) {
+        grid-column: 1 / -1;
+        contain: inline-size;
+      }
+    }
+  }
+}
+
+.events-calendar > .calendar-slider__toggle {
+  align-self: flex-end;
+
+  @media (max-width: 767px) {
+    width: 100%;
   }
 }
 
@@ -218,8 +252,25 @@
     text-overflow: clip;
   }
 
+  @media (min-width: 1920px) {
+    li {
+      font-size: var(--fs-16);
+    }
+
+    .calendar-day__more {
+      font-size: var(--fs-18);
+    }
+  }
+
   @media (max-width: 1099px) {
     display: none;
+  }
+}
+
+@media (min-width: 1920px) {
+  .calendar-day__number,
+  .calendar-day__label {
+    font-size: var(--fs-18);
   }
 }
 
