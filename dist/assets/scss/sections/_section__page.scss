@@ -16,9 +16,13 @@
   flex-direction: column;
   gap: var(--fs-24);
   width: 100%;
-  max-width: var(--fs-400);
+  max-width: var(--fs-360);
   flex-shrink: 0;
   align-self: flex-start;
+
+  @media (min-width: 1920px) {
+    max-width: var(--fs-400);
+  }
 
   &.gap--8 {
     gap: var(--fs-8);
