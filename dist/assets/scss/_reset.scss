@@ -184,6 +184,12 @@ textarea {
     gap: var(--fs-40);
   }
 
+  @media (min-width: 1440px) {
+    &.mw-1100 {
+      max-width: 1100px;
+    }
+  }
+
   @media (min-width: 1920px) {
     max-width: 1720px;
   }
