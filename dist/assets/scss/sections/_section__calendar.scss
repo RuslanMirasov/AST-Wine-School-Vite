@@ -415,6 +415,12 @@
     font-size: var(--fs-14);
     border-radius: var(--fs-16);
     font-weight: 400;
+
+    @media (min-width: 1920px) {
+      .section-event-calendar & {
+        font-size: var(--fs-16);
+      }
+    }
   }
   .search-submit-icon {
     width: var(--fs-30);

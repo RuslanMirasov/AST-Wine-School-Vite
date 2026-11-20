@@ -10548,6 +10548,11 @@ a.calendar-day__inner:focus-visible {
   width: auto;
   gap: var(--fs-8);
 }
+@media (min-width: 1920px) {
+  .calendar-slider .search-navigation .search-navigation__btn {
+    font-size: var(--fs-16);
+  }
+}
 @media (max-width: 767px) {
   .calendar-slider .search-navigation .arrow {
     width: 20px;
@@ -10724,10 +10729,20 @@ a.calendar-slider-day__inner:focus-visible {
   --lh: 1.25;
   font-weight: 700;
 }
+@media (min-width: 1920px) {
+  .calendar-slider-day__number {
+    font-size: var(--fs-18);
+  }
+}
 
 .calendar-slider-day__label {
   font-size: var(--fs-12);
   --lh: 1.2;
+}
+@media (min-width: 1920px) {
+  .calendar-slider-day__label {
+    font-size: var(--fs-16);
+  }
 }
 @media (max-width: 767px) {
   .calendar-slider-day__label {
@@ -14435,6 +14450,11 @@ a.calendar-slider-day__inner:focus-visible {
   font-size: var(--fs-14);
   border-radius: var(--fs-16);
   font-weight: 400;
+}
+@media (min-width: 1920px) {
+  .section-event-calendar .search-form-with-filter .input {
+    font-size: var(--fs-16);
+  }
 }
 .search-form-with-filter .search-submit-icon {
   width: var(--fs-30);
