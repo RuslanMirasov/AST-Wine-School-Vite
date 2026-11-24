@@ -9566,6 +9566,7 @@ a.mood-card:focus-visible .mood-button {
   position: relative;
   width: 181px;
   height: auto;
+  filter: hue-rotate(-18deg);
   margin-left: auto;
   margin-top: auto;
   margin-bottom: -24px;
