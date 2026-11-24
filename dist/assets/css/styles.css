@@ -17513,6 +17513,45 @@ a.calendar-slider-day__inner:focus-visible {
   background: rgba(0, 0, 0, 0.7);
 }
 
+.waitlist-popup {
+  --input-height: calc(var(--fs-50) + 1px);
+}
+.waitlist-popup:not(.big) {
+  max-width: 420px;
+}
+.waitlist-popup .popup-title {
+  align-items: center;
+  gap: var(--fs-16);
+  --lh: 1.2;
+}
+.waitlist-popup .label-text {
+  --lh: 1.3;
+}
+.waitlist-popup .label.auto .label-text {
+  margin-bottom: var(--fs-6);
+}
+.waitlist-popup .label--count {
+  height: var(--fs-40);
+}
+.waitlist-popup .buttons {
+  margin-top: 0;
+}
+@media (max-width: 359px) {
+  .waitlist-popup .button.magenta-light {
+    padding-inline: var(--fs-20);
+  }
+}
+.waitlist-popup :is(button, input, a):focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) and (pointer: coarse) {
+  .backdrop:has(.waitlist-popup[style*="display: flex"]) {
+    height: 100svh;
+    padding-bottom: 16px;
+  }
+}
 :root {
   --gallery-lightbox-gap: 8px;
   --gallery-lightbox-button: 32px;

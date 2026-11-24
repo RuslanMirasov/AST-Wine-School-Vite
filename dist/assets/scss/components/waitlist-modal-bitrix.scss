@@ -1,0 +1,220 @@
+// Bitrix переносит содержимое листа ожидания в общую оболочку контактов.
+.contacts-modal:has(> .contacts-modal__window--waitlist) {
+  padding: 16px;
+  background: rgba(39, 53, 81, 0.9);
+}
+
+.contacts-modal__window.contacts-modal__window--waitlist {
+  --waitlist-padding: 32px;
+
+  position: relative;
+  box-sizing: border-box;
+  width: 558px;
+  max-width: 100%;
+  min-height: 0;
+  padding: var(--waitlist-padding);
+  border-radius: 26px;
+  background: var(--white, #fff);
+  box-shadow: 0 0 20px var(--blue-light, rgba(5, 67, 189, 0.102));
+  color: var(--blue, #273551);
+  font: 400 16px/1.3 var(--font, 'Mabry Pro', system-ui, sans-serif);
+  text-align: left;
+
+  @media (max-width: 767px) {
+    --waitlist-padding: 20px;
+  }
+
+  &:has([data-waitlist-step='done']) {
+    width: 420px;
+  }
+
+  .contacts-modal__head {
+    position: absolute;
+    top: calc(var(--waitlist-padding) + 2px);
+    right: var(--waitlist-padding);
+    width: auto;
+    height: 24px;
+  }
+
+  .contacts-modal__close {
+    width: 24px;
+    height: 24px;
+    border: 0;
+    background: transparent;
+
+    img {
+      opacity: 0.62;
+    }
+  }
+
+  .waitlist-modal {
+    padding: 0;
+  }
+
+  .waitlist-modal__panel,
+  .waitlist-modal__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .waitlist-modal__form {
+    gap: 18px;
+  }
+
+  .waitlist-modal__panel[hidden],
+  .waitlist-modal__subtitle:empty,
+  .waitlist-modal__error[hidden] {
+    display: none;
+  }
+
+  .waitlist-modal__title,
+  .waitlist-modal__subtitle,
+  .waitlist-modal__lead,
+  .waitlist-modal__done-text,
+  .waitlist-modal__done-link-wrap,
+  .waitlist-modal__guests-label {
+    margin: 0;
+    color: inherit;
+    text-align: left;
+  }
+
+  .waitlist-modal__title,
+  .waitlist-modal__subtitle {
+    font: 700 18px/1.2 var(--font, 'Mabry Pro', system-ui, sans-serif);
+    overflow-wrap: anywhere;
+  }
+
+  .waitlist-modal__title {
+    padding-right: 40px;
+    font-size: 24px;
+  }
+
+  .waitlist-modal__field {
+    display: grid;
+    gap: 9px;
+    width: 100%;
+  }
+
+  .waitlist-modal__lead,
+  .waitlist-modal__label,
+  .waitlist-modal__guests-label {
+    color: var(--grey-text, #636669);
+    font: inherit;
+    font-size: 14px;
+  }
+
+  .waitlist-modal__input,
+  .waitlist-modal__counter-input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 51px;
+    margin: 0;
+    padding: 0 16px;
+    border: 1px solid var(--grey-button, #e2e5ea);
+    border-radius: 16px;
+    background: var(--white, #fff);
+    color: inherit;
+    font: inherit;
+
+    &::placeholder {
+      color: var(--grey-text, #636669);
+    }
+
+    &:focus {
+      border-color: var(--magenta, #c24191);
+    }
+  }
+
+  .waitlist-modal__counter {
+    display: flex;
+    gap: 12px;
+    margin-top: -12px;
+  }
+
+  .waitlist-modal__counter-input {
+    width: 47px;
+    height: 40px;
+    padding: 0;
+    border-radius: 12px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .waitlist-modal__counter-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--grey-light, #edf0f5);
+    color: inherit;
+    font: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .waitlist-modal__error {
+    margin: -12px 0 0;
+    color: var(--invalid, #e0483c);
+    font-size: 12px;
+  }
+
+  .waitlist-modal__done-text {
+    font: inherit;
+  }
+
+  .waitlist-modal__submit,
+  .waitlist-modal__done-link {
+    display: inline-flex;
+    box-sizing: border-box;
+    min-height: 40px;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 32px;
+    border: 0;
+    border-radius: 100px;
+    background: var(--magenta, #c24191);
+    color: var(--white, #fff);
+    font: 500 16px/1.3 var(--font-center, 'Mabry Pro', system-ui, sans-serif);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .waitlist-modal__submit {
+    margin-top: 2px;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    &:enabled:is(:hover, :focus-visible) {
+      background: var(--magenta-hover, #aa397f);
+    }
+  }
+
+  .waitlist-modal__done-link {
+    background: var(--magenta-light, rgba(194, 65, 145, 0.102));
+    color: var(--magenta, #c24191);
+
+    @media (max-width: 359px) {
+      padding-inline: 20px;
+    }
+
+    &:is(:hover, :focus-visible) {
+      background: var(--magenta-light-hover, rgba(194, 65, 145, 0.2));
+    }
+  }
+
+  :is(button, input, a):focus-visible {
+    outline: 2px solid var(--magenta, #c24191);
+    outline-offset: 2px;
+  }
+}
