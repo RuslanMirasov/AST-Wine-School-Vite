@@ -1690,14 +1690,14 @@
     <!--FOOTER-->
 <footer class="footer" data-fix-button-stop>
   <div class="container">
-    <div class="footer-menu" data-accordeon data-init="mobil" data-accordeon-group="footer-accordeon">
-      <h2 class="footer-menu-title" data-accordeon-head>
-        Школа вина АСТ
-        <button type="button" aria-expanded="false" aria-label="Развернуть">
-          <svg width="16" height="16"><use href="../../assets/img/sprite.svg#arrow"></use></svg>
+    <nav class="footer-menu" aria-labelledby="footer-school-title" data-accordeon data-init="mobil" data-accordeon-group="footer-accordeon">
+      <div class="footer-menu-title" data-accordeon-head>
+        <span id="footer-school-title">Школа вина АСТ</span>
+        <button type="button" aria-expanded="false" aria-labelledby="footer-school-title" aria-controls="footer-school-links">
+          <svg width="16" height="16" aria-hidden="true"><use href="../../assets/img/sprite.svg#arrow"></use></svg>
         </button>
-      </h2>
-      <ul class="footer-menu-list" data-accordeon-body>
+      </div>
+      <ul class="footer-menu-list" id="footer-school-links" data-accordeon-body>
         <li><a href="../../about/">О нас</a></li>
         <li><a href="../../about/teachers/">Преподаватели</a></li>
         <li><a href="../../about/classrooms/">Наши залы (классы)</a></li>
@@ -1707,16 +1707,16 @@
         <li><a href="../../about/videos/">Видеоматериалы</a></li>
         <li><a href="../../about/contacts/">Контакты</a></li>
       </ul>
-    </div>
+    </nav>
 
-    <div class="footer-menu" data-accordeon data-init="mobil" data-accordeon-group="footer-accordeon">
-      <h2 class="footer-menu-title" data-accordeon-head>
-        Услуги
-        <button type="button" aria-expanded="false" aria-label="Развернуть">
-          <svg width="16" height="16"><use href="../../assets/img/sprite.svg#arrow"></use></svg>
+    <nav class="footer-menu" aria-labelledby="footer-services-title" data-accordeon data-init="mobil" data-accordeon-group="footer-accordeon">
+      <div class="footer-menu-title" data-accordeon-head>
+        <span id="footer-services-title">Услуги</span>
+        <button type="button" aria-expanded="false" aria-labelledby="footer-services-title" aria-controls="footer-services-links">
+          <svg width="16" height="16" aria-hidden="true"><use href="../../assets/img/sprite.svg#arrow"></use></svg>
         </button>
-      </h2>
-      <ul class="footer-menu-list" data-accordeon-body>
+      </div>
+      <ul class="footer-menu-list" id="footer-services-links" data-accordeon-body>
         <li><a href="../../courses/">Курсы и обучение</a></li>
         <li><a href="../../events/">Календарь мероприятий</a></li>
         <li><a href="../../tastings/">Дегустации</a></li>
@@ -1725,30 +1725,29 @@
         <li><a href="../../profile/referral-program/">Реферальная программа</a></li>
         <li><a href="../../pay-methods/">Оплата</a></li>
       </ul>
-    </div>
+    </nav>
 
-    <div class="footer-menu" data-accordeon data-init="mobil" data-accordeon-group="footer-accordeon">
-      <h2 class="footer-menu-title" data-accordeon-head>
-        Юридическая информация
-        <button type="button" aria-expanded="false" aria-label="Развернуть">
-          <svg width="16" height="16"><use href="../../assets/img/sprite.svg#arrow"></use></svg>
+    <nav class="footer-menu" aria-labelledby="footer-legal-title" data-accordeon data-init="mobil" data-accordeon-group="footer-accordeon">
+      <div class="footer-menu-title" data-accordeon-head>
+        <span id="footer-legal-title">Юридическая информация</span>
+        <button type="button" aria-expanded="false" aria-labelledby="footer-legal-title" aria-controls="footer-legal-links">
+          <svg width="16" height="16" aria-hidden="true"><use href="../../assets/img/sprite.svg#arrow"></use></svg>
         </button>
-      </h2>
-      <ul class="footer-menu-list" data-accordeon-body>
+      </div>
+      <ul class="footer-menu-list footer-menu-list--legal" id="footer-legal-links" data-accordeon-body>
         <li><a href="../../privacy-policy/">Политика обработки персональных данных</a></li>
         <li><a href="../../oferta-individuals/">Публичная оферта для физических лиц</a></li>
         <li><a href="../../oferta-legal/">Публичная оферта для юридических лиц</a></li>
-        <li class="delete-in-mobil"><a>&nbsp;</a></li>
         <li><a href="../../sveden/">Сведения об образовательной организации</a></li>
       </ul>
-    </div>
+    </nav>
 
     <div class="footer-menu">
       <h2 class="footer-menu-title no-border">Остаемся на связи</h2>
 
       <address class="footer-address">
         <div class="footer-menu-col">
-          <h3 class="footer-menu-title">Москва</h3>
+          <p class="footer-menu-title">Москва</p>
           <ul class="footer-menu-list">
             <li><a href="tel:+74959939999">+7 495 993-99-99</a></li>
             <li><a href="mailto:msk@ast.school">msk@ast.school</a></li>
@@ -1769,7 +1768,7 @@
         </div>
 
         <div class="footer-menu-col">
-          <h3 class="footer-menu-title">Санкт-петербург</h3>
+          <p class="footer-menu-title">Санкт-петербург</p>
           <ul class="footer-menu-list">
             <li><a href="tel:+79998887766">+7 999 888-77-66</a></li>
             <li><a href="mailto:spb@ast.school">spb@ast.school</a></li>
@@ -1812,12 +1811,12 @@
       <div class="popup" data-popup>
         <!--LOGIN POPUP-->
 <div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="login-title" id="login">
-  <h2 class="popup-title" id="login-title">
-    Вход
+  <div class="popup-title">
+    <span id="login-title">Вход</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>
     </button>
-  </h2>
+  </div>
 
   <script>
     function onLoginSubmit(e) {
@@ -1853,12 +1852,12 @@
 
 <!--LOGIN CODE POPUP-->
 <div class="popup-content" id="login-code" role="dialog" aria-modal="true" aria-labelledby="login-code-title">
-  <h2 class="popup-title" id="login-code-title">
-    Вход
+  <div class="popup-title">
+    <span id="login-code-title">Вход</span>
     <button class="popup-close" data-popup-close aria-label="Закрыть">
       <svg width="18" height="18"><use href="../../assets/img/sprite.svg#close"></use></svg>
     </button>
-  </h2>
+  </div>
 
   <p class="popup-subtitle">Мы отправили проверочный код на&nbsp;ваш&nbsp;email. Введите&nbsp;его:</p>
 
@@ -1964,9 +1963,9 @@
 
 <!--AGE-CONFIRM POPUP-->
 <div class="popup-content" data-popup-lock id="age-confirm" role="dialog" aria-modal="true" aria-labelledby="age-confirm-title">
-  <h2 class="popup-title fs-40 regular magenta" id="age-confirm-title">
+  <div class="popup-title fs-40 regular magenta" id="age-confirm-title">
     <span>18+</span>
-  </h2>
+  </div>
 
   <p class="text ta--l">
     Сайт содержит информацию, не&nbsp;рекомендованную для лиц, не&nbsp;достигших совершеннолетнего возраста. Для&nbsp;доступа на&nbsp;сайт
@@ -1981,9 +1980,9 @@
 
 <!--AGE-NOT-VALID POPUP-->
 <div class="popup-content" data-popup-lock id="age-not-valid" role="dialog" aria-modal="true" aria-labelledby="age-not-valid-title">
-  <h2 class="popup-title fs-40 regular magenta" id="age-not-valid-title">
+  <div class="popup-title fs-40 regular magenta" id="age-not-valid-title">
     <span>18+</span>
-  </h2>
+  </div>
 
   <p class="text ta--l">Приходите позже! Сайт содержит информацию, доступную только с 18 лет.</p>
 

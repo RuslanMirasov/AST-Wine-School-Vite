@@ -224,6 +224,12 @@
   }
 }
 
+@media (min-width: 768px) {
+  .footer-menu-list--legal li:last-child {
+    margin-top: calc(var(--fs-16) * 1.2 + 2 * var(--fs-8));
+  }
+}
+
 .socials {
   display: flex;
   position: relative;
